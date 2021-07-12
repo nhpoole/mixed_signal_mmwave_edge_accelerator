@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/comparator_lvs.spice comparator_lvs" "comparator_lvs_layout.spice comparator_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

@@ -1,0 +1,122 @@
+* NGSPICE file created from dffr_stdcell_flat.ext - technology: sky130A
+
+.subckt dffr_stdcell_flat D CLK Q QB RN VDD VSS
+X0 VDD a_1059_93# a_1623_119# VDD sky130_fd_pr__pfet_01v8_hvt ad=1.5393e+12p pd=1.452e+07u as=1.664e+11p ps=1.8e+06u w=640000u l=150000u
+X1 a_1059_93# a_884_119# a_1238_119# VSS sky130_fd_pr__nfet_01v8 ad=1.092e+11p pd=1.36e+06u as=1.281e+11p ps=1.45e+06u w=420000u l=150000u
+X2 a_224_119# D VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=1.302e+11p pd=1.46e+06u as=0p ps=0u w=420000u l=150000u
+X3 a_1238_119# RN VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=1.2225e+12p ps=1.139e+07u w=420000u l=150000u
+X4 a_319_119# a_n31_119# a_224_119# VDD sky130_fd_pr__pfet_01v8_hvt ad=1.449e+11p pd=1.53e+06u as=0p ps=0u w=420000u l=150000u
+X5 a_319_119# a_n197_119# a_224_119# VSS sky130_fd_pr__nfet_01v8 ad=1.188e+11p pd=1.38e+06u as=1.32e+11p ps=1.49e+06u w=360000u l=150000u
+X6 a_415_119# a_n31_119# a_319_119# VSS sky130_fd_pr__nfet_01v8 ad=2.802e+11p pd=2.2e+06u as=0p ps=0u w=360000u l=150000u
+X7 a_884_119# a_n197_119# a_537_361# VDD sky130_fd_pr__pfet_01v8_hvt ad=1.176e+11p pd=1.4e+06u as=2.583e+11p ps=2.37e+06u w=420000u l=150000u
+X8 VDD a_884_119# a_1059_93# VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=1.134e+11p ps=1.38e+06u w=420000u l=150000u
+X9 a_884_119# a_n31_119# a_537_361# VSS sky130_fd_pr__nfet_01v8 ad=1.422e+11p pd=1.51e+06u as=1.998e+11p ps=1.97e+06u w=360000u l=150000u
+X10 a_224_119# D VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X11 Q a_1059_93# VSS VSS sky130_fd_pr__nfet_01v8 ad=1.69e+11p pd=1.82e+06u as=0p ps=0u w=650000u l=150000u
+X12 VDD a_1059_93# a_1046_485# VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=1.134e+11p ps=1.38e+06u w=420000u l=150000u
+X13 VSS RN a_581_119# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=8.82e+10p ps=1.26e+06u w=420000u l=150000u
+X14 QB a_1623_119# VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=2.6e+11p pd=2.52e+06u as=0p ps=0u w=1e+06u l=150000u
+X15 a_n31_119# a_n197_119# VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=1.664e+11p pd=1.8e+06u as=0p ps=0u w=640000u l=150000u
+X16 a_993_119# a_n197_119# a_884_119# VSS sky130_fd_pr__nfet_01v8 ad=1.338e+11p pd=1.5e+06u as=0p ps=0u w=360000u l=150000u
+X17 a_n31_119# a_n197_119# VSS VSS sky130_fd_pr__nfet_01v8 ad=1.092e+11p pd=1.36e+06u as=0p ps=0u w=420000u l=150000u
+X18 a_1046_485# a_n31_119# a_884_119# VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X19 a_1059_93# RN VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X20 Q a_1059_93# VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=2.8e+11p pd=2.56e+06u as=0p ps=0u w=1e+06u l=150000u
+X21 VSS a_1059_93# a_1623_119# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=1.092e+11p ps=1.36e+06u w=420000u l=150000u
+X22 VDD CLK a_n197_119# VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=1.664e+11p ps=1.8e+06u w=640000u l=150000u
+X23 VDD a_537_361# a_427_485# VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=3.402e+11p ps=3.3e+06u w=420000u l=150000u
+X24 a_581_119# a_537_361# a_415_119# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X25 VSS a_1059_93# a_993_119# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X26 VSS CLK a_n197_119# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=1.092e+11p ps=1.36e+06u w=420000u l=150000u
+X27 a_427_485# a_n197_119# a_319_119# VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X28 a_537_361# a_319_119# VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=640000u l=150000u
+X29 a_537_361# a_319_119# VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+X30 a_427_485# RN VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X31 QB a_1623_119# VSS VSS sky130_fd_pr__nfet_01v8 ad=1.69e+11p pd=1.82e+06u as=0p ps=0u w=650000u l=150000u
+C0 VDD CLK 0.12fF
+C1 Q a_1059_93# 0.29fF
+C2 VDD a_n31_119# 0.73fF
+C3 VDD D 0.86fF
+C4 a_1623_119# a_1059_93# 0.30fF
+C5 a_427_485# a_884_119# 0.01fF
+C6 RN a_n31_119# 0.33fF
+C7 VDD a_427_485# 0.26fF
+C8 RN D 0.02fF
+C9 CLK a_n31_119# 0.04fF
+C10 CLK D 0.12fF
+C11 a_1238_119# RN 0.01fF
+C12 a_n31_119# D 0.76fF
+C13 a_427_485# RN 0.06fF
+C14 VDD QB 0.20fF
+C15 Q a_1623_119# 0.46fF
+C16 a_427_485# a_n31_119# 0.12fF
+C17 a_n197_119# a_537_361# 0.16fF
+C18 a_537_361# a_1059_93# 0.03fF
+C19 VDD a_224_119# 0.15fF
+C20 a_n197_119# a_884_119# 0.27fF
+C21 a_319_119# a_537_361# 0.50fF
+C22 a_884_119# a_1059_93# 0.62fF
+C23 VDD a_n197_119# 0.67fF
+C24 VDD a_1059_93# 0.37fF
+C25 CLK a_224_119# 0.01fF
+C26 a_n31_119# a_224_119# 0.22fF
+C27 a_n197_119# RN 0.86fF
+C28 RN a_1059_93# 0.78fF
+C29 a_319_119# a_884_119# 0.01fF
+C30 a_224_119# D 0.45fF
+C31 CLK a_n197_119# 0.52fF
+C32 VDD a_319_119# 0.28fF
+C33 a_n197_119# a_n31_119# 1.60fF
+C34 Q a_884_119# 0.02fF
+C35 a_n31_119# a_1059_93# 0.10fF
+C36 a_427_485# a_224_119# 0.02fF
+C37 a_n197_119# D 0.50fF
+C38 Q VDD 0.46fF
+C39 RN a_319_119# 0.30fF
+C40 VDD a_1623_119# 0.26fF
+C41 a_1238_119# a_1059_93# 0.04fF
+C42 Q RN 0.02fF
+C43 a_319_119# a_n31_119# 0.49fF
+C44 a_319_119# D 0.04fF
+C45 a_1623_119# RN 0.02fF
+C46 a_993_119# a_884_119# 0.04fF
+C47 a_427_485# a_319_119# 0.21fF
+C48 a_537_361# a_884_119# 0.13fF
+C49 VDD a_537_361# 0.29fF
+C50 a_1046_485# a_884_119# 0.04fF
+C51 a_n197_119# a_224_119# 0.23fF
+C52 VDD a_1046_485# 0.01fF
+C53 RN a_537_361# 0.37fF
+C54 Q QB 0.22fF
+C55 a_n197_119# a_1059_93# 0.12fF
+C56 VDD a_884_119# 0.39fF
+C57 QB a_1623_119# 0.14fF
+C58 a_537_361# a_n31_119# 0.41fF
+C59 a_319_119# a_224_119# 0.13fF
+C60 a_537_361# D 0.03fF
+C61 RN a_884_119# 0.47fF
+C62 a_415_119# a_319_119# 0.07fF
+C63 a_427_485# a_537_361# 0.23fF
+C64 a_n197_119# a_319_119# 0.42fF
+C65 VDD RN 0.26fF
+C66 a_319_119# a_1059_93# 0.02fF
+C67 a_n31_119# a_884_119# 0.29fF
+C68 a_1238_119# VSS -0.01fF
+C69 a_993_119# VSS -0.01fF
+C70 QB VSS 0.26fF
+C71 Q VSS 0.14fF
+C72 a_427_485# VSS 0.09fF
+C73 a_224_119# VSS 0.08fF
+C74 a_1623_119# VSS 0.30fF
+C75 a_884_119# VSS -0.23fF
+C76 a_1059_93# VSS -0.56fF
+C77 a_319_119# VSS 0.46fF
+C78 RN VSS 0.03fF
+C79 a_537_361# VSS 0.40fF
+C80 a_n31_119# VSS 0.90fF
+C81 D VSS 0.52fF
+C82 a_n197_119# VSS 1.19fF
+C83 CLK VSS 0.39fF
+C84 VDD VSS 4.18fF
+.ends
+

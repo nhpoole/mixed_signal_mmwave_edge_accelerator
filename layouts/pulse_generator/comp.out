@@ -1,0 +1,56 @@
+Flattening unmatched subcell sky130_fd_sc_hd__dfxbp_1 in circuit dff_stdcell (0)(1 instance)
+Flattening unmatched subcell nand2 in circuit and2 (0)(1 instance)
+Flattening unmatched subcell inv in circuit and2 (0)(1 instance)
+Flattening unmatched subcell dff_stdcell in circuit pulse_generator_lvs (0)(4 instances)
+Flattening unmatched subcell inv1 in circuit pulse_generator_lvs (0)(1 instance)
+Flattening unmatched subcell and2 in circuit pulse_generator_lvs (0)(1 instance)
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_hvt has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_hvt has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8_hvt     |Circuit 2: sky130_fd_pr__pfet_01v8_hvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8_hvt and sky130_fd_pr__pfet_01v8_hvt are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8         |Circuit 2: sky130_fd_pr__nfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+
+Subcircuit summary:
+Circuit 1: pulse_generator_lvs             |Circuit 2: pulse_generator_flat            
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_01v8_hvt (60)           |sky130_fd_pr__pfet_01v8_hvt (60)           
+sky130_fd_pr__nfet_01v8 (60)               |sky130_fd_pr__nfet_01v8 (60)               
+Number of devices: 120                     |Number of devices: 120                     
+Number of nets: 64                         |Number of nets: 64                         
+---------------------------------------------------------------------------------------
+Circuits match uniquely.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: pulse_generator_lvs             |Circuit 2: pulse_generator_flat            
+-------------------------------------------|-------------------------------------------
+VSS                                        |VSS                                        
+VDD                                        |VDD                                        
+trigb                                      |trigb                                      
+pulse                                      |pulse                                      
+clk                                        |clk                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes pulse_generator_lvs and pulse_generator_flat are equivalent.
+Circuits match uniquely.

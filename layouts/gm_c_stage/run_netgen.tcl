@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/gm_c_stage_lvs.spice gm_c_stage_lvs" "gm_c_stage_lvs_layout.spice gm_c_stage_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

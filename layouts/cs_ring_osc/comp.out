@@ -1,0 +1,65 @@
+Flattening unmatched subcell cs_ring_osc_stage_lvs_exp in circuit cs_ring_osc_lvs (0)(6 instances)
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8         |Circuit 2: sky130_fd_pr__nfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_hvt has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_hvt has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8_hvt     |Circuit 2: sky130_fd_pr__pfet_01v8_hvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8_hvt and sky130_fd_pr__pfet_01v8_hvt are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__cap_mim_m3_1      |Circuit 2: sky130_fd_pr__cap_mim_m3_1      
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__cap_mim_m3_1 and sky130_fd_pr__cap_mim_m3_1 are equivalent.
+Class cs_ring_osc_lvs:  Merged 24 devices.
+Class cs_ring_osc_flat:  Merged 244 devices.
+
+Subcircuit summary:
+Circuit 1: cs_ring_osc_lvs                 |Circuit 2: cs_ring_osc_flat                
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (183)              |sky130_fd_pr__nfet_01v8 (183)              
+sky130_fd_pr__pfet_01v8_hvt (182)          |sky130_fd_pr__pfet_01v8_hvt (182)          
+sky130_fd_pr__cap_mim_m3_1 (7)             |sky130_fd_pr__cap_mim_m3_1 (7)             
+Number of devices: 372                     |Number of devices: 372                     
+Number of nets: 311                        |Number of nets: 311                        
+---------------------------------------------------------------------------------------
+Circuits match uniquely.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: cs_ring_osc_lvs                 |Circuit 2: cs_ring_osc_flat                
+-------------------------------------------|-------------------------------------------
+vctrl                                      |vctrl                                      
+voscbuf                                    |voscbuf                                    
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+vosc                                       |vosc                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes cs_ring_osc_lvs and cs_ring_osc_flat are equivalent.
+Circuits match uniquely.

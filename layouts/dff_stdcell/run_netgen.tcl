@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/dff_stdcell.spice dff_stdcell" "dff_stdcell_lvs_layout.spice dff_stdcell_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

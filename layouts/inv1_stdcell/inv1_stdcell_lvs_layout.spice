@@ -1,0 +1,7 @@
+* NGSPICE file created from inv1_stdcell_flat.ext - technology: sky130A
+
+.subckt inv1_stdcell_flat A Y VDD VSS
+X0 Y A VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=2.6e+11p pd=2.52e+06u as=2.6e+11p ps=2.52e+06u w=1e+06u l=150000u
+X1 Y A VSS VSS sky130_fd_pr__nfet_01v8 ad=1.69e+11p pd=1.82e+06u as=1.69e+11p ps=1.82e+06u w=650000u l=150000u
+.ends
+

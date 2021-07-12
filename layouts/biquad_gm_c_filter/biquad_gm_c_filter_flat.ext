@@ -1,0 +1,606 @@
+timestamp 1622700284
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__nfet_01v8_lvt l=l w=w a1=as p1=ps a2=ad p2=pd
+port "ibiasn3" 12 18656 -1896 18670 -1880 m2
+port "ibiasn2" 11 6844 -1890 6870 -1878 m2
+port "ibiasn4" 13 18640 1074 18656 1084 m2
+port "vfiltm" 8 23620 1100 23640 1116 m3
+port "vfiltp" 7 23360 1060 23382 1076 m3
+port "ibiasn1" 5 6858 1072 6874 1080 m2
+port "vim" 4 5012 2710 5020 2724 m2
+port "vip" 3 4746 1978 4762 1992 m2
+port "vocm" 6 11604 1874 11614 1882 m3
+port "vintm" 10 -290 1124 -268 1144 m3
+port "vintp" 9 -562 1138 -542 1158 m3
+port "VDD" 1 11516 5188 11546 5206 m4
+port "VSS" 2 11416 -406 11440 -390 m4
+node "gm_c_stage_3/vcmcn2" 4556 3227.38 18850 -4894 p 0 0 0 0 0 0 0 0 69600 2748 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 74312 1188 0 0 57664 3800 163236 6618 216000 7320 0 0 0 0 0 0 0 0
+node "gm_c_stage_3/vcmcn1" 3301 3175.06 13686 -3362 ndif 0 0 0 0 0 0 0 0 46400 1832 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 74312 1188 0 0 43792 2916 146756 5734 372372 12532 0 0 0 0 0 0 0 0
+node "gm_c_stage_3/vcmcn" 7481 10011.2 13170 -3362 ndif 0 0 0 0 0 0 0 0 116000 4580 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 148624 2376 0 0 94384 6232 587920 21620 264156 9164 0 0 0 0 0 0 0 0
+node "gm_c_stage_3/vbiasp" 2332 5021 15954 -4830 pdif 0 0 0 0 0 0 0 0 11600 516 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 222936 3564 0 0 41072 2960 118520 4946 582720 19544 0 0 0 0 0 0 0 0
+node "gm_c_stage_3/vtail_diff" 6346 3388 13222 -2254 ndif 0 0 0 0 0 0 0 0 116000 4696 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 69632 4504 214136 8548 310080 10576 0 0 0 0 0 0 0 0
+node "gm_c_stage_3/vcmn_tail2" 5562 5210.19 20020 -3362 ndif 0 0 0 0 0 0 0 0 104400 4180 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 62560 4020 261840 10204 237600 8160 0 0 0 0 0 0 0 0
+node "gm_c_stage_3/vcmn_tail1" 5572 10521.7 13428 -3362 ndif 0 0 0 0 0 0 0 0 104400 4180 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 62560 4020 262172 10216 545760 18432 0 0 0 0 0 0 0 0
+node "gm_c_stage_3/ibiasn" 13405 18850 14138 -2309 p 0 0 0 0 0 0 0 0 69600 3096 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3926608 32928 0 0 510816 32360 732232 32348 420720 14144 0 0 0 0 0 0 0 0
+equiv "gm_c_stage_3/ibiasn" "ibiasn3"
+node "gm_c_stage_3/vcmc" 2478 6848.05 13222 -1714 ndif 0 0 0 0 0 0 0 0 11600 516 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 560944 4704 0 0 81056 5176 160616 6616 590040 19788 0 0 0 0 0 0 0 0
+node "gm_c_stage_1/vcmcn2" 4556 3227.38 7050 -4894 p 0 0 0 0 0 0 0 0 69600 2748 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 74312 1188 0 0 57664 3800 163236 6618 216000 7320 0 0 0 0 0 0 0 0
+node "gm_c_stage_1/vcmcn1" 3301 3175.06 1886 -3362 ndif 0 0 0 0 0 0 0 0 46400 1832 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 74312 1188 0 0 43792 2916 146756 5734 372372 12532 0 0 0 0 0 0 0 0
+node "gm_c_stage_1/vcmcn" 7481 10011.2 1370 -3362 ndif 0 0 0 0 0 0 0 0 116000 4580 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 148624 2376 0 0 94384 6232 587920 21620 264156 9164 0 0 0 0 0 0 0 0
+node "gm_c_stage_1/vbiasp" 2332 5021 4154 -4830 pdif 0 0 0 0 0 0 0 0 11600 516 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 222936 3564 0 0 41072 2960 118520 4946 582720 19544 0 0 0 0 0 0 0 0
+node "gm_c_stage_1/vtail_diff" 6346 3388 1422 -2254 ndif 0 0 0 0 0 0 0 0 116000 4696 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 69632 4504 214136 8548 310080 10576 0 0 0 0 0 0 0 0
+node "gm_c_stage_1/vcmn_tail2" 5562 5210.19 8220 -3362 ndif 0 0 0 0 0 0 0 0 104400 4180 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 62560 4020 261840 10204 237600 8160 0 0 0 0 0 0 0 0
+node "gm_c_stage_1/vcmn_tail1" 5572 10521.7 1628 -3362 ndif 0 0 0 0 0 0 0 0 104400 4180 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 62560 4020 262172 10216 545760 18432 0 0 0 0 0 0 0 0
+node "gm_c_stage_1/ibiasn" 13405 18850 2338 -2309 p 0 0 0 0 0 0 0 0 69600 3096 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3926608 32928 0 0 510816 32360 732232 32348 420720 14144 0 0 0 0 0 0 0 0
+equiv "gm_c_stage_1/ibiasn" "ibiasn2"
+node "gm_c_stage_1/vcmc" 2478 6848.05 1422 -1714 ndif 0 0 0 0 0 0 0 0 11600 516 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 560944 4704 0 0 81056 5176 160616 6616 590040 19788 0 0 0 0 0 0 0 0
+node "gm_c_stage_2/ibiasn" 13405 18850 14138 655 p 0 0 0 0 0 0 0 0 69600 3096 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3926608 32928 0 0 510816 32360 732232 32348 420720 14144 0 0 0 0 0 0 0 0
+equiv "gm_c_stage_2/ibiasn" "ibiasn4"
+node "gm_c_stage_2/vcmn_tail2" 5562 5210.19 20020 2158 ndif 0 0 0 0 0 0 0 0 104400 4180 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 62560 4020 261840 10204 237600 8160 0 0 0 0 0 0 0 0
+node "gm_c_stage_2/vtail_diff" 6346 3388 13222 1250 ndif 0 0 0 0 0 0 0 0 116000 4696 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 69632 4504 214136 8548 310080 10576 0 0 0 0 0 0 0 0
+node "gm_c_stage_2/vcmn_tail1" 5572 10521.7 13428 2158 ndif 0 0 0 0 0 0 0 0 104400 4180 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 62560 4020 262172 10216 545760 18432 0 0 0 0 0 0 0 0
+node "gm_c_stage_2/vim" 7511 14593.6 16466 -3362 ndif 0 0 0 0 0 0 0 0 69600 2748 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 885696 12416 0 0 120496 8448 278954 12608 442824 15000 1394400 28088 0 0 0 0 0 0
+equiv "gm_c_stage_2/vim" "gm_c_stage_3/vom"
+equiv "gm_c_stage_2/vim" "gm_c_stage_3/vom"
+equiv "gm_c_stage_2/vim" "gm_c_stage_3/vom"
+equiv "gm_c_stage_2/vim" "vfiltm"
+node "gm_c_stage_2/vip" 6257 15622.9 13228 -3417 p 0 0 0 0 0 0 0 0 46400 1832 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 885696 12416 0 0 106624 7564 307898 13268 511716 17536 1496600 30132 0 0 0 0 0 0
+equiv "gm_c_stage_2/vip" "gm_c_stage_3/vop"
+equiv "gm_c_stage_2/vip" "gm_c_stage_3/vop"
+equiv "gm_c_stage_2/vip" "gm_c_stage_3/vop"
+equiv "gm_c_stage_2/vip" "vfiltp"
+node "gm_c_stage_0/ibiasn" 13405 18850 2338 655 p 0 0 0 0 0 0 0 0 69600 3096 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3926608 32928 0 0 510816 32360 732232 32348 420720 14144 0 0 0 0 0 0 0 0
+equiv "gm_c_stage_0/ibiasn" "ibiasn1"
+node "gm_c_stage_0/vcmn_tail2" 5562 5210.19 8220 2158 ndif 0 0 0 0 0 0 0 0 104400 4180 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 62560 4020 261840 10204 237600 8160 0 0 0 0 0 0 0 0
+node "gm_c_stage_0/vtail_diff" 6346 3388 1422 1250 ndif 0 0 0 0 0 0 0 0 116000 4696 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 69632 4504 214136 8548 310080 10576 0 0 0 0 0 0 0 0
+node "gm_c_stage_0/vcmn_tail1" 5572 10521.7 1628 2158 ndif 0 0 0 0 0 0 0 0 104400 4180 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 62560 4020 262172 10216 545760 18432 0 0 0 0 0 0 0 0
+node "gm_c_stage_0/vim" 1533 2027.85 4982 2103 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 442848 6208 0 0 35904 2656 69024 3440 87120 3024 0 0 0 0 0 0 0 0
+equiv "gm_c_stage_0/vim" "vim"
+node "gm_c_stage_0/vip" 1534 2502.18 4724 2103 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 442848 6208 0 0 35904 2656 72384 3552 118680 4076 0 0 0 0 0 0 0 0
+equiv "gm_c_stage_0/vip" "vip"
+node "gm_c_stage_2/vocm" 4861 38826.1 1686 -3417 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3542784 49664 0 0 287232 21248 566592 28000 1735544 52804 3192700 64252 0 0 0 0 0 0
+equiv "gm_c_stage_2/vocm" "gm_c_stage_3/vocm"
+equiv "gm_c_stage_2/vocm" "gm_c_stage_3/vocm"
+equiv "gm_c_stage_2/vocm" "gm_c_stage_1/vocm"
+equiv "gm_c_stage_2/vocm" "gm_c_stage_1/vocm"
+equiv "gm_c_stage_2/vocm" "gm_c_stage_0/vocm"
+equiv "gm_c_stage_2/vocm" "gm_c_stage_0/vocm"
+equiv "gm_c_stage_2/vocm" "vocm"
+node "gm_c_stage_2/vcmc" 2478 6848.05 13222 710 ndif 0 0 0 0 0 0 0 0 11600 516 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 560944 4704 0 0 81056 5176 160616 6616 590040 19788 0 0 0 0 0 0 0 0
+node "gm_c_stage_2/vcmcn2" 4556 3227.38 18850 3762 p 0 0 0 0 0 0 0 0 69600 2748 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 74312 1188 0 0 57664 3800 163236 6618 216000 7320 0 0 0 0 0 0 0 0
+node "gm_c_stage_2/vcmcn1" 3301 3175.06 13686 2158 ndif 0 0 0 0 0 0 0 0 46400 1832 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 74312 1188 0 0 43792 2916 146756 5734 372372 12532 0 0 0 0 0 0 0 0
+node "gm_c_stage_2/vcmcn" 7481 10011.2 13170 2158 ndif 0 0 0 0 0 0 0 0 116000 4580 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 148624 2376 0 0 94384 6232 587920 21620 264156 9164 0 0 0 0 0 0 0 0
+node "gm_c_stage_2/vbiasp" 2332 5021 15954 3826 pdif 0 0 0 0 0 0 0 0 11600 516 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 222936 3564 0 0 41072 2960 118520 4946 582720 19544 0 0 0 0 0 0 0 0
+node "gm_c_stage_0/vcmc" 2478 6848.05 1422 710 ndif 0 0 0 0 0 0 0 0 11600 516 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 560944 4704 0 0 81056 5176 160616 6616 590040 19788 0 0 0 0 0 0 0 0
+node "gm_c_stage_2/vom" 21245 37786.3 1428 2103 p 0 0 0 0 0 0 0 0 185600 7328 34800 1548 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2214240 31040 0 0 311712 21804 855418 36404 2048372 60698 2304100 46680 0 0 0 0 0 0
+equiv "gm_c_stage_2/vom" "gm_c_stage_3/vip"
+equiv "gm_c_stage_2/vom" "gm_c_stage_1/vom"
+equiv "gm_c_stage_2/vom" "gm_c_stage_1/vip"
+equiv "gm_c_stage_2/vom" "gm_c_stage_1/vom"
+equiv "gm_c_stage_2/vom" "gm_c_stage_1/vom"
+equiv "gm_c_stage_2/vom" "gm_c_stage_0/vop"
+equiv "gm_c_stage_2/vom" "gm_c_stage_0/vop"
+equiv "gm_c_stage_2/vom" "gm_c_stage_0/vop"
+equiv "gm_c_stage_2/vom" "vintm"
+node "gm_c_stage_2/vop" 20036 37021.5 1428 -3417 p 0 0 0 0 0 0 0 0 162400 6412 34800 1548 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2214240 31040 0 0 297840 20920 890266 37848 1225920 42060 3603200 72664 0 0 0 0 0 0
+equiv "gm_c_stage_2/vop" "gm_c_stage_3/vim"
+equiv "gm_c_stage_2/vop" "gm_c_stage_1/vop"
+equiv "gm_c_stage_2/vop" "gm_c_stage_1/vop"
+equiv "gm_c_stage_2/vop" "gm_c_stage_1/vop"
+equiv "gm_c_stage_2/vop" "gm_c_stage_1/vim"
+equiv "gm_c_stage_2/vop" "gm_c_stage_0/vom"
+equiv "gm_c_stage_2/vop" "gm_c_stage_0/vom"
+equiv "gm_c_stage_2/vop" "gm_c_stage_0/vom"
+equiv "gm_c_stage_2/vop" "vintp"
+node "gm_c_stage_0/vcmcn2" 4556 3227.38 7050 3762 p 0 0 0 0 0 0 0 0 69600 2748 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 74312 1188 0 0 57664 3800 163236 6618 216000 7320 0 0 0 0 0 0 0 0
+node "gm_c_stage_0/vcmcn1" 3301 3175.06 1886 2158 ndif 0 0 0 0 0 0 0 0 46400 1832 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 74312 1188 0 0 43792 2916 146756 5734 372372 12532 0 0 0 0 0 0 0 0
+node "gm_c_stage_0/vcmcn" 7481 10011.2 1370 2158 ndif 0 0 0 0 0 0 0 0 116000 4580 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 148624 2376 0 0 94384 6232 587920 21620 264156 9164 0 0 0 0 0 0 0 0
+node "gm_c_stage_0/vbiasp" 2332 5021 4154 3826 pdif 0 0 0 0 0 0 0 0 11600 516 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 222936 3564 0 0 41072 2960 118520 4946 582720 19544 0 0 0 0 0 0 0 0
+node "gm_c_stage_2/VDD" 44276 436633 30 -5978 nw 0 0 0 0 86177792 100288 0 0 10342400 206848 371200 16512 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2080736 33264 0 0 10820032 240928 19785200 339080 5083520 47408 5085120 47568 39705600 102464 9050304 24220 0 0
+equiv "gm_c_stage_2/VDD" "gm_c_stage_3/VDD"
+equiv "gm_c_stage_2/VDD" "gm_c_stage_1/VDD"
+equiv "gm_c_stage_2/VDD" "gm_c_stage_0/VDD"
+equiv "gm_c_stage_2/VDD" "VDD"
+substrate "gm_c_stage_2/VSS" 0 0 30 -3958 pw 0 0 158728064 119136 0 0 0 0 1206400 50880 11638400 232768 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11632192 112512 0 0 13653376 364352 33089328 633808 10758544 102624 10760144 102784 39051688 49960 0 0 0 0
+equiv "gm_c_stage_2/VSS" "gm_c_stage_3/VSS"
+equiv "gm_c_stage_2/VSS" "gm_c_stage_1/VSS"
+equiv "gm_c_stage_2/VSS" "gm_c_stage_0/VSS"
+equiv "gm_c_stage_2/VSS" "VSS"
+cap "gm_c_stage_2/vop" "gm_c_stage_0/vcmcn1" 914.306
+cap "gm_c_stage_2/vim" "gm_c_stage_3/vtail_diff" 582.607
+cap "gm_c_stage_2/vop" "gm_c_stage_1/vbiasp" 416.344
+cap "gm_c_stage_3/vcmn_tail1" "gm_c_stage_3/vcmcn" 582.607
+cap "gm_c_stage_1/vcmn_tail2" "gm_c_stage_2/vom" 321.506
+cap "gm_c_stage_2/vcmn_tail1" "gm_c_stage_2/ibiasn" 71.0029
+cap "gm_c_stage_3/ibiasn" "gm_c_stage_3/vtail_diff" 62.2134
+cap "gm_c_stage_2/vop" "gm_c_stage_3/vcmcn" 112.866
+cap "gm_c_stage_2/vocm" "gm_c_stage_3/vtail_diff" 1189.71
+cap "gm_c_stage_0/vcmc" "gm_c_stage_0/vcmn_tail1" 147.11
+cap "gm_c_stage_1/vcmn_tail1" "gm_c_stage_1/ibiasn" 71.0029
+cap "gm_c_stage_2/vop" "gm_c_stage_0/vtail_diff" 582.607
+cap "gm_c_stage_2/vom" "gm_c_stage_3/vcmcn1" 124.2
+cap "gm_c_stage_1/vcmcn1" "gm_c_stage_2/vocm" 1067.8
+cap "gm_c_stage_0/vim" "gm_c_stage_2/vom" 1213.4
+cap "gm_c_stage_3/vcmc" "gm_c_stage_3/vcmcn1" 2373.34
+cap "gm_c_stage_0/vcmcn" "gm_c_stage_0/vcmcn2" 1280.69
+cap "gm_c_stage_2/vop" "gm_c_stage_0/vbiasp" 442
+cap "gm_c_stage_1/vcmcn" "gm_c_stage_1/vbiasp" 534.534
+cap "gm_c_stage_0/vcmcn" "gm_c_stage_2/vom" 418.377
+cap "gm_c_stage_1/vcmn_tail1" "gm_c_stage_2/vom" 65.25
+cap "gm_c_stage_2/vcmc" "gm_c_stage_2/vtail_diff" 30.7922
+cap "gm_c_stage_1/vcmn_tail1" "gm_c_stage_1/vcmc" 147.11
+cap "gm_c_stage_2/vcmn_tail2" "gm_c_stage_2/vocm" 2823.46
+cap "gm_c_stage_2/VDD" "gm_c_stage_2/vop" 2279.49
+cap "gm_c_stage_2/vcmc" "gm_c_stage_2/vom" 537.117
+cap "gm_c_stage_2/vop" "gm_c_stage_2/vcmcn1" 126.228
+cap "gm_c_stage_3/vcmn_tail1" "gm_c_stage_3/vtail_diff" 490.86
+cap "gm_c_stage_0/vcmcn2" "gm_c_stage_0/vcmn_tail2" 582.607
+cap "gm_c_stage_3/vcmcn1" "gm_c_stage_3/vcmcn2" 169.012
+cap "gm_c_stage_2/vbiasp" "gm_c_stage_2/vop" 319.916
+cap "gm_c_stage_1/vcmcn2" "gm_c_stage_2/vom" 2120.56
+cap "gm_c_stage_0/vcmcn" "gm_c_stage_0/vcmn_tail1" 582.607
+cap "gm_c_stage_2/vop" "gm_c_stage_3/vtail_diff" 327.2
+cap "gm_c_stage_1/vcmn_tail2" "gm_c_stage_2/vocm" 4740.77
+cap "gm_c_stage_0/ibiasn" "gm_c_stage_0/vcmn_tail2" 56.2036
+cap "gm_c_stage_1/vcmcn1" "gm_c_stage_2/vop" 151.528
+cap "gm_c_stage_2/VDD" "gm_c_stage_1/vcmcn" 4047.65
+cap "gm_c_stage_2/VDD" "gm_c_stage_2/vcmcn2" 1508.18
+cap "gm_c_stage_2/vcmcn2" "gm_c_stage_2/vcmcn1" 169.012
+cap "gm_c_stage_3/vbiasp" "gm_c_stage_3/vcmcn2" 883.415
+cap "gm_c_stage_2/vcmc" "gm_c_stage_2/vcmn_tail1" 147.11
+cap "gm_c_stage_2/vocm" "gm_c_stage_3/vcmcn1" 1067.8
+cap "gm_c_stage_2/vip" "gm_c_stage_3/vcmcn" 418.377
+cap "gm_c_stage_2/vim" "gm_c_stage_3/vbiasp" 442
+cap "gm_c_stage_0/vip" "gm_c_stage_0/vtail_diff" 2648.14
+cap "gm_c_stage_0/vcmcn" "gm_c_stage_2/vocm" 2066.02
+cap "gm_c_stage_2/vbiasp" "gm_c_stage_2/vcmcn2" 883.415
+cap "gm_c_stage_0/vcmc" "gm_c_stage_2/vop" 98.9
+cap "gm_c_stage_1/ibiasn" "gm_c_stage_1/vcmc" 107.799
+cap "gm_c_stage_3/ibiasn" "gm_c_stage_3/vbiasp" 38.9712
+cap "gm_c_stage_1/vcmn_tail1" "gm_c_stage_2/vocm" 321.506
+cap "gm_c_stage_2/vom" "gm_c_stage_2/vtail_diff" 582.607
+cap "gm_c_stage_1/vcmcn1" "gm_c_stage_1/vcmcn" 1184.76
+cap "gm_c_stage_2/VDD" "gm_c_stage_2/vcmcn" 4047.65
+cap "gm_c_stage_2/vcmc" "gm_c_stage_2/vocm" 241.836
+cap "gm_c_stage_3/vbiasp" "gm_c_stage_3/vcmn_tail2" 895.706
+cap "gm_c_stage_2/vom" "gm_c_stage_1/vcmc" 98.9
+cap "gm_c_stage_2/vcmcn" "gm_c_stage_2/vcmcn1" 1184.76
+cap "gm_c_stage_3/vcmc" "gm_c_stage_2/vom" 98.9
+cap "gm_c_stage_2/vip" "gm_c_stage_2/VDD" 821.786
+cap "gm_c_stage_2/vcmn_tail2" "gm_c_stage_2/vcmcn2" 582.607
+cap "gm_c_stage_1/vcmcn2" "gm_c_stage_2/vocm" 282.306
+cap "gm_c_stage_2/vocm" "gm_c_stage_0/vcmn_tail2" 4740.77
+cap "gm_c_stage_2/vbiasp" "gm_c_stage_2/vcmcn" 534.534
+cap "gm_c_stage_2/vcmn_tail1" "gm_c_stage_2/vtail_diff" 490.86
+cap "gm_c_stage_3/vcmn_tail1" "gm_c_stage_3/vcmcn1" 582.922
+cap "gm_c_stage_2/vip" "gm_c_stage_2/vbiasp" 100.483
+cap "gm_c_stage_2/vop" "gm_c_stage_3/vcmcn1" 781.029
+cap "gm_c_stage_0/vim" "gm_c_stage_2/vop" 1614.19
+cap "gm_c_stage_2/vip" "gm_c_stage_3/vtail_diff" 2763.45
+cap "gm_c_stage_0/vcmcn1" "gm_c_stage_0/vbiasp" 185.572
+cap "gm_c_stage_0/vcmcn" "gm_c_stage_2/vop" 1296.59
+cap "gm_c_stage_2/vim" "gm_c_stage_2/vtail_diff" 327.2
+cap "gm_c_stage_1/vcmn_tail1" "gm_c_stage_2/vop" 2834.89
+cap "gm_c_stage_2/vom" "gm_c_stage_0/vcmn_tail1" 2843.89
+cap "gm_c_stage_1/vcmcn" "gm_c_stage_1/vcmn_tail2" 582.922
+cap "gm_c_stage_0/ibiasn" "gm_c_stage_0/vcmn_tail1" 71.0029
+cap "gm_c_stage_2/VDD" "gm_c_stage_1/vbiasp" 3036.49
+cap "gm_c_stage_2/VDD" "gm_c_stage_0/vcmcn1" 3437.32
+cap "gm_c_stage_2/vim" "gm_c_stage_2/vom" 3382.98
+cap "gm_c_stage_2/vocm" "gm_c_stage_2/vtail_diff" 1189.71
+cap "gm_c_stage_2/vcmn_tail2" "gm_c_stage_2/vcmcn" 582.922
+cap "gm_c_stage_2/vcmc" "gm_c_stage_2/vop" 98.9
+cap "gm_c_stage_2/vip" "gm_c_stage_2/vcmn_tail2" 65.25
+cap "gm_c_stage_2/VDD" "gm_c_stage_3/vcmcn" 4047.65
+cap "gm_c_stage_0/vcmcn2" "gm_c_stage_2/vocm" 282.306
+cap "gm_c_stage_3/ibiasn" "gm_c_stage_3/vcmc" 107.799
+cap "gm_c_stage_2/vom" "gm_c_stage_2/vocm" 6197.85
+cap "gm_c_stage_3/vcmc" "gm_c_stage_2/vocm" 241.532
+cap "gm_c_stage_1/vcmcn2" "gm_c_stage_2/vop" 98.9
+cap "gm_c_stage_1/vcmcn" "gm_c_stage_1/vcmn_tail1" 582.607
+cap "gm_c_stage_2/vop" "gm_c_stage_0/vcmn_tail2" 321.506
+cap "gm_c_stage_2/VDD" "gm_c_stage_0/vbiasp" 3036.49
+cap "gm_c_stage_1/vcmcn1" "gm_c_stage_1/vbiasp" 185.572
+cap "gm_c_stage_2/vim" "gm_c_stage_3/vcmcn2" 2122.56
+cap "gm_c_stage_1/vcmn_tail1" "gm_c_stage_1/vtail_diff" 490.86
+cap "gm_c_stage_0/vcmc" "gm_c_stage_0/vcmcn1" 2373.34
+cap "gm_c_stage_2/vcmn_tail1" "gm_c_stage_2/vocm" 2224.17
+cap "gm_c_stage_1/vcmcn2" "gm_c_stage_1/vcmcn" 1280.69
+cap "gm_c_stage_2/VDD" "gm_c_stage_2/vcmcn1" 3437.32
+cap "gm_c_stage_2/vip" "gm_c_stage_3/vcmcn1" 27.3282
+cap "gm_c_stage_0/vcmn_tail1" "gm_c_stage_2/vocm" 321.506
+cap "gm_c_stage_0/vip" "gm_c_stage_0/vim" 511.131
+cap "gm_c_stage_2/vop" "gm_c_stage_2/vtail_diff" 2745.6
+cap "gm_c_stage_2/vocm" "gm_c_stage_3/vcmcn2" 282.306
+cap "gm_c_stage_0/vcmc" "gm_c_stage_0/vtail_diff" 30.7922
+cap "gm_c_stage_2/VDD" "gm_c_stage_2/vbiasp" 3036.49
+cap "gm_c_stage_2/vim" "gm_c_stage_2/vocm" 511.131
+cap "gm_c_stage_0/vcmcn2" "gm_c_stage_2/vop" 2154.74
+cap "gm_c_stage_3/vcmn_tail1" "gm_c_stage_3/vcmc" 147.11
+cap "gm_c_stage_3/vcmn_tail2" "gm_c_stage_3/vcmcn2" 582.607
+cap "gm_c_stage_2/vbiasp" "gm_c_stage_2/vcmcn1" 185.572
+cap "gm_c_stage_2/vip" "gm_c_stage_3/vbiasp" 382.694
+cap "gm_c_stage_2/vop" "gm_c_stage_2/vom" 13749.5
+cap "gm_c_stage_2/vcmcn" "gm_c_stage_2/vcmc" 50.0076
+cap "gm_c_stage_3/vcmc" "gm_c_stage_2/vop" 507.619
+cap "gm_c_stage_2/vop" "gm_c_stage_1/vcmc" 98.9
+cap "gm_c_stage_2/VDD" "gm_c_stage_1/vcmcn1" 3437.32
+cap "gm_c_stage_2/vim" "gm_c_stage_3/vcmn_tail2" 321.506
+cap "gm_c_stage_1/vcmn_tail2" "gm_c_stage_1/vbiasp" 895.706
+cap "gm_c_stage_3/ibiasn" "gm_c_stage_3/vcmn_tail2" 56.2036
+cap "gm_c_stage_3/vcmn_tail2" "gm_c_stage_2/vocm" 2823.46
+cap "gm_c_stage_2/VDD" "gm_c_stage_0/vcmc" 2695.32
+cap "gm_c_stage_2/vom" "gm_c_stage_2/vcmcn2" 2046.31
+cap "gm_c_stage_1/vcmcn" "gm_c_stage_2/vom" 1197.69
+cap "gm_c_stage_1/vtail_diff" "gm_c_stage_1/ibiasn" 62.2134
+cap "gm_c_stage_1/vcmcn" "gm_c_stage_1/vcmc" 50.0076
+cap "gm_c_stage_0/vcmcn" "gm_c_stage_0/vcmcn1" 1184.76
+cap "gm_c_stage_2/vop" "gm_c_stage_2/vcmn_tail1" 2834.89
+cap "gm_c_stage_3/vcmcn" "gm_c_stage_3/vcmcn1" 1184.76
+cap "gm_c_stage_2/vbiasp" "gm_c_stage_2/ibiasn" 38.9712
+cap "gm_c_stage_0/vim" "gm_c_stage_0/vtail_diff" 327.2
+cap "gm_c_stage_2/vbiasp" "gm_c_stage_2/vcmn_tail2" 895.706
+cap "gm_c_stage_2/vim" "gm_c_stage_2/vop" 3060.53
+cap "gm_c_stage_3/vcmn_tail1" "gm_c_stage_3/ibiasn" 71.0029
+cap "gm_c_stage_1/vtail_diff" "gm_c_stage_2/vom" 4992.16
+cap "gm_c_stage_3/vbiasp" "gm_c_stage_3/vcmcn" 534.534
+cap "gm_c_stage_1/vtail_diff" "gm_c_stage_1/vcmc" 30.7922
+cap "gm_c_stage_0/vcmcn" "gm_c_stage_0/vbiasp" 534.534
+cap "gm_c_stage_3/vcmn_tail1" "gm_c_stage_2/vocm" 2224.17
+cap "gm_c_stage_2/vip" "gm_c_stage_2/vtail_diff" 2637.88
+cap "gm_c_stage_2/vop" "gm_c_stage_2/vocm" 3457.9
+cap "gm_c_stage_1/vcmcn2" "gm_c_stage_1/vbiasp" 883.415
+cap "gm_c_stage_2/VDD" "gm_c_stage_3/vcmcn1" 3437.32
+cap "gm_c_stage_2/vcmcn" "gm_c_stage_2/vom" 2622.05
+cap "gm_c_stage_2/vcmn_tail2" "gm_c_stage_2/ibiasn" 56.2036
+cap "gm_c_stage_2/vip" "gm_c_stage_2/vom" 713.369
+cap "gm_c_stage_0/vip" "gm_c_stage_2/vom" 301.95
+cap "gm_c_stage_0/vcmcn" "gm_c_stage_2/VDD" 4047.65
+cap "gm_c_stage_2/vim" "gm_c_stage_2/vcmcn2" 189.45
+cap "gm_c_stage_2/VDD" "gm_c_stage_3/vbiasp" 3036.49
+cap "gm_c_stage_2/vocm" "gm_c_stage_2/vcmcn2" 282.306
+cap "gm_c_stage_1/vcmcn" "gm_c_stage_2/vocm" 2066.02
+cap "gm_c_stage_0/vbiasp" "gm_c_stage_0/vcmn_tail2" 895.706
+cap "gm_c_stage_1/ibiasn" "gm_c_stage_1/vbiasp" 38.9712
+cap "gm_c_stage_2/VDD" "gm_c_stage_2/vcmc" 2695.32
+cap "gm_c_stage_2/vcmcn" "gm_c_stage_2/vcmn_tail1" 582.607
+cap "gm_c_stage_2/vcmc" "gm_c_stage_2/vcmcn1" 2373.34
+cap "gm_c_stage_2/VDD" "gm_c_stage_1/vcmcn2" 1508.18
+cap "gm_c_stage_1/vcmcn1" "gm_c_stage_1/vcmn_tail1" 582.922
+cap "gm_c_stage_0/vcmcn2" "gm_c_stage_0/vcmcn1" 169.012
+cap "gm_c_stage_1/vtail_diff" "gm_c_stage_2/vocm" 1189.71
+cap "gm_c_stage_2/vim" "gm_c_stage_2/vcmcn" 124.2
+cap "gm_c_stage_2/vom" "gm_c_stage_0/vcmcn1" 27.3282
+cap "gm_c_stage_2/vom" "gm_c_stage_1/vbiasp" 612.944
+cap "gm_c_stage_2/vip" "gm_c_stage_2/vim" 3223.87
+cap "gm_c_stage_0/vcmcn" "gm_c_stage_0/vcmc" 50.0076
+cap "gm_c_stage_3/vcmcn" "gm_c_stage_2/vom" 189.45
+cap "gm_c_stage_2/vcmcn" "gm_c_stage_2/vocm" 2066.02
+cap "gm_c_stage_2/vom" "gm_c_stage_0/vtail_diff" 2747.12
+cap "gm_c_stage_3/vcmc" "gm_c_stage_3/vcmcn" 50.0076
+cap "gm_c_stage_2/vip" "gm_c_stage_2/vocm" 2820.33
+cap "gm_c_stage_0/ibiasn" "gm_c_stage_0/vtail_diff" 62.2134
+cap "gm_c_stage_0/vcmcn2" "gm_c_stage_0/vbiasp" 883.415
+cap "gm_c_stage_1/vcmcn2" "gm_c_stage_1/vcmcn1" 169.012
+cap "gm_c_stage_2/vcmc" "gm_c_stage_2/ibiasn" 107.799
+cap "gm_c_stage_2/vom" "gm_c_stage_0/vbiasp" 506.922
+cap "gm_c_stage_1/vcmcn" "gm_c_stage_2/vop" 1445.32
+cap "gm_c_stage_2/vip" "gm_c_stage_3/vcmn_tail2" 65.25
+cap "gm_c_stage_0/ibiasn" "gm_c_stage_0/vbiasp" 38.9712
+cap "gm_c_stage_0/vcmn_tail1" "gm_c_stage_0/vcmcn1" 582.922
+cap "gm_c_stage_0/vcmcn2" "gm_c_stage_2/VDD" 1508.18
+cap "gm_c_stage_2/VDD" "gm_c_stage_2/vom" 2007.62
+cap "gm_c_stage_2/VDD" "gm_c_stage_1/vcmc" 2695.32
+cap "gm_c_stage_2/VDD" "gm_c_stage_3/vcmc" 2695.32
+cap "gm_c_stage_2/vom" "gm_c_stage_2/vcmcn1" 124.2
+cap "gm_c_stage_0/vcmn_tail1" "gm_c_stage_0/vtail_diff" 490.86
+cap "gm_c_stage_3/vcmcn" "gm_c_stage_3/vcmcn2" 1280.69
+cap "gm_c_stage_1/vtail_diff" "gm_c_stage_2/vop" 3072.8
+cap "gm_c_stage_2/vim" "gm_c_stage_3/vcmcn" 1197.69
+cap "gm_c_stage_2/vocm" "gm_c_stage_1/vbiasp" 98.9
+cap "gm_c_stage_2/vocm" "gm_c_stage_0/vcmcn1" 1067.8
+cap "gm_c_stage_2/vbiasp" "gm_c_stage_2/vom" 343.1
+cap "gm_c_stage_3/vbiasp" "gm_c_stage_3/vcmcn1" 185.572
+cap "gm_c_stage_2/vom" "gm_c_stage_3/vtail_diff" 2724.63
+cap "gm_c_stage_2/vcmcn" "gm_c_stage_2/vop" 1124.06
+cap "gm_c_stage_2/vip" "gm_c_stage_3/vcmn_tail1" 2834.89
+cap "gm_c_stage_3/vcmc" "gm_c_stage_3/vtail_diff" 30.7922
+cap "gm_c_stage_3/vcmcn" "gm_c_stage_2/vocm" 2066.02
+cap "gm_c_stage_1/vcmcn2" "gm_c_stage_1/vcmn_tail2" 582.607
+cap "gm_c_stage_2/vip" "gm_c_stage_2/vop" 1724.2
+cap "gm_c_stage_0/vip" "gm_c_stage_2/vop" 278.063
+cap "gm_c_stage_1/vcmcn1" "gm_c_stage_1/vcmc" 2373.34
+cap "gm_c_stage_2/vocm" "gm_c_stage_0/vtail_diff" 1189.71
+cap "gm_c_stage_2/vtail_diff" "gm_c_stage_2/ibiasn" 62.2134
+cap "gm_c_stage_2/vcmn_tail1" "gm_c_stage_2/vcmcn1" 582.922
+cap "gm_c_stage_3/vcmcn" "gm_c_stage_3/vcmn_tail2" 582.922
+cap "gm_c_stage_2/VDD" "gm_c_stage_3/vcmcn2" 1508.18
+cap "gm_c_stage_2/vocm" "gm_c_stage_0/vbiasp" 98.9
+cap "gm_c_stage_0/vcmc" "gm_c_stage_2/vom" 98.9
+cap "gm_c_stage_2/vim" "gm_c_stage_2/VDD" 592.918
+cap "gm_c_stage_2/vcmcn" "gm_c_stage_2/vcmcn2" 1280.69
+cap "gm_c_stage_2/vcmn_tail2" "gm_c_stage_2/vom" 321.506
+cap "gm_c_stage_0/vcmcn" "gm_c_stage_0/vcmn_tail2" 582.922
+cap "gm_c_stage_0/vcmc" "gm_c_stage_0/ibiasn" 107.799
+cap "gm_c_stage_1/vcmn_tail2" "gm_c_stage_1/ibiasn" 56.2036
+cap "gm_c_stage_2/vim" "gm_c_stage_2/vbiasp" 98.9
+cap "gm_c_stage_2/vocm" "gm_c_stage_2/vcmcn1" 1067.8
+device msubckt sky130_fd_pr__pfet_01v8 19108 -4830 19109 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_3/vcmcn2" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 18850 -4830 18851 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_3/vcmcn2" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_3/vcmcn2" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 18592 -4830 18593 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_3/vcmcn1" 400 0 "gm_c_stage_3/vcmcn1" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 18334 -4830 18335 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_3/vcmcn1" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 18076 -4830 18077 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_3/vcmcn" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 17818 -4830 17819 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_3/vcmcn" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_3/vcmcn" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 17560 -4830 17561 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_3/vcmcn" 400 0 "gm_c_stage_3/vcmc" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 17302 -4830 17303 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_3/vcmc" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 17044 -4830 17045 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/vip" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 16786 -4830 16787 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_3/vbiasp" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vip" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 16528 -4830 16529 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/vim" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 16270 -4830 16271 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_3/vbiasp" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vim" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 16012 -4830 16013 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_3/vbiasp" 400 0 "gm_c_stage_3/vbiasp" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 15754 -4830 15755 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_3/vbiasp" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 7308 -4830 7309 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_1/vcmcn2" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 7050 -4830 7051 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_1/vcmcn2" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_1/vcmcn2" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 6792 -4830 6793 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_1/vcmcn1" 400 0 "gm_c_stage_1/vcmcn1" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 6534 -4830 6535 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_1/vcmcn1" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 6276 -4830 6277 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_1/vcmcn" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 6018 -4830 6019 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_1/vcmcn" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_1/vcmcn" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 5760 -4830 5761 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_1/vcmcn" 400 0 "gm_c_stage_1/vcmc" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 5502 -4830 5503 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_1/vcmc" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 5244 -4830 5245 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/vop" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 4986 -4830 4987 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_1/vbiasp" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vop" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 4728 -4830 4729 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/vom" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 4470 -4830 4471 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_1/vbiasp" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vom" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 4212 -4830 4213 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_1/vbiasp" 400 0 "gm_c_stage_1/vbiasp" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 3954 -4830 3955 -4829 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_1/vbiasp" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 21884 -3362 21885 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_3/vcmcn2" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 21626 -3362 21627 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_3/vcmn_tail2" 400 0 "gm_c_stage_3/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 21368 -3362 21369 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vim" 400 0 "gm_c_stage_3/vcmcn" 400 0 "gm_c_stage_3/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 21110 -3362 21111 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vim" 400 0 "gm_c_stage_3/vcmn_tail2" 400 0 "gm_c_stage_3/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 20852 -3362 20853 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_3/vcmcn2" 400 0 "gm_c_stage_3/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 20594 -3362 20595 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_3/vcmn_tail2" 400 0 "gm_c_stage_3/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 20336 -3362 20337 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vim" 400 0 "gm_c_stage_3/vcmcn" 400 0 "gm_c_stage_3/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 20078 -3362 20079 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vim" 400 0 "gm_c_stage_3/vcmn_tail2" 400 0 "gm_c_stage_3/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 19820 -3362 19821 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_3/vcmcn2" 400 0 "gm_c_stage_3/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 19562 -3362 19563 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_3/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 18588 -3362 18589 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vim" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 18330 -3362 18331 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_3/vtail_diff" 400 0 "gm_c_stage_2/vim" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 18072 -3362 18073 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_2/vip" 400 0 "gm_c_stage_3/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 17814 -3362 17815 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_3/vtail_diff" 400 0 "gm_c_stage_2/vip" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 17556 -3362 17557 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/vim" 400 0 "gm_c_stage_3/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 17298 -3362 17299 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_3/vtail_diff" 400 0 "gm_c_stage_2/vim" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 17040 -3362 17041 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_2/vip" 400 0 "gm_c_stage_3/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 16782 -3362 16783 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_3/vtail_diff" 400 0 "gm_c_stage_2/vip" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 16524 -3362 16525 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/vim" 400 0 "gm_c_stage_3/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 16266 -3362 16267 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vim" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 15292 -3362 15293 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_3/vcmcn" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 15034 -3362 15035 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vip" 400 0 "gm_c_stage_3/vcmn_tail1" 400 0 "gm_c_stage_3/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 14776 -3362 14777 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_3/vcmcn1" 400 0 "gm_c_stage_3/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 14518 -3362 14519 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_3/vcmn_tail1" 400 0 "gm_c_stage_3/vcmcn1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 14260 -3362 14261 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vip" 400 0 "gm_c_stage_3/vcmcn" 400 0 "gm_c_stage_3/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 14002 -3362 14003 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vip" 400 0 "gm_c_stage_3/vcmn_tail1" 400 0 "gm_c_stage_3/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 13744 -3362 13745 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_3/vcmcn1" 400 0 "gm_c_stage_3/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 13486 -3362 13487 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_3/vcmn_tail1" 400 0 "gm_c_stage_3/vcmcn1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 13228 -3362 13229 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vip" 400 0 "gm_c_stage_3/vcmcn" 400 0 "gm_c_stage_3/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 12970 -3362 12971 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_3/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 21860 -2254 21861 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_3/vbiasp" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 21002 -2254 21003 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/vbiasp" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 20144 -2254 20145 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_3/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 19286 -2254 19287 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 18428 -2254 18429 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_3/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 17570 -2254 17571 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 16712 -2254 16713 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_3/vtail_diff" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 15854 -2254 15855 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/vtail_diff" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 14996 -2254 14997 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_3/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 14138 -2254 14139 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 13280 -2254 13281 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/vcmc" 1600 0 "gm_c_stage_3/vtail_diff" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 12422 -2254 12423 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/vtail_diff" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 21860 -1714 21861 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_3/vcmn_tail2" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 21002 -1714 21003 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/vcmn_tail2" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 20144 -1714 20145 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_3/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 19286 -1714 19287 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 18428 -1714 18429 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_3/vcmn_tail1" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 17570 -1714 17571 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/vcmn_tail1" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 16712 -1714 16713 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_3/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 15854 -1714 15855 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 14996 -1714 14997 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_3/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 14138 -1714 14139 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 13280 -1714 13281 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_3/vcmc" 1600 0 "gm_c_stage_3/vcmc" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 12422 -1714 12423 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_3/vcmc" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 10084 -3362 10085 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_1/vcmcn2" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 9826 -3362 9827 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_1/vcmn_tail2" 400 0 "gm_c_stage_1/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 9568 -3362 9569 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_1/vcmcn" 400 0 "gm_c_stage_1/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 9310 -3362 9311 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_1/vcmn_tail2" 400 0 "gm_c_stage_1/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 9052 -3362 9053 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_1/vcmcn2" 400 0 "gm_c_stage_1/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 8794 -3362 8795 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_1/vcmn_tail2" 400 0 "gm_c_stage_1/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 8536 -3362 8537 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_1/vcmcn" 400 0 "gm_c_stage_1/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 8278 -3362 8279 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_1/vcmn_tail2" 400 0 "gm_c_stage_1/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 8020 -3362 8021 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_1/vcmcn2" 400 0 "gm_c_stage_1/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 7762 -3362 7763 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_1/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6788 -3362 6789 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6530 -3362 6531 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_1/vtail_diff" 400 0 "gm_c_stage_2/vom" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6272 -3362 6273 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_2/vop" 400 0 "gm_c_stage_1/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6014 -3362 6015 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_1/vtail_diff" 400 0 "gm_c_stage_2/vop" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5756 -3362 5757 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/vom" 400 0 "gm_c_stage_1/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5498 -3362 5499 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_1/vtail_diff" 400 0 "gm_c_stage_2/vom" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5240 -3362 5241 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_2/vop" 400 0 "gm_c_stage_1/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4982 -3362 4983 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_1/vtail_diff" 400 0 "gm_c_stage_2/vop" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4724 -3362 4725 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/vom" 400 0 "gm_c_stage_1/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4466 -3362 4467 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vom" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 3492 -3362 3493 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_1/vcmcn" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 3234 -3362 3235 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_1/vcmn_tail1" 400 0 "gm_c_stage_1/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 2976 -3362 2977 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_1/vcmcn1" 400 0 "gm_c_stage_1/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 2718 -3362 2719 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_1/vcmn_tail1" 400 0 "gm_c_stage_1/vcmcn1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 2460 -3362 2461 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_1/vcmcn" 400 0 "gm_c_stage_1/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 2202 -3362 2203 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_1/vcmn_tail1" 400 0 "gm_c_stage_1/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 1944 -3362 1945 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_1/vcmcn1" 400 0 "gm_c_stage_1/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 1686 -3362 1687 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_1/vcmn_tail1" 400 0 "gm_c_stage_1/vcmcn1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 1428 -3362 1429 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_1/vcmcn" 400 0 "gm_c_stage_1/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 1170 -3362 1171 -3361 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_1/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 10060 -2254 10061 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_1/vbiasp" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 9202 -2254 9203 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/vbiasp" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 8344 -2254 8345 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_1/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 7486 -2254 7487 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 6628 -2254 6629 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_1/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 5770 -2254 5771 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 4912 -2254 4913 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_1/vtail_diff" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 4054 -2254 4055 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/vtail_diff" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 3196 -2254 3197 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_1/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 2338 -2254 2339 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1480 -2254 1481 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/vcmc" 1600 0 "gm_c_stage_1/vtail_diff" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 622 -2254 623 -2253 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/vtail_diff" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 10060 -1714 10061 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_1/vcmn_tail2" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 9202 -1714 9203 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/vcmn_tail2" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 8344 -1714 8345 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_1/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 7486 -1714 7487 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 6628 -1714 6629 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_1/vcmn_tail1" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 5770 -1714 5771 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/vcmn_tail1" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 4912 -1714 4913 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_1/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 4054 -1714 4055 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 3196 -1714 3197 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_1/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 2338 -1714 2339 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1480 -1714 1481 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_1/vcmc" 1600 0 "gm_c_stage_1/vcmc" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 622 -1714 623 -1713 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_1/vcmc" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 21860 710 21861 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/vcmn_tail2" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 21002 710 21003 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/vcmn_tail2" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 20144 710 20145 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 19286 710 19287 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 18428 710 18429 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/vcmn_tail1" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 17570 710 17571 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/vcmn_tail1" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 16712 710 16713 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 15854 710 15855 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 14996 710 14997 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 14138 710 14139 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 13280 710 13281 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/vcmc" 1600 0 "gm_c_stage_2/vcmc" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 12422 710 12423 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/vcmc" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 21860 1250 21861 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/vbiasp" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 21002 1250 21003 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/vbiasp" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 20144 1250 20145 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 19286 1250 19287 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 18428 1250 18429 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 17570 1250 17571 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 16712 1250 16713 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/vtail_diff" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 15854 1250 15855 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/vtail_diff" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 14996 1250 14997 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 14138 1250 14139 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 13280 1250 13281 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/vcmc" 1600 0 "gm_c_stage_2/vtail_diff" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 12422 1250 12423 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_2/vtail_diff" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 21884 2158 21885 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vcmcn2" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 21626 2158 21627 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_2/vcmn_tail2" 400 0 "gm_c_stage_2/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 21368 2158 21369 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/vcmcn" 400 0 "gm_c_stage_2/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 21110 2158 21111 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/vcmn_tail2" 400 0 "gm_c_stage_2/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 20852 2158 20853 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_2/vcmcn2" 400 0 "gm_c_stage_2/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 20594 2158 20595 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_2/vcmn_tail2" 400 0 "gm_c_stage_2/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 20336 2158 20337 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/vcmcn" 400 0 "gm_c_stage_2/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 20078 2158 20079 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/vcmn_tail2" 400 0 "gm_c_stage_2/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 19820 2158 19821 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_2/vcmcn2" 400 0 "gm_c_stage_2/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 19562 2158 19563 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 18588 2158 18589 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 18330 2158 18331 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vip" 400 0 "gm_c_stage_2/vtail_diff" 400 0 "gm_c_stage_2/vom" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 18072 2158 18073 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vim" 400 0 "gm_c_stage_2/vop" 400 0 "gm_c_stage_2/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 17814 2158 17815 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vim" 400 0 "gm_c_stage_2/vtail_diff" 400 0 "gm_c_stage_2/vop" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 17556 2158 17557 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vip" 400 0 "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 17298 2158 17299 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vip" 400 0 "gm_c_stage_2/vtail_diff" 400 0 "gm_c_stage_2/vom" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 17040 2158 17041 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vim" 400 0 "gm_c_stage_2/vop" 400 0 "gm_c_stage_2/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 16782 2158 16783 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vim" 400 0 "gm_c_stage_2/vtail_diff" 400 0 "gm_c_stage_2/vop" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 16524 2158 16525 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vip" 400 0 "gm_c_stage_2/vom" 400 0 "gm_c_stage_2/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 16266 2158 16267 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vom" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 15292 2158 15293 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vcmcn" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 15034 2158 15035 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_2/vcmn_tail1" 400 0 "gm_c_stage_2/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 14776 2158 14777 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_2/vcmcn1" 400 0 "gm_c_stage_2/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 14518 2158 14519 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_2/vcmn_tail1" 400 0 "gm_c_stage_2/vcmcn1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 14260 2158 14261 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_2/vcmcn" 400 0 "gm_c_stage_2/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 14002 2158 14003 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_2/vcmn_tail1" 400 0 "gm_c_stage_2/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 13744 2158 13745 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_2/vcmcn1" 400 0 "gm_c_stage_2/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 13486 2158 13487 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_2/vcmn_tail1" 400 0 "gm_c_stage_2/vcmcn1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 13228 2158 13229 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_2/vcmcn" 400 0 "gm_c_stage_2/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 12970 2158 12971 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 10060 710 10061 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_0/vcmn_tail2" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 9202 710 9203 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/vcmn_tail2" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 8344 710 8345 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_0/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 7486 710 7487 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 6628 710 6629 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_0/vcmn_tail1" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 5770 710 5771 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/vcmn_tail1" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 4912 710 4913 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_0/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 4054 710 4055 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 3196 710 3197 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_0/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 2338 710 2339 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1480 710 1481 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/vcmc" 1600 0 "gm_c_stage_0/vcmc" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 622 710 623 711 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/vcmc" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 10060 1250 10061 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_0/vbiasp" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 9202 1250 9203 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/vbiasp" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 8344 1250 8345 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_0/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 7486 1250 7487 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 6628 1250 6629 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_0/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 5770 1250 5771 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 4912 1250 4913 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_0/vtail_diff" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 4054 1250 4055 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/vtail_diff" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 3196 1250 3197 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_0/ibiasn" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 2338 1250 2339 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/ibiasn" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/ibiasn" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1480 1250 1481 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_0/vcmc" 1600 0 "gm_c_stage_0/vtail_diff" 200 0 "gm_c_stage_2/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 622 1250 623 1251 l=800 w=200 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 1600 0 "gm_c_stage_2/VSS" 200 0 "gm_c_stage_0/vtail_diff" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 10084 2158 10085 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_0/vcmcn2" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 9826 2158 9827 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_0/vcmn_tail2" 400 0 "gm_c_stage_0/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 9568 2158 9569 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_0/vcmcn" 400 0 "gm_c_stage_0/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 9310 2158 9311 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_0/vcmn_tail2" 400 0 "gm_c_stage_0/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 9052 2158 9053 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_0/vcmcn2" 400 0 "gm_c_stage_0/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 8794 2158 8795 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_0/vcmn_tail2" 400 0 "gm_c_stage_0/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 8536 2158 8537 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_0/vcmcn" 400 0 "gm_c_stage_0/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 8278 2158 8279 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vop" 400 0 "gm_c_stage_0/vcmn_tail2" 400 0 "gm_c_stage_0/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 8020 2158 8021 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_0/vcmcn2" 400 0 "gm_c_stage_0/vcmn_tail2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 7762 2158 7763 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_0/vcmcn2" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6788 2158 6789 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vop" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6530 2158 6531 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_0/vip" 400 0 "gm_c_stage_0/vtail_diff" 400 0 "gm_c_stage_2/vop" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6272 2158 6273 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_0/vim" 400 0 "gm_c_stage_2/vom" 400 0 "gm_c_stage_0/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6014 2158 6015 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_0/vim" 400 0 "gm_c_stage_0/vtail_diff" 400 0 "gm_c_stage_2/vom" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5756 2158 5757 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_0/vip" 400 0 "gm_c_stage_2/vop" 400 0 "gm_c_stage_0/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5498 2158 5499 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_0/vip" 400 0 "gm_c_stage_0/vtail_diff" 400 0 "gm_c_stage_2/vop" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5240 2158 5241 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_0/vim" 400 0 "gm_c_stage_2/vom" 400 0 "gm_c_stage_0/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4982 2158 4983 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_0/vim" 400 0 "gm_c_stage_0/vtail_diff" 400 0 "gm_c_stage_2/vom" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4724 2158 4725 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_0/vip" 400 0 "gm_c_stage_2/vop" 400 0 "gm_c_stage_0/vtail_diff" 400 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4466 2158 4467 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/vop" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 3492 2158 3493 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_0/vcmcn" 400 0 "gm_c_stage_2/VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 3234 2158 3235 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_0/vcmn_tail1" 400 0 "gm_c_stage_0/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 2976 2158 2977 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_0/vcmcn1" 400 0 "gm_c_stage_0/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 2718 2158 2719 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_0/vcmn_tail1" 400 0 "gm_c_stage_0/vcmcn1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 2460 2158 2461 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_0/vcmcn" 400 0 "gm_c_stage_0/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 2202 2158 2203 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_0/vcmn_tail1" 400 0 "gm_c_stage_0/vcmcn" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 1944 2158 1945 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_0/vcmcn1" 400 0 "gm_c_stage_0/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 1686 2158 1687 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vocm" 400 0 "gm_c_stage_0/vcmn_tail1" 400 0 "gm_c_stage_0/vcmcn1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 1428 2158 1429 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/vom" 400 0 "gm_c_stage_0/vcmcn" 400 0 "gm_c_stage_0/vcmn_tail1" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 1170 2158 1171 2159 l=200 w=400 "gm_c_stage_2/VSS" "gm_c_stage_2/VSS" 400 0 "gm_c_stage_2/VSS" 400 0 "gm_c_stage_0/vcmcn" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 19108 3826 19109 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/vcmcn2" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 18850 3826 18851 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/vcmcn2" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vcmcn2" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 18592 3826 18593 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/vcmcn1" 400 0 "gm_c_stage_2/vcmcn1" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 18334 3826 18335 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vcmcn1" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 18076 3826 18077 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/vcmcn" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 17818 3826 17819 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/vcmcn" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vcmcn" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 17560 3826 17561 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/vcmcn" 400 0 "gm_c_stage_2/vcmc" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 17302 3826 17303 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vcmc" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 17044 3826 17045 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/vop" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 16786 3826 16787 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/vbiasp" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vop" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 16528 3826 16529 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/vom" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 16270 3826 16271 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/vbiasp" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vom" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 16012 3826 16013 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/vbiasp" 400 0 "gm_c_stage_2/vbiasp" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 15754 3826 15755 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vbiasp" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 7308 3826 7309 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_0/vcmcn2" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 7050 3826 7051 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_0/vcmcn2" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_0/vcmcn2" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 6792 3826 6793 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_0/vcmcn1" 400 0 "gm_c_stage_0/vcmcn1" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 6534 3826 6535 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_0/vcmcn1" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 6276 3826 6277 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_0/vcmcn" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 6018 3826 6019 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_0/vcmcn" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_0/vcmcn" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 5760 3826 5761 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_0/vcmcn" 400 0 "gm_c_stage_0/vcmc" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 5502 3826 5503 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_0/vcmc" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 5244 3826 5245 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/vom" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 4986 3826 4987 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_0/vbiasp" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vom" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 4728 3826 4729 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/vop" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 4470 3826 4471 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_0/vbiasp" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_2/vop" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 4212 3826 4213 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_0/vbiasp" 400 0 "gm_c_stage_0/vbiasp" 200 0 "gm_c_stage_2/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 3954 3826 3955 3827 l=200 w=200 "gm_c_stage_2/VDD" "gm_c_stage_2/VDD" 400 0 "gm_c_stage_2/VDD" 200 0 "gm_c_stage_0/vbiasp" 200 0
+subcap "gm_c_stage_1/ibiasn" -18705.3

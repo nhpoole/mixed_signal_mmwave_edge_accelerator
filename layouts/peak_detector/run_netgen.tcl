@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/peak_detector_lvs.spice peak_detector_lvs" "peak_detector_lvs_layout.spice peak_detector_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

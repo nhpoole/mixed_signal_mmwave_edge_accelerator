@@ -1,0 +1,110 @@
+timestamp 1624432856
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+use cs_ring_osc cs_ring_osc_0 1 0 -2466 0 1 6424
+use pfd_cp_lpf pfd_cp_lpf_0 -1 0 30256 0 1 14838
+use freq_div freq_div_0 1 0 32794 0 1 8554
+node "m4_33074_5166#" 0 433.672 33074 5166 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 118560 2216 0 0 0 0
+node "m4_35772_8584#" 1 723.656 35772 8584 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 206880 3688 0 0 0 0
+node "VSS" 1 740.992 30394 8472 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 212160 3776 0 0 0 0
+node "m4_23256_10806#" 2 4170.3 23256 10806 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2592000 19740 0 0 0 0
+node "VDD" 1 8909.76 32818 16778 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4734400 13436 8497600 22844 0 0
+node "ibiasn" 3 568.975 30988 12438 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75000 2620 0 0 0 0 0 0 0 0
+node "m1_29948_8646#" 1 147.626 29948 8646 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16440 668 0 0 0 0 0 0 0 0 0 0
+node "vsigin" 1 271.55 32380 14118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 33000 1220 0 0 0 0 0 0 0 0 0 0
+node "m1_27146_14096#" 15 5839.77 27146 14096 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11200 424 316000 10696 807800 16356 0 0 0 0 0 0
+node "vcp" 13 2715.63 23080 14094 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 84000 2920 284400 9600 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "freq_div_0/VSS" "cs_ring_osc_0/VDD" 49.0244
+cap "cs_ring_osc_0/m1_27074_394#" "freq_div_0/sky130_fd_sc_hd__dfxbp_1_5/Q" 45.2866
+cap "cs_ring_osc_0/VDD" "cs_ring_osc_0/m1_27074_394#" 34.8837
+cap "freq_div_0/sky130_fd_sc_hd__dfxbp_1_10/CLK" "cs_ring_osc_0/m1_27074_394#" 58.9744
+cap "freq_div_0/VGND" "cs_ring_osc_0/VDD" 49.0244
+cap "freq_div_0/VGND" "cs_ring_osc_0/VDD" 15.8268
+cap "cs_ring_osc_0/m1_27074_394#" "freq_div_0/sky130_fd_sc_hd__dfxbp_1_5/Q" 45.2866
+cap "freq_div_0/sky130_fd_sc_hd__dfxbp_1_10/CLK" "cs_ring_osc_0/m1_27074_394#" 58.9744
+cap "cs_ring_osc_0/VDD" "freq_div_0/VGND" 15.8268
+subcap "m1_29948_8646#" -190.71
+subcap "m1_29948_8646#" -510.379
+cap "freq_div_0/VGND" "cs_ring_osc_0/sky130_fd_sc_hd__inv_4_0/VPWR" 5.65327
+subcap "m1_29948_8646#" -114.819
+subcap "VSS" -333.355
+cap "freq_div_0/sky130_fd_sc_hd__dfxbp_1_0/VPWR" "freq_div_0/VGND" 9.6
+cap "freq_div_0/sky130_fd_sc_hd__dfxbp_1_0/VPWR" "cs_ring_osc_0/sky130_fd_sc_hd__inv_4_0/VGND" 5.65327
+cap "freq_div_0/VDD" "freq_div_0/vout" 112.416
+cap "freq_div_0/w_n2454_122#" "freq_div_0/vout" 13.452
+subcap "m4_35772_8584#" -65.8794
+cap "freq_div_0/sky130_fd_sc_hd__tapvpwrvgnd_1_12/VPWR" "freq_div_0/VGND" 9.6
+subcap "m4_23256_10806#" -1449.97
+cap "cs_ring_osc_0/VSS" "vcp" 258.6
+cap "m1_27146_14096#" "cs_ring_osc_0/VSS" 227.6
+cap "vcp" "pfd_cp_lpf_0/VSS" 22.3333
+subcap "ibiasn" -83.3707
+cap "pfd_cp_lpf_0/sky130_fd_pr__nfet_01v8_58Q5WU_1/a_n2974_n155#" "pfd_cp_lpf_0/VSS" 406.726
+subcap "vcp" -2956.96
+subcap "vcp" -1625.66
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/vpbias" 47.498
+cap "pfd_cp_lpf_0/VSS" "pfd_cp_lpf_0/vcp" 30
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/VDD" 8.5443
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/VDD" 0.56962
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/sky130_fd_pr__pfet_01v8_lvt_HJ2CZP_0/a_358_n200#" 4.04297
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/sky130_fd_pr__pfet_01v8_lvt_HJ2CZP_0/a_158_n264#" 14.3787
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/VSS" 1.875
+cap "pfd_cp_lpf_0/sky130_fd_pr__nfet_01v8_lvt_V7QMZR_0/a_358_n100#" "pfd_cp_lpf_0/vcp" 12.4951
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/sky130_fd_pr__nfet_01v8_lvt_V7QMZR_0/a_158_n155#" 42.2609
+subcap "m1_27146_14096#" -5901.99
+subcap "m1_27146_14096#" -5261.67
+cap "pfd_cp_lpf_0/sky130_fd_sc_hd__dfrbp_1_0/VGND" "pfd_cp_lpf_0/vin_div" 329.97
+cap "pfd_cp_lpf_0/vQB" "pfd_cp_lpf_0/vin_div" 116.734
+cap "pfd_cp_lpf_0/sky130_fd_sc_hd__dfrbp_1_0/a_27_47#" "pfd_cp_lpf_0/vin_div" 2.8125
+cap "m1_27146_14096#" "pfd_cp_lpf_0/VQBb" 98.9
+cap "pfd_cp_lpf_0/sky130_fd_sc_hd__nand2_1_0/VNB" "m1_27146_14096#" 74.465
+subcap "ibiasn" -3647.72
+cap "pfd_cp_lpf_0/sky130_fd_sc_hd__nand2_1_0/VNB" "m1_27146_14096#" 175.47
+subcap "vsigin" -163.712
+cap "m1_27146_14096#" "pfd_cp_lpf_0/sky130_fd_sc_hd__dfrbp_1_1/VGND" 228.965
+subcap "vcp" -2714.05
+subcap "vcp" -2262.83
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/VSS" 10.7463
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/vpbias" 33.562
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/VDD" 19.8529
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/VSS" 0.671642
+cap "pfd_cp_lpf_0/sky130_fd_pr__nfet_01v8_lvt_V7QMZR_0/a_158_n155#" "pfd_cp_lpf_0/vcp" 15.8824
+cap "pfd_cp_lpf_0/sky130_fd_pr__nfet_01v8_lvt_V7QMZR_0/a_358_n100#" "pfd_cp_lpf_0/vcp" 5.28001
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/VDD" 1.32353
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/sky130_fd_pr__pfet_01v8_lvt_HJ2CZP_0/a_158_n264#" 33.0612
+cap "pfd_cp_lpf_0/vcp" "pfd_cp_lpf_0/sky130_fd_pr__pfet_01v8_lvt_HJ2CZP_0/a_358_n200#" 8.84615
+subcap "m1_27146_14096#" -6022.3
+subcap "m1_27146_14096#" -5667.52
+cap "pfd_cp_lpf_0/vin_div" "pfd_cp_lpf_0/sky130_fd_sc_hd__dfrbp_1_0/VPB" 0.6558
+cap "pfd_cp_lpf_0/vQB" "pfd_cp_lpf_0/vin_div" 0.571429
+subcap "vsigin" -69.9898
+subcap "vsigin" -123.464
+cap "pfd_cp_lpf_0/vsig_in" "pfd_cp_lpf_0/sky130_fd_sc_hd__dfrbp_1_1/VPB" 0.702
+subcap "VDD" -8808.66
+subcap "VDD" -7528.78
+subcap "VDD" -8093.95
+subcap "VDD" -6832.84
+merge "pfd_cp_lpf_0/ibiasn" "ibiasn" -461.059 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 178920 -2620 0 0 0 0 0 0 0 0
+merge "pfd_cp_lpf_0/VSS" "freq_div_0/w_n2582_n2518#" -7632.11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1344240 -42536 0 0 0 0
+merge "freq_div_0/w_n2582_n2518#" "m4_23256_10806#"
+merge "m4_23256_10806#" "cs_ring_osc_0/VSS"
+merge "cs_ring_osc_0/VSS" "VSUBS"
+merge "VSUBS" "freq_div_0/VGND"
+merge "freq_div_0/VGND" "m4_35772_8584#"
+merge "m4_35772_8584#" "VSS"
+merge "pfd_cp_lpf_0/vsig_in" "vsigin" -112.652 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -28416 -456 0 0 0 0 0 0 0 0 0 0
+merge "pfd_cp_lpf_0/vcp" "cs_ring_osc_0/vctrl" -1141.25 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 35112 -240 1851076 -9276 0 0 0 0 0 0 0 0
+merge "cs_ring_osc_0/vctrl" "vcp"
+merge "pfd_cp_lpf_0/vin_div" "freq_div_0/vout" -3189.01 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 21024 -332 -79800 -3030 -496300 -10026 0 0 0 0 0 0
+merge "freq_div_0/vout" "m1_27146_14096#"
+merge "pfd_cp_lpf_0/VDD" "freq_div_0/sky130_fd_sc_hd__dfxbp_1_9/VPWR" -5856.81 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -350240 -4855 -6820686 -19823 0 0
+merge "freq_div_0/sky130_fd_sc_hd__dfxbp_1_9/VPWR" "VDD"
+merge "VDD" "freq_div_0/sky130_fd_sc_hd__dfxbp_1_10/VPWR"
+merge "freq_div_0/sky130_fd_sc_hd__dfxbp_1_10/VPWR" "cs_ring_osc_0/VDD"
+merge "cs_ring_osc_0/VDD" "m4_33074_5166#"
+merge "freq_div_0/vin" "cs_ring_osc_0/voscbuf" -139.381 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -34032 -572 0 0 0 0 0 0 0 0 0 0
+merge "cs_ring_osc_0/voscbuf" "m1_29948_8646#"

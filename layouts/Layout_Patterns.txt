@@ -1,0 +1,423 @@
+----------------------------------------------------------------------------------------
+Layout Patterns
+('-' denotes a dummy transistor)
+----------------------------------------------------------------------------------------
+
+****************************************************************************************
+diff_fold_casc_ota
+------------------------------------------------------
+
+NMOS input differential pair:
+(unit transistor: 3/1.2)
+
+-ABBAABBAA-
+-BAABBAABB-
+-BAABBAABB-
+-ABBAABBAA-
+
+PMOS cascode with bias circuitry (top):
+(unit transistor: 3/4.8)
+
+-ADDEEAA|BBEEDDB-
+-CEEDDCC|CCDDEEC-
+-BDDEEBB|AAEEDDA-
+
+PMOS cascode with bias circuitry (bottom):
+(unit transistor: 3/4.8)
+
+-AAA-------BBB-
+-EEE--CCC--DDD-
+-DDD--CCC--EEE-
+-BBB-------AAA-
+
+NMOS cascode with bias circuitry:
+(unit transistor: 3/4.8)
+
+KKKKKKKKKK|KKKKKKKKKK
+KKL---JJHG|GGJJJ--KKK
+-HHGGGHHJJ|JJHHGGGHH-
+-DAAACFFFF|FFCBBBEEBM
+-FCCCBEEEE|EEBAAADDA-
+-CFFCCCADD|DDDDABBBE-
+-EBBBADDDD|DDACCCFFC-
+-ADDAAABEE|EEEEBCCCF-
+-BEEBBBCFF|FFFFCAAAD-
+-HHGGGHHJJ|JJHHGGGHH-
+KKK--JJJGG|GHJJ---LKK
+KKKKKKKKKK|KKKKKKKKKK
+
+Common-mode feedback NMOS differential pairs:
+(unit transistor: 1/0.3)
+
+-ABBADCCD-
+-DCCDABBA-
+
+Common-mode feedback PMOS active loads:
+(unit transistor: 2/0.8)
+
+-CDDCCDDC-
+-ABBAABBA-
+-BAABBAAB-
+-DCCDDCCD-
+
+NMOS current mirror biasing:
+(unit transistor: 3/4.8)
+
+-CDDC-
+-ABBA-
+-BAAB-
+-DCCD-
+
+NMOS bias diode-connected device:
+(unit transistor: 3/4.8)
+
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+
+Compensation capacitors:
+(unit capacitor: 10x10)
+
+------
+-ABAB-
+-BABA-
+-ABAB-
+-BABA-
+------
+
+****************************************************************************************
+****************************************************************************************
+se_fold_casc_wide_swing_ota
+------------------------------------------------------
+
+NMOS input differential pair:
+(unit transistor: 3/4.8)
+
+-ABBAABBAA-
+-BAABBAABB-
+-BAABBAABB-
+-ABBAABBAA-
+
+PMOS input differential pair:
+(unit transistor: 3/4.8)
+
+-AB-
+-BA-
+-BA-
+-AB-
+
+PMOS cascode biasing (top):
+(unit transistor: 3/4.8)
+
+-ADD--AA|BB--DDB-
+-C--DDCC|CCDD--C-
+-BDD--BB|AA--DDA-
+
+PMOS cascode circuitry (top):
+(unit transistor: 3/4.8)
+
+-BAABBA|ABBAAB-
+-ABBAAB|BAABBA-
+
+PMOS cascode with bias circuitry (bottom):
+(unit transistor: 3/4.8)
+
+-AAA---E---BBB-
+-EEE--CCC--DDD-
+-DDD--CCC--EEE-
+-BBB---D---AAA-
+
+NMOS cascode with bias circuitry:
+(unit transistor: 3/4.8)
+
+-GGGCCBBGG|GGBBCCGGC-
+-BCCGGGGBB|BBGGGGCCG-
+HDAAACFFFF|FFCBBBEEBJ
+-FCCCBEEEE|EEBAAADDA-
+-CFFCCCADD|DDDDABBBE-
+-EBBBADDDD|DDACCCFFC-
+-ADDAAABEE|EEEEBCCCF-
+-BEEBBBCFF|FFFFCAAADH
+-GCCGGGGBB|BBGGGGCCB-
+-CGGCCBBGG|GGBBCCGGG-
+
+NMOS current mirror biasing:
+(unit transistor: 3/4.8)
+
+-ABBAABBA-
+
+NMOS bias diode-connected device:
+(unit transistor: 3/4.8)
+
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+-AAAAAAA-
+
+Compensation capacitor:
+(unit capacitor: 24x26)
+
+ --
+-AA-
+-AA-
+ --
+
+****************************************************************************************
+****************************************************************************************
+continuous_time_comparator
+------------------------------------------------------
+
+NMOS input differential pair:
+(unit transistor: 1/1)
+
+-ABBAABBA-
+
+NMOS current mirror biasing:
+(unit transistor: 1/4)
+
+-AB|BA-
+-BA|AB-
+
+NMOS differential-to-single-ended conversion mirror:
+(unit transistor: 1/1)
+
+-BAAB-
+
+PMOS latch:
+(unit transistor: 1/1)
+
+-CABD|CABD-
+-DBAC|DBAC-
+
+PMOS output stage:
+(unit transistor: 1/1)
+
+-BA|AB-
+-AB|BA-
+
+Output inverter: single PMOS and NMOS.
+
+****************************************************************************************
+****************************************************************************************
+latched_comparator_folded
+------------------------------------------------------
+
+PMOS input differential pair:
+(unit transistor: 2/1)
+
+-ABBAABBA-
+-BAABBAAB-
+
+PMOS regenerative latch (with clocked reset transistors):
+(unit transistor: 2/1)
+
+-CBABC-
+-BCDBA-
+
+-CBBCD-
+-BCCBA-
+
+PMOS current mirror bias:
+(unit transistor: 1/2)
+
+-BAAB-
+
+NMOS regenerative latch: ensure symmetric dummies for both transistors to yield equal
+    capacitive loading on vlatchm and vlatchp.
+(unit transistor: 1/0.3)
+
+-BA--AB-
+
+NMOS cascode clocked enable devices: separate transistors.
+PMOS reset clocked transistor: single transistor with odd number of fingers to ensure
+    symmetric dummies/capacitive loading for vlatchm and vlatchp.
+Inverters and latch: standard cells.
+
+****************************************************************************************
+****************************************************************************************
+cs_ring_osc_stage
+------------------------------------------------------
+
+Replace long lengths (L = 16) with stacked transistors, length 2um each.
+16um PMOS current source laid out using two width-wise fingers.
+
+****************************************************************************************
+****************************************************************************************
+cs_ring_osc
+------------------------------------------------------
+
+Replace long lengths (L = 16) with stacked transistors, length 2um each.
+16um PMOS current source laid out using two width-wise fingers.
+
+****************************************************************************************
+****************************************************************************************
+freq_divider
+------------------------------------------------------
+
+Standard cell layout.
+
+****************************************************************************************
+****************************************************************************************
+pfd_cp_lpf
+------------------------------------------------------
+
+NMOS current switch: discrete transistor.
+
+NMOS anti-leakage diodes:
+(unit transistor: 1/1)
+
+-A--B-
+
+PMOS current switch: discrete transistor. 
+
+PMOS anti-leakage diodes:
+(unit transistor: 2/1)
+
+-A--B-
+
+PMOS current mirror:
+(unit transistor: 1/4)
+
+-ABBAABBA-
+-BAABBAAB-
+
+NMOS current mirror:
+(unit transistor: 1/4)
+
+-CCCA-CC-
+-CC-BCCC-
+
+****************************************************************************************
+****************************************************************************************
+amux_2to1
+-------------------------------------------------
+
+NMOS pass transistors:
+(unit transistor: 2/1)
+-ABBA-
+
+PMOS pass transistors:
+(unit transistor: 2/1)
+-ABBA-
+-BAAB-
+
+Discrete inverter.
+
+****************************************************************************************
+****************************************************************************************
+dac_8bit
+------------------------------------------------------
+
+Capacitor array layout:
+
+- - - - - - - - - - - - - - - - - -
+- H H H H H H H H H H H H H H H H -
+- H H H H H H H H H H H H H H H H -
+- H H H H H G G G G G G G H H H H -
+- H H H G G G G G G G G G G H H H -
+- H H G G F F F F F F F F G H H H -
+- H H G G F F E E E E F F G G H H -
+- H H G G F E C D D C E F G G H H -
+- H H G G F E D A B D E F G G H H -
+- H H G G F E D B A D E F G G H H -
+- H H G G F E C D D C E F G G H H -
+- H H G G F F E E E E F F G G H H -
+- H H H G F F F F F F F F G G H H -
+- H H H G G G G G G G G G G H H H -
+- H H H H G G G G G G G H H H H H -
+- H H H H H H H H H H H H H H H H -
+- H H H H H H H H H H H H H H H H -
+- - - - - - - - - - - - - - - - - -
+
+Analog transmission gate:
+
+NMOS (unit transistor: 1/1): -AAAA-
+PMOS (unit transistor: 2/1): -AAAA-
+
+****************************************************************************************
+****************************************************************************************
+gm_c_stage
+------------------------------------------------------
+
+NMOS differential pairs (input pair +
+both common mode feedback pairs):
+(unit transistor: 2/1)
+
+-ABBAABBA-
+
+NMOS current mirror biasing:
+(unit transistor: 1/4)
+
+-CGGB--GGGA-
+-DGGG--EGGF-
+
+PMOS loads/current mirror biasing:
+(unit transistor: 1/1)
+
+-AB-C--DE--FG-
+
+****************************************************************************************
+****************************************************************************************
+sample_and_hold
+------------------------------------------------------
+
+Sample transistors:
+
+-AA--BBBB--AA-
+-BB--AAAA--BB-
+
+Compensation capacitors:
+(unit capacitor: 10x10)
+
+----
+-AB-
+-BA-
+-BA-
+-AB-
+----
+
+****************************************************************************************
+****************************************************************************************
+peak_detector
+------------------------------------------------------
+
+Current mirror rectifying element:
+
+-ABBA-
+
+****************************************************************************************
+****************************************************************************************
+txgate
+------------------------------------------------------
+
+NMOS (unit transistor: 1/1): -AAAA-
+PMOS (unit transistor: 2/1): -AAAA-
+
+****************************************************************************************
+****************************************************************************************
+bias_current_distribution
+------------------------------------------------------
+
+PMOS (unit transistor: 6/4):
+-AABBCCDDEEFF-
+-FFEEDDCCBBAA-
+-GGHHIIJJKKLL-
+-LLKKJJIIHHGG-
+-MMNNOOOONNMM-
+
+NMOS (unit transistor: 2/2):
+
+-ABBA-
+-BAAB-
+
+
+

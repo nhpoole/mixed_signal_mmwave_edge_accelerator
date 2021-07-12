@@ -1,0 +1,125 @@
+Flattening unmatched subcell inv1 in circuit txgate_lvs (0)(1 instance)
+Flattening unmatched subcell se_fold_casc_wide_swing_ota_lvs in circuit diff_to_se_converter_lvs (0)(1 instance)
+Flattening unmatched subcell txgate_lvs in circuit diff_to_se_converter_lvs (0)(2 instances)
+Flattening unmatched subcell inv1 in circuit diff_to_se_converter_lvs (0)(1 instance)
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8         |Circuit 2: sky130_fd_pr__nfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_hvt has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_hvt has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8_hvt     |Circuit 2: sky130_fd_pr__pfet_01v8_hvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8_hvt and sky130_fd_pr__pfet_01v8_hvt are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8         |Circuit 2: sky130_fd_pr__pfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8 and sky130_fd_pr__pfet_01v8 are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_lvt has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_lvt has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8_lvt     |Circuit 2: sky130_fd_pr__pfet_01v8_lvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8_lvt and sky130_fd_pr__pfet_01v8_lvt are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8_lvt has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8_lvt has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8_lvt     |Circuit 2: sky130_fd_pr__nfet_01v8_lvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8_lvt and sky130_fd_pr__nfet_01v8_lvt are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__cap_mim_m3_1      |Circuit 2: sky130_fd_pr__cap_mim_m3_1      
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__cap_mim_m3_1 and sky130_fd_pr__cap_mim_m3_1 are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_2 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_2 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__cap_mim_m3_2      |Circuit 2: sky130_fd_pr__cap_mim_m3_2      
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__cap_mim_m3_2 and sky130_fd_pr__cap_mim_m3_2 are equivalent.
+Class diff_to_se_converter_lvs:  Merged 5 devices.
+Class diff_to_se_converter_flat:  Merged 529 devices.
+
+Subcircuit summary:
+Circuit 1: diff_to_se_converter_lvs        |Circuit 2: diff_to_se_converter_flat       
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (26)               |sky130_fd_pr__nfet_01v8 (26)               
+sky130_fd_pr__pfet_01v8 (18)               |sky130_fd_pr__pfet_01v8 (18)               
+sky130_fd_pr__pfet_01v8_lvt (16)           |sky130_fd_pr__pfet_01v8_lvt (16)           
+sky130_fd_pr__nfet_01v8_lvt (8)            |sky130_fd_pr__nfet_01v8_lvt (8)            
+sky130_fd_pr__cap_mim_m3_1 (6)             |sky130_fd_pr__cap_mim_m3_1 (6)             
+sky130_fd_pr__cap_mim_m3_2 (2)             |sky130_fd_pr__cap_mim_m3_2 (2)             
+sky130_fd_pr__pfet_01v8_hvt (7)            |sky130_fd_pr__pfet_01v8_hvt (7)            
+Number of devices: 83                      |Number of devices: 83                      
+Number of nets: 30                         |Number of nets: 30                         
+---------------------------------------------------------------------------------------
+Circuits match uniquely.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: diff_to_se_converter_lvs        |Circuit 2: diff_to_se_converter_flat       
+-------------------------------------------|-------------------------------------------
+rst_n                                      |rst_n                                      
+vocm                                       |vocm                                       
+vdiffp                                     |vdiffp                                     
+vdiffm                                     |vdiffm                                     
+VDD                                        |VDD                                        
+ibiasn                                     |ibiasn                                     
+vse                                        |vse                                        
+VSS                                        |VSS                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes diff_to_se_converter_lvs and diff_to_se_converter_flat are equivalent.
+Circuits match uniquely.

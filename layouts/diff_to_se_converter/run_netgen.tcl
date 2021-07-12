@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/diff_to_se_converter_lvs.spice diff_to_se_converter_lvs" "diff_to_se_converter_lvs_layout.spice diff_to_se_converter_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

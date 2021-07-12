@@ -1,0 +1,33 @@
+| units: 500000 tech: sky130A format: MIT
+x VDD B VDD VDD l=200 w=400 x=2121 y=1203 t=23 sky130_fd_pr__pfet_01v8_hvt
+x VSS VSS B VSS l=200 w=400 x=826 y=-629 t=17 sky130_fd_pr__nfet_01v8
+x SEL B Y VDD l=200 w=400 x=1605 y=2063 t=23 sky130_fd_pr__pfet_01v8_hvt
+x SEL A Y VSS l=200 w=400 x=1600 y=-629 t=17 sky130_fd_pr__nfet_01v8
+x SELB Y B VSS l=200 w=400 x=1858 y=-629 t=17 sky130_fd_pr__nfet_01v8
+x SELB A Y VDD l=200 w=400 x=1089 y=2063 t=23 sky130_fd_pr__pfet_01v8_hvt
+x SEL Y B VDD l=200 w=400 x=1347 y=2063 t=23 sky130_fd_pr__pfet_01v8_hvt
+x SEL Y A VSS l=200 w=400 x=1342 y=-629 t=17 sky130_fd_pr__nfet_01v8
+x SELB B Y VSS l=200 w=400 x=1084 y=-629 t=17 sky130_fd_pr__nfet_01v8
+x VDD VDD A VDD l=200 w=400 x=831 y=2063 t=23 sky130_fd_pr__pfet_01v8_hvt
+x SEL VDD SELB VDD l=30 w=200 x=170 y=559 t=23 sky130_fd_pr__pfet_01v8_hvt
+x SELB Y A VDD l=200 w=400 x=1863 y=2063 t=23 sky130_fd_pr__pfet_01v8_hvt
+x SELB A Y VDD l=200 w=400 x=1605 y=1203 t=23 sky130_fd_pr__pfet_01v8_hvt
+x SELB Y A VDD l=200 w=400 x=1347 y=1203 t=23 sky130_fd_pr__pfet_01v8_hvt
+x SEL B Y VDD l=200 w=400 x=1089 y=1203 t=23 sky130_fd_pr__pfet_01v8_hvt
+x VSS B VSS VSS l=200 w=400 x=2116 y=-629 t=17 sky130_fd_pr__nfet_01v8
+x VDD VDD B VDD l=200 w=400 x=831 y=1203 t=23 sky130_fd_pr__pfet_01v8_hvt
+x SEL Y B VDD l=200 w=400 x=1863 y=1203 t=23 sky130_fd_pr__pfet_01v8_hvt
+x SEL VSS SELB VSS l=30 w=130 x=170 y=309 t=17 sky130_fd_pr__nfet_01v8
+x VDD A VDD VDD l=200 w=400 x=2121 y=2063 t=23 sky130_fd_pr__pfet_01v8_hvt
+C SELB SEL 2.36
+C B SEL 2.52
+C B VDD 3.52
+C SEL VDD 3.29
+R B 7723
+R Y 9671
+R A 6445
+R SELB 3506
+R SEL 2806
+C VDD GND 2.15
+R VDD 26875
+R VSS 27471

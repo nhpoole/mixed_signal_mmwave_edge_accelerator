@@ -1,0 +1,117 @@
+Flattening unmatched subcell inv1 in circuit txgate_lvs (0)(1 instance)
+Flattening unmatched subcell txgate_lvs in circuit input_amplifier_lvs (0)(8 instances)
+Flattening unmatched subcell diff_fold_casc_ota_lvs in circuit input_amplifier_lvs (0)(2 instances)
+Flattening unmatched subcell inv1 in circuit input_amplifier_lvs (0)(1 instance)
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8         |Circuit 2: sky130_fd_pr__nfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_hvt has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_hvt has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8_hvt     |Circuit 2: sky130_fd_pr__pfet_01v8_hvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8_hvt and sky130_fd_pr__pfet_01v8_hvt are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8         |Circuit 2: sky130_fd_pr__pfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8 and sky130_fd_pr__pfet_01v8 are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_lvt has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_lvt has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8_lvt     |Circuit 2: sky130_fd_pr__pfet_01v8_lvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8_lvt and sky130_fd_pr__pfet_01v8_lvt are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8_lvt has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8_lvt has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8_lvt     |Circuit 2: sky130_fd_pr__nfet_01v8_lvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8_lvt and sky130_fd_pr__nfet_01v8_lvt are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__cap_mim_m3_1      |Circuit 2: sky130_fd_pr__cap_mim_m3_1      
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__cap_mim_m3_1 and sky130_fd_pr__cap_mim_m3_1 are equivalent.
+Class input_amplifier_lvs:  Merged 12 devices.
+Class input_amplifier_flat:  Merged 1187 devices.
+
+Subcircuit summary:
+Circuit 1: input_amplifier_lvs             |Circuit 2: input_amplifier_flat            
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_01v8_hvt (24)           |sky130_fd_pr__pfet_01v8_hvt (24)           
+sky130_fd_pr__nfet_01v8 (79)               |sky130_fd_pr__nfet_01v8 (79)               
+sky130_fd_pr__cap_mim_m3_1 (17)            |sky130_fd_pr__cap_mim_m3_1 (17)            
+sky130_fd_pr__pfet_01v8 (47)               |sky130_fd_pr__pfet_01v8 (47)               
+sky130_fd_pr__pfet_01v8_lvt (16)           |sky130_fd_pr__pfet_01v8_lvt (16)           
+sky130_fd_pr__nfet_01v8_lvt (26)           |sky130_fd_pr__nfet_01v8_lvt (26)           
+Number of devices: 209                     |Number of devices: 209                     
+Number of nets: 73                         |Number of nets: 73                         
+---------------------------------------------------------------------------------------
+Circuits match uniquely.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: input_amplifier_lvs             |Circuit 2: input_amplifier_flat            
+-------------------------------------------|-------------------------------------------
+rst_n                                      |rst_n                                      
+ibiasn2                                    |ibiasn2                                    
+ibiasn1                                    |ibiasn1                                    
+vocm                                       |vocm                                       
+vincm                                      |vincm                                      
+vhpf                                       |vhpf                                       
+vop                                        |vop                                        
+vom                                        |vom                                        
+VSS                                        |VSS                                        
+gain_ctrl_0                                |gain_ctrl_0                                
+gain_ctrl_1                                |gain_ctrl_1                                
+VDD                                        |VDD                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes input_amplifier_lvs and input_amplifier_flat are equivalent.
+Circuits match uniquely.

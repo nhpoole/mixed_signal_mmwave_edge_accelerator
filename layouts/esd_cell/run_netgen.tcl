@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/esd_cell.spice esd_cell" "esd_cell_lvs_layout.spice esd_cell_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

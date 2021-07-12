@@ -1,0 +1,46 @@
+* NGSPICE file created from amux_2to1_flat.ext - technology: sky130A
+
+.subckt amux_2to1_flat A B SEL Y VDD VSS
+X0 VDD VDD B VDD sky130_fd_pr__pfet_01v8_hvt ad=2.58e+12p pd=2.084e+07u as=1.74e+12p ps=1.374e+07u w=2e+06u l=1e+06u
+X1 B VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=1.16e+12p pd=9.16e+06u as=1.329e+12p ps=1.098e+07u w=2e+06u l=1e+06u
+X2 Y SEL B VDD sky130_fd_pr__pfet_01v8_hvt ad=2.32e+12p pd=1.832e+07u as=0p ps=0u w=2e+06u l=1e+06u
+X3 Y SEL A VSS sky130_fd_pr__nfet_01v8 ad=1.16e+12p pd=9.16e+06u as=5.8e+11p ps=4.58e+06u w=2e+06u l=1e+06u
+X4 B SELB Y VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X5 Y SELB A VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=1.74e+12p ps=1.374e+07u w=2e+06u l=1e+06u
+X6 B SEL Y VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X7 A SEL Y VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X8 Y SELB B VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X9 A VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X10 SELB SEL VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=2.6e+11p pd=2.52e+06u as=0p ps=0u w=1e+06u l=150000u
+X11 A SELB Y VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X12 Y SELB A VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X13 A SELB Y VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X14 Y SEL B VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X15 VSS VSS B VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X16 B VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X17 B SEL Y VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X18 SELB SEL VSS VSS sky130_fd_pr__nfet_01v8 ad=1.69e+11p pd=1.82e+06u as=0p ps=0u w=650000u l=150000u
+X19 VDD VDD A VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+C0 SELB SEL 2.36fF
+C1 SELB B 1.51fF
+C2 Y VDD 1.04fF
+C3 Y A 1.84fF
+C4 Y SEL 1.99fF
+C5 A VDD 1.19fF
+C6 Y B 1.72fF
+C7 SEL VDD 3.29fF
+C8 Y SELB 1.59fF
+C9 VDD B 3.52fF
+C10 A SEL 0.62fF
+C11 SELB VDD 1.15fF
+C12 A B 0.25fF
+C13 SEL B 2.52fF
+C14 A SELB 1.97fF
+C15 B VSS 0.14fF
+C16 Y VSS 0.02fF
+C17 A VSS 0.02fF
+C18 SELB VSS 0.35fF
+C19 SEL VSS 0.25fF
+C20 VDD VSS 2.15fF
+.ends
+

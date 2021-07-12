@@ -1,0 +1,815 @@
+* NGSPICE file created from diff_to_se_converter_flat.ext - technology: sky130A
+
+.subckt diff_to_se_converter_flat vdiffp vdiffm VDD VSS vocm vse ibiasn rst_n
+X0 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M7d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X3 se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vbias3 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X4 VSS se_fold_casc_wide_swing_ota_0/vbias4 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X5 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X6 se_fold_casc_wide_swing_ota_0/vcascpp vim se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X7 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X8 se_fold_casc_wide_swing_ota_0/vcascpm vip se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X9 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X10 VSS VSS vip VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X11 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X12 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X13 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X14 VDD rst txgate_0/txb VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X15 ibiasn ibiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X16 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X17 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias3 vse VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X18 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X19 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X20 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X21 VSS VSS sky130_fd_pr__cap_mim_m3_2 l=4e+06u w=2.9e+07u
+X22 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X23 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X24 se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M8d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X25 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X26 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X27 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X28 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2.9e+07u w=4e+06u
+X29 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X30 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X31 se_fold_casc_wide_swing_ota_0/vcascpp vim se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X32 vdiffm txgate_1/txb vim VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X33 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X34 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X35 vse se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X36 VSS VSS sky130_fd_pr__cap_mim_m3_2 l=4e+06u w=2.9e+07u
+X37 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X38 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X39 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X40 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias3 vse VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X41 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X42 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X43 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X44 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X45 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X46 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X47 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X48 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X49 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X50 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X51 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X52 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X53 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X54 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X55 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X56 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X57 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X58 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X59 se_fold_casc_wide_swing_ota_0/M8d VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X60 se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X61 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X62 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X63 vim txgate_1/txb vdiffm VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X64 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X65 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X66 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/M16d VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X67 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X68 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X69 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X70 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X71 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X72 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X73 VSS vse sky130_fd_pr__cap_mim_m3_2 l=2.6e+07u w=2.4e+07u
+X74 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X75 se_fold_casc_wide_swing_ota_0/vtail_cascn vip se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X76 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X77 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X78 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vtail_cascp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X79 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X80 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X81 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X82 se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/M9d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X83 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X84 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X85 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X86 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X87 se_fold_casc_wide_swing_ota_0/vcascpp VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X88 ibiasn ibiasn ibiasn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X89 VSS ibiasn se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X90 se_fold_casc_wide_swing_ota_0/vtail_cascn vim se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X91 se_fold_casc_wide_swing_ota_0/vtail_cascn vip se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X92 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X93 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vbias2 vse VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X94 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X95 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias3 vse VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X96 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X97 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X98 vse vse vse VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X99 vim VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X100 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X101 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X102 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X103 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X104 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X105 vim rst vdiffm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X106 vim vdiffm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X107 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M7d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X108 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M13d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X109 vdiffp rst vip VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X110 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X111 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X112 se_fold_casc_wide_swing_ota_0/vtail_cascn vim se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X113 se_fold_casc_wide_swing_ota_0/vtail_cascn vim se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X114 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X115 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X116 se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M8d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X117 vip vdiffp sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X118 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X119 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M16d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X120 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M16d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X121 VSS se_fold_casc_wide_swing_ota_0/vbias4 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X122 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X123 vse se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X124 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X125 se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vbias3 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X126 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X127 vse vse vse VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X128 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X129 se_fold_casc_wide_swing_ota_0/vtail_cascn vip se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X130 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X131 se_fold_casc_wide_swing_ota_0/vtail_cascn vim se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X132 VSS se_fold_casc_wide_swing_ota_0/vbias4 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X133 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X134 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X135 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X136 VSS VSS vim VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X137 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X138 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X139 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X140 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X141 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X142 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X143 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X144 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X145 se_fold_casc_wide_swing_ota_0/vtail_cascp vim se_fold_casc_wide_swing_ota_0/vcascnp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X146 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X147 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X148 se_fold_casc_wide_swing_ota_0/vtail_cascn vip se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X149 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=3.1e+07u
+X150 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X151 se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X152 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vmirror VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X153 vse vse vse VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X154 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X155 vse se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X156 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X157 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X158 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X159 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X160 se_fold_casc_wide_swing_ota_0/vbias2 ibiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X161 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=3.1e+07u
+X162 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X163 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X164 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X165 vim vdiffm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X166 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X167 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X168 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X169 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X170 VDD VDD se_fold_casc_wide_swing_ota_0/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X171 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X172 VSS se_fold_casc_wide_swing_ota_0/vbias4 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X173 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X174 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X175 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X176 VSS VSS sky130_fd_pr__cap_mim_m3_2 l=4e+06u w=2.9e+07u
+X177 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X178 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X179 VSS vse sky130_fd_pr__cap_mim_m3_2 l=2.6e+07u w=2.4e+07u
+X180 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vbias2 vse VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X181 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X182 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vmirror VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X183 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X184 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X185 se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M8d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X186 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X187 VSS VSS sky130_fd_pr__cap_mim_m3_2 l=3.1e+07u w=2e+06u
+X188 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X189 vse vim sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X190 se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X191 vip VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X192 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X193 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X194 vse VSS sky130_fd_pr__cap_mim_m3_1 l=2.4e+07u w=2.6e+07u
+X195 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X196 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X197 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X198 se_fold_casc_wide_swing_ota_0/vcascnm vip se_fold_casc_wide_swing_ota_0/vtail_cascp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X199 vip txgate_0/txb vdiffp VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X200 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X201 se_fold_casc_wide_swing_ota_0/vcascpm vip se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X202 VDD rst txgate_1/txb VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X203 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X204 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X205 vse se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X206 se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/M9d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X207 se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vbias3 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X208 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X209 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X210 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X211 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X212 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X213 se_fold_casc_wide_swing_ota_0/vcascpp vim se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X214 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M7d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X215 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X216 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X217 vse VSS sky130_fd_pr__cap_mim_m3_1 l=2.4e+07u w=2.6e+07u
+X218 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X219 VDD VDD se_fold_casc_wide_swing_ota_0/M16d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X220 VSS ibiasn ibiasn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X221 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias3 vse VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X222 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X223 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X224 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X225 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X226 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X227 se_fold_casc_wide_swing_ota_0/vcascpp vim se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X228 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X229 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X230 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vmirror VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X231 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X232 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X233 VSS VSS sky130_fd_pr__cap_mim_m3_2 l=3.1e+07u w=2e+06u
+X234 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X235 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M9d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X236 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vtail_cascp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X237 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X238 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M9d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X239 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X240 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X241 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X242 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X243 se_fold_casc_wide_swing_ota_0/vcascpm vip se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X244 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X245 VSS se_fold_casc_wide_swing_ota_0/vbias4 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X246 se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vbias3 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X247 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X248 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X249 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X250 vse se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X251 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias3 vse VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X252 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X253 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X254 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X255 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X256 vdiffp rst vip VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X257 VDD VDD se_fold_casc_wide_swing_ota_0/vmirror VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X258 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X259 VSS rst_n rst VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X260 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X261 se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/M9d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X262 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X263 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X264 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M7d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X265 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X266 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X267 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X268 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X269 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X270 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X271 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X272 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X273 vse se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X274 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X275 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X276 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X277 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X278 vdiffm rst vim VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X279 VSS VSS sky130_fd_pr__cap_mim_m3_2 l=4e+06u w=2.9e+07u
+X280 vip rst vdiffp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X281 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X282 VDD VDD vip VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X283 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X284 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X285 vip vocm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X286 vse se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X287 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=3.1e+07u
+X288 se_fold_casc_wide_swing_ota_0/vtail_cascp vip se_fold_casc_wide_swing_ota_0/vcascnm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X289 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X290 vip vdiffp sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X291 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X292 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X293 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X294 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X295 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X296 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X297 ibiasn ibiasn ibiasn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X298 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/M13d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X299 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2.9e+07u w=4e+06u
+X300 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X301 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X302 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X303 se_fold_casc_wide_swing_ota_0/vtail_cascp vim se_fold_casc_wide_swing_ota_0/vcascnp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X304 vim vdiffm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X305 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X306 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X307 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X308 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X309 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X310 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X311 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X312 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/M13d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X313 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X314 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X315 VSS vse sky130_fd_pr__cap_mim_m3_2 l=2.6e+07u w=2.4e+07u
+X316 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M9d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X317 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M7d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X318 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X319 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X320 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2.9e+07u w=4e+06u
+X321 VSS se_fold_casc_wide_swing_ota_0/vbias4 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X322 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X323 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X324 se_fold_casc_wide_swing_ota_0/vtail_cascn vim se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X325 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X326 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X327 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X328 se_fold_casc_wide_swing_ota_0/vcascpm vip se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X329 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X330 se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vbias3 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X331 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X332 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X333 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X334 se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vbias3 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X335 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X336 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X337 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X338 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vtail_cascp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X339 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X340 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vmirror VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X341 VSS rst txgate_0/txb VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X342 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X343 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X344 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X345 se_fold_casc_wide_swing_ota_0/vtail_cascn vip se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X346 VDD VDD vse VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X347 se_fold_casc_wide_swing_ota_0/vcascpp vim se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X348 se_fold_casc_wide_swing_ota_0/vcascnp vim se_fold_casc_wide_swing_ota_0/vtail_cascp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X349 VDD VDD se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X350 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X351 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X352 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M7d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X353 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X354 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X355 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X356 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X357 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X358 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X359 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X360 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X361 se_fold_casc_wide_swing_ota_0/vcascnm vip se_fold_casc_wide_swing_ota_0/vtail_cascp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X362 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X363 se_fold_casc_wide_swing_ota_0/vtail_cascn vip se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X364 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X365 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X366 vse se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X367 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X368 se_fold_casc_wide_swing_ota_0/vcascpp vim se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X369 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X370 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X371 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X372 vim VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X373 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X374 vdiffm rst vim VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X375 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X376 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X377 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M13d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X378 vim txgate_1/txb vdiffm VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X379 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X380 vdiffp txgate_0/txb vip VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X381 VSS se_fold_casc_wide_swing_ota_0/vbias4 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X382 se_fold_casc_wide_swing_ota_0/vtail_cascn vim se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X383 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X384 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X385 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X386 se_fold_casc_wide_swing_ota_0/vcascpm vip se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X387 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X388 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X389 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X390 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X391 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X392 ibiasn ibiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X393 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X394 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X395 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X396 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X397 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X398 vim rst vdiffm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X399 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X400 VDD VDD vim VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X401 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X402 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vbias2 vse VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X403 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X404 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X405 vse se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X406 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X407 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X408 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=3.1e+07u
+X409 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X410 se_fold_casc_wide_swing_ota_0/M16d VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X411 VDD VDD se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X412 se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vbias3 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X413 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X414 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M7d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X415 vim vdiffm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X416 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X417 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias3 vse VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X418 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vcascnm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X419 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X420 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X421 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X422 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X423 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X424 vse vim sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X425 VSS vse sky130_fd_pr__cap_mim_m3_2 l=2.6e+07u w=2.4e+07u
+X426 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X427 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X428 se_fold_casc_wide_swing_ota_0/vcascpm VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X429 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias3 vse VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X430 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X431 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X432 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X433 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X434 vip vocm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X435 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X436 se_fold_casc_wide_swing_ota_0/vtail_cascn vim se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X437 se_fold_casc_wide_swing_ota_0/vtail_cascp vip se_fold_casc_wide_swing_ota_0/vcascnm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X438 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M7d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X439 vse VSS sky130_fd_pr__cap_mim_m3_1 l=2.4e+07u w=2.6e+07u
+X440 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X441 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X442 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X443 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X444 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X445 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X446 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X447 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X448 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X449 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X450 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vmirror VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X451 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X452 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X453 vse se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X454 VSS ibiasn se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X455 se_fold_casc_wide_swing_ota_0/vtail_cascn vip se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X456 se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/M9d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X457 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X458 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X459 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X460 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X461 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M16d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X462 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X463 se_fold_casc_wide_swing_ota_0/M13d VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X464 se_fold_casc_wide_swing_ota_0/vtail_cascn vim se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X465 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X466 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias3 vse VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X467 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X468 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X469 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X470 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X471 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M9d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X472 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X473 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X474 se_fold_casc_wide_swing_ota_0/vtail_cascn vip se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X475 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X476 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X477 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X478 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X479 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X480 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vtail_cascp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X481 se_fold_casc_wide_swing_ota_0/vtail_cascn vip se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X482 VSS VSS sky130_fd_pr__cap_mim_m3_2 l=3.1e+07u w=2e+06u
+X483 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X484 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X485 VSS se_fold_casc_wide_swing_ota_0/vbias4 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X486 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X487 se_fold_casc_wide_swing_ota_0/vcascpp VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X488 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X489 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X490 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M7d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X491 se_fold_casc_wide_swing_ota_0/vtail_cascn vim se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X492 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X493 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X494 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X495 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X496 se_fold_casc_wide_swing_ota_0/vcascnp vim se_fold_casc_wide_swing_ota_0/vtail_cascp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X497 se_fold_casc_wide_swing_ota_0/vtail_cascn vip se_fold_casc_wide_swing_ota_0/vcascpm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X498 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X499 VDD VDD se_fold_casc_wide_swing_ota_0/M8d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X500 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X501 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X502 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X503 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X504 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X505 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X506 vse vse vse VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X507 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X508 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X509 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M9d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X510 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X511 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X512 se_fold_casc_wide_swing_ota_0/vtail_cascn vim se_fold_casc_wide_swing_ota_0/vcascpp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X513 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X514 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X515 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X516 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X517 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X518 VSS rst txgate_1/txb VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X519 se_fold_casc_wide_swing_ota_0/vbias2 ibiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X520 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X521 vip VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X522 vse vim sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X523 VSS VSS sky130_fd_pr__cap_mim_m3_2 l=3.1e+07u w=2e+06u
+X524 vdiffp txgate_0/txb vip VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X525 vip rst vdiffp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X526 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X527 se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vbias3 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X528 VSS se_fold_casc_wide_swing_ota_0/vbias4 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X529 vse se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X530 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X531 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X532 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X533 vse se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vcascpp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X534 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X535 vip vocm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X536 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X537 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X538 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X539 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X540 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X541 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X542 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X543 vse vim sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X544 se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X545 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X546 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X547 VDD rst_n rst VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X548 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X549 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X550 vdiffm txgate_1/txb vim VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X551 vip txgate_0/txb vdiffp VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X552 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X553 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X554 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X555 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X556 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X557 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X558 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X559 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X560 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X561 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X562 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X563 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X564 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X565 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X566 se_fold_casc_wide_swing_ota_0/vcascpp vim se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X567 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X568 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X569 vip vdiffp sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X570 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M13d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X571 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X572 vip vocm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X573 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X574 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X575 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X576 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M9d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X577 se_fold_casc_wide_swing_ota_0/vbias1 VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X578 vse VSS sky130_fd_pr__cap_mim_m3_1 l=2.4e+07u w=2.6e+07u
+X579 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X580 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X581 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vtail_cascp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X582 VDD VDD se_fold_casc_wide_swing_ota_0/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X583 VSS ibiasn ibiasn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X584 se_fold_casc_wide_swing_ota_0/vcascpm vip se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X585 se_fold_casc_wide_swing_ota_0/vcascpp vim se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X586 vse se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X587 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X588 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X589 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X590 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X591 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X592 se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vbias3 a_15516_4308# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X593 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X594 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias3 vse VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X595 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X596 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vmirror VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X597 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X598 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X599 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X600 VDD se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X601 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M7d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X602 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2.9e+07u w=4e+06u
+X603 VSS se_fold_casc_wide_swing_ota_0/vbias4 se_fold_casc_wide_swing_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X604 VDD se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vtail_cascp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X605 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X606 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X607 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M8d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X608 vip vdiffp sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X609 se_fold_casc_wide_swing_ota_0/vcascpm vip se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X610 se_fold_casc_wide_swing_ota_0/vcascpm vip se_fold_casc_wide_swing_ota_0/vtail_cascn VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X611 se_fold_casc_wide_swing_ota_0/vcascpm VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+C0 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/vbias3 0.56fF
+C1 rst vip 0.40fF
+C2 vdiffm vip 1.07fF
+C3 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/vmirror 3.60fF
+C4 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/M9d 1.65fF
+C5 se_fold_casc_wide_swing_ota_0/vmirror vip 1.41fF
+C6 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias2 0.61fF
+C7 VDD se_fold_casc_wide_swing_ota_0/M9d 9.36fF
+C8 se_fold_casc_wide_swing_ota_0/vbias2 se_fold_casc_wide_swing_ota_0/vcascnm 2.00fF
+C9 VDD se_fold_casc_wide_swing_ota_0/vcascnm 1.46fF
+C10 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias3 3.02fF
+C11 se_fold_casc_wide_swing_ota_0/vbias1 vip 0.08fF
+C12 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/M9d 2.23fF
+C13 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm 12.94fF
+C14 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vmirror 5.68fF
+C15 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/vbias2 8.42fF
+C16 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascnm 23.84fF
+C17 se_fold_casc_wide_swing_ota_0/M7d VDD 7.37fF
+C18 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M9d 15.11fF
+C19 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vcascnm 0.51fF
+C20 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias2 3.28fF
+C21 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/vmirror 14.22fF
+C22 VDD se_fold_casc_wide_swing_ota_0/M8d 2.04fF
+C23 se_fold_casc_wide_swing_ota_0/vtail_cascp VDD 19.81fF
+C24 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/M8d 21.43fF
+C25 vse se_fold_casc_wide_swing_ota_0/vbias2 3.16fF
+C26 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M7d 13.66fF
+C27 vse VDD 3.63fF
+C28 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/M8d 1.51fF
+C29 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/vbias2 1.35fF
+C30 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vbias2 3.47fF
+C31 VDD se_fold_casc_wide_swing_ota_0/M13d 11.46fF
+C32 VDD se_fold_casc_wide_swing_ota_0/vcascpp 7.64fF
+C33 vse se_fold_casc_wide_swing_ota_0/vbias3 12.80fF
+C34 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias3 8.26fF
+C35 vocm vip 29.18fF
+C36 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M8d 5.21fF
+C37 a_15516_4308# se_fold_casc_wide_swing_ota_0/vmirror 8.05fF
+C38 vse se_fold_casc_wide_swing_ota_0/vmirror 15.92fF
+C39 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/vbias1 6.59fF
+C40 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vbias4 33.98fF
+C41 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/vmirror 4.50fF
+C42 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vcascpp 17.44fF
+C43 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/M9d 0.70fF
+C44 vim txgate_1/txb 0.36fF
+C45 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/vtail_cascn 0.21fF
+C46 se_fold_casc_wide_swing_ota_0/vtail_cascn vip 2.30fF
+C47 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias4 28.69fF
+C48 vse se_fold_casc_wide_swing_ota_0/vbias1 7.98fF
+C49 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/vcascnm 0.12fF
+C50 vip se_fold_casc_wide_swing_ota_0/vcascnm 0.75fF
+C51 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/M13d 3.07fF
+C52 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vcascpp 1.03fF
+C53 ibiasn se_fold_casc_wide_swing_ota_0/vcascpp 0.03fF
+C54 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vbias2 3.45fF
+C55 VDD se_fold_casc_wide_swing_ota_0/vcascpm 6.84fF
+C56 VDD vdiffp 1.19fF
+C57 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vcascnm 32.00fF
+C58 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vmirror 16.88fF
+C59 rst vdiffp 0.55fF
+C60 vim se_fold_casc_wide_swing_ota_0/vbias2 2.37fF
+C61 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/M8d 0.16fF
+C62 vdiffm vdiffp 10.75fF
+C63 vim VDD 1.92fF
+C64 se_fold_casc_wide_swing_ota_0/vtail_cascp vip 0.86fF
+C65 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M9d 10.82fF
+C66 VDD rst_n 0.08fF
+C67 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vcascpm 4.75fF
+C68 vim rst 0.80fF
+C69 vdiffm vim 36.96fF
+C70 a_15516_4308# se_fold_casc_wide_swing_ota_0/M16d 1.44fF
+C71 vse se_fold_casc_wide_swing_ota_0/M16d 9.65fF
+C72 vse vip 7.82fF
+C73 vim se_fold_casc_wide_swing_ota_0/vmirror 4.81fF
+C74 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/M9d 1.26fF
+C75 rst rst_n 0.23fF
+C76 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/M13d 0.56fF
+C77 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/M8d 8.02fF
+C78 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/M9d 13.60fF
+C79 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/vcascpp 1.84fF
+C80 se_fold_casc_wide_swing_ota_0/vcascpp vip 28.95fF
+C81 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/vbias4 0.04fF
+C82 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vcascnm 1.74fF
+C83 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/vcascnm 0.08fF
+C84 vim se_fold_casc_wide_swing_ota_0/vbias1 0.08fF
+C85 vse se_fold_casc_wide_swing_ota_0/M9d 15.32fF
+C86 a_15516_4308# se_fold_casc_wide_swing_ota_0/vtail_cascn 0.11fF
+C87 vse se_fold_casc_wide_swing_ota_0/vtail_cascn 3.39fF
+C88 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/M9d 1.91fF
+C89 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/M9d 3.66fF
+C90 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vcascpp 2.79fF
+C91 a_15516_4308# se_fold_casc_wide_swing_ota_0/vcascnm 10.16fF
+C92 vse se_fold_casc_wide_swing_ota_0/vcascnm 13.64fF
+C93 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M8d 2.62fF
+C94 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/M7d 7.95fF
+C95 se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vbias4 44.84fF
+C96 se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vcascnm 0.19fF
+C97 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4 28.76fF
+C98 vse se_fold_casc_wide_swing_ota_0/M7d 0.73fF
+C99 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/vcascpm 6.93fF
+C100 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias2 0.08fF
+C101 se_fold_casc_wide_swing_ota_0/vcascpm vip 6.29fF
+C102 se_fold_casc_wide_swing_ota_0/vcascnp VDD 1.49fF
+C103 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M13d 5.99fF
+C104 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/vcascpp 0.81fF
+C105 vdiffp vip 31.71fF
+C106 VDD txgate_0/txb 3.10fF
+C107 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias3 24.81fF
+C108 a_15516_4308# se_fold_casc_wide_swing_ota_0/M8d 0.79fF
+C109 vse se_fold_casc_wide_swing_ota_0/M8d 4.82fF
+C110 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vmirror 4.15fF
+C111 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/M9d 3.14fF
+C112 rst txgate_0/txb 0.36fF
+C113 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/M13d 7.88fF
+C114 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vtail_cascn 16.73fF
+C115 vim vip 22.65fF
+C116 vim vocm 4.85fF
+C117 se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vbias4 1.13fF
+C118 vse a_15516_4308# 19.89fF
+C119 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias1 0.73fF
+C120 vse se_fold_casc_wide_swing_ota_0/M13d 0.58fF
+C121 vse se_fold_casc_wide_swing_ota_0/vcascpp 3.50fF
+C122 vim se_fold_casc_wide_swing_ota_0/vtail_cascn 10.10fF
+C123 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/vcascpp 11.53fF
+C124 a_15516_4308# se_fold_casc_wide_swing_ota_0/vbias4 8.05fF
+C125 vse se_fold_casc_wide_swing_ota_0/vbias4 8.85fF
+C126 se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/vcascpm 5.03fF
+C127 vim se_fold_casc_wide_swing_ota_0/vcascnm 2.13fF
+C128 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/M8d 0.75fF
+C129 se_fold_casc_wide_swing_ota_0/vtail_cascp se_fold_casc_wide_swing_ota_0/vcascpm 0.08fF
+C130 vse se_fold_casc_wide_swing_ota_0/vcascpm 5.69fF
+C131 se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota_0/vcascpm 2.41fF
+C132 se_fold_casc_wide_swing_ota_0/vtail_cascp vim 0.86fF
+C133 se_fold_casc_wide_swing_ota_0/vcascpm se_fold_casc_wide_swing_ota_0/vcascpp 20.84fF
+C134 se_fold_casc_wide_swing_ota_0/vcascnp vip 0.28fF
+C135 vip txgate_0/txb 0.36fF
+C136 vse vim 30.50fF
+C137 vim se_fold_casc_wide_swing_ota_0/vcascpp 5.59fF
+C138 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vtail_cascn 9.20fF
+C139 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascnm 19.65fF
+C140 VDD txgate_1/txb 3.26fF
+C141 vim se_fold_casc_wide_swing_ota_0/vcascpm 19.24fF
+C142 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/M8d 2.72fF
+C143 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vtail_cascp 0.08fF
+C144 txgate_1/txb rst 0.39fF
+C145 vim vdiffp 4.24fF
+C146 vdiffm txgate_1/txb 0.35fF
+C147 a_15516_4308# se_fold_casc_wide_swing_ota_0/vcascnp 10.36fF
+C148 vse se_fold_casc_wide_swing_ota_0/vcascnp 21.50fF
+C149 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/M13d 0.28fF
+C150 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vcascpp 1.94fF
+C151 se_fold_casc_wide_swing_ota_0/vcascnp se_fold_casc_wide_swing_ota_0/vbias4 58.37fF
+C152 VDD se_fold_casc_wide_swing_ota_0/vbias2 11.66fF
+C153 VDD rst 0.64fF
+C154 vdiffm VDD 1.30fF
+C155 se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/vbias2 6.88fF
+C156 VDD se_fold_casc_wide_swing_ota_0/vmirror 12.54fF
+C157 se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vmirror 6.00fF
+C158 vdiffm rst 0.65fF
+C159 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2 13.36fF
+C160 ibiasn se_fold_casc_wide_swing_ota_0/vbias2 0.18fF
+C161 se_fold_casc_wide_swing_ota_0/vbias1 VDD 25.41fF
+C162 vdiffp txgate_0/txb 0.35fF
+C163 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vmirror 0.69fF
+C164 se_fold_casc_wide_swing_ota_0/vcascnp vim 1.42fF
+C165 se_fold_casc_wide_swing_ota_0/M16d se_fold_casc_wide_swing_ota_0/vbias2 0.82fF
+C166 se_fold_casc_wide_swing_ota_0/vbias2 vip 0.71fF
+C167 se_fold_casc_wide_swing_ota_0/M16d VDD 1.27fF
+C168 VDD vip 1.80fF
+C169 vocm VSS 0.03fF
+C170 ibiasn VSS 15.65fF
+C171 a_15516_4308# VSS 36.23fF
+C172 se_fold_casc_wide_swing_ota_0/vbias4 VSS 304.65fF
+C173 se_fold_casc_wide_swing_ota_0/vtail_cascn VSS 66.29fF
+C174 se_fold_casc_wide_swing_ota_0/vbias3 VSS 132.57fF
+C175 rst_n VSS 0.23fF
+C176 vdiffm VSS 0.12fF
+C177 txgate_1/txb VSS 2.50fF
+C178 rst VSS 0.76fF
+C179 vdiffp VSS 0.12fF
+C180 txgate_0/txb VSS 2.49fF
+C181 se_fold_casc_wide_swing_ota_0/M16d VSS 11.42fF
+C182 se_fold_casc_wide_swing_ota_0/M8d VSS 74.42fF
+C183 vse VSS 588.65fF
+C184 se_fold_casc_wide_swing_ota_0/vcascnp VSS 141.20fF
+C185 vim VSS 78.52fF
+C186 vip VSS 68.60fF
+C187 se_fold_casc_wide_swing_ota_0/vcascnm VSS 83.16fF
+C188 se_fold_casc_wide_swing_ota_0/vbias2 VSS 90.33fF
+C189 se_fold_casc_wide_swing_ota_0/vcascpm VSS 48.55fF
+C190 se_fold_casc_wide_swing_ota_0/vmirror VSS 97.87fF
+C191 se_fold_casc_wide_swing_ota_0/vcascpp VSS 41.82fF
+C192 se_fold_casc_wide_swing_ota_0/M13d VSS 17.52fF
+C193 se_fold_casc_wide_swing_ota_0/vtail_cascp VSS 12.44fF
+C194 se_fold_casc_wide_swing_ota_0/M9d VSS 29.04fF
+C195 se_fold_casc_wide_swing_ota_0/vbias1 VSS 138.72fF
+C196 se_fold_casc_wide_swing_ota_0/M7d VSS 26.00fF
+C197 VDD VSS 1333.43fF
+.ends
+

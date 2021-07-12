@@ -1,0 +1,9 @@
+* NGSPICE file created from inv_test_flat.ext - technology: sky130A
+
+.subckt inv_test_flat VDD in VSS out out2
+X0 out in VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=2.9e+11p pd=2.58e+06u as=5.5e+11p ps=5.1e+06u w=1e+06u l=150000u
+X1 out2 in VSS VSS sky130_fd_pr__nfet_01v8 ad=1.69e+11p pd=1.82e+06u as=3.575e+11p ps=3.7e+06u w=650000u l=150000u
+X2 VSS in out VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=1.885e+11p ps=1.88e+06u w=650000u l=150000u
+X3 out2 in VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=2.6e+11p pd=2.52e+06u as=0p ps=0u w=1e+06u l=150000u
+.ends
+

@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/user_analog_project_wrapper.spice user_analog_project_wrapper" "user_analog_project_wrapper_lvs_layout.spice user_analog_project_wrapper_ext" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

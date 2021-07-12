@@ -1,0 +1,86 @@
+Netgen 1.5.177 compiled on Thu May 20 20:23:43 PDT 2021
+Warning: netgen command 'format' use fully-qualified name '::netgen::format'
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Reading netlist file ../../simulations/bias_current_distribution_lvs.spice
+Call to undefined subcircuit sky130_fd_pr__pfet_01v8
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__nfet_01v8
+Creating placeholder cell definition.
+Reading netlist file bias_current_distribution_lvs_layout.spice
+Call to undefined subcircuit sky130_fd_pr__pfet_01v8
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__nfet_01v8
+Creating placeholder cell definition.
+Reading setup file /home/users/nhpoole/PDKS/sky130A/libs.tech/netgen/sky130A_setup.tcl
+Model sky130_fd_pr__nfet_01v8 pin 1 == 3
+Model sky130_fd_pr__nfet_01v8 pin 1 == 3
+No property mult found for device sky130_fd_pr__nfet_01v8
+No property sa found for device sky130_fd_pr__nfet_01v8
+No property sb found for device sky130_fd_pr__nfet_01v8
+No property sd found for device sky130_fd_pr__nfet_01v8
+No property nf found for device sky130_fd_pr__nfet_01v8
+No property nrd found for device sky130_fd_pr__nfet_01v8
+No property nrs found for device sky130_fd_pr__nfet_01v8
+Model sky130_fd_pr__pfet_01v8 pin 1 == 3
+Model sky130_fd_pr__pfet_01v8 pin 1 == 3
+No property mult found for device sky130_fd_pr__pfet_01v8
+No property sa found for device sky130_fd_pr__pfet_01v8
+No property sb found for device sky130_fd_pr__pfet_01v8
+No property sd found for device sky130_fd_pr__pfet_01v8
+No property nf found for device sky130_fd_pr__pfet_01v8
+No property nrd found for device sky130_fd_pr__pfet_01v8
+No property nrs found for device sky130_fd_pr__pfet_01v8
+Comparison output logged to file comp.out
+Logging to file "comp.out" enabled
+Contents of circuit 1:  Circuit: 'sky130_fd_pr__pfet_01v8'
+Circuit sky130_fd_pr__pfet_01v8 contains 0 device instances.
+Circuit contains 0 nets.
+Contents of circuit 2:  Circuit: 'sky130_fd_pr__pfet_01v8'
+Circuit sky130_fd_pr__pfet_01v8 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_pr__pfet_01v8 contains no devices.
+Contents of circuit 1:  Circuit: 'sky130_fd_pr__nfet_01v8'
+Circuit sky130_fd_pr__nfet_01v8 contains 0 device instances.
+Circuit contains 0 nets.
+Contents of circuit 2:  Circuit: 'sky130_fd_pr__nfet_01v8'
+Circuit sky130_fd_pr__nfet_01v8 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_pr__nfet_01v8 contains no devices.
+Contents of circuit 1:  Circuit: 'bias_current_distribution_lvs'
+Circuit bias_current_distribution_lvs contains 20 device instances.
+  Class: sky130_fd_pr__nfet_01v8 instances:   4
+  Class: sky130_fd_pr__pfet_01v8 instances:  16
+Circuit contains 21 nets.
+Contents of circuit 2:  Circuit: 'bias_current_distribution_flat'
+Circuit bias_current_distribution_flat contains 82 device instances.
+  Class: sky130_fd_pr__nfet_01v8 instances:  12
+  Class: sky130_fd_pr__pfet_01v8 instances:  70
+Circuit contains 21 nets.
+
+Circuit was modified by parallel/series device merging.
+New circuit summary:
+
+Contents of circuit 1:  Circuit: 'bias_current_distribution_lvs'
+Circuit bias_current_distribution_lvs contains 20 device instances.
+  Class: sky130_fd_pr__nfet_01v8 instances:   4
+  Class: sky130_fd_pr__pfet_01v8 instances:  16
+Circuit contains 21 nets.
+Contents of circuit 2:  Circuit: 'bias_current_distribution_flat'
+Circuit bias_current_distribution_flat contains 20 device instances.
+  Class: sky130_fd_pr__nfet_01v8 instances:   4
+  Class: sky130_fd_pr__pfet_01v8 instances:  16
+Circuit contains 21 nets.
+
+Circuit 1 contains 20 devices, Circuit 2 contains 20 devices.
+Circuit 1 contains 21 nets,    Circuit 2 contains 21 nets.
+
+Circuits match with 5 symmetries.
+Resolving automorphisms by property value.
+Resolving automorphisms by pin name.
+Netlists match uniquely.
+Circuits match correctly.
+Result: Circuits match uniquely.
+Logging to file "comp.out" disabled
+LVS Done.

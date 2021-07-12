@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/amux_2to1_lvs.spice amux_2to1_lvs" "amux_2to1_lvs_layout.spice amux_2to1_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

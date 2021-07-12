@@ -1,0 +1,875 @@
+timestamp 1624237933
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8_hvt l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8_lvt l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8_hvt l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__nfet_01v8_lvt l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__cap_mim_m3_1 w=w l=l
+parameters sky130_fd_pr__cap_mim_m3_2 w=w l=l
+port "vocm" 5 -9752 13102 -9732 13118 m3
+port "ibiasn" 7 704 1582 716 1600 m1
+port "rst_n" 8 -7056 15480 -7054 15484 m1
+port "vdiffm" 2 -9812 1318 -9800 1332 m3
+port "vdiffp" 1 -9542 5852 -9520 5872 m3
+port "vse" 6 -9816 8794 -9798 8822 m4
+port "VDD" 3 -4738 30526 -4712 30558 m4
+port "VSS" 4 -5616 -342 -5562 -296 m4
+node "vocm" 9 14700.8 -9752 13102 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 473712 11116 13233624 35504 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/ibiasn" 15055 15654.8 850 800 ndif 0 0 0 0 0 0 0 0 174000 6580 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7204080 34720 0 0 503200 31300 1317232 50488 0 0 0 0 0 0 0 0 0 0
+equiv "se_fold_casc_wide_swing_ota_0/ibiasn" "ibiasn"
+node "a_15516_4308#" 30987 36232.2 15516 4308 ndif 0 0 0 0 0 0 0 0 626400 23688 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 372096 23112 1251160 48236 2742600 92140 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/vbias4" 14749 304650 14498 9242 ndif 0 0 0 0 0 0 0 0 348000 13160 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 90771408 437472 0 0 5252384 326584 9932272 405360 8466084 284344 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1648 66288.6 2428 2342 ndif 0 0 0 0 0 0 0 0 1670400 63168 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5763264 27776 0 0 1312416 81548 4480980 165176 3686040 123468 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/vbias3" 32678 132567 13480 9242 ndif 0 0 0 0 0 0 0 0 765600 28952 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 38902032 187488 0 0 2615720 162660 7010564 267488 2977560 100332 0 0 0 0 0 0 0 0
+node "sky130_fd_sc_hd__inv_1_0/A" 807 336.519 -7220 15267 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 18756 1176 0 0 3216 230 9960 452 0 0 0 0 0 0 0 0 0 0
+equiv "sky130_fd_sc_hd__inv_1_0/A" "rst_n"
+node "txgate_1/in" 4817 22524.6 -9062 15002 ndif 0 0 0 0 0 0 0 0 23200 1032 46400 1832 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 41888 2736 129760 4900 467100 10634 14484940 61090 585600 12112 0 0 0 0
+equiv "txgate_1/in" "vdiffm"
+node "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" 2678 2496.49 -9262 15662 p 0 0 0 0 0 0 0 0 6760 364 10400 504 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 457248 6352 0 0 63012 3726 108564 4518 94980 3286 0 0 0 0 0 0 0 0
+equiv "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" "txgate_1/txb"
+node "sky130_fd_sc_hd__inv_1_0/Y" 4987 11250.3 -11862 14947 p 0 0 0 0 0 0 0 0 6760 364 10400 504 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 603208 11568 0 0 105300 6840 251868 10194 300235 10108 0 0 0 0 0 0 0 0
+equiv "sky130_fd_sc_hd__inv_1_0/Y" "txgate_0/sky130_fd_sc_hd__inv_1_0/A"
+equiv "sky130_fd_sc_hd__inv_1_0/Y" "txgate_0/tx"
+equiv "sky130_fd_sc_hd__inv_1_0/Y" "txgate_1/sky130_fd_sc_hd__inv_1_0/A"
+equiv "sky130_fd_sc_hd__inv_1_0/Y" "txgate_1/tx"
+equiv "sky130_fd_sc_hd__inv_1_0/Y" "rst"
+node "txgate_0/in" 4818 21742.7 -11662 15002 ndif 0 0 0 0 0 0 0 0 23200 1032 46400 1832 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 41888 2736 129760 4900 613300 14766 14355280 58328 188904 3978 0 0 0 0
+equiv "txgate_0/in" "vdiffp"
+node "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" 2678 2486.02 -11862 15662 p 0 0 0 0 0 0 0 0 6760 364 10400 504 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 457248 6352 0 0 63012 3726 108564 4518 94980 3286 0 0 0 0 0 0 0 0
+equiv "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" "txgate_0/txb"
+node "se_fold_casc_wide_swing_ota_0/M16d" 12451 11419.7 24482 19612 pdif 0 0 0 0 0 0 0 0 34800 1316 139200 5264 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 720408 3472 0 0 143344 8908 352512 14304 1374360 46172 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/M8d" 42082 74422.3 13482 13086 ndif 0 0 0 0 0 0 0 0 765600 28952 139200 5264 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 30257136 145824 0 0 2216800 137880 5615196 213644 1622400 54800 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/vo" 41636 588649 13480 8008 ndif 0 0 0 0 0 0 0 0 417600 15792 243600 9212 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2916192 13960 0 0 552704 34348 2655584 97688 4850280 162828 1838960 37180 132525076 113084 0 0 0 0
+equiv "se_fold_casc_wide_swing_ota_0/vo" "vse"
+node "se_fold_casc_wide_swing_ota_0/vcascnp" 64882 141201 13070 18700 pdif 0 0 0 0 0 0 0 0 1044000 39480 278400 10528 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4391568 20976 0 0 1025440 63720 3547912 134508 7658040 256708 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/vim" 6907 78523.3 -9320 15002 ndif 0 0 0 0 0 0 0 0 34800 1548 69600 2748 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15918096 76528 0 0 942480 58840 2390542 94870 2150060 68098 14901480 69822 11894368 76898 0 0 0 0
+equiv "se_fold_casc_wide_swing_ota_0/vim" "txgate_1/out"
+equiv "se_fold_casc_wide_swing_ota_0/vim" "vim"
+equiv "se_fold_casc_wide_swing_ota_0/vim" "vim"
+node "se_fold_casc_wide_swing_ota_0/vip" 6912 68602.3 -11920 15002 ndif 0 0 0 0 0 0 0 0 34800 1548 69600 2748 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15918096 76528 0 0 942480 58840 2356102 93122 2296920 77404 1076480 22732 21637392 110414 0 0 0 0
+equiv "se_fold_casc_wide_swing_ota_0/vip" "txgate_0/out"
+equiv "se_fold_casc_wide_swing_ota_0/vip" "vip"
+equiv "se_fold_casc_wide_swing_ota_0/vip" "vip"
+node "se_fold_casc_wide_swing_ota_0/vcascnm" 64882 83164.5 13070 17668 pdif 0 0 0 0 0 0 0 0 1044000 39480 278400 10528 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4391568 20976 0 0 1025440 63720 3591772 136268 4798800 161160 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/vbias2" 191 90332.4 3752 7702 ndif 0 0 0 0 0 0 0 0 1461600 55272 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 29369280 140032 0 0 2467704 153452 6883540 262202 1806224 59560 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/vcascpm" 60488 48551.6 392 3454 ndif 0 0 0 0 0 0 0 0 417600 15792 487200 18424 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2916192 13960 0 0 697408 43336 2646858 98332 5062232 169812 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/vmirror" 34537 97866.7 13480 5542 ndif 0 0 0 0 0 0 0 0 417600 15792 243600 9212 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20620704 98152 0 0 1512320 94060 4057552 158526 5974176 200328 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/vcascpp" 60488 41817.9 392 2342 ndif 0 0 0 0 0 0 0 0 417600 15792 487200 18424 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2916192 13960 0 0 697408 43336 3005248 111208 3670920 123324 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/M13d" 27816 17519.6 17388 26278 pdif 0 0 0 0 0 0 0 0 0 0 348000 13160 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1475376 7016 0 0 286688 17816 1186368 44424 1686720 56824 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/vtail_cascp" 26554 12440.4 15106 17668 pdif 0 0 0 0 0 0 0 0 0 0 348000 13160 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 206720 12840 764468 27936 1738372 56128 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/M9d" 34504 29035.4 17388 25142 pdif 0 0 0 0 0 0 0 0 0 0 417600 15792 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2950752 14032 0 0 408000 25360 1847960 67776 2643944 86488 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/vbias1" 9586 138725 1716 7702 ndif 0 0 0 0 0 0 0 0 1392000 52640 139200 5264 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 68236752 327448 0 0 4671544 290484 8582536 349740 3212880 108416 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/M7d" 34504 26002.6 17388 27414 pdif 0 0 0 0 0 0 0 0 0 0 417600 15792 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2950752 14032 0 0 408000 25360 1582504 59064 2456104 82348 0 0 0 0 0 0 0 0
+node "se_fold_casc_wide_swing_ota_0/VDD" 2435 1.33343e+06 -12316 15506 nw 0 0 0 0 365451207 90764 0 0 9246632 229836 1898800 72292 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24063264 118608 0 0 11964128 389612 24833716 582680 7486150 125408 4900868 38548 32672000 83280 0 0 0 0
+equiv "se_fold_casc_wide_swing_ota_0/VDD" "sky130_fd_sc_hd__inv_1_0/VPWR"
+equiv "se_fold_casc_wide_swing_ota_0/VDD" "sky130_fd_sc_hd__inv_1_0/VPB"
+equiv "se_fold_casc_wide_swing_ota_0/VDD" "txgate_0/sky130_fd_sc_hd__inv_1_0/VPWR"
+equiv "se_fold_casc_wide_swing_ota_0/VDD" "txgate_0/sky130_fd_sc_hd__inv_1_0/VPB"
+equiv "se_fold_casc_wide_swing_ota_0/VDD" "txgate_0/VDD"
+equiv "se_fold_casc_wide_swing_ota_0/VDD" "txgate_1/sky130_fd_sc_hd__inv_1_0/VPWR"
+equiv "se_fold_casc_wide_swing_ota_0/VDD" "txgate_1/sky130_fd_sc_hd__inv_1_0/VPB"
+equiv "se_fold_casc_wide_swing_ota_0/VDD" "txgate_1/VDD"
+equiv "se_fold_casc_wide_swing_ota_0/VDD" "VDD"
+substrate "se_fold_casc_wide_swing_ota_0/VSS" 0 0 -12316 14792 pw 0 0 603860884 119646 0 0 0 0 2676680 101856 13591744 360560 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3884888 21968 0 0 15466200 476808 39436970 533352 31099788 403568 269527118 256498 140657316 326452 221415032 64372 0 0
+equiv "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/VGND"
+equiv "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/VNB"
+equiv "se_fold_casc_wide_swing_ota_0/VSS" "txgate_0/sky130_fd_sc_hd__inv_1_0/VGND"
+equiv "se_fold_casc_wide_swing_ota_0/VSS" "txgate_0/sky130_fd_sc_hd__inv_1_0/VNB"
+equiv "se_fold_casc_wide_swing_ota_0/VSS" "txgate_0/VSS"
+equiv "se_fold_casc_wide_swing_ota_0/VSS" "txgate_1/sky130_fd_sc_hd__inv_1_0/VGND"
+equiv "se_fold_casc_wide_swing_ota_0/VSS" "txgate_1/sky130_fd_sc_hd__inv_1_0/VNB"
+equiv "se_fold_casc_wide_swing_ota_0/VSS" "txgate_1/VSS"
+equiv "se_fold_casc_wide_swing_ota_0/VSS" "VSS"
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "a_15516_4308#" 10159.9
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/ibiasn" 177.742
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/vip" 1407.22
+cap "se_fold_casc_wide_swing_ota_0/M9d" "se_fold_casc_wide_swing_ota_0/M8d" 1256.78
+cap "se_fold_casc_wide_swing_ota_0/M13d" "se_fold_casc_wide_swing_ota_0/vcascnp" 280.17
+cap "se_fold_casc_wide_swing_ota_0/VDD" "txgate_0/in" 1187.61
+cap "se_fold_casc_wide_swing_ota_0/vcascpp" "se_fold_casc_wide_swing_ota_0/vim" 5593.37
+cap "a_15516_4308#" "se_fold_casc_wide_swing_ota_0/vbias4" 8045.82
+cap "a_15516_4308#" "se_fold_casc_wide_swing_ota_0/M16d" 1442.74
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vcascpp" 192.048
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/vmirror" 6876.63
+cap "se_fold_casc_wide_swing_ota_0/vcascpp" "se_fold_casc_wide_swing_ota_0/M7d" 808.017
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascp" "se_fold_casc_wide_swing_ota_0/M9d" 13600
+cap "txgate_1/in" "se_fold_casc_wide_swing_ota_0/vim" 36955.2
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/VDD" 12537.4
+cap "se_fold_casc_wide_swing_ota_0/M13d" "se_fold_casc_wide_swing_ota_0/vbias1" 3065.26
+cap "se_fold_casc_wide_swing_ota_0/vcascnp" "se_fold_casc_wide_swing_ota_0/vip" 282.981
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 5684.33
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/vcascnp" 81.06
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/vo" 5685.76
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/M8d" 1510.46
+cap "se_fold_casc_wide_swing_ota_0/vcascpp" "se_fold_casc_wide_swing_ota_0/M16d" 1835.86
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vim" 2129.72
+cap "sky130_fd_sc_hd__inv_1_0/A" "se_fold_casc_wide_swing_ota_0/VDD" 83.4013
+cap "se_fold_casc_wide_swing_ota_0/vbias1" "se_fold_casc_wide_swing_ota_0/vip" 81.06
+cap "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascnp" 1487.12
+cap "se_fold_casc_wide_swing_ota_0/vcascpp" "se_fold_casc_wide_swing_ota_0/M13d" 11526.6
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/M9d" 3142.79
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/vbias1" 13363.6
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascn" "se_fold_casc_wide_swing_ota_0/vcascnp" 9199.4
+cap "se_fold_casc_wide_swing_ota_0/vbias3" "se_fold_casc_wide_swing_ota_0/vo" 12802.2
+cap "sky130_fd_sc_hd__inv_1_0/Y" "txgate_0/in" 545.444
+cap "se_fold_casc_wide_swing_ota_0/vbias1" "se_fold_casc_wide_swing_ota_0/VDD" 25406
+cap "se_fold_casc_wide_swing_ota_0/M8d" "se_fold_casc_wide_swing_ota_0/vcascnp" 2720.12
+cap "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" "se_fold_casc_wide_swing_ota_0/vip" 358.903
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vbias4" 28757.6
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/M16d" 119.048
+cap "se_fold_casc_wide_swing_ota_0/vbias1" "se_fold_casc_wide_swing_ota_0/M8d" 5211.47
+cap "se_fold_casc_wide_swing_ota_0/vcascpp" "se_fold_casc_wide_swing_ota_0/vip" 28946.7
+cap "se_fold_casc_wide_swing_ota_0/M9d" "se_fold_casc_wide_swing_ota_0/vo" 15320.8
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascp" "se_fold_casc_wide_swing_ota_0/vcascnp" 81.06
+cap "se_fold_casc_wide_swing_ota_0/VDD" "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" 3103.97
+cap "a_15516_4308#" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 111.585
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/vcascpp" 3472.49
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/vmirror" 16878.4
+cap "a_15516_4308#" "se_fold_casc_wide_swing_ota_0/M8d" 787.529
+cap "se_fold_casc_wide_swing_ota_0/vbias4" "se_fold_casc_wide_swing_ota_0/M16d" 43.6207
+cap "sky130_fd_sc_hd__inv_1_0/A" "sky130_fd_sc_hd__inv_1_0/Y" 229.859
+cap "txgate_1/in" "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" 349.077
+cap "se_fold_casc_wide_swing_ota_0/vcascpp" "se_fold_casc_wide_swing_ota_0/VDD" 7636.96
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascp" "se_fold_casc_wide_swing_ota_0/vbias1" 6591.92
+cap "se_fold_casc_wide_swing_ota_0/M13d" "se_fold_casc_wide_swing_ota_0/M7d" 5988.38
+cap "txgate_1/in" "se_fold_casc_wide_swing_ota_0/vip" 1072.18
+cap "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" "se_fold_casc_wide_swing_ota_0/vim" 358.903
+cap "se_fold_casc_wide_swing_ota_0/vim" "se_fold_casc_wide_swing_ota_0/vip" 22649.6
+cap "se_fold_casc_wide_swing_ota_0/vcascpp" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 2786.05
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/vbias3" 5996.26
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/vim" 2368.45
+cap "se_fold_casc_wide_swing_ota_0/M13d" "se_fold_casc_wide_swing_ota_0/M16d" 563.16
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/vo" 15915.5
+cap "txgate_1/in" "se_fold_casc_wide_swing_ota_0/VDD" 1295.43
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vip" 752.695
+cap "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vim" 1923.96
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vbias2" 1997.19
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/vbias1" 4751.69
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/M9d" 2233.32
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/VDD" 1457.83
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/M7d" 8421.42
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascn" "se_fold_casc_wide_swing_ota_0/vim" 10096.1
+cap "se_fold_casc_wide_swing_ota_0/vbias3" "se_fold_casc_wide_swing_ota_0/vcascnp" 24814.3
+cap "sky130_fd_sc_hd__inv_1_0/Y" "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" 355.104
+cap "se_fold_casc_wide_swing_ota_0/M7d" "se_fold_casc_wide_swing_ota_0/VDD" 7368.52
+cap "se_fold_casc_wide_swing_ota_0/vo" "se_fold_casc_wide_swing_ota_0/vcascnp" 21499.5
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 32004.9
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/M8d" 1740.92
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/M16d" 819.7
+cap "se_fold_casc_wide_swing_ota_0/M7d" "se_fold_casc_wide_swing_ota_0/M8d" 2619.4
+cap "se_fold_casc_wide_swing_ota_0/vbias1" "se_fold_casc_wide_swing_ota_0/vo" 7977.38
+cap "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M16d" 1266.69
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascp" "se_fold_casc_wide_swing_ota_0/vim" 863.917
+cap "a_15516_4308#" "se_fold_casc_wide_swing_ota_0/vbias3" 8260.24
+cap "se_fold_casc_wide_swing_ota_0/vbias4" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 44843.8
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vtail_cascp" 81.06
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/M13d" 1347.85
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/vcascpp" 20839.3
+cap "vocm" "se_fold_casc_wide_swing_ota_0/vim" 4847.28
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascn" "se_fold_casc_wide_swing_ota_0/M16d" 208.42
+cap "a_15516_4308#" "se_fold_casc_wide_swing_ota_0/vo" 19890.5
+cap "se_fold_casc_wide_swing_ota_0/vbias4" "se_fold_casc_wide_swing_ota_0/M8d" 1131.53
+cap "txgate_1/in" "sky130_fd_sc_hd__inv_1_0/Y" 646.105
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascp" "se_fold_casc_wide_swing_ota_0/M7d" 7946.25
+cap "se_fold_casc_wide_swing_ota_0/M13d" "se_fold_casc_wide_swing_ota_0/VDD" 11458.5
+cap "se_fold_casc_wide_swing_ota_0/M9d" "se_fold_casc_wide_swing_ota_0/vbias1" 15113.7
+cap "se_fold_casc_wide_swing_ota_0/M16d" "se_fold_casc_wide_swing_ota_0/M8d" 162.12
+cap "sky130_fd_sc_hd__inv_1_0/Y" "se_fold_casc_wide_swing_ota_0/vim" 803.36
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/vim" 19244.6
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/vip" 710.77
+cap "se_fold_casc_wide_swing_ota_0/vcascpp" "se_fold_casc_wide_swing_ota_0/vo" 3503.33
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/vcascnp" 4147.77
+cap "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" "se_fold_casc_wide_swing_ota_0/VDD" 3255.16
+cap "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vip" 1804.54
+cap "se_fold_casc_wide_swing_ota_0/vcascpp" "se_fold_casc_wide_swing_ota_0/M9d" 3656.09
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/vbias1" 689.14
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/M7d" 5030.14
+cap "se_fold_casc_wide_swing_ota_0/M13d" "se_fold_casc_wide_swing_ota_0/vtail_cascp" 7875.9
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascn" "se_fold_casc_wide_swing_ota_0/vip" 2301.53
+cap "txgate_0/in" "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" 349.077
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/VDD" 11655.7
+cap "se_fold_casc_wide_swing_ota_0/vo" "se_fold_casc_wide_swing_ota_0/vim" 30500.1
+cap "a_15516_4308#" "se_fold_casc_wide_swing_ota_0/vmirror" 8049.83
+cap "se_fold_casc_wide_swing_ota_0/ibiasn" "se_fold_casc_wide_swing_ota_0/vcascpp" 26.6695
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 608.792
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vbias3" 12939.1
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vo" 13638.9
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/M16d" 6928.83
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/M8d" 3278.99
+cap "se_fold_casc_wide_swing_ota_0/vbias1" "se_fold_casc_wide_swing_ota_0/vcascnp" 734.336
+cap "se_fold_casc_wide_swing_ota_0/M7d" "se_fold_casc_wide_swing_ota_0/vo" 732.207
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascp" "se_fold_casc_wide_swing_ota_0/vip" 856.66
+cap "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M8d" 2040.91
+cap "se_fold_casc_wide_swing_ota_0/vbias4" "se_fold_casc_wide_swing_ota_0/vbias3" 33984.9
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/M13d" 2405.87
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/vcascpp" 17441.1
+cap "vocm" "se_fold_casc_wide_swing_ota_0/vip" 29181.9
+cap "txgate_1/in" "txgate_0/in" 10748.7
+cap "se_fold_casc_wide_swing_ota_0/vbias3" "se_fold_casc_wide_swing_ota_0/M16d" 560.524
+cap "a_15516_4308#" "se_fold_casc_wide_swing_ota_0/vcascnp" 10360.5
+cap "se_fold_casc_wide_swing_ota_0/vbias4" "se_fold_casc_wide_swing_ota_0/vo" 8854.97
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascn" "se_fold_casc_wide_swing_ota_0/M8d" 8019.14
+cap "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" "sky130_fd_sc_hd__inv_1_0/Y" 386.776
+cap "se_fold_casc_wide_swing_ota_0/M9d" "se_fold_casc_wide_swing_ota_0/M7d" 10823.5
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascp" "se_fold_casc_wide_swing_ota_0/VDD" 19814.6
+cap "txgate_0/in" "se_fold_casc_wide_swing_ota_0/vim" 4242.6
+cap "se_fold_casc_wide_swing_ota_0/M16d" "se_fold_casc_wide_swing_ota_0/vo" 9654.07
+cap "sky130_fd_sc_hd__inv_1_0/Y" "se_fold_casc_wide_swing_ota_0/vip" 402.166
+cap "se_fold_casc_wide_swing_ota_0/M9d" "se_fold_casc_wide_swing_ota_0/M16d" 699.667
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/vim" 4811.78
+cap "se_fold_casc_wide_swing_ota_0/M13d" "se_fold_casc_wide_swing_ota_0/vo" 582.141
+cap "se_fold_casc_wide_swing_ota_0/vcascpp" "se_fold_casc_wide_swing_ota_0/vcascnp" 1940.07
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/vip" 6289.38
+cap "sky130_fd_sc_hd__inv_1_0/Y" "se_fold_casc_wide_swing_ota_0/VDD" 640.893
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vmirror" 23835.5
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/vcascpm" 3446.22
+cap "se_fold_casc_wide_swing_ota_0/vcascpp" "se_fold_casc_wide_swing_ota_0/vbias1" 1030.21
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/M7d" 14215.1
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/VDD" 6840.66
+cap "se_fold_casc_wide_swing_ota_0/M13d" "se_fold_casc_wide_swing_ota_0/M9d" 1909.04
+cap "se_fold_casc_wide_swing_ota_0/vo" "se_fold_casc_wide_swing_ota_0/vip" 7816.3
+cap "se_fold_casc_wide_swing_ota_0/vcascnp" "se_fold_casc_wide_swing_ota_0/vim" 1424.39
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/vbias4" 28687.3
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 16726.5
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/M16d" 3599.15
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/M8d" 751.338
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vcascnp" 19646.5
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/vo" 3162.83
+cap "se_fold_casc_wide_swing_ota_0/vbias1" "se_fold_casc_wide_swing_ota_0/vim" 81.06
+cap "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vo" 3632.69
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascn" "se_fold_casc_wide_swing_ota_0/vbias3" 3018.69
+cap "se_fold_casc_wide_swing_ota_0/vcascnm" "se_fold_casc_wide_swing_ota_0/vbias1" 508.345
+cap "se_fold_casc_wide_swing_ota_0/vmirror" "se_fold_casc_wide_swing_ota_0/M13d" 4497.07
+cap "se_fold_casc_wide_swing_ota_0/vcascpm" "se_fold_casc_wide_swing_ota_0/vtail_cascp" 81.06
+cap "se_fold_casc_wide_swing_ota_0/vbias2" "se_fold_casc_wide_swing_ota_0/M9d" 1648.16
+cap "se_fold_casc_wide_swing_ota_0/vtail_cascn" "se_fold_casc_wide_swing_ota_0/vo" 3386.99
+cap "se_fold_casc_wide_swing_ota_0/vbias4" "se_fold_casc_wide_swing_ota_0/vcascnp" 58365.6
+cap "se_fold_casc_wide_swing_ota_0/vbias3" "se_fold_casc_wide_swing_ota_0/M8d" 21431.5
+cap "se_fold_casc_wide_swing_ota_0/M9d" "se_fold_casc_wide_swing_ota_0/VDD" 9358.31
+cap "se_fold_casc_wide_swing_ota_0/vbias1" "se_fold_casc_wide_swing_ota_0/M7d" 13661.5
+cap "se_fold_casc_wide_swing_ota_0/M8d" "se_fold_casc_wide_swing_ota_0/vo" 4816.48
+cap "txgate_0/in" "se_fold_casc_wide_swing_ota_0/vip" 31709.4
+device csubckt sky130_fd_pr__cap_mim_m3_2 2830 14726 2831 14727 w=5800 l=800 "None" "se_fold_casc_wide_swing_ota_0/VSS" 12000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_2 -3570 14726 -3569 14727 w=5800 l=800 "None" "se_fold_casc_wide_swing_ota_0/VSS" 12000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_2 9888 15752 9889 15753 w=400 l=6200 "None" "se_fold_casc_wide_swing_ota_0/VSS" 1172 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_2 3384 16726 3385 16727 w=4800 l=5200 "None" "se_fold_casc_wide_swing_ota_0/VSS" 10000 0 "se_fold_casc_wide_swing_ota_0/vo" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_2 -2216 16726 -2215 16727 w=4800 l=5200 "None" "se_fold_casc_wide_swing_ota_0/VSS" 10000 0 "se_fold_casc_wide_swing_ota_0/vo" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_2 -4156 15752 -4155 15753 w=400 l=6200 "None" "se_fold_casc_wide_swing_ota_0/VSS" 1200 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_2 9888 22244 9889 22245 w=400 l=6200 "None" "se_fold_casc_wide_swing_ota_0/VSS" 1200 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_2 3384 22326 3385 22327 w=4800 l=5200 "None" "se_fold_casc_wide_swing_ota_0/VSS" 10000 0 "se_fold_casc_wide_swing_ota_0/vo" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_2 -2216 22326 -2215 22327 w=4800 l=5200 "None" "se_fold_casc_wide_swing_ota_0/VSS" 10000 0 "se_fold_casc_wide_swing_ota_0/vo" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_2 -4156 22244 -4155 22245 w=400 l=6200 "None" "se_fold_casc_wide_swing_ota_0/VSS" 1200 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_2 3330 28726 3331 28727 w=5800 l=800 "None" "se_fold_casc_wide_swing_ota_0/VSS" 12000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_2 -3070 28726 -3069 28727 w=5800 l=800 "None" "se_fold_casc_wide_swing_ota_0/VSS" 12000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -5073 526 -5072 527 w=2400 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 5280 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -7056 526 -7055 527 w=1600 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -9444 524 -9443 525 w=1600 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -12227 524 -12226 525 w=2400 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 5280 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -3052 1744 -3051 1745 w=400 l=1600 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -5242 1746 -5241 1747 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vip" 6080 0 "txgate_0/in" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -7282 1746 -7281 1747 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vim" 6080 0 "txgate_1/in" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -9482 1746 -9481 1747 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vip" 6080 0 "txgate_0/in" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -11522 1746 -11521 1747 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vim" 6080 0 "txgate_1/in" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -12408 1742 -12407 1743 w=400 l=1600 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -3052 3848 -3051 3849 w=400 l=1600 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -5242 3846 -5241 3847 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vim" 6080 0 "txgate_1/in" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -7282 3846 -7281 3847 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vip" 6080 0 "txgate_0/in" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -9482 3846 -9481 3847 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vim" 6080 0 "txgate_1/in" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -11522 3846 -11521 3847 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vip" 6080 0 "txgate_0/in" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -12408 3846 -12407 3847 w=400 l=1600 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -5073 6282 -5072 6283 w=2400 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 5280 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -7056 6282 -7055 6283 w=1600 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -9444 6280 -9443 6281 w=1600 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -12227 6280 -12226 6281 w=2400 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 5280 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -5135 7756 -5134 7757 w=2400 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 5280 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -7118 7756 -7117 7757 w=1600 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -9506 7754 -9505 7755 w=1600 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -12289 7754 -12288 7755 w=2400 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 5280 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -3114 8974 -3113 8975 w=400 l=1600 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -5304 8976 -5303 8977 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vip" 6080 0 "vocm" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -7344 8976 -7343 8977 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vo" 6080 0 "se_fold_casc_wide_swing_ota_0/vim" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -9544 8976 -9543 8977 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vip" 6080 0 "vocm" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -11584 8976 -11583 8977 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vo" 6080 0 "se_fold_casc_wide_swing_ota_0/vim" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -12470 8972 -12469 8973 w=400 l=1600 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -3114 11078 -3113 11079 w=400 l=1600 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -5304 11076 -5303 11077 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vo" 6080 0 "se_fold_casc_wide_swing_ota_0/vim" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -7344 11076 -7343 11077 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vip" 6080 0 "vocm" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -9544 11076 -9543 11077 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vo" 6080 0 "se_fold_casc_wide_swing_ota_0/vim" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -11584 11076 -11583 11077 w=1600 l=1600 "None" "se_fold_casc_wide_swing_ota_0/vip" 6080 0 "vocm" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -12470 11076 -12469 11077 w=400 l=1600 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -5135 13512 -5134 13513 w=2400 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 5280 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -7118 13512 -7117 13513 w=1600 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -9506 13510 -9505 13511 w=1600 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 3680 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -12289 13510 -12288 13511 w=2400 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 5280 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 2830 15126 2831 15127 w=6200 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 1200 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -3570 15126 -3569 15127 w=6200 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 1200 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 9888 16152 9889 16153 w=800 l=5800 "None" "se_fold_casc_wide_swing_ota_0/VSS" 12000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 3384 17126 3385 17127 w=5200 l=4800 "None" "se_fold_casc_wide_swing_ota_0/vo" 10000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -2216 17126 -2215 17127 w=5200 l=4800 "None" "se_fold_casc_wide_swing_ota_0/vo" 10000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -4156 16152 -4155 16153 w=800 l=5800 "None" "se_fold_casc_wide_swing_ota_0/VSS" 12000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 3384 22726 3385 22727 w=5200 l=4800 "None" "se_fold_casc_wide_swing_ota_0/vo" 10000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -2216 22726 -2215 22727 w=5200 l=4800 "None" "se_fold_casc_wide_swing_ota_0/vo" 10000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 9888 22644 9889 22645 w=800 l=5800 "None" "se_fold_casc_wide_swing_ota_0/VSS" 12000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -4156 22644 -4155 22645 w=800 l=5800 "None" "se_fold_casc_wide_swing_ota_0/VSS" 12000 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 3330 29126 3331 29127 w=6200 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 1200 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device csubckt sky130_fd_pr__cap_mim_m3_1 -3070 29126 -3069 29127 w=6200 l=400 "None" "se_fold_casc_wide_swing_ota_0/VSS" 1200 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device msubckt sky130_fd_pr__nfet_01v8 32880 610 32881 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 0 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1200 0
+device msubckt sky130_fd_pr__nfet_01v8 31862 610 31863 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30844 610 30845 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29826 610 29827 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28808 610 28809 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27790 610 27791 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26772 610 26773 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25754 610 25755 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24736 610 24737 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23718 610 23719 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22700 610 22701 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21682 610 21683 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20664 610 20665 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19646 610 19647 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18628 610 18629 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17610 610 17611 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16592 610 16593 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15574 610 15575 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14556 610 14557 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13538 610 13539 611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vcascnp" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 10070 800 10071 801 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/ibiasn" 1920 0 "se_fold_casc_wide_swing_ota_0/ibiasn" 1200 0 "se_fold_casc_wide_swing_ota_0/ibiasn" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 9052 800 9053 801 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/ibiasn" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/ibiasn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 8034 800 8035 801 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/ibiasn" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 7016 800 7017 801 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/ibiasn" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 5998 800 5999 801 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/ibiasn" 1920 0 "se_fold_casc_wide_swing_ota_0/ibiasn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 4980 800 4981 801 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/ibiasn" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/ibiasn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 3962 800 3963 801 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/ibiasn" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 2944 800 2945 801 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/ibiasn" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 1926 800 1927 801 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/ibiasn" 1920 0 "se_fold_casc_wide_swing_ota_0/ibiasn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 908 800 909 801 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/ibiasn" 1920 0 "se_fold_casc_wide_swing_ota_0/ibiasn" 1200 0 "se_fold_casc_wide_swing_ota_0/ibiasn" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 32880 1842 32881 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vcascnm" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 0 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 1200 0
+device msubckt sky130_fd_pr__nfet_01v8 31862 1842 31863 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30844 1842 30845 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29826 1842 29827 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28808 1842 28809 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27790 1842 27791 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26772 1842 26773 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25754 1842 25755 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24736 1842 24737 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23718 1842 23719 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22700 1842 22701 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21682 1842 21683 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20664 1842 20665 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19646 1842 19647 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18628 1842 18629 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17610 1842 17611 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16592 1842 16593 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15574 1842 15575 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14556 1842 14557 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13538 1842 13539 1843 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1200 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 10630 2342 10631 2343 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1200 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9612 2342 9613 2343 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8594 2342 8595 2343 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7576 2342 7577 2343 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6558 2342 6559 2343 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5540 2342 5541 2343 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4522 2342 4523 2343 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3504 2342 3505 2343 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2486 2342 2487 2343 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1468 2342 1469 2343 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 450 2342 451 2343 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vcascpp" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 32880 3076 32881 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 31862 3076 31863 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30844 3076 30845 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29826 3076 29827 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28808 3076 28809 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27790 3076 27791 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26772 3076 26773 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25754 3076 25755 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24736 3076 24737 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23718 3076 23719 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22700 3076 22701 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21682 3076 21683 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20664 3076 20665 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19646 3076 19647 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18628 3076 18629 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17610 3076 17611 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16592 3076 16593 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15574 3076 15575 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14556 3076 14557 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13538 3076 13539 3077 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/VSS" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0 "se_fold_casc_wide_swing_ota_0/VSS" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 10630 3454 10631 3455 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1200 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9612 3454 9613 3455 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8594 3454 8595 3455 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7576 3454 7577 3455 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6558 3454 6559 3455 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5540 3454 5541 3455 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4522 3454 4523 3455 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3504 3454 3505 3455 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2486 3454 2487 3455 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1468 3454 1469 3455 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 450 3454 451 3455 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vcascpm" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 32880 4308 32881 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vo" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 0 0 "se_fold_casc_wide_swing_ota_0/vo" 1200 0
+device msubckt sky130_fd_pr__nfet_01v8 31862 4308 31863 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30844 4308 30845 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29826 4308 29827 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28808 4308 28809 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27790 4308 27791 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26772 4308 26773 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25754 4308 25755 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24736 4308 24737 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23718 4308 23719 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22700 4308 22701 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21682 4308 21683 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20664 4308 20665 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19646 4308 19647 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18628 4308 18629 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17610 4308 17611 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16592 4308 16593 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15574 4308 15575 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14556 4308 14557 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13538 4308 13539 4309 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/VSS" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0 "se_fold_casc_wide_swing_ota_0/VSS" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 10630 4566 10631 4567 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1200 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9612 4566 9613 4567 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8594 4566 8595 4567 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7576 4566 7577 4567 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6558 4566 6559 4567 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5540 4566 5541 4567 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4522 4566 4523 4567 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3504 4566 3505 4567 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2486 4566 2487 4567 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1468 4566 1469 4567 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 450 4566 451 4567 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vcascpm" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 32880 5542 32881 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/VSS" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 0 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device msubckt sky130_fd_pr__nfet_01v8 31862 5542 31863 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30844 5542 30845 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29826 5542 29827 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28808 5542 28809 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27790 5542 27791 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26772 5542 26773 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25754 5542 25755 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24736 5542 24737 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23718 5542 23719 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22700 5542 22701 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21682 5542 21683 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20664 5542 20665 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19646 5542 19647 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18628 5542 18629 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17610 5542 17611 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16592 5542 16593 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15574 5542 15575 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14556 5542 14557 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13538 5542 13539 5543 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 1200 0 "se_fold_casc_wide_swing_ota_0/vmirror" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 10630 5678 10631 5679 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1200 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9612 5678 9613 5679 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8594 5678 8595 5679 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7576 5678 7577 5679 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6558 5678 6559 5679 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5540 5678 5541 5679 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4522 5678 4523 5679 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3504 5678 3505 5679 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2486 5678 2487 5679 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1468 5678 1469 5679 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 450 5678 451 5679 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vcascpp" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 32880 6776 32881 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 0 0 "se_fold_casc_wide_swing_ota_0/vmirror" 1200 0
+device msubckt sky130_fd_pr__nfet_01v8 31862 6776 31863 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30844 6776 30845 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29826 6776 29827 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28808 6776 28809 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27790 6776 27791 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26772 6776 26773 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25754 6776 25755 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24736 6776 24737 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23718 6776 23719 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22700 6776 22701 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21682 6776 21683 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20664 6776 20665 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19646 6776 19647 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18628 6776 18629 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17610 6776 17611 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16592 6776 16593 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15574 6776 15575 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14556 6776 14557 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13538 6776 13539 6777 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/VSS" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0 "se_fold_casc_wide_swing_ota_0/VSS" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 32880 8008 32881 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/VSS" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 0 0 "se_fold_casc_wide_swing_ota_0/VSS" 1200 0
+device msubckt sky130_fd_pr__nfet_01v8 31862 8008 31863 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30844 8008 30845 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29826 8008 29827 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28808 8008 28809 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27790 8008 27791 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26772 8008 26773 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25754 8008 25755 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24736 8008 24737 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23718 8008 23719 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22700 8008 22701 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21682 8008 21683 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20664 8008 20665 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19646 8008 19647 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18628 8008 18629 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17610 8008 17611 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16592 8008 16593 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15574 8008 15575 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14556 8008 14557 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13538 8008 13539 8009 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vo" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 1200 0 "se_fold_casc_wide_swing_ota_0/vo" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9918 7702 9919 7703 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias2" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8900 7702 8901 7703 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7882 7702 7883 7703 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6864 7702 6865 7703 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5846 7702 5847 7703 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4828 7702 4829 7703 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3810 7702 3811 7703 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2792 7702 2793 7703 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1774 7702 1775 7703 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias1" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9918 8520 9919 8521 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 0 0 "se_fold_casc_wide_swing_ota_0/vbias2" 1200 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8900 8520 8901 8521 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7882 8520 7883 8521 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6864 8520 6865 8521 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5846 8520 5847 8521 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4828 8520 4829 8521 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3810 8520 3811 8521 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2792 8520 2793 8521 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1774 8520 1775 8521 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias1" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 32880 9242 32881 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M16d" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/M16d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 31862 9242 31863 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30844 9242 30845 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29826 9242 29827 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28808 9242 28809 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27790 9242 27791 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26772 9242 26773 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25754 9242 25755 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24736 9242 24737 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23718 9242 23719 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22700 9242 22701 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21682 9242 21683 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20664 9242 20665 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19646 9242 19647 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18628 9242 18629 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17610 9242 17611 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16592 9242 16593 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15574 9242 15575 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "a_15516_4308#" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14556 9242 14557 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias3" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0 "a_15516_4308#" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13538 9242 13539 9243 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/vbias4" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9918 9338 9919 9339 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias2" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8900 9338 8901 9339 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7882 9338 7883 9339 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6864 9338 6865 9339 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5846 9338 5847 9339 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4828 9338 4829 9339 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3810 9338 3811 9339 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2792 9338 2793 9339 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1774 9338 1775 9339 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias1" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 32882 10476 32883 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 0 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1200 0
+device msubckt sky130_fd_pr__nfet_01v8 31864 10476 31865 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30846 10476 30847 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29828 10476 29829 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28810 10476 28811 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27792 10476 27793 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26774 10476 26775 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25756 10476 25757 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24738 10476 24739 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23720 10476 23721 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22702 10476 22703 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21684 10476 21685 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20666 10476 20667 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19648 10476 19649 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18630 10476 18631 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17612 10476 17613 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16594 10476 16595 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15576 10476 15577 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14558 10476 14559 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13540 10476 13541 10477 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vcascnm" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9918 10156 9919 10157 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias2" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8900 10156 8901 10157 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7882 10156 7883 10157 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6864 10156 6865 10157 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5846 10156 5847 10157 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4828 10156 4829 10157 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3810 10156 3811 10157 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2792 10156 2793 10157 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1774 10156 1775 10157 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias1" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9918 10974 9919 10975 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 0 0 "se_fold_casc_wide_swing_ota_0/vbias2" 1200 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8900 10974 8901 10975 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7882 10974 7883 10975 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6864 10974 6865 10975 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5846 10974 5847 10975 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4828 10974 4829 10975 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3810 10974 3811 10975 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2792 10974 2793 10975 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1774 10974 1775 10975 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias1" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 32882 11708 32883 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vcascnp" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 0 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 1200 0
+device msubckt sky130_fd_pr__nfet_01v8 31864 11708 31865 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30846 11708 30847 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29828 11708 29829 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28810 11708 28811 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27792 11708 27793 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26774 11708 26775 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25756 11708 25757 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24738 11708 24739 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23720 11708 23721 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22702 11708 22703 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21684 11708 21685 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20666 11708 20667 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19648 11708 19649 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18630 11708 18631 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17612 11708 17613 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16594 11708 16595 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15576 11708 15577 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14558 11708 14559 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias4" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 600 0 "se_fold_casc_wide_swing_ota_0/VSS" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13540 11708 13541 11709 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 1200 0 "se_fold_casc_wide_swing_ota_0/vtail_cascn" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9918 11792 9919 11793 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias2" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8900 11792 8901 11793 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7882 11792 7883 11793 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6864 11792 6865 11793 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5846 11792 5847 11793 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4828 11792 4829 11793 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3810 11792 3811 11793 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2792 11792 2793 11793 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1774 11792 1775 11793 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias1" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 32882 13086 32883 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 31864 13086 31865 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30846 13086 30847 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29828 13086 29829 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28810 13086 28811 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27792 13086 27793 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26774 13086 26775 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25756 13086 25757 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24738 13086 24739 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23720 13086 23721 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22702 13086 22703 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21684 13086 21685 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20666 13086 20667 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19648 13086 19649 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18630 13086 18631 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17612 13086 17613 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16594 13086 16595 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15576 13086 15577 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14558 13086 14559 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13540 13086 13541 13087 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9918 12610 9919 12611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias2" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8900 12610 8901 12611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7882 12610 7883 12611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6864 12610 6865 12611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5846 12610 5847 12611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4828 12610 4829 12611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3810 12610 3811 12611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2792 12610 2793 12611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1774 12610 1775 12611 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias1" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 32882 13904 32883 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 31864 13904 31865 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 30846 13904 30847 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 29828 13904 29829 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 28810 13904 28811 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 27792 13904 27793 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 26774 13904 26775 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 25756 13904 25757 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 24738 13904 24739 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 23720 13904 23721 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 22702 13904 22703 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 21684 13904 21685 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 20666 13904 20667 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 19648 13904 19649 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 18630 13904 18631 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 17612 13904 17613 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 16594 13904 16595 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 15576 13904 15577 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 14558 13904 14559 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__nfet_01v8 13540 13904 13541 13905 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/M8d" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias3" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 9918 13428 9919 13429 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias2" 0 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 8900 13428 8901 13429 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 7882 13428 7883 13429 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 6864 13428 6865 13429 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 5846 13428 5847 13429 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 4828 13428 4829 13429 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 3810 13428 3811 13429 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 2792 13428 2793 13429 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/vbias2" 600 0
+device msubckt sky130_fd_pr__nfet_01v8_lvt 1774 13428 1775 13429 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 1200 0 "se_fold_casc_wide_swing_ota_0/vbias1" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 -8230 15002 -8229 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/VSS" 400 0 "se_fold_casc_wide_swing_ota_0/vim" 200 0 "se_fold_casc_wide_swing_ota_0/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -8488 15002 -8487 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/Y" 400 0 "txgate_1/in" 200 0 "se_fold_casc_wide_swing_ota_0/vim" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -8746 15002 -8745 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/Y" 400 0 "se_fold_casc_wide_swing_ota_0/vim" 200 0 "txgate_1/in" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -9004 15002 -9003 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/Y" 400 0 "txgate_1/in" 200 0 "se_fold_casc_wide_swing_ota_0/vim" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -9262 15002 -9261 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/Y" 400 0 "se_fold_casc_wide_swing_ota_0/vim" 200 0 "txgate_1/in" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -9520 15002 -9519 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/VSS" 400 0 "se_fold_casc_wide_swing_ota_0/VSS" 200 0 "se_fold_casc_wide_swing_ota_0/vim" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -7220 15293 -7219 15294 l=30 w=130 "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/A" 60 0 "sky130_fd_sc_hd__inv_1_0/Y" 130 0 "se_fold_casc_wide_swing_ota_0/VSS" 130 0
+device msubckt sky130_fd_pr__nfet_01v8 -7670 15293 -7669 15294 l=30 w=130 "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/Y" 60 0 "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" 130 0 "se_fold_casc_wide_swing_ota_0/VSS" 130 0
+device msubckt sky130_fd_pr__nfet_01v8 -10830 15002 -10829 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/VSS" 400 0 "se_fold_casc_wide_swing_ota_0/vip" 200 0 "se_fold_casc_wide_swing_ota_0/VSS" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -11088 15002 -11087 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/Y" 400 0 "txgate_0/in" 200 0 "se_fold_casc_wide_swing_ota_0/vip" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -11346 15002 -11345 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/Y" 400 0 "se_fold_casc_wide_swing_ota_0/vip" 200 0 "txgate_0/in" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -11604 15002 -11603 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/Y" 400 0 "txgate_0/in" 200 0 "se_fold_casc_wide_swing_ota_0/vip" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -11862 15002 -11861 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/Y" 400 0 "se_fold_casc_wide_swing_ota_0/vip" 200 0 "txgate_0/in" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -12120 15002 -12119 15003 l=200 w=200 "se_fold_casc_wide_swing_ota_0/VSS" "se_fold_casc_wide_swing_ota_0/VSS" 400 0 "se_fold_casc_wide_swing_ota_0/VSS" 200 0 "se_fold_casc_wide_swing_ota_0/vip" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 -10270 15293 -10269 15294 l=30 w=130 "se_fold_casc_wide_swing_ota_0/VSS" "sky130_fd_sc_hd__inv_1_0/Y" 60 0 "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" 130 0 "se_fold_casc_wide_swing_ota_0/VSS" 130 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -7220 15543 -7219 15544 l=30 w=200 "se_fold_casc_wide_swing_ota_0/VDD" "sky130_fd_sc_hd__inv_1_0/A" 60 0 "sky130_fd_sc_hd__inv_1_0/Y" 200 0 "se_fold_casc_wide_swing_ota_0/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -7670 15543 -7669 15544 l=30 w=200 "se_fold_casc_wide_swing_ota_0/VDD" "sky130_fd_sc_hd__inv_1_0/Y" 60 0 "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" 200 0 "se_fold_casc_wide_swing_ota_0/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -8230 15726 -8229 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 400 0 "se_fold_casc_wide_swing_ota_0/vim" 400 0 "se_fold_casc_wide_swing_ota_0/VDD" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -8488 15726 -8487 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" 400 0 "txgate_1/in" 400 0 "se_fold_casc_wide_swing_ota_0/vim" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -8746 15726 -8745 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" 400 0 "se_fold_casc_wide_swing_ota_0/vim" 400 0 "txgate_1/in" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -9004 15726 -9003 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" 400 0 "txgate_1/in" 400 0 "se_fold_casc_wide_swing_ota_0/vim" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -9262 15726 -9261 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "txgate_1/sky130_fd_sc_hd__inv_1_0/Y" 400 0 "se_fold_casc_wide_swing_ota_0/vim" 400 0 "txgate_1/in" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -9520 15726 -9519 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 400 0 "se_fold_casc_wide_swing_ota_0/VDD" 400 0 "se_fold_casc_wide_swing_ota_0/vim" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -10270 15543 -10269 15544 l=30 w=200 "se_fold_casc_wide_swing_ota_0/VDD" "sky130_fd_sc_hd__inv_1_0/Y" 60 0 "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" 200 0 "se_fold_casc_wide_swing_ota_0/VDD" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -10830 15726 -10829 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 400 0 "se_fold_casc_wide_swing_ota_0/vip" 400 0 "se_fold_casc_wide_swing_ota_0/VDD" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -11088 15726 -11087 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" 400 0 "txgate_0/in" 400 0 "se_fold_casc_wide_swing_ota_0/vip" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -11346 15726 -11345 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" 400 0 "se_fold_casc_wide_swing_ota_0/vip" 400 0 "txgate_0/in" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -11604 15726 -11603 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" 400 0 "txgate_0/in" 400 0 "se_fold_casc_wide_swing_ota_0/vip" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -11862 15726 -11861 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "txgate_0/sky130_fd_sc_hd__inv_1_0/Y" 400 0 "se_fold_casc_wide_swing_ota_0/vip" 400 0 "txgate_0/in" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt -12120 15726 -12119 15727 l=200 w=400 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 400 0 "se_fold_casc_wide_swing_ota_0/VDD" 400 0 "se_fold_casc_wide_swing_ota_0/vip" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 32684 17100 32685 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M7d" 1920 0 "se_fold_casc_wide_swing_ota_0/M7d" 0 0 "se_fold_casc_wide_swing_ota_0/M7d" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 31666 17100 31667 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30648 17100 30649 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 29630 17100 29631 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 28612 17100 28613 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 27594 17100 27595 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 26576 17100 26577 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 25558 17100 25559 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 24540 17100 24541 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 23522 17100 23523 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 22504 17100 22505 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 21486 17100 21487 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 20468 17100 20469 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 19450 17100 19451 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 18432 17100 18433 17101 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M9d" 1920 0 "se_fold_casc_wide_swing_ota_0/M9d" 1200 0 "se_fold_casc_wide_swing_ota_0/M9d" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 16182 17668 16183 17669 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascnp" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 15164 17668 15165 17669 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 14146 17668 14147 17669 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 13128 17668 13129 17669 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascnm" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 32684 18356 32685 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vo" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 0 0 "se_fold_casc_wide_swing_ota_0/vo" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 31666 18356 31667 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30648 18356 30649 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 29630 18356 29631 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 28612 18356 28613 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 27594 18356 27595 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/M16d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 26576 18356 26577 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0 "se_fold_casc_wide_swing_ota_0/M16d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 25558 18356 25559 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M16d" 600 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 24540 18356 24541 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0 "se_fold_casc_wide_swing_ota_0/M16d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 23522 18356 23523 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 22504 18356 22505 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 21486 18356 21487 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 20468 18356 20469 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 19450 18356 19451 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 18432 18356 18433 18357 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 1200 0 "se_fold_casc_wide_swing_ota_0/vmirror" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 16182 18700 16183 18701 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascnm" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 15164 18700 15165 18701 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 14146 18700 14147 18701 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 13128 18700 13129 18701 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascnp" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 32684 19612 32685 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 0 0 "se_fold_casc_wide_swing_ota_0/vmirror" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 31666 19612 31667 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30648 19612 30649 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 29630 19612 29631 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/vmirror" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 28612 19612 28613 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 27594 19612 27595 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 26576 19612 26577 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M16d" 600 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 25558 19612 25559 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0 "se_fold_casc_wide_swing_ota_0/M16d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 24540 19612 24541 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M16d" 600 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 23522 19612 23523 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M16d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 22504 19612 22505 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 21486 19612 21487 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 20468 19612 20469 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 19450 19612 19451 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 18432 19612 18433 19613 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vo" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 1200 0 "se_fold_casc_wide_swing_ota_0/vo" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 16182 19732 16183 19733 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascnm" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 15164 19732 15165 19733 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 14146 19732 14147 19733 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 13128 19732 13129 19733 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascnp" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 32684 20868 32685 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M9d" 1920 0 "se_fold_casc_wide_swing_ota_0/M9d" 0 0 "se_fold_casc_wide_swing_ota_0/M9d" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 31666 20868 31667 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30648 20868 30649 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 29630 20868 29631 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 28612 20868 28613 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M8d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 27594 20868 27595 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 26576 20868 26577 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 25558 20868 25559 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/vo" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 24540 20868 24541 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 23522 20868 23523 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 22504 20868 22505 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 21486 20868 21487 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 20468 20868 20469 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 19450 20868 19451 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias2" 1920 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0 "se_fold_casc_wide_swing_ota_0/vbias1" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 18432 20868 18433 20869 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M7d" 1920 0 "se_fold_casc_wide_swing_ota_0/M7d" 1200 0 "se_fold_casc_wide_swing_ota_0/M7d" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 16182 20764 16183 20765 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascnp" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 15164 20764 15165 20765 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vim" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0 "se_fold_casc_wide_swing_ota_0/vcascnp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 14146 20764 14147 20765 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vip" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 13128 20764 13129 20765 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascnm" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascnm" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 31874 22472 31875 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascpm" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 0 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 30856 22472 30857 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 29838 22472 29839 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 28820 22472 28821 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 27802 22472 27803 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 26784 22472 26785 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 25766 22472 25767 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 24748 22472 24749 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 23730 22472 23731 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 22712 22472 22713 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 21694 22472 21695 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 20676 22472 20677 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 19658 22472 19659 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 18640 22472 18641 22473 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascpm" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 31874 23504 31875 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascpp" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 0 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 30856 23504 30857 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 29838 23504 29839 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 28820 23504 28821 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 27802 23504 27803 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 26784 23504 26785 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 25766 23504 25767 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 24748 23504 24749 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 23730 23504 23731 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 22712 23504 22713 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 21694 23504 21695 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 20676 23504 20677 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vcascpm" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 19658 23504 19659 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vmirror" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 18640 23504 18641 23505 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vcascpp" 1920 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 1200 0 "se_fold_casc_wide_swing_ota_0/vcascpp" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 32716 25142 32717 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M7d" 1920 0 "se_fold_casc_wide_swing_ota_0/M7d" 0 0 "se_fold_casc_wide_swing_ota_0/M7d" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 31698 25142 31699 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 30680 25142 30681 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 29662 25142 29663 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 28644 25142 28645 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 27626 25142 27627 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 26608 25142 26609 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 25590 25142 25591 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 24572 25142 24573 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 23554 25142 23555 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 22536 25142 22537 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 21518 25142 21519 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 20500 25142 20501 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 19482 25142 19483 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 18464 25142 18465 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 17446 25142 17447 25143 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M9d" 1920 0 "se_fold_casc_wide_swing_ota_0/M9d" 1200 0 "se_fold_casc_wide_swing_ota_0/M9d" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 32716 26278 32717 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M13d" 1920 0 "se_fold_casc_wide_swing_ota_0/M13d" 0 0 "se_fold_casc_wide_swing_ota_0/M13d" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 31698 26278 31699 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 30680 26278 30681 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 29662 26278 29663 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 28644 26278 28645 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 27626 26278 27627 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 26608 26278 26609 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 25590 26278 25591 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 24572 26278 24573 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 23554 26278 23555 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 22536 26278 22537 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 21518 26278 21519 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 20500 26278 20501 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 19482 26278 19483 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 18464 26278 18465 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/M13d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 17446 26278 17447 26279 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M13d" 1920 0 "se_fold_casc_wide_swing_ota_0/M13d" 1200 0 "se_fold_casc_wide_swing_ota_0/M13d" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 32716 27414 32717 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M9d" 1920 0 "se_fold_casc_wide_swing_ota_0/M9d" 0 0 "se_fold_casc_wide_swing_ota_0/M9d" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 31698 27414 31699 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 30680 27414 30681 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 29662 27414 29663 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 28644 27414 28645 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 27626 27414 27627 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 26608 27414 26609 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 25590 27414 25591 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M9d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 24572 27414 24573 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 23554 27414 23555 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 22536 27414 22537 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 21518 27414 21519 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/VDD" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 1200 0 "se_fold_casc_wide_swing_ota_0/VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 20500 27414 20501 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 19482 27414 19483 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0 "se_fold_casc_wide_swing_ota_0/vtail_cascp" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 18464 27414 18465 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/vbias1" 1920 0 "se_fold_casc_wide_swing_ota_0/M7d" 600 0 "se_fold_casc_wide_swing_ota_0/VDD" 600 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt 17446 27414 17447 27415 l=960 w=600 "se_fold_casc_wide_swing_ota_0/VDD" "se_fold_casc_wide_swing_ota_0/M7d" 1920 0 "se_fold_casc_wide_swing_ota_0/M7d" 1200 0 "se_fold_casc_wide_swing_ota_0/M7d" 0 0
+subcap "vocm" -14666.8
+subcap "sky130_fd_sc_hd__inv_1_0/Y" -10486.8
+subcap "txgate_0/in" -21626.7
+subcap "txgate_1/in" -22408.6
+subcap "sky130_fd_sc_hd__inv_1_0/A" -108.559

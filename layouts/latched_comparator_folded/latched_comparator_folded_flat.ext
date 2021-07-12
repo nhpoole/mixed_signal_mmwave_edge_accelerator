@@ -1,0 +1,225 @@
+timestamp 1623652296
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8_hvt l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8_lvt l=l w=w a1=as p1=ps a2=ad p2=pd
+port "vop" 3 2674 -990 2680 -984 m2
+port "vom" 4 1606 -1052 1612 -1044 m1
+port "clk" 5 -1548 -1552 -1528 -1534 m4
+port "vip" 1 -3086 -112 -3072 -100 m1
+port "vim" 2 -2316 -232 -2306 -222 m1
+port "ibiasp" 6 -1746 918 -1726 930 m1
+port "VDD" 7 324 2134 340 2140 m4
+port "VSS" 8 -186 -2534 -160 -2514 m4
+node "a_1749_n1119#" 289 11.1051 1749 -1119 ndif 0 0 0 0 0 0 0 0 7020 368 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_1291_n1119#" 289 11.1051 1291 -1119 ndif 0 0 0 0 0 0 0 0 7020 368 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "sky130_fd_sc_hd__inv_1_3/Y" 1995 800.432 2042 -1145 p 0 0 0 0 0 0 0 0 6760 364 10400 504 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 18756 1176 0 0 30850 1322 14640 608 0 0 0 0 0 0 0 0 0 0
+equiv "sky130_fd_sc_hd__inv_1_3/Y" "sky130_fd_sc_hd__inv_1_2/A"
+equiv "sky130_fd_sc_hd__inv_1_3/Y" "vcomppb"
+node "sky130_fd_sc_hd__inv_1_2/Y" 1995 846.922 1803 -1145 p 0 0 0 0 0 0 0 0 6760 364 10400 504 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 19152 1188 0 0 31302 1336 12360 532 0 0 0 0 0 0 0 0 0 0
+equiv "sky130_fd_sc_hd__inv_1_2/Y" "sky130_fd_sc_hd__nand2_1_1/B"
+equiv "sky130_fd_sc_hd__inv_1_2/Y" "vcompp_buf"
+node "sky130_fd_sc_hd__nand2_1_0/Y" 1971 610.422 1291 -869 pdif 0 0 0 0 0 0 0 0 6760 364 10800 508 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 18888 1180 0 0 37880 1460 9360 552 157200 5360 0 0 0 0 0 0 0 0
+equiv "sky130_fd_sc_hd__nand2_1_0/Y" "sky130_fd_sc_hd__nand2_1_1/A"
+equiv "sky130_fd_sc_hd__nand2_1_0/Y" "vop"
+node "sky130_fd_sc_hd__nand2_1_0/A" 1966 999.026 1345 -1145 p 0 0 0 0 0 0 0 0 6760 364 10800 508 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 18888 1180 0 0 37880 1460 28920 1084 0 0 0 0 0 0 0 0 0 0
+equiv "sky130_fd_sc_hd__nand2_1_0/A" "sky130_fd_sc_hd__nand2_1_1/Y"
+equiv "sky130_fd_sc_hd__nand2_1_0/A" "sky130_fd_sc_hd__nand2_1_1/Y"
+equiv "sky130_fd_sc_hd__nand2_1_0/A" "sky130_fd_sc_hd__nand2_1_1/Y"
+equiv "sky130_fd_sc_hd__nand2_1_0/A" "vom"
+node "sky130_fd_sc_hd__inv_1_1/Y" 1992 850.971 1052 -1119 ndif 0 0 0 0 0 0 0 0 6760 364 10400 504 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 19152 1188 0 0 30774 1314 12240 528 0 0 0 0 0 0 0 0 0 0
+equiv "sky130_fd_sc_hd__inv_1_1/Y" "sky130_fd_sc_hd__nand2_1_0/B"
+equiv "sky130_fd_sc_hd__inv_1_1/Y" "vcompm_buf"
+node "sky130_fd_sc_hd__inv_1_1/A" 1995 800.432 776 -1119 ndif 0 0 0 0 0 0 0 0 6760 364 10400 504 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 18756 1176 0 0 30850 1322 14640 608 0 0 0 0 0 0 0 0 0 0
+equiv "sky130_fd_sc_hd__inv_1_1/A" "sky130_fd_sc_hd__inv_1_0/Y"
+equiv "sky130_fd_sc_hd__inv_1_1/A" "sky130_fd_sc_hd__inv_1_0/Y"
+equiv "sky130_fd_sc_hd__inv_1_1/A" "vcompmb"
+node "clk" 3562 13441.6 -1548 -1552 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 441046 10646 0 0 103150 4402 74832 3244 43632 1868 877008 18740 664652 13684 0 0 0 0
+node "sky130_fd_sc_hd__inv_1_3/A" 7956 6148.26 838 690 pdif 0 0 0 0 0 0 0 0 11600 516 69600 2748 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 476004 7528 0 0 87808 6022 407296 15992 259680 9016 0 0 0 0 0 0 0 0
+equiv "sky130_fd_sc_hd__inv_1_3/A" "vcompp"
+node "sky130_fd_sc_hd__inv_1_0/A" 7950 5027.95 526 -1932 ndif 0 0 0 0 0 0 0 0 11600 516 69600 2748 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 476004 7528 0 0 87808 6022 383776 14976 127560 4492 0 0 0 0 0 0 0 0
+equiv "sky130_fd_sc_hd__inv_1_0/A" "vcompm"
+node "vlatchm" 17168 9895.1 -2731 -853 pdif 0 0 0 0 0 0 0 0 34800 1548 162400 6644 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 41880 1636 0 0 127024 8336 563054 21526 543552 18836 0 0 0 0 0 0 0 0
+node "vlatchp" 17163 10606.7 -2731 7 pdif 0 0 0 0 0 0 0 0 34800 1548 162400 6644 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 42000 1640 0 0 134824 8596 491410 19106 391464 13288 0 0 0 0 0 0 0 0
+node "vip" 3227 5049.29 -3086 -112 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 914496 12704 0 0 71808 5312 236928 10296 275040 9408 0 0 0 0 0 0 0 0
+node "vim" 3218 3642.17 -2316 -232 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 914496 12704 0 0 71808 5312 168288 7888 117600 4040 0 0 0 0 0 0 0 0
+node "ibiasp" 2419 2662.87 -1746 918 m1 0 0 0 0 0 0 0 0 0 0 11600 516 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 591328 6352 0 0 75616 5060 192888 7654 0 0 0 0 0 0 0 0 0 0
+node "vtailp" 20882 3952.33 -3048 1090 pdif 0 0 0 0 0 0 0 0 0 0 232000 9392 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 295664 3176 0 0 173536 11296 699410 24852 0 0 0 0 0 0 0 0 0 0
+node "sky130_fd_sc_hd__inv_1_3/VPWR" 45022 99663.1 -3358 -2066 nw 0 0 0 0 22186136 20580 0 0 2385864 52896 454400 18920 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 963916 14396 0 0 2861592 80792 5573035 89642 1535216 13432 1403680 10296 5032000 14180 0 0 0 0
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/VPB"
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_2/VPWR"
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_2/VPB"
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_1/VPWR"
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_1/VPB"
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_0/VPWR"
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_0/VPB"
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__nand2_1_0/VPWR"
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__nand2_1_0/VPB"
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__nand2_1_1/VPWR"
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__nand2_1_1/VPB"
+equiv "sky130_fd_sc_hd__inv_1_3/VPWR" "VDD"
+substrate "sky130_fd_sc_hd__inv_1_3/VGND" 0 0 386 -2952 pw 0 0 4883153 8908 0 0 0 0 98560 4764 611728 16448 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 90600 3500 0 0 784216 25624 2082064 24552 796744 5540 778624 5560 5032000 14180 0 0 0 0
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_3/VNB"
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_2/VGND"
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_2/VNB"
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_1/VGND"
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_1/VNB"
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_0/VGND"
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_0/VNB"
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__nand2_1_0/VGND"
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__nand2_1_0/VNB"
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__nand2_1_1/VGND"
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__nand2_1_1/VNB"
+equiv "sky130_fd_sc_hd__inv_1_3/VGND" "VSS"
+cap "sky130_fd_sc_hd__inv_1_3/Y" "clk" 1.83511
+cap "vlatchm" "vip" 4516.11
+cap "sky130_fd_sc_hd__inv_1_0/A" "vlatchm" 543.491
+cap "sky130_fd_sc_hd__nand2_1_0/A" "sky130_fd_sc_hd__nand2_1_0/Y" 811.506
+cap "sky130_fd_sc_hd__inv_1_3/A" "sky130_fd_sc_hd__inv_1_2/Y" 16.8555
+cap "vip" "vim" 1709.1
+cap "vlatchp" "sky130_fd_sc_hd__inv_1_3/A" 362.8
+cap "sky130_fd_sc_hd__inv_1_1/A" "sky130_fd_sc_hd__inv_1_3/VPWR" 466.542
+cap "sky130_fd_sc_hd__inv_1_0/A" "clk" 505.61
+cap "vtailp" "sky130_fd_sc_hd__inv_1_3/VPWR" 1693.2
+cap "ibiasp" "vip" 64.7266
+cap "sky130_fd_sc_hd__inv_1_1/A" "sky130_fd_sc_hd__nand2_1_0/Y" 6.07027
+cap "sky130_fd_sc_hd__inv_1_3/Y" "sky130_fd_sc_hd__inv_1_3/A" 232.265
+cap "vtailp" "vlatchm" 1845.09
+cap "sky130_fd_sc_hd__inv_1_3/Y" "sky130_fd_sc_hd__inv_1_2/Y" 317.279
+cap "vlatchm" "sky130_fd_sc_hd__inv_1_3/VPWR" 6798.14
+cap "vtailp" "vim" 2621.79
+cap "sky130_fd_sc_hd__inv_1_3/A" "sky130_fd_sc_hd__inv_1_0/A" 1506.53
+cap "sky130_fd_sc_hd__nand2_1_0/Y" "sky130_fd_sc_hd__inv_1_3/VPWR" 2442.7
+cap "sky130_fd_sc_hd__inv_1_1/Y" "sky130_fd_sc_hd__nand2_1_0/A" 122.605
+cap "a_1291_n1119#" "sky130_fd_sc_hd__nand2_1_0/Y" 53.0528
+cap "sky130_fd_sc_hd__nand2_1_0/A" "sky130_fd_sc_hd__inv_1_2/Y" 213.46
+cap "sky130_fd_sc_hd__inv_1_1/Y" "sky130_fd_sc_hd__inv_1_0/A" 15.8122
+cap "vim" "sky130_fd_sc_hd__inv_1_3/VPWR" 598.792
+cap "clk" "sky130_fd_sc_hd__inv_1_3/VPWR" 3009.23
+cap "ibiasp" "vtailp" 1662.85
+cap "vlatchp" "vip" 159.736
+cap "vlatchp" "sky130_fd_sc_hd__inv_1_0/A" 1330.53
+cap "vlatchm" "vim" 54.7448
+cap "vlatchm" "clk" 587.109
+cap "ibiasp" "sky130_fd_sc_hd__inv_1_3/VPWR" 493.28
+cap "sky130_fd_sc_hd__inv_1_3/A" "sky130_fd_sc_hd__inv_1_1/A" 1.83511
+cap "sky130_fd_sc_hd__inv_1_1/Y" "sky130_fd_sc_hd__inv_1_1/A" 311.227
+cap "sky130_fd_sc_hd__inv_1_3/Y" "sky130_fd_sc_hd__nand2_1_0/A" 6.07027
+cap "ibiasp" "vlatchm" 36.2011
+cap "sky130_fd_sc_hd__inv_1_3/A" "sky130_fd_sc_hd__inv_1_3/VPWR" 6162.58
+cap "ibiasp" "vim" 24.3609
+cap "sky130_fd_sc_hd__inv_1_1/Y" "sky130_fd_sc_hd__inv_1_3/VPWR" 527.143
+cap "vlatchp" "vtailp" 1997.1
+cap "sky130_fd_sc_hd__inv_1_2/Y" "sky130_fd_sc_hd__inv_1_3/VPWR" 527.096
+cap "sky130_fd_sc_hd__inv_1_3/A" "sky130_fd_sc_hd__nand2_1_0/Y" 695.624
+cap "sky130_fd_sc_hd__inv_1_1/Y" "vlatchm" 1.81102
+cap "vlatchp" "sky130_fd_sc_hd__inv_1_3/VPWR" 4856.22
+cap "sky130_fd_sc_hd__inv_1_2/Y" "vlatchm" 0.0594315
+cap "sky130_fd_sc_hd__inv_1_1/Y" "sky130_fd_sc_hd__nand2_1_0/Y" 204.96
+cap "sky130_fd_sc_hd__inv_1_3/A" "clk" 374.851
+cap "sky130_fd_sc_hd__inv_1_2/Y" "sky130_fd_sc_hd__nand2_1_0/Y" 119.618
+cap "sky130_fd_sc_hd__nand2_1_0/A" "a_1749_n1119#" 53.0528
+cap "sky130_fd_sc_hd__nand2_1_0/A" "sky130_fd_sc_hd__inv_1_1/A" 26.0961
+cap "vlatchp" "vlatchm" 3857.83
+cap "sky130_fd_sc_hd__inv_1_0/A" "sky130_fd_sc_hd__inv_1_1/A" 226.105
+cap "sky130_fd_sc_hd__inv_1_3/Y" "sky130_fd_sc_hd__inv_1_3/VPWR" 466.542
+cap "vtailp" "vip" 1833.23
+cap "vlatchp" "vim" 3391.02
+cap "vlatchp" "clk" 394.529
+cap "sky130_fd_sc_hd__nand2_1_0/A" "sky130_fd_sc_hd__inv_1_3/VPWR" 670.361
+cap "vip" "sky130_fd_sc_hd__inv_1_3/VPWR" 3405.96
+cap "sky130_fd_sc_hd__inv_1_3/Y" "sky130_fd_sc_hd__nand2_1_0/Y" 25.7522
+cap "sky130_fd_sc_hd__inv_1_0/A" "sky130_fd_sc_hd__inv_1_3/VPWR" 5248.45
+device msubckt sky130_fd_pr__nfet_01v8 2488 -1932 2489 -1931 l=60 w=200 "sky130_fd_sc_hd__inv_1_3/VGND" "clk" 120 0 "vlatchp" 200 0 "sky130_fd_sc_hd__inv_1_3/A" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1956 -1846 1957 -1845 l=60 w=200 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_3/VGND" 120 0 "vlatchp" 200 0 "sky130_fd_sc_hd__inv_1_3/VGND" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1838 -1846 1839 -1845 l=60 w=200 "sky130_fd_sc_hd__inv_1_3/VGND" "vlatchm" 120 0 "sky130_fd_sc_hd__inv_1_3/VGND" 200 0 "vlatchp" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1720 -1846 1721 -1845 l=60 w=200 "sky130_fd_sc_hd__inv_1_3/VGND" "vlatchp" 120 0 "vlatchm" 200 0 "sky130_fd_sc_hd__inv_1_3/VGND" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1602 -1846 1603 -1845 l=60 w=200 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_3/VGND" 120 0 "sky130_fd_sc_hd__inv_1_3/VGND" 200 0 "vlatchm" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1484 -1846 1485 -1845 l=60 w=200 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_3/VGND" 120 0 "vlatchm" 200 0 "sky130_fd_sc_hd__inv_1_3/VGND" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1366 -1846 1367 -1845 l=60 w=200 "sky130_fd_sc_hd__inv_1_3/VGND" "vlatchp" 120 0 "sky130_fd_sc_hd__inv_1_3/VGND" 200 0 "vlatchm" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1248 -1846 1249 -1845 l=60 w=200 "sky130_fd_sc_hd__inv_1_3/VGND" "vlatchm" 120 0 "vlatchp" 200 0 "sky130_fd_sc_hd__inv_1_3/VGND" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1130 -1846 1131 -1845 l=60 w=200 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_3/VGND" 120 0 "sky130_fd_sc_hd__inv_1_3/VGND" 200 0 "vlatchp" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 584 -1932 585 -1931 l=60 w=200 "sky130_fd_sc_hd__inv_1_3/VGND" "clk" 120 0 "sky130_fd_sc_hd__inv_1_0/A" 200 0 "vlatchm" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -190 -1824 -189 -1823 l=70 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/VPWR" 140 0 "vlatchp" 200 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -318 -1824 -317 -1823 l=70 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "clk" 140 0 "vlatchm" 200 0 "vlatchp" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -446 -1824 -445 -1823 l=70 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "clk" 140 0 "vlatchp" 200 0 "vlatchm" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -574 -1824 -573 -1823 l=70 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "clk" 140 0 "vlatchm" 200 0 "vlatchp" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -702 -1824 -701 -1823 l=70 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "clk" 140 0 "vlatchp" 200 0 "vlatchm" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -830 -1824 -829 -1823 l=70 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "clk" 140 0 "vlatchm" 200 0 "vlatchp" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -958 -1824 -957 -1823 l=70 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "clk" 140 0 "vlatchp" 200 0 "vlatchm" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -1086 -1824 -1085 -1823 l=70 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "clk" 140 0 "vlatchm" 200 0 "vlatchp" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -1214 -1824 -1213 -1823 l=70 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/VPWR" 140 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0 "vlatchm" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 2318 -1119 2319 -1118 l=30 w=130 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_3/A" 60 0 "sky130_fd_sc_hd__inv_1_3/Y" 130 0 "sky130_fd_sc_hd__inv_1_3/VGND" 130 0
+device msubckt sky130_fd_pr__nfet_01v8 2042 -1119 2043 -1118 l=30 w=130 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_3/Y" 60 0 "sky130_fd_sc_hd__inv_1_2/Y" 130 0 "sky130_fd_sc_hd__inv_1_3/VGND" 130 0
+device msubckt sky130_fd_pr__nfet_01v8 1803 -1119 1804 -1118 l=30 w=130 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_2/Y" 60 0 "a_1749_n1119#" 130 0 "sky130_fd_sc_hd__inv_1_3/VGND" 130 0
+device msubckt sky130_fd_pr__nfet_01v8 1719 -1119 1720 -1118 l=30 w=130 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__nand2_1_0/Y" 60 0 "sky130_fd_sc_hd__nand2_1_0/A" 130 0 "a_1749_n1119#" 130 0
+device msubckt sky130_fd_pr__nfet_01v8 1345 -1119 1346 -1118 l=30 w=130 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__nand2_1_0/A" 60 0 "a_1291_n1119#" 130 0 "sky130_fd_sc_hd__nand2_1_0/Y" 130 0
+device msubckt sky130_fd_pr__nfet_01v8 1261 -1119 1262 -1118 l=30 w=130 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_1/Y" 60 0 "sky130_fd_sc_hd__inv_1_3/VGND" 130 0 "a_1291_n1119#" 130 0
+device msubckt sky130_fd_pr__nfet_01v8 1022 -1119 1023 -1118 l=30 w=130 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_1/A" 60 0 "sky130_fd_sc_hd__inv_1_3/VGND" 130 0 "sky130_fd_sc_hd__inv_1_1/Y" 130 0
+device msubckt sky130_fd_pr__nfet_01v8 746 -1119 747 -1118 l=30 w=130 "sky130_fd_sc_hd__inv_1_3/VGND" "sky130_fd_sc_hd__inv_1_0/A" 60 0 "sky130_fd_sc_hd__inv_1_3/VGND" 130 0 "sky130_fd_sc_hd__inv_1_1/A" 130 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt 2318 -869 2319 -868 l=30 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/A" 60 0 "sky130_fd_sc_hd__inv_1_3/Y" 200 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt 2042 -869 2043 -868 l=30 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/Y" 60 0 "sky130_fd_sc_hd__inv_1_2/Y" 200 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt 1803 -869 1804 -868 l=30 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_2/Y" 60 0 "sky130_fd_sc_hd__nand2_1_0/A" 200 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt 1719 -869 1720 -868 l=30 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__nand2_1_0/Y" 60 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0 "sky130_fd_sc_hd__nand2_1_0/A" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt 1345 -869 1346 -868 l=30 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__nand2_1_0/A" 60 0 "sky130_fd_sc_hd__nand2_1_0/Y" 200 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt 1261 -869 1262 -868 l=30 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_1/Y" 60 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0 "sky130_fd_sc_hd__nand2_1_0/Y" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt 1022 -869 1023 -868 l=30 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_1/A" 60 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0 "sky130_fd_sc_hd__inv_1_1/Y" 200 0
+device msubckt sky130_fd_pr__pfet_01v8_hvt 746 -869 747 -868 l=30 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_0/A" 60 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0 "sky130_fd_sc_hd__inv_1_1/A" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 2186 -170 2187 -169 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 0 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 800 0
+device msubckt sky130_fd_pr__pfet_01v8 1928 -170 1929 -169 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "clk" 400 0 "sky130_fd_sc_hd__inv_1_0/A" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 1670 -170 1671 -169 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/A" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_0/A" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 1412 -170 1413 -169 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_0/A" 400 0 "sky130_fd_sc_hd__inv_1_3/A" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 1154 -170 1155 -169 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_0/A" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_3/A" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 896 -170 897 -169 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/A" 400 0 "sky130_fd_sc_hd__inv_1_0/A" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 638 -170 639 -169 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_0/A" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 2186 690 2187 691 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 0 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 800 0
+device msubckt sky130_fd_pr__pfet_01v8 1928 690 1929 691 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "clk" 400 0 "sky130_fd_sc_hd__inv_1_3/A" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 1670 690 1671 691 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_0/A" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_3/A" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 1412 690 1413 691 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/A" 400 0 "sky130_fd_sc_hd__inv_1_0/A" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 1154 690 1155 691 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/A" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_0/A" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 896 690 897 691 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_0/A" 400 0 "sky130_fd_sc_hd__inv_1_3/A" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 638 690 639 691 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_3/A" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -609 -853 -608 -852 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "vlatchm" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -867 -853 -866 -852 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vip" 400 0 "vtailp" 400 0 "vlatchm" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -1125 -853 -1124 -852 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vim" 400 0 "vlatchp" 400 0 "vtailp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -1383 -853 -1382 -852 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vim" 400 0 "vtailp" 400 0 "vlatchp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -1641 -853 -1640 -852 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vip" 400 0 "vlatchm" 400 0 "vtailp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -1899 -853 -1898 -852 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vip" 400 0 "vtailp" 400 0 "vlatchm" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -2157 -853 -2156 -852 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vim" 400 0 "vlatchp" 400 0 "vtailp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -2415 -853 -2414 -852 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vim" 400 0 "vtailp" 400 0 "vlatchp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -2673 -853 -2672 -852 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vip" 400 0 "vlatchm" 400 0 "vtailp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -2931 -853 -2930 -852 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "vlatchm" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -609 7 -608 8 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "vlatchp" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -867 7 -866 8 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vim" 400 0 "vtailp" 400 0 "vlatchp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -1125 7 -1124 8 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vip" 400 0 "vlatchm" 400 0 "vtailp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -1383 7 -1382 8 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vip" 400 0 "vtailp" 400 0 "vlatchm" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -1641 7 -1640 8 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vim" 400 0 "vlatchp" 400 0 "vtailp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -1899 7 -1898 8 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vim" 400 0 "vtailp" 400 0 "vlatchp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -2157 7 -2156 8 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vip" 400 0 "vlatchm" 400 0 "vtailp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -2415 7 -2414 8 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vip" 400 0 "vtailp" 400 0 "vlatchm" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -2673 7 -2672 8 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "vim" 400 0 "vlatchp" 400 0 "vtailp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8_lvt -2931 7 -2930 8 l=200 w=400 "sky130_fd_sc_hd__inv_1_3/VPWR" "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 400 0 "vlatchp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 -700 1090 -699 1091 l=400 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "vtailp" 800 0 "vtailp" 0 0 "vtailp" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 -1158 1090 -1157 1091 l=400 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "ibiasp" 800 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0 "vtailp" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 -1616 1090 -1615 1091 l=400 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "ibiasp" 800 0 "ibiasp" 200 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 -2074 1090 -2073 1091 l=400 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "ibiasp" 800 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0 "ibiasp" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 -2532 1090 -2531 1091 l=400 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "ibiasp" 800 0 "vtailp" 200 0 "sky130_fd_sc_hd__inv_1_3/VPWR" 200 0
+device msubckt sky130_fd_pr__pfet_01v8 -2990 1090 -2989 1091 l=400 w=200 "sky130_fd_sc_hd__inv_1_3/VPWR" "vtailp" 800 0 "vtailp" 400 0 "vtailp" 0 0
+subcap "vim" -3633.97
+subcap "clk" -13427.5
+subcap "sky130_fd_sc_hd__inv_1_1/A" -762.412
+subcap "a_1749_n1119#" -11.1051
+subcap "a_1291_n1119#" -11.1051
+subcap "sky130_fd_sc_hd__inv_1_3/Y" -574.279
+subcap "sky130_fd_sc_hd__inv_1_2/Y" -405.594
+subcap "sky130_fd_sc_hd__nand2_1_0/Y" -162.521
+subcap "sky130_fd_sc_hd__nand2_1_0/A" -540.593
+subcap "sky130_fd_sc_hd__inv_1_1/Y" -406.453
+subcap "vip" -4993.53
+subcap "ibiasp" -2606.7

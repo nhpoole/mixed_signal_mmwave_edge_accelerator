@@ -1,0 +1,33 @@
+* NGSPICE file created from dff_stdcell_flat.ext - technology: sky130A
+
+.subckt dff_stdcell_flat D CLK Q QB VDD VSS
+X0 a_682_55# a_514_309# VDD sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=2.19e+11p pd=2.15e+06u as=1.32905e+12p ps=1.228e+07u w=750000u l=150000u
+X1 VSS a_939_309# a_1107_211# sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=9.432e+11p pd=1.006e+07u as=1.69e+11p ps=1.82e+06u w=650000u l=150000u
+X2 a_241_n57# a_75_n57# VDD sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=1.664e+11p pd=1.8e+06u as=0p ps=0u w=640000u l=150000u
+X3 a_939_309# a_75_n57# a_682_55# sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=1.134e+11p pd=1.38e+06u as=0p ps=0u w=420000u l=150000u
+X4 a_1065_n57# a_75_n57# a_939_309# sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=1.32e+11p pd=1.49e+06u as=1.368e+11p ps=1.48e+06u w=360000u l=150000u
+X5 VDD a_1107_211# a_1023_309# sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=1.764e+11p ps=1.68e+06u w=420000u l=150000u
+X6 Q a_1107_211# VSS sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=1.69e+11p pd=1.82e+06u as=0p ps=0u w=650000u l=150000u
+X7 VSS a_682_55# a_640_n57# sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=1.392e+11p ps=1.53e+06u w=420000u l=150000u
+X8 VDD a_939_309# a_1107_211# sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=2.7e+11p ps=2.54e+06u w=1e+06u l=150000u
+X9 VDD a_682_55# a_609_309# sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=1.533e+11p ps=1.57e+06u w=420000u l=150000u
+X10 VDD a_1107_211# a_1538_265# sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=1.664e+11p ps=1.8e+06u w=640000u l=150000u
+X11 QB a_1538_265# VDD sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=2.6e+11p pd=2.52e+06u as=0p ps=0u w=1e+06u l=150000u
+X12 VSS a_1107_211# a_1065_n57# sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X13 a_241_n57# a_75_n57# VSS sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=1.092e+11p pd=1.36e+06u as=0p ps=0u w=420000u l=150000u
+X14 a_640_n57# a_241_n57# a_514_309# sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=1.242e+11p ps=1.41e+06u w=360000u l=150000u
+X15 Q a_1107_211# VDD sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=2.6e+11p pd=2.52e+06u as=0p ps=0u w=1e+06u l=150000u
+X16 QB a_1538_265# VSS sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=1.69e+11p pd=1.82e+06u as=0p ps=0u w=650000u l=150000u
+X17 a_429_n57# D VSS sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=1.626e+11p pd=1.66e+06u as=0p ps=0u w=420000u l=150000u
+X18 a_609_309# a_75_n57# a_514_309# sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=1.365e+11p ps=1.49e+06u w=420000u l=150000u
+X19 VSS CLK a_75_n57# sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=1.092e+11p ps=1.36e+06u w=420000u l=150000u
+X20 a_429_n57# D VDD sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=1.155e+11p pd=1.39e+06u as=0p ps=0u w=420000u l=150000u
+X21 a_1023_309# a_241_n57# a_939_309# sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X22 VSS a_1107_211# a_1538_265# sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=1.092e+11p ps=1.36e+06u w=420000u l=150000u
+X23 VDD CLK a_75_n57# sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=1.664e+11p ps=1.8e+06u w=640000u l=150000u
+X24 a_514_309# a_241_n57# a_429_n57# sky130_fd_sc_hd__dfxbp_1_0/VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+X25 a_682_55# a_514_309# VSS sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=1.978e+11p pd=1.99e+06u as=0p ps=0u w=640000u l=150000u
+X26 a_514_309# a_75_n57# a_429_n57# sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=360000u l=150000u
+X27 a_939_309# a_241_n57# a_682_55# sky130_fd_sc_hd__dfxbp_1_0/VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=360000u l=150000u
+.ends
+

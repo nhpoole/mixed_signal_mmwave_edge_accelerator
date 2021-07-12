@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/input_amplifier_lvs.spice input_amplifier_lvs" "input_amplifier_lvs_layout.spice input_amplifier_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

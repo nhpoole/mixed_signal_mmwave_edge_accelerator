@@ -1,0 +1,67 @@
+* NGSPICE file created from comparator_flat.ext - technology: sky130A
+
+.subckt comparator_flat vip vim vo ibiasn VDD VSS
+X0 vcompm vip vtail VSS sky130_fd_pr__nfet_01v8_lvt ad=1.45e+12p pd=1.29e+07u as=2.61e+12p ps=2.322e+07u w=1e+06u l=1e+06u
+X1 vo1 vmirror VSS VSS sky130_fd_pr__nfet_01v8 ad=1.16e+12p pd=1.032e+07u as=2.32e+12p ps=2.006e+07u w=1e+06u l=1e+06u
+X2 vcompm vcompm VDD VDD sky130_fd_pr__pfet_01v8 ad=1.16e+12p pd=1.032e+07u as=6.38e+12p ps=5.502e+07u w=1e+06u l=1e+06u
+X3 vmirror vcompm VDD VDD sky130_fd_pr__pfet_01v8 ad=1.45e+12p pd=1.29e+07u as=0p ps=0u w=1e+06u l=1e+06u
+X4 VDD vcompm vmirror VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X5 vcompm vcompm vcompm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X6 vcompm vcompp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X7 vcompm vcompp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X8 VDD vcompm vcompp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=1.16e+12p ps=1.032e+07u w=1e+06u l=1e+06u
+X9 vtail vtail vtail VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X10 ibiasn ibiasn ibiasn VSS sky130_fd_pr__nfet_01v8 ad=1.45e+12p pd=1.29e+07u as=0p ps=0u w=1e+06u l=4e+06u
+X11 vo1 vo1 vo1 VDD sky130_fd_pr__pfet_01v8 ad=1.45e+12p pd=1.29e+07u as=0p ps=0u w=1e+06u l=1e+06u
+X12 vo1 vo1 vo1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X13 VDD vcompm vcompm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X14 vcompp vcompm VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X15 vmirror vmirror VSS VSS sky130_fd_pr__nfet_01v8 ad=2.9e+11p pd=2.58e+06u as=0p ps=0u w=1e+06u l=1e+06u
+X16 VDD vcompp vcompm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X17 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X18 vtail vip vcompm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X19 vo1 vcompp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X20 vcompm vip vtail VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X21 VDD vcompp vcompm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X22 VDD vcompm vmirror VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X23 ibiasn ibiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X24 vtail ibiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X25 vcompp vim vtail VSS sky130_fd_pr__nfet_01v8_lvt ad=5.8e+11p pd=5.16e+06u as=0p ps=0u w=1e+06u l=1e+06u
+X26 vcompp vim vtail VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X27 vtail vtail vtail VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X28 ibiasn ibiasn ibiasn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X29 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X30 vcompp vcompm VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X31 vo1 vcompp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X32 vtail vim vcompp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X33 VSS vmirror vmirror VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X34 vcompp vcompp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X35 VSS ibiasn vtail VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X36 VSS ibiasn ibiasn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X37 vcompp vcompp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X38 vo1 vo1 vo1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X39 vo1 vo1 vo1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X40 vtail ibiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X41 ibiasn ibiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X42 VDD vcompp vo1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X43 VDD vcompm vcompp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X44 vcompm vcompm VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X45 VDD vcompm vcompm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X46 vmirror vmirror vmirror VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X47 vmirror vmirror vmirror VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X48 vcompm vcompm vcompm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X49 VSS ibiasn ibiasn VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X50 VDD vcompp vcompp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X51 vmirror vcompm VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X52 VSS ibiasn vtail VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X53 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X54 VSS vmirror vo1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X55 VDD vcompp vo1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X56 VDD vcompp vcompp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X57 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X58 vo vo1 VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=1.16e+12p pd=8.58e+06u as=0p ps=0u w=4e+06u l=1e+06u
+X59 vtail vip vcompm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X60 vtail vim vcompp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X61 vo vo1 VSS VSS sky130_fd_pr__nfet_01v8 ad=5.8e+11p pd=4.58e+06u as=0p ps=0u w=2e+06u l=1e+06u
+.ends
+

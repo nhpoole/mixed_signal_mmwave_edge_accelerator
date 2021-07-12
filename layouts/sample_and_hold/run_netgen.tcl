@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/sample_and_hold_lvs.spice sample_and_hold_lvs" "sample_and_hold_lvs_layout.spice sample_and_hold_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/biquad_gm_c_filter_lvs.spice biquad_gm_c_filter_lvs" "biquad_gm_c_filter_lvs_layout.spice biquad_gm_c_filter_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

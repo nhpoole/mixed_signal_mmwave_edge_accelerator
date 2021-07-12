@@ -1,0 +1,60 @@
+timestamp 1624252453
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+parameters sky130_fd_pr__nfet_g5v0d10v5 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__nfet_20v0 l=l w=w a1=as a2=ad p1=ps p2=pd
+parameters sky130_fd_pr__pfet_g5v0d10v5 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_20v0 l=l w=w a1=as a2=ad p1=ps p2=pd
+port "clamp" 1 -2400 -284 -2397 284 m2
+port "VDD" 2 -2376 2812 -2370 2816 m2
+port "VSS" 3 -2392 -2814 -2386 -2808 m2
+node "clamp" 65959 29212.6 -2400 -284 m2 0 0 0 0 0 0 0 0 0 0 0 0 580000 21160 580000 21160 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 685440 41680 1888000 53880 2476880 12380 0 0 0 0 0 0 0 0
+node "VDD" 85972 110498 -2376 2812 m2 0 0 0 0 13248000 39120 0 0 0 0 0 0 4524928 49184 638000 23276 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2351040 51760 0 0 4469676 82828 9102856 91812 5821984 15400 0 0 0 0 0 0 0 0
+substrate "VSS" 0 0 -2392 -2814 m2 0 0 13248000 39120 0 0 0 0 0 0 0 0 638000 23276 4524928 49184 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2315040 51040 0 0 4469676 82828 8932976 91672 5821984 15400 0 0 0 0 0 0 0 0
+cap "clamp" "VDD" 27955.7
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 1451 -1900 1452 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "clamp" 1000 0 "VSS" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 1293 -1900 1294 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "VSS" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 1135 -1900 1136 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "clamp" 1000 0 "VSS" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 977 -1900 978 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "VSS" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 819 -1900 820 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "clamp" 1000 0 "VSS" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 661 -1900 662 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "VSS" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 503 -1900 504 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "clamp" 1000 0 "VSS" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 345 -1900 346 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "VSS" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 187 -1900 188 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "clamp" 1000 0 "VSS" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 29 -1900 30 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "VSS" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -129 -1900 -128 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "clamp" 1000 0 "VSS" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -287 -1900 -286 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "VSS" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -445 -1900 -444 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "clamp" 1000 0 "VSS" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -603 -1900 -602 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "VSS" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -761 -1900 -760 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "clamp" 1000 0 "VSS" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -919 -1900 -918 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "VSS" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -1077 -1900 -1076 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "clamp" 1000 0 "VSS" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -1235 -1900 -1234 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "VSS" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -1393 -1900 -1392 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "clamp" 1000 0 "VSS" 1000 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -1551 -1900 -1550 -1899 l=100 w=1000 "VSS" "VSS" 200 0 "VSS" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 1451 900 1452 901 l=100 w=1000 "VDD" "VDD" 200 0 "clamp" 1000 0 "VDD" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 1293 900 1294 901 l=100 w=1000 "VDD" "VDD" 200 0 "VDD" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 1135 900 1136 901 l=100 w=1000 "VDD" "VDD" 200 0 "clamp" 1000 0 "VDD" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 977 900 978 901 l=100 w=1000 "VDD" "VDD" 200 0 "VDD" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 819 900 820 901 l=100 w=1000 "VDD" "VDD" 200 0 "clamp" 1000 0 "VDD" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 661 900 662 901 l=100 w=1000 "VDD" "VDD" 200 0 "VDD" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 503 900 504 901 l=100 w=1000 "VDD" "VDD" 200 0 "clamp" 1000 0 "VDD" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 345 900 346 901 l=100 w=1000 "VDD" "VDD" 200 0 "VDD" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 187 900 188 901 l=100 w=1000 "VDD" "VDD" 200 0 "clamp" 1000 0 "VDD" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 29 900 30 901 l=100 w=1000 "VDD" "VDD" 200 0 "VDD" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -129 900 -128 901 l=100 w=1000 "VDD" "VDD" 200 0 "clamp" 1000 0 "VDD" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -287 900 -286 901 l=100 w=1000 "VDD" "VDD" 200 0 "VDD" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -445 900 -444 901 l=100 w=1000 "VDD" "VDD" 200 0 "clamp" 1000 0 "VDD" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -603 900 -602 901 l=100 w=1000 "VDD" "VDD" 200 0 "VDD" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -761 900 -760 901 l=100 w=1000 "VDD" "VDD" 200 0 "clamp" 1000 0 "VDD" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -919 900 -918 901 l=100 w=1000 "VDD" "VDD" 200 0 "VDD" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1077 900 -1076 901 l=100 w=1000 "VDD" "VDD" 200 0 "clamp" 1000 0 "VDD" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1235 900 -1234 901 l=100 w=1000 "VDD" "VDD" 200 0 "VDD" 1000 0 "clamp" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1393 900 -1392 901 l=100 w=1000 "VDD" "VDD" 200 0 "clamp" 1000 0 "VDD" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1551 900 -1550 901 l=100 w=1000 "VDD" "VDD" 200 0 "VDD" 1000 0 "clamp" 1000 0
+subcap "VSS" -19205.3
+subcap "clamp" -28978
+subcap "VDD" -110494

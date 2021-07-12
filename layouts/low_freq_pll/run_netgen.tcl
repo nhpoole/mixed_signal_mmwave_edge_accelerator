@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/low_freq_pll_block_lvs.spice low_freq_pll_block_lvs" "low_freq_pll_lvs_layout.spice low_freq_pll_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/pulse_generator_lvs.spice pulse_generator_lvs" "pulse_generator_lvs_layout.spice pulse_generator_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

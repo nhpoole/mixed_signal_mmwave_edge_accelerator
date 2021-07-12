@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/diff_fold_casc_ota_lvs.spice diff_fold_casc_ota_lvs" "diff_fold_casc_ota_lvs_layout.spice diff_fold_casc_ota_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

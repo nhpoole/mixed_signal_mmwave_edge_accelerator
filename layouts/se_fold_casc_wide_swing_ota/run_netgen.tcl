@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/se_fold_casc_wide_swing_ota_lvs.spice se_fold_casc_wide_swing_ota_lvs" "se_fold_casc_wide_swing_ota_lvs_layout.spice se_fold_casc_wide_swing_ota_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

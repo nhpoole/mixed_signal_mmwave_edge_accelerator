@@ -1,0 +1,72 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1624494425
+<< error_s >>
+rect 1422 679 1458 1471
+<< locali >>
+rect 0 1396 2518 1432
+rect 1819 724 1853 885
+rect 1819 698 2015 724
+rect 1658 690 2015 698
+rect 2240 690 2359 724
+rect 1658 664 1853 690
+rect 2325 503 2359 690
+rect 0 -18 2518 18
+<< metal1 >>
+rect 1805 859 1869 911
+rect 1507 655 1571 707
+rect 2310 477 2374 529
+<< metal2 >>
+rect 1822 871 1850 899
+rect 369 692 423 756
+rect 1513 661 1565 681
+rect 1115 609 1565 661
+rect 137 538 203 590
+rect 2328 489 2356 517
+use pinv_3  pinv_3_0
+timestamp 1624494425
+transform 1 0 1934 0 1 0
+box -36 -17 620 1471
+use pinv_2  pinv_2_0
+timestamp 1624494425
+transform 1 0 1458 0 1 0
+box -36 -17 512 1471
+use contact_8  contact_8_0
+timestamp 1624494425
+transform 1 0 1804 0 1 853
+box 0 0 64 64
+use contact_7  contact_7_0
+timestamp 1624494425
+transform 1 0 1808 0 1 852
+box 0 0 58 66
+use contact_8  contact_8_1
+timestamp 1624494425
+transform 1 0 2310 0 1 471
+box 0 0 64 64
+use contact_7  contact_7_1
+timestamp 1624494425
+transform 1 0 2313 0 1 470
+box 0 0 58 66
+use contact_8  contact_8_2
+timestamp 1624494425
+transform 1 0 1507 0 1 649
+box 0 0 64 64
+use contact_7  contact_7_2
+timestamp 1624494425
+transform 1 0 1510 0 1 648
+box 0 0 58 66
+use sky130_fd_bd_sram__openram_dff  sky130_fd_bd_sram__openram_dff_0
+timestamp 1624494425
+transform 1 0 0 0 1 0
+box -36 -43 1204 1467
+<< labels >>
+rlabel locali s 1259 1414 1259 1414 4 vdd
+rlabel locali s 1259 0 1259 0 4 gnd
+rlabel metal2 s 369 692 423 756 4 clk
+rlabel metal2 s 137 538 203 590 4 D
+rlabel metal2 s 2328 489 2356 517 4 Q
+rlabel metal2 s 1822 871 1850 899 4 Qb
+<< properties >>
+string FIXED_BBOX 0 0 2518 1414
+<< end >>

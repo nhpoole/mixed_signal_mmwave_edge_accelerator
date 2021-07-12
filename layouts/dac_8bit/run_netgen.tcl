@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/dac_8bit_lvs.spice dac_8bit_lvs" "dac_8bit_lvs_layout.spice dac_8bit_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

@@ -1,0 +1,214 @@
+timestamp 1622760105
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+port "dac_8bit_ibiasp_B" 21 5264 -9132 5274 -9118 m2
+port "dac_8bit_ibiasp_A" 20 5934 -9020 5950 -9006 m2
+port "vbiasn" 19 6620 -9826 6626 -9814 m2
+port "dac_8bit_ibiasn_B" 12 6058 -6832 6082 -6816 m2
+port "sample_and_hold_ibiasn_B" 11 4048 -5194 4060 -5174 m2
+port "dac_8bit_ibiasn_A" 10 2324 -5298 2344 -5282 m2
+port "sample_and_hold_ibiasn_A" 9 1210 -3580 1234 -3554 m2
+port "peak_detector_ibiasn2" 8 1524 -3460 1542 -3444 m2
+port "peak_detector_ibiasn1" 7 6342 -3576 6354 -3558 m2
+port "diff_to_se_converter_ibiasn" 6 5342 -3304 5356 -3294 m1
+port "input_amplifier_ibiasn2" 5 3948 -3460 3954 -3444 m2
+port "input_amplifier_ibiasn1" 4 3240 -3356 3256 -3342 m2
+port "comparator_ibiasn" 13 1436 -74 1454 -64 m2
+port "biquad_gm_c_filter_ibiasn1" 14 2212 16 2228 34 m2
+port "biquad_gm_c_filter_ibiasn2" 15 5890 -90 5904 -74 m2
+port "biquad_gm_c_filter_ibiasn3" 16 5340 180 5354 186 m1
+port "biquad_gm_c_filter_ibiasn4" 17 3796 12 3814 26 m2
+port "low_freq_pll_ibiasn" 18 2170 120 2190 138 m2
+port "vbiasp" 3 3562 -6966 3574 -6948 m2
+port "VDD" 1 -414 2968 -398 2984 m4
+port "VSS" 2 -398 -10890 -382 -10872 m4
+node "dac_8bit_ibiasp_B" 3517 4419.94 5264 -9132 m2 0 0 0 0 0 0 0 0 69600 2748 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 41616 2652 158256 6248 242400 8320 0 0 0 0 0 0 0 0
+node "dac_8bit_ibiasp_A" 3510 1444.24 5934 -9020 m2 0 0 0 0 0 0 0 0 69600 2748 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 41616 2652 97796 4108 115560 3972 0 0 0 0 0 0 0 0
+node "vbiasn" 3428 9478.52 6620 -9826 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1765056 15616 0 0 137088 9152 271768 11604 178080 6176 0 0 0 0 0 0 0 0
+node "dac_8bit_ibiasn_B" 9463 840.78 6058 -6832 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 138700 5904 108120 3724 0 0 0 0 0 0 0 0
+node "sample_and_hold_ibiasn_B" 9471 2179.02 4048 -5194 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 149844 6296 313800 10580 0 0 0 0 0 0 0 0
+node "dac_8bit_ibiasn_A" 9478 3297.5 2324 -5298 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 137004 5840 519960 17452 0 0 0 0 0 0 0 0
+node "sample_and_hold_ibiasn_A" 9491 5726.34 1210 -3580 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 271740 10440 762600 25660 0 0 0 0 0 0 0 0
+node "peak_detector_ibiasn2" 9490 5440.16 1524 -3460 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 255452 9884 737400 24820 0 0 0 0 0 0 0 0
+node "peak_detector_ibiasn1" 9464 1073.66 6342 -3576 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 158796 6544 115800 3980 0 0 0 0 0 0 0 0
+node "diff_to_se_converter_ibiasn" 9463 937.95 5342 -3304 m1 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 248652 9440 0 0 0 0 0 0 0 0 0 0
+node "input_amplifier_ibiasn2" 9471 2217.56 3948 -3460 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 150080 6288 314160 10592 0 0 0 0 0 0 0 0
+node "input_amplifier_ibiasn1" 9478 3438.54 3240 -3356 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 150892 6288 519960 17452 0 0 0 0 0 0 0 0
+node "comparator_ibiasn" 9491 5682.06 1436 -74 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 265260 10224 762600 25660 0 0 0 0 0 0 0 0
+node "biquad_gm_c_filter_ibiasn1" 9490 5156.44 2212 16 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 258332 9980 737400 24820 0 0 0 0 0 0 0 0
+node "biquad_gm_c_filter_ibiasn2" 9464 1073.66 5890 -90 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 158796 6544 115800 3980 0 0 0 0 0 0 0 0
+node "biquad_gm_c_filter_ibiasn3" 9463 937.95 5340 180 m1 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 248652 9440 0 0 0 0 0 0 0 0 0 0
+node "biquad_gm_c_filter_ibiasn4" 9471 2217.56 3796 12 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 150080 6288 314160 10592 0 0 0 0 0 0 0 0
+node "low_freq_pll_ibiasn" 9478 3438.54 2170 120 m2 0 0 0 0 0 0 0 0 0 0 139200 5032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82144 4968 150892 6288 519960 17452 0 0 0 0 0 0 0 0
+node "vbiasp" 61 77724.3 3562 -6966 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 65692320 263280 0 0 2007360 126240 3695568 151784 2300568 77164 0 0 0 0 0 0 0 0
+node "VDD" 4056 513547 -414 2968 m4 0 0 0 0 137558016 47184 0 0 4649600 92992 3132000 113220 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10948720 43880 0 0 6832400 225812 14794320 331516 4866120 78536 3774600 36592 10512000 27880 0 0 0 0
+substrate "VSS" 0 0 -398 -10890 m4 0 0 40682496 32344 0 0 0 0 185600 7328 3165600 63312 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 882528 7808 0 0 3345120 74960 6455156 97108 2185620 13268 2126140 11192 10512000 27880 0 0 0 0
+cap "sample_and_hold_ibiasn_B" "dac_8bit_ibiasn_A" 4996.38
+cap "sample_and_hold_ibiasn_A" "dac_8bit_ibiasn_A" 5.88068
+cap "VDD" "vbiasp" 38986.8
+cap "low_freq_pll_ibiasn" "comparator_ibiasn" 58.6322
+cap "biquad_gm_c_filter_ibiasn3" "VDD" 107.429
+cap "biquad_gm_c_filter_ibiasn4" "peak_detector_ibiasn2" 5.91429
+cap "input_amplifier_ibiasn1" "peak_detector_ibiasn2" 2078.97
+cap "peak_detector_ibiasn2" "input_amplifier_ibiasn2" 171.035
+cap "sample_and_hold_ibiasn_A" "input_amplifier_ibiasn1" 58.6322
+cap "sample_and_hold_ibiasn_B" "input_amplifier_ibiasn2" 8.69748
+cap "vbiasp" "biquad_gm_c_filter_ibiasn1" 3099.54
+cap "peak_detector_ibiasn1" "input_amplifier_ibiasn1" 761.289
+cap "sample_and_hold_ibiasn_A" "low_freq_pll_ibiasn" 14.375
+cap "peak_detector_ibiasn1" "input_amplifier_ibiasn2" 2268.5
+cap "input_amplifier_ibiasn1" "diff_to_se_converter_ibiasn" 81.06
+cap "input_amplifier_ibiasn2" "diff_to_se_converter_ibiasn" 426.378
+cap "biquad_gm_c_filter_ibiasn3" "vbiasp" 696.325
+cap "VDD" "dac_8bit_ibiasn_A" 848.674
+cap "VDD" "biquad_gm_c_filter_ibiasn4" 351.491
+cap "VDD" "dac_8bit_ibiasn_B" 606.908
+cap "VDD" "input_amplifier_ibiasn1" 986.109
+cap "VDD" "input_amplifier_ibiasn2" 666.029
+cap "VDD" "biquad_gm_c_filter_ibiasn2" 127.87
+cap "VDD" "low_freq_pll_ibiasn" 775.894
+cap "vbiasp" "dac_8bit_ibiasn_A" 3811.05
+cap "sample_and_hold_ibiasn_B" "peak_detector_ibiasn2" 8.69748
+cap "biquad_gm_c_filter_ibiasn4" "biquad_gm_c_filter_ibiasn1" 171.035
+cap "sample_and_hold_ibiasn_A" "peak_detector_ibiasn2" 6024.26
+cap "vbiasn" "dac_8bit_ibiasp_B" 1524.18
+cap "biquad_gm_c_filter_ibiasn4" "vbiasp" 586.265
+cap "vbiasp" "dac_8bit_ibiasn_B" 1791.09
+cap "biquad_gm_c_filter_ibiasn3" "biquad_gm_c_filter_ibiasn4" 426.378
+cap "peak_detector_ibiasn1" "diff_to_se_converter_ibiasn" 322.226
+cap "input_amplifier_ibiasn1" "vbiasp" 981.911
+cap "low_freq_pll_ibiasn" "biquad_gm_c_filter_ibiasn1" 2078.97
+cap "vbiasp" "input_amplifier_ibiasn2" 586.265
+cap "vbiasp" "biquad_gm_c_filter_ibiasn2" 303.528
+cap "dac_8bit_ibiasp_A" "dac_8bit_ibiasp_B" 2015.88
+cap "low_freq_pll_ibiasn" "vbiasp" 981.911
+cap "VDD" "comparator_ibiasn" 6656.1
+cap "biquad_gm_c_filter_ibiasn3" "biquad_gm_c_filter_ibiasn2" 322.226
+cap "biquad_gm_c_filter_ibiasn3" "low_freq_pll_ibiasn" 81.06
+cap "VDD" "peak_detector_ibiasn2" 3184.93
+cap "VDD" "sample_and_hold_ibiasn_B" 526.954
+cap "VDD" "sample_and_hold_ibiasn_A" 2625.54
+cap "biquad_gm_c_filter_ibiasn1" "comparator_ibiasn" 9486.17
+cap "VDD" "peak_detector_ibiasn1" 1366.93
+cap "VDD" "diff_to_se_converter_ibiasn" 238.721
+cap "vbiasp" "comparator_ibiasn" 7291.99
+cap "input_amplifier_ibiasn1" "dac_8bit_ibiasn_A" 5.88068
+cap "biquad_gm_c_filter_ibiasn4" "biquad_gm_c_filter_ibiasn2" 2268.5
+cap "vbiasp" "peak_detector_ibiasn2" 10059.9
+cap "sample_and_hold_ibiasn_B" "vbiasp" 6714.68
+cap "sample_and_hold_ibiasn_A" "vbiasp" 11703.6
+cap "biquad_gm_c_filter_ibiasn4" "low_freq_pll_ibiasn" 6309.63
+cap "peak_detector_ibiasn1" "vbiasp" 303.528
+cap "dac_8bit_ibiasp_A" "vbiasn" 701.158
+cap "input_amplifier_ibiasn1" "input_amplifier_ibiasn2" 6309.63
+cap "vbiasp" "diff_to_se_converter_ibiasn" 696.325
+cap "low_freq_pll_ibiasn" "biquad_gm_c_filter_ibiasn2" 761.289
+cap "VDD" "biquad_gm_c_filter_ibiasn1" 4899.51
+device msubckt sky130_fd_pr__nfet_01v8 7246 -9660 7247 -9659 l=400 w=400 "VSS" "VSS" 800 0 "dac_8bit_ibiasp_B" 400 0 "VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 6788 -9660 6789 -9659 l=400 w=400 "VSS" "vbiasn" 800 0 "VSS" 400 0 "dac_8bit_ibiasp_B" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 6330 -9660 6331 -9659 l=400 w=400 "VSS" "vbiasn" 800 0 "dac_8bit_ibiasp_A" 400 0 "VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 5872 -9660 5873 -9659 l=400 w=400 "VSS" "vbiasn" 800 0 "VSS" 400 0 "dac_8bit_ibiasp_A" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 5414 -9660 5415 -9659 l=400 w=400 "VSS" "vbiasn" 800 0 "dac_8bit_ibiasp_B" 400 0 "VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 4956 -9660 4957 -9659 l=400 w=400 "VSS" "VSS" 800 0 "VSS" 400 0 "dac_8bit_ibiasp_B" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 7246 -8860 7247 -8859 l=400 w=400 "VSS" "VSS" 800 0 "dac_8bit_ibiasp_A" 400 0 "VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 6788 -8860 6789 -8859 l=400 w=400 "VSS" "vbiasn" 800 0 "VSS" 400 0 "dac_8bit_ibiasp_A" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 6330 -8860 6331 -8859 l=400 w=400 "VSS" "vbiasn" 800 0 "dac_8bit_ibiasp_B" 400 0 "VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 5872 -8860 5873 -8859 l=400 w=400 "VSS" "vbiasn" 800 0 "VSS" 400 0 "dac_8bit_ibiasp_B" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 5414 -8860 5415 -8859 l=400 w=400 "VSS" "vbiasn" 800 0 "dac_8bit_ibiasp_A" 400 0 "VSS" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 4956 -8860 4957 -8859 l=400 w=400 "VSS" "VSS" 800 0 "VSS" 400 0 "dac_8bit_ibiasp_A" 400 0
+device msubckt sky130_fd_pr__pfet_01v8 11386 -6656 11387 -6655 l=800 w=1200 "VDD" "VDD" 1600 0 "VDD" 0 0 "VDD" 2400 0
+device msubckt sky130_fd_pr__pfet_01v8 10528 -6656 10529 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "dac_8bit_ibiasn_A" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 9670 -6656 9671 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "dac_8bit_ibiasn_A" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 8812 -6656 8813 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "sample_and_hold_ibiasn_B" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 7954 -6656 7955 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "sample_and_hold_ibiasn_B" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 7096 -6656 7097 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "dac_8bit_ibiasn_B" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 6238 -6656 6239 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "dac_8bit_ibiasn_B" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 5380 -6656 5381 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "dac_8bit_ibiasn_B" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 4522 -6656 4523 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "dac_8bit_ibiasn_B" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 3664 -6656 3665 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "sample_and_hold_ibiasn_B" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 2806 -6656 2807 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "sample_and_hold_ibiasn_B" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 1948 -6656 1949 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "dac_8bit_ibiasn_A" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 1090 -6656 1091 -6655 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "dac_8bit_ibiasn_A" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 232 -6656 233 -6655 l=800 w=1200 "VDD" "VDD" 1600 0 "VDD" 2400 0 "VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 11386 -4916 11387 -4915 l=800 w=1200 "VDD" "VDD" 1600 0 "VDD" 0 0 "VDD" 2400 0
+device msubckt sky130_fd_pr__pfet_01v8 10528 -4916 10529 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "input_amplifier_ibiasn1" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 9670 -4916 9671 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "input_amplifier_ibiasn1" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 8812 -4916 8813 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "input_amplifier_ibiasn2" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 7954 -4916 7955 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "input_amplifier_ibiasn2" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 7096 -4916 7097 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "diff_to_se_converter_ibiasn" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 6238 -4916 6239 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "diff_to_se_converter_ibiasn" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 5380 -4916 5381 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "peak_detector_ibiasn1" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 4522 -4916 4523 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "peak_detector_ibiasn1" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 3664 -4916 3665 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "peak_detector_ibiasn2" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 2806 -4916 2807 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "peak_detector_ibiasn2" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 1948 -4916 1949 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "sample_and_hold_ibiasn_A" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 1090 -4916 1091 -4915 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "sample_and_hold_ibiasn_A" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 232 -4916 233 -4915 l=800 w=1200 "VDD" "VDD" 1600 0 "VDD" 2400 0 "VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 11386 -3176 11387 -3175 l=800 w=1200 "VDD" "VDD" 1600 0 "VDD" 0 0 "VDD" 2400 0
+device msubckt sky130_fd_pr__pfet_01v8 10528 -3176 10529 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "sample_and_hold_ibiasn_A" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 9670 -3176 9671 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "sample_and_hold_ibiasn_A" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 8812 -3176 8813 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "peak_detector_ibiasn2" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 7954 -3176 7955 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "peak_detector_ibiasn2" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 7096 -3176 7097 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "peak_detector_ibiasn1" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 6238 -3176 6239 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "peak_detector_ibiasn1" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 5380 -3176 5381 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "diff_to_se_converter_ibiasn" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 4522 -3176 4523 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "diff_to_se_converter_ibiasn" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 3664 -3176 3665 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "input_amplifier_ibiasn2" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 2806 -3176 2807 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "input_amplifier_ibiasn2" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 1948 -3176 1949 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "input_amplifier_ibiasn1" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 1090 -3176 1091 -3175 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "input_amplifier_ibiasn1" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 232 -3176 233 -3175 l=800 w=1200 "VDD" "VDD" 1600 0 "VDD" 2400 0 "VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 11386 -1436 11387 -1435 l=800 w=1200 "VDD" "VDD" 1600 0 "VDD" 0 0 "VDD" 2400 0
+device msubckt sky130_fd_pr__pfet_01v8 10528 -1436 10529 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "low_freq_pll_ibiasn" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 9670 -1436 9671 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "low_freq_pll_ibiasn" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 8812 -1436 8813 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "biquad_gm_c_filter_ibiasn4" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 7954 -1436 7955 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "biquad_gm_c_filter_ibiasn4" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 7096 -1436 7097 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "biquad_gm_c_filter_ibiasn3" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 6238 -1436 6239 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "biquad_gm_c_filter_ibiasn3" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 5380 -1436 5381 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "biquad_gm_c_filter_ibiasn2" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 4522 -1436 4523 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "biquad_gm_c_filter_ibiasn2" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 3664 -1436 3665 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "biquad_gm_c_filter_ibiasn1" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 2806 -1436 2807 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "biquad_gm_c_filter_ibiasn1" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 1948 -1436 1949 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "comparator_ibiasn" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 1090 -1436 1091 -1435 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "comparator_ibiasn" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 232 -1436 233 -1435 l=800 w=1200 "VDD" "VDD" 1600 0 "VDD" 2400 0 "VDD" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 11386 304 11387 305 l=800 w=1200 "VDD" "VDD" 1600 0 "VDD" 0 0 "VDD" 2400 0
+device msubckt sky130_fd_pr__pfet_01v8 10528 304 10529 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "comparator_ibiasn" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 9670 304 9671 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "comparator_ibiasn" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 8812 304 8813 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "biquad_gm_c_filter_ibiasn1" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 7954 304 7955 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "biquad_gm_c_filter_ibiasn1" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 7096 304 7097 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "biquad_gm_c_filter_ibiasn2" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 6238 304 6239 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "biquad_gm_c_filter_ibiasn2" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 5380 304 5381 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "biquad_gm_c_filter_ibiasn3" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 4522 304 4523 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "biquad_gm_c_filter_ibiasn3" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 3664 304 3665 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "biquad_gm_c_filter_ibiasn4" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 2806 304 2807 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "biquad_gm_c_filter_ibiasn4" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 1948 304 1949 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "low_freq_pll_ibiasn" 1200 0 "VDD" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 1090 304 1091 305 l=800 w=1200 "VDD" "vbiasp" 1600 0 "VDD" 1200 0 "low_freq_pll_ibiasn" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 232 304 233 305 l=800 w=1200 "VDD" "VDD" 1600 0 "VDD" 2400 0 "VDD" 0 0
+subcap "VSS" -48315.7
+subcap "vbiasn" -9471.11
+subcap "dac_8bit_ibiasp_B" -4088.07
+subcap "dac_8bit_ibiasp_A" -1166.44
+subcap "vbiasp" -77712
+subcap "dac_8bit_ibiasn_B" -824.38
+subcap "dac_8bit_ibiasn_A" -3282.74
+subcap "sample_and_hold_ibiasn_B" -2165.9
+subcap "sample_and_hold_ibiasn_A" -5582.02
+subcap "peak_detector_ibiasn2" -5299.94
+subcap "input_amplifier_ibiasn1" -3426.24
+subcap "input_amplifier_ibiasn2" -2208.54
+subcap "peak_detector_ibiasn1" -600.52
+subcap "diff_to_se_converter_ibiasn" -444.31
+subcap "comparator_ibiasn" -5436.88
+subcap "biquad_gm_c_filter_ibiasn1" -4831.72
+subcap "low_freq_pll_ibiasn" -3241.33
+subcap "biquad_gm_c_filter_ibiasn4" -2204.44
+subcap "biquad_gm_c_filter_ibiasn2" -788.3
+subcap "biquad_gm_c_filter_ibiasn3" -627.99
+subcap "VDD" -513536

@@ -1,0 +1,437 @@
+* NGSPICE file created from comparator_flat.ext - technology: sky130A
+
+.subckt comparator_flat vip vim vo ibiasn VDD VSS
+X0 vcompm.t21 vip.t0 vtail VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=2.61e+12p ps=2.322e+07u w=1e+06u l=1e+06u
+X1 vo1.t1 vmirror.t14 VSS.t4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X2 vcompm.t5 vcompm.t4 VDD.t36 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X3 vmirror.t12 vcompm.t22 VDD.t35 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X4 VDD.t34 vcompm.t23 vmirror.t13 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X5 vcompm.t15 vcompm.t13 vcompm.t14 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X6 vcompm.t3 vcompp VDD.t23 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X7 vcompm.t1 vcompp VDD.t22 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X8 VDD.t33 vcompm.t24 vcompp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=1.16e+12p ps=1.032e+07u w=1e+06u l=1e+06u
+X9 vtail.t11 vtail.t9 vtail.t10 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X10 ibiasn.t5 ibiasn.t3 ibiasn.t4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X11 vo1.t17 vo1.t15 vo1.t16 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X12 vo1.t14 vo1.t12 vo1.t13 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X13 VDD.t32 vcompm.t6 vcompm.t7 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X14 vcompp vcompm.t25 VDD.t31 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X15 vmirror.t9 vmirror.t8 VSS.t11 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X16 VDD.t21 vcompp vcompm.t2 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X17 VDD.t11 VDD.t9 VDD.t10 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X18 vtail vip.t1 vcompm.t20 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X19 vo1.t4 vcompp VDD.t20 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X20 vcompm.t19 vip.t2 vtail VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X21 VDD.t19 vcompp vcompm.t0 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X22 VDD.t30 vcompm.t26 vmirror.t10 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X23 ibiasn.t13 ibiasn.t12 VSS.t5 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X24 vtail.t3 ibiasn.t14 VSS.t7 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X25 vcompp vim.t0 vtail.t2 VSS sky130_fd_pr__nfet_01v8_lvt ad=5.8e+11p pd=5.16e+06u as=0p ps=0u w=1e+06u l=1e+06u
+X26 vcompp vim.t1 vtail VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X27 vtail.t8 vtail.t6 vtail.t7 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X28 ibiasn.t2 ibiasn.t0 ibiasn.t1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X29 VDD.t8 VDD.t6 VDD.t7 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X30 vcompp vcompm.t27 VDD.t29 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X31 vo1.t2 vcompp VDD.t18 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X32 vtail vim.t2 vcompp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X33 VSS.t3 vmirror.t6 vmirror.t7 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X34 vcompp vcompp VDD.t17 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X35 VSS.t0 ibiasn.t15 vtail.t0 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X36 VSS.t8 ibiasn.t10 ibiasn.t11 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X37 vcompp vcompp VDD.t16 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X38 vo1.t11 vo1.t9 vo1.t10 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X39 vo1.t8 vo1.t6 vo1.t7 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X40 vtail.t5 ibiasn.t16 VSS.t12 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X41 ibiasn.t9 ibiasn.t8 VSS.t2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X42 VDD.t15 vcompp vo1.t3 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X43 VDD.t28 vcompm.t28 vcompp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X44 vcompm.t17 vcompm.t16 VDD.t27 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X45 VDD.t26 vcompm.t8 vcompm.t9 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X46 vmirror.t5 vmirror.t3 vmirror.t4 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X47 vmirror.t2 vmirror.t0 vmirror.t1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X48 vcompm.t12 vcompm.t10 vcompm.t11 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X49 VSS.t9 ibiasn.t6 ibiasn.t7 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X50 VDD.t14 vcompp vcompp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X51 vmirror.t11 vcompm.t29 VDD.t25 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X52 VSS.t1 ibiasn.t17 vtail.t1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=4e+06u
+X53 VDD.t5 VDD.t3 VDD.t4 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X54 VSS.t6 vmirror.t15 vo1.t0 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X55 VDD.t13 vcompp vo1.t5 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X56 VDD.t12 vcompp vcompp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X57 VDD.t2 VDD.t0 VDD.t1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X58 vo.t0 vo1.t18 VDD.t24 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=4e+06u l=1e+06u
+X59 vtail.t4 vip.t3 vcompm.t18 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X60 vtail vim.t3 vcompp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X61 vo.t1 vo1.t19 VSS.t10 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+R0 vip.n0 vip.t0 26.044
+R1 vip vip.t3 24.768
+R2 vip.n1 vip.t2 24.419
+R3 vip.n0 vip.t1 24.419
+R4 vip vip.n1 1.233
+R5 vip.n1 vip.n0 0.529
+R6 vtail.t9 vtail.t10 17.914
+R7 vtail.n0 vtail.t8 17.43
+R8 vtail.n2 vtail.t1 17.4
+R9 vtail.n2 vtail.t3 17.4
+R10 vtail.n3 vtail.t11 17.4
+R11 vtail.n3 vtail.t5 17.4
+R12 vtail.n4 vtail.t0 17.4
+R13 vtail.n4 vtail.t7 17.4
+R14 vtail.n1 vtail.t2 17.4
+R15 vtail.n1 vtail.t4 17.4
+R16 vtail.n2 vtail 7.204
+R17 vtail.n0 vtail.n2 7.049
+R18 vtail.n1 vtail.n0 3.015
+R19 vtail.n0 vtail.t6 2.408
+R20 vtail.t9 vtail.n3 2.318
+R21 vtail vtail.n1 1.926
+R22 vtail vtail.t9 1.705
+R23 vtail.t6 vtail.n4 1.394
+R24 vcompm.n8 vcompm.t2 28.565
+R25 vcompm.n8 vcompm.t17 28.565
+R26 vcompm.n7 vcompm.t9 28.565
+R27 vcompm.n7 vcompm.t3 28.565
+R28 vcompm.n0 vcompm.t0 28.565
+R29 vcompm.n0 vcompm.t5 28.565
+R30 vcompm.n9 vcompm.t7 28.565
+R31 vcompm.n9 vcompm.t1 28.565
+R32 vcompm.t28 vcompm.n12 26.952
+R33 vcompm.t4 vcompm.n6 26.619
+R34 vcompm.n14 vcompm.t25 24.687
+R35 vcompm.n17 vcompm.t8 24.687
+R36 vcompm.n18 vcompm.t27 24.687
+R37 vcompm.n13 vcompm.t6 24.687
+R38 vcompm.n21 vcompm.t29 24.654
+R39 vcompm.n22 vcompm.t23 24.654
+R40 vcompm.n20 vcompm.t26 24.417
+R41 vcompm.n14 vcompm.t16 24.37
+R42 vcompm.n17 vcompm.t24 24.37
+R43 vcompm.n18 vcompm.t4 24.37
+R44 vcompm.n13 vcompm.t28 24.37
+R45 vcompm vcompm.t10 24.366
+R46 vcompm.n1 vcompm.t13 24.366
+R47 vcompm vcompm.t22 24.315
+R48 vcompm.n1 vcompm.t14 18.23
+R49 vcompm vcompm.t12 18.138
+R50 vcompm.n4 vcompm.t20 17.4
+R51 vcompm.n4 vcompm.t19 17.4
+R52 vcompm.n10 vcompm.t18 17.4
+R53 vcompm.n10 vcompm.t11 17.4
+R54 vcompm.n2 vcompm.t15 17.4
+R55 vcompm.n2 vcompm.t21 17.4
+R56 vcompm.n20 vcompm.n19 2.911
+R57 vcompm.n6 vcompm.n5 1.795
+R58 vcompm.n16 vcompm.n15 1.075
+R59 vcompm.n12 vcompm.n11 0.98
+R60 vcompm.n16 vcompm.n7 0.905
+R61 vcompm.n5 vcompm.n4 0.862
+R62 vcompm vcompm.n9 0.812
+R63 vcompm vcompm.n22 0.631
+R64 vcompm.n15 vcompm.n8 0.588
+R65 vcompm.n19 vcompm.n0 0.583
+R66 vcompm.n3 vcompm.n2 0.56
+R67 vcompm.n11 vcompm.n10 0.556
+R68 vcompm.n18 vcompm.n17 0.541
+R69 vcompm.n22 vcompm.n21 0.537
+R70 vcompm.n21 vcompm.n20 0.537
+R71 vcompm.n14 vcompm.n13 0.537
+R72 vcompm.n6 vcompm.n3 0.522
+R73 vcompm.n11 vcompm 0.361
+R74 vcompm.n13 vcompm 0.351
+R75 vcompm.n17 vcompm.n16 0.275
+R76 vcompm.n3 vcompm.n1 0.27
+R77 vcompm.n19 vcompm.n18 0.258
+R78 vcompm.n15 vcompm.n14 0.254
+R79 VSS.n17 VSS.n16 25.01
+R80 VSS.n24 VSS.n23 25.01
+R81 VSS.n37 VSS.t7 17.4
+R82 VSS.n37 VSS.t8 17.4
+R83 VSS.n36 VSS.t5 17.4
+R84 VSS.n36 VSS.t0 17.4
+R85 VSS.n8 VSS.t12 17.4
+R86 VSS.n8 VSS.t9 17.4
+R87 VSS.n10 VSS.t2 17.4
+R88 VSS.n10 VSS.t1 17.4
+R89 VSS.n0 VSS.t11 17.4
+R90 VSS.n0 VSS.t6 17.4
+R91 VSS.n1 VSS.t4 17.4
+R92 VSS.n1 VSS.t3 17.4
+R93 VSS.n4 VSS.t10 9.404
+R94 VSS.n31 VSS.n30 3.956
+R95 VSS.n17 VSS.n15 3.53
+R96 VSS.n22 VSS.n13 3.002
+R97 VSS VSS.n12 2.762
+R98 VSS.n26 VSS.n24 2.15
+R99 VSS.n19 VSS.n17 2.15
+R100 VSS.n28 VSS.n26 1.749
+R101 VSS.n21 VSS.n19 1.749
+R102 VSS.n7 VSS.n5 1.609
+R103 VSS.n21 VSS.n20 1.365
+R104 VSS.n28 VSS.n27 1.365
+R105 VSS.n3 VSS.n2 1.075
+R106 VSS.n7 VSS.n6 0.986
+R107 VSS.n38 VSS.n36 0.931
+R108 VSS.n11 VSS.n9 0.928
+R109 VSS.n9 VSS.n7 0.836
+R110 VSS.n33 VSS.n32 0.829
+R111 VSS.n35 VSS.n33 0.824
+R112 VSS.n3 VSS.n0 0.819
+R113 VSS.n2 VSS.n1 0.819
+R114 VSS VSS.n39 0.787
+R115 VSS.n5 VSS.n4 0.629
+R116 VSS.n7 VSS.n3 0.629
+R117 VSS.n12 VSS.n11 0.567
+R118 VSS.n39 VSS.n38 0.549
+R119 VSS.n32 VSS.n12 0.477
+R120 VSS.n39 VSS.n35 0.477
+R121 VSS.n33 VSS.n29 0.172
+R122 VSS.n33 VSS.n22 0.17
+R123 VSS.n29 VSS.n28 0.083
+R124 VSS.n22 VSS.n21 0.083
+R125 VSS.n38 VSS.n37 0.03
+R126 VSS.n9 VSS.n8 0.03
+R127 VSS.n11 VSS.n10 0.03
+R128 VSS.n32 VSS.n31 0.008
+R129 VSS.n35 VSS.n34 0.007
+R130 VSS.n19 VSS.n18 0.001
+R131 VSS.n15 VSS.n14 0.001
+R132 VSS.n26 VSS.n25 0.001
+R133 vmirror.n9 vmirror.t5 29.415
+R134 vmirror.n8 vmirror.t1 29.41
+R135 vmirror.n0 vmirror.t10 28.565
+R136 vmirror.n0 vmirror.t4 28.565
+R137 vmirror.n1 vmirror.t2 28.565
+R138 vmirror.n1 vmirror.t12 28.565
+R139 vmirror.n6 vmirror.t13 28.565
+R140 vmirror.n6 vmirror.t11 28.565
+R141 vmirror.n3 vmirror.t14 24.904
+R142 vmirror vmirror.t15 24.637
+R143 vmirror.n4 vmirror.t8 24.367
+R144 vmirror.n3 vmirror.t6 24.367
+R145 vmirror.n8 vmirror.t0 24.365
+R146 vmirror.n9 vmirror.t3 24.36
+R147 vmirror.n2 vmirror.t7 17.4
+R148 vmirror.n2 vmirror.t9 17.4
+R149 vmirror vmirror.n10 4.991
+R150 vmirror.n10 vmirror.n1 2.922
+R151 vmirror.n7 vmirror.n5 2.064
+R152 vmirror.n7 vmirror.n6 0.873
+R153 vmirror.n1 vmirror.n8 0.82
+R154 vmirror.n10 vmirror.n0 0.802
+R155 vmirror.n0 vmirror.n9 0.778
+R156 vmirror vmirror.n7 0.666
+R157 vmirror.n5 vmirror.n2 0.534
+R158 vmirror.n4 vmirror 0.275
+R159 vmirror.n5 vmirror.n3 0.266
+R160 vmirror.n5 vmirror.n4 0.262
+R161 vo1.n12 vo1.t18 98.509
+R162 vo1.n3 vo1.t19 49.31
+R163 vo1.n15 vo1.t17 29.42
+R164 vo1.n1 vo1.t13 29.391
+R165 vo1.n14 vo1.t3 28.565
+R166 vo1.n14 vo1.t4 28.565
+R167 vo1.n2 vo1.t14 28.565
+R168 vo1.n2 vo1.t2 28.565
+R169 vo1.n0 vo1.t5 28.565
+R170 vo1.n0 vo1.t16 28.565
+R171 vo1.n15 vo1.t15 24.364
+R172 vo1.n1 vo1.t12 24.343
+R173 vo1.n4 vo1.t9 24.317
+R174 vo1.n7 vo1.t6 24.317
+R175 vo1.n7 vo1.t7 18.189
+R176 vo1 vo1.t11 18.049
+R177 vo1.n5 vo1.t0 17.4
+R178 vo1.n5 vo1.t10 17.4
+R179 vo1.n8 vo1.t8 17.4
+R180 vo1.n8 vo1.t1 17.4
+R181 vo1.n12 vo1.n11 2.55
+R182 vo1.n9 vo1.n6 2.154
+R183 vo1.n11 vo1.n10 1.866
+R184 vo1.n16 vo1.n0 1.631
+R185 vo1.n13 vo1.n12 1.045
+R186 vo1.n10 vo1.n9 1.045
+R187 vo1.n16 vo1.n14 0.897
+R188 vo1.n0 vo1.n15 0.808
+R189 vo1 vo1.n16 0.737
+R190 vo1.n11 vo1.n3 0.625
+R191 vo1.n13 vo1.n2 0.568
+R192 vo1.n9 vo1.n8 0.513
+R193 vo1.n6 vo1.n5 0.508
+R194 vo1 vo1.n13 0.333
+R195 vo1.n13 vo1.n1 0.275
+R196 vo1.n9 vo1.n7 0.27
+R197 vo1.n6 vo1.n4 0.262
+R198 vo1.n4 vo1 0.133
+R199 VDD.n18 VDD.t11 29.275
+R200 VDD.n26 VDD.t1 29.257
+R201 VDD.n19 VDD.t5 28.595
+R202 VDD.n27 VDD.t7 28.595
+R203 VDD.n13 VDD.t22 28.565
+R204 VDD.n13 VDD.t4 28.565
+R205 VDD.n14 VDD.t16 28.565
+R206 VDD.n14 VDD.t10 28.565
+R207 VDD.n10 VDD.t31 28.565
+R208 VDD.n10 VDD.t32 28.565
+R209 VDD.n11 VDD.t27 28.565
+R210 VDD.n11 VDD.t28 28.565
+R211 VDD.n7 VDD.t23 28.565
+R212 VDD.n7 VDD.t14 28.565
+R213 VDD.n8 VDD.t17 28.565
+R214 VDD.n8 VDD.t21 28.565
+R215 VDD.n4 VDD.t29 28.565
+R216 VDD.n4 VDD.t26 28.565
+R217 VDD.n5 VDD.t36 28.565
+R218 VDD.n5 VDD.t33 28.565
+R219 VDD.n1 VDD.t2 28.565
+R220 VDD.n1 VDD.t19 28.565
+R221 VDD.n0 VDD.t8 28.565
+R222 VDD.n0 VDD.t12 28.565
+R223 VDD.n28 VDD.t20 28.565
+R224 VDD.n28 VDD.t30 28.565
+R225 VDD.n29 VDD.t25 28.565
+R226 VDD.n29 VDD.t13 28.565
+R227 VDD.n31 VDD.t35 28.565
+R228 VDD.n31 VDD.t15 28.565
+R229 VDD.n32 VDD.t18 28.565
+R230 VDD.n32 VDD.t34 28.565
+R231 VDD.n25 VDD.t6 24.493
+R232 VDD.n15 VDD.t3 24.485
+R233 VDD.n15 VDD.t9 24.468
+R234 VDD.n25 VDD.t0 24.46
+R235 VDD.n39 VDD.n38 20.618
+R236 VDD.n47 VDD.n46 20.618
+R237 VDD.n34 VDD.t24 10.106
+R238 VDD.n47 VDD.n45 3.53
+R239 VDD.n53 VDD.n52 3.002
+R240 VDD.n54 VDD.n53 3.002
+R241 VDD.n43 VDD.n42 1.818
+R242 VDD.n51 VDD.n50 1.818
+R243 VDD.n33 VDD.n32 1.479
+R244 VDD.n9 VDD.n8 1.471
+R245 VDD.n12 VDD.n11 1.467
+R246 VDD.n30 VDD.n29 1.467
+R247 VDD.n6 VDD.n5 1.462
+R248 VDD.n49 VDD.n47 1.369
+R249 VDD.n41 VDD.n39 1.369
+R250 VDD.n20 VDD.n19 1.317
+R251 VDD.n35 VDD.n30 1.079
+R252 VDD.n34 VDD.n33 1.079
+R253 VDD.n20 VDD.n17 1.077
+R254 VDD.n21 VDD.n12 1.077
+R255 VDD.n22 VDD.n9 1.077
+R256 VDD.n23 VDD.n6 1.077
+R257 VDD.n24 VDD.n3 1.077
+R258 VDD.n36 VDD.n27 1.077
+R259 VDD.n51 VDD.n49 0.968
+R260 VDD.n43 VDD.n41 0.968
+R261 VDD.n36 VDD.n35 0.882
+R262 VDD.n16 VDD.n14 0.689
+R263 VDD.n2 VDD.n1 0.675
+R264 VDD.n3 VDD.n2 0.656
+R265 VDD.n27 VDD.n26 0.656
+R266 VDD.n19 VDD.n18 0.647
+R267 VDD.n17 VDD.n16 0.647
+R268 VDD.n23 VDD.n22 0.492
+R269 VDD.n21 VDD.n20 0.492
+R270 VDD.n35 VDD.n34 0.49
+R271 VDD.n22 VDD.n21 0.486
+R272 VDD.n24 VDD.n23 0.484
+R273 VDD.n26 VDD.n25 0.279
+R274 VDD.n16 VDD.n15 0.266
+R275 VDD.n37 VDD.n24 0.239
+R276 VDD.n52 VDD.n37 0.174
+R277 VDD VDD.n37 0.093
+R278 VDD.n52 VDD.n51 0.083
+R279 VDD.n54 VDD.n43 0.083
+R280 VDD VDD.n54 0.072
+R281 VDD.n17 VDD.n13 0.03
+R282 VDD.n12 VDD.n10 0.03
+R283 VDD.n9 VDD.n7 0.03
+R284 VDD.n6 VDD.n4 0.03
+R285 VDD.n3 VDD.n0 0.03
+R286 VDD.n30 VDD.n28 0.03
+R287 VDD.n33 VDD.n31 0.03
+R288 VDD.n37 VDD.n36 0.004
+R289 VDD.n41 VDD.n40 0.001
+R290 VDD.n45 VDD.n44 0.001
+R291 VDD.n49 VDD.n48 0.001
+R292 ibiasn.n21 ibiasn.n20 138.295
+R293 ibiasn.n23 ibiasn.n22 138.294
+R294 ibiasn.n26 ibiasn.t2 17.911
+R295 ibiasn.n15 ibiasn.t4 17.43
+R296 ibiasn.n4 ibiasn.t7 17.4
+R297 ibiasn.n4 ibiasn.t13 17.4
+R298 ibiasn.n24 ibiasn.t11 17.4
+R299 ibiasn.n24 ibiasn.t1 17.4
+R300 ibiasn.n13 ibiasn.t5 17.4
+R301 ibiasn.n13 ibiasn.t9 17.4
+R302 ibiasn.n27 ibiasn.n26 5.176
+R303 ibiasn.n16 ibiasn.n15 5.127
+R304 ibiasn.n17 ibiasn.n16 1.816
+R305 ibiasn.n14 ibiasn.n13 1.423
+R306 ibiasn.n25 ibiasn.n24 1.384
+R307 ibiasn.n15 ibiasn.n14 1.334
+R308 ibiasn ibiasn.n27 0.929
+R309 ibiasn.n26 ibiasn.n25 0.912
+R310 ibiasn.n18 ibiasn.n17 0.887
+R311 ibiasn.n19 ibiasn.n18 0.887
+R312 ibiasn ibiasn.n19 0.837
+R313 ibiasn.n18 ibiasn.n4 0.622
+R314 ibiasn.n27 ibiasn.n23 0.253
+R315 ibiasn.n19 ibiasn.n3 0.253
+R316 ibiasn.n17 ibiasn.n8 0.253
+R317 ibiasn.n16 ibiasn.n12 0.253
+R318 ibiasn.n21 ibiasn.t10 0.251
+R319 ibiasn.n0 ibiasn.t14 0.25
+R320 ibiasn.n6 ibiasn.t17 0.25
+R321 ibiasn.n9 ibiasn.t8 0.25
+R322 ibiasn.n25 ibiasn.t0 0.156
+R323 ibiasn.n14 ibiasn.t3 0.156
+R324 ibiasn.n3 ibiasn.n2 0.003
+R325 ibiasn.n12 ibiasn.n11 0.003
+R326 ibiasn.n23 ibiasn.n20 0.003
+R327 ibiasn.n7 ibiasn.n6 0.002
+R328 ibiasn.n8 ibiasn.n7 0.002
+R329 ibiasn.n1 ibiasn.n0 0.002
+R330 ibiasn.n10 ibiasn.n9 0.002
+R331 ibiasn.n22 ibiasn.n21 0.002
+R332 ibiasn.t15 ibiasn.n20 0.001
+R333 ibiasn.n22 ibiasn.t15 0.001
+R334 ibiasn.t12 ibiasn.n1 0.001
+R335 ibiasn.t16 ibiasn.n10 0.001
+R336 ibiasn.t6 ibiasn.n5 0.001
+R337 ibiasn.n2 ibiasn.t12 0.001
+R338 ibiasn.n11 ibiasn.t16 0.001
+R339 ibiasn.n7 ibiasn.t6 0.001
+R340 vim.n0 vim.t3 24.939
+R341 vim.n1 vim.t0 24.934
+R342 vim.n1 vim.t2 24.402
+R343 vim.n0 vim.t1 24.402
+R344 vim vim.n0 0.845
+R345 vim vim.n1 0.733
+R346 vo vo.t1 10.933
+R347 vo vo.t0 9.555
+C0 VDD vcompm 5.99fF
+C1 vmirror vcompm 1.29fF
+C2 vcompp vtail 0.30fF
+C3 vim vtail 2.08fF
+C4 vo VDD 0.56fF
+C5 vip vcompm 2.61fF
+C6 vo1 vcompp 1.27fF
+C7 vtail ibiasn 4.69fF
+C8 vim vcompp 0.28fF
+C9 VDD vo1 2.00fF
+C10 vip vtail 0.28fF
+C11 vo1 vmirror 1.16fF
+C12 vcompm vtail 0.31fF
+C13 VDD vcompp 9.64fF
+C14 vmirror vcompp 2.84fF
+C15 vo1 vcompm 1.42fF
+C16 vip vcompp 0.57fF
+C17 vim vip 0.51fF
+C18 VDD vmirror 2.51fF
+C19 vo vo1 1.45fF
+C20 vcompm vcompp 7.44fF
+C21 vim vcompm 0.06fF
+.ends
+

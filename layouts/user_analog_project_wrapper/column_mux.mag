@@ -1,0 +1,75 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1624494425
+<< poly >>
+rect 297 630 327 684
+rect 297 28 327 54
+<< locali >>
+rect 80 1243 379 1277
+rect 345 972 379 1243
+rect 245 73 279 342
+rect 245 39 558 73
+<< metal1 >>
+rect 80 1260 108 1316
+rect 248 412 276 972
+rect 544 832 572 1316
+rect 80 384 276 412
+rect 348 804 572 832
+rect 80 0 108 384
+rect 348 342 376 804
+rect 544 0 572 56
+<< metal2 >>
+rect 596 639 652 687
+<< metal3 >>
+rect 575 614 673 712
+use nmos_m1_w2_880_sli_dli  nmos_m1_w2_880_sli_dli_1
+timestamp 1624494425
+transform 1 0 237 0 1 54
+box -26 -26 176 602
+use contact_7  contact_7_1
+timestamp 1624494425
+transform 1 0 333 0 1 309
+box 0 0 58 66
+use contact_7  contact_7_3
+timestamp 1624494425
+transform 1 0 529 0 1 23
+box 0 0 58 66
+use contact_7  contact_7_0
+timestamp 1624494425
+transform 1 0 595 0 1 630
+box 0 0 58 66
+use contact_8  contact_8_0
+timestamp 1624494425
+transform 1 0 592 0 1 631
+box 0 0 64 64
+use contact_9  contact_9_0
+timestamp 1624494425
+transform 1 0 591 0 1 626
+box 0 0 66 74
+use contact_14  contact_14_0
+timestamp 1624494425
+transform 1 0 599 0 1 622
+box -26 -26 76 108
+use contact_7  contact_7_4
+timestamp 1624494425
+transform 1 0 65 0 1 1227
+box 0 0 58 66
+use contact_7  contact_7_2
+timestamp 1624494425
+transform 1 0 233 0 1 939
+box 0 0 58 66
+use nmos_m1_w2_880_sli_dli  nmos_m1_w2_880_sli_dli_0
+timestamp 1624494425
+transform 1 0 237 0 1 684
+box -26 -26 176 602
+<< labels >>
+rlabel poly s 312 41 312 41 4 sel
+rlabel metal1 s 80 1260 108 1316 4 bl
+rlabel metal1 s 544 1260 572 1316 4 br
+rlabel metal1 s 80 0 108 56 4 bl_out
+rlabel metal1 s 544 0 572 56 4 br_out
+rlabel metal3 s 575 614 673 712 4 gnd
+<< properties >>
+string FIXED_BBOX 0 0 624 1316
+<< end >>

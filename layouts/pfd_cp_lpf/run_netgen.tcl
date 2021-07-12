@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/pfd_cp_lpf_lvs.spice pfd_cp_lpf_lvs" "pfd_cp_lpf_lvs_layout.spice pfd_cp_lpf_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

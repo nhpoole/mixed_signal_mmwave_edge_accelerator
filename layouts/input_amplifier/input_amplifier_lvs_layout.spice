@@ -1,0 +1,1402 @@
+* NGSPICE file created from input_amplifier_flat.ext - technology: sky130A
+
+.subckt input_amplifier_flat VDD VSS vincm vhpf gain_ctrl_0 gain_ctrl_1 vocm ibiasn1
++ vom vop ibiasn2 rst_n
+X0 diff_fold_casc_ota_0/vcmcn2_casc vocm diff_fold_casc_ota_0/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1 venm2 vip2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X2 vop1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X3 vop VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X4 VSS diff_fold_casc_ota_0/vbias4 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X5 vop diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X6 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X7 diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X8 diff_fold_casc_ota_1/M6d diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X9 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X10 VDD diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X11 diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X12 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X13 diff_fold_casc_ota_1/vcmn_casc_tail2 diff_fold_casc_ota_1/vcmn_casc_tail2 diff_fold_casc_ota_1/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X14 vom1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X15 VSS VSS diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X16 VDD rst txgate_7/txb VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X17 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X18 VSS diff_fold_casc_ota_1/vbias4 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X19 VDD diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X20 VDD diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X21 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X22 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias3 vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X23 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X24 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X25 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X26 diff_fold_casc_ota_1/M6d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X27 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X28 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X29 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X30 VDD VDD vom VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X31 diff_fold_casc_ota_0/vfoldp vim1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X32 a_15554_5588# diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X33 diff_fold_casc_ota_1/vfoldp vim2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X34 vip1 txgate_5/txb vincm VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X35 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X36 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X37 vom diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vfoldm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X38 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X39 diff_fold_casc_ota_0/vcmn_casc_tail1 vocm diff_fold_casc_ota_0/vcmcn1_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X40 VSS ibiasn1 ibiasn1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X41 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X42 vop1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X43 VSS VSS vip2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X44 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X45 venm2 txgate_2/txb vom VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X46 VDD gain_ctrl_0 txgate_1/txb VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X47 vim2 txgate_6/txb vop1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X48 diff_fold_casc_ota_1/vtail_casc vip2 diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X49 diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vbias2 vop VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X50 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X51 diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/M2d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X52 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X53 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X54 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X55 diff_fold_casc_ota_0/vtail_casc vip1 diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X56 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X57 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias3 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X58 diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M3d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X59 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X60 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X61 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X62 diff_fold_casc_ota_0/vfoldp vim1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X63 diff_fold_casc_ota_0/vtail_casc vip1 diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X64 venp2 vim2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X65 diff_fold_casc_ota_1/vcmcn1_casc vocm diff_fold_casc_ota_1/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X66 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X67 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X68 a_69554_5588# diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X69 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X70 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X71 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X72 vom1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X73 vop diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X74 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X75 diff_fold_casc_ota_1/vcmn_casc_tail2 ibiasn2 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X76 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X77 a_15554_5588# diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X78 vop1 vim1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X79 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X80 diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X81 diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/M2d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X82 diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X83 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X84 ibiasn2 ibiasn2 ibiasn2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X85 vom diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vfoldm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X86 diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X87 diff_fold_casc_ota_0/vtail_casc vim1 diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X88 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X89 VDD diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X90 VDD diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X91 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X92 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X93 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X94 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X95 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X96 vom1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X97 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X98 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X99 diff_fold_casc_ota_0/vcmn_casc_tail2 diff_fold_casc_ota_0/vcmn_casc_tail2 diff_fold_casc_ota_0/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X100 vom VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X101 diff_fold_casc_ota_1/M6d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X102 vip2 vom1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X103 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X104 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X105 vop1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X106 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X107 diff_fold_casc_ota_0/M6d diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X108 diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X109 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X110 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X111 vim2 vop1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X112 diff_fold_casc_ota_1/vcmn_casc_tail2 vom diff_fold_casc_ota_1/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X113 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X114 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X115 a_69554_5588# diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X116 vincm txgate_4/txb vim1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X117 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X118 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X119 vom1 txgate_7/txb vip2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X120 diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X121 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X122 diff_fold_casc_ota_0/vfoldp vim1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X123 venp1 vop1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X124 VDD diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X125 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X126 VSS diff_fold_casc_ota_0/vbias4 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X127 VDD diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X128 vop diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X129 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X130 venm1 vom1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X131 vom VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X132 diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M3d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X133 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X134 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X135 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X136 diff_fold_casc_ota_0/vcmn_casc_tail1 ibiasn1 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X137 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X138 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias3 vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X139 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X140 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X141 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/M1d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X142 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X143 venm1 txgate_0/txb vip2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X144 vom1 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vfoldm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X145 diff_fold_casc_ota_0/vcmcn1_casc vocm diff_fold_casc_ota_0/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X146 diff_fold_casc_ota_0/vbias2 ibiasn1 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X147 diff_fold_casc_ota_1/vfoldm vip2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X148 VDD rst txgate_4/txb VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X149 VSS VSS vim2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X150 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias3 vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X151 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X152 VDD rst txgate_6/txb VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X153 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X154 vip2 vom1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X155 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X156 diff_fold_casc_ota_1/M6d diff_fold_casc_ota_1/M6d diff_fold_casc_ota_1/M6d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X157 vop diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vfoldp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X158 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X159 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/M2d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X160 diff_fold_casc_ota_1/M3d VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X161 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X162 VDD VDD diff_fold_casc_ota_1/M6d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X163 a_69554_5588# diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X164 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X165 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X166 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X167 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X168 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X169 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X170 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vbias2 vom VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X171 diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X172 diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X173 vip2 txgate_0/txb venm1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X174 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X175 diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X176 diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M3d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X177 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X178 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X179 diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X180 diff_fold_casc_ota_1/vtail_casc vim2 diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X181 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X182 diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X183 VSS diff_fold_casc_ota_0/vbias4 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X184 diff_fold_casc_ota_0/vcmn_casc_tail2 vocm diff_fold_casc_ota_0/vcmcn2_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X185 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias3 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X186 diff_fold_casc_ota_1/vtail_casc vim2 diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X187 diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/M2d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X188 diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X189 vom1 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vfoldm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X190 diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X191 diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X192 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X193 vop1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X194 diff_fold_casc_ota_1/vfoldp vim2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X195 vom1 VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X196 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X197 a_15554_5588# diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X198 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X199 vom vom vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X200 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X201 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X202 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X203 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X204 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X205 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X206 diff_fold_casc_ota_0/M6d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X207 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X208 diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X209 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X210 diff_fold_casc_ota_1/vcmcn2_casc vocm diff_fold_casc_ota_1/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X211 diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X212 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X213 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X214 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X215 vom vom vom VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X216 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X217 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X218 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X219 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X220 diff_fold_casc_ota_0/vtail_casc vim1 diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X221 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X222 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X223 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias3 vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X224 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X225 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X226 diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X227 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X228 diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X229 VSS diff_fold_casc_ota_0/vbias4 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X230 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X231 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X232 VSS diff_fold_casc_ota_0/vbias4 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X233 diff_fold_casc_ota_1/M13d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M6d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X234 diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X235 VSS ibiasn2 ibiasn2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X236 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias3 vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X237 a_15554_5588# diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X238 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/M6d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X239 venp1 txgate_1/txb vim2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X240 venp1 vop1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X241 a_15554_5588# diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X242 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias3 vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X243 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X244 diff_fold_casc_ota_0/vfoldm vip1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X245 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X246 VSS VSS vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X247 diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/M1d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X248 a_15554_5588# diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X249 vop diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X250 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/M6d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X251 vim1 txgate_4/txb vincm VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X252 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X253 vop1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X254 diff_fold_casc_ota_1/vcmn_casc_tail1 vop diff_fold_casc_ota_1/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X255 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X256 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X257 a_15554_5588# diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X258 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X259 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X260 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X261 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X262 vom1 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vfoldm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X263 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias3 vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X264 diff_fold_casc_ota_1/vbias2 ibiasn2 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X265 diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X266 VDD diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X267 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X268 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X269 diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vbias2 vom1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X270 diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X271 diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X272 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X273 vim2 txgate_1/txb venp1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X274 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X275 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X276 diff_fold_casc_ota_1/vcmcn_casc vom diff_fold_casc_ota_1/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X277 diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M3d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X278 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X279 diff_fold_casc_ota_1/vcmn_casc_tail1 ibiasn2 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X280 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias3 vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X281 vom diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X282 diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vbias2 vop VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X283 vip2 rst vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X284 diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X285 diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X286 diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X287 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X288 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X289 vom diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X290 vip1 vhpf sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X291 diff_fold_casc_ota_1/vfoldm VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X292 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X293 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X294 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X295 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X296 diff_fold_casc_ota_0/vcmcn_casc vop1 diff_fold_casc_ota_0/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X297 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X298 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X299 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X300 vop gain_ctrl_1 venp2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X301 vom1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X302 ibiasn1 ibiasn1 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X303 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X304 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X305 vop1 vim1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X306 VDD VDD diff_fold_casc_ota_1/vfoldm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X307 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X308 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X309 a_69554_5588# diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X310 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M2d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X311 vop1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X312 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X313 venm2 vip2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X314 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X315 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X316 VDD diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X317 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X318 vom1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X319 a_69554_5588# diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X320 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X321 diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X322 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X323 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X324 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X325 diff_fold_casc_ota_0/vfoldp vim1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X326 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X327 vom1 vom1 vom1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X328 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X329 a_69554_5588# diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X330 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X331 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X332 vom VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X333 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X334 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X335 diff_fold_casc_ota_0/M13d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M6d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X336 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X337 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X338 diff_fold_casc_ota_1/vfoldm vip2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X339 VSS diff_fold_casc_ota_0/vbias4 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X340 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X341 diff_fold_casc_ota_0/M13d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M6d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X342 diff_fold_casc_ota_1/M6d diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X343 diff_fold_casc_ota_1/vtail_casc vip2 diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X344 diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X345 vincm VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X346 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/M2d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X347 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X348 vom VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X349 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X350 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X351 diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vbias2 vom1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X352 vim2 txgate_6/txb vop1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X353 diff_fold_casc_ota_1/vtail_casc vip2 diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X354 diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/M1d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X355 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias3 vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X356 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X357 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X358 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias3 vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X359 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/M1d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X360 diff_fold_casc_ota_1/vfoldm vip2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X361 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X362 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X363 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X364 vom VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X365 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X366 diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X367 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X368 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X369 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X370 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X371 vop VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X372 diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X373 VDD diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X374 vop txgate_3/txb venp2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X375 vom vom vom VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X376 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X377 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X378 vim1 vincm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X379 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias3 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X380 VDD diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X381 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X382 diff_fold_casc_ota_0/vtail_casc vip1 diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X383 venm2 vip2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X384 vincm txgate_5/txb vip1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X385 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X386 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X387 vop1 txgate_6/txb vim2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X388 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X389 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X390 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X391 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X392 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X393 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias3 vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X394 diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X395 diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vbias2 vop1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X396 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X397 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X398 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X399 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias3 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X400 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X401 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X402 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X403 VSS ibiasn1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X404 vincm rst vip1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X405 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X406 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias3 vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X407 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X408 vom gain_ctrl_1 venm2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X409 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X410 VSS ibiasn1 diff_fold_casc_ota_0/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X411 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X412 VDD VDD diff_fold_casc_ota_0/vfoldm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X413 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X414 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M2d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X415 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X416 diff_fold_casc_ota_0/vcmn_casc_tail1 vop1 diff_fold_casc_ota_0/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X417 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X418 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X419 vop1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X420 vip1 vhpf sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X421 VDD diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X422 diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X423 vom1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X424 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X425 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X426 VDD diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X427 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M1d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X428 VSS VSS vincm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X429 VDD VDD vom1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X430 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X431 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias3 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X432 diff_fold_casc_ota_1/vcmcn_casc vop diff_fold_casc_ota_1/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X433 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X434 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X435 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X436 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X437 diff_fold_casc_ota_1/M6d VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X438 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X439 diff_fold_casc_ota_0/vfoldm vip1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X440 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X441 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias3 vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X442 VDD VDD diff_fold_casc_ota_1/M3d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X443 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X444 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X445 vop vim2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X446 vom1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X447 diff_fold_casc_ota_1/vcmn_casc_tail2 ibiasn2 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X448 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X449 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X450 VSS rst txgate_7/txb VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X451 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X452 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X453 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X454 diff_fold_casc_ota_0/vcmcn_casc vom1 diff_fold_casc_ota_0/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X455 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X456 venp2 vim2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X457 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X458 diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X459 a_15554_5588# diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X460 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X461 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X462 diff_fold_casc_ota_0/M6d diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X463 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X464 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X465 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X466 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X467 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X468 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X469 diff_fold_casc_ota_0/vbias4 VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X470 diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X471 diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X472 vom1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X473 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X474 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X475 diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X476 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X477 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X478 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X479 VDD VDD diff_fold_casc_ota_0/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X480 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X481 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X482 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X483 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X484 vincm VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X485 diff_fold_casc_ota_0/vtail_casc vim1 diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X486 vip2 VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X487 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X488 diff_fold_casc_ota_0/vfoldm vip1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X489 diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X490 vom txgate_2/txb venm2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X491 vip2 txgate_0/txb venm1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X492 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X493 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X494 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X495 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M2d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X496 a_15554_5588# diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X497 diff_fold_casc_ota_1/vcmcn2_casc vocm diff_fold_casc_ota_1/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X498 vop1 vop1 vop1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X499 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X500 diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X501 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X502 diff_fold_casc_ota_0/vtail_casc vip1 diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X503 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X504 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X505 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X506 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X507 diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X508 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X509 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X510 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias3 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X511 diff_fold_casc_ota_0/vfoldm vip1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X512 vop diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X513 diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/M2d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X514 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X515 diff_fold_casc_ota_1/vtail_casc vim2 diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X516 diff_fold_casc_ota_1/vtail_casc vip2 diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X517 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X518 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X519 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X520 VDD diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X521 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X522 vop1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X523 venp2 txgate_3/txb vop VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X524 VDD diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X525 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X526 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X527 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X528 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X529 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X530 diff_fold_casc_ota_1/vfoldp vim2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X531 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X532 diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X533 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M1d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X534 VSS diff_fold_casc_ota_0/vbias4 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X535 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X536 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X537 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X538 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X539 vop1 vop1 vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X540 diff_fold_casc_ota_0/vtail_casc vim1 diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X541 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X542 vop VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X543 VSS ibiasn2 diff_fold_casc_ota_1/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X544 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X545 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X546 vom1 vip1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X547 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X548 diff_fold_casc_ota_0/M6d VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X549 diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X550 diff_fold_casc_ota_0/vtail_casc vim1 diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X551 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X552 VSS ibiasn2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X553 VDD VDD diff_fold_casc_ota_0/M3d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X554 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X555 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X556 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X557 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias3 vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X558 vop1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X559 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X560 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=2e+06u
+X561 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X562 diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X563 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X564 VDD diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X565 diff_fold_casc_ota_0/vcmn_casc_tail2 vom1 diff_fold_casc_ota_0/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X566 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X567 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X568 VDD diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X569 VSS ibiasn1 diff_fold_casc_ota_0/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X570 venm1 gain_ctrl_0 vip2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X571 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X572 diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X573 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X574 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias3 vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X575 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X576 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X577 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X578 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X579 diff_fold_casc_ota_0/vtail_casc vim1 diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X580 vop VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X581 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X582 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X583 vom diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X584 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X585 VDD rst txgate_5/txb VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X586 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X587 vim2 VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X588 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X589 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X590 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X591 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X592 vim2 txgate_1/txb venp1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X593 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X594 VSS diff_fold_casc_ota_1/vbias4 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X595 diff_fold_casc_ota_1/vfoldp vim2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X596 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X597 a_15554_5588# diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X598 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X599 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X600 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X601 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X602 vip2 rst vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X603 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X604 diff_fold_casc_ota_0/vfoldp VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X605 VSS VSS diff_fold_casc_ota_0/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X606 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=2e+06u
+X607 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X608 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X609 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X610 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X611 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X612 diff_fold_casc_ota_1/vcmn_casc_tail1 diff_fold_casc_ota_1/vcmn_casc_tail1 diff_fold_casc_ota_1/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X613 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X614 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X615 VSS diff_fold_casc_ota_1/vbias4 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X616 diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X617 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X618 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X619 diff_fold_casc_ota_1/M13d diff_fold_casc_ota_1/M13d VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X620 vom1 vom1 vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X621 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X622 diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X623 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X624 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X625 VSS VSS diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X626 VDD diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X627 venm2 txgate_2/txb vom VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X628 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X629 vom1 rst vip2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X630 VDD diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X631 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X632 diff_fold_casc_ota_0/vcmn_casc_tail2 vocm diff_fold_casc_ota_0/vcmcn2_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X633 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X634 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X635 vim1 txgate_4/txb vincm VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X636 diff_fold_casc_ota_1/vcmcn1_casc vocm diff_fold_casc_ota_1/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X637 vop1 vim1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X638 vop1 vim1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X639 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X640 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X641 a_69554_5588# diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X642 VSS gain_ctrl_1 txgate_3/txb VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X643 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X644 diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X645 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X646 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X647 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X648 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X649 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X650 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X651 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X652 diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M3d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X653 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X654 diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X655 diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X656 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X657 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X658 VDD diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X659 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/M1d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X660 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X661 vom1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X662 VDD diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X663 venp1 gain_ctrl_0 vim2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X664 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X665 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X666 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M1d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X667 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X668 diff_fold_casc_ota_1/vfoldm vip2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X669 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X670 vop diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vfoldp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X671 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X672 vom1 vip1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X673 vop vop vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X674 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/M2d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X675 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X676 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X677 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X678 diff_fold_casc_ota_0/vtail_casc vip1 diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X679 a_69554_5588# diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X680 VSS VSS vincm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X681 VSS VSS diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X682 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X683 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X684 vop1 VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X685 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X686 diff_fold_casc_ota_0/vtail_casc vip1 diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X687 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X688 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X689 vip1 txgate_5/txb vincm VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X690 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias3 vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X691 vop1 txgate_6/txb vim2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X692 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X693 diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X694 vincm txgate_4/txb vim1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X695 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X696 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X697 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X698 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X699 VSS ibiasn2 ibiasn2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X700 vim2 vop1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X701 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X702 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X703 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias3 vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X704 venp2 vim2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X705 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X706 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X707 diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X708 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X709 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X710 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias3 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X711 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X712 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X713 VSS gain_ctrl_0 txgate_0/txb VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X714 vim2 vop1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X715 venm1 vom1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X716 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X717 venm1 vom1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X718 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X719 diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X720 diff_fold_casc_ota_0/M13d diff_fold_casc_ota_0/M13d VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X721 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias3 vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X722 VSS rst_n rst VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X723 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X724 diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X725 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X726 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X727 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X728 diff_fold_casc_ota_0/M3d VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X729 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias3 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X730 diff_fold_casc_ota_0/vfoldp vim1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X731 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X732 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X733 diff_fold_casc_ota_0/vbias1 VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X734 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X735 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X736 vop1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X737 VSS VSS vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X738 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X739 VSS gain_ctrl_1 txgate_2/txb VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X740 diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X741 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias3 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X742 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X743 ibiasn1 ibiasn1 ibiasn1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X744 vop VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X745 diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X746 venp2 gain_ctrl_1 vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X747 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X748 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias3 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X749 VSS diff_fold_casc_ota_0/vbias4 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X750 vop VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X751 vom1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X752 diff_fold_casc_ota_1/vcmn_casc_tail2 diff_fold_casc_ota_1/vcmn_casc_tail2 diff_fold_casc_ota_1/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X753 diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X754 diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X755 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/M6d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X756 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X757 a_15554_5588# diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X758 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X759 diff_fold_casc_ota_0/vcmn_casc_tail1 vocm diff_fold_casc_ota_0/vcmcn1_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X760 vim2 rst vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X761 vip1 rst vincm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X762 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X763 vom VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X764 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M1d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X765 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X766 a_69554_5588# diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X767 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X768 vop1 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vfoldp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X769 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/M6d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X770 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X771 VDD VDD vip2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X772 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X773 venp2 vim2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X774 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X775 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X776 VSS diff_fold_casc_ota_1/vbias4 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X777 vop VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X778 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M2d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X779 vom diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vfoldm VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X780 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X781 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X782 diff_fold_casc_ota_1/vcmn_casc_tail1 ibiasn2 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X783 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X784 diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X785 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X786 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X787 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X788 diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X789 diff_fold_casc_ota_0/vtail_casc vim1 diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X790 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X791 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X792 diff_fold_casc_ota_1/vbias2 ibiasn2 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X793 VDD VDD diff_fold_casc_ota_1/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X794 diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vbias2 vop VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X795 diff_fold_casc_ota_0/vtail_casc vim1 diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X796 diff_fold_casc_ota_1/vcmn_casc_tail1 vocm diff_fold_casc_ota_1/vcmcn1_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X797 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X798 diff_fold_casc_ota_0/vfoldm vip1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X799 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X800 VDD diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X801 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias3 vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X802 vip1 vhpf sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X803 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=2e+06u
+X804 diff_fold_casc_ota_1/vfoldp vim2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X805 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X806 diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X807 vop VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X808 vom VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X809 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X810 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X811 vip2 vom1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X812 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X813 VSS gain_ctrl_0 txgate_1/txb VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X814 vom diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X815 diff_fold_casc_ota_1/vtail_casc vip2 diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X816 diff_fold_casc_ota_1/M6d diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X817 a_15554_5588# diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X818 diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X819 vop1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X820 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X821 diff_fold_casc_ota_0/vcmn_casc_tail1 diff_fold_casc_ota_0/vcmn_casc_tail1 diff_fold_casc_ota_0/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X822 diff_fold_casc_ota_1/vfoldp vim2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X823 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X824 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X825 vom vip2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X826 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X827 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X828 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X829 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X830 vop diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X831 VSS VSS vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X832 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X833 diff_fold_casc_ota_0/vcmc_casc VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X834 vom diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X835 a_69554_5588# diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X836 vip1 vhpf sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X837 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X838 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X839 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X840 diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X841 diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/M1d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X842 VDD diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X843 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X844 vom1 VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X845 diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X846 diff_fold_casc_ota_1/M13d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M6d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X847 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X848 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M1d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X849 venm2 gain_ctrl_1 vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X850 vincm rst vim1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X851 a_15554_5588# diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X852 a_69554_5588# diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X853 diff_fold_casc_ota_0/vfoldp vim1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X854 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X855 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X856 vom diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X857 a_69554_5588# diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X858 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/M2d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X859 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/M2d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X860 venm1 gain_ctrl_0 vip2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X861 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X862 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vbias2 vom VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X863 diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/M1d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X864 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X865 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/M1d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X866 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X867 vim1 vincm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X868 diff_fold_casc_ota_1/vtail_casc vim2 diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X869 VDD VDD vim2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X870 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X871 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X872 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X873 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X874 diff_fold_casc_ota_0/vfoldp vim1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X875 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M2d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X876 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X877 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X878 vip2 gain_ctrl_0 venm1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X879 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X880 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X881 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X882 VDD diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X883 vom1 vom1 vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X884 diff_fold_casc_ota_1/vtail_casc vip2 diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X885 diff_fold_casc_ota_1/vcmn_casc_tail1 vop diff_fold_casc_ota_1/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X886 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X887 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X888 VDD VDD diff_fold_casc_ota_0/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X889 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X890 vom vip2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X891 diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vbias2 vop1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X892 ibiasn1 ibiasn1 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X893 VDD diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X894 diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X895 vop diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vfoldp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X896 VDD diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X897 vom VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X898 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X899 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X900 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vbias2 vom VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X901 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias3 vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X902 diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X903 diff_fold_casc_ota_1/vfoldp vim2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X904 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X905 diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X906 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X907 VSS rst txgate_4/txb VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X908 VSS rst txgate_6/txb VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X909 diff_fold_casc_ota_0/M6d diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X910 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X911 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X912 vom1 rst vip2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X913 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X914 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X915 diff_fold_casc_ota_1/M13d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M6d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X916 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X917 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X918 VDD diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X919 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X920 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X921 VDD VDD diff_fold_casc_ota_1/vfoldp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X922 vip2 txgate_7/txb vom1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X923 VSS diff_fold_casc_ota_1/vbias4 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X924 vop1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X925 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X926 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X927 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias3 vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X928 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X929 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X930 vop1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X931 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias3 vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X932 diff_fold_casc_ota_1/vcmn_casc_tail2 vocm diff_fold_casc_ota_1/vcmcn2_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X933 diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X934 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias3 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X935 VDD diff_fold_casc_ota_0/vcmcn1_casc diff_fold_casc_ota_0/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X936 VDD diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X937 vop txgate_3/txb venp2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X938 diff_fold_casc_ota_1/M6d diff_fold_casc_ota_1/M6d diff_fold_casc_ota_1/M6d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X939 diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/M1d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X940 ibiasn2 ibiasn2 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X941 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X942 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X943 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=2e+06u
+X944 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X945 a_15554_5588# diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X946 vom VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X947 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X948 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X949 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X950 diff_fold_casc_ota_1/vfoldm vip2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X951 diff_fold_casc_ota_0/M6d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X952 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/M6d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X953 venp1 gain_ctrl_0 vim2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X954 a_69554_5588# diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X955 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X956 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/M2d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X957 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X958 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X959 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X960 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X961 a_15554_5588# diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X962 vom1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X963 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X964 diff_fold_casc_ota_0/vcmn_casc_tail2 diff_fold_casc_ota_0/vcmn_casc_tail2 diff_fold_casc_ota_0/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X965 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X966 VDD VDD diff_fold_casc_ota_1/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X967 diff_fold_casc_ota_1/vtail_casc vim2 diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X968 diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vbias2 vop1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X969 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X970 VDD VDD vop1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X971 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X972 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X973 diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/M2d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X974 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X975 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X976 venp2 vim2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X977 vim1 rst vincm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X978 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X979 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X980 VSS diff_fold_casc_ota_1/vbias4 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X981 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X982 VSS diff_fold_casc_ota_1/vbias4 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X983 diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X984 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X985 diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X986 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X987 vim2 gain_ctrl_0 venp1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X988 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X989 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M2d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X990 a_15554_5588# diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X991 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias3 vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X992 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X993 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X994 vop vop vop VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X995 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X996 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X997 a_69554_5588# diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X998 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X999 diff_fold_casc_ota_0/vtail_casc vip1 diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1000 vop1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X1001 vop1 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vfoldp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1002 vop1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1003 a_15554_5588# diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1004 diff_fold_casc_ota_1/vfoldm vip2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1005 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1006 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1007 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1008 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X1009 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1010 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1011 diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vbias2 vom1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1012 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1013 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X1014 vop diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1015 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1016 diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1017 diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1018 diff_fold_casc_ota_1/vtail_casc vim2 diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1019 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1020 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1021 diff_fold_casc_ota_0/vcmcn1_casc vocm diff_fold_casc_ota_0/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1022 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1023 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1024 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias3 vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1025 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1026 diff_fold_casc_ota_0/M13d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M6d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1027 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X1028 VDD VDD diff_fold_casc_ota_0/vfoldp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1029 vop vop vop VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1030 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1031 diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1032 diff_fold_casc_ota_0/vtail_casc vip1 diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1033 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1034 diff_fold_casc_ota_1/vcmn_casc_tail2 vom diff_fold_casc_ota_1/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1035 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=2e+06u
+X1036 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1037 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1038 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1039 VSS ibiasn2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1040 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1041 vim2 vop1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1042 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X1043 diff_fold_casc_ota_1/vbias4 VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1044 vom txgate_2/txb venm2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1045 diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/M2d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1046 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias3 vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1047 venm2 vip2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1048 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X1049 vop1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X1050 diff_fold_casc_ota_0/M6d diff_fold_casc_ota_0/M6d diff_fold_casc_ota_0/M6d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1051 VSS ibiasn2 diff_fold_casc_ota_1/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1052 diff_fold_casc_ota_1/vcmcn_casc vop diff_fold_casc_ota_1/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1053 diff_fold_casc_ota_1/M6d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1054 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1055 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1056 diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc diff_fold_casc_ota_0/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1057 diff_fold_casc_ota_1/M13d VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1058 vincm VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1059 vom1 vip1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1060 vop diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1061 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/M1d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1062 VSS ibiasn1 diff_fold_casc_ota_0/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1063 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1064 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/M6d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1065 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1066 diff_fold_casc_ota_0/vbias2 ibiasn1 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1067 vim2 rst vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1068 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1069 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1070 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1071 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1072 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1073 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1074 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias3 vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1075 diff_fold_casc_ota_0/vcmn_casc_tail2 vom1 diff_fold_casc_ota_0/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1076 diff_fold_casc_ota_0/vcmn_casc_tail1 ibiasn1 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1077 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1078 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1079 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1080 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1081 diff_fold_casc_ota_0/M6d diff_fold_casc_ota_0/M6d diff_fold_casc_ota_0/M6d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1082 vop1 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vfoldp VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1083 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1084 diff_fold_casc_ota_0/M3d VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1085 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1086 diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1087 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X1088 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X1089 VDD VDD diff_fold_casc_ota_0/M6d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1090 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1091 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1092 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1093 vop1 rst vim2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1094 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1095 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1096 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=2e+06u
+X1097 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X1098 venm1 vom1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1099 diff_fold_casc_ota_1/vcmn_casc_tail2 vocm diff_fold_casc_ota_1/vcmcn2_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1100 VSS VSS diff_fold_casc_ota_1/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1101 diff_fold_casc_ota_1/vfoldp VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1102 vincm rst vip1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1103 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1104 vincm txgate_5/txb vip1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1105 ibiasn1 ibiasn1 ibiasn1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1106 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1107 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias3 vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1108 vom1 vip1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1109 venp1 vop1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1110 VSS diff_fold_casc_ota_1/vbias4 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1111 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias3 vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1112 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1113 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1114 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1115 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1116 diff_fold_casc_ota_0/vfoldp diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1117 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1118 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1119 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1120 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1121 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias3 vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1122 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1123 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1124 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1125 VDD VDD vincm VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1126 diff_fold_casc_ota_1/vtail_casc vip2 diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1127 vop1 vop1 vop1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1128 vom1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1129 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1130 diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1131 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1132 diff_fold_casc_ota_0/vtail_casc vim1 diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1133 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1134 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1135 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1136 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias3 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1137 diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/M2d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1138 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1139 a_15554_5588# diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1140 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1141 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1142 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias3 vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1143 diff_fold_casc_ota_0/M6d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/M13d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1144 vip2 vom1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1145 diff_fold_casc_ota_1/vtail_casc vip2 diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1146 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1147 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1148 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X1149 venm2 vip2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1150 diff_fold_casc_ota_0/M13d VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1151 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1152 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/M1d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1153 diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/M1d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1154 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1155 vom VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X1156 diff_fold_casc_ota_0/vcmcn2_casc vocm diff_fold_casc_ota_0/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1157 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1158 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1159 vom diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1160 vop gain_ctrl_1 venp2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1161 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1162 venp1 vop1 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1163 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1164 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1165 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X1166 diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/M1d VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1167 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1168 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1169 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1170 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X1171 diff_fold_casc_ota_0/vtail_casc vim1 diff_fold_casc_ota_0/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1172 vip2 gain_ctrl_0 venm1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1173 VSS VSS diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1174 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1175 vop VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X1176 vincm VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1177 diff_fold_casc_ota_0/vtail_casc vip1 diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1178 diff_fold_casc_ota_1/vcmcn_casc vom diff_fold_casc_ota_1/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1179 diff_fold_casc_ota_0/vfoldp vim1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1180 vip2 VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1181 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1182 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X1183 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1184 a_69554_5588# diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1185 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1186 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1187 ibiasn2 ibiasn2 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1188 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1189 VSS ibiasn2 diff_fold_casc_ota_1/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1190 vom1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X1191 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1192 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1193 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1194 vom diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1195 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X1196 diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1197 diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X1198 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1199 VSS VSS vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1200 diff_fold_casc_ota_0/vfoldm VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1201 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1202 diff_fold_casc_ota_0/vcmn_casc_tail1 vop1 diff_fold_casc_ota_0/vcmcn_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1203 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X1204 diff_fold_casc_ota_0/vfoldm diff_fold_casc_ota_0/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1205 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1206 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias3 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1207 diff_fold_casc_ota_0/vcmn_casc_tail2 ibiasn1 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1208 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias3 vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1209 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1210 VSS diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1211 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1212 diff_fold_casc_ota_0/vcmn_casc_tail2 ibiasn1 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1213 vip2 txgate_7/txb vom1 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1214 diff_fold_casc_ota_0/vcmcn_casc vom1 diff_fold_casc_ota_0/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1215 diff_fold_casc_ota_1/M3d VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1216 diff_fold_casc_ota_1/vbias1 VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1217 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1218 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1219 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1220 diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1221 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1222 a_69554_5588# diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1223 diff_fold_casc_ota_1/vcmn_casc_tail1 vocm diff_fold_casc_ota_1/vcmcn1_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1224 vom1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X1225 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1226 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1227 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1228 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1229 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1230 vom1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1231 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1232 diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X1233 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1234 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1235 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1236 diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vbias3 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1237 diff_fold_casc_ota_1/vfoldm vip2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1238 vom1 txgate_7/txb vip2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1239 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1240 VSS diff_fold_casc_ota_1/vbias4 a_69554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1241 diff_fold_casc_ota_1/vfoldm vip2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1242 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1243 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1244 vim1 vincm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1245 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias3 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1246 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1247 vim1 vincm sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1248 diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/M1d diff_fold_casc_ota_0/M1d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1249 diff_fold_casc_ota_1/vtail_casc vim2 diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1250 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1251 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1252 vom gain_ctrl_1 venm2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1253 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1254 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1255 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1256 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1257 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias3 vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1258 diff_fold_casc_ota_1/vtail_casc vip2 diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1259 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias3 vom1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1260 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1261 venm1 txgate_0/txb vip2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1262 vop vop vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1263 diff_fold_casc_ota_1/vtail_casc vim2 diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1264 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1265 vop vim2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1266 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1267 diff_fold_casc_ota_0/vfoldm vip1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1268 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1269 vim2 gain_ctrl_0 venp1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1270 diff_fold_casc_ota_1/vtail_casc vim2 diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1271 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1272 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1273 diff_fold_casc_ota_0/vtail_casc vip1 diff_fold_casc_ota_0/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1274 vim2 VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1275 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1276 vop diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1277 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1278 vom1 vom1 vom1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1279 diff_fold_casc_ota_1/vcmn_casc_tail1 diff_fold_casc_ota_1/vcmn_casc_tail1 diff_fold_casc_ota_1/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1280 VSS diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1281 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1282 VDD gain_ctrl_1 txgate_3/txb VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1283 venp2 gain_ctrl_1 vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1284 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1285 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1286 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias3 vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1287 diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X1288 diff_fold_casc_ota_0/vfoldm vip1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1289 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1290 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias3 vop VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1291 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1292 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1293 VSS ibiasn1 diff_fold_casc_ota_0/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1294 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1295 diff_fold_casc_ota_1/vtail_casc vim2 diff_fold_casc_ota_1/vfoldp VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1296 diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X1297 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1298 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1299 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1300 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1301 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1302 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X1303 VSS ibiasn1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1304 diff_fold_casc_ota_1/vfoldp vim2 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1305 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1306 VSS rst txgate_5/txb VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X1307 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1308 a_69554_5588# diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1309 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1310 diff_fold_casc_ota_0/vfoldm vip1 diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1311 diff_fold_casc_ota_1/M1d diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1312 vop1 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/vcascnp VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1313 vim1 rst vincm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1314 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1315 vop1 vop1 vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1316 venp2 vim2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1317 diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X1318 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1319 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X1320 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1321 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M1d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1322 VSS ibiasn2 diff_fold_casc_ota_1/vcmn_casc_tail2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1323 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1324 diff_fold_casc_ota_1/vcmc_casc diff_fold_casc_ota_1/vcmcn_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X1325 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
+X1326 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=2e+06u
+X1327 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1328 vom vom vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1329 VDD VDD vop VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1330 diff_fold_casc_ota_0/vbias3 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1331 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1332 vop VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X1333 diff_fold_casc_ota_0/vcmcn_casc vop1 diff_fold_casc_ota_0/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=800000u
+X1334 VSS diff_fold_casc_ota_1/vbias4 diff_fold_casc_ota_1/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1335 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1336 VSS ibiasn1 ibiasn1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1337 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X1338 diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/M3d diff_fold_casc_ota_0/vbias3 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1339 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1340 VDD gain_ctrl_0 txgate_0/txb VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1341 venp1 txgate_1/txb vim2 VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1342 venp2 txgate_3/txb vop VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1343 diff_fold_casc_ota_0/vtail_casc diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1344 VDD rst_n rst VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1345 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias3 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1346 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1347 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=2e+06u
+X1348 VDD diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vfoldp VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1349 VDD VDD vincm VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1350 diff_fold_casc_ota_0/vcascnm diff_fold_casc_ota_0/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1351 diff_fold_casc_ota_0/vcmn_casc_tail1 diff_fold_casc_ota_0/vcmn_casc_tail1 diff_fold_casc_ota_0/vcmn_casc_tail1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1352 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1353 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+X1354 VDD diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vfoldm VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1355 diff_fold_casc_ota_1/M2d diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/M3d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1356 vop1 rst vim2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1357 diff_fold_casc_ota_1/vtail_casc diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1358 diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/M3d diff_fold_casc_ota_1/M3d VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1359 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias3 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1360 vop1 VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X1361 diff_fold_casc_ota_1/vbias2 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1362 a_69554_5588# diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vbias4 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1363 vip1 rst vincm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1364 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1365 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias1 diff_fold_casc_ota_1/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1366 vom diff_fold_casc_ota_1/vbias3 diff_fold_casc_ota_1/vcascnm VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1367 ibiasn2 ibiasn2 ibiasn2 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1368 VDD gain_ctrl_1 txgate_2/txb VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1369 venm2 gain_ctrl_1 vom VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1370 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1371 VDD diff_fold_casc_ota_1/vcmcn_casc diff_fold_casc_ota_1/vcmc_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X1372 vincm rst vim1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X1373 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1374 venm2 vip2 sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
+X1375 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=2e+06u
+X1376 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias1 diff_fold_casc_ota_0/vbias2 VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1377 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1e+07u
+X1378 vom1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X1379 diff_fold_casc_ota_1/vfoldp diff_fold_casc_ota_1/vbias1 VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1380 diff_fold_casc_ota_0/vcascnp diff_fold_casc_ota_0/vbias3 vop1 VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1381 VSS VSS sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
+X1382 diff_fold_casc_ota_1/vcmc_casc VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1383 diff_fold_casc_ota_1/vcascnm diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1384 VDD diff_fold_casc_ota_1/vcmcn2_casc diff_fold_casc_ota_1/vcmcn2_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X1385 VDD diff_fold_casc_ota_1/vcmcn1_casc diff_fold_casc_ota_1/vcmcn1_casc VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X1386 VSS diff_fold_casc_ota_0/vbias4 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1387 diff_fold_casc_ota_0/vcmcn2_casc diff_fold_casc_ota_0/vcmcn2_casc VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=800000u
+X1388 diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vcmc_casc VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1389 diff_fold_casc_ota_1/vcascnp diff_fold_casc_ota_1/vbias4 VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1390 diff_fold_casc_ota_0/vbias4 diff_fold_casc_ota_0/vbias3 a_15554_5588# VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1391 diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/M2d diff_fold_casc_ota_0/M2d VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1392 VSS diff_fold_casc_ota_0/vcmc_casc diff_fold_casc_ota_0/vtail_casc VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+X1393 vom1 VSS sky130_fd_pr__cap_mim_m3_1 l=1e+07u w=1e+07u
+X1394 diff_fold_casc_ota_1/vtail_casc vip2 diff_fold_casc_ota_1/vfoldm VSS sky130_fd_pr__nfet_01v8_lvt ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u
+X1395 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=4.8e+06u
+.ends
+

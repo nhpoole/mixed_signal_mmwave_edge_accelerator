@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/txgate_lvs.spice txgate_lvs" "txgate_lvs_layout.spice txgate_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

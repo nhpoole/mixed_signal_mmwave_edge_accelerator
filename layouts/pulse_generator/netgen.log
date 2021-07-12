@@ -1,0 +1,80 @@
+Netgen 1.5.177 compiled on Thu May 20 20:23:43 PDT 2021
+Warning: netgen command 'format' use fully-qualified name '::netgen::format'
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Reading netlist file ../../simulations/pulse_generator_lvs.spice
+Call to undefined subcircuit dff_stdcell
+Creating placeholder cell definition.
+Call to undefined subcircuit inv1
+Creating placeholder cell definition.
+Call to undefined subcircuit and2
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_sc_hd__dfxbp_1
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__pfet_01v8_hvt
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__nfet_01v8
+Creating placeholder cell definition.
+Call to undefined subcircuit nand2
+Creating placeholder cell definition.
+Call to undefined subcircuit inv
+Creating placeholder cell definition.
+Reading netlist file pulse_generator_lvs_layout.spice
+Call to undefined subcircuit sky130_fd_pr__nfet_01v8
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__pfet_01v8_hvt
+Creating placeholder cell definition.
+Reading setup file /home/users/nhpoole/PDKS/sky130A/libs.tech/netgen/sky130A_setup.tcl
+Model sky130_fd_pr__nfet_01v8 pin 1 == 3
+Model sky130_fd_pr__nfet_01v8 pin 1 == 3
+No property mult found for device sky130_fd_pr__nfet_01v8
+No property sa found for device sky130_fd_pr__nfet_01v8
+No property sb found for device sky130_fd_pr__nfet_01v8
+No property sd found for device sky130_fd_pr__nfet_01v8
+No property nf found for device sky130_fd_pr__nfet_01v8
+No property nrd found for device sky130_fd_pr__nfet_01v8
+No property nrs found for device sky130_fd_pr__nfet_01v8
+Model sky130_fd_pr__pfet_01v8_hvt pin 1 == 3
+Model sky130_fd_pr__pfet_01v8_hvt pin 1 == 3
+No property mult found for device sky130_fd_pr__pfet_01v8_hvt
+No property sa found for device sky130_fd_pr__pfet_01v8_hvt
+No property sb found for device sky130_fd_pr__pfet_01v8_hvt
+No property sd found for device sky130_fd_pr__pfet_01v8_hvt
+No property nf found for device sky130_fd_pr__pfet_01v8_hvt
+No property nrd found for device sky130_fd_pr__pfet_01v8_hvt
+No property nrs found for device sky130_fd_pr__pfet_01v8_hvt
+Comparison output logged to file comp.out
+Logging to file "comp.out" enabled
+Contents of circuit 1:  Circuit: 'sky130_fd_pr__pfet_01v8_hvt'
+Circuit sky130_fd_pr__pfet_01v8_hvt contains 0 device instances.
+Circuit contains 0 nets.
+Contents of circuit 2:  Circuit: 'sky130_fd_pr__pfet_01v8_hvt'
+Circuit sky130_fd_pr__pfet_01v8_hvt contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_pr__pfet_01v8_hvt contains no devices.
+Contents of circuit 1:  Circuit: 'sky130_fd_pr__nfet_01v8'
+Circuit sky130_fd_pr__nfet_01v8 contains 0 device instances.
+Circuit contains 0 nets.
+Contents of circuit 2:  Circuit: 'sky130_fd_pr__nfet_01v8'
+Circuit sky130_fd_pr__nfet_01v8 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_pr__nfet_01v8 contains no devices.
+Contents of circuit 1:  Circuit: 'pulse_generator_lvs'
+Circuit pulse_generator_lvs contains 120 device instances.
+  Class: sky130_fd_pr__nfet_01v8 instances:  60
+  Class: sky130_fd_pr__pfet_01v8_hvt instances:  60
+Circuit contains 64 nets.
+Contents of circuit 2:  Circuit: 'pulse_generator_flat'
+Circuit pulse_generator_flat contains 120 device instances.
+  Class: sky130_fd_pr__nfet_01v8 instances:  60
+  Class: sky130_fd_pr__pfet_01v8_hvt instances:  60
+Circuit contains 64 nets.
+
+Circuit 1 contains 120 devices, Circuit 2 contains 120 devices.
+Circuit 1 contains 64 nets,    Circuit 2 contains 64 nets.
+
+Netlists match uniquely.
+Result: Circuits match uniquely.
+Logging to file "comp.out" disabled
+LVS Done.

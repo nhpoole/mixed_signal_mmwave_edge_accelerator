@@ -1,0 +1,108 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1623661481
+<< nwell >>
+rect -38 261 1142 582
+<< pwell >>
+rect 30 -17 64 17
+<< locali >>
+rect 28 215 248 255
+<< obsli1 >>
+rect 0 527 1104 561
+rect 19 323 85 493
+rect 119 367 153 527
+rect 187 323 253 493
+rect 287 367 321 527
+rect 371 323 405 493
+rect 439 367 505 527
+rect 539 323 573 493
+rect 607 367 673 527
+rect 707 323 741 493
+rect 775 367 841 527
+rect 875 323 909 493
+rect 19 289 319 323
+rect 371 289 909 323
+rect 943 297 1009 527
+rect 284 249 319 289
+rect 858 263 909 289
+rect 284 215 809 249
+rect 284 181 319 215
+rect 858 211 974 263
+rect 858 181 909 211
+rect 35 147 319 181
+rect 371 147 909 181
+rect 35 51 69 147
+rect 103 17 169 113
+rect 203 52 237 147
+rect 271 17 337 113
+rect 371 51 405 147
+rect 439 17 505 113
+rect 539 51 573 147
+rect 607 17 673 113
+rect 707 51 741 147
+rect 775 17 841 113
+rect 875 51 909 147
+rect 943 17 1009 177
+rect 0 -17 1104 17
+<< obsm1 >>
+rect 0 570 1104 592
+rect 0 518 1168 570
+rect 0 496 1104 518
+rect 404 252 532 264
+rect 849 252 979 261
+rect 404 224 979 252
+rect 404 212 532 224
+rect 849 215 979 224
+rect 0 26 1104 48
+rect 0 -26 1168 26
+rect 0 -48 1104 -26
+<< obsm2 >>
+rect 1027 516 1181 572
+rect 378 210 532 266
+rect 1027 -28 1181 28
+<< obsm3 >>
+rect 1026 511 1182 577
+rect -143 206 13 270
+rect 377 205 533 271
+rect 1026 -33 1182 33
+<< metal4 >>
+rect -228 154 8 390
+rect 292 154 528 390
+<< obsm4 >>
+rect 986 487 1222 723
+rect 986 -179 1222 57
+<< metal5 >>
+rect 232 432 552 765
+rect 872 432 1335 778
+rect -252 112 552 432
+rect 232 -221 552 112
+rect 872 -234 1335 112
+<< labels >>
+rlabel locali s 28 215 248 255 6 A
+port 1 nsew signal input
+rlabel metal4 s 292 154 528 390 6 X
+port 2 nsew signal output
+rlabel metal4 s -228 154 8 390 4 X
+port 2 nsew signal output
+rlabel metal5 s 232 432 552 765 6 X
+port 2 nsew signal output
+rlabel metal5 s 232 -221 552 112 8 X
+port 2 nsew signal output
+rlabel metal5 s -252 112 552 432 6 X
+port 2 nsew signal output
+rlabel metal5 s 872 -234 1335 112 8 VGND
+port 3 nsew ground bidirectional abutment
+rlabel pwell s 30 -17 64 17 8 VNB
+port 4 nsew ground bidirectional
+rlabel nwell s -38 261 1142 582 6 VPB
+port 5 nsew power bidirectional
+rlabel metal5 s 872 432 1335 778 6 VPWR
+port 6 nsew power bidirectional abutment
+<< properties >>
+string LEFsite unithd
+string LEFclass CORE
+string FIXED_BBOX 0 0 1104 544
+string LEFsymmetry X Y R90
+string LEFview TRUE
+<< end >>

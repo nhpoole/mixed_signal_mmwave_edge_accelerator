@@ -1,0 +1,75 @@
+Flattening unmatched subcell gm_c_stage_lvs in circuit biquad_gm_c_filter_lvs (0)(4 instances)
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8         |Circuit 2: sky130_fd_pr__nfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8         |Circuit 2: sky130_fd_pr__pfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8 and sky130_fd_pr__pfet_01v8 are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8_lvt has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8_lvt has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8_lvt     |Circuit 2: sky130_fd_pr__nfet_01v8_lvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8_lvt and sky130_fd_pr__nfet_01v8_lvt are equivalent.
+Class biquad_gm_c_filter_lvs:  Merged 5 devices.
+Class biquad_gm_c_filter_flat:  Merged 133 devices.
+
+Subcircuit summary:
+Circuit 1: biquad_gm_c_filter_lvs          |Circuit 2: biquad_gm_c_filter_flat         
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (76)               |sky130_fd_pr__nfet_01v8 (76)               
+sky130_fd_pr__pfet_01v8 (52)               |sky130_fd_pr__pfet_01v8 (52)               
+sky130_fd_pr__nfet_01v8_lvt (11)           |sky130_fd_pr__nfet_01v8_lvt (11)           
+Number of devices: 139                     |Number of devices: 139                     
+Number of nets: 45                         |Number of nets: 45                         
+---------------------------------------------------------------------------------------
+Circuits match uniquely.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: biquad_gm_c_filter_lvs          |Circuit 2: biquad_gm_c_filter_flat         
+-------------------------------------------|-------------------------------------------
+vfiltm                                     |vfiltm                                     
+vfiltp                                     |vfiltp                                     
+ibiasn2                                    |ibiasn2                                    
+ibiasn3                                    |ibiasn3                                    
+ibiasn4                                    |ibiasn4                                    
+ibiasn1                                    |ibiasn1                                    
+VSS                                        |VSS                                        
+VDD                                        |VDD                                        
+vocm                                       |vocm                                       
+vim                                        |vim                                        
+vip                                        |vip                                        
+vintm                                      |vintm                                      
+vintp                                      |vintp                                      
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes biquad_gm_c_filter_lvs and biquad_gm_c_filter_flat are equivalent.
+Circuits match uniquely.

@@ -1,0 +1,19 @@
+* NGSPICE file created from txgate_flat.ext - technology: sky130A
+
+.subckt txgate_flat in out VDD VSS tx
+X0 VDD tx txb VDD sky130_fd_pr__pfet_01v8_hvt ad=1.42e+12p pd=1.168e+07u as=2.6e+11p ps=2.52e+06u w=1e+06u l=150000u
+X1 out tx in VSS sky130_fd_pr__nfet_01v8 ad=8.7e+11p pd=7.74e+06u as=5.8e+11p ps=5.16e+06u w=1e+06u l=1e+06u
+X2 in tx out VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X3 in tx out VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X4 out txb in VDD sky130_fd_pr__pfet_01v8_hvt ad=1.74e+12p pd=1.374e+07u as=1.16e+12p ps=9.16e+06u w=2e+06u l=1e+06u
+X5 in txb out VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X6 in txb out VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X7 VSS VSS out VSS sky130_fd_pr__nfet_01v8 ad=7.49e+11p pd=6.98e+06u as=0p ps=0u w=1e+06u l=1e+06u
+X8 VSS tx txb VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=1.69e+11p ps=1.82e+06u w=650000u l=150000u
+X9 out VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X10 out tx in VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u
+X11 VDD VDD out VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X12 out VDD VDD VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+X13 out txb in VDD sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u
+.ends
+

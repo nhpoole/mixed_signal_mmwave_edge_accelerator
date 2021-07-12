@@ -1,0 +1,1 @@
+exec netgen -batch lvs "../../simulations/analog_top_level_lvs.spice analog_top_level_lvs" "analog_top_level_lvs_layout.spice analog_top_level_flat" $PDKPATH/libs.tech/netgen/sky130A_setup.tcl > netgen.log 2> netgen_err.log

@@ -1,0 +1,82 @@
+Netgen 1.5.189 compiled on Sun Jun 20 19:52:12 PDT 2021
+Warning: netgen command 'format' use fully-qualified name '::netgen::format'
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Reading netlist file ../../simulations/esd_cell.spice
+Call to undefined subcircuit sky130_fd_pr__nfet_g5v0d10v5
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__pfet_g5v0d10v5
+Creating placeholder cell definition.
+Reading netlist file esd_cell_lvs_layout.spice
+Call to undefined subcircuit sky130_fd_pr__pfet_g5v0d10v5
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__nfet_g5v0d10v5
+Creating placeholder cell definition.
+Reading setup file /home/users/nhpoole/PDKS/sky130A/libs.tech/netgen/sky130A_setup.tcl
+Model sky130_fd_pr__nfet_g5v0d10v5 pin 1 == 3
+Model sky130_fd_pr__nfet_g5v0d10v5 pin 1 == 3
+No property mult found for device sky130_fd_pr__nfet_g5v0d10v5
+No property sa found for device sky130_fd_pr__nfet_g5v0d10v5
+No property sb found for device sky130_fd_pr__nfet_g5v0d10v5
+No property sd found for device sky130_fd_pr__nfet_g5v0d10v5
+No property nf found for device sky130_fd_pr__nfet_g5v0d10v5
+No property nrd found for device sky130_fd_pr__nfet_g5v0d10v5
+No property nrs found for device sky130_fd_pr__nfet_g5v0d10v5
+Model sky130_fd_pr__pfet_g5v0d10v5 pin 1 == 3
+Model sky130_fd_pr__pfet_g5v0d10v5 pin 1 == 3
+No property mult found for device sky130_fd_pr__pfet_g5v0d10v5
+No property sa found for device sky130_fd_pr__pfet_g5v0d10v5
+No property sb found for device sky130_fd_pr__pfet_g5v0d10v5
+No property sd found for device sky130_fd_pr__pfet_g5v0d10v5
+No property nf found for device sky130_fd_pr__pfet_g5v0d10v5
+No property nrd found for device sky130_fd_pr__pfet_g5v0d10v5
+No property nrs found for device sky130_fd_pr__pfet_g5v0d10v5
+Comparison output logged to file comp.out
+Logging to file "comp.out" enabled
+Contents of circuit 1:  Circuit: 'sky130_fd_pr__nfet_g5v0d10v5'
+Circuit sky130_fd_pr__nfet_g5v0d10v5 contains 0 device instances.
+Circuit contains 0 nets.
+Contents of circuit 2:  Circuit: 'sky130_fd_pr__nfet_g5v0d10v5'
+Circuit sky130_fd_pr__nfet_g5v0d10v5 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_pr__nfet_g5v0d10v5 contains no devices.
+Contents of circuit 1:  Circuit: 'sky130_fd_pr__pfet_g5v0d10v5'
+Circuit sky130_fd_pr__pfet_g5v0d10v5 contains 0 device instances.
+Circuit contains 0 nets.
+Contents of circuit 2:  Circuit: 'sky130_fd_pr__pfet_g5v0d10v5'
+Circuit sky130_fd_pr__pfet_g5v0d10v5 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_pr__pfet_g5v0d10v5 contains no devices.
+Contents of circuit 1:  Circuit: 'esd_cell'
+Circuit esd_cell contains 2 device instances.
+  Class: sky130_fd_pr__nfet_g5v0d10v5 instances:   1
+  Class: sky130_fd_pr__pfet_g5v0d10v5 instances:   1
+Circuit contains 3 nets.
+Contents of circuit 2:  Circuit: 'esd_cell_flat'
+Circuit esd_cell_flat contains 40 device instances.
+  Class: sky130_fd_pr__nfet_g5v0d10v5 instances:  20
+  Class: sky130_fd_pr__pfet_g5v0d10v5 instances:  20
+Circuit contains 3 nets.
+
+Circuit was modified by parallel/series device merging.
+New circuit summary:
+
+Contents of circuit 1:  Circuit: 'esd_cell'
+Circuit esd_cell contains 2 device instances.
+  Class: sky130_fd_pr__nfet_g5v0d10v5 instances:   1
+  Class: sky130_fd_pr__pfet_g5v0d10v5 instances:   1
+Circuit contains 3 nets.
+Contents of circuit 2:  Circuit: 'esd_cell_flat'
+Circuit esd_cell_flat contains 2 device instances.
+  Class: sky130_fd_pr__nfet_g5v0d10v5 instances:   1
+  Class: sky130_fd_pr__pfet_g5v0d10v5 instances:   1
+Circuit contains 3 nets.
+
+Circuit 1 contains 2 devices, Circuit 2 contains 2 devices.
+Circuit 1 contains 3 nets,    Circuit 2 contains 3 nets.
+
+Netlists match uniquely.
+Result: Circuits match uniquely.
+Logging to file "comp.out" disabled
+LVS Done.

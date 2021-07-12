@@ -1,0 +1,147 @@
+* NGSPICE file created from bias_current_distribution_flat.ext - technology: sky130A
+
+.subckt bias_current_distribution_flat VDD VSS vbiasp input_amplifier_ibiasn1 input_amplifier_ibiasn2
++ diff_to_se_converter_ibiasn peak_detector_ibiasn1 peak_detector_ibiasn2 sample_and_hold_ibiasn_A
++ dac_8bit_ibiasn_A sample_and_hold_ibiasn_B dac_8bit_ibiasn_B comparator_ibiasn biquad_gm_c_filter_ibiasn1
++ biquad_gm_c_filter_ibiasn2 biquad_gm_c_filter_ibiasn3 biquad_gm_c_filter_ibiasn4
++ low_freq_pll_ibiasn vbiasn dac_8bit_ibiasp_A dac_8bit_ibiasp_B
+X0 peak_detector_ibiasn1 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=3.48e+12p pd=2.516e+07u as=7.83e+13p ps=5.661e+08u w=6e+06u l=4e+06u
+X1 VDD vbiasp sample_and_hold_ibiasn_B VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=3.48e+12p ps=2.516e+07u w=6e+06u l=4e+06u
+X2 dac_8bit_ibiasp_B vbiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=1.74e+12p pd=1.374e+07u as=4.64e+12p ps=3.664e+07u w=2e+06u l=2e+06u
+X3 VSS vbiasn dac_8bit_ibiasp_B VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=2e+06u
+X4 biquad_gm_c_filter_ibiasn2 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=3.48e+12p pd=2.516e+07u as=0p ps=0u w=6e+06u l=4e+06u
+X5 VDD vbiasp input_amplifier_ibiasn2 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=3.48e+12p ps=2.516e+07u w=6e+06u l=4e+06u
+X6 dac_8bit_ibiasp_A vbiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=1.74e+12p pd=1.374e+07u as=0p ps=0u w=2e+06u l=2e+06u
+X7 VSS VSS dac_8bit_ibiasp_A VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=2e+06u
+X8 biquad_gm_c_filter_ibiasn2 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X9 peak_detector_ibiasn2 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=3.48e+12p pd=2.516e+07u as=0p ps=0u w=6e+06u l=4e+06u
+X10 dac_8bit_ibiasn_A vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=3.48e+12p pd=2.516e+07u as=0p ps=0u w=6e+06u l=4e+06u
+X11 VDD vbiasp dac_8bit_ibiasn_A VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X12 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X13 VDD vbiasp biquad_gm_c_filter_ibiasn4 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=3.48e+12p ps=2.516e+07u w=6e+06u l=4e+06u
+X14 biquad_gm_c_filter_ibiasn1 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=3.48e+12p pd=2.516e+07u as=0p ps=0u w=6e+06u l=4e+06u
+X15 input_amplifier_ibiasn1 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=3.48e+12p pd=2.516e+07u as=0p ps=0u w=6e+06u l=4e+06u
+X16 VDD vbiasp input_amplifier_ibiasn1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X17 VDD vbiasp dac_8bit_ibiasn_B VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=3.48e+12p ps=2.516e+07u w=6e+06u l=4e+06u
+X18 VDD vbiasp peak_detector_ibiasn1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X19 VDD vbiasp biquad_gm_c_filter_ibiasn1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X20 diff_to_se_converter_ibiasn vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=3.48e+12p pd=2.516e+07u as=0p ps=0u w=6e+06u l=4e+06u
+X21 input_amplifier_ibiasn1 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X22 low_freq_pll_ibiasn vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=3.48e+12p pd=2.516e+07u as=0p ps=0u w=6e+06u l=4e+06u
+X23 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X24 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X25 dac_8bit_ibiasp_A VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=2e+06u
+X26 VSS vbiasn dac_8bit_ibiasp_A VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=2e+06u
+X27 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X28 biquad_gm_c_filter_ibiasn3 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=3.48e+12p pd=2.516e+07u as=0p ps=0u w=6e+06u l=4e+06u
+X29 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X30 input_amplifier_ibiasn2 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X31 VDD vbiasp biquad_gm_c_filter_ibiasn3 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X32 biquad_gm_c_filter_ibiasn4 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X33 VDD vbiasp input_amplifier_ibiasn1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X34 VDD vbiasp low_freq_pll_ibiasn VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X35 VDD vbiasp peak_detector_ibiasn1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X36 VDD vbiasp biquad_gm_c_filter_ibiasn2 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X37 VDD vbiasp peak_detector_ibiasn2 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X38 VDD vbiasp comparator_ibiasn VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=3.48e+12p ps=2.516e+07u w=6e+06u l=4e+06u
+X39 VDD vbiasp biquad_gm_c_filter_ibiasn1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X40 sample_and_hold_ibiasn_A vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=3.48e+12p pd=2.516e+07u as=0p ps=0u w=6e+06u l=4e+06u
+X41 VDD vbiasp sample_and_hold_ibiasn_A VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X42 biquad_gm_c_filter_ibiasn1 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X43 comparator_ibiasn vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X44 VDD vbiasp comparator_ibiasn VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X45 VDD vbiasp biquad_gm_c_filter_ibiasn2 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X46 VDD vbiasp diff_to_se_converter_ibiasn VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X47 VDD vbiasp biquad_gm_c_filter_ibiasn3 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X48 VDD vbiasp sample_and_hold_ibiasn_B VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X49 VDD vbiasp peak_detector_ibiasn2 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X50 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X51 dac_8bit_ibiasp_A vbiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=2e+06u
+X52 VSS vbiasn dac_8bit_ibiasp_A VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=2e+06u
+X53 dac_8bit_ibiasp_B vbiasn VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=2e+06u
+X54 VSS VSS dac_8bit_ibiasp_B VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=2e+06u
+X55 biquad_gm_c_filter_ibiasn4 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X56 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X57 dac_8bit_ibiasn_B vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X58 comparator_ibiasn vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X59 diff_to_se_converter_ibiasn vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X60 sample_and_hold_ibiasn_B vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X61 input_amplifier_ibiasn2 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X62 dac_8bit_ibiasp_B VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=2e+06u
+X63 biquad_gm_c_filter_ibiasn3 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X64 dac_8bit_ibiasn_A vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X65 VSS vbiasn dac_8bit_ibiasp_B VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=2e+06u
+X66 sample_and_hold_ibiasn_A vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X67 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X68 dac_8bit_ibiasn_B vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X69 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X70 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X71 peak_detector_ibiasn1 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X72 sample_and_hold_ibiasn_B vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X73 low_freq_pll_ibiasn vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X74 VDD vbiasp low_freq_pll_ibiasn VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X75 peak_detector_ibiasn2 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X76 VDD vbiasp input_amplifier_ibiasn2 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X77 VDD vbiasp dac_8bit_ibiasn_A VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X78 VDD vbiasp biquad_gm_c_filter_ibiasn4 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X79 VDD vbiasp sample_and_hold_ibiasn_A VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X80 VDD vbiasp dac_8bit_ibiasn_B VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+X81 VDD vbiasp diff_to_se_converter_ibiasn VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=6e+06u l=4e+06u
+C0 vbiasp biquad_gm_c_filter_ibiasn4 0.59fF
+C1 vbiasp diff_to_se_converter_ibiasn 0.70fF
+C2 biquad_gm_c_filter_ibiasn3 biquad_gm_c_filter_ibiasn4 0.43fF
+C3 biquad_gm_c_filter_ibiasn1 biquad_gm_c_filter_ibiasn4 0.17fF
+C4 sample_and_hold_ibiasn_A low_freq_pll_ibiasn 0.01fF
+C5 dac_8bit_ibiasn_B VDD 0.61fF
+C6 diff_to_se_converter_ibiasn peak_detector_ibiasn1 0.32fF
+C7 biquad_gm_c_filter_ibiasn3 vbiasp 0.70fF
+C8 VDD dac_8bit_ibiasn_A 0.85fF
+C9 low_freq_pll_ibiasn comparator_ibiasn 0.06fF
+C10 vbiasp peak_detector_ibiasn2 10.06fF
+C11 biquad_gm_c_filter_ibiasn1 vbiasp 3.10fF
+C12 vbiasp peak_detector_ibiasn1 0.30fF
+C13 dac_8bit_ibiasp_A vbiasn 0.70fF
+C14 biquad_gm_c_filter_ibiasn2 biquad_gm_c_filter_ibiasn4 2.27fF
+C15 sample_and_hold_ibiasn_A input_amplifier_ibiasn1 0.06fF
+C16 biquad_gm_c_filter_ibiasn4 VDD 0.35fF
+C17 diff_to_se_converter_ibiasn VDD 0.24fF
+C18 input_amplifier_ibiasn2 diff_to_se_converter_ibiasn 0.43fF
+C19 biquad_gm_c_filter_ibiasn2 vbiasp 0.30fF
+C20 biquad_gm_c_filter_ibiasn2 biquad_gm_c_filter_ibiasn3 0.32fF
+C21 vbiasp VDD 38.99fF
+C22 biquad_gm_c_filter_ibiasn3 VDD 0.11fF
+C23 sample_and_hold_ibiasn_B dac_8bit_ibiasn_A 5.00fF
+C24 vbiasp input_amplifier_ibiasn2 0.59fF
+C25 peak_detector_ibiasn2 VDD 3.18fF
+C26 biquad_gm_c_filter_ibiasn1 VDD 4.90fF
+C27 peak_detector_ibiasn1 VDD 1.37fF
+C28 input_amplifier_ibiasn2 peak_detector_ibiasn2 0.17fF
+C29 input_amplifier_ibiasn2 peak_detector_ibiasn1 2.27fF
+C30 low_freq_pll_ibiasn biquad_gm_c_filter_ibiasn4 6.31fF
+C31 biquad_gm_c_filter_ibiasn2 VDD 0.13fF
+C32 sample_and_hold_ibiasn_B vbiasp 6.71fF
+C33 vbiasp low_freq_pll_ibiasn 0.98fF
+C34 biquad_gm_c_filter_ibiasn3 low_freq_pll_ibiasn 0.08fF
+C35 input_amplifier_ibiasn2 VDD 0.67fF
+C36 biquad_gm_c_filter_ibiasn1 low_freq_pll_ibiasn 2.08fF
+C37 input_amplifier_ibiasn1 diff_to_se_converter_ibiasn 0.08fF
+C38 sample_and_hold_ibiasn_A vbiasp 11.70fF
+C39 vbiasp input_amplifier_ibiasn1 0.98fF
+C40 sample_and_hold_ibiasn_A peak_detector_ibiasn2 6.02fF
+C41 input_amplifier_ibiasn1 peak_detector_ibiasn2 2.08fF
+C42 biquad_gm_c_filter_ibiasn2 low_freq_pll_ibiasn 0.76fF
+C43 vbiasp comparator_ibiasn 7.29fF
+C44 input_amplifier_ibiasn1 peak_detector_ibiasn1 0.76fF
+C45 sample_and_hold_ibiasn_B VDD 0.53fF
+C46 low_freq_pll_ibiasn VDD 0.78fF
+C47 biquad_gm_c_filter_ibiasn1 comparator_ibiasn 9.49fF
+C48 dac_8bit_ibiasp_B vbiasn 1.52fF
+C49 sample_and_hold_ibiasn_A VDD 2.63fF
+C50 input_amplifier_ibiasn1 VDD 0.99fF
+C51 dac_8bit_ibiasn_B vbiasp 1.79fF
+C52 input_amplifier_ibiasn2 input_amplifier_ibiasn1 6.31fF
+C53 vbiasp dac_8bit_ibiasn_A 3.81fF
+C54 VDD comparator_ibiasn 6.66fF
+C55 dac_8bit_ibiasp_A dac_8bit_ibiasp_B 2.02fF
+.ends
+
