@@ -1,0 +1,41 @@
+#=========================================================================
+# LVS using netgen
+#=========================================================================
+# Author : Nikhil Poole
+# Date   : June 21, 2021
+#
+
+name: open-netgen-lvs
+
+#-------------------------------------------------------------------------
+# Inputs and Outputs
+#-------------------------------------------------------------------------
+inputs:
+  - adk
+  - design_extracted.spice
+  - user_analog_project_wrapper.spice
+  - deconv.nofillerflatbuslvs.v
+  - adc_controller.nofillerflatbuslvs.v
+#  - sky130_sram_4kbyte_1rw1r_32x1024_8.sp
+  - sky130_sram_2kbyte_1rw1r_32x512_8.sp
+
+outputs:
+  - lvs_results.log
+
+#-------------------------------------------------------------------------
+# Parameters
+#-------------------------------------------------------------------------
+
+parameters:
+  design_name: undefined
+
+commands:
+  - sed -i 's/VNB sky130_fd_pr__res_generic_po/sky130_fd_pr__res_generic_po/g' inputs/adk/stdcells.spi
+  - cp inputs/adc_controller.nofillerflatbuslvs.v adc_controller_case_converted.v
+  - sed -i -e 's/N2/N_2/g' -e 's/N3/N_3/g' -e 's/N4/N_4/g' adc_controller_case_converted.v
+  #- v2lvs -i -lsp inputs/adk/stdcells.spi -s inputs/adk/stdcells.spi -lsp inputs/*.sp -s inputs/*.sp -v inputs/design.flatbuslvs.v -o design_lvs.spice
+  - v2lvs -i -lsp inputs/adk/stdcells.spi -s inputs/adk/stdcells.spi -lsp inputs/*.sp -s inputs/*.sp -lsp inputs/user_analog_project_wrapper.spice -s inputs/user_analog_project_wrapper.spice -v inputs/deconv.nofillerflatbuslvs.v -v adc_controller_case_converted.v -o design_lvs.spice
+  - cat inputs/adk/netgen-setup.tcl blackbox.tcl > netgen_blackbox_setup.tcl
+  #- cat inputs/adk/netgen-setup.tcl > netgen_blackbox_setup.tcl
+  - sh run_lvs.sh
+

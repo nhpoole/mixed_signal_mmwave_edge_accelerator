@@ -1,0 +1,2240 @@
+Starting shell in Topographical mode...
+#=========================================================================
+# START.tcl
+#=========================================================================
+# This script runs a list of other scripts from the "scripts" or "inputs"
+# dir in some order (either default or from an mflowgen Python parameter).
+#
+# The order of the scripts can specified from an mflowgen parameter. This
+# creates a highly flexible node where you can rearrange the internal
+# scripts or add new scripts. For example, with a default order of:
+#
+#     order = step1.tcl step2.tcl step3.tcl
+#
+# After adding a new input called "new.tcl", you can re-parameterize as:
+#
+#     order = step1.tcl new.tcl step2.tcl step3.tcl
+#
+# and the scripts will execute in that order.
+#
+# Author : Christopher Torng
+# Date   : January 14, 2020
+#-------------------------------------------------------------------------
+# Execute
+#-------------------------------------------------------------------------
+# Order is a comma-separated string containing scripts to run
+set order [split $::env(order) ","]
+designer-interface.tcl setup-session.tcl read-design.tcl constraints.tcl make-path-groups.tcl compile-options.tcl compile.tcl generate-results.tcl reporting.tcl
+# Run the scripts in order (inputs take priority)
+foreach tcl $order {
+  # Try to find the script in the "inputs" directory first
+  if {[ file exists inputs/$tcl ]} {
+    puts "\n  > Info: Sourcing \"inputs/$tcl\"\n"
+    source -echo -verbose inputs/$tcl
+    # Hook to drop into interactive Design Compiler shell after setup
+    if {[ info exists DC_SETUP_DONE ]} { return }
+  # Try to find the script in the "scripts" directory
+  } elseif {[ file exists scripts/$tcl ]} {
+    puts "\n  > Info: Sourcing \"scripts/$tcl\"\n"
+    source -echo -verbose scripts/$tcl
+    # Hook to drop into interactive Design Compiler shell after setup
+    if {[ info exists DC_SETUP_DONE ]} { return }
+  # Failed to find the script anywhere...
+  } else {
+    echo "Warn: Did not find $tcl"
+    exit 1
+  }
+}
+
+  > Info: Sourcing "scripts/designer-interface.tcl"
+
+#=========================================================================
+# designer-interface.tcl
+#=========================================================================
+# The designer-interface.tcl file is the first script run by Design
+# Compiler. It is the interface that connects the synthesis scripts with
+# the following:
+#
+# - Build system parameters
+# - Build system inputs
+# - ASIC design kit
+#
+# Author : Christopher Torng
+# Date   : April 8, 2018
+#-------------------------------------------------------------------------
+# Parameters
+#-------------------------------------------------------------------------
+set design_name                   $::env(design_name)
+deconv_kernel_estimator_top_level
+set clock_period                  $::env(clock_period)
+20.0
+# dc_design_name and dc_clock_period kept for backwards comptability,
+# prefer to use design_name and clock_period for tool independence
+set dc_design_name                $::env(design_name)
+deconv_kernel_estimator_top_level
+set dc_clock_period               $::env(clock_period)
+20.0
+set dc_saif_instance              $::env(saif_instance)
+deconv_kernel_estimator_top_level_tb/deconv_kernel_estimator_top_level_inst
+set dc_flatten_effort             $::env(flatten_effort)
+0
+set dc_topographical              $::env(topographical)
+True
+set dc_num_cores                  $::env(nthreads)
+16
+set dc_high_effort_area_opt       $::env(high_effort_area_opt)
+False
+set dc_gate_clock                 $::env(gate_clock)
+True
+set dc_uniquify_with_design_name  $::env(uniquify_with_design_name)
+True
+set dc_suppress_msg                       $::env(suppress_msg)
+False
+set dc_suppressed_msg                     [split $::env(suppressed_msg) ","]
+TFCHK-072 TFCHK-014 TFCHK-049 TFCHK-050 TFCHK-012 TFCHK-073 TFCHK-092 PSYN-651 PSYN-650
+#-------------------------------------------------------------------------
+# Inputs
+#-------------------------------------------------------------------------
+set dc_rtl_handoff              inputs/design.v
+inputs/design.v
+set adk_dir                     inputs/adk
+inputs/adk
+# Extra libraries
+#
+# The glob below will capture any libraries collected by the build system
+# (e.g., SRAM libraries) generated from steps that synthesis depends on.
+#
+# To add more link libraries (e.g., IO cells, hierarchical blocks), append
+# to the "dc_extra_link_libraries" variable in the pre-synthesis plugin
+# like this:
+#
+#   set dc_extra_link_libraries  [join "
+#                                  $dc_extra_link_libraries
+#                                  extra1.db
+#                                  extra2.db
+#                                  extra3.db
+#                                "]
+set dc_extra_link_libraries     [join "
+                                    [lsort [glob -nocomplain inputs/*.db]]
+                                    [lsort [glob -nocomplain inputs/adk/*.db]]
+                                "]
+inputs/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.db inputs/adk/stdcells-bc.db inputs/adk/stdcells.db
+#-------------------------------------------------------------------------
+# Interface to the ASIC design kit
+#-------------------------------------------------------------------------
+set dc_milkyway_ref_libraries   $adk_dir/stdcells.mwlib
+inputs/adk/stdcells.mwlib
+set dc_milkyway_tf              $adk_dir/rtk-tech.tf
+inputs/adk/rtk-tech.tf
+set dc_tluplus_map              $adk_dir/rtk-tluplus.map
+inputs/adk/rtk-tluplus.map
+set dc_tluplus_max              $adk_dir/rtk-max.tluplus
+inputs/adk/rtk-max.tluplus
+set dc_tluplus_min              $adk_dir/rtk-min.tluplus
+inputs/adk/rtk-min.tluplus
+set dc_adk_tcl                  $adk_dir/adk.tcl
+inputs/adk/adk.tcl
+set dc_target_libraries         stdcells.db
+stdcells.db
+# Extra libraries
+set dc_additional_search_path   $adk_dir
+inputs/adk
+#-------------------------------------------------------------------------
+# Directories
+#-------------------------------------------------------------------------
+set dc_reports_dir              reports
+reports
+set dc_results_dir              results
+results
+set dc_alib_dir                 alib
+alib
+
+  > Info: Sourcing "scripts/setup-session.tcl"
+
+#=========================================================================
+# setup-session.tcl
+#=========================================================================
+# Author : Christopher Torng
+# Date   : September 30, 2018
+# Set up variables for this specific ASIC design kit
+source -echo -verbose $dc_adk_tcl
+#=========================================================================
+# ASIC Design Kit Setup TCL File
+#=========================================================================
+# This file is sourced by every asic flow tcl script that uses the
+# ASIC design kit. This allows us to set ADK-specific variables.
+#-------------------------------------------------------------------------
+# ADK_PROCESS
+#-------------------------------------------------------------------------
+# This variable is used by the Innovus Foundation Flow to automatically
+# configure process-specific options (e.g., extraction engines).
+#
+# The process can be "28", "180", etc., with units in nm.
+set ADK_PROCESS 130
+130
+#-------------------------------------------------------------------------
+# Preferred routing layers
+#-------------------------------------------------------------------------
+# These variables are used by the Synopsys DC Topographical flow and also
+# by the Innovus Foundation Flow. Typically the top few metal layers are
+# reserved for power straps and maybe clock routing.
+set ADK_MIN_ROUTING_LAYER_DC met2
+met2
+set ADK_MAX_ROUTING_LAYER_DC met5
+met5
+set ADK_MAX_ROUTING_LAYER_INNOVUS 6
+6
+set ADK_BASE_LAYER_IDX 1
+1
+#-------------------------------------------------------------------------
+# Power mesh layers
+#-------------------------------------------------------------------------
+# These variables are used in Innovus scripts to reference the layers used
+# for the coarse power mesh.
+#
+# Care must be taken to choose the right layers for the power mesh such
+# that the bottom layer of the power mesh is perpendicular to the
+# direction of the power rails in the stdcells. This allows Innovus to
+# stamp stacked vias down at each intersection.
+set ADK_POWER_MESH_BOT_LAYER 5
+5
+set ADK_POWER_MESH_TOP_LAYER 6
+6
+#-------------------------------------------------------------------------
+# ADK_DRIVING_CELL
+#-------------------------------------------------------------------------
+# This variable should indicate which cell to use with the
+# set_driving_cell command. The tools will assume all inputs to a block
+# are being driven by this kind of cell. It should usually be some kind
+# of simple inverter.
+set ADK_DRIVING_CELL "sky130_fd_sc_hd__inv_2"
+sky130_fd_sc_hd__inv_2
+#-------------------------------------------------------------------------
+# ADK_TYPICAL_ON_CHIP_LOAD
+#-------------------------------------------------------------------------
+# Our default timing constraints assume that we are driving another block of
+# on-chip logic. Select how much load capacitance (in the same units as the
+# lib/db) we should drive here. This is the load capacitance that the output
+# pins of the block will expect to be driving.
+#
+# The stdcell lib shows about 9fF for an inverter x4, so about 9fF is
+# reasonable.
+set ADK_TYPICAL_ON_CHIP_LOAD 0.009
+0.009
+#-------------------------------------------------------------------------
+# ADK_FILLER_CELLS
+#-------------------------------------------------------------------------
+# This variable should include a space delimited list of the names of
+# the filler cells in the library. Note, you must order the filler cells
+# from largest to smallest because ICC / Innovus will start by using the
+# first filler cell, and only use the second filler cell if there is
+# space.
+set ADK_FILLER_CELLS   "sky130_fd_sc_hd__fill_8    sky130_fd_sc_hd__fill_4    sky130_fd_sc_hd__fill_2    sky130_fd_sc_hd__fill_1"
+sky130_fd_sc_hd__fill_8    sky130_fd_sc_hd__fill_4    sky130_fd_sc_hd__fill_2    sky130_fd_sc_hd__fill_1
+#-------------------------------------------------------------------------
+# ADK_TIE_CELLS
+#-------------------------------------------------------------------------
+# This list should specify the cells to use for tying high to VDD and
+# tying low to VSS.
+set ADK_TIE_CELLS   "sky130_fd_sc_hd__conb_1"
+sky130_fd_sc_hd__conb_1
+#-------------------------------------------------------------------------
+# ADK_WELL_TAP_CELL
+#-------------------------------------------------------------------------
+# This list should specify the well tap cell if the stdcells in the
+# library do not already include taps. The interval is the DRC rule for
+# the required spacing between tap cells.
+# source: https://github.com/RTimothyEdwards/open_pdks/blob/master/sky130/openlane/sky130_fd_sc_hd/config.tcl#L29
+set ADK_WELL_TAP_CELL "sky130_fd_sc_hd__tapvpwrvgnd_1"
+sky130_fd_sc_hd__tapvpwrvgnd_1
+# source: https://github.com/RTimothyEdwards/open_pdks/blob/master/sky130/openlane/config.tcl#L70
+set ADK_WELL_TAP_INTERVAL 13
+13
+#-------------------------------------------------------------------------
+# ADK_END_CAP_CELL
+#-------------------------------------------------------------------------
+# This list should specify the end cap cells if the library requires them.
+# source: https://github.com/RTimothyEdwards/open_pdks/blob/master/sky130/openlane/sky130_fd_sc_hd/config.tcl#L30
+set ADK_END_CAP_CELL "sky130_fd_sc_hd__decap_3"
+sky130_fd_sc_hd__decap_3
+#-------------------------------------------------------------------------
+# ADK_ANTENNA_CELL
+#-------------------------------------------------------------------------
+# This list has the antenna diode cell used to avoid antenna DRC
+# violations.
+# source: https://github.com/RTimothyEdwards/open_pdks/blob/master/sky130/openlane/sky130_fd_sc_hd/config.tcl#L55
+set ADK_ANTENNA_CELL "sky130_fd_sc_hd__diode_2"
+sky130_fd_sc_hd__diode_2
+#-------------------------------------------------------------------------
+# ADK_LVS_EXCLUDE_CELL_LIST (OPTIONAL)
+#-------------------------------------------------------------------------
+# For LVS, we usually want a netlist that excludes physical cells that
+# have no devices in them (or else LVS will have issues). Specifically for
+# filler cells, the extracted layout will not have any trace of the
+# fillers because there are no devices in them. Meanwhile, the schematic
+# generated from the netlist will show filler cells instances with VDD/VSS
+# ports, and this will cause LVS to flag a "mismatch" with the layout.
+#
+# This list can be used to filter out physical-only cells from the netlist
+# generated for LVS. If this is left empty, LVS will just be a bit more
+# difficult to deal with.
+set ADK_LVS_EXCLUDE_CELL_LIST   "sky130_fd_sc_hd__fill_*    sky130_fd_sc_hd__tapvpwrvgnd_1"
+sky130_fd_sc_hd__fill_*    sky130_fd_sc_hd__tapvpwrvgnd_1
+#-------------------------------------------------------------------------
+# ADK_VIRTUOSO_EXCLUDE_CELL_LIST (OPTIONAL)
+#-------------------------------------------------------------------------
+# Similar to the case with LVS, we may want to filter out certain cells
+# for Virtuoso simulation. Specifically, decaps can make Virtuoso
+# simulation very slow. While we do eventually want to do a complete
+# simulation including decaps, excluding them can speed up simulation
+# significantly.
+#
+# This list can be used to filter out such cells from the netlist
+# generated for Virtuoso simulation. If this is left empty, then Virtuoso
+# simulations will just run more slowly.
+set ADK_VIRTUOSO_EXCLUDE_CELL_LIST   "sky130_fd_sc_hd__fill_*    sky130_fd_sc_hd__tapvpwrvgnd_1"
+sky130_fd_sc_hd__fill_*    sky130_fd_sc_hd__tapvpwrvgnd_1
+#-------------------------------------------------------------------------
+# ADK_BUF_CELL_LIST (OPTIONAL)
+#-------------------------------------------------------------------------
+# For ECOs, we specify what buffer cells can be used in order to resolve
+# timing violations.
+set ADK_BUF_CELL_LIST   "sky130_fd_sc_hd__buf_1    sky130_fd_sc_hd__buf_2    sky130_fd_sc_hd__buf_4    sky130_fd_sc_hd__buf_6    sky130_fd_sc_hd__buf_8    sky130_fd_sc_hd__buf_12    sky130_fd_sc_hd__buf_16"
+sky130_fd_sc_hd__buf_1    sky130_fd_sc_hd__buf_2    sky130_fd_sc_hd__buf_4    sky130_fd_sc_hd__buf_6    sky130_fd_sc_hd__buf_8    sky130_fd_sc_hd__buf_12    sky130_fd_sc_hd__buf_16
+#-------------------------------------------------------------------------
+# Support for open-source tools
+#-------------------------------------------------------------------------
+# Open-source tools tend to require more detailed variables than
+# commercial tools do. In this section we define extra variables for them.
+set ADK_TIE_HI_CELL "sky130_fd_sc_hd__conb_1"
+sky130_fd_sc_hd__conb_1
+set ADK_TIE_LO_CELL "sky130_fd_sc_hd__conb_1"
+sky130_fd_sc_hd__conb_1
+set ADK_TIE_HI_PORT "HI"
+HI
+set ADK_TIE_LO_PORT "LO"
+LO
+set ADK_MIN_BUF_CELL   "sky130_fd_sc_hd__buf_1"
+sky130_fd_sc_hd__buf_1
+set ADK_MIN_BUF_PORT_I "A"
+A
+set ADK_MIN_BUF_PORT_O "X"
+X
+X
+#-------------------------------------------------------------------------
+# System
+#-------------------------------------------------------------------------
+# Multicore support -- watch how many licenses we have!
+set_host_options -max_cores $dc_num_cores
+1
+# Set up alib caching for faster consecutive runs
+set_app_var alib_library_analysis_path $dc_alib_dir
+alib
+#-------------------------------------------------------------------------
+# Message suppression
+#-------------------------------------------------------------------------
+if { $dc_suppress_msg } {
+
+  foreach m $dc_suppressed_msg {
+    suppress_message $m
+  }
+
+}
+#-------------------------------------------------------------------------
+# Libraries
+#-------------------------------------------------------------------------
+# Set up search path for libraries and design files
+set_app_var search_path ". $dc_additional_search_path $search_path"
+. inputs/adk . /cad/synopsys/syn/L-2016.03-SP5-5/libraries/syn /cad/synopsys/syn/L-2016.03-SP5-5/minpower/syn /cad/synopsys/syn/L-2016.03-SP5-5/dw/syn_ver /cad/synopsys/syn/L-2016.03-SP5-5/dw/sim_ver
+# Important app vars
+#
+# - target_library    -- DC maps the design to gates in this library (db)
+# - synthetic_library -- DesignWare library (sldb)
+# - link_library      -- Libraries for any other design references (e.g.,
+#                        SRAMs, hierarchical blocks, macros, IO libs) (db)
+set_app_var target_library     $dc_target_libraries
+stdcells.db
+set_app_var synthetic_library  dw_foundation.sldb
+dw_foundation.sldb
+set_app_var link_library       [join "
+                                 *
+                                 $target_library
+                                 $dc_extra_link_libraries
+                                 $synthetic_library
+                               "]
+* stdcells.db inputs/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.db inputs/adk/stdcells-bc.db inputs/adk/stdcells.db dw_foundation.sldb
+# Create Milkyway library
+#
+# By default, Milkyway libraries only have 180 or so layers available to
+# use (255 total, but some are reserved). The extend_mw_layers command
+# expands the Milkyway library to accommodate up to 4095 layers.
+# Only create new Milkyway design library if it doesn't already exist
+set milkyway_library ${dc_design_name}_lib
+deconv_kernel_estimator_top_level_lib
+if {![file isdirectory $milkyway_library ]} {
+
+  # Create a new Milkyway library
+
+  extend_mw_layers
+  create_mw_lib -technology           $dc_milkyway_tf                            -mw_reference_library $dc_milkyway_ref_libraries                 $milkyway_library
+
+} else {
+
+  # Reuse existing Milkyway library, but ensure that it is consistent with
+  # the provided reference Milkyway libraries.
+
+  set_mw_lib_reference $milkyway_library     -mw_reference_library $dc_milkyway_ref_libraries
+
+}
+Start to load technology file inputs/adk/rtk-tech.tf.
+Warning: Layer 'li1' has invalid fat table thresholds '(0)'. (line 117) (TFCHK-086)
+Warning: Layer 'met5' has invalid fat table thresholds '(0)'. (line 356) (TFCHK-086)
+Warning: DesignRule '' is missing the attribute 'stackable'. (line 840) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 840) (TFCHK-014)
+Warning: DesignRule is defined with non-consecutive layers 'via4' and 'met4'. (line 840) (TFCHK-080)
+Warning: DesignRule '' is missing the attribute 'stackable'. (line 848) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 848) (TFCHK-014)
+Warning: DesignRule is defined with non-consecutive layers 'via4' and 'met5'. (line 848) (TFCHK-080)
+Warning: DesignRule '' is missing the attribute 'stackable'. (line 856) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 856) (TFCHK-014)
+Warning: DesignRule is defined with non-consecutive layers 'via3' and 'met3'. (line 856) (TFCHK-080)
+Warning: DesignRule '' is missing the attribute 'stackable'. (line 864) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 864) (TFCHK-014)
+Warning: DesignRule is defined with non-consecutive layers 'via3' and 'met4'. (line 864) (TFCHK-080)
+Warning: DesignRule '' is missing the attribute 'stackable'. (line 872) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 872) (TFCHK-014)
+Warning: DesignRule is defined with non-consecutive layers 'via2' and 'met2'. (line 872) (TFCHK-080)
+Warning: DesignRule '' is missing the attribute 'stackable'. (line 880) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 880) (TFCHK-014)
+Warning: DesignRule is defined with non-consecutive layers 'via2' and 'met3'. (line 880) (TFCHK-080)
+Warning: DesignRule '' is missing the attribute 'stackable'. (line 888) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 888) (TFCHK-014)
+Warning: DesignRule is defined with non-consecutive layers 'via' and 'met1'. (line 888) (TFCHK-080)
+Warning: DesignRule '' is missing the attribute 'stackable'. (line 896) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 896) (TFCHK-014)
+Warning: DesignRule is defined with non-consecutive layers 'via' and 'met2'. (line 896) (TFCHK-080)
+Warning: DesignRule '' is missing the attribute 'stackable'. (line 904) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 904) (TFCHK-014)
+Warning: DesignRule is defined with non-consecutive layers 'mcon' and 'li1'. (line 904) (TFCHK-080)
+Warning: DesignRule '' is missing the attribute 'stackable'. (line 912) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 912) (TFCHK-014)
+Warning: DesignRule is defined with non-consecutive layers 'mcon' and 'met1'. (line 912) (TFCHK-080)
+Warning: Layer 'li1' has a pitch 0.46 that does not match the recommended wire-to-via pitch 0.34. (TFCHK-049)
+Warning: Layer 'met1' has a pitch 0.34 that does not match the recommended wire-to-via pitch 0.37. (TFCHK-049)
+Warning: Layer 'met2' has a pitch 0.46 that does not match the recommended wire-to-via pitch 0.395. (TFCHK-049)
+Warning: Layer 'met3' has a pitch 0.68 that does not match the recommended wire-to-via pitch 0.64. (TFCHK-049)
+Warning: Layer 'met4' has a pitch 0.92 that does not match the recommended wire-to-via pitch 1.04. (TFCHK-049)
+Warning: Layer 'met5' has a pitch 3.4 that does not match the recommended wire-to-via pitch 3.11. (TFCHK-049)
+Warning: Layer 'met2' has a pitch 0.46 that does not match the doubled pitch 0.92 or tripled pitch 1.38. (TFCHK-050)
+Warning: Layer 'met5' has a pitch 3.4 that does not match the doubled pitch 1.36 or tripled pitch 2.04. (TFCHK-050)
+Warning: CapModel sections are missing. Capacitance models should be loaded with a TLU+ file later. (TFCHK-084)
+Technology file inputs/adk/rtk-tech.tf has been loaded successfully.
+open_mw_lib $milkyway_library
+{deconv_kernel_estimator_top_level_lib}
+# Set up TLU plus (if the files exist)
+if { $dc_topographical == True } {
+  if {[file exists [which $dc_tluplus_max]]} {
+    set_tlu_plus_files -max_tluplus  $dc_tluplus_max                        -min_tluplus  $dc_tluplus_min                        -tech2itf_map $dc_tluplus_map
+
+    check_tlu_plus_files
+  }
+}
+Warning: File 'inputs/adk/rtk-max.tluplus' was not found in search path. (CMD-030)
+#-------------------------------------------------------------------------
+# Misc
+#-------------------------------------------------------------------------
+# Set up tracking for Synopsys Formality
+set_svf ${dc_results_dir}/${dc_design_name}.mapped.svf
+1
+# SAIF mapping
+saif_map -start
+Information: The SAIF name mapping information database is now active. (PWR-602)
+1
+# Avoiding X-propagation for synchronous reset DFFs
+#
+# There are two key variables that help avoid X-propagation for
+# synchronous reset DFFs:
+#
+# - set hdlin_ff_always_sync_set_reset true
+#
+#     - Tells DC to use every constant 0 loaded into a DFF with a clock
+#       for synchronous reset, and every constant 1 loaded into a DFF with a
+#       clock for synchronous set
+#
+# - set compile_seqmap_honor_sync_set_reset true
+#
+#     - Tells DC to preserve synchronous reset or preset logic close to
+#       the flip-flop
+#
+# So the hdlin variable first tells DC to treat resets as synchronous, and
+# the compile variable tells DC that for all these synchronous reset DFFs,
+# keep the logic simple and close to the DFF to avoid X-propagation. The
+# hdlin variable applies to the analyze step when we read in the RTL, so
+# it must be set before we read in the Verilog. The second variable
+# applies to compile and must be set before we run compile_ultra.
+#
+# Note: Instead of setting the hdlin_ff_always_sync_set_reset variable to
+# true, you can specifically tell DC about a particular DFF reset using
+# the //synopsys sync_set_reset "reset, int_reset" pragma.
+#
+# By default, the hdlin_ff_always_async_set_reset variable is set to true,
+# and the hdlin_ff_always_sync_set_reset variable is set to false.
+set hdlin_ff_always_sync_set_reset      true
+true
+set compile_seqmap_honor_sync_set_reset true
+true
+# When boundary optimizations are off, set this variable to true to still
+# allow unconnected registers to be removed.
+set compile_optimize_unloaded_seq_logic_with_no_bound_opt true
+true
+# Remove new variable info messages from the end of the log file
+set_app_var sh_new_variable_message false
+false
+# Hook to drop into interactive Design Compiler shell after setup
+if {[info exists ::env(DC_EXIT_AFTER_SETUP)]} { set DC_SETUP_DONE true }
+
+  > Info: Sourcing "scripts/read-design.tcl"
+
+#=========================================================================
+# read-design.tcl
+#=========================================================================
+# Author : Christopher Torng
+# Date   : May 14, 2018
+#
+# Check libraries
+check_library > $dc_reports_dir/${dc_design_name}.check_library.rpt
+# The first "WORK" is a reserved word for Design Compiler. The value for
+# the -path option is customizable.
+define_design_lib WORK -path ${dc_results_dir}/WORK
+1
+# Analyze the RTL source file
+if { ![analyze -format sverilog $dc_rtl_handoff] } { exit 1 }
+Running PRESTO HDLC
+Compiling source file ./inputs/design.v
+Warning:  ./inputs/design.v:107: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:199: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:200: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:201: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:202: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:203: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:204: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:205: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:206: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:207: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:208: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:209: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:210: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:211: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:212: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:213: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:214: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:226: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:239: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:257: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:319: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:330: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:460: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:519: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:520: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:521: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:522: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:523: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:524: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:525: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:526: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:527: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:528: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:529: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:530: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:531: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:532: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:533: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:534: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:548: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:560: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:571: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:646: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:755: the undeclared symbol 'kernel_phase_sram_en' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ./inputs/design.v:826: the undeclared symbol 'serializer_rdy' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ./inputs/design.v:1241: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:1242: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:1243: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:1245: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:1246: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:1247: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:1248: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./inputs/design.v:1249: The statements in initial blocks are ignored. (VER-281)
+Presto compilation completed successfully.
+Loading db file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells.db'
+Loading db file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.db'
+Loading db file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells-bc.db'
+Loading db file '/cad/synopsys/syn/L-2016.03-SP5-5/libraries/syn/dw_foundation.sldb'
+# Elaborate the design with design parameters from a file, or else just
+# elaborate normally
+if {[file exists [which setup-design-params.txt]]} {
+  elaborate $dc_design_name -file_parameters setup-design-params.txt
+  rename_design $dc_design_name* $dc_design_name
+} else {
+  elaborate $dc_design_name
+}
+Warning: File 'setup-design-params.txt' was not found in search path. (CMD-030)
+Loading db file '/cad/synopsys/syn/L-2016.03-SP5-5/libraries/syn/gtech.db'
+Loading db file '/cad/synopsys/syn/L-2016.03-SP5-5/libraries/syn/standard.sldb'
+  Loading link library 'sky130_fd_sc_hd__tt_025C_1v80'
+  Loading link library 'sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C_lib'
+  Loading link library 'sky130_fd_sc_hd__ff_100C_1v95'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ./inputs/design.v:941: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:965: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:976: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:977: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:988: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:999: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:1000: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:1017: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 928 in file
+        './inputs/design.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           933            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine deconv_kernel_estimator_top_level line 765 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   config_nfft_reg   | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|  nfft_cntr_en_reg   | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+| nfft_cntr_en_d1_reg | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|    nfft_cntr_reg    | Flip-flop |  12   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine deconv_kernel_estimator_top_level line 785 in file
+                './inputs/design.v'.
+============================================================================================
+|          Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+============================================================================================
+| coeff_table_base_addr_bypass_reg | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+============================================================================================
+
+Inferred memory devices in process
+        in routine deconv_kernel_estimator_top_level line 813 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   debug_en_d1_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   debug_en_d2_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine deconv_kernel_estimator_top_level line 928 in file
+                './inputs/design.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+|   tf_coeff_rwen_reg    | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|      state_r_reg       | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|   tf_coeff_radr_reg    | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|      a_coeffs_reg      | Flip-flop |  48   |  Y  | N  | N  | N  | N  | N  | N  |
+|      b_coeffs_reg      | Flip-flop |  48   |  Y  | N  | N  | N  | N  | N  | N  |
+| eval_iir_freq_resp_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   phase_vec_ren_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   phase_vec_rwen_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    tf_coeff_ren_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+==================================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'deconv_kernel_estimator_top_level'.
+Information: Building the design 'deserializer' instantiated from design 'deconv_kernel_estimator_top_level' with
+        the parameters "FETCH_WIDTH=16". (HDL-193)
+Warning:  ./inputs/design.v:1170: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./inputs/design.v:1171: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine deserializer_FETCH_WIDTH16 line 1166 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     count_r_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    out_valid_reg    | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|  parallel_data_reg  | Flip-flop |  16   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'serializer' instantiated from design 'deconv_kernel_estimator_top_level' with
+        the parameters "FETCH_WIDTH=16". (HDL-193)
+Warning:  ./inputs/design.v:2001: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine serializer_FETCH_WIDTH16 line 1971 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    select_r_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine serializer_FETCH_WIDTH16 line 1985 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_valid_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | Y  | N  |
+|   serial_data_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine serializer_FETCH_WIDTH16 line 1996 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   sender_deq_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===================================================================
+|       block name/line         | Inputs | Outputs | # sel inputs |
+===================================================================
+| serializer_FETCH_WIDTH16/1987 |   16   |    1    |      4       |
+===================================================================
+Presto compilation completed successfully.
+Information: Building the design 'iir_notch_filter' instantiated from design 'deconv_kernel_estimator_top_level' with
+        the parameters "CONFIG_SIZE=12,CORDIC_XY_BITS=16,CORDIC_PHASE_BITS=16,ADC_BITS=8,FIXED_Q=13,FILTER_ORDER=2,LATENCY=4". (HDL-193)
+Warning:  ./inputs/design.v:1383: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:1385: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:1404: signed to unsigned part selection occurs. (VER-318)
+Warning:  ./inputs/design.v:1422: signed to unsigned part selection occurs. (VER-318)
+Warning:  ./inputs/design.v:1499: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:1500: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:1501: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:1502: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1486 in file
+        './inputs/design.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1491           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+        in routine iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4 line 1486 in file
+                './inputs/design.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+|     den_phase_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      state_r_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | Y  | N  | N  |
+| tf_val_magnitude_reg  | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   tf_val_phase_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+| phase_mem_indices_reg | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reset_filt_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   run_filt_trig_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   tf_val_valid_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  freq_eval_done_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  complex_phases_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   den_eval_real_reg   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   den_eval_imag_reg   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   num_eval_real_reg   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   num_eval_imag_reg   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|    freq_k_step_reg    | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|     eval_cntr_reg     | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|   num_magnitude_reg   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|   den_magnitude_reg   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|     num_phase_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+=================================================================================
+Information:  Complex logic will not be considered for set/reset inference. (ELAB-2008)
+Presto compilation completed successfully.
+Information: Building the design 'phase_vec_sram_interface' instantiated from design 'deconv_kernel_estimator_top_level' with
+        the parameters "DATA_WIDTH=16,ADDR_WIDTH=12,DEPTH=2048". (HDL-193)
+
+Inferred memory devices in process
+        in routine phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048 line 1639 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     radr_r_reg      | Flip-flop |  12   |  Y  | N  | N  | N  | Y  | N  | N  |
+|     rwadr_r_reg     | Flip-flop |  12   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'tf_coeff_sram_interface' instantiated from design 'deconv_kernel_estimator_top_level' with
+        the parameters "DATA_WIDTH=16,ADDR_WIDTH=12,DEPTH=2048". (HDL-193)
+
+Inferred memory devices in process
+        in routine tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048 line 2048 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     radr_r_reg      | Flip-flop |  12   |  Y  | N  | N  | N  | Y  | N  | N  |
+|     rwadr_r_reg     | Flip-flop |  12   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'deconv_kernel_magnitude_sram_interface' instantiated from design 'deconv_kernel_estimator_top_level' with
+        the parameters "DATA_WIDTH=16,ADDR_WIDTH=12,DEPTH=2048". (HDL-193)
+
+Inferred memory devices in process
+        in routine deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048 line 1046 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     radr_r_reg      | Flip-flop |  12   |  Y  | N  | N  | N  | Y  | N  | N  |
+|     wadr_r_reg      | Flip-flop |  12   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'deconv_kernel_phase_sram_interface' instantiated from design 'deconv_kernel_estimator_top_level' with
+        the parameters "DATA_WIDTH=16,ADDR_WIDTH=12,DEPTH=2048". (HDL-193)
+
+Inferred memory devices in process
+        in routine deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048 line 1109 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     radr_r_reg      | Flip-flop |  12   |  Y  | N  | N  | N  | Y  | N  | N  |
+|     wadr_r_reg      | Flip-flop |  12   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'cordic_polar_to_rect'. (HDL-193)
+Warning:  ./inputs/design.v:82: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:83: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:310: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:313: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:335: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:336: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 124 in file
+        './inputs/design.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           125            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine cordic_polar_to_rect line 108 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       aux_reg       | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_polar_to_rect line 124 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      prey_reg       | Flip-flop |  17   |  Y  | N  | N  | N  | N  | N  | N  |
+|      prey_reg       | Flip-flop |   2   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      preph_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      prex_reg       | Flip-flop |  17   |  Y  | N  | N  | N  | N  | N  | N  |
+|      prex_reg       | Flip-flop |   2   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_polar_to_rect line 227 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      idle_reg       | Flip-flop |   1   |  N  | N  | N  | N  | Y  | Y  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_polar_to_rect line 240 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    pre_valid_reg    | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_polar_to_rect line 250 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     cangle_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_polar_to_rect line 258 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_polar_to_rect line 275 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       ph_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       xv_reg        | Flip-flop |  19   |  Y  | N  | N  | N  | N  | N  | N  |
+|       yv_reg        | Flip-flop |  19   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_polar_to_rect line 320 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     o_done_reg      | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_polar_to_rect line 331 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      o_aux_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     o_xval_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|     o_yval_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==============================================================
+|     block name/line      | Inputs | Outputs | # sel inputs |
+==============================================================
+| cordic_polar_to_rect/251 |   16   |    1    |      4       |
+==============================================================
+Information:  Complex logic will not be considered for set/reset inference. (ELAB-2008)
+Presto compilation completed successfully.
+Information: Building the design 'cordic_rect_to_polar'. (HDL-193)
+Warning:  ./inputs/design.v:434: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:435: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:639: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./inputs/design.v:650: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 471 in file
+        './inputs/design.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           472            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine cordic_rect_to_polar line 461 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       aux_reg       | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_rect_to_polar line 471 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      prey_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|      preph_reg      | Flip-flop |   1   |  N  | N  | N  | N  | Y  | Y  | N  |
+|      preph_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | Y  | N  |
+|      preph_reg      | Flip-flop |  14   |  Y  | N  | N  | N  | N  | N  | N  |
+|      prex_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_rect_to_polar line 549 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      idle_reg       | Flip-flop |   1   |  N  | N  | N  | N  | Y  | Y  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_rect_to_polar line 561 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    pre_valid_reg    | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_rect_to_polar line 572 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_rect_to_polar line 585 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     cangle_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_rect_to_polar line 594 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       ph_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       xv_reg        | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       yv_reg        | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_rect_to_polar line 625 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     o_done_reg      | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cordic_rect_to_polar line 647 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      o_aux_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      o_mag_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|     o_phase_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==============================================================
+|     block name/line      | Inputs | Outputs | # sel inputs |
+==============================================================
+| cordic_rect_to_polar/586 |   16   |    1    |      4       |
+==============================================================
+Information:  Complex logic will not be considered for set/reset inference. (ELAB-2008)
+Presto compilation completed successfully.
+Information: Building the design 'fixed_pt_div' instantiated from design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4' with
+        the parameters "Q=13,N=16". (HDL-193)
+Warning:  ./inputs/design.v:1261: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine fixed_pt_div_Q13_N16 line 1257 in file
+                './inputs/design.v'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+|     reg_quotient_reg     | Flip-flop |  15   |  Y  | N  | N  | N  | N  | N  | N  |
+|       reg_done_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      reg_count_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+| reg_working_quotient_reg | Flip-flop |  42   |  Y  | N  | N  | N  | N  | N  | N  |
+| reg_working_dividend_reg | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+| reg_working_divisor_reg  | Flip-flop |  43   |  Y  | N  | N  | N  | N  | N  | N  |
+|     reg_overflow_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       reg_sign_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+====================================================================================
+Information:  Complex logic will not be considered for set/reset inference. (ELAB-2008)
+Presto compilation completed successfully.
+Information: Building the design 'ram_sync_1rw1r' instantiated from design 'phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048' with
+        the parameters "DATA_WIDTH=16,ADDR_WIDTH=12,DEPTH=2048". (HDL-193)
+
+Inferred memory devices in process
+        in routine ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048 line 1793 in file
+                './inputs/design.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| genblk1.radr_r_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+| genblk1.rwadr_r_reg | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
+current_design $dc_design_name
+Current design is 'deconv_kernel_estimator_top_level'.
+{deconv_kernel_estimator_top_level}
+link
+
+  Linking design 'deconv_kernel_estimator_top_level'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (12 designs)              /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/deconv_kernel_estimator_top_level.db, etc
+  sky130_fd_sc_hd__tt_025C_1v80 (library) /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells.db
+  sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C_lib (library) /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.db
+  sky130_fd_sc_hd__ff_100C_1v95 (library) /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells-bc.db
+  dw_foundation.sldb (library) /cad/synopsys/syn/L-2016.03-SP5-5/libraries/syn/dw_foundation.sldb
+
+1
+#-------------------------------------------------------------------------
+# Write out useful files
+#-------------------------------------------------------------------------
+# This ddc can be used as a checkpoint to load up to the current state
+write -hierarchy -format ddc       -output ${dc_results_dir}/${dc_design_name}.elab.ddc
+Writing ddc file 'results/deconv_kernel_estimator_top_level.elab.ddc'.
+1
+# This Verilog is useful to double-check the netlist that dc will use for
+# mapping
+write -hierarchy -format verilog       -output ${dc_results_dir}/${dc_design_name}.elab.v
+Writing verilog file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/results/deconv_kernel_estimator_top_level.elab.v'.
+Warning: Module deserializer_FETCH_WIDTH16 contains unmapped components.  The output netlist might not be read back into the system. (VO-12)
+Warning: Module serializer_FETCH_WIDTH16 contains unmapped components.  The output netlist might not be read back into the system. (VO-12)
+Warning: Verilog writer has added 4 nets to module cordic_polar_to_rect using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Module cordic_polar_to_rect contains unmapped components.  The output netlist might not be read back into the system. (VO-12)
+Warning: Verilog writer has added 6 nets to module cordic_rect_to_polar using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Module cordic_rect_to_polar contains unmapped components.  The output netlist might not be read back into the system. (VO-12)
+Warning: Module fixed_pt_div_Q13_N16 contains unmapped components.  The output netlist might not be read back into the system. (VO-12)
+Warning: Verilog writer has added 192 nets to module iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Module iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4 contains unmapped components.  The output netlist might not be read back into the system. (VO-12)
+Warning: Module ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048 contains unmapped components.  The output netlist might not be read back into the system. (VO-12)
+Warning: Module phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048 contains unmapped components.  The output netlist might not be read back into the system. (VO-12)
+Warning: Module tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048 contains unmapped components.  The output netlist might not be read back into the system. (VO-12)
+Warning: Module deconv_kernel_estimator_top_level contains unmapped components.  The output netlist might not be read back into the system. (VO-12)
+1
+
+  > Info: Sourcing "inputs/constraints.tcl"
+
+#=========================================================================
+# Design Constraints File
+#=========================================================================
+# This constraint sets the target clock period for the chip in
+# nanoseconds. Note that the first parameter is the name of the clock
+# signal in your verlog design. If you called it something different than
+# clk you will need to change this. You should set this constraint
+# carefully. If the period is unrealistically small then the tools will
+# spend forever trying to meet timing and ultimately fail. If the period
+# is too large the tools will have no trouble but you will get a very
+# conservative implementation.
+set clock_net  clk
+clk
+set clock_name ideal_clock
+ideal_clock
+create_clock -name ${clock_name}              -period ${dc_clock_period}              [get_ports ${clock_net}]
+1
+# This constraint sets the load capacitance in picofarads of the
+# output pins of your design.
+set_load -pin_load $ADK_TYPICAL_ON_CHIP_LOAD [all_outputs]
+1
+# This constraint sets the input drive strength of the input pins of
+# your design. We specifiy a specific standard cell which models what
+# would be driving the inputs. This should usually be a small inverter
+# which is reasonable if another block of on-chip logic is driving
+# your inputs.
+set_driving_cell -no_design_rule   -lib_cell $ADK_DRIVING_CELL [all_inputs]
+1
+# set_input_delay constraints for input ports
+#
+# - make this non-zero to avoid hold buffers on input-registered designs
+set_input_delay -clock ${clock_name} [expr ${dc_clock_period}/2.0] [all_inputs]
+1
+# set_output_delay constraints for output ports
+set_output_delay -clock ${clock_name} 0 [all_outputs]
+1
+# Make all signals limit their fanout
+set_max_fanout 20 $dc_design_name
+1
+# Make all signals meet good slew
+set_max_transition [expr 0.25*${dc_clock_period}] $dc_design_name
+1
+#set_input_transition 1 [all_inputs]
+#set_max_transition 10 [all_outputs]
+
+  > Info: Sourcing "scripts/make-path-groups.tcl"
+
+#=========================================================================
+# make-path-groups.tcl
+#=========================================================================
+# Set up common path groups to help the timing engine focus individually
+# on different sets of paths.
+#
+# Author : Christopher Torng
+# Date   : May 14, 2018
+#
+set ports_clock_root [filter_collection                        [get_attribute [get_clocks] sources]                        object_class==port]
+{clk}
+group_path -name REGOUT            -to   [all_outputs]
+1
+group_path -name REGIN            -from [remove_from_collection [all_inputs] $ports_clock_root]
+1
+group_path -name FEEDTHROUGH            -from [remove_from_collection [all_inputs] $ports_clock_root]            -to   [all_outputs]
+1
+
+  > Info: Sourcing "scripts/compile-options.tcl"
+
+#=========================================================================
+# compile-options.tcl
+#=========================================================================
+# This script sets the "$compile_ultra_options" variable used in the
+# compile.tcl script.
+#
+# Author : Christopher Torng
+# Date   : May 14, 2018
+#
+#-------------------------------------------------------------------------
+# Flatten effort
+#-------------------------------------------------------------------------
+#
+# - Effort 0: No auto-ungrouping / boundary optimizations (strict hierarchy)
+# - Effort 1: No auto-ungrouping / boundary optimizations
+#             DesignWare cells are ungrouped (var compile_ultra_ungroup_dw)
+# - Effort 2: Enable auto-ungrouping / boundary optimizations
+#             DesignWare cells are ungrouped (var compile_ultra_ungroup_dw)
+# - Effort 3: Everything ungrouped + level param for how deep to ungroup
+#
+# Note that even with boundary optimizations off, DC will still propagate
+# constants across the boundary, although this can be disabled with a
+# variable if we really wanted to disable it.
+#
+puts "Info: Flattening effort = $dc_flatten_effort"
+Info: Flattening effort = 0
+set compile_ultra_options ""
+if {$dc_flatten_effort == 0} {
+  puts "Info: All design hierarchies are preserved unless otherwise specified."
+  set_app_var compile_ultra_ungroup_dw false
+  puts "Info: Design Compiler compile_ultra boundary optimization is disabled."
+  append compile_ultra_options " -no_autoungroup -no_boundary_optimization"
+
+} elseif {$dc_flatten_effort == 1} {
+  puts "Info: Unconditionally ungroup the DesignWare cells."
+  set_app_var compile_ultra_ungroup_dw true
+  puts "Info: Design Compiler compile_ultra automatic ungrouping is disabled."
+  puts "Info: Design Compiler compile_ultra boundary optimization is disabled."
+  append compile_ultra_options " -no_autoungroup -no_boundary_optimization"
+
+} elseif {$dc_flatten_effort == 2} {
+  puts "Info: Unconditionally ungroup the DesignWare cells."
+  set_app_var compile_ultra_ungroup_dw true
+  puts "Info: Design Compiler compile_ultra automatic ungrouping is enabled."
+  puts "Info: Design Compiler compile_ultra boundary optimization is enabled."
+  append compile_ultra_options ""
+
+} elseif {$dc_flatten_effort == 3} {
+  set ungroup_start_level 2
+  ungroup -start_level $ungroup_start_level -all -flatten
+  puts "Info: All hierarchical cells starting from level $ungroup_start_level are flattened."
+  puts "Info: Unconditionally ungroup the DesignWare cells."
+  puts "Info: Design Compiler compile_ultra automatic ungrouping is enabled."
+  puts "Info: Design Compiler compile_ultra boundary optimization is enabled."
+  set_app_var compile_ultra_ungroup_dw true
+  append compile_ultra_options ""
+
+} else {
+  puts "Info: Unrecognizable flatten effort value: $dc_flatten_effort"
+  exit
+}
+Info: All design hierarchies are preserved unless otherwise specified.
+Info: Design Compiler compile_ultra boundary optimization is disabled.
+ -no_autoungroup -no_boundary_optimization
+#-------------------------------------------------------------------------
+# Enable or disable clock gating
+#-------------------------------------------------------------------------
+puts "Info: Enable clock gating = $dc_gate_clock"
+Info: Enable clock gating = True
+if { $dc_gate_clock == True } {
+  append compile_ultra_options " -gate_clock"
+}
+ -no_autoungroup -no_boundary_optimization -gate_clock
+#-------------------------------------------------------------------------
+# Other
+#-------------------------------------------------------------------------
+# Three-state nets are declared as Verilog "wire" instead of "tri." This
+# is useful in eliminating "assign" primitives and "tran" gates in the
+# Verilog output.
+set_app_var verilogout_no_tri true
+true
+# Prevent assignment statements in the Verilog netlist
+set_fix_multiple_port_nets -all -buffer_constants
+1
+# Apply physical design constraints (this really belongs in constraints)
+#
+# Set the minimum and maximum routing layers used in DC topographical mode
+#
+if { $dc_topographical == True } {
+  set_ignored_layers -min_routing_layer $ADK_MIN_ROUTING_LAYER_DC
+  set_ignored_layers -max_routing_layer $ADK_MAX_ROUTING_LAYER_DC
+
+  report_ignored_layers
+}
+Information: linking reference library : /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.mwlib. (PSYN-878)
+
+  Linking design 'deconv_kernel_estimator_top_level'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (12 designs)              /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/deconv_kernel_estimator_top_level.db, etc
+  sky130_fd_sc_hd__tt_025C_1v80 (library) /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells.db
+  sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C_lib (library) /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.db
+  sky130_fd_sc_hd__ff_100C_1v95 (library) /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells-bc.db
+  dw_foundation.sldb (library) /cad/synopsys/syn/L-2016.03-SP5-5/libraries/syn/dw_foundation.sldb
+
+Information: No preferred routing direction is found for design layer li1. Automatically deriving direction V. (DCT-035)
+Information: No preferred routing direction is found for design layer met1. Automatically deriving direction H. (DCT-035)
+Information: No preferred routing direction is found for design layer met2. Automatically deriving direction V. (DCT-035)
+Information: No preferred routing direction is found for design layer met3. Automatically deriving direction H. (DCT-035)
+Information: No preferred routing direction is found for design layer met4. Automatically deriving direction V. (DCT-035)
+Information: No preferred routing direction is found for design layer met5. Automatically deriving direction H. (DCT-035)
+Information: setting li1 as ignored_layer due to min_max layer setting. (PSYN-178)
+Information: setting met1 as ignored_layer due to min_max layer setting. (PSYN-178)
+Information: setting met2 as min routing layer.  (PSYN-179)
+Information: setting met5 as max routing layer.  (PSYN-179)
+Ignored layers in congestion analysis and RC estimation: li1 met1 
+
+Min_routing_layer: met2
+Max_routing_layer: met5
+1
+
+  > Info: Sourcing "inputs/compile.tcl"
+
+#=========================================================================
+# compile.tcl
+#=========================================================================
+# Author : Christopher Torng
+# Date   : September 30, 2018
+#-------------------------------------------------------------------------
+# Pre-compile checks
+#-------------------------------------------------------------------------
+# The check_timing command checks for constraint problems such as
+# undefined clocking, undefined input arrival times, and undefined output
+# constraints. These constraint problems could cause you to overlook
+# timing violations. For this reason, the check_timing command is
+# recommended whenever you apply new constraints such as clock
+# definitions, I/O delays, or timing exceptions.
+redirect -tee   ${dc_reports_dir}/${dc_design_name}.premapped.checktiming.rpt   {check_timing}
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Updating design information... (UID-85)
+Warning: Design 'deconv_kernel_estimator_top_level' contains 10 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+
+Information: Checking generated_clocks...
+
+Information: Checking loops...
+
+Information: Checking no_input_delay...
+
+Information: Checking unconstrained_endpoints...
+
+Information: Checking pulse_clock_cell_type...
+
+Information: Checking no_driving_cell...
+
+Information: Checking partial_input_delay...
+1
+# Check design for consistency
+#
+# Most problems with synthesis will be caught in this report
+check_design -summary
+ 
+****************************************
+check_design summary:
+Version:     L-2016.03-SP5-5
+Date:        Sat Jul 10 20:58:36 2021
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                             103
+    Cells do not drive (LINT-1)                                    14
+    Connected to power or ground (LINT-32)                         84
+    Nets connected to multiple pins on same cell (LINT-33)          5
+
+Nets                                                              266
+    Unloaded nets (LINT-2)                                        266
+--------------------------------------------------------------------------------
+
+Information: Use the 'check_design' command for 
+         more information about warnings. (LINT-98)
+
+1
+check_design   > ${dc_reports_dir}/${dc_design_name}.premapped.checkdesign.rpt
+#-------------------------------------------------------------------------
+# Compile
+#-------------------------------------------------------------------------
+puts "Info: DC compile_ultra options = $compile_ultra_options"
+Info: DC compile_ultra options =  -no_autoungroup -no_boundary_optimization -gate_clock
+eval "compile_ultra $compile_ultra_options"
+Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
+Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
+Information: Performing power optimization. (PWR-850)
+Analyzing: "/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells.db"
+Library analysis succeeded.
+Warning: No TLUPlus file identified. (DCT-034)
+Warning: Layer 'li1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met2' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met3' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met4' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met5' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Total of 16 instantiated cells without corresponding physical library cells are found. Run '-check_only' with 'compile_ultra' to see more details. (OPT-1432)
+Warning: Total of 427 technology library cells with the same names are found. Run '-check_only' with 'compile_ultra' to see more details. (OPT-1434)
+Warning: The trip points for the library named sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C_lib differ from those in the library named sky130_fd_sc_hd__tt_025C_1v80. (TIM-164)
+Information: Running optimization using a maximum of 16 cores. (OPT-1500)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | L-2016.03-DWBB_201603.5.1
+                                                               |     *     |
+| Licensed DW Building Blocks        | L-2016.03-DWBB_201603.5.1
+                                                               |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 369 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+Information: Uniquified 4 instances of design 'cordic_polar_to_rect'. (OPT-1056)
+Information: Uniquified 2 instances of design 'cordic_rect_to_polar'. (OPT-1056)
+Information: Uniquified 4 instances of design 'ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'. (OPT-1056)
+  Simplifying Design 'deconv_kernel_estimator_top_level'
+Information: The register 'iir_notch_filter_inst/cordic_rect_to_polar_inst_den/o_aux_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/cordic_rect_to_polar_inst_den/aux_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_b/o_aux_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_b/aux_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_a/o_aux_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_a/aux_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_b/o_aux_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_b/aux_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_overflow_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[16]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[17]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[18]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[19]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[20]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[21]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[22]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[23]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[24]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[25]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[26]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[27]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[28]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[29]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[30]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[31]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[32]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[33]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[34]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[35]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[36]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[37]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[38]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[39]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[40]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[41]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg[42]' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/cordic_rect_to_polar_inst_num/o_aux_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/cordic_rect_to_polar_inst_num/aux_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_a/o_aux_reg' will be removed. (OPT-1207)
+Information: The register 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_a/aux_reg' will be removed. (OPT-1207)
+
+Information: Layer li1 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: Layer met1 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is library 1D. (RCEX-015)
+Information: Library Derived Cap for layer li1 : 8.8e-05 8.8e-05 (RCEX-011)
+Information: Library Derived Res for layer li1 : 0.072 0.072 (RCEX-011)
+Information: Library Derived Cap for layer met1 : 8.5e-05 8.5e-05 (RCEX-011)
+Information: Library Derived Res for layer met1 : 0.00089 0.00089 (RCEX-011)
+Information: Library Derived Cap for layer met2 : 7.8e-05 7.8e-05 (RCEX-011)
+Information: Library Derived Res for layer met2 : 0.00089 0.00089 (RCEX-011)
+Information: Library Derived Cap for layer met3 : 8.6e-05 8.6e-05 (RCEX-011)
+Information: Library Derived Res for layer met3 : 0.00016 0.00016 (RCEX-011)
+Information: Library Derived Cap for layer met4 : 7.6e-05 7.6e-05 (RCEX-011)
+Information: Library Derived Res for layer met4 : 0.00016 0.00016 (RCEX-011)
+Information: Library Derived Cap for layer met5 : 8.8e-05 8.8e-05 (RCEX-011)
+Information: Library Derived Res for layer met5 : 1.8e-05 1.8e-05 (RCEX-011)
+Information: Library Derived Horizontal Cap : 8.7e-05 8.7e-05 (RCEX-011)
+Information: Library Derived Horizontal Res : 8.7e-05 8.7e-05 (RCEX-011)
+Information: Library Derived Vertical Cap : 7.7e-05 7.7e-05 (RCEX-011)
+Information: Library Derived Vertical Res : 0.00052 0.00052 (RCEX-011)
+Information: Using derived R and C coefficients. (RCEX-008)
+Information: Using region-based R and C coefficients. (RCEX-013)
+Information: Library Derived Via Res : 0 0 (RCEX-011)
+Loaded alib file 'alib/alib-52/stdcells.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'cordic_rect_to_polar_0'
+Information: Added key list 'DesignWare' to design 'cordic_rect_to_polar_0'. (DDB-72)
+Information: The register 'cangle_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'preph_reg[13]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'cordic_rect_to_polar_0'.
+Information: The register 'prey_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prey_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prey_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prey_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prey_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prey_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prex_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prex_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prex_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prex_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prex_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prex_reg[0]' is a constant and will be removed. (OPT-1206)
+  Processing 'ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0'
+Information: The register 'genblk1.rwadr_r_reg[0]' will be removed. (OPT-1207)
+Information: The register 'genblk1.rwadr_r_reg[10]' will be removed. (OPT-1207)
+Information: The register 'genblk1.rwadr_r_reg[11]' will be removed. (OPT-1207)
+ Implement Synthetic for 'ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0'.
+  Processing 'phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'
+ Implement Synthetic for 'phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'.
+  Processing 'deserializer_FETCH_WIDTH16'
+Information: Added key list 'DesignWare' to design 'deserializer_FETCH_WIDTH16'. (DDB-72)
+  Processing 'cordic_polar_to_rect_0'
+Information: Added key list 'DesignWare' to design 'cordic_polar_to_rect_0'. (DDB-72)
+Information: The register 'cangle_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cangle_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prex_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prex_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prey_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'prey_reg[1]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'cordic_polar_to_rect_0'.
+  Processing 'ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_3'
+ Implement Synthetic for 'ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_3'.
+  Processing 'deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'
+ Implement Synthetic for 'deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'.
+  Processing 'deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'
+ Implement Synthetic for 'deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'.
+  Processing 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4'
+Information: Added key list 'DesignWare' to design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4'. (DDB-72)
+ Implement Synthetic for 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4'.
+  Processing 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_0'
+  Mapping integrated clock gating circuitry
+  Processing 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0'
+  Mapping integrated clock gating circuitry
+  Processing 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0'
+  Mapping integrated clock gating circuitry
+  Processing 'SNPS_CLOCK_GATE_HIGH_tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0'
+  Mapping integrated clock gating circuitry
+  Processing 'SNPS_CLOCK_GATE_HIGH_phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0'
+  Mapping integrated clock gating circuitry
+  Processing 'SNPS_CLOCK_GATE_HIGH_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_0'
+  Mapping integrated clock gating circuitry
+  Processing 'SNPS_CLOCK_GATE_HIGH_cordic_rect_to_polar_0_0'
+  Mapping integrated clock gating circuitry
+  Processing 'SNPS_CLOCK_GATE_HIGH_deserializer_FETCH_WIDTH16'
+  Mapping integrated clock gating circuitry
+  Processing 'deconv_kernel_estimator_top_level'
+Information: The register 'tf_coeff_rwen_reg' is a constant and will be removed. (OPT-1206)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'phase_vec_ren_reg' is removed because it is merged to 'phase_vec_rwen_reg'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][0]' is removed because it is merged to 'b_coeffs_reg[1][0]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][1]' is removed because it is merged to 'b_coeffs_reg[1][1]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][2]' is removed because it is merged to 'b_coeffs_reg[1][2]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][3]' is removed because it is merged to 'b_coeffs_reg[1][3]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][4]' is removed because it is merged to 'b_coeffs_reg[1][4]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][5]' is removed because it is merged to 'b_coeffs_reg[1][5]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][6]' is removed because it is merged to 'b_coeffs_reg[1][6]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][7]' is removed because it is merged to 'b_coeffs_reg[1][7]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][8]' is removed because it is merged to 'b_coeffs_reg[1][8]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][9]' is removed because it is merged to 'b_coeffs_reg[1][9]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][10]' is removed because it is merged to 'b_coeffs_reg[1][10]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][11]' is removed because it is merged to 'b_coeffs_reg[1][11]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][12]' is removed because it is merged to 'b_coeffs_reg[1][12]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][13]' is removed because it is merged to 'b_coeffs_reg[1][13]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][14]' is removed because it is merged to 'b_coeffs_reg[1][14]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'a_coeffs_reg[1][15]' is removed because it is merged to 'b_coeffs_reg[1][15]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][0]' is removed because it is merged to 'b_coeffs_reg[0][0]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][1]' is removed because it is merged to 'b_coeffs_reg[0][1]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][2]' is removed because it is merged to 'b_coeffs_reg[0][2]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][3]' is removed because it is merged to 'b_coeffs_reg[0][3]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][4]' is removed because it is merged to 'b_coeffs_reg[0][4]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][5]' is removed because it is merged to 'b_coeffs_reg[0][5]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][6]' is removed because it is merged to 'b_coeffs_reg[0][6]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][7]' is removed because it is merged to 'b_coeffs_reg[0][7]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][8]' is removed because it is merged to 'b_coeffs_reg[0][8]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][9]' is removed because it is merged to 'b_coeffs_reg[0][9]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][10]' is removed because it is merged to 'b_coeffs_reg[0][10]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][11]' is removed because it is merged to 'b_coeffs_reg[0][11]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][12]' is removed because it is merged to 'b_coeffs_reg[0][12]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][13]' is removed because it is merged to 'b_coeffs_reg[0][13]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][14]' is removed because it is merged to 'b_coeffs_reg[0][14]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'b_coeffs_reg[2][15]' is removed because it is merged to 'b_coeffs_reg[0][15]'. (OPT-1215)
+ Implement Synthetic for 'deconv_kernel_estimator_top_level'.
+  Processing 'fixed_pt_div_Q13_N16'
+ Implement Synthetic for 'fixed_pt_div_Q13_N16'.
+  Processing 'tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'
+ Implement Synthetic for 'tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'.
+  Processing 'serializer_FETCH_WIDTH16'
+Information: Added key list 'DesignWare' to design 'serializer_FETCH_WIDTH16'. (DDB-72)
+ Implement Synthetic for 'serializer_FETCH_WIDTH16'.
+  Processing 'SNPS_CLOCK_GATE_HIGH_fixed_pt_div_Q13_N16_0'
+  Mapping integrated clock gating circuitry
+  Processing 'SNPS_CLOCK_GATE_HIGH_cordic_polar_to_rect_0_0'
+  Mapping integrated clock gating circuitry
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'sky130_fd_sc_hd__conb_1' in the library 'sky130_fd_sc_hd__tt_025C_1v80' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design deconv_kernel_estimator_top_level_DW01_inc_J4_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deserializer_FETCH_WIDTH16, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DP_OP_80J3_124_8471_J3_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DP_OP_79J3_123_8471_J3_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DP_OP_78J3_122_9085_J3_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_sub_J3_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_sub_J3_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_inc_J3_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_inc_J3_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_add_J3_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_add_J3_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW_mult_uns_J3_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW_mult_uns_J3_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J1_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J1_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J4_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J4_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_cordic_polar_to_rect_0_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_84_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_85_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_86_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_73J2_123_9847_J2_0_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_75J2_125_9847_J2_0_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_cordic_rect_to_polar_0_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_RSOP_67_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_RSOP_68_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_RSOP_69_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_DP_OP_70J1_122_3253_J1_0_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fixed_pt_div_Q13_N16_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design fixed_pt_div_Q13_N16_DW01_sub_J4_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design fixed_pt_div_Q13_N16_DW_cmp_J4_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design fixed_pt_div_Q13_N16_DW01_dec_J4_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_DP_OP_67J1_123_1532_J1_0_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_DP_OP_70J1_126_5376_J1_0_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_DP_OP_73J1_129_6861_J1_0_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_DP_OP_70J1_122_3253_J1_0_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_RSOP_67_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_DP_OP_67J1_123_1532_J1_0_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_RSOP_68_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_DP_OP_70J1_126_5376_J1_0_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_RSOP_69_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_rect_to_polar_0_DP_OP_73J1_129_6861_J1_0_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_75J2_125_9847_J2_0_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_75J2_125_9847_J2_0_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_75J2_125_9847_J2_0_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_73J2_123_9847_J2_0_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_73J2_123_9847_J2_0_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_73J2_123_9847_J2_0_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_84_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_84_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_84_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_85_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_85_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_85_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_86_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_86_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_RSOP_86_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_cordic_rect_to_polar_0_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fixed_pt_div_Q13_N16_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fixed_pt_div_Q13_N16_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_cordic_polar_to_rect_0_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_cordic_polar_to_rect_0_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_cordic_polar_to_rect_0_2, since there are no registers. (PWR-806)
+Information: Performing clock-gating on design cordic_polar_to_rect_3. (PWR-730)
+Information: Performing clock-gating on design cordic_polar_to_rect_0. (PWR-730)
+Information: Performing clock-gating on design cordic_polar_to_rect_1. (PWR-730)
+Information: Performing clock-gating on design cordic_polar_to_rect_2. (PWR-730)
+Information: Performing clock-gating on design cordic_rect_to_polar_1. (PWR-730)
+Information: Performing clock-gating on design cordic_rect_to_polar_0. (PWR-730)
+Information: Performing clock-gating on design serializer_FETCH_WIDTH16. (PWR-730)
+Information: Performing clock-gating on design deserializer_FETCH_WIDTH16. (PWR-730)
+Information: Performing clock-gating on design ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_2. (PWR-730)
+Information: Performing clock-gating on design ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_1. (PWR-730)
+Information: Performing clock-gating on design deconv_kernel_estimator_top_level. (PWR-730)
+Information: Performing clock-gating on design ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_3. (PWR-730)
+Information: Performing clock-gating on design ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0. (PWR-730)
+Information: Performing clock-gating on design iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4. (PWR-730)
+Information: Performing clock-gating on design phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048. (PWR-730)
+Information: Performing clock-gating on design tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048. (PWR-730)
+Information: Performing clock-gating on design deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048. (PWR-730)
+Information: Performing clock-gating on design deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048. (PWR-730)
+Information: Performing clock-gating on design fixed_pt_div_Q13_N16. (PWR-730)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_b/preph_reg[14]' is removed because it is merged to 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_b/preph_reg[13]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_a/preph_reg[14]' is removed because it is merged to 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_a/preph_reg[13]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_b/preph_reg[14]' is removed because it is merged to 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_b/preph_reg[13]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_a/preph_reg[14]' is removed because it is merged to 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_a/preph_reg[13]'. (OPT-1215)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_b/preph_reg[13]' is removed because it is merged to 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_b/preph_reg[15]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_a/preph_reg[13]' is removed because it is merged to 'iir_notch_filter_inst/genblk2[0].cordic_polar_to_rect_inst_a/preph_reg[15]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_b/preph_reg[13]' is removed because it is merged to 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_b/preph_reg[15]'. (OPT-1215)
+Information: In design 'deconv_kernel_estimator_top_level', the register 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_a/preph_reg[13]' is removed because it is merged to 'iir_notch_filter_inst/genblk2[1].cordic_polar_to_rect_inst_a/preph_reg[15]'. (OPT-1215)
+
+  Beginning Global Optimizations
+  ------------------------------
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:34 4650902.3      0.00       0.0      34.0                           283655.3750
+    0:00:34 4650902.3      0.00       0.0      34.0                           283655.3750
+    0:00:34 4650902.3      0.00       0.0      34.0                           283655.3750
+    0:00:34 4650902.3      0.00       0.0      34.0                           283655.3750
+    0:00:34 4650902.3      0.00       0.0      34.0                           283655.3750
+    0:00:34 4650902.3      0.00       0.0      34.0                           283655.3750
+    0:00:34 4650902.3      0.00       0.0      34.0                           283655.3750
+    0:00:34 4650902.3      0.00       0.0      34.0                           283655.3750
+Loading db file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells.db'
+Loading db file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.db'
+Loading db file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells-bc.db'
+  Loading design 'deconv_kernel_estimator_top_level'
+Information: The library cell 'sky130_fd_sc_hd__conb_1' in the library 'sky130_fd_sc_hd__tt_025C_1v80' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Warning: Created physical library cell for logical library cell sky130_sram_2kbyte_1rw1r_32x512_8. (OPT-1413)
+Information: Layer li1 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: Layer met1 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is library 1D. (RCEX-015)
+Information: Library Derived Cap for layer li1 : 8.8e-05 8.8e-05 (RCEX-011)
+Information: Library Derived Res for layer li1 : 0.072 0.072 (RCEX-011)
+Information: Library Derived Cap for layer met1 : 8.5e-05 8.5e-05 (RCEX-011)
+Information: Library Derived Res for layer met1 : 0.00089 0.00089 (RCEX-011)
+Information: Library Derived Cap for layer met2 : 7.8e-05 7.8e-05 (RCEX-011)
+Information: Library Derived Res for layer met2 : 0.00089 0.00089 (RCEX-011)
+Information: Library Derived Cap for layer met3 : 8.6e-05 8.6e-05 (RCEX-011)
+Information: Library Derived Res for layer met3 : 0.00016 0.00016 (RCEX-011)
+Information: Library Derived Cap for layer met4 : 7.6e-05 7.6e-05 (RCEX-011)
+Information: Library Derived Res for layer met4 : 0.00016 0.00016 (RCEX-011)
+Information: Library Derived Cap for layer met5 : 8.8e-05 8.8e-05 (RCEX-011)
+Information: Library Derived Res for layer met5 : 1.8e-05 1.8e-05 (RCEX-011)
+Information: Library Derived Horizontal Cap : 8.7e-05 8.7e-05 (RCEX-011)
+Information: Library Derived Horizontal Res : 8.7e-05 8.7e-05 (RCEX-011)
+Information: Library Derived Vertical Cap : 7.7e-05 7.7e-05 (RCEX-011)
+Information: Library Derived Vertical Res : 0.00052 0.00052 (RCEX-011)
+Information: Using derived R and C coefficients. (RCEX-008)
+Information: Using region-based R and C coefficients. (RCEX-013)
+Information: Library Derived Via Res : 0 0 (RCEX-011)
+Warning: Layer 'li1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met2' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met3' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met4' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met5' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+
+...25%...50%...75%...100% done.
+
+
+ Collecting Buffer Trees ... Found 309
+
+ Processing Buffer Trees ... 
+
+    [31]  10% ...
+    [62]  20% ...
+    [93]  30% ...
+    [124]  40% ...
+    [155]  50% ...
+    [186]  60% ...
+    [217]  70% ...
+    [248]  80% ...
+    [279]  90% ...
+    [309] 100% Done ...
+
+
+Information: Automatic high-fanout synthesis deletes 227 cells. (HFS-802)
+Information: Automatic high-fanout synthesis adds 1132 new cells. (PSYN-864)
+
+
+
+  Beginning Timing Optimizations
+  ------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:53 4655126.3      0.00       0.0      45.0                           283656.5625
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+    0:00:54 4655126.3      0.00       0.0      45.0                           283656.5625
+    0:00:55 4654211.7      0.00       0.0      36.8                           283656.3125
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ------------------------------------
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:00:58 4659076.4      0.00       0.0       1.4                           283658.8750
+    0:01:00 4657926.5      0.00       0.0       1.4                           283657.6875
+
+
+  Beginning High Effort Optimization Phase
+  ----------------------------------------
+
+
+  Beginning Timing Optimization
+  -----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:00 4657926.5      0.00       0.0       1.4                           283657.6875
+    0:01:00 4657926.5      0.00       0.0       1.4                           283657.6875
+    0:01:00 4657926.5      0.00       0.0       1.4                           283657.6875
+    0:01:00 4657926.5      0.00       0.0       1.4                           283657.6875
+    0:01:00 4657926.5      0.00       0.0       1.4                           283657.6875
+
+
+  High Effort Optimization Phase Complete
+  ---------------------------------------
+
+Skipping remaining steps due to timing met. Go to finish
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Loading db file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells.db'
+Loading db file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.db'
+Loading db file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells-bc.db'
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated black box outputs. (PWR-428)
+1
+# High-effort area optimization
+#
+# This command was introduced in I-2013.12 and performs monotonic
+# gate-to-gate optimization on mapped designs. It is supposed to improve
+# area without degrading timing or leakage.
+if { $dc_high_effort_area_opt == True } {
+  optimize_netlist -area
+}
+#-------------------------------------------------------------------------
+# Post-compile
+#-------------------------------------------------------------------------
+# Check design
+check_design -summary
+ 
+****************************************
+check_design summary:
+Version:     L-2016.03-SP5-5
+Date:        Sat Jul 10 21:01:34 2021
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    742
+    Unconnected ports (LINT-28)                                   742
+
+Cells                                                             521
+    Connected to power or ground (LINT-32)                        460
+    Nets connected to multiple pins on same cell (LINT-33)         61
+--------------------------------------------------------------------------------
+
+Information: Use the 'check_design' command for 
+         more information about warnings. (LINT-98)
+
+1
+check_design > ${dc_reports_dir}/${dc_design_name}.mapped.checkdesign.rpt
+# Synopsys Formality
+set_svf -off
+1
+# Uniquify by prefixing every module in the design with the design name.
+# This is useful for hierarchical LVS when multiple blocks use modules
+# with the same name but different definitions.
+if { $dc_uniquify_with_design_name == True } {
+  set uniquify_naming_style "${dc_design_name}_%s_%d"
+  uniquify -force
+}
+Information: Uniquified 1 instances of design 'cordic_rect_to_polar_0_DP_OP_70J1_122_3253_J1_0_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_rect_to_polar_0_DP_OP_67J1_123_1532_J1_0_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_rect_to_polar_0_DP_OP_70J1_126_5376_J1_0_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_rect_to_polar_0_DP_OP_73J1_129_6861_J1_0_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J1_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J1_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_3'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_3'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_3'. (OPT-1056)
+Information: Uniquified 1 instances of design 'deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_cordic_rect_to_polar_0_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deserializer_FETCH_WIDTH16'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DP_OP_80J3_124_8471_J3_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DP_OP_79J3_123_8471_J3_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DP_OP_78J3_122_9085_J3_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_sub_J3_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_sub_J3_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_inc_J3_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_inc_J3_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_add_J3_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_add_J3_2'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW_mult_uns_J3_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW_mult_uns_J3_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_2'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_3'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_fixed_pt_div_Q13_N16_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_cordic_polar_to_rect_0_3'. (OPT-1056)
+Information: Uniquified 1 instances of design 'deconv_kernel_estimator_top_level_DW01_inc_J4_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'fixed_pt_div_Q13_N16_DW01_sub_J4_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'fixed_pt_div_Q13_N16_DW_cmp_J4_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'fixed_pt_div_Q13_N16_DW01_dec_J4_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J4_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J4_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_rect_to_polar_0_DP_OP_70J1_122_3253_J1_0_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_rect_to_polar_0_DP_OP_67J1_123_1532_J1_0_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_rect_to_polar_0_DP_OP_70J1_126_5376_J1_0_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_rect_to_polar_0_DP_OP_73J1_129_6861_J1_0_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_2'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_2'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_2'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_2'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_3'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_4'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_5'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_6'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_estimator_top_level_7'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_2'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_3'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_cordic_rect_to_polar_0_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_fixed_pt_div_Q13_N16_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_fixed_pt_div_Q13_N16_2'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_cordic_polar_to_rect_0_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_cordic_polar_to_rect_0_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'SNPS_CLOCK_GATE_HIGH_cordic_polar_to_rect_0_2'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_3'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_polar_to_rect_2'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_rect_to_polar_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'cordic_rect_to_polar_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'serializer_FETCH_WIDTH16'. (OPT-1056)
+Information: Uniquified 1 instances of design 'deserializer_FETCH_WIDTH16'. (OPT-1056)
+Information: Uniquified 1 instances of design 'ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_2'. (OPT-1056)
+Information: Uniquified 1 instances of design 'ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_1'. (OPT-1056)
+Information: Uniquified 1 instances of design 'ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_3'. (OPT-1056)
+Information: Uniquified 1 instances of design 'ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0'. (OPT-1056)
+Information: Uniquified 1 instances of design 'iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4'. (OPT-1056)
+Information: Uniquified 1 instances of design 'phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'. (OPT-1056)
+Information: Uniquified 1 instances of design 'tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'. (OPT-1056)
+Information: Uniquified 1 instances of design 'deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'. (OPT-1056)
+Information: Uniquified 1 instances of design 'deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048'. (OPT-1056)
+Information: Uniquified 1 instances of design 'fixed_pt_div_Q13_N16'. (OPT-1056)
+1
+# Use naming rules to preserve structs
+define_name_rules verilog -preserve_struct_ports -case_insensitive
+1
+report_names       -rules verilog   > ${dc_reports_dir}/${dc_design_name}.mapped.naming.rpt
+# Replace special characters with non-special ones before writing out a
+# Verilog netlist (e.g., "\bus[5]" -> "bus_5_")
+change_names -rules verilog -hierarchy
+1
+
+  > Info: Sourcing "scripts/generate-results.tcl"
+
+#=========================================================================
+# generate-results.tcl
+#=========================================================================
+# Write out the design
+#
+# Author : Christopher Torng
+# Date   : May 14, 2018
+#
+# Write the .namemap file for energy analysis
+if {[file exists "inputs/run.saif" ]} {
+  saif_map                       -create_map                  -input "inputs/run.saif"     -source_instance ${dc_saif_instance}
+}
+1
+# Write out files
+write -format ddc       -hierarchy        -output ${dc_results_dir}/${dc_design_name}.mapped.ddc
+Writing ddc file 'results/deconv_kernel_estimator_top_level.mapped.ddc'.
+1
+write -format verilog       -hierarchy            -output ${dc_results_dir}/${dc_design_name}.mapped.v
+Writing verilog file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/results/deconv_kernel_estimator_top_level.mapped.v'.
+1
+write -format svsim       -output ${dc_results_dir}/${dc_design_name}.mapped.svwrapper.v
+Writing svsim file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/results/deconv_kernel_estimator_top_level.mapped.svwrapper.v'.
+1
+# Dump the mapped.v and svwrapper.v into one svsim.v file to make it
+# easier to include a single file for gate-level simulation. The svwrapper
+# matches the interface of the original RTL even if using SystemVerilog
+# features (e.g., array of arrays, uses parameters, etc.).
+sh cat ${dc_results_dir}/${dc_design_name}.mapped.v        ${dc_results_dir}/${dc_design_name}.mapped.svwrapper.v        > ${dc_results_dir}/${dc_design_name}.mapped.svsim.v
+# Write top-level verilog view needed for block instantiation
+write               -format verilog   -output ${dc_results_dir}/${dc_design_name}.mapped.top.v
+Writing verilog file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/results/deconv_kernel_estimator_top_level.mapped.top.v'.
+1
+# Floorplan
+if { $dc_topographical == True } {
+  write_floorplan -all ${dc_results_dir}/${dc_design_name}.mapped.fp
+}
+1
+# Parasitics
+write_parasitics -output ${dc_results_dir}/${dc_design_name}.mapped.spef
+Information: Writing parasitics to file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/results/deconv_kernel_estimator_top_level.mapped.spef'. (WP-3)
+Warning: Created physical library cell for logical library cell sky130_sram_2kbyte_1rw1r_32x512_8. (OPT-1413)
+Warning: Layer 'li1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met2' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met3' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met4' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'met5' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Information: Layer li1 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: Layer met1 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)
+Information: The RC model used is library 1D. (RCEX-015)
+Information: Library Derived Cap for layer li1 : 8.8e-05 8.8e-05 (RCEX-011)
+Information: Library Derived Res for layer li1 : 0.072 0.072 (RCEX-011)
+Information: Library Derived Cap for layer met1 : 8.5e-05 8.5e-05 (RCEX-011)
+Information: Library Derived Res for layer met1 : 0.00089 0.00089 (RCEX-011)
+Information: Library Derived Cap for layer met2 : 7.8e-05 7.8e-05 (RCEX-011)
+Information: Library Derived Res for layer met2 : 0.00089 0.00089 (RCEX-011)
+Information: Library Derived Cap for layer met3 : 8.6e-05 8.6e-05 (RCEX-011)
+Information: Library Derived Res for layer met3 : 0.00016 0.00016 (RCEX-011)
+Information: Library Derived Cap for layer met4 : 7.6e-05 7.6e-05 (RCEX-011)
+Information: Library Derived Res for layer met4 : 0.00016 0.00016 (RCEX-011)
+Information: Library Derived Cap for layer met5 : 8.8e-05 8.8e-05 (RCEX-011)
+Information: Library Derived Res for layer met5 : 1.8e-05 1.8e-05 (RCEX-011)
+Information: Library Derived Horizontal Cap : 8.7e-05 8.7e-05 (RCEX-011)
+Information: Library Derived Horizontal Res : 8.7e-05 8.7e-05 (RCEX-011)
+Information: Library Derived Vertical Cap : 7.7e-05 7.7e-05 (RCEX-011)
+Information: Library Derived Vertical Res : 0.00052 0.00052 (RCEX-011)
+Information: Using derived R and C coefficients. (RCEX-008)
+Information: Using region-based R and C coefficients. (RCEX-013)
+Information: Library Derived Via Res : 0 0 (RCEX-011)
+1
+# SDF for back-annotated gate-level simulation
+write_sdf ${dc_results_dir}/${dc_design_name}.mapped.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/results/deconv_kernel_estimator_top_level.mapped.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+1
+# Do not write out net RC info into SDC
+set_app_var write_sdc_output_lumped_net_capacitance false
+false
+set_app_var write_sdc_output_net_resistance false
+false
+# SDC constraints
+write_sdc -nosplit ${dc_results_dir}/${dc_design_name}.mapped.sdc
+1
+
+  > Info: Sourcing "scripts/reporting.tcl"
+
+#=========================================================================
+# reporting.tcl
+#=========================================================================
+# Final reports
+#
+# Author : Christopher Torng
+# Date   : May 14, 2018
+#
+# Report variables
+print_variable_group all > ${dc_reports_dir}/${dc_design_name}.vars.rpt
+# Report units
+redirect -tee   ${dc_reports_dir}/${dc_design_name}.mapped.units.rpt   {report_units}
+************************************
+Report : units
+Design : deconv_kernel_estimator_top_level
+Version: L-2016.03-SP5-5
+Date   : Sat Jul 10 21:01:37 2021
+
+************************************
+Units
+------------------------------------
+Time_unit            : 1.0e-09 Second(ns)
+Capacitive_load_unit : 1.0e-12 Farad(pF)
+Resistance_unit      : 1000 Ohm(kOhm)
+Voltage_unit         : 1 Volt
+Power_unit           : N/A
+Current_unit         : 1.0e-03 Amp(mA)
+1
+# Report QOR
+report_qor > ${dc_reports_dir}/${dc_design_name}.mapped.qor.rpt
+# Report timing
+report_clock_timing   -type summary       > ${dc_reports_dir}/${dc_design_name}.mapped.timing.clock.rpt
+report_timing   -input_pins -capacitance -transition_time   -nets -significant_digits 4 -nosplit        -path_type full_clock -attributes           -nworst 10 -max_paths 30 -delay_type max    > ${dc_reports_dir}/${dc_design_name}.mapped.timing.setup.rpt
+report_timing   -input_pins -capacitance -transition_time   -nets -significant_digits 4 -nosplit        -path_type full_clock -attributes           -nworst 10 -max_paths 30 -delay_type min    > ${dc_reports_dir}/${dc_design_name}.mapped.timing.hold.rpt
+# Report constraints
+report_constraint   -nosplit          -verbose          > ${dc_reports_dir}/${dc_design_name}.mapped.constraints.rpt
+report_constraint   -nosplit          -verbose          -all_violators    > ${dc_reports_dir}/${dc_design_name}.mapped.constraints.violators.rpt
+report_timing_requirements   > ${dc_reports_dir}/${dc_design_name}.mapped.timing.requirements.rpt
+# Report area
+report_area    -hierarchy   -physical    -nosplit     > ${dc_reports_dir}/${dc_design_name}.mapped.area.rpt
+# Report references and resources
+report_reference   -nosplit         -hierarchy       > ${dc_reports_dir}/${dc_design_name}.mapped.reference.rpt
+report_resources   -nosplit         -hierarchy       > ${dc_reports_dir}/${dc_design_name}.mapped.resources.rpt
+# Report power
+#
+# - Use SAIF file for power analysis
+#
+if {[file exists "inputs/run.saif" ]} {
+
+  read_saif                                -map_names                             -input "inputs/run.saif"               -instance_name $dc_saif_instance       -verbose
+
+  report_saif            -hier                -annotated_flag      -rtl_saif            > ${dc_reports_dir}/${dc_design_name}.mapped.saif.rpt
+
+  saif_map         -type ptpx     -write_map     ${dc_reports_dir}/${dc_design_name}.namemap
+
+}
+Information: Writing SAIF name mapping information into the PT-PX name mapping file 'reports/deconv_kernel_estimator_top_level.namemap'. (PWR-636)
+1
+report_power   -nosplit     -hier        > ${dc_reports_dir}/${dc_design_name}.mapped.power.rpt
+# Report clock gating
+report_clock_gating   -nosplit            > ${dc_reports_dir}/${dc_design_name}.mapped.clock_gating.rpt
+exit
+
+Thank you...
+

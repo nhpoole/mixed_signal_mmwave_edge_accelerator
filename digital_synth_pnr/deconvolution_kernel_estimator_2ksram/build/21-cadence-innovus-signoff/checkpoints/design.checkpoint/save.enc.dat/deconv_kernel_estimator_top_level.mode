@@ -1,0 +1,130 @@
+if {![namespace exists ::IMEX]} { namespace eval ::IMEX {} }
+set ::IMEX::dataVar [file dirname [file normalize [info script]]]
+set ::IMEX::libVar ${::IMEX::dataVar}/libs
+
+catch { setDesignMode -powerEffort high }
+catch { setDesignMode -process 130 }
+catch { setDesignMode -propagateActivity true }
+catch { setDesignMode -topRoutingLayer met5 }
+catch { setAnalysisMode -analysisType onChipVariation }
+catch { setAnalysisMode -checkType setup }
+catch { setAnalysisMode -clkSrcPath true }
+catch { setAnalysisMode -clockPropagation sdcControl }
+catch { setAnalysisMode -cppr both }
+catch { setAnalysisMode -skew true }
+catch { setAnalysisMode -usefulSkew true }
+catch { setOptMode -activeHoldViews { analysis_default } }
+catch { setOptMode -activeSetupViews { analysis_default } }
+catch { setOptMode -autoHoldViews { analysis_default} }
+catch { setOptMode -autoSetupViews { analysis_default} }
+catch { setOptMode -autoTDGRSetupViews { analysis_default} }
+catch { setOptMode -autoViewHoldTargetSlack 50 }
+catch { setOptMode -autoViewOpt false }
+catch { setOptMode -deleteInst true }
+catch { setOptMode -drcMargin 0 }
+catch { setOptMode -fixDrc true }
+catch { setOptMode -fixFanoutLoad true }
+catch { setOptMode -fixHoldAllowOverlap true }
+catch { setOptMode -fixHoldAllowSetupTnsDegrade true }
+catch { setOptMode -holdTargetSlack 0.005 }
+catch { setOptMode -optimizeFF true }
+catch { setOptMode -powerEffort high }
+catch { setOptMode -preserveAllSequential false }
+catch { setOptMode -setupTargetSlack 0 }
+catch { setOptMode -timeDesignCompressReports false }
+catch { setOptMode -usefulSkew true }
+catch { setOptMode -usefulSkewCCOpt standard }
+catch { setOptMode -usefulSkewPostRoute true }
+catch { setOptMode -usefulSkewPreCTS true }
+catch { setOptMode -verbose true }
+catch { setPathGroupOptions Reg2Reg -effortLevel high }
+catch { setPathGroupOptions Reg2Out -effortLevel low }
+catch { setPathGroupOptions Reg2ClkGate -effortLevel low }
+catch { setPathGroupOptions Macro2All -effortLevel high }
+catch { setPathGroupOptions In2Reg -effortLevel low }
+catch { setPathGroupOptions In2Out -effortLevel low }
+catch { setPathGroupOptions All2Macro -effortLevel high }
+catch { setExtractRCMode  -effortLevel low -engine postRoute -total_c_th 0 -relative_c_th 1 -coupling_c_th 0.4 -minNetTermNrToBeInMem 50 }
+catch {setNanoRouteMode -quiet -droutePostRouteSpreadWire "false"}
+catch {setNanoRouteMode -quiet -drouteStartIteration 0}
+catch {setNanoRouteMode -quiet -drouteUseMinSpacingForBlockage auto}
+catch {setNanoRouteMode -quiet -drouteUseMultiCutViaEffort "high"}
+catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
+catch {setNanoRouteMode -quiet -grouteExpTdStdDelay 44.000000}
+catch {setNanoRouteMode -quiet -grouteExpTdUseTifTimingEngineForImportDesign true}
+catch {setNanoRouteMode -quiet -routeAntennaCellName "sky130_fd_sc_hd__diode_2"}
+catch {setNanoRouteMode -quiet -routeFillerInstPrefix "FILL"}
+catch {setNanoRouteMode -quiet -routeInsertAntennaDiode true}
+catch {setNanoRouteMode -quiet -routeReInsertFillerCellList "sky130_fd_sc_hd__fill_8 sky130_fd_sc_hd__fill_4 sky130_fd_sc_hd__fill_2 sky130_fd_sc_hd__fill_1"}
+catch {setNanoRouteMode -quiet -routeReInsertFillerCellListFromFile false}
+catch {setNanoRouteMode -quiet -routeStrictlyHonorNonDefaultRule "false"}
+catch {setNanoRouteMode -quiet -routeTopRoutingLayer 6}
+catch {setNanoRouteMode -quiet -routeWithEco false}
+catch {setNanoRouteMode -quiet -routeWithLithoDriven true}
+catch {setNanoRouteMode -quiet -routeWithSiPostRouteFix false}
+catch {setNanoRouteMode -quiet -routeWithTimingDriven false}
+
+catch { setPlaceMode -place_global_clock_gate_aware true }
+catch { setPlaceMode -place_global_cong_effort medium }
+catch { setPlaceMode -place_global_place_io_pins false }
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
+catch { setWireOptMode -expLocalWireReclaimRunSwap true }
+catch { setUsefulSkewMode -ecoRoute false }
+catch { setViaGenMode -ignore_DRC false }
+catch { setViaGenMode -viarule_preference default }
+catch { set_verify_drc_mode -area {0 0 0 0} }
+catch { set_verify_drc_mode -check_ndr_spacing auto }
+catch { set_verify_drc_mode -check_only default }
+catch { set_verify_drc_mode -check_same_via_cell false }
+catch { set_verify_drc_mode -disable_rules "" }
+catch { set_verify_drc_mode -exclude_pg_net false }
+catch { set_verify_drc_mode -ignore_cell_blockage false }
+catch { set_verify_drc_mode -ignore_trial_route false }
+catch { set_verify_drc_mode -limit 1000 }
+catch { set_verify_drc_mode -report ${::IMEX::libVar}/misc/deconv_kernel_estimator_top_level.drc.rpt }
+catch { set_verify_drc_mode -use_min_spacing_on_block_obs auto }
+catch { setDelayCalMode -enable_high_fanout true }
+catch { setDelayCalMode -eng_copyNetPropToNewNet true }
+catch { setDelayCalMode -engine aae }
+catch { setDelayCalMode -ignoreNetLoad false }
+catch { setDelayCalMode -SIAware true }
+catch { setDelayCalMode -signOff true }
+catch { setDelayCalMode -siMode signoff }
+catch { setDelayCalMode -socv_accuracy_mode low }
+catch { setPinAssignMode -maxLayer 6 }
+catch { setAddRingMode -avoid_short false }
+catch { setAddRingMode -extend_over_row false }
+catch { setAddRingMode -ignore_rows false }
+catch { setAddRingMode -orthogonal_only true }
+catch { setAddRingMode -ring_target default }
+catch { setAddRingMode -skip_crossing_trunks none }
+catch { setAddRingMode -skip_via_on_pin standardcell }
+catch { setAddRingMode -skip_via_on_wire_shape noshape }
+catch { setAddRingMode -stacked_via_bottom_layer met4 }
+catch { setAddRingMode -stacked_via_top_layer met5 }
+catch { setAddRingMode -via_using_exact_crossover_size true }
+catch { setEditMode -layer_vertical met3 }
+catch { setHierMode -disableArt false }
+catch { setHierMode -reportPostRouteArtTiming false }
+catch { setHierMode -trialRouteHonorReadOnly false }
+catch { setImportMode -config true }
+catch { setImportMode -discardFloatingVNets false }
+catch { setImportMode -keepEmptyModule true }
+catch { setTieHiLoMode -cell {sky130_fd_sc_hd__conb_1} }
+catch { setTieHiLoMode -maxDistance 20 }
+catch { setTieHiLoMode -maxFanout 8 }
+catch { setSIMode -analysisType aae }
+catch { setSIMode -enable_glitch_report false }
+catch { setSIMode -separate_delta_delay_on_data true }
+catch { setSIMode -si_reselection slack }
+catch { setAddStripeMode -break_at block_ring }
+catch { setAddStripeMode -stacked_via_bottom_layer 5 }
+catch { setAddStripeMode -stacked_via_top_layer 6 }
+catch { setRouteMode -earlyGlobalMaxRouteLayer 6 }
+catch { setRouteMode -earlyGlobalMinRouteLayer 2 }
+catch { setRouteMode -earlyGlobalRouteSecondPG false }
+catch { setFillerMode -core {sky130_fd_sc_hd__fill_8 sky130_fd_sc_hd__fill_4 sky130_fd_sc_hd__fill_2 sky130_fd_sc_hd__fill_1} }
+catch { setFillerMode -corePrefix FILL }
+catch { setFPlanMode -defaultTechSite unithd }
+catch { setFPlanMode -maxIoHeight false }
+catch { setFPlanMode -powerRailLayer {} }

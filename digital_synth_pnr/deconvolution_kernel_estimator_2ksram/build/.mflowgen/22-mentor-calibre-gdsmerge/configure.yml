@@ -1,0 +1,45 @@
+build_dir: 22-mentor-calibre-gdsmerge
+build_id: '22'
+commands:
+- mkdir -p $HOME/.calibrewb_workspace/tmp
+- ins=""; for f in inputs/adk/*.gds*; do ins="$ins -in $f"; done
+- echo | calibredrv -a layout filemerge \ -indir inputs \ $ins -topcell deconv_kernel_estimator_top_level
+  \ -out design_merged.gds 2>&1 | tee merge.log
+- mkdir -p outputs && cd outputs
+- ln -sf ../design_merged.gds
+debug:
+- calibredrv -m design_merged.gds \ -l inputs/adk/calibre.layerprops
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.gds.gz:
+  - f: design.gds.gz
+    step: 21-cadence-innovus-signoff
+  sky130_sram_2kbyte_1rw1r_32x512_8.gds:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.gds
+    step: 6-sram
+edges_o:
+  design_merged.gds:
+  - f: design_merged.gds
+    step: 28-open-magic-drc
+  - f: design_merged.gds
+    step: 29-open-magic-gds2spice
+  - f: design_merged.gds
+    step: 30-open-magic-gds2spice-nobbox
+inputs:
+- design.gds.gz
+- adk
+- sky130_sram_2kbyte_1rw1r_32x512_8.gds
+name: mentor-calibre-gdsmerge
+outputs:
+- design_merged.gds
+parameters:
+  design_name: deconv_kernel_estimator_top_level
+postconditions:
+- assert File( 'outputs/design_merged.gds' )
+- 'assert ''WARNING: Ignoring duplicate structure'' not in File( ''merge.log'' )'
+preconditions:
+- assert Tool( 'calibredrv' )
+- assert File( 'inputs/design.gds.gz' )
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/steps/mentor-calibre-gdsmerge

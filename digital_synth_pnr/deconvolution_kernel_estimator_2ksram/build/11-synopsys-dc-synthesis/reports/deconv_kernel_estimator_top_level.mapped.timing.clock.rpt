@@ -1,0 +1,39 @@
+ 
+****************************************
+Report : clock timing
+        -type summary
+Design : deconv_kernel_estimator_top_level
+Version: L-2016.03-SP5-5
+Date   : Sat Jul 10 21:01:38 2021
+****************************************
+
+  Clock: ideal_clock
+----------------------------------------------------------------------------
+  Maximum setup launch latency:
+      deserializer_inst/count_r_reg_1_/CLK                   0.00      wr-+
+
+  Minimum setup capture latency:
+      deserializer_inst/count_r_reg_1_/CLK                   0.00      wr-+
+
+  Minimum hold launch latency:
+      deserializer_inst/count_r_reg_1_/CLK                   0.00      br-+
+
+  Maximum hold capture latency:
+      deserializer_inst/count_r_reg_1_/CLK                   0.00      br-+
+
+  Maximum active transition:
+      deserializer_inst/count_r_reg_1_/CLK                   0.00      wr-+
+
+  Minimum active transition:
+      deserializer_inst/count_r_reg_1_/CLK                   0.00      wr-+
+
+  Maximum setup skew:
+      a_coeffs_reg_0__0_/CLK                                           wr-+
+      iir_notch_filter_inst/den_eval_real_reg_0_/CLK         0.00      wr-+
+
+  Maximum hold skew:
+      a_coeffs_reg_0__0_/CLK                                           br-+
+      iir_notch_filter_inst/den_eval_real_reg_0_/CLK         0.00      br-+
+----------------------------------------------------------------------------
+
+1

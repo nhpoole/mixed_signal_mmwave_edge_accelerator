@@ -1,0 +1,32 @@
+build_dir: 20-open-magic-def2spice
+build_id: '20'
+commands:
+- cp /home/users/nhpoole/PDKS/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+- cp inputs/adk/sky130A.tech sky130A.tech
+- cp inputs/adk/sky130A.tcl sky130A.tcl
+- cp inputs/adk/rtk-tech.lef rtk-tech-nolicon.lef
+- sed -i '/LAYER licon/,/END licon/d' rtk-tech-nolicon.lef
+- cp -L inputs/design.def.gz design.def.gz
+- gunzip design.def.gz
+- sed -i 's/\//____/g' design.def
+- magic -noconsole -dnull extract.tcl | tee def2spice.log
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.def.gz:
+  - f: design.def.gz
+    step: 18-cadence-innovus-signoff
+edges_o:
+  design_extracted.spice:
+  - f: design_extracted.spice
+    step: 24-netgen-lvs-def
+inputs:
+- adk
+- design.def.gz
+name: open-magic-def2spice
+outputs:
+- design_extracted.spice
+parameters:
+  design_name: sar_adc_controller
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/design/open-magic-def2spice

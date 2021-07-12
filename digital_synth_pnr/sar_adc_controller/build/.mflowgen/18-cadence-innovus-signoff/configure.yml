@@ -1,0 +1,108 @@
+build_dir: 18-cadence-innovus-signoff
+build_id: '18'
+commands:
+- ln -sf inputs/innovus-foundation-flow
+- innovus -overwrite -64 -nowin -init START.tcl -log logs/run.log
+- cd outputs
+- ln -sf ../checkpoints/design.checkpoint
+- ln -sf ../typical.spef.gz             design.spef.gz
+- ln -sf ../rcbest.spef.gz              design.rcbest.spef.gz
+- ln -sf ../results/*.gds.gz            design.gds.gz
+- ln -sf ../results/*-merged.gds        design-merged.gds
+- ln -sf ../results/*.lvs.v             design.lvs.v
+- ln -sf ../results/*.flatbuslvs.v      design.flatbuslvs.v
+- ln -sf ../results/*.nofillerlvs.v     design.nofillerlvs.v
+- ln -sf ../results/*.nofillerflatbuslvs.v      design.nofillerflatbuslvs.v
+- ln -sf ../results/*.vcs.v             design.vcs.v
+- ln -sf ../results/*.vcs.pg.v          design.vcs.pg.v
+- ln -sf ../results/*.lef               design.lef
+- ln -sf ../results/*.def.gz            design.def.gz
+- ln -sf ../results/*.pt.sdc            design.pt.sdc
+- ln -sf ../results/*.sdf               design.sdf
+- ln -sf ../results/*.virtuoso.v        design.virtuoso.v
+debug:
+- innovus -overwrite -64 -init innovus-foundation-flow/custom-scripts/run-debug.tcl
+  -log logs/debug.log
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.checkpoint:
+  - f: design.checkpoint
+    step: 17-cadence-innovus-postroute
+  innovus-foundation-flow:
+  - f: innovus-foundation-flow
+    step: 10-cadence-innovus-flowsetup
+edges_o:
+  design.def.gz:
+  - f: design.def.gz
+    step: 20-open-magic-def2spice
+  design.gds.gz:
+  - f: design.gds.gz
+    step: 19-mentor-calibre-gdsmerge
+  design.lvs.v:
+  - f: design.lvs.v
+    step: 24-netgen-lvs-def
+  - f: design.lvs.v
+    step: 30-netgen-lvs-gds
+  - f: design.lvs.v
+    step: 29-mentor-calibre-comparison
+  design.pt.sdc:
+  - f: design.pt.sdc
+    step: 21-synopsys-pt-timing-signoff
+  - f: design.pt.sdc
+    step: 22-synopsys-ptpx-rtl
+  - f: design.pt.sdc
+    step: 31-synopsys-ptpx-gl
+  design.spef.gz:
+  - f: design.spef.gz
+    step: 21-synopsys-pt-timing-signoff
+  - f: design.spef.gz
+    step: 22-synopsys-ptpx-rtl
+  - f: design.spef.gz
+    step: 31-synopsys-ptpx-gl
+  design.vcs.pg.v:
+  - f: design.vcs.v
+    step: 23-gl-sim
+  design.vcs.v:
+  - f: design.vcs.v
+    step: 21-synopsys-pt-timing-signoff
+  - f: design.vcs.v
+    step: 22-synopsys-ptpx-rtl
+  - f: design.vcs.v
+    step: 31-synopsys-ptpx-gl
+inputs:
+- innovus-foundation-flow
+- adk
+- design.checkpoint
+name: cadence-innovus-signoff
+outputs:
+- design.checkpoint
+- design.gds.gz
+- design-merged.gds
+- design.lvs.v
+- design.flatbuslvs.v
+- design.nofillerlvs.v
+- design.nofillerflatbuslvs.v
+- design.vcs.v
+- design.vcs.pg.v
+- design.lef
+- design.def.gz
+- design.pt.sdc
+- design.sdf
+- design.virtuoso.v
+- design.spef.gz
+- design.rcbest.spef.gz
+parameters:
+  order:
+  - main.tcl
+  - generate-results.tcl
+  - reporting.tcl
+postconditions:
+- assert File( 'outputs/design.checkpoint' )
+preconditions:
+- assert Tool( 'innovus' )
+- assert File( 'inputs/innovus-foundation-flow' )
+- assert File( 'inputs/adk' )
+- assert File( 'inputs/design.checkpoint' )
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/design/cadence-innovus-signoff

@@ -1,0 +1,28 @@
+build_dir: 28-open-magic-gds2spice
+build_id: '28'
+commands:
+- cp /home/users/nhpoole/PDKS/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+- magic -noconsole -dnull extract.tcl | tee gds2spice.log
+- mv deconv_kernel_estimator_top_level.spice outputs/design_extracted.spice
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design_merged.gds:
+  - f: design_merged.gds
+    step: 21-mentor-calibre-gdsmerge
+edges_o:
+  design_extracted.spice:
+  - f: design_extracted.spice
+    step: 31-netgen-lvs-gds
+  - f: design_extracted.spice
+    step: 30-mentor-calibre-comparison
+inputs:
+- adk
+- design_merged.gds
+name: open-magic-gds2spice
+outputs:
+- design_extracted.spice
+parameters:
+  design_name: deconv_kernel_estimator_top_level
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator/design/open-magic-gds2spice

@@ -1,0 +1,24 @@
+build_dir: 1-premerge
+build_id: '1'
+commands:
+- cp design.gds outputs/
+- cp user_analog_project_wrapper_digital_abstracted.gds outputs/
+- cp ~/PDKS/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_2kbyte_1rw1r_32x512_8.gds
+  outputs/
+edges_i: {}
+edges_o:
+  design.gds:
+  - f: design.gds
+    step: 5-mentor-calibre-gdsmerge
+  sky130_sram_2kbyte_1rw1r_32x512_8.gds:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.gds
+    step: 5-mentor-calibre-gdsmerge
+  user_analog_project_wrapper_digital_abstracted.gds:
+  - f: user_analog_project_wrapper_digital_abstracted.gds
+    step: 5-mentor-calibre-gdsmerge
+name: premerge
+outputs:
+- design.gds
+- user_analog_project_wrapper_digital_abstracted.gds
+- sky130_sram_2kbyte_1rw1r_32x512_8.gds
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/chip_merge/design/premerge

@@ -1,0 +1,16 @@
+name: testbench
+
+inputs:
+  - adk
+
+outputs:
+  - testbench.sv
+  - testbench.v
+  - design.args
+  - design.args.gls
+
+commands:
+  - cp sar_adc_controller_tb.v outputs/testbench.sv
+  - cp sar_adc_controller_tb.v outputs/testbench.v
+#  - cat design.args.gls inputs/adk/vcs_incdir.txt > outputs/design.args.gls
+  - cp design.args.gls outputs/design.args.gls

@@ -1,0 +1,880 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2020 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v20.13-s083_1, built Tue Jan 19 16:51:46 PST 2021
+Options:	-overwrite -init innovus-foundation-flow/custom-scripts/run-debug.tcl -log logs/debug.log 
+Date:		Sun Jul 11 20:44:55 2021
+Host:		caddy13 (x86_64 w/Linux 3.10.0-1160.31.1.el7.x86_64) (8cores*16cpus*Common KVM processor 16384KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		invs	Innovus Implementation System	20.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_4982_caddy13_nhpoole_RmWApd.
+
+The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+
+**INFO:  MMMC transition support version v31-84 
+
+Sourcing file "innovus-foundation-flow/custom-scripts/run-debug.tcl" ...
+#% Begin load design ... (date=07/11 20:45:59, mem=627.1M)
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'deconv_kernel_estimator_top_level' saved by 'Innovus' '20.13-s083_1' on 'Sun Jul 11 20:36:08 2021'.
+% Begin Load MMMC data ... (date=07/11 20:46:00, mem=629.1M)
+% End Load MMMC data ... (date=07/11 20:46:00, total cpu=0:00:00.1, real=0:00:00.0, peak res=629.8M, current mem=629.8M)
+
+Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/libs/lef/rtk-tech.lef ...
+
+Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/libs/lef/stdcells.lef ...
+WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/libs/lef/stdcells.lef at line 18.
+Set DBUPerIGU to M1 pitch 460.
+
+Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/libs/lef/sky130_sram_2kbyte_1rw1r_32x512_8.lef ...
+**WARN: (IMPLF-246):	The 'UNITS' attribute is only allowed to be set in the first LEF file (technology LEF). The attribute was found in this LEF file, and will be ignored.
+**WARN: (IMPLF-200):	Pin 'din0[0]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[1]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[2]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[3]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[4]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[5]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[6]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[7]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[8]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[9]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[10]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[11]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[12]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[13]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[14]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[15]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[16]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[17]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[18]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[19]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (IMPLF-201):	Pin 'dout0[0]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[1]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[2]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[3]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[4]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[5]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[6]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[7]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[8]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[9]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[10]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[11]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[12]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[13]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[14]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[15]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[16]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[17]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[18]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[19]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+
+viaInitial starts at Sun Jul 11 20:46:00 2021
+viaInitial ends at Sun Jul 11 20:46:00 2021
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/viewDefinition.tcl
+Reading libs_typical timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+Read 427 cells in library 'sky130_fd_sc_hd__tt_025C_1v80' 
+Reading libs_typical timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/6-sram/outputs/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib' ...
+Read 1 cells in library 'sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C_lib' 
+Reading libs_bc timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 427 cells in library 'sky130_fd_sc_hd__ff_100C_1v95' 
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.04min, real=0.05min, mem=14.9M, fe_cpu=0.76min, fe_real=1.13min, fe_mem=742.1M) ***
+% Begin Load netlist data ... (date=07/11 20:46:03, mem=653.4M)
+*** Begin netlist parsing (mem=742.1M) ***
+Created 428 new cells from 3 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/vbin/deconv_kernel_estimator_top_level.v.bin'
+Reading binary database version 2 in 1-threaded mode
+
+*** Memory Usage v#2 (Current mem = 757.105M, initial mem = 267.602M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=757.1M) ***
+% End Load netlist data ... (date=07/11 20:46:03, total cpu=0:00:00.1, real=0:00:00.0, peak res=665.3M, current mem=665.3M)
+Set top cell to deconv_kernel_estimator_top_level.
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Hooked 855 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell deconv_kernel_estimator_top_level ...
+*** Netlist is unique.
+** info: there are 960 modules.
+** info: there are 12013 stdCell insts.
+** info: there are 16 macros.
+
+*** Memory Usage v#2 (Current mem = 803.578M, initial mem = 267.602M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Adjust met3 preferred direction offset from 0.34 to 0.17.
+Adjust met4 preferred direction offset from 0.46 to 0.23.
+Adjust met5 preferred direction offset from 1.7 to 0.17.
+Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Loading preference file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/gui.pref.tcl ...
+##  Process: 130           (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 130nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.4.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+setAnalysisMode -usefulSkew already set.
+**WARN: (IMPOPT-3602):	The specified path group name Reg2Reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for Reg2Reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name Reg2Out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for Reg2Out path_group
+**WARN: (IMPOPT-3602):	The specified path group name Reg2ClkGate is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for Reg2ClkGate path_group
+**WARN: (IMPOPT-3602):	The specified path group name Macro2All is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for Macro2All path_group
+**WARN: (IMPOPT-3602):	The specified path group name In2Reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for In2Reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name In2Out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for In2Out path_group
+**WARN: (IMPOPT-3602):	The specified path group name All2Macro is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for All2Macro path_group
+**WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+Setting -ignore_DRC to 0. ViaGen will do DRC check while creating vias.
+Setting -viarule_preference to default order. ViaGen will consider via rule priority based on the order of appearance in the technology file.
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+addRing command will ignore shorts while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will consider rows while creating rings.
+The ring targets are set to core/block ring wires.
+Stripe will break at block ring.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMinRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -bottomRoutingLayer' instead.
+Change floorplan default-technical-site to 'unithd'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 328
+Total number of sequential cells: 68
+Total number of tristate cells: 13
+Total number of level shifter cells: 7
+Total number of power gating cells: 0
+Total number of isolation cells: 11
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_12 sky130_fd_sc_hd__buf_16 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_6 sky130_fd_sc_hd__buf_8 sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_16 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8 sky130_fd_sc_hd__dlymetal6s2s_1 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__probe_p_8
+Total number of usable buffers: 15
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: sky130_fd_sc_hd__bufinv_16 sky130_fd_sc_hd__clkinv_1 sky130_fd_sc_hd__bufinv_8 sky130_fd_sc_hd__clkinv_16 sky130_fd_sc_hd__clkinv_2 sky130_fd_sc_hd__clkinv_4 sky130_fd_sc_hd__clkinv_8 sky130_fd_sc_hd__inv_1 sky130_fd_sc_hd__clkinvlp_2 sky130_fd_sc_hd__clkinvlp_4 sky130_fd_sc_hd__inv_12 sky130_fd_sc_hd__inv_16 sky130_fd_sc_hd__inv_2 sky130_fd_sc_hd__inv_4 sky130_fd_sc_hd__inv_6 sky130_fd_sc_hd__inv_8
+Total number of usable inverters: 16
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: sky130_fd_sc_hd__bufbuf_16 sky130_fd_sc_hd__bufbuf_8 sky130_fd_sc_hd__clkdlybuf4s15_1 sky130_fd_sc_hd__clkdlybuf4s15_2 sky130_fd_sc_hd__clkdlybuf4s18_1 sky130_fd_sc_hd__clkdlybuf4s18_2 sky130_fd_sc_hd__clkdlybuf4s25_1 sky130_fd_sc_hd__clkdlybuf4s50_1 sky130_fd_sc_hd__clkdlybuf4s25_2 sky130_fd_sc_hd__clkdlybuf4s50_2 sky130_fd_sc_hd__dlygate4sd2_1 sky130_fd_sc_hd__dlygate4sd1_1 sky130_fd_sc_hd__dlygate4sd3_1 sky130_fd_sc_hd__dlymetal6s6s_1 sky130_fd_sc_hd__dlymetal6s4s_1
+Total number of identified usable delay cells: 15
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Reading floorplan file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.fp.gz (mem = 1067.1M).
+% Begin Load floorplan data ... (date=07/11 20:46:05, mem=968.6M)
+*info: reset 15137 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 2568640 2564960)
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Adjust met3 preferred direction offset from 0.34 to 0.17.
+Adjust met4 preferred direction offset from 0.46 to 0.23.
+Adjust met5 preferred direction offset from 1.7 to 0.17.
+Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+ ... processed partition successfully.
+Reading binary special route file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.fp.spr.gz (Created by Innovus v20.13-s083_1 on Sun Jul 11 20:36:01 2021, version: 1)
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=974.4M, current mem=974.4M)
+There are 349 nets with weight being set
+There are 349 nets with bottomPreferredRoutingLayer being set
+There are 349 nets with avoidDetour being set
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Delete all existing relative floorplan constraints.
+% End Load floorplan data ... (date=07/11 20:46:08, total cpu=0:00:00.1, real=0:00:03.0, peak res=974.4M, current mem=974.1M)
+Reading congestion map file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=07/11 20:46:08, mem=974.3M)
+Suppress "**WARN ..." messages.
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=07/11 20:46:09, total cpu=0:00:00.3, real=0:00:01.0, peak res=1002.8M, current mem=1002.8M)
+Loading place ...
+% Begin Load placement data ... (date=07/11 20:46:09, mem=1002.8M)
+Reading placement file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v20.13-s083_1 on Sun Jul 11 20:36:01 2021, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Checked 6 GNC rules.
+*** applyConnectGlobalNets disabled.
+*** Completed restorePlace (cpu=0:00:01.0 real=0:00:01.0 mem=1146.9M) ***
+Total net length = 1.072e+06 (5.368e+05 5.355e+05) (ext = 2.536e+04)
+% End Load placement data ... (date=07/11 20:46:10, total cpu=0:00:01.0, real=0:00:01.0, peak res=1058.5M, current mem=1055.7M)
+Reading PG file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.pg.gz, version#2, (Created by Innovus v20.13-s083_1 on       Sun Jul 11 20:36:01 2021)
+*** Completed restorePGFile (cpu=0:00:00.3 real=0:00:01.0 mem=1149.9M) ***
+% Begin Load routing data ... (date=07/11 20:46:11, mem=1062.4M)
+Reading routing file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.route.gz.
+Reading Innovus routing data (Created by Innovus v20.13-s083_1 on Sun Jul 11 20:36:01 2021 Format: 20.1) ...
+*** Total 14357 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.2 real=0:00:02.0 mem=1172.9M) ***
+% End Load routing data ... (date=07/11 20:46:13, total cpu=0:00:00.3, real=0:00:02.0, peak res=1086.4M, current mem=1085.4M)
+Loading Drc markers ...
+... 1 markers are loaded ...
+... 0 geometry drc markers are loaded ...
+... 1 antenna drc markers are loaded ...
+TAT_INFO: restoreCongMap REAL = 1 : CPU = 0 : MEM = 0.
+Reading property file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1178.9M) ***
+Reading dirtyarea snapshot file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.db.da.gz (Create by Innovus v20.13-s083_1 on Sun Jul 11 20:36:03 2021, version: 4).
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Reading Capacitance Table File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable ...
+Process name: (null).
+Allocated an empty WireEdgeEnlargement table in typical [6].
+Allocated an empty WireEdgeEnlargement table in typical [6].
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: analysis_default
+    RC-Corner Name        : typical
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=07/11 20:46:19, mem=1127.4M)
+source /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/20-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level_power_constraints.tcl
+'set_default_switching_activity' finished successfully.
+** WARN:  (VOLTUS_POWR-3212): The 'set_power_analysis_mode -leakage_power_view |-dynamic_power_view|-analysis_view' will be obsolete in 18.20 release. Use 'set_analysis_view -leakage <> | -dynamic <>' to set leakage and dynamic power views.
+
+% End Load power constraints ... (date=07/11 20:46:19, total cpu=0:00:00.1, real=0:00:00.0, peak res=1133.9M, current mem=1133.9M)
+% Begin load AAE data ... (date=07/11 20:46:19, mem=1169.0M)
+**WARN: (IMPESI-3505):	setDelayCalMode -eng_copyNetPropToNewNet true (default=false) will be obsoleted along with its sgs2set equivalent.  This parameter will continue to be supported in the current release, but will be removed in the next major release of the software.
+AAE DB initialization (MEM=1279.84 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End load AAE data ... (date=07/11 20:46:20, total cpu=0:00:00.7, real=0:00:01.0, peak res=1178.0M, current mem=1178.0M)
+Restoring CCOpt config...
+  Extracting original clock gating for ideal_clock...
+    clock_tree ideal_clock contains 1503 sinks and 114 clock gates.
+    Extraction for ideal_clock complete.
+  Extracting original clock gating for ideal_clock done.
+  The skew group ideal_clock/constraints_default was created. It contains 1503 sinks and 1 sources.
+  The skew group ideal_clock/constraints_default was created. It contains 1503 sinks and 1 sources.
+Restoring CCOpt config done.
+Total number of combinational cells: 328
+Total number of sequential cells: 68
+Total number of tristate cells: 13
+Total number of level shifter cells: 7
+Total number of power gating cells: 0
+Total number of isolation cells: 11
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_12 sky130_fd_sc_hd__buf_16 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_6 sky130_fd_sc_hd__buf_8 sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_16 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8
+Total number of usable buffers: 12
+List of unusable buffers: sky130_fd_sc_hd__dlymetal6s2s_1 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__probe_p_8
+Total number of unusable buffers: 3
+List of usable inverters: sky130_fd_sc_hd__bufinv_16 sky130_fd_sc_hd__clkinv_1 sky130_fd_sc_hd__bufinv_8 sky130_fd_sc_hd__clkinv_2 sky130_fd_sc_hd__clkinv_4 sky130_fd_sc_hd__clkinv_8 sky130_fd_sc_hd__inv_1 sky130_fd_sc_hd__inv_12 sky130_fd_sc_hd__inv_16 sky130_fd_sc_hd__inv_2 sky130_fd_sc_hd__inv_4 sky130_fd_sc_hd__inv_6 sky130_fd_sc_hd__inv_8
+Total number of usable inverters: 13
+List of unusable inverters: sky130_fd_sc_hd__clkinv_16 sky130_fd_sc_hd__clkinvlp_2 sky130_fd_sc_hd__clkinvlp_4
+Total number of unusable inverters: 3
+List of identified usable delay cells: sky130_fd_sc_hd__bufbuf_16 sky130_fd_sc_hd__bufbuf_8 sky130_fd_sc_hd__clkdlybuf4s15_1 sky130_fd_sc_hd__clkdlybuf4s15_2 sky130_fd_sc_hd__clkdlybuf4s18_1 sky130_fd_sc_hd__clkdlybuf4s18_2 sky130_fd_sc_hd__clkdlybuf4s25_1 sky130_fd_sc_hd__clkdlybuf4s50_1 sky130_fd_sc_hd__clkdlybuf4s25_2 sky130_fd_sc_hd__clkdlybuf4s50_2
+Total number of identified usable delay cells: 10
+List of identified unusable delay cells: sky130_fd_sc_hd__dlygate4sd2_1 sky130_fd_sc_hd__dlygate4sd1_1 sky130_fd_sc_hd__dlygate4sd3_1 sky130_fd_sc_hd__dlymetal6s6s_1 sky130_fd_sc_hd__dlymetal6s4s_1
+Total number of identified unusable delay cells: 5
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version 20.13-s083_1. They will be removed in the next release. 
+timing_enable_default_delay_arc
+#% End load design ... (date=07/11 20:46:20, total cpu=0:00:12.5, real=0:00:21.0, peak res=1199.8M, current mem=1175.9M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200           59  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPLF-201           66  Pin '%s' in macro '%s' has no ANTENNADIF...
+WARNING   IMPLF-246            1  The '%s' attribute is only allowed to be...
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPPTN-867           1  Found use of %s. This will continue to w...
+WARNING   IMPESI-3505          1  setDelayCalMode -eng_%s (default=%s) wil...
+WARNING   IMPOPT-3602          7  The specified path group name %s is not ...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+WARNING   IMPPSP-1003          2  Found use of '%s'. This will continue to...
+WARNING   TECHLIB-302         24  No function defined for cell '%s'. The c...
+*** Message Summary: 165 warning(s), 0 error(s)
+
+The timeout for a remote job to respond is 3600 seconds.
+Submit command for task runs will be: local
+<FF> Plugin -> always_source_tcl
+<FF> LOADING 'always_source_tcl' PLUG-IN FILE(s) 
+<FF> -> innovus-foundation-flow/custom-scripts/always-source.tcl
+innovus 1> VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Sun Jul 11 20:46:35 2021
+
+Design Name: deconv_kernel_estimator_top_level
+Database Units: 1000
+Design Boundary: (0.0000, 0.0000) (2568.6400, 2564.9600)
+Error Limit = 1000000; Warning Limit = 50000
+Check all nets
+Use 16 pthreads
+Net VSS: has an unconnected terminal, has special routes with opens, has regular routing with opens.
+
+Begin Summary 
+    185651 Problem(s) (IMPVFC-96): Terminal(s) are not connected.
+    1 Problem(s) (IMPVFC-200): Special Wires: Pieces of the net are not connected together.
+    5416 Problem(s) (IMPVFC-92): Pieces of the net are not connected together.
+    191068 total info(s) created.
+End Summary
+
+End Time: Sun Jul 11 20:46:42 2021
+Time Elapsed: 0:00:07.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 191068 Viols.  0 Wrngs.
+  (CPU Time: 0:00:13.5  MEM: 275.062M)
+
+innovus 1> 
+******* START VERIFY ANTENNA ********
+Report File: deconv_kernel_estimator_top_level.antenna.rpt
+LEF Macro File: deconv_kernel_estimator_top_level.antenna.lef
+5000 nets processed: 1 violations
+10000 nets processed: 1 violations
+15000 nets processed: 1 violations
+Verification Complete: 1 Violations
+******* DONE VERIFY ANTENNA ********
+(CPU Time: 0:00:01.8  MEM: 0.000M)
+
+innovus 1> #-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-report deconv_kernel_estimator_top_level.drc.rpt # string, default="", user setting
+ *** Starting Verify DRC (MEM: 1689.9) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+ VERIFY DRC ...... Sub-Area: {1146.880 286.720 1290.240 430.080} 45 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {1433.600 286.720 1576.960 430.080} 47 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {2007.040 286.720 2150.400 430.080} 51 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {2150.400 286.720 2293.760 430.080} 52 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {286.720 286.720 430.080 430.080} 39 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {1290.240 286.720 1433.600 430.080} 46 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {2293.760 286.720 2437.120 430.080} 53 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {286.720 430.080 430.080 573.440} 57 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {573.440 286.720 716.800 430.080} 41 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {860.160 286.720 1003.520 430.080} 43 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {716.800 286.720 860.160 430.080} 42 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {716.800 430.080 860.160 573.440} 60 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {1433.600 430.080 1576.960 573.440} 65 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {1146.880 430.080 1290.240 573.440} 63 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {860.160 430.080 1003.520 573.440} 61 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {1720.320 286.720 1863.680 430.080} 49 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1576.960 286.720 1720.320 430.080} 48 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {2007.040 430.080 2150.400 573.440} 69 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {1863.680 286.720 2007.040 430.080} 50 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {1290.240 430.080 1433.600 573.440} 64 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {430.080 286.720 573.440 430.080} 40 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {2293.760 0.000 2437.120 143.360} 17 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {1146.880 0.000 1290.240 143.360} 9 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {286.720 0.000 430.080 143.360} 3 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {286.720 143.360 430.080 286.720} 21 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {1433.600 0.000 1576.960 143.360} 11 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {716.800 573.440 860.160 716.800} 78 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {1576.960 430.080 1720.320 573.440} 66 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1146.880 573.440 1290.240 716.800} 81 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1290.240 573.440 1433.600 716.800} 82 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1433.600 573.440 1576.960 716.800} 83 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {2007.040 0.000 2150.400 143.360} 15 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {573.440 0.000 716.800 143.360} 5 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {1576.960 573.440 1720.320 716.800} 84 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {860.160 0.000 1003.520 143.360} 7 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {2150.400 430.080 2293.760 573.440} 70 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {1863.680 430.080 2007.040 573.440} 68 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {0.000 0.000 143.360 143.360} 1 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {1720.320 0.000 1863.680 143.360} 13 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {860.160 573.440 1003.520 716.800} 79 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {2437.120 286.720 2568.640 430.080} 54 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1003.520 286.720 1146.880 430.080} 44 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {0.000 286.720 143.360 430.080} 37 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {2007.040 573.440 2150.400 716.800} 87 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {2150.400 573.440 2293.760 716.800} 88 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {143.360 286.720 286.720 430.080} 38 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {286.720 716.800 430.080 860.160} 93 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {1290.240 716.800 1433.600 860.160} 100 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {1433.600 716.800 1576.960 860.160} 101 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {1576.960 716.800 1720.320 860.160} 102 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {573.440 716.800 716.800 860.160} 95 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {430.080 430.080 573.440 573.440} 58 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {573.440 430.080 716.800 573.440} 59 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {1003.520 573.440 1146.880 716.800} 80 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {2437.120 0.000 2568.640 143.360} 18 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {2150.400 0.000 2293.760 143.360} 16 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {1290.240 0.000 1433.600 143.360} 10 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {2150.400 143.360 2293.760 286.720} 34 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {716.800 0.000 860.160 143.360} 6 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {1290.240 143.360 1433.600 286.720} 28 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {2007.040 716.800 2150.400 860.160} 105 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {2150.400 716.800 2293.760 860.160} 106 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {0.000 573.440 143.360 716.800} 73 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {716.800 143.360 860.160 286.720} 24 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {430.080 0.000 573.440 143.360} 4 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {143.360 0.000 286.720 143.360} 2 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {1720.320 716.800 1863.680 860.160} 103 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {2437.120 573.440 2568.640 716.800} 90 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1863.680 716.800 2007.040 860.160} 104 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {2293.760 716.800 2437.120 860.160} 107 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {1576.960 0.000 1720.320 143.360} 12 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {716.800 716.800 860.160 860.160} 96 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {1433.600 143.360 1576.960 286.720} 29 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {716.800 860.160 860.160 1003.520} 114 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {1576.960 143.360 1720.320 286.720} 30 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {1720.320 430.080 1863.680 573.440} 67 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {1003.520 0.000 1146.880 143.360} 8 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {1863.680 0.000 2007.040 143.360} 14 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {1146.880 143.360 1290.240 286.720} 27 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {860.160 143.360 1003.520 286.720} 25 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {2293.760 430.080 2437.120 573.440} 71 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {2007.040 143.360 2150.400 286.720} 33 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1863.680 860.160 2007.040 1003.520} 122 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {1576.960 860.160 1720.320 1003.520} 120 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {1290.240 860.160 1433.600 1003.520} 118 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {1720.320 143.360 1863.680 286.720} 31 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {1863.680 143.360 2007.040 286.720} 32 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {286.720 1003.520 430.080 1146.880} 129 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {430.080 143.360 573.440 286.720} 22 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {573.440 143.360 716.800 286.720} 23 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {2007.040 860.160 2150.400 1003.520} 123 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {1003.520 716.800 1146.880 860.160} 98 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {716.800 1003.520 860.160 1146.880} 132 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {1146.880 716.800 1290.240 860.160} 99 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {1003.520 430.080 1146.880 573.440} 62 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {2437.120 143.360 2568.640 286.720} 36 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {1720.320 573.440 1863.680 716.800} 85 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {2293.760 143.360 2437.120 286.720} 35 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {1863.680 573.440 2007.040 716.800} 86 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {143.360 1146.880 286.720 1290.240} 146 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {1146.880 860.160 1290.240 1003.520} 117 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {430.080 716.800 573.440 860.160} 94 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1003.520 143.360 1146.880 286.720} 26 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {286.720 573.440 430.080 716.800} 75 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {573.440 573.440 716.800 716.800} 77 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {1720.320 1146.880 1863.680 1290.240} 157 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {2150.400 860.160 2293.760 1003.520} 124 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {1863.680 1146.880 2007.040 1290.240} 158 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {0.000 860.160 143.360 1003.520} 109 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {0.000 143.360 143.360 286.720} 19 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {143.360 143.360 286.720 286.720} 20 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {2437.120 716.800 2568.640 860.160} 108 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {286.720 1290.240 430.080 1433.600} 165 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {1720.320 860.160 1863.680 1003.520} 121 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {0.000 430.080 143.360 573.440} 55 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {143.360 430.080 286.720 573.440} 56 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {716.800 1290.240 860.160 1433.600} 168 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {860.160 716.800 1003.520 860.160} 97 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {1720.320 1290.240 1863.680 1433.600} 175 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {1863.680 1290.240 2007.040 1433.600} 176 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {430.080 1003.520 573.440 1146.880} 130 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {286.720 860.160 430.080 1003.520} 111 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {860.160 1003.520 1003.520 1146.880} 133 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1433.600 860.160 1576.960 1003.520} 119 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {2293.760 1290.240 2437.120 1433.600} 179 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {860.160 1290.240 1003.520 1433.600} 169 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {430.080 1290.240 573.440 1433.600} 166 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {286.720 1146.880 430.080 1290.240} 147 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {716.800 1146.880 860.160 1290.240} 150 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {2150.400 1003.520 2293.760 1146.880} 142 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {430.080 573.440 573.440 716.800} 76 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {2437.120 430.080 2568.640 573.440} 72 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {2293.760 573.440 2437.120 716.800} 89 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {2007.040 1290.240 2150.400 1433.600} 177 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {2150.400 1290.240 2293.760 1433.600} 178 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {860.160 860.160 1003.520 1003.520} 115 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1720.320 1003.520 1863.680 1146.880} 139 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {860.160 1146.880 1003.520 1290.240} 151 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {0.000 1290.240 143.360 1433.600} 163 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {0.000 1003.520 143.360 1146.880} 127 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {1720.320 1433.600 1863.680 1576.960} 193 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1863.680 1433.600 2007.040 1576.960} 194 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {430.080 1146.880 573.440 1290.240} 148 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {2437.120 1003.520 2568.640 1146.880} 144 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {573.440 1146.880 716.800 1290.240} 149 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {0.000 716.800 143.360 860.160} 91 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {143.360 1003.520 286.720 1146.880} 128 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {430.080 860.160 573.440 1003.520} 112 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {143.360 573.440 286.720 716.800} 74 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {143.360 860.160 286.720 1003.520} 110 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {573.440 860.160 716.800 1003.520} 113 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {573.440 1003.520 716.800 1146.880} 131 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {1720.320 1576.960 1863.680 1720.320} 211 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {2293.760 1576.960 2437.120 1720.320} 215 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {286.720 1433.600 430.080 1576.960} 183 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {286.720 1576.960 430.080 1720.320} 201 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {2293.760 860.160 2437.120 1003.520} 125 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {286.720 1720.320 430.080 1863.680} 219 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {430.080 1720.320 573.440 1863.680} 220 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {573.440 1720.320 716.800 1863.680} 221 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {143.360 716.800 286.720 860.160} 92 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {2007.040 1433.600 2150.400 1576.960} 195 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1003.520 1720.320 1146.880 1863.680} 224 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {2150.400 1433.600 2293.760 1576.960} 196 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {2150.400 1576.960 2293.760 1720.320} 214 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1863.680 1576.960 2007.040 1720.320} 212 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {1146.880 1720.320 1290.240 1863.680} 225 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1290.240 1720.320 1433.600 1863.680} 226 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {573.440 1433.600 716.800 1576.960} 185 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {573.440 1290.240 716.800 1433.600} 167 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {2437.120 1290.240 2568.640 1433.600} 180 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {2293.760 1146.880 2437.120 1290.240} 161 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {2007.040 1003.520 2150.400 1146.880} 141 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {860.160 1433.600 1003.520 1576.960} 187 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {2150.400 1146.880 2293.760 1290.240} 160 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {2007.040 1576.960 2150.400 1720.320} 213 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {716.800 1720.320 860.160 1863.680} 222 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {860.160 1720.320 1003.520 1863.680} 223 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {0.000 1576.960 143.360 1720.320} 199 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {0.000 1146.880 143.360 1290.240} 145 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {143.360 1720.320 286.720 1863.680} 218 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {1720.320 1720.320 1863.680 1863.680} 229 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {286.720 1863.680 430.080 2007.040} 237 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {430.080 1863.680 573.440 2007.040} 238 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {2437.120 1576.960 2568.640 1720.320} 216 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {573.440 1863.680 716.800 2007.040} 239 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {2293.760 1433.600 2437.120 1576.960} 197 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {2437.120 860.160 2568.640 1003.520} 126 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {1433.600 1720.320 1576.960 1863.680} 227 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1863.680 1003.520 2007.040 1146.880} 140 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {1003.520 860.160 1146.880 1003.520} 116 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1003.520 1863.680 1146.880 2007.040} 242 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1146.880 1863.680 1290.240 2007.040} 243 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1290.240 1863.680 1433.600 2007.040} 244 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {716.800 1433.600 860.160 1576.960} 186 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {2293.760 1720.320 2437.120 1863.680} 233 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {1576.960 1720.320 1720.320 1863.680} 228 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {2437.120 1146.880 2568.640 1290.240} 162 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {430.080 1433.600 573.440 1576.960} 184 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {430.080 1576.960 573.440 1720.320} 202 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1720.320 1863.680 1863.680 2007.040} 247 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {2007.040 1720.320 2150.400 1863.680} 231 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {286.720 2007.040 430.080 2150.400} 255 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {716.800 1576.960 860.160 1720.320} 204 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {573.440 1576.960 716.800 1720.320} 203 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {860.160 1576.960 1003.520 1720.320} 205 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {2007.040 1146.880 2150.400 1290.240} 159 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {1003.520 2007.040 1146.880 2150.400} 260 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1720.320 2007.040 1863.680 2150.400} 265 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {2293.760 1003.520 2437.120 1146.880} 143 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {1863.680 2007.040 2007.040 2150.400} 266 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {2150.400 2007.040 2293.760 2150.400} 268 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {2150.400 1720.320 2293.760 1863.680} 232 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {143.360 2150.400 286.720 2293.760} 272 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {0.000 1433.600 143.360 1576.960} 181 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {143.360 1290.240 286.720 1433.600} 164 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {430.080 2007.040 573.440 2150.400} 256 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {286.720 2150.400 430.080 2293.760} 273 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {430.080 2150.400 573.440 2293.760} 274 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {0.000 1863.680 143.360 2007.040} 235 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {1863.680 1720.320 2007.040 1863.680} 230 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {1433.600 1433.600 1576.960 1576.960} 191 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {1146.880 2007.040 1290.240 2150.400} 261 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {2437.120 1433.600 2568.640 1576.960} 198 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {1003.520 2150.400 1146.880 2293.760} 278 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1720.320 2150.400 1863.680 2293.760} 283 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {1146.880 2150.400 1290.240 2293.760} 279 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {286.720 2293.760 430.080 2437.120} 291 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {430.080 2293.760 573.440 2437.120} 292 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1003.520 2293.760 1146.880 2437.120} 296 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1146.880 2293.760 1290.240 2437.120} 297 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1720.320 2293.760 1863.680 2437.120} 301 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1576.960 1433.600 1720.320 1576.960} 192 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {1863.680 2293.760 2007.040 2437.120} 302 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {716.800 1863.680 860.160 2007.040} 240 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {1433.600 1863.680 1576.960 2007.040} 245 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {860.160 1863.680 1003.520 2007.040} 241 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {2293.760 2293.760 2437.120 2437.120} 305 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {1576.960 1863.680 1720.320 2007.040} 246 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {2437.120 1720.320 2568.640 1863.680} 234 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {2007.040 2007.040 2150.400 2150.400} 267 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {1863.680 1863.680 2007.040 2007.040} 248 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {716.800 2150.400 860.160 2293.760} 276 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {143.360 1433.600 286.720 1576.960} 182 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {1433.600 2150.400 1576.960 2293.760} 281 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {2007.040 2293.760 2150.400 2437.120} 303 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1576.960 2007.040 1720.320 2150.400} 264 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {2437.120 2007.040 2568.640 2150.400} 270 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {2293.760 1863.680 2437.120 2007.040} 251 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {573.440 2007.040 716.800 2150.400} 257 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1576.960 2150.400 1720.320 2293.760} 282 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {573.440 2150.400 716.800 2293.760} 275 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {2150.400 2150.400 2293.760 2293.760} 286 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1863.680 2150.400 2007.040 2293.760} 284 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {860.160 2293.760 1003.520 2437.120} 295 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1290.240 2293.760 1433.600 2437.120} 298 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1290.240 2007.040 1433.600 2150.400} 262 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {1433.600 1576.960 1576.960 1720.320} 209 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {2007.040 1863.680 2150.400 2007.040} 249 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {2150.400 1863.680 2293.760 2007.040} 250 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {0.000 2293.760 143.360 2437.120} 289 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {0.000 1720.320 143.360 1863.680} 217 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {143.360 1576.960 286.720 1720.320} 200 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {1576.960 1576.960 1720.320 1720.320} 210 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {860.160 2007.040 1003.520 2150.400} 259 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {0.000 2007.040 143.360 2150.400} 253 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {286.720 2437.120 430.080 2564.960} 309 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {143.360 1863.680 286.720 2007.040} 236 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {2437.120 2293.760 2568.640 2437.120} 306 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {2293.760 2150.400 2437.120 2293.760} 287 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {2007.040 2150.400 2150.400 2293.760} 285 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {573.440 2437.120 716.800 2564.960} 311 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {573.440 2293.760 716.800 2437.120} 293 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {1433.600 2293.760 1576.960 2437.120} 299 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {860.160 2437.120 1003.520 2564.960} 313 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {1146.880 2437.120 1290.240 2564.960} 315 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {2437.120 1863.680 2568.640 2007.040} 252 of 324  Thread : 2
+ VERIFY DRC ...... Sub-Area: {2293.760 2437.120 2437.120 2564.960} 323 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {1720.320 2437.120 1863.680 2564.960} 319 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {143.360 2437.120 286.720 2564.960} 308 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {2007.040 2437.120 2150.400 2564.960} 321 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {2150.400 2293.760 2293.760 2437.120} 304 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {2437.120 2150.400 2568.640 2293.760} 288 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {2293.760 2007.040 2437.120 2150.400} 269 of 324  Thread : 5
+ VERIFY DRC ...... Sub-Area: {0.000 2150.400 143.360 2293.760} 271 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {430.080 2437.120 573.440 2564.960} 310 of 324  Thread : 7
+ VERIFY DRC ...... Sub-Area: {716.800 2293.760 860.160 2437.120} 294 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {1433.600 2007.040 1576.960 2150.400} 263 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {1290.240 2150.400 1433.600 2293.760} 280 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {716.800 2007.040 860.160 2150.400} 258 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {860.160 2150.400 1003.520 2293.760} 277 of 324  Thread : 6
+ VERIFY DRC ...... Sub-Area: {143.360 2007.040 286.720 2150.400} 254 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1433.600 2437.120 1576.960 2564.960} 317 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1003.520 2437.120 1146.880 2564.960} 314 of 324  Thread : 0
+ VERIFY DRC ...... Sub-Area: {1576.960 2293.760 1720.320 2437.120} 300 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1146.880 1433.600 1290.240 1576.960} 189 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {2437.120 2437.120 2568.640 2564.960} 324 of 324  Thread : 14
+ VERIFY DRC ...... Sub-Area: {716.800 2437.120 860.160 2564.960} 312 of 324  Thread : 8
+ VERIFY DRC ...... Sub-Area: {0.000 2437.120 143.360 2564.960} 307 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {143.360 2293.760 286.720 2437.120} 290 of 324  Thread : 13
+ VERIFY DRC ...... Sub-Area: {2150.400 2437.120 2293.760 2564.960} 322 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {1433.600 1146.880 1576.960 1290.240} 155 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {1863.680 2437.120 2007.040 2564.960} 320 of 324  Thread : 9
+ VERIFY DRC ...... Sub-Area: {1576.960 1290.240 1720.320 1433.600} 174 of 324  Thread : 4
+ VERIFY DRC ...... Sub-Area: {1576.960 2437.120 1720.320 2564.960} 318 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1290.240 2437.120 1433.600 2564.960} 316 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1146.880 1146.880 1290.240 1290.240} 153 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {1290.240 1433.600 1433.600 1576.960} 190 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {1290.240 1576.960 1433.600 1720.320} 208 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1433.600 1003.520 1576.960 1146.880} 137 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {1003.520 1433.600 1146.880 1576.960} 188 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {1003.520 1576.960 1146.880 1720.320} 206 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1146.880 1576.960 1290.240 1720.320} 207 of 324  Thread : 3
+ VERIFY DRC ...... Sub-Area: {1576.960 1003.520 1720.320 1146.880} 138 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1576.960 1146.880 1720.320 1290.240} 156 of 324  Thread : 11
+ VERIFY DRC ...... Sub-Area: {1290.240 1290.240 1433.600 1433.600} 172 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {1003.520 1003.520 1146.880 1146.880} 134 of 324  Thread : 1
+ VERIFY DRC ...... Sub-Area: {1433.600 1290.240 1576.960 1433.600} 173 of 324  Thread : 10
+ VERIFY DRC ...... Sub-Area: {1290.240 1003.520 1433.600 1146.880} 136 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {1003.520 1290.240 1146.880 1433.600} 170 of 324  Thread : 12
+ VERIFY DRC ...... Sub-Area: {1146.880 1003.520 1290.240 1146.880} 135 of 324  Thread : 15
+ VERIFY DRC ...... Sub-Area: {1146.880 1290.240 1290.240 1433.600} 171 of 324  Thread : 12
+ VERIFY DRC ...... Thread : 10 finished.
+ VERIFY DRC ...... Thread : 1 finished.
+ VERIFY DRC ...... Thread : 11 finished.
+ VERIFY DRC ...... Thread : 4 finished.
+ VERIFY DRC ...... Thread : 13 finished.
+ VERIFY DRC ...... Thread : 0 finished.
+ VERIFY DRC ...... Thread : 2 finished.
+ VERIFY DRC ...... Thread : 6 finished.
+ VERIFY DRC ...... Sub-Area: {1003.520 1146.880 1146.880 1290.240} 152 of 324  Thread : 12
+ VERIFY DRC ...... Thread : 12 finished.
+ VERIFY DRC ...... Sub-Area: {1290.240 1146.880 1433.600 1290.240} 154 of 324  Thread : 15
+ VERIFY DRC ...... Thread : 15 finished.
+
+  Verification Complete : 0 Viols.
+
+ *** End Verify DRC (CPU: 0:00:22.1  ELAPSED TIME: 3.00  MEM: 176.1M) ***
+
+innovus 1> Cut-line is auto-snapped from (806.935000 1805.782000 807.233000 1805.782000) to (806.935000 1805.780000 807.235000 1805.780000).
+Cut-line is auto-snapped from (806.961000 1804.301000 807.243000 1804.301000) to (806.960000 1804.300000 807.245000 1804.300000).
+Cut-line is auto-snapped from (806.940000 1804.322000 807.243000 1804.322000) to (806.940000 1804.320000 807.245000 1804.320000).
+Cut-line is auto-snapped from (806.950000 1804.337000 807.233000 1804.337000) to (806.950000 1804.335000 807.235000 1804.335000).
+
+******* START VERIFY ANTENNA ********
+Report File: deconv_kernel_estimator_top_level.antenna.rpt
+LEF Macro File: deconv_kernel_estimator_top_level.antenna.lef
+5000 nets processed: 0 violations
+10000 nets processed: 0 violations
+15000 nets processed: 0 violations
+Verification Complete: 0 Violations
+******* DONE VERIFY ANTENNA ********
+(CPU Time: 0:00:01.6  MEM: 0.000M)
+
+innovus 1> #% Begin save design ... (date=07/11 20:50:34, mem=1433.9M)
+% Begin Save ccopt configuration ... (date=07/11 20:50:34, mem=1436.0M)
+% End Save ccopt configuration ... (date=07/11 20:50:34, total cpu=0:00:00.1, real=0:00:00.0, peak res=1438.0M, current mem=1438.0M)
+% Begin Save netlist data ... (date=07/11 20:50:34, mem=1438.2M)
+Writing Binary DB to deconv_kernel_estimator_top_level.dat/vbin/deconv_kernel_estimator_top_level.v.bin in multi-threaded mode...
+% End Save netlist data ... (date=07/11 20:50:34, total cpu=0:00:00.2, real=0:00:00.0, peak res=1438.7M, current mem=1438.7M)
+Saving symbol-table file in separate thread ...
+Saving congestion map file in separate thread ...
+Saving congestion map file deconv_kernel_estimator_top_level.dat/deconv_kernel_estimator_top_level.route.congmap.gz ...
+% Begin Save AAE data ... (date=07/11 20:50:34, mem=1439.4M)
+Saving AAE Data ...
+% End Save AAE data ... (date=07/11 20:50:34, total cpu=0:00:00.0, real=0:00:01.0, peak res=1439.4M, current mem=1439.4M)
+Saving preference file deconv_kernel_estimator_top_level.dat/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+Saving Drc markers ...
+... 191068 markers are saved ...
+... 0 geometry drc markers are saved ...
+... 0 antenna drc markers are saved ...
+Saving special route data file in separate thread ...
+Saving PG file in separate thread ...
+Saving placement file in separate thread ...
+Saving route file in separate thread ...
+Saving property file in separate thread ...
+Saving PG file deconv_kernel_estimator_top_level.dat/deconv_kernel_estimator_top_level.pg.gz, version#2, (Created by Innovus v20.13-s083_1 on Sun Jul 11 20:50:39 2021)
+** Saving stdCellPlacement_binary (version# 2) ...
+Saving property file deconv_kernel_estimator_top_level.dat/deconv_kernel_estimator_top_level.prop
+TAT_INFO: ::saveSpecialRoute REAL = 0 : CPU = 0 : MEM = 0.
+*** Completed saveProperty (cpu=0:00:00.2 real=0:00:00.0 mem=1762.6M) ***
+Save Adaptive View Pruning View Names to Binary file
+*** Completed savePGFile (cpu=0:00:00.7 real=0:00:01.0 mem=1762.5M) ***
+TAT_INFO: ::savePGFile REAL = 1 : CPU = 0 : MEM = 0.
+TAT_INFO: ::savePlace REAL = 0 : CPU = 0 : MEM = 0.
+*** Completed saveRoute (cpu=0:00:00.9 real=0:00:01.0 mem=1762.5M) ***
+TAT_INFO: ::saveRoute REAL = 1 : CPU = 0 : MEM = 0.
+TAT_INFO: ::db::saveAnnotationAndProp REAL = 0 : CPU = 0 : MEM = 0.
+#Saving pin access data to file deconv_kernel_estimator_top_level.dat/deconv_kernel_estimator_top_level.apa ...
+TAT_INFO: ::db::saveSymbolTable REAL = 2 : CPU = 0 : MEM = 0.
+TAT_INFO: ::saveCongMap REAL = 2 : CPU = 0 : MEM = 0.
+% Begin Save power constraints data ... (date=07/11 20:50:43, mem=1442.2M)
+% End Save power constraints data ... (date=07/11 20:50:43, total cpu=0:00:00.0, real=0:00:00.0, peak res=1442.3M, current mem=1442.3M)
+Generated self-contained design deconv_kernel_estimator_top_level.dat
+#% End save design ... (date=07/11 20:50:46, total cpu=0:00:05.4, real=0:00:12.0, peak res=1443.6M, current mem=1443.6M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Sun Jul 11 20:52:02 2021
+  Total CPU time:     0:03:37
+  Total real time:    0:07:10
+  Peak memory (main): 3260.22MB
+
+
+*** Memory Usage v#2 (Current mem = 1763.820M, initial mem = 267.602M) ***
+*** Message Summary: 165 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:03:11, real=0:07:08, mem=1763.8M) ---
+

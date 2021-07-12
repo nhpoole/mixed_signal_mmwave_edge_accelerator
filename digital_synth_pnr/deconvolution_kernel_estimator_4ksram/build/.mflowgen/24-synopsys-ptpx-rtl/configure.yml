@@ -1,0 +1,48 @@
+build_dir: 24-synopsys-ptpx-rtl
+build_id: '24'
+commands:
+- pt_shell -file pt_px.tcl
+- cp reports/*.pwr.rpt outputs/design.pwr.rpt
+- cp reports/*.pwr.hier.rpt outputs/design.pwr.hier.rpt
+- cp reports/*.sw.rpt outputs/design.sw.rpt
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.namemap:
+  - f: design.namemap
+    step: 11-synopsys-dc-synthesis
+  design.pt.sdc:
+  - f: design.pt.sdc
+    step: 20-cadence-innovus-signoff
+  design.spef.gz:
+  - f: design.spef.gz
+    step: 20-cadence-innovus-signoff
+  design.vcs.v:
+  - f: design.vcs.v
+    step: 20-cadence-innovus-signoff
+  run.saif:
+  - f: run.saif
+    step: 10-synopsys-vcs-sim
+  sky130_sram_4kbyte_1rw1r_32x1024_8_TT_1p8V_25C.db:
+  - f: sky130_sram_4kbyte_1rw1r_32x1024_8_TT_1p8V_25C.db
+    step: 6-sram
+edges_o: {}
+inputs:
+- adk
+- design.vcs.v
+- design.spef.gz
+- design.pt.sdc
+- run.saif
+- design.namemap
+- sky130_sram_4kbyte_1rw1r_32x1024_8_TT_1p8V_25C.db
+name: synopsys-ptpx-rtl
+outputs:
+- design.pwr.rpt
+- design.pwr.hier.rpt
+- design.sw.rpt
+parameters:
+  clock_period: 20.0
+  design_name: deconv_kernel_estimator_top_level
+  strip_path: deconv_kernel_estimator_top_level_tb/deconv_kernel_estimator_top_level_inst
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator/design/synopsys-ptpx-rtl

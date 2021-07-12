@@ -1,0 +1,24 @@
+build_dir: 7-cadence-ncsim-sim
+build_id: '7'
+commands:
+- xrun -gui +access+r -sv -timescale 1ns/1ps inputs/testbench.v inputs/*.v -incdir
+  inputs
+edges_i:
+  design.args:
+  - f: design.args
+    step: 6-testbench
+  design.v:
+  - f: design.v
+    step: 4-rtl
+  testbench.v:
+  - f: testbench.v
+    step: 6-testbench
+edges_o: {}
+inputs:
+- design.v
+- testbench.v
+- design.args
+name: cadence-ncsim-sim
+outputs:
+- design.vcd
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/design/cadence-xcelium-sim

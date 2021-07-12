@@ -1,0 +1,2648 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2020 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v20.13-s083_1, built Tue Jan 19 16:51:46 PST 2021
+Options:	-overwrite -nowin -init START.tcl -log logs/run.log 
+Date:		Sun Jul 11 19:59:42 2021
+Host:		caddy13 (x86_64 w/Linux 3.10.0-1160.31.1.el7.x86_64) (8cores*16cpus*Common KVM processor 16384KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		invs	Innovus Implementation System	20.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+Sourcing file "START.tcl" ...
+<CMD> is_common_ui_mode
+<CMD> restoreDesign /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat deconv_kernel_estimator_top_level
+#% Begin load design ... (date=07/11 20:00:22, mem=566.8M)
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'deconv_kernel_estimator_top_level' saved by 'Innovus' '20.13-s083_1' on 'Sun Jul 11 16:17:18 2021'.
+% Begin Load MMMC data ... (date=07/11 20:00:23, mem=569.3M)
+% End Load MMMC data ... (date=07/11 20:00:23, total cpu=0:00:00.1, real=0:00:00.0, peak res=570.0M, current mem=570.0M)
+typical
+
+Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/libs/lef/rtk-tech.lef ...
+
+Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/libs/lef/stdcells.lef ...
+WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/libs/lef/stdcells.lef at line 18.
+Set DBUPerIGU to M1 pitch 460.
+
+Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/libs/lef/sky130_sram_2kbyte_1rw1r_32x512_8.lef ...
+**WARN: (IMPLF-246):	The 'UNITS' attribute is only allowed to be set in the first LEF file (technology LEF). The attribute was found in this LEF file, and will be ignored.
+**WARN: (IMPLF-200):	Pin 'din0[0]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[1]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[2]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[3]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[4]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[5]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[6]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[7]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[8]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[9]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[10]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[11]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[12]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[13]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[14]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[15]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[16]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[17]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[18]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[19]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (IMPLF-201):	Pin 'dout0[0]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[1]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[2]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[3]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[4]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[5]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[6]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[7]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[8]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[9]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[10]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[11]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[12]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[13]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[14]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[15]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[16]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[17]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[18]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[19]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+
+viaInitial starts at Sun Jul 11 20:00:24 2021
+viaInitial ends at Sun Jul 11 20:00:24 2021
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/viewDefinition.tcl
+Reading libs_typical timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+Read 427 cells in library 'sky130_fd_sc_hd__tt_025C_1v80' 
+Reading libs_typical timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/6-sram/outputs/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib' ...
+Read 1 cells in library 'sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C_lib' 
+Reading libs_bc timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 427 cells in library 'sky130_fd_sc_hd__ff_100C_1v95' 
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.04min, real=0.03min, mem=16.9M, fe_cpu=0.67min, fe_real=0.75min, fe_mem=678.4M) ***
+% Begin Load netlist data ... (date=07/11 20:00:26, mem=592.4M)
+*** Begin netlist parsing (mem=678.4M) ***
+Created 428 new cells from 3 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/vbin/deconv_kernel_estimator_top_level.v.bin'
+Reading binary database version 2 in 1-threaded mode
+
+*** Memory Usage v#2 (Current mem = 690.465M, initial mem = 275.605M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=690.5M) ***
+% End Load netlist data ... (date=07/11 20:00:26, total cpu=0:00:00.1, real=0:00:00.0, peak res=604.0M, current mem=604.0M)
+Set top cell to deconv_kernel_estimator_top_level.
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Hooked 855 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell deconv_kernel_estimator_top_level ...
+*** Netlist is unique.
+** info: there are 960 modules.
+** info: there are 9889 stdCell insts.
+** info: there are 16 macros.
+
+*** Memory Usage v#2 (Current mem = 734.438M, initial mem = 275.605M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Adjust met3 preferred direction offset from 0.34 to 0.17.
+Adjust met4 preferred direction offset from 0.46 to 0.23.
+Adjust met5 preferred direction offset from 1.7 to 0.17.
+Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Loading preference file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/gui.pref.tcl ...
+##  Process: 130           (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 130nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.4.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+**WARN: (IMPOPT-3602):	The specified path group name Reg2Reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for Reg2Reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name Reg2Out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for Reg2Out path_group
+**WARN: (IMPOPT-3602):	The specified path group name Reg2ClkGate is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for Reg2ClkGate path_group
+**WARN: (IMPOPT-3602):	The specified path group name Macro2All is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for Macro2All path_group
+**WARN: (IMPOPT-3602):	The specified path group name In2Reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for In2Reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name In2Out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for In2Out path_group
+**WARN: (IMPOPT-3602):	The specified path group name All2Macro is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for All2Macro path_group
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+Change floorplan default-technical-site to 'unithd'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 328
+Total number of sequential cells: 68
+Total number of tristate cells: 13
+Total number of level shifter cells: 7
+Total number of power gating cells: 0
+Total number of isolation cells: 11
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_12 sky130_fd_sc_hd__buf_16 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_6 sky130_fd_sc_hd__buf_8 sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_16 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8 sky130_fd_sc_hd__dlymetal6s2s_1 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__probe_p_8
+Total number of usable buffers: 15
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: sky130_fd_sc_hd__bufinv_16 sky130_fd_sc_hd__clkinv_1 sky130_fd_sc_hd__bufinv_8 sky130_fd_sc_hd__clkinv_16 sky130_fd_sc_hd__clkinv_2 sky130_fd_sc_hd__clkinv_4 sky130_fd_sc_hd__clkinv_8 sky130_fd_sc_hd__inv_1 sky130_fd_sc_hd__clkinvlp_2 sky130_fd_sc_hd__clkinvlp_4 sky130_fd_sc_hd__inv_12 sky130_fd_sc_hd__inv_16 sky130_fd_sc_hd__inv_2 sky130_fd_sc_hd__inv_4 sky130_fd_sc_hd__inv_6 sky130_fd_sc_hd__inv_8
+Total number of usable inverters: 16
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: sky130_fd_sc_hd__bufbuf_16 sky130_fd_sc_hd__bufbuf_8 sky130_fd_sc_hd__clkdlybuf4s15_1 sky130_fd_sc_hd__clkdlybuf4s15_2 sky130_fd_sc_hd__clkdlybuf4s18_1 sky130_fd_sc_hd__clkdlybuf4s18_2 sky130_fd_sc_hd__clkdlybuf4s25_1 sky130_fd_sc_hd__clkdlybuf4s50_1 sky130_fd_sc_hd__clkdlybuf4s25_2 sky130_fd_sc_hd__clkdlybuf4s50_2 sky130_fd_sc_hd__dlygate4sd2_1 sky130_fd_sc_hd__dlygate4sd1_1 sky130_fd_sc_hd__dlygate4sd3_1 sky130_fd_sc_hd__dlymetal6s6s_1 sky130_fd_sc_hd__dlymetal6s4s_1
+Total number of identified usable delay cells: 15
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Reading floorplan file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.fp.gz (mem = 945.1M).
+% Begin Load floorplan data ... (date=07/11 20:00:28, mem=857.1M)
+*info: reset 13249 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 2568640 2564960)
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Adjust met3 preferred direction offset from 0.34 to 0.17.
+Adjust met4 preferred direction offset from 0.46 to 0.23.
+Adjust met5 preferred direction offset from 1.7 to 0.17.
+Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+ ... processed partition successfully.
+Reading binary special route file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.fp.spr.gz (Created by Innovus v20.13-s083_1 on Sun Jul 11 16:17:13 2021, version: 1)
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=859.9M, current mem=859.9M)
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=07/11 20:00:30, total cpu=0:00:00.1, real=0:00:02.0, peak res=859.9M, current mem=859.3M)
+Reading congestion map file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=07/11 20:00:30, mem=859.6M)
+% End Load SymbolTable ... (date=07/11 20:00:31, total cpu=0:00:00.1, real=0:00:01.0, peak res=863.0M, current mem=863.0M)
+Loading place ...
+% Begin Load placement data ... (date=07/11 20:00:31, mem=863.0M)
+Reading placement file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v20.13-s083_1 on Sun Jul 11 16:17:13 2021, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Completed restorePlace (cpu=0:00:00.2 real=0:00:00.0 mem=959.7M) ***
+Total net length = 5.054e+03 (2.509e+03 2.546e+03) (ext = 4.919e+03)
+% End Load placement data ... (date=07/11 20:00:31, total cpu=0:00:00.2, real=0:00:00.0, peak res=874.5M, current mem=872.2M)
+% Begin Load routing data ... (date=07/11 20:00:31, mem=872.2M)
+Reading routing file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.route.gz.
+Reading Innovus routing data (Created by Innovus v20.13-s083_1 on Sun Jul 11 16:17:13 2021 Format: 20.1) ...
+*** Total 12499 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.0 real=0:00:01.0 mem=960.7M) ***
+% End Load routing data ... (date=07/11 20:00:32, total cpu=0:00:00.0, real=0:00:01.0, peak res=877.8M, current mem=876.8M)
+TAT_INFO: restoreCongMap REAL = 1 : CPU = 0 : MEM = 0.
+Reading property file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=965.7M) ***
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Reading Capacitance Table File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable ...
+Process name: (null).
+Allocated an empty WireEdgeEnlargement table in typical [6].
+Allocated an empty WireEdgeEnlargement table in typical [6].
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: analysis_default
+    RC-Corner Name        : typical
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/14-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=07/11 20:00:34, mem=890.4M)
+** WARN:  (VOLTUS_POWR-3212): The 'set_power_analysis_mode -leakage_power_view |-dynamic_power_view|-analysis_view' will be obsolete in 18.20 release. Use 'set_analysis_view -leakage <> | -dynamic <>' to set leakage and dynamic power views.
+
+% End Load power constraints ... (date=07/11 20:00:34, total cpu=0:00:00.0, real=0:00:00.0, peak res=890.5M, current mem=890.5M)
+delay_default
+% Begin load AAE data ... (date=07/11 20:00:34, mem=931.9M)
+**WARN: (IMPESI-3505):	setDelayCalMode -eng_copyNetPropToNewNet true (default=false) will be obsoleted along with its sgs2set equivalent.  This parameter will continue to be supported in the current release, but will be removed in the next major release of the software.
+AAE DB initialization (MEM=1039.73 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End load AAE data ... (date=07/11 20:00:34, total cpu=0:00:00.7, real=0:00:00.0, peak res=940.2M, current mem=940.2M)
+Total number of combinational cells: 328
+Total number of sequential cells: 68
+Total number of tristate cells: 13
+Total number of level shifter cells: 7
+Total number of power gating cells: 0
+Total number of isolation cells: 11
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_12 sky130_fd_sc_hd__buf_16 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_6 sky130_fd_sc_hd__buf_8 sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_16 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8
+Total number of usable buffers: 12
+List of unusable buffers: sky130_fd_sc_hd__dlymetal6s2s_1 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__probe_p_8
+Total number of unusable buffers: 3
+List of usable inverters: sky130_fd_sc_hd__bufinv_16 sky130_fd_sc_hd__clkinv_1 sky130_fd_sc_hd__bufinv_8 sky130_fd_sc_hd__clkinv_2 sky130_fd_sc_hd__clkinv_4 sky130_fd_sc_hd__clkinv_8 sky130_fd_sc_hd__inv_1 sky130_fd_sc_hd__inv_12 sky130_fd_sc_hd__inv_16 sky130_fd_sc_hd__inv_2 sky130_fd_sc_hd__inv_4 sky130_fd_sc_hd__inv_6 sky130_fd_sc_hd__inv_8
+Total number of usable inverters: 13
+List of unusable inverters: sky130_fd_sc_hd__clkinv_16 sky130_fd_sc_hd__clkinvlp_2 sky130_fd_sc_hd__clkinvlp_4
+Total number of unusable inverters: 3
+List of identified usable delay cells: sky130_fd_sc_hd__bufbuf_16 sky130_fd_sc_hd__bufbuf_8 sky130_fd_sc_hd__clkdlybuf4s15_1 sky130_fd_sc_hd__clkdlybuf4s15_2 sky130_fd_sc_hd__clkdlybuf4s18_1 sky130_fd_sc_hd__clkdlybuf4s18_2 sky130_fd_sc_hd__clkdlybuf4s25_1 sky130_fd_sc_hd__clkdlybuf4s50_1 sky130_fd_sc_hd__clkdlybuf4s25_2 sky130_fd_sc_hd__clkdlybuf4s50_2
+Total number of identified usable delay cells: 10
+List of identified unusable delay cells: sky130_fd_sc_hd__dlygate4sd2_1 sky130_fd_sc_hd__dlygate4sd1_1 sky130_fd_sc_hd__dlygate4sd3_1 sky130_fd_sc_hd__dlymetal6s6s_1 sky130_fd_sc_hd__dlymetal6s4s_1
+Total number of identified unusable delay cells: 5
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version 20.13-s083_1. They will be removed in the next release. 
+timing_enable_default_delay_arc
+#% End load design ... (date=07/11 20:00:34, total cpu=0:00:07.2, real=0:00:13.0, peak res=970.5M, current mem=938.4M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200           59  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPLF-201           66  Pin '%s' in macro '%s' has no ANTENNADIF...
+WARNING   IMPLF-246            1  The '%s' attribute is only allowed to be...
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPPTN-867           1  Found use of %s. This will continue to w...
+WARNING   IMPESI-3505          1  setDelayCalMode -eng_%s (default=%s) wil...
+WARNING   IMPOPT-3602          7  The specified path group name %s is not ...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPPSP-1003          1  Found use of '%s'. This will continue to...
+WARNING   TECHLIB-302         24  No function defined for cell '%s'. The c...
+*** Message Summary: 163 warning(s), 0 error(s)
+
+<CMD> setDistributeHost -local
+The timeout for a remote job to respond is 3600 seconds.
+Submit command for task runs will be: local
+<CMD> setMultiCpuUsage -localCpu 16
+<FF> LOADING 'always_source_tcl' PLUG-IN FILE(s) 
+<FF> -> innovus-foundation-flow/custom-scripts/always-source.tcl
+### Start verbose source output (echo mode) for 'scripts/globalnetconnect.tcl' ...
+# globalNetConnect VDD    -type pgpin -pin VPWR    -inst * -verbose
+<CMD> globalNetConnect VDD -type pgpin -pin VPWR -inst * -verbose
+52645 new pwr-pin connections were made to global net 'VDD'.
+# globalNetConnect VSS    -type pgpin -pin VGND    -inst * -verbose
+<CMD> globalNetConnect VSS -type pgpin -pin VGND -inst * -verbose
+52645 new gnd-pin connections were made to global net 'VSS'.
+# globalNetConnect VSS    -type pgpin -pin VNB     -inst * -verbose
+<CMD> globalNetConnect VSS -type pgpin -pin VNB -inst * -verbose
+9889 new gnd-pin connections were made to global net 'VSS'.
+# globalNetConnect VDD    -type pgpin -pin VPB     -inst * -verbose
+<CMD> globalNetConnect VDD -type pgpin -pin VPB -inst * -verbose
+9889 new pwr-pin connections were made to global net 'VDD'.
+# globalNetConnect VDD    -type pgpin -pin vccd1   -inst * -verbose
+<CMD> globalNetConnect VDD -type pgpin -pin vccd1 -inst * -verbose
+16 new pwr-pin connections were made to global net 'VDD'.
+# globalNetConnect VSS    -type pgpin -pin vssd1   -inst * -verbose
+<CMD> globalNetConnect VSS -type pgpin -pin vssd1 -inst * -verbose
+16 new gnd-pin connections were made to global net 'VSS'.
+### End verbose source output for 'scripts/globalnetconnect.tcl'.
+### Start verbose source output (echo mode) for 'scripts/main.tcl' ...
+# set M2_direction [dbGet [dbGet head.layers.name 3 -p].direction]
+# if { $M2_direction == "Vertical" } {
+  # Vertical M2 -- Use single power mesh strategy
+  puts "Info: Using coarse-only power mesh because M2 is vertical"
+  if {[ file exists inputs/power-strategy-singlemesh.tcl ]} {
+    source -verbose inputs/power-strategy-singlemesh.tcl
+  } else {
+    source -verbose scripts/power-strategy-singlemesh.tcl
+  }
+} else {
+  # Horizontal M2 -- Use dual power mesh strategy
+  puts "Info: Using fine+coarse power mesh because M2 is horizontal"
+  if {[ file exists inputs/power-strategy-dualmesh.tcl ]} {
+    source -verbose inputs/power-strategy-dualmesh.tcl
+  } else {
+    source -verbose scripts/power-strategy-dualmesh.tcl
+  }
+}
+### Start verbose source output (echo mode) for 'scripts/power-strategy-singlemesh.tcl' ...
+# sroute -nets {VDD VSS}
+<CMD> sroute -nets {VDD VSS}
+#% Begin sroute (date=07/11 20:00:35, mem=938.7M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:00:35 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteConnectConverterPin set to false
+srouteFollowCorePinEnd set to 3
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2033.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 437 macros, 65 used
+Read in 42835 components
+  42819 core components: 63 unplaced, 0 placed, 42756 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 29 physical pins
+  29 physical pins: 0 unplaced, 29 placed, 0 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets
+Read in 85825 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the VDD net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net VDD. Check net list, or change port class in the technology file, or change option to include pin in given range.
+**WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the VSS net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net VSS. Check net list, or change port class in the technology file, or change option to include pin in given range.
+CPU time for FollowPin 0 seconds
+CPU time for FollowPin 0 seconds
+  Number of IO ports routed: 0
+  Number of Block ports routed: 0  open: 32
+  Number of Stripe ports routed: 0
+  Number of Core ports routed: 0  open: 8566
+  Number of Pad ports routed: 0
+  Number of Power Bump ports routed: 0
+  Number of Followpin connections: 4283
+End power routing: cpu: 0:00:02, real: 0:00:01, peak: 2113.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 29 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 4283 wires.
+ViaGen created 0 via, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met1  |      4283      |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:00:37, total cpu=0:00:02.4, real=0:00:02.0, peak res=1023.3M, current mem=970.1M)
+# set pmesh_bot $ADK_POWER_MESH_BOT_LAYER
+# set pmesh_top $ADK_POWER_MESH_TOP_LAYER
+# addRing -nets {VDD VSS} -type core_rings -follow core   \
+        -layer [list top  $pmesh_top bottom $pmesh_top  \
+                     left $pmesh_bot right  $pmesh_bot] \
+        -width $savedvars(p_ring_width)                 \
+        -spacing $savedvars(p_ring_spacing)             \
+        -offset $savedvars(p_ring_spacing)              \
+        -extend_corner {tl tr bl br lt lb rt rb}
+<CMD> addRing -nets {VDD VSS} -type core_rings -follow core -layer {top 6 bottom 6 left 5 right 5} -width 8.16 -spacing 4.08 -offset 4.08 -extend_corner {tl tr bl br lt lb rt rb}
+#% Begin addRing (date=07/11 20:00:37, mem=970.1M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1104.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:37, total cpu=0:00:00.1, real=0:00:00.0, peak res=973.2M, current mem=973.2M)
+# deselectAll
+<CMD> deselectAll
+# selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:37, mem=973.3M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1104.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:37, total cpu=0:00:00.1, real=0:00:00.0, peak res=973.5M, current mem=973.5M)
+# deselectAll
+<CMD> deselectAll
+# selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:37, mem=971.2M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.1, real=0:00:00.0, peak res=971.2M, current mem=971.2M)
+# deselectAll
+<CMD> deselectAll
+# selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.2M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=971.3M, current mem=971.3M)
+# deselectAll
+<CMD> deselectAll
+# selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.3M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=971.3M, current mem=971.3M)
+# deselectAll
+<CMD> deselectAll
+# selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.3M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=971.3M, current mem=971.3M)
+# deselectAll
+<CMD> deselectAll
+# selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.3M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=971.3M, current mem=971.3M)
+# deselectAll
+<CMD> deselectAll
+# selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.3M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.1, real=0:00:00.0, peak res=971.4M, current mem=971.4M)
+# deselectAll
+<CMD> deselectAll
+# selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.4M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.1, real=0:00:00.0, peak res=971.4M, current mem=971.4M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.4M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.1, real=0:00:00.0, peak res=971.4M, current mem=971.4M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.4M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=971.4M, current mem=971.4M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.4M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=971.4M, current mem=971.4M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.4M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=971.5M, current mem=971.5M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.5M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=971.5M, current mem=971.5M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.5M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=971.5M, current mem=971.5M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.5M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=971.5M, current mem=971.5M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer met5 -stacked_via_bottom_layer met4 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+# addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+<CMD> addRing -nets {VDD VSS} -type block_rings -around selected -layer {top met5 bottom met5 left met4 right met4} -width {top 1.8 bottom 1.8 left 1.8 right 1.8} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=07/11 20:00:38, mem=971.5M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=07/11 20:00:39, total cpu=0:00:00.1, real=0:00:00.0, peak res=971.5M, current mem=971.5M)
+# set M1_min_width    [dbGet [dbGetLayerByZ 2].minWidth]
+# set M1_route_pitchX [dbGet [dbGetLayerByZ 2].pitchX]
+# set pmesh_bot_str_width [expr  8 *  3 * $M1_min_width   ]
+# set pmesh_bot_str_pitch [expr 4 * 10 * $M1_route_pitchX]
+# set pmesh_bot_str_intraset_spacing [expr $pmesh_bot_str_pitch - $pmesh_bot_str_width]
+# set pmesh_bot_str_interset_pitch   [expr 4*$pmesh_bot_str_pitch]
+# setViaGenMode -reset
+<CMD> setViaGenMode -reset
+# setViaGenMode -viarule_preference default
+<CMD> setViaGenMode -viarule_preference default
+Setting -viarule_preference to default order. ViaGen will consider via rule priority based on the order of appearance in the technology file.
+# setViaGenMode -ignore_DRC false
+<CMD> setViaGenMode -ignore_DRC false
+Setting -ignore_DRC to 0. ViaGen will do DRC check while creating vias.
+# setAddStripeMode -reset
+<CMD> setAddStripeMode -reset
+# setAddStripeMode -stacked_via_bottom_layer met1 \
+                 -stacked_via_top_layer    $pmesh_top \
+                 -break_at {  block_ring  }
+<CMD> setAddStripeMode -stacked_via_bottom_layer met1 -stacked_via_top_layer 6 -break_at {  block_ring  }
+Stripe will break at block ring.
+# addStripe -nets {VSS VDD} -layer $pmesh_bot -direction vertical \
+    -width $pmesh_bot_str_width                                 \
+    -spacing $pmesh_bot_str_intraset_spacing                    \
+    -set_to_set_distance $pmesh_bot_str_interset_pitch          \
+    -max_same_layer_jog_length $pmesh_bot_str_pitch             \
+    -padcore_ring_bottom_layer_limit $pmesh_bot                 \
+    -padcore_ring_top_layer_limit $pmesh_top                    \
+    -start [expr 2*$pmesh_bot_str_pitch]
+<CMD> addStripe -nets {VSS VDD} -layer 5 -direction vertical -width 3.36 -spacing 10.24 -set_to_set_distance 54.4 -max_same_layer_jog_length 13.6 -padcore_ring_bottom_layer_limit 5 -padcore_ring_top_layer_limit 6 -start 27.2
+#% Begin addStripe (date=07/11 20:00:39, mem=971.6M)
+
+Initialize fgc environment(mem: 1102.0M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading cell geometries (cpu: 0:00:00.5, real: 0:00:00.0, peak mem: 1102.0M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Completing 10% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Completing 20% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Completing 30% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Completing 40% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Completing 50% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Completing 60% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Completing 70% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Completing 80% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Completing 90% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Completing 100% stripe generation(cpu: 0:00:00.1, real: 0:00:00.0, peak mem: 1102.0M)
+Stripe generation is complete.
+vias are now being generated.
+addStripe created 427 wires.
+ViaGen created 30132 vias, deleted 4 vias to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   via  |      9762      |        0       |
+|  via2  |      9762      |        0       |
+|  via3  |      9762      |        0       |
+|  met4  |       427      |       NA       |
+|  via4  |       846      |        4       |
++--------+----------------+----------------+
+#% End addStripe (date=07/11 20:00:41, total cpu=0:00:02.7, real=0:00:02.0, peak res=992.3M, current mem=992.3M)
+# addStripe -nets {VSS} -layer $pmesh_bot -direction vertical \
+    -width $pmesh_bot_str_width                                 \
+    -spacing $pmesh_bot_str_intraset_spacing                    \
+    -set_to_set_distance $pmesh_bot_str_interset_pitch          \
+    -max_same_layer_jog_length $pmesh_bot_str_pitch             \
+    -padcore_ring_bottom_layer_limit $pmesh_bot                 \
+    -padcore_ring_top_layer_limit $pmesh_top                    \
+    -start_from left -start_offset 785 -stop_offset 1719
+<CMD> addStripe -nets VSS -layer 5 -direction vertical -width 3.36 -spacing 10.24 -set_to_set_distance 54.4 -max_same_layer_jog_length 13.6 -padcore_ring_bottom_layer_limit 5 -padcore_ring_top_layer_limit 6 -start_from left -start_offset 785 -stop_offset 1719
+#% Begin addStripe (date=07/11 20:00:41, mem=992.3M)
+
+Initialize fgc environment(mem: 1102.0M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading cell geometries (cpu: 0:00:00.4, real: 0:00:01.0, peak mem: 1102.0M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Stripe generation is complete.
+vias are now being generated.
+Total CPU(s) requested: 16
+Total CPU(s) enabled with current License(s): 8
+Current free CPU(s): 8
+Additional license(s) checked out: 1 Innovus_CPU_Opt license(s) for 8 CPU(s)
+Total CPU(s) now enabled: 16
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+addStripe created 3 wires.
+ViaGen created 618 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   via  |       204      |        0       |
+|  via2  |       204      |        0       |
+|  via3  |       204      |        0       |
+|  met4  |        3       |       NA       |
+|  via4  |        6       |        0       |
++--------+----------------+----------------+
+#% End addStripe (date=07/11 20:00:43, total cpu=0:00:01.6, real=0:00:02.0, peak res=992.3M, current mem=991.9M)
+# addStripe -nets {VSS} -layer $pmesh_bot -direction vertical \
+    -width $pmesh_bot_str_width                                 \
+    -spacing $pmesh_bot_str_intraset_spacing                    \
+    -set_to_set_distance $pmesh_bot_str_interset_pitch          \
+    -max_same_layer_jog_length $pmesh_bot_str_pitch             \
+    -padcore_ring_bottom_layer_limit $pmesh_bot                 \
+    -padcore_ring_top_layer_limit $pmesh_top                    \
+    -start_from left -start_offset 518.5 -stop_offset 1985.7
+<CMD> addStripe -nets VSS -layer 5 -direction vertical -width 3.36 -spacing 10.24 -set_to_set_distance 54.4 -max_same_layer_jog_length 13.6 -padcore_ring_bottom_layer_limit 5 -padcore_ring_top_layer_limit 6 -start_from left -start_offset 518.5 -stop_offset 1985.7
+#% Begin addStripe (date=07/11 20:00:43, mem=991.9M)
+
+Initialize fgc environment(mem: 1102.0M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading cell geometries (cpu: 0:00:00.4, real: 0:00:01.0, peak mem: 1102.0M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Stripe generation is complete.
+vias are now being generated.
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+addStripe created 3 wires.
+ViaGen created 912 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   via  |       302      |        0       |
+|  via2  |       302      |        0       |
+|  via3  |       302      |        0       |
+|  met4  |        3       |       NA       |
+|  via4  |        6       |        0       |
++--------+----------------+----------------+
+#% End addStripe (date=07/11 20:00:46, total cpu=0:00:01.7, real=0:00:03.0, peak res=991.9M, current mem=990.0M)
+# addStripe -nets {VDD} -layer $pmesh_bot -direction vertical \
+    -width $pmesh_bot_str_width                                 \
+    -spacing $pmesh_bot_str_intraset_spacing                    \
+    -set_to_set_distance $pmesh_bot_str_interset_pitch          \
+    -max_same_layer_jog_length $pmesh_bot_str_pitch             \
+    -padcore_ring_bottom_layer_limit $pmesh_bot                 \
+    -padcore_ring_top_layer_limit $pmesh_top                    \
+    -start_from left -start_offset 509.5 -stop_offset 1985.7
+<CMD> addStripe -nets VDD -layer 5 -direction vertical -width 3.36 -spacing 10.24 -set_to_set_distance 54.4 -max_same_layer_jog_length 13.6 -padcore_ring_bottom_layer_limit 5 -padcore_ring_top_layer_limit 6 -start_from left -start_offset 509.5 -stop_offset 1985.7
+#% Begin addStripe (date=07/11 20:00:46, mem=990.0M)
+
+Initialize fgc environment(mem: 1102.0M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading cell geometries (cpu: 0:00:00.4, real: 0:00:00.0, peak mem: 1102.0M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Stripe generation is complete.
+vias are now being generated.
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+addStripe created 3 wires.
+ViaGen created 903 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   via  |       299      |        0       |
+|  via2  |       299      |        0       |
+|  via3  |       299      |        0       |
+|  met4  |        3       |       NA       |
+|  via4  |        6       |        0       |
++--------+----------------+----------------+
+#% End addStripe (date=07/11 20:00:48, total cpu=0:00:01.7, real=0:00:02.0, peak res=992.5M, current mem=992.5M)
+# addStripe -nets {VDD} -layer $pmesh_bot -direction vertical \
+    -width $pmesh_bot_str_width                                 \
+    -spacing $pmesh_bot_str_intraset_spacing                    \
+    -set_to_set_distance $pmesh_bot_str_interset_pitch          \
+    -max_same_layer_jog_length $pmesh_bot_str_pitch             \
+    -padcore_ring_bottom_layer_limit $pmesh_bot                 \
+    -padcore_ring_top_layer_limit $pmesh_top                    \
+    -start_from left -start_offset 1723 -stop_offset 772.5
+<CMD> addStripe -nets VDD -layer 5 -direction vertical -width 3.36 -spacing 10.24 -set_to_set_distance 54.4 -max_same_layer_jog_length 13.6 -padcore_ring_bottom_layer_limit 5 -padcore_ring_top_layer_limit 6 -start_from left -start_offset 1723 -stop_offset 772.5
+#% Begin addStripe (date=07/11 20:00:48, mem=992.5M)
+
+Initialize fgc environment(mem: 1102.0M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading cell geometries (cpu: 0:00:00.4, real: 0:00:00.0, peak mem: 1102.0M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Stripe generation is complete.
+vias are now being generated.
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+addStripe created 3 wires.
+ViaGen created 609 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   via  |       201      |        0       |
+|  via2  |       201      |        0       |
+|  via3  |       201      |        0       |
+|  met4  |        3       |       NA       |
+|  via4  |        6       |        0       |
++--------+----------------+----------------+
+#% End addStripe (date=07/11 20:00:50, total cpu=0:00:01.7, real=0:00:02.0, peak res=992.5M, current mem=991.4M)
+# addStripe -nets {VSS} -layer $pmesh_bot -direction vertical \
+    -width $pmesh_bot_str_width                                 \
+    -spacing $pmesh_bot_str_intraset_spacing                    \
+    -set_to_set_distance $pmesh_bot_str_interset_pitch          \
+    -max_same_layer_jog_length $pmesh_bot_str_pitch             \
+    -padcore_ring_bottom_layer_limit $pmesh_bot                 \
+    -padcore_ring_top_layer_limit $pmesh_top                    \
+    -start_from left -start_offset 1732 -stop_offset 772.5
+<CMD> addStripe -nets VSS -layer 5 -direction vertical -width 3.36 -spacing 10.24 -set_to_set_distance 54.4 -max_same_layer_jog_length 13.6 -padcore_ring_bottom_layer_limit 5 -padcore_ring_top_layer_limit 6 -start_from left -start_offset 1732 -stop_offset 772.5
+#% Begin addStripe (date=07/11 20:00:50, mem=991.4M)
+
+Initialize fgc environment(mem: 1102.0M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading cell geometries (cpu: 0:00:00.4, real: 0:00:00.0, peak mem: 1102.0M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1102.0M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Stripe generation is complete.
+vias are now being generated.
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+addStripe created 3 wires.
+ViaGen created 618 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   via  |       204      |        0       |
+|  via2  |       204      |        0       |
+|  via3  |       204      |        0       |
+|  met4  |        3       |       NA       |
+|  via4  |        6       |        0       |
++--------+----------------+----------------+
+#% End addStripe (date=07/11 20:00:52, total cpu=0:00:01.7, real=0:00:02.0, peak res=991.4M, current mem=991.0M)
+# addStripe -nets {VSS} -layer $pmesh_bot -direction vertical \
+    -width $pmesh_bot_str_width                                 \
+    -spacing $pmesh_bot_str_intraset_spacing                    \
+    -set_to_set_distance $pmesh_bot_str_interset_pitch          \
+    -max_same_layer_jog_length $pmesh_bot_str_pitch             \
+    -padcore_ring_bottom_layer_limit $pmesh_bot                 \
+    -padcore_ring_top_layer_limit $pmesh_top                    \
+    -start_from left -start_offset 1999 -stop_offset 506.1
+<CMD> addStripe -nets VSS -layer 5 -direction vertical -width 3.36 -spacing 10.24 -set_to_set_distance 54.4 -max_same_layer_jog_length 13.6 -padcore_ring_bottom_layer_limit 5 -padcore_ring_top_layer_limit 6 -start_from left -start_offset 1999 -stop_offset 506.1
+#% Begin addStripe (date=07/11 20:00:52, mem=991.0M)
+
+Initialize fgc environment(mem: 1100.0M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Loading cell geometries (cpu: 0:00:00.4, real: 0:00:01.0, peak mem: 1100.0M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Stripe generation is complete.
+vias are now being generated.
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+addStripe created 3 wires.
+ViaGen created 912 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   via  |       302      |        0       |
+|  via2  |       302      |        0       |
+|  via3  |       302      |        0       |
+|  met4  |        3       |       NA       |
+|  via4  |        6       |        0       |
++--------+----------------+----------------+
+#% End addStripe (date=07/11 20:00:54, total cpu=0:00:01.7, real=0:00:02.0, peak res=993.4M, current mem=993.4M)
+# addStripe -nets {VDD} -layer $pmesh_bot -direction vertical \
+    -width $pmesh_bot_str_width                                 \
+    -spacing $pmesh_bot_str_intraset_spacing                    \
+    -set_to_set_distance $pmesh_bot_str_interset_pitch          \
+    -max_same_layer_jog_length $pmesh_bot_str_pitch             \
+    -padcore_ring_bottom_layer_limit $pmesh_bot                 \
+    -padcore_ring_top_layer_limit $pmesh_top                    \
+    -start_from left -start_offset 1990 -stop_offset 506.1
+<CMD> addStripe -nets VDD -layer 5 -direction vertical -width 3.36 -spacing 10.24 -set_to_set_distance 54.4 -max_same_layer_jog_length 13.6 -padcore_ring_bottom_layer_limit 5 -padcore_ring_top_layer_limit 6 -start_from left -start_offset 1990 -stop_offset 506.1
+#% Begin addStripe (date=07/11 20:00:54, mem=993.4M)
+
+Initialize fgc environment(mem: 1100.0M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Loading cell geometries (cpu: 0:00:00.4, real: 0:00:01.0, peak mem: 1100.0M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Stripe generation is complete.
+vias are now being generated.
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+addStripe created 3 wires.
+ViaGen created 903 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   via  |       299      |        0       |
+|  via2  |       299      |        0       |
+|  via3  |       299      |        0       |
+|  met4  |        3       |       NA       |
+|  via4  |        6       |        0       |
++--------+----------------+----------------+
+#% End addStripe (date=07/11 20:00:56, total cpu=0:00:01.7, real=0:00:02.0, peak res=993.4M, current mem=993.2M)
+# set pmesh_top_str_width [expr  8 *  3 * $M1_min_width   ]
+# set pmesh_top_str_pitch [expr 4 * 10 * $M1_route_pitchX]
+# set pmesh_top_str_intraset_spacing [expr $pmesh_top_str_pitch - $pmesh_top_str_width]
+# set pmesh_top_str_interset_pitch   [expr 4*$pmesh_top_str_pitch]
+# setViaGenMode -reset
+<CMD> setViaGenMode -reset
+# setViaGenMode -viarule_preference default
+<CMD> setViaGenMode -viarule_preference default
+Setting -viarule_preference to default order. ViaGen will consider via rule priority based on the order of appearance in the technology file.
+# setViaGenMode -ignore_DRC false
+<CMD> setViaGenMode -ignore_DRC false
+Setting -ignore_DRC to 0. ViaGen will do DRC check while creating vias.
+# setAddStripeMode -reset
+<CMD> setAddStripeMode -reset
+-break_at none
+-stacked_via_bottom_layer bottomLayer
+-stacked_via_top_layer topLayer
+# setAddStripeMode -stacked_via_bottom_layer $pmesh_bot \
+                 -stacked_via_top_layer    $pmesh_top \
+                 -break_at {  block_ring  }
+<CMD> setAddStripeMode -stacked_via_bottom_layer 5 -stacked_via_top_layer 6 -break_at {  block_ring  }
+Stripe will break at block ring.
+# addStripe -nets {VSS VDD} -layer $pmesh_top -direction horizontal \
+    -width $pmesh_top_str_width                                   \
+    -spacing $pmesh_top_str_intraset_spacing                      \
+    -set_to_set_distance $pmesh_top_str_interset_pitch            \
+    -max_same_layer_jog_length $pmesh_top_str_pitch               \
+    -padcore_ring_bottom_layer_limit $pmesh_bot                   \
+    -padcore_ring_top_layer_limit $pmesh_top                      \
+    -block_ring_bottom_layer_limit met4                           \
+    -start [expr $pmesh_top_str_pitch]
+<CMD> addStripe -nets {VSS VDD} -layer 6 -direction horizontal -width 3.36 -spacing 10.24 -set_to_set_distance 54.4 -max_same_layer_jog_length 13.6 -padcore_ring_bottom_layer_limit 5 -padcore_ring_top_layer_limit 6 -block_ring_bottom_layer_limit met4 -start 13.6
+#% Begin addStripe (date=07/11 20:00:56, mem=993.2M)
+
+Initialize fgc environment(mem: 1100.0M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Loading cell geometries (cpu: 0:00:00.4, real: 0:00:01.0, peak mem: 1100.0M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+**WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer via4 at (4.04, 13.60) (12.20, 14.72).
+**WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer via4 at (2556.44, 13.60) (2564.60, 14.72).
+**WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 4.040000 15.280000 2556.439941 15.280000 with width 3.360000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+Type 'man IMPPP-354' for more detail.
+Completing 10% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Completing 20% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Completing 30% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Completing 40% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Completing 50% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Completing 60% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Completing 70% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Completing 80% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Completing 90% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1100.0M)
+Completing 100% stripe generation(cpu: 0:00:00.1, real: 0:00:00.0, peak mem: 1100.0M)
+Stripe generation is complete.
+vias are now being generated.
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+addStripe created 437 wires.
+ViaGen created 2044 vias, deleted 7 vias to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |      2044      |        7       |
+|  met5  |       433      |       NA       |
++--------+----------------+----------------+
+#% End addStripe (date=07/11 20:01:00, total cpu=0:00:02.1, real=0:00:04.0, peak res=998.9M, current mem=998.9M)
+# deselectAll
+<CMD> deselectAll
+# selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+#% Begin sroute (date=07/11 20:01:00, mem=998.9M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:00 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2113.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2113.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via4  |        4       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:01, total cpu=0:00:00.5, real=0:00:01.0, peak res=999.2M, current mem=999.2M)
+# deselectAll
+<CMD> deselectAll
+# selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+#% Begin sroute (date=07/11 20:01:01, mem=999.2M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:01 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2113.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via4  |        4       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:01, total cpu=0:00:00.5, real=0:00:00.0, peak res=1000.3M, current mem=1000.3M)
+# deselectAll
+<CMD> deselectAll
+# selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+#% Begin sroute (date=07/11 20:01:01, mem=1000.3M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:01 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via4  |        4       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:02, total cpu=0:00:00.5, real=0:00:01.0, peak res=1000.3M, current mem=1000.0M)
+# deselectAll
+<CMD> deselectAll
+# selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> selectInst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+#% Begin sroute (date=07/11 20:01:02, mem=1000.0M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:02 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via4  |        4       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:03, total cpu=0:00:00.5, real=0:00:01.0, peak res=1000.0M, current mem=999.7M)
+# deselectAll
+<CMD> deselectAll
+# selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+#% Begin sroute (date=07/11 20:01:03, mem=999.7M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:03 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 6 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via3  |        2       |        0       |
+|  via4  |        4       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:03, total cpu=0:00:00.5, real=0:00:00.0, peak res=999.7M, current mem=999.5M)
+# deselectAll
+<CMD> deselectAll
+# selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+#% Begin sroute (date=07/11 20:01:03, mem=999.5M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:03 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via3  |        1       |        0       |
+|  via4  |        3       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:04, total cpu=0:00:00.5, real=0:00:01.0, peak res=999.5M, current mem=999.3M)
+# deselectAll
+<CMD> deselectAll
+# selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+#% Begin sroute (date=07/11 20:01:04, mem=999.3M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:04 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 6 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via3  |        2       |        0       |
+|  via4  |        4       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:05, total cpu=0:00:00.5, real=0:00:01.0, peak res=999.6M, current mem=999.6M)
+# deselectAll
+<CMD> deselectAll
+# selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> selectInst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+#% Begin sroute (date=07/11 20:01:05, mem=999.6M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:05 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via3  |        1       |        0       |
+|  via4  |        3       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:05, total cpu=0:00:00.5, real=0:00:00.0, peak res=1000.0M, current mem=1000.0M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+#% Begin sroute (date=07/11 20:01:05, mem=1000.0M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:05 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via4  |        4       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:06, total cpu=0:00:00.5, real=0:00:01.0, peak res=1004.6M, current mem=1004.6M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+#% Begin sroute (date=07/11 20:01:06, mem=1004.6M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:06 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via4  |        4       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:06, total cpu=0:00:00.5, real=0:00:01.0, peak res=1005.0M, current mem=1005.0M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+#% Begin sroute (date=07/11 20:01:07, mem=1005.0M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:07 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via4  |        4       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:07, total cpu=0:00:00.5, real=0:00:00.0, peak res=1005.5M, current mem=1005.5M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> selectInst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+#% Begin sroute (date=07/11 20:01:07, mem=1005.5M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:07 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via4  |        4       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:08, total cpu=0:00:00.5, real=0:00:01.0, peak res=1005.9M, current mem=1005.9M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+#% Begin sroute (date=07/11 20:01:08, mem=1005.9M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:08 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via3  |        1       |        0       |
+|  via4  |        3       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:08, total cpu=0:00:00.5, real=0:00:00.0, peak res=1006.3M, current mem=1006.3M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_1
+#% Begin sroute (date=07/11 20:01:08, mem=1006.3M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:09 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via3  |        1       |        0       |
+|  via4  |        3       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:09, total cpu=0:00:00.5, real=0:00:01.0, peak res=1006.8M, current mem=1006.8M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_2
+#% Begin sroute (date=07/11 20:01:09, mem=1006.8M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:09 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:01, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via3  |        1       |        0       |
+|  via4  |        3       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:10, total cpu=0:00:00.5, real=0:00:01.0, peak res=1007.3M, current mem=1007.3M)
+# deselectAll
+<CMD> deselectAll
+# selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> selectInst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+# sroute -connect {blockPin} -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+<CMD> sroute -connect blockPin -layerChangeRange {met1 met5} -blockPinTarget { nearestTarget } -nets {VDD VSS} -allowLayerChange 1 -blockPin useLef -inst deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_3
+#% Begin sroute (date=07/11 20:01:10, mem=1007.3M)
+*** Begin SPECIAL ROUTE on Sun Jul 11 20:01:10 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 2
+srouteConnectConverterPin set to false
+srouteConnectCorePin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteSelectBlock set to "< .feSelectedInst"
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 6
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 65 macros, 65 used
+Read in 80 components
+  64 core components: 63 unplaced, 0 placed, 1 fixed
+  16 block/ring components: 0 unplaced, 0 placed, 16 fixed
+Read in 45 physical pins
+  45 physical pins: 0 unplaced, 29 placed, 16 fixed
+Read in 18 blockages
+Read in 29 nets
+Read in 10 special nets, 2 routed
+Read in 331 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-555):	The specified Bottom target layer is below bottom routing layer. Set bottom target layer to 2.
+1 block selected.
+
+  Number of Block ports routed: 2
+  Number of Power Bump ports routed: 0
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 2115.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 45 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 2 wires.
+ViaGen created 4 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via3  |        1       |        0       |
+|  via4  |        3       |        0       |
+|  met5  |        2       |       NA       |
++--------+----------------+----------------+
+#% End sroute (date=07/11 20:01:10, total cpu=0:00:00.5, real=0:00:00.0, peak res=1007.7M, current mem=1007.7M)
+# deselectAll
+<CMD> deselectAll
+# selectWire 2040.0000 1744.5000 2043.3600 1767.0600 5 VSS
+<CMD_INTERNAL> selectWire 2040.0000 1744.5000 2043.3600 1767.0600 5 VSS
+# editResize -direction y -offset -9.29 -side high -keep_center_line auto
+<CMD> editResize -direction y -offset -9.29 -side high -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+# selectWire 2040.0000 1744.5000 2043.3600 1757.7700 5 VSS
+<CMD_INTERNAL> selectWire 2040.0000 1744.5000 2043.3600 1757.7700 5 VSS
+# editResize -direction y -offset 9.9 -side low -keep_center_line auto
+<CMD> editResize -direction y -offset 9.9 -side low -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+# selectWire 530.4000 1522.7600 533.7600 1583.1200 5 VDD
+<CMD_INTERNAL> selectWire 530.4000 1522.7600 533.7600 1583.1200 5 VDD
+# editResize -direction y -offset 27.615 -side low -keep_center_line auto
+<CMD> editResize -direction y -offset 27.615 -side low -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+# selectWire 530.4000 797.9000 533.7600 820.4600 5 VDD
+<CMD_INTERNAL> selectWire 530.4000 797.9000 533.7600 820.4600 5 VDD
+# deleteSelectedFromFPlan
+<CMD> deleteSelectedFromFPlan
+# deselectAll
+<CMD> deselectAll
+# selectWire 530.4000 16.3200 533.7600 95.6000 5 VDD
+<CMD_INTERNAL> selectWire 530.4000 16.3200 533.7600 95.6000 5 VDD
+# editResize -direction y -offset -10.635 -side high -keep_center_line auto
+<CMD> editResize -direction y -offset -10.635 -side high -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+# selectWire 2471.2000 2461.6000 2564.6000 2464.9600 6 VSS
+<CMD_INTERNAL> selectWire 2471.2000 2461.6000 2564.6000 2464.9600 6 VSS
+# editResize -direction x -offset 4.005 -side low -keep_center_line auto
+<CMD> editResize -direction x -offset 4.005 -side low -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+# selectWire 2012.9000 2461.6000 2035.4600 2464.9600 6 VSS
+<CMD_INTERNAL> selectWire 2012.9000 2461.6000 2035.4600 2464.9600 6 VSS
+# deleteSelectedFromFPlan
+<CMD> deleteSelectedFromFPlan
+# deselectAll
+<CMD> deselectAll
+# selectWire 1524.6000 2461.6000 1577.1600 2464.9600 6 VSS
+<CMD_INTERNAL> selectWire 1524.6000 2461.6000 1577.1600 2464.9600 6 VSS
+# editResize -direction x -offset -23.415 -side high -keep_center_line auto
+<CMD> editResize -direction x -offset -23.415 -side high -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+# selectWire 1524.6000 2461.6000 1553.7450 2464.9600 6 VSS
+<CMD_INTERNAL> selectWire 1524.6000 2461.6000 1553.7450 2464.9600 6 VSS
+# editResize -direction x -offset 25.785 -side low -keep_center_line auto
+<CMD> editResize -direction x -offset 25.785 -side low -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+# selectWire 2471.2000 1768.0000 2552.3600 1771.3600 6 VDD
+<CMD_INTERNAL> selectWire 2471.2000 1768.0000 2552.3600 1771.3600 6 VDD
+# editResize -direction x -offset 17.61 -side low -keep_center_line auto
+<CMD> editResize -direction x -offset 17.61 -side low -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+# selectWire 2012.9000 1768.0000 2035.4600 1771.3600 6 VDD
+<CMD_INTERNAL> selectWire 2012.9000 1768.0000 2035.4600 1771.3600 6 VDD
+# deleteSelectedFromFPlan
+<CMD> deleteSelectedFromFPlan
+# deselectAll
+<CMD> deselectAll
+# selectWire 1516.8000 1768.0000 1577.1600 1771.3600 6 VDD
+<CMD_INTERNAL> selectWire 1516.8000 1768.0000 1577.1600 1771.3600 6 VDD
+# editResize -direction x -offset -9.805 -side high -keep_center_line auto
+<CMD> editResize -direction x -offset -9.805 -side high -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+# selectWire 799.7400 2461.6000 822.3000 2464.9600 6 VSS
+<CMD_INTERNAL> selectWire 799.7400 2461.6000 822.3000 2464.9600 6 VSS
+# deleteSelectedFromFPlan
+<CMD> deleteSelectedFromFPlan
+# deselectAll
+<CMD> deselectAll
+# selectWire 4.0400 2461.6000 97.4400 2464.9600 6 VSS
+<CMD_INTERNAL> selectWire 4.0400 2461.6000 97.4400 2464.9600 6 VSS
+# editResize -direction x -offset -12.485 -side high -keep_center_line auto
+<CMD> editResize -direction x -offset -12.485 -side high -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+# selectWire 2471.2000 1047.2000 2564.6000 1050.5600 6 VSS
+<CMD_INTERNAL> selectWire 2471.2000 1047.2000 2564.6000 1050.5600 6 VSS
+# editResize -direction x -offset 4 -side low -keep_center_line auto
+<CMD> editResize -direction x -offset 4 -side low -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+# selectWire 2012.9000 1047.2000 2035.4600 1050.5600 6 VSS
+<CMD_INTERNAL> selectWire 2012.9000 1047.2000 2035.4600 1050.5600 6 VSS
+# deleteSelectedFromFPlan
+<CMD> deleteSelectedFromFPlan
+# deselectAll
+<CMD> deselectAll
+# selectWire 987.2800 1047.2000 1577.1600 1050.5600 6 VSS
+<CMD_INTERNAL> selectWire 987.2800 1047.2000 1577.1600 1050.5600 6 VSS
+# editResize -direction x -offset -23.395 -side high -keep_center_line auto
+<CMD> editResize -direction x -offset -23.395 -side high -keep_center_line auto
+# deselectAll
+<CMD> deselectAll
+### End verbose source output for 'scripts/power-strategy-singlemesh.tcl'.
+### End verbose source output for 'scripts/main.tcl'.
+<CMD> getVersion
+<CMD> saveDesign checkpoints/design.checkpoint/save.enc -user_path
+#% Begin save design ... (date=07/11 20:01:11, mem=1126.5M)
+% Begin Save ccopt configuration ... (date=07/11 20:01:11, mem=1128.5M)
+% End Save ccopt configuration ... (date=07/11 20:01:11, total cpu=0:00:00.0, real=0:00:00.0, peak res=1129.4M, current mem=1129.4M)
+% Begin Save netlist data ... (date=07/11 20:01:11, mem=1129.6M)
+Writing Binary DB to checkpoints/design.checkpoint/save.enc.dat/vbin/deconv_kernel_estimator_top_level.v.bin in multi-threaded mode...
+% End Save netlist data ... (date=07/11 20:01:11, total cpu=0:00:00.2, real=0:00:00.0, peak res=1176.3M, current mem=1141.6M)
+Saving symbol-table file in separate thread ...
+Saving congestion map file in separate thread ...
+Saving congestion map file checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.route.congmap.gz ...
+% Begin Save AAE data ... (date=07/11 20:01:11, mem=1142.0M)
+Saving AAE Data ...
+% End Save AAE data ... (date=07/11 20:01:11, total cpu=0:00:00.0, real=0:00:00.0, peak res=1142.0M, current mem=1142.0M)
+Saving preference file checkpoints/design.checkpoint/save.enc.dat/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+Saving Drc markers ...
+... 8596 markers are saved ...
+... 0 geometry drc markers are saved ...
+... 0 antenna drc markers are saved ...
+Saving special route data file in separate thread ...
+Saving PG file in separate thread ...
+Saving placement file in separate thread ...
+Saving route file in separate thread ...
+Saving property file in separate thread ...
+** Saving stdCellPlacement_binary (version# 2) ...
+TAT_INFO: ::saveSpecialRoute REAL = 0 : CPU = 0 : MEM = 0.
+Saving property file checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.prop
+Save Adaptive View Pruning View Names to Binary file
+Saving PG file checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.pg.gz, version#2, (Created by Innovus v20.13-s083_1 on Sun Jul 11 20:01:14 2021)
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1569.2M) ***
+*** Completed savePGFile (cpu=0:00:00.2 real=0:00:01.0 mem=1569.2M) ***
+TAT_INFO: ::savePGFile REAL = 1 : CPU = 0 : MEM = 0.
+TAT_INFO: ::savePlace REAL = 0 : CPU = 0 : MEM = 0.
+*** Completed saveRoute (cpu=0:00:00.2 real=0:00:01.0 mem=1569.2M) ***
+TAT_INFO: ::saveRoute REAL = 1 : CPU = 0 : MEM = 0.
+TAT_INFO: ::db::saveAnnotationAndProp REAL = 0 : CPU = 0 : MEM = 0.
+TAT_INFO: ::db::saveSymbolTable REAL = 1 : CPU = 0 : MEM = 0.
+TAT_INFO: ::saveCongMap REAL = 1 : CPU = 0 : MEM = 0.
+% Begin Save power constraints data ... (date=07/11 20:01:17, mem=1149.7M)
+% End Save power constraints data ... (date=07/11 20:01:17, total cpu=0:00:00.0, real=0:00:00.0, peak res=1149.8M, current mem=1149.8M)
+typical
+Generated self-contained design save.enc.dat
+#% End save design ... (date=07/11 20:01:19, total cpu=0:00:02.1, real=0:00:08.0, peak res=1181.0M, current mem=1169.4M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+
+*** Memory Usage v#2 (Current mem = 1581.539M, initial mem = 275.605M) ***
+*** Message Summary: 184 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:15, real=0:01:37, mem=1581.5M) ---

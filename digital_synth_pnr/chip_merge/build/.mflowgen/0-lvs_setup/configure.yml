@@ -1,0 +1,68 @@
+build_dir: 0-lvs_setup
+build_id: '0'
+commands:
+- cp deconv.lvs.v deconv.nofillerlvs.v deconv.flatbuslvs.v deconv.nofillerflatbuslvs.v
+  outputs/
+- cp adc_controller.lvs.v adc_controller.nofillerlvs.v adc_controller.flatbuslvs.v
+  adc_controller.nofillerflatbuslvs.v outputs/
+- cp ~/PDKS/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_2kbyte_1rw1r_32x512_8.lef
+  outputs/
+- cp ~/PDKS/sky130A/libs.ref/sky130_sram_macros/spice/sky130_sram_2kbyte_1rw1r_32x512_8.sp
+  outputs/
+- cp design_extracted.spice outputs/
+- cp user_analog_project_wrapper.spice outputs/
+edges_i: {}
+edges_o:
+  adc_controller.nofillerflatbuslvs.v:
+  - f: adc_controller.nofillerflatbuslvs.v
+    step: 3-mentor-calibre-comparison
+  - f: adc_controller.nofillerflatbuslvs.v
+    step: 4-mentor-calibre-comparison-nobbox
+  - f: adc_controller.nofillerflatbuslvs.v
+    step: 6-netgen-lvs-gds
+  deconv.nofillerflatbuslvs.v:
+  - f: deconv.nofillerflatbuslvs.v
+    step: 3-mentor-calibre-comparison
+  - f: deconv.nofillerflatbuslvs.v
+    step: 4-mentor-calibre-comparison-nobbox
+  - f: deconv.nofillerflatbuslvs.v
+    step: 6-netgen-lvs-gds
+  design_extracted.spice:
+  - f: design_extracted.spice
+    step: 3-mentor-calibre-comparison
+  - f: design_extracted.spice
+    step: 4-mentor-calibre-comparison-nobbox
+  - f: design_extracted.spice
+    step: 6-netgen-lvs-gds
+  sky130_sram_2kbyte_1rw1r_32x512_8.lef:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.lef
+    step: 8-open-magic-gds2spice-nobbox
+  sky130_sram_2kbyte_1rw1r_32x512_8.sp:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.sp
+    step: 3-mentor-calibre-comparison
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.sp
+    step: 4-mentor-calibre-comparison-nobbox
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.sp
+    step: 6-netgen-lvs-gds
+  user_analog_project_wrapper.spice:
+  - f: user_analog_project_wrapper.spice
+    step: 3-mentor-calibre-comparison
+  - f: user_analog_project_wrapper.spice
+    step: 4-mentor-calibre-comparison-nobbox
+  - f: user_analog_project_wrapper.spice
+    step: 6-netgen-lvs-gds
+name: lvs_setup
+outputs:
+- deconv.lvs.v
+- deconv.nofillerlvs.v
+- deconv.flatbuslvs.v
+- deconv.nofillerflatbuslvs.v
+- adc_controller.lvs.v
+- adc_controller.nofillerlvs.v
+- adc_controller.flatbuslvs.v
+- adc_controller.nofillerflatbuslvs.v
+- sky130_sram_2kbyte_1rw1r_32x512_8.lef
+- sky130_sram_2kbyte_1rw1r_32x512_8.sp
+- design_extracted.spice
+- user_analog_project_wrapper.spice
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/chip_merge/design/lvs-setup

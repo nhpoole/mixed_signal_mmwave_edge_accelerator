@@ -1,0 +1,28 @@
+build_dir: 2-skywater-130nm
+build_id: '2'
+commands:
+- mkdir -p outputs && cd outputs
+- ln -sf ../view-standard adk
+edges_i: {}
+edges_o:
+  adk:
+  - f: adk
+    step: 5-mentor-calibre-gdsmerge
+  - f: adk
+    step: 7-open-magic-gds2spice
+  - f: adk
+    step: 8-open-magic-gds2spice-nobbox
+  - f: adk
+    step: 3-mentor-calibre-comparison
+  - f: adk
+    step: 4-mentor-calibre-comparison-nobbox
+  - f: adk
+    step: 6-netgen-lvs-gds
+name: skywater-130nm
+outputs:
+- adk
+parameters:
+  adk: skywater-130nm-adk
+  adk_view: view-standard
+sandbox: true
+source: /afs/ir.stanford.edu/class/ee272/skywater-130nm-adk

@@ -1,0 +1,88 @@
+* expanding   symbol:
+*+  /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/chip_top_level.sym # of pins=42
+* sym_path:
+*+ /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/chip_top_level.sym
+* sch_path:
+*+ /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/chip_top_level.sch
+.subckt chip_top_level  adc_bypass_en adc_start amplitude_comparator_val clk debug_en freq_eval_done
++ frequency_comparator_val gain_ctrl_0 gain_ctrl_1 load_en rst_n serial_in serial_out serial_out_valid sram_select_0
++ sram_select_1 vampm vampp vbiasn vbiasp vccd1 vccd2 vcomp vcp vcp_sampled vfiltm vfiltp vhpf vincm vintm vintp
++ vlow_amplitude vlow_frequency vocm vocm_filt vpeak vpeak_sampled vref_amplitude vref_frequency vse vssa1 vssd1
+*.ipin vssd1
+*.ipin vssa1
+*.opin vse
+*.ipin vref_frequency
+*.ipin vref_amplitude
+*.opin vpeak_sampled
+*.opin vpeak
+*.ipin vocm_filt
+*.ipin vocm
+*.ipin vlow_frequency
+*.ipin vlow_amplitude
+*.opin vintp
+*.opin vintm
+*.ipin vincm
+*.ipin vhpf
+*.opin vfiltp
+*.opin vfiltm
+*.opin vcp_sampled
+*.opin vcp
+*.opin vcomp
+*.ipin vccd2
+*.ipin vccd1
+*.ipin vbiasp
+*.ipin vbiasn
+*.opin vampp
+*.opin vampm
+*.ipin sram_select_1
+*.opin serial_out_valid
+*.opin serial_out
+*.ipin serial_in
+*.ipin rst_n
+*.ipin load_en
+*.ipin gain_ctrl_1
+*.ipin gain_ctrl_0
+*.opin frequency_comparator_val
+*.opin freq_eval_done
+*.ipin debug_en
+*.ipin clk
+*.opin amplitude_comparator_val
+*.ipin adc_start
+*.ipin adc_bypass_en
+*.ipin sram_select_0
+
+x1 vfiltp vintm vfiltm vintp vampm vampp vocm_filt vse vccd2 vincm vssa1 vhpf gain_ctrl_0
++ gain_ctrl_1 sample vocm clk net3 rst_n frequency_comparator_val vbiasp vbiasn sig_frequency_0 sig_frequency_1
++ sig_frequency_2 vcp sig_frequency_3 sig_frequency_4 sig_frequency_5 sig_frequency_6 vcp_sampled sig_frequency_7
++ vref_frequency vlow_frequency vcomp net4 amplitude_comparator_val vpeak_sampled net5 vpeak sig_amplitude_0
++ sig_amplitude_1 sig_amplitude_2 sig_amplitude_3 sig_amplitude_4 sig_amplitude_5 sig_amplitude_6 sig_amplitude_7
++ vref_amplitude vlow_amplitude analog_top_level_lvs
+
+x2 clk rst_n adc_start frequency_comparator_val sample 
++ sig_frequency_7 sig_frequency_6 sig_frequency_5 sig_frequency_4 sig_frequency_3 sig_frequency_2
++ sig_frequency_1 sig_frequency_0 frequency_adc_done vssd1 vccd1 sar_adc_controller
+*x2 sample vccd1 vssd1 sig_frequency_0 sig_frequency_1 clk sig_frequency_2 rst_n adc_start
+*+ sig_frequency_3 sig_frequency_4 frequency_comparator_val sig_frequency_5 sig_frequency_6 sig_frequency_7 net2
+*+ sar_adc_controller
+
+x3 clk rst_n adc_start amplitude_comparator_val amplitude_run_adc_n 
++ sig_amplitude_7 sig_amplitude_6 sig_amplitude_5 sig_amplitude_4 sig_amplitude_3 sig_amplitude_2
++ sig_amplitude_1 sig_amplitude_0 amplitude_adc_done vssd1 vccd1 sar_adc_controller
+*x3 net6 vccd1 vssd1 sig_amplitude_0 sig_amplitude_1 clk sig_amplitude_2 rst_n adc_start
+*+ sig_amplitude_3 sig_amplitude_4 amplitude_comparator_val sig_amplitude_5 sig_amplitude_6 sig_amplitude_7 net1
+*+ sar_adc_controller
+
+x4 clk rst_n load_en debug_en serial_in 
++ sram_select_1 sram_select_0 frequency_adc_done amplitude_adc_done 
++ sig_frequency_7 sig_frequency_6 sig_frequency_5 sig_frequency_4 
++ sig_frequency_3 sig_frequency_2 sig_frequency_1 sig_frequency_0 
++ sig_amplitude_7 sig_amplitude_6 sig_amplitude_5 sig_amplitude_4 
++ sig_amplitude_3 sig_amplitude_2 sig_amplitude_1 sig_amplitude_0 
++ adc_bypass_en serial_out serial_out_valid freq_eval_done vssd1 vccd1 deconv_kernel_estimator_top_level
+*x4 serial_out vccd1 serial_out_valid vssd1 clk freq_eval_done rst_n load_en debug_en serial_in
+*+ sram_select_0 sram_select_1 net2 net1 sig_frequency_0 sig_frequency_1 sig_frequency_2 sig_frequency_3
+*+ sig_frequency_4 sig_frequency_5 sig_frequency_6 sig_frequency_7 sig_amplitude_0 sig_amplitude_1 sig_amplitude_2
+*+ sig_amplitude_3 sig_amplitude_4 sig_amplitude_5 sig_amplitude_6 sig_amplitude_7 adc_bypass_en
+*+ deconv_kernel_estimator_top_level
+
+.ends

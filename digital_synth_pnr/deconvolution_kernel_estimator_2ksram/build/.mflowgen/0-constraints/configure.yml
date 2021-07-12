@@ -1,0 +1,16 @@
+build_dir: 0-constraints
+build_id: '0'
+commands:
+- cat constraints.tcl > outputs/constraints.tcl
+edges_i: {}
+edges_o:
+  constraints.tcl:
+  - f: constraints.tcl
+    step: 11-synopsys-dc-synthesis
+name: constraints
+outputs:
+- constraints.tcl
+parameters:
+  clock_period: 20.0
+  design_name: deconv_kernel_estimator_top_level
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/design/constraints

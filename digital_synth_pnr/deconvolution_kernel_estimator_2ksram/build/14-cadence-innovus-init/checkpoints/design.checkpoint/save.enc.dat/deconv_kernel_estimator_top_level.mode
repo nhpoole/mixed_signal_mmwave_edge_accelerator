@@ -1,0 +1,33 @@
+catch { setDesignMode -powerEffort high }
+catch { setDesignMode -process 130 }
+catch { setDesignMode -topRoutingLayer met5 }
+catch { setAnalysisMode -analysisType bcwc }
+catch { setAnalysisMode -checkType setup }
+catch { setAnalysisMode -clkSrcPath false }
+catch { setAnalysisMode -clockPropagation forcedIdeal }
+catch { setOptMode -timeDesignCompressReports false }
+catch { setPathGroupOptions Reg2Reg -effortLevel high }
+catch { setPathGroupOptions Reg2Out -effortLevel low }
+catch { setPathGroupOptions Reg2ClkGate -effortLevel low }
+catch { setPathGroupOptions Macro2All -effortLevel high }
+catch { setPathGroupOptions In2Reg -effortLevel low }
+catch { setPathGroupOptions In2Out -effortLevel low }
+catch { setPathGroupOptions All2Macro -effortLevel high }
+catch { setExtractRCMode  -engine preRoute -total_c_th 0 -relative_c_th 1 -coupling_c_th 0.4 }
+catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
+catch {setNanoRouteMode -quiet -routeTopRoutingLayer 6}
+
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
+catch { setDelayCalMode -enable_high_fanout true }
+catch { setDelayCalMode -eng_copyNetPropToNewNet true }
+catch { setDelayCalMode -engine aae }
+catch { setDelayCalMode -ignoreNetLoad true }
+catch { setDelayCalMode -socv_accuracy_mode low }
+catch { setPinAssignMode -maxLayer 6 }
+catch { setImportMode -discardFloatingVNets false }
+catch { setImportMode -keepEmptyModule true }
+catch { setSIMode -separate_delta_delay_on_data true }
+catch { setRouteMode -earlyGlobalMaxRouteLayer 6 }
+catch { setFPlanMode -defaultTechSite unithd }
+catch { setFPlanMode -maxIoHeight false }
+catch { setFPlanMode -powerRailLayer {} }

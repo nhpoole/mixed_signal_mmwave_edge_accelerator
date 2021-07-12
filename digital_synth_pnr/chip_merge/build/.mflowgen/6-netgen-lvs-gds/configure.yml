@@ -1,0 +1,44 @@
+build_dir: 6-netgen-lvs-gds
+build_id: '6'
+commands:
+- sed -i 's/VNB sky130_fd_pr__res_generic_po/sky130_fd_pr__res_generic_po/g' inputs/adk/stdcells.spi
+- cp inputs/adc_controller.nofillerflatbuslvs.v adc_controller_case_converted.v
+- sed -i -e 's/N2/N_2/g' -e 's/N3/N_3/g' -e 's/N4/N_4/g' adc_controller_case_converted.v
+- v2lvs -i -lsp inputs/adk/stdcells.spi -s inputs/adk/stdcells.spi -lsp inputs/*.sp
+  -s inputs/*.sp -lsp inputs/user_analog_project_wrapper.spice -s inputs/user_analog_project_wrapper.spice
+  -v inputs/deconv.nofillerflatbuslvs.v -v adc_controller_case_converted.v -o design_lvs.spice
+- cat inputs/adk/netgen-setup.tcl blackbox.tcl > netgen_blackbox_setup.tcl
+- sh run_lvs.sh
+edges_i:
+  adc_controller.nofillerflatbuslvs.v:
+  - f: adc_controller.nofillerflatbuslvs.v
+    step: 0-lvs_setup
+  adk:
+  - f: adk
+    step: 2-skywater-130nm
+  deconv.nofillerflatbuslvs.v:
+  - f: deconv.nofillerflatbuslvs.v
+    step: 0-lvs_setup
+  design_extracted.spice:
+  - f: design_extracted.spice
+    step: 0-lvs_setup
+  sky130_sram_2kbyte_1rw1r_32x512_8.sp:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.sp
+    step: 0-lvs_setup
+  user_analog_project_wrapper.spice:
+  - f: user_analog_project_wrapper.spice
+    step: 0-lvs_setup
+edges_o: {}
+inputs:
+- adk
+- design_extracted.spice
+- user_analog_project_wrapper.spice
+- deconv.nofillerflatbuslvs.v
+- adc_controller.nofillerflatbuslvs.v
+- sky130_sram_2kbyte_1rw1r_32x512_8.sp
+name: netgen-lvs-gds
+outputs:
+- lvs_results.log
+parameters:
+  design_name: user_analog_project_wrapper
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/chip_merge/design/open-netgen-lvs

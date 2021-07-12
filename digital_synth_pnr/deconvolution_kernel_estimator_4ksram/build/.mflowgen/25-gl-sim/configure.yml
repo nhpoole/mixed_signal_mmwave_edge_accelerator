@@ -1,0 +1,42 @@
+build_dir: 25-gl-sim
+build_id: '25'
+commands:
+- ./run.sh
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.args:
+  - f: design.args.gls
+    step: 8-testbench
+  design.sdf:
+  - f: design.sdf
+    step: 23-synopsys-pt-timing-signoff
+  design.vcs.v:
+  - f: design.vcs.pg.v
+    step: 20-cadence-innovus-signoff
+  sky130_sram_4kbyte_1rw1r_32x1024_8.v:
+  - f: sky130_sram_4kbyte_1rw1r_32x1024_8.v
+    step: 6-sram
+  testbench.sv:
+  - f: testbench.sv
+    step: 8-testbench
+edges_o:
+  design.vpd:
+  - f: run.vcd
+    step: 29-gen-saif-gl
+inputs:
+- adk
+- design.vcs.v
+- testbench.sv
+- design.sdf
+- design.args
+- sky130_sram_4kbyte_1rw1r_32x1024_8.v
+name: gl-sim
+outputs:
+- design.vpd
+parameters:
+  clock_period: 20.0
+  testbench_name: deconv_kernel_estimator_top_level_tb
+  waveform: true
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator/design/synopsys-vcs-sim

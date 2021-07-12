@@ -1,0 +1,50 @@
+build_dir: 8-testbench
+build_id: '8'
+commands:
+- cp deconv_kernel_estimator_top_level_tb.v outputs/testbench.sv
+- cp deconv_kernel_estimator_top_level_tb.v outputs/testbench.v
+- mv freq_vec_data.txt outputs/
+- mv tf_coeff_data.txt outputs/
+- cp design.args.gls outputs/design.args.gls
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+edges_o:
+  design.args:
+  - f: design.args
+    step: 12-cadence-ncsim-sim
+  - f: design.args
+    step: 10-synopsys-vcs-sim
+  design.args.gls:
+  - f: design.args
+    step: 26-gl-sim
+  freq_vec_data.txt:
+  - f: freq_vec_data.txt
+    step: 12-cadence-ncsim-sim
+  - f: freq_vec_data.txt
+    step: 10-synopsys-vcs-sim
+  testbench.sv:
+  - f: testbench.sv
+    step: 10-synopsys-vcs-sim
+  - f: testbench.sv
+    step: 26-gl-sim
+  testbench.v:
+  - f: testbench.v
+    step: 12-cadence-ncsim-sim
+  tf_coeff_data.txt:
+  - f: tf_coeff_data.txt
+    step: 12-cadence-ncsim-sim
+  - f: tf_coeff_data.txt
+    step: 10-synopsys-vcs-sim
+inputs:
+- adk
+name: testbench
+outputs:
+- testbench.sv
+- testbench.v
+- freq_vec_data.txt
+- tf_coeff_data.txt
+- design.args
+- design.args.gls
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/design/testbench

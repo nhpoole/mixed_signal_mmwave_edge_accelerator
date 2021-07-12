@@ -1,0 +1,99 @@
+*----------------------------------------------------------------------------------------
+*	Innovus 20.13-s083_1 (64bit) 01/19/2021 16:51 (Linux 2.6.32-431.11.2.el6.x86_64)
+*	
+*
+* 	Date & Time:	2021-Jul-11 20:21:17 (2021-Jul-12 03:21:17 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: deconv_kernel_estimator_top_level
+*
+*	Liberty Libraries used: 
+*	        analysis_default: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/16-cadence-innovus-place/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/stdcells.lib
+*	        analysis_default: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/16-cadence-innovus-place/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib
+*
+*	Power Domain used: 
+*              Rail:        VDD      Voltage:        1.8 
+*
+*       Power View : analysis_default
+*
+*       User-Defined Activity : N.A.
+*
+*       Activity File: N.A.
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs 
+*
+*       report_power -outfile reports/deconv_kernel_estimator_top_level_postCTS.power -leakage
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Leakage Power:         0.28366412 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Leakage       Percentage 
+                                Power         (%)        
+-----------------------------------------------------------------------------------------
+Sequential                     1.232e-05    0.004342 
+Macro                             0.2836       99.98 
+IO                                     0           0 
+Combinational                  3.307e-05     0.01166 
+Clock (Combinational)          1.347e-06    0.000475 
+Clock (Sequential)             1.369e-06   0.0004825 
+-----------------------------------------------------------------------------------------
+Total                             0.2837         100 
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Leakage       Percentage 
+                                Power         (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.8     0.2837         100 
+
+
+Clock                           Leakage       Percentage 
+                                Power         (%)        
+-----------------------------------------------------------------------------------------
+ideal_clock                    2.716e-06   0.0009575 
+-----------------------------------------------------------------------------------------
+Total (excluding duplicates)   2.716e-06   0.0009575 
+-----------------------------------------------------------------------------------------
+Clock: ideal_clock
+Clock Period: 0.020000 usec 
+Clock Toggle Rate:   100.0000 Mhz 
+Clock Static Probability:  0.5000
+
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*                Highest Average Power: phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0 (sky130_sram_2kbyte_1rw1r_32x512_8):          0.01773 
+*                Highest Leakage Power: phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0 (sky130_sram_2kbyte_1rw1r_32x512_8):          0.01773 
+*          Total Cap:      3.13035e-10 F
+*          Total instances in design: 11585
+*          Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+*          Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+
+Total leakage power = 0.283664 mW
+Cell usage statistics:  
+Library sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C_lib , 16 cells ( 0.000000%) , 0.283616 mW ( 99.983040%  ) 
+Library sky130_fd_sc_hd__tt_025C_1v80 , 11569 cells ( 0.000000%) , 4.81084e-05 mW ( 0.016960%  ) 

@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+set -euo pipefail
+#=========================================================================
+# mflowgen-debug
+#=========================================================================
+# Generator : /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/mflowgen/core/build_orchestrator.py
+
+# Pre
+
+export useful_skew=True
+export order=setup-optmode.tcl,setup-cellpad.tcl,main.tcl,clean-cellpad.tcl,reporting.tcl
+export cell_padding=2
+
+# Debug
+
+innovus -overwrite -64 -init innovus-foundation-flow/custom-scripts/run-debug.tcl -log logs/debug.log
+

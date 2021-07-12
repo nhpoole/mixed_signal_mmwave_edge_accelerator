@@ -1,0 +1,284 @@
+ 
+****************************************
+Report : constraint
+        -verbose
+Design : deconv_kernel_estimator_top_level
+Version: L-2016.03-SP5-5
+Date   : Sat Jul 10 21:01:38 2021
+****************************************
+
+
+  Startpoint: adc_bypass_en
+              (input port clocked by ideal_clock)
+  Endpoint: phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   10.00      10.00 f
+  adc_bypass_en (in)                                      0.13      10.13 f
+  U156/Y (sky130_fd_sc_hd__nor3_2)                        0.98 *    11.11 r
+  U286/Y (sky130_fd_sc_hd__inv_1)                         0.23 *    11.33 f
+  U161/Y (sky130_fd_sc_hd__nor2_2)                        0.52 *    11.85 r
+  phase_vec_sram_interface_inst/U45/Y (sky130_fd_sc_hd__inv_1)     0.30 *    12.15 f
+  phase_vec_sram_interface_inst/U28/X (sky130_fd_sc_hd__a22o_2)     0.39 *    12.54 f
+  phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/U406/X (sky130_fd_sc_hd__clkbuf_1)     0.16 *    12.70 f
+  phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/U436/X (sky130_fd_sc_hd__buf_12)     0.12 *    12.82 f
+  phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0/wmask0[0] (sky130_sram_2kbyte_1rw1r_32x512_8)     0.00 *    12.82 f
+  data arrival time                                                 12.82
+
+  clock ideal_clock (rise edge)                          20.00      20.00
+  clock network delay (ideal)                             0.00      20.00
+  phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0/clk0 (sky130_sram_2kbyte_1rw1r_32x512_8)     0.00    20.00 r
+  library setup time                                     -0.10      19.90
+  data required time                                                19.90
+  --------------------------------------------------------------------------
+  data required time                                                19.90
+  data arrival time                                                -12.82
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.08
+
+
+  Startpoint: iir_notch_filter_inst/freq_eval_done_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: freq_eval_done
+            (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iir_notch_filter_inst/freq_eval_done_reg/CLK (sky130_fd_sc_hd__dfxtp_1)     0.00     0.00 r
+  iir_notch_filter_inst/freq_eval_done_reg/Q (sky130_fd_sc_hd__dfxtp_1)     0.44     0.44 r
+  freq_eval_done (out)                                    0.00 *     0.44 r
+  data arrival time                                                  0.44
+
+  clock ideal_clock (rise edge)                          20.00      20.00
+  clock network delay (ideal)                             0.00      20.00
+  output external delay                                   0.00      20.00
+  data required time                                                20.00
+  --------------------------------------------------------------------------
+  data required time                                                20.00
+  data arrival time                                                 -0.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                       19.56
+
+
+  Startpoint: b_coeffs_reg_1__4_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/prey_reg_17_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  b_coeffs_reg_1__4_/CLK (sky130_fd_sc_hd__dfxtp_1)       0.00       0.00 r
+  b_coeffs_reg_1__4_/Q (sky130_fd_sc_hd__dfxtp_1)         0.98       0.98 r
+  iir_notch_filter_inst/mult_x_2/U395/SUM (sky130_fd_sc_hd__fa_2)     0.62 *     1.60 f
+  iir_notch_filter_inst/mult_x_2/U398/X (sky130_fd_sc_hd__maj3_1)     0.35 *     1.95 f
+  iir_notch_filter_inst/mult_x_2/U399/X (sky130_fd_sc_hd__maj3_1)     0.36 *     2.31 f
+  iir_notch_filter_inst/mult_x_2/U400/X (sky130_fd_sc_hd__maj3_1)     0.36 *     2.66 f
+  iir_notch_filter_inst/mult_x_2/U401/X (sky130_fd_sc_hd__maj3_1)     0.36 *     3.02 f
+  iir_notch_filter_inst/mult_x_2/U402/X (sky130_fd_sc_hd__maj3_1)     0.36 *     3.38 f
+  iir_notch_filter_inst/mult_x_2/U403/X (sky130_fd_sc_hd__maj3_1)     0.36 *     3.74 f
+  iir_notch_filter_inst/mult_x_2/U404/X (sky130_fd_sc_hd__maj3_1)     0.36 *     4.11 f
+  iir_notch_filter_inst/mult_x_2/U405/X (sky130_fd_sc_hd__maj3_1)     0.36 *     4.46 f
+  iir_notch_filter_inst/mult_x_2/U406/X (sky130_fd_sc_hd__maj3_1)     0.36 *     4.82 f
+  iir_notch_filter_inst/mult_x_2/U407/X (sky130_fd_sc_hd__maj3_1)     0.36 *     5.18 f
+  iir_notch_filter_inst/mult_x_2/U408/X (sky130_fd_sc_hd__maj3_1)     0.36 *     5.54 f
+  iir_notch_filter_inst/mult_x_2/U409/X (sky130_fd_sc_hd__maj3_1)     0.36 *     5.90 f
+  iir_notch_filter_inst/mult_x_2/U410/X (sky130_fd_sc_hd__maj3_1)     0.36 *     6.26 f
+  iir_notch_filter_inst/mult_x_2/U411/X (sky130_fd_sc_hd__maj3_1)     0.36 *     6.62 f
+  iir_notch_filter_inst/mult_x_2/U412/X (sky130_fd_sc_hd__maj3_1)     0.36 *     6.98 f
+  iir_notch_filter_inst/mult_x_2/U413/X (sky130_fd_sc_hd__maj3_1)     0.36 *     7.34 f
+  iir_notch_filter_inst/mult_x_2/U414/X (sky130_fd_sc_hd__maj3_1)     0.36 *     7.70 f
+  iir_notch_filter_inst/mult_x_2/U415/X (sky130_fd_sc_hd__maj3_1)     0.36 *     8.05 f
+  iir_notch_filter_inst/mult_x_2/U416/X (sky130_fd_sc_hd__maj3_1)     0.36 *     8.41 f
+  iir_notch_filter_inst/mult_x_2/U417/X (sky130_fd_sc_hd__maj3_1)     0.36 *     8.77 f
+  iir_notch_filter_inst/mult_x_2/U418/X (sky130_fd_sc_hd__maj3_1)     0.36 *     9.13 f
+  iir_notch_filter_inst/mult_x_2/U419/X (sky130_fd_sc_hd__maj3_1)     0.36 *     9.49 f
+  iir_notch_filter_inst/mult_x_2/U420/X (sky130_fd_sc_hd__maj3_1)     0.36 *     9.85 f
+  iir_notch_filter_inst/mult_x_2/U421/X (sky130_fd_sc_hd__maj3_1)     0.36 *    10.21 f
+  iir_notch_filter_inst/mult_x_2/U422/X (sky130_fd_sc_hd__maj3_1)     0.36 *    10.56 f
+  iir_notch_filter_inst/mult_x_2/U423/X (sky130_fd_sc_hd__maj3_1)     0.40 *    10.96 f
+  iir_notch_filter_inst/mult_x_2/U425/COUT (sky130_fd_sc_hd__fa_2)     0.35 *    11.32 f
+  iir_notch_filter_inst/mult_x_2/U424/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    11.66 f
+  iir_notch_filter_inst/mult_x_2/U426/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    12.00 f
+  iir_notch_filter_inst/mult_x_2/U427/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    12.34 f
+  iir_notch_filter_inst/mult_x_2/U431/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    12.68 f
+  iir_notch_filter_inst/mult_x_2/U434/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    13.03 f
+  iir_notch_filter_inst/mult_x_2/U437/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    13.37 f
+  iir_notch_filter_inst/mult_x_2/U445/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    13.71 f
+  iir_notch_filter_inst/mult_x_2/U454/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    14.05 f
+  iir_notch_filter_inst/mult_x_2/U455/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    14.39 f
+  iir_notch_filter_inst/mult_x_2/U447/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    14.73 f
+  iir_notch_filter_inst/mult_x_2/U446/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    15.08 f
+  iir_notch_filter_inst/mult_x_2/U449/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    15.42 f
+  iir_notch_filter_inst/mult_x_2/U450/COUT (sky130_fd_sc_hd__fa_2)     0.34 *    15.76 f
+  iir_notch_filter_inst/mult_x_2/U451/SUM (sky130_fd_sc_hd__fa_2)     0.53 *    16.29 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/U325/Y (sky130_fd_sc_hd__inv_2)     0.05 *    16.34 f
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/U326/Y (sky130_fd_sc_hd__nand2_1)     0.10 *    16.45 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/U328/Y (sky130_fd_sc_hd__nand2_1)     0.08 *    16.52 f
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/U333/Y (sky130_fd_sc_hd__a221oi_1)     0.32 *    16.84 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/U434/Y (sky130_fd_sc_hd__inv_1)     0.07 *    16.91 f
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/U435/Y (sky130_fd_sc_hd__o31ai_1)     0.06 *    16.97 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/prey_reg_17_/D (sky130_fd_sc_hd__dfxtp_1)     0.00 *    16.97 r
+  data arrival time                                                 16.97
+
+  clock ideal_clock (rise edge)                          20.00      20.00
+  clock network delay (ideal)                             0.00      20.00
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/prey_reg_17_/CLK (sky130_fd_sc_hd__dfxtp_1)     0.00    20.00 r
+  library setup time                                     -0.09      19.91
+  data required time                                                19.91
+  --------------------------------------------------------------------------
+  data required time                                                19.91
+  data arrival time                                                -16.97
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.94
+
+
+  Startpoint: debug_en (input port clocked by ideal_clock)
+  Endpoint: debug_en_d1_reg
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   10.00      10.00 f
+  debug_en (in)                                           0.02      10.02 f
+  debug_en_d1_reg/D (sky130_fd_sc_hd__dfxtp_1)            0.00 *    10.02 f
+  data arrival time                                                 10.02
+
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  debug_en_d1_reg/CLK (sky130_fd_sc_hd__dfxtp_1)          0.00       0.00 r
+  library hold time                                      -0.06      -0.06
+  data required time                                                -0.06
+  --------------------------------------------------------------------------
+  data required time                                                -0.06
+  data arrival time                                                -10.02
+  --------------------------------------------------------------------------
+  slack (MET)                                                       10.07
+
+
+  Startpoint: serializer_inst/out_valid_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: serial_out_valid
+            (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  serializer_inst/out_valid_reg/CLK (sky130_fd_sc_hd__dfxtp_1)     0.00     0.00 r
+  serializer_inst/out_valid_reg/Q (sky130_fd_sc_hd__dfxtp_1)     0.32     0.32 f
+  serial_out_valid (out)                                  0.00 *     0.32 f
+  data arrival time                                                  0.32
+
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  output external delay                                   0.00       0.00
+  data required time                                                 0.00
+  --------------------------------------------------------------------------
+  data required time                                                 0.00
+  data arrival time                                                 -0.32
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.32
+
+
+  Startpoint: debug_en_d1_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: debug_en_d2_reg
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  debug_en_d1_reg/CLK (sky130_fd_sc_hd__dfxtp_1)          0.00       0.00 r
+  debug_en_d1_reg/Q (sky130_fd_sc_hd__dfxtp_1)            0.28       0.28 r
+  debug_en_d2_reg/D (sky130_fd_sc_hd__dfxtp_1)            0.00 *     0.28 r
+  data arrival time                                                  0.28
+
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  debug_en_d2_reg/CLK (sky130_fd_sc_hd__dfxtp_1)          0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.28
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.32
+
+
+    Net: deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/n247
+
+    max_transition         0.04
+  - Transition Time        0.05
+  ------------------------------
+    Slack                 -0.01  (VIOLATED)
+
+    List of pins on net "deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/n247" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0/addr0[3]     0.04     0.05    -0.01 (VIOLATED)
+
+    Net: deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_rdata_w_0[0]
+
+    max_fanout             4.00
+  - Fanout                 0.00
+  ------------------------------
+    Slack                  4.00  (MET)
+
+
+    Net: iir_notch_filter_inst/cordic_rect_to_polar_inst_den/pre_valid
+
+    max_capacitance        0.16
+  - Capacitance            0.16
+  ------------------------------
+    Slack                  0.01  (MET)
+
+
+    Net: phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_rwdata_w_0[23]
+
+    Capacitance            0.00
+  - min_capacitance        0.00
+  ------------------------------
+    Slack                  0.00  (MET)
+
+
+    Design: deconv_kernel_estimator_top_level
+
+    max_leakage_power          0.00
+  - Current Leakage Power  283656.09
+  ----------------------------------
+    Slack                  -283656.09  (VIOLATED)
+
+
+Min pulse width constraints
+
+                       Required      Actual
+  Pin                pulse width   pulse width   Slack           Scenario
+--------------------------------------------------------------------------------
+  phase_vec_sram_interface_inst/ram_sync_1rw1r_inst/genblk1_genblk1_sram_2kb_inst_0/clk0(low)  0.98 10.00  9.02 (MET)
+
+1

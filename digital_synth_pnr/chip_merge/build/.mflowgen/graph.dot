@@ -1,0 +1,78 @@
+digraph {
+label="";
+labelloc="t";
+fontsize=60;
+size="8.5;11";
+ratio="fill";
+margin=0;
+pad=1;
+rankdir="TB";
+concentrate=true;
+splines=polyline;
+center=true;
+nodesep=1.2;
+ranksep=0.8;
+lvs_setup [ fontsize=24, width=2, penwidth=2, shape=Mrecord, label="{ {  } | \n
+lvs_setup
+
+\n\n | { <o_adc_controller_flatbuslvs_v> adc_controller.flatbuslvs.v | <o_adc_controller_lvs_v> adc_controller.lvs.v | <o_adc_controller_nofillerflatbuslvs_v> adc_controller.nofillerflatbuslvs.v | <o_adc_controller_nofillerlvs_v> adc_controller.nofillerlvs.v | <o_deconv_flatbuslvs_v> deconv.flatbuslvs.v | <o_deconv_lvs_v> deconv.lvs.v | <o_deconv_nofillerflatbuslvs_v> deconv.nofillerflatbuslvs.v | <o_deconv_nofillerlvs_v> deconv.nofillerlvs.v | <o_design_extracted_spice> design_extracted.spice | <o_sky130_sram_2kbyte_1rw1r_32x512_8_lef> sky130_sram_2kbyte_1rw1r_32x512_8.lef | <o_sky130_sram_2kbyte_1rw1r_32x512_8_sp> sky130_sram_2kbyte_1rw1r_32x512_8.sp | <o_user_analog_project_wrapper_spice> user_analog_project_wrapper.spice } }", color=black ];
+mentor_calibre_comparison [ fontsize=24, width=2, penwidth=2, shape=Mrecord, label="{ { <i_adc_controller_nofillerflatbuslvs_v> adc_controller.nofillerflatbuslvs.v | <i_adk> adk | <i_deconv_nofillerflatbuslvs_v> deconv.nofillerflatbuslvs.v | <i_design_extracted_spice> design_extracted.spice | <i_sky130_sram_2kbyte_1rw1r_32x512_8_sp> sky130_sram_2kbyte_1rw1r_32x512_8.sp | <i_user_analog_project_wrapper_spice> user_analog_project_wrapper.spice } | \n
+mentor-calibre-comparison
+
+\n\n | { <o_lvs_report> lvs.report } }", color=black ];
+mentor_calibre_comparison_nobbox [ fontsize=24, width=2, penwidth=2, shape=Mrecord, label="{ { <i_adc_controller_nofillerflatbuslvs_v> adc_controller.nofillerflatbuslvs.v | <i_adk> adk | <i_deconv_nofillerflatbuslvs_v> deconv.nofillerflatbuslvs.v | <i_design_extracted_spice> design_extracted.spice | <i_sky130_sram_2kbyte_1rw1r_32x512_8_sp> sky130_sram_2kbyte_1rw1r_32x512_8.sp | <i_user_analog_project_wrapper_spice> user_analog_project_wrapper.spice } | \n
+mentor-calibre-comparison-nobbox
+
+\n\n | { <o_lvs_report> lvs.report } }", color=black ];
+mentor_calibre_gdsmerge [ fontsize=24, width=2, penwidth=2, shape=Mrecord, label="{ { <i_adk> adk | <i_design_gds> design.gds | <i_sky130_sram_2kbyte_1rw1r_32x512_8_gds> sky130_sram_2kbyte_1rw1r_32x512_8.gds | <i_user_analog_project_wrapper_digital_abstracted_gds> user_analog_project_wrapper_digital_abstracted.gds } | \n
+mentor-calibre-gdsmerge
+
+\n\n | { <o_design_merged_gds> design_merged.gds } }", color=black ];
+netgen_lvs_gds [ fontsize=24, width=2, penwidth=2, shape=Mrecord, label="{ { <i_adc_controller_nofillerflatbuslvs_v> adc_controller.nofillerflatbuslvs.v | <i_adk> adk | <i_deconv_nofillerflatbuslvs_v> deconv.nofillerflatbuslvs.v | <i_design_extracted_spice> design_extracted.spice | <i_sky130_sram_2kbyte_1rw1r_32x512_8_sp> sky130_sram_2kbyte_1rw1r_32x512_8.sp | <i_user_analog_project_wrapper_spice> user_analog_project_wrapper.spice } | \n
+netgen-lvs-gds
+
+\n\n | { <o_lvs_results_log> lvs_results.log } }", color=black ];
+open_magic_gds2spice [ fontsize=24, width=2, penwidth=2, shape=Mrecord, label="{ { <i_adk> adk | <i_design_merged_gds> design_merged.gds } | \n
+open-magic-gds2spice
+
+\n\n | { <o_design_extracted_spice> design_extracted.spice } }", color=black ];
+open_magic_gds2spice_nobbox [ fontsize=24, width=2, penwidth=2, shape=Mrecord, label="{ { <i_adk> adk | <i_design_merged_gds> design_merged.gds | <i_sky130_sram_2kbyte_1rw1r_32x512_8_lef> sky130_sram_2kbyte_1rw1r_32x512_8.lef } | \n
+open-magic-gds2spice-nobbox
+
+\n\n | { <o_design_extracted_spice> design_extracted.spice } }", color=black ];
+premerge [ fontsize=24, width=2, penwidth=2, shape=Mrecord, label="{ {  } | \n
+premerge
+
+\n\n | { <o_design_gds> design.gds | <o_sky130_sram_2kbyte_1rw1r_32x512_8_gds> sky130_sram_2kbyte_1rw1r_32x512_8.gds | <o_user_analog_project_wrapper_digital_abstracted_gds> user_analog_project_wrapper_digital_abstracted.gds } }", color=black ];
+skywater_130nm [ fontsize=24, width=2, penwidth=2, shape=Mrecord, label="{ {  } | \n
+skywater-130nm
+
+\n\n | { <o_adk> adk } }", color=black ];
+lvs_setup:o_adc_controller_nofillerflatbuslvs_v:s -> mentor_calibre_comparison:i_adc_controller_nofillerflatbuslvs_v:n [ arrowsize=2, penwidth=2 ];
+skywater_130nm:o_adk:s -> mentor_calibre_comparison:i_adk:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_deconv_nofillerflatbuslvs_v:s -> mentor_calibre_comparison:i_deconv_nofillerflatbuslvs_v:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_design_extracted_spice:s -> mentor_calibre_comparison:i_design_extracted_spice:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_sky130_sram_2kbyte_1rw1r_32x512_8_sp:s -> mentor_calibre_comparison:i_sky130_sram_2kbyte_1rw1r_32x512_8_sp:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_user_analog_project_wrapper_spice:s -> mentor_calibre_comparison:i_user_analog_project_wrapper_spice:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_adc_controller_nofillerflatbuslvs_v:s -> mentor_calibre_comparison_nobbox:i_adc_controller_nofillerflatbuslvs_v:n [ arrowsize=2, penwidth=2 ];
+skywater_130nm:o_adk:s -> mentor_calibre_comparison_nobbox:i_adk:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_deconv_nofillerflatbuslvs_v:s -> mentor_calibre_comparison_nobbox:i_deconv_nofillerflatbuslvs_v:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_design_extracted_spice:s -> mentor_calibre_comparison_nobbox:i_design_extracted_spice:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_sky130_sram_2kbyte_1rw1r_32x512_8_sp:s -> mentor_calibre_comparison_nobbox:i_sky130_sram_2kbyte_1rw1r_32x512_8_sp:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_user_analog_project_wrapper_spice:s -> mentor_calibre_comparison_nobbox:i_user_analog_project_wrapper_spice:n [ arrowsize=2, penwidth=2 ];
+skywater_130nm:o_adk:s -> mentor_calibre_gdsmerge:i_adk:n [ arrowsize=2, penwidth=2 ];
+premerge:o_design_gds:s -> mentor_calibre_gdsmerge:i_design_gds:n [ arrowsize=2, penwidth=2 ];
+premerge:o_sky130_sram_2kbyte_1rw1r_32x512_8_gds:s -> mentor_calibre_gdsmerge:i_sky130_sram_2kbyte_1rw1r_32x512_8_gds:n [ arrowsize=2, penwidth=2 ];
+premerge:o_user_analog_project_wrapper_digital_abstracted_gds:s -> mentor_calibre_gdsmerge:i_user_analog_project_wrapper_digital_abstracted_gds:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_adc_controller_nofillerflatbuslvs_v:s -> netgen_lvs_gds:i_adc_controller_nofillerflatbuslvs_v:n [ arrowsize=2, penwidth=2 ];
+skywater_130nm:o_adk:s -> netgen_lvs_gds:i_adk:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_deconv_nofillerflatbuslvs_v:s -> netgen_lvs_gds:i_deconv_nofillerflatbuslvs_v:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_design_extracted_spice:s -> netgen_lvs_gds:i_design_extracted_spice:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_sky130_sram_2kbyte_1rw1r_32x512_8_sp:s -> netgen_lvs_gds:i_sky130_sram_2kbyte_1rw1r_32x512_8_sp:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_user_analog_project_wrapper_spice:s -> netgen_lvs_gds:i_user_analog_project_wrapper_spice:n [ arrowsize=2, penwidth=2 ];
+skywater_130nm:o_adk:s -> open_magic_gds2spice:i_adk:n [ arrowsize=2, penwidth=2 ];
+mentor_calibre_gdsmerge:o_design_merged_gds:s -> open_magic_gds2spice:i_design_merged_gds:n [ arrowsize=2, penwidth=2 ];
+skywater_130nm:o_adk:s -> open_magic_gds2spice_nobbox:i_adk:n [ arrowsize=2, penwidth=2 ];
+mentor_calibre_gdsmerge:o_design_merged_gds:s -> open_magic_gds2spice_nobbox:i_design_merged_gds:n [ arrowsize=2, penwidth=2 ];
+lvs_setup:o_sky130_sram_2kbyte_1rw1r_32x512_8_lef:s -> open_magic_gds2spice_nobbox:i_sky130_sram_2kbyte_1rw1r_32x512_8_lef:n [ arrowsize=2, penwidth=2 ];
+}

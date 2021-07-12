@@ -1,0 +1,23 @@
+build_dir: 7-open-magic-gds2spice
+build_id: '7'
+commands:
+- cp /home/users/nhpoole/PDKS/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+- magic -noconsole -dnull extract.tcl | tee gds2spice.log
+- mv user_analog_project_wrapper.spice outputs/design_extracted.spice
+edges_i:
+  adk:
+  - f: adk
+    step: 2-skywater-130nm
+  design_merged.gds:
+  - f: design_merged.gds
+    step: 5-mentor-calibre-gdsmerge
+edges_o: {}
+inputs:
+- adk
+- design_merged.gds
+name: open-magic-gds2spice
+outputs:
+- design_extracted.spice
+parameters:
+  design_name: user_analog_project_wrapper
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/chip_merge/design/open-magic-gds2spice

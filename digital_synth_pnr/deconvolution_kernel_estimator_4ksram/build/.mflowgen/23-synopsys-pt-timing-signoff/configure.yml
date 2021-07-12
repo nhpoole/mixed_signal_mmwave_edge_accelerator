@@ -1,0 +1,38 @@
+build_dir: 23-synopsys-pt-timing-signoff
+build_id: '23'
+commands:
+- pt_shell -file pt.tcl
+- mkdir -p outputs && cd outputs
+- ln -sf ../design.sdf design.sdf
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.pt.sdc:
+  - f: design.pt.sdc
+    step: 20-cadence-innovus-signoff
+  design.spef.gz:
+  - f: design.spef.gz
+    step: 20-cadence-innovus-signoff
+  design.vcs.v:
+  - f: design.vcs.v
+    step: 20-cadence-innovus-signoff
+  sky130_sram_4kbyte_1rw1r_32x1024_8_TT_1p8V_25C.db:
+  - f: sky130_sram_4kbyte_1rw1r_32x1024_8_TT_1p8V_25C.db
+    step: 6-sram
+edges_o:
+  design.sdf:
+  - f: design.sdf
+    step: 25-gl-sim
+inputs:
+- adk
+- design.vcs.v
+- design.pt.sdc
+- design.spef.gz
+- sky130_sram_4kbyte_1rw1r_32x1024_8_TT_1p8V_25C.db
+name: synopsys-pt-timing-signoff
+outputs:
+- design.sdf
+parameters:
+  design_name: deconv_kernel_estimator_top_level
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/steps/synopsys-pt-timing-signoff

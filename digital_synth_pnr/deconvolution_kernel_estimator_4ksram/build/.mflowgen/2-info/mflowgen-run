@@ -1,0 +1,33 @@
+#! /usr/bin/env bash
+set -euo pipefail
+#=========================================================================
+# mflowgen-run
+#=========================================================================
+# Generator : /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/mflowgen/core/build_orchestrator.py
+
+# Pre
+
+rm -f .time_end
+date +%Y-%m%d-%H%M-%S > .time_start
+MFLOWGEN_STEP_HOME=$PWD
+export design_name=deconv_kernel_estimator_top_level
+export clock_period=20.0
+export construct_path=../design/construct.py
+export adk=skywater-130nm-adk
+export adk_view=view-standard
+
+# Commands
+
+echo "Design name      -- deconv_kernel_estimator_top_level"
+echo "Clock period     -- 20.0"
+echo "ADK              -- skywater-130nm-adk"
+echo "ADK view         -- view-standard"
+echo
+echo "Constructed from -- ../design/construct.py"
+echo
+
+# Post
+
+cd $MFLOWGEN_STEP_HOME
+date +%Y-%m%d-%H%M-%S > .time_end
+

@@ -1,0 +1,25 @@
+#! /usr/bin/env bash
+set -euo pipefail
+#=========================================================================
+# mflowgen-run
+#=========================================================================
+# Generator : /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/mflowgen/core/build_orchestrator.py
+
+# Pre
+
+rm -f .time_end
+date +%Y-%m%d-%H%M-%S > .time_start
+MFLOWGEN_STEP_HOME=$PWD
+export design_name=user_analog_project_wrapper
+
+# Commands
+
+cp /home/users/nhpoole/PDKS/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+magic -noconsole -dnull extract.tcl | tee gds2spice.log
+mv user_analog_project_wrapper.spice outputs/design_extracted.spice
+
+# Post
+
+cd $MFLOWGEN_STEP_HOME
+date +%Y-%m%d-%H%M-%S > .time_end
+

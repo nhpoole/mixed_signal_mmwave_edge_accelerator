@@ -1,0 +1,27 @@
+#! /usr/bin/env bash
+set -euo pipefail
+#=========================================================================
+# mflowgen-run
+#=========================================================================
+# Generator : /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/mflowgen/core/build_orchestrator.py
+
+# Pre
+
+rm -f .time_end
+date +%Y-%m%d-%H%M-%S > .time_start
+MFLOWGEN_STEP_HOME=$PWD
+export design_name=sar_adc_controller
+
+# Commands
+
+mkdir -p $HOME/.calibrewb_workspace/tmp
+ins=""; for f in inputs/adk/*.gds*; do ins="$ins -in $f"; done
+echo | calibredrv -a layout filemerge \ -indir inputs \ $ins -topcell sar_adc_controller \ -out design_merged.gds 2>&1 | tee merge.log
+mkdir -p outputs && cd outputs
+ln -sf ../design_merged.gds
+
+# Post
+
+cd $MFLOWGEN_STEP_HOME
+date +%Y-%m%d-%H%M-%S > .time_end
+

@@ -1,0 +1,1 @@
+../../7-synopsys-dc-compile/outputs/compile.tcl

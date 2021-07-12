@@ -1,0 +1,47 @@
+build_dir: 10-synopsys-vcs-sim
+build_id: '10'
+commands:
+- ./run.sh
+edges_i:
+  design.args:
+  - f: design.args
+    step: 8-testbench
+  design.vcs.v:
+  - f: design.vcs.v
+    step: 4-rtl
+  freq_vec_data.txt:
+  - f: freq_vec_data.txt
+    step: 8-testbench
+  sky130_sram_2kbyte_1rw1r_32x512_8.v:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.v
+    step: 6-sram
+  testbench.sv:
+  - f: testbench.sv
+    step: 8-testbench
+  tf_coeff_data.txt:
+  - f: tf_coeff_data.txt
+    step: 8-testbench
+edges_o:
+  run.saif:
+  - f: run.saif
+    step: 11-synopsys-dc-synthesis
+  - f: run.saif
+    step: 25-synopsys-ptpx-rtl
+inputs:
+- adk
+- design.vcs.v
+- testbench.sv
+- design.sdf
+- design.args
+- freq_vec_data.txt
+- tf_coeff_data.txt
+- sky130_sram_2kbyte_1rw1r_32x512_8.v
+name: synopsys-vcs-sim
+outputs:
+- design.vpd
+- run.saif
+parameters:
+  clock_period: 20.0
+  testbench_name: deconv_kernel_estimator_top_level_tb
+  waveform: true
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/design/synopsys-vcs-sim

@@ -1,0 +1,53 @@
+build_dir: 13-cadence-innovus-place
+build_id: '13'
+commands:
+- ln -sf inputs/innovus-foundation-flow
+- innovus -overwrite -64 -nowin -init START.tcl -log logs/run.log
+- cd outputs
+- ln -sf ../checkpoints/design.checkpoint
+debug:
+- innovus -overwrite -64 -init innovus-foundation-flow/custom-scripts/run-debug.tcl
+  -log logs/debug.log
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.checkpoint:
+  - f: design.checkpoint
+    step: 12-cadence-innovus-power
+  design.sdc:
+  - f: design.sdc
+    step: 9-synopsys-dc-synthesis
+  innovus-foundation-flow:
+  - f: innovus-foundation-flow
+    step: 10-cadence-innovus-flowsetup
+edges_o:
+  design.checkpoint:
+  - f: design.checkpoint
+    step: 14-cadence-innovus-cts
+inputs:
+- innovus-foundation-flow
+- adk
+- design.sdc
+- design.checkpoint
+name: cadence-innovus-place
+outputs:
+- design.checkpoint
+parameters:
+  cell_padding: 2
+  order:
+  - setup-optmode.tcl
+  - setup-cellpad.tcl
+  - main.tcl
+  - clean-cellpad.tcl
+  - reporting.tcl
+  useful_skew: true
+postconditions:
+- assert File( 'outputs/design.checkpoint' )
+preconditions:
+- assert Tool( 'innovus' )
+- assert File( 'inputs/innovus-foundation-flow' )
+- assert File( 'inputs/adk' )
+- assert File( 'inputs/design.sdc' )
+- assert File( 'inputs/design.checkpoint' )
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/steps/cadence-innovus-place

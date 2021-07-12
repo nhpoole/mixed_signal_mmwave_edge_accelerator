@@ -1,0 +1,34 @@
+build_dir: 30-open-magic-gds2spice-nobbox
+build_id: '30'
+commands:
+- cp /home/users/nhpoole/PDKS/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+- magic -noconsole -dnull extract.tcl | tee gds2spice.log
+- mv deconv_kernel_estimator_top_level.spice outputs/design_extracted.spice
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design_merged.gds:
+  - f: design_merged.gds
+    step: 22-mentor-calibre-gdsmerge
+  sky130_sram_2kbyte_1rw1r_32x512_8.lef:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.lef
+    step: 6-sram
+edges_o:
+  design_extracted.spice:
+  - f: design_extracted.spice
+    step: 34-netgen-lvs-gds
+  - f: design_extracted.spice
+    step: 32-mentor-calibre-comparison
+  - f: design_extracted.spice
+    step: 33-mentor-calibre-comparison-nobbox
+inputs:
+- adk
+- design_merged.gds
+- sky130_sram_2kbyte_1rw1r_32x512_8.lef
+name: open-magic-gds2spice-nobbox
+outputs:
+- design_extracted.spice
+parameters:
+  design_name: deconv_kernel_estimator_top_level
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/design/open-magic-gds2spice-nobbox

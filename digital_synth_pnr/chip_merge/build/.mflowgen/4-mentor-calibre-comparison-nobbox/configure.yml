@@ -1,0 +1,40 @@
+build_dir: 4-mentor-calibre-comparison-nobbox
+build_id: '4'
+commands:
+- sed -i 's/VNB sky130_fd_pr__res_generic_po/sky130_fd_pr__res_generic_po/g' inputs/adk/stdcells.spi
+- sh run_lvs.sh
+debug:
+- calibre -rve -lvs svdb
+edges_i:
+  adc_controller.nofillerflatbuslvs.v:
+  - f: adc_controller.nofillerflatbuslvs.v
+    step: 0-lvs_setup
+  adk:
+  - f: adk
+    step: 2-skywater-130nm
+  deconv.nofillerflatbuslvs.v:
+  - f: deconv.nofillerflatbuslvs.v
+    step: 0-lvs_setup
+  design_extracted.spice:
+  - f: design_extracted.spice
+    step: 0-lvs_setup
+  sky130_sram_2kbyte_1rw1r_32x512_8.sp:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.sp
+    step: 0-lvs_setup
+  user_analog_project_wrapper.spice:
+  - f: user_analog_project_wrapper.spice
+    step: 0-lvs_setup
+edges_o: {}
+inputs:
+- adk
+- design_extracted.spice
+- user_analog_project_wrapper.spice
+- deconv.nofillerflatbuslvs.v
+- adc_controller.nofillerflatbuslvs.v
+- sky130_sram_2kbyte_1rw1r_32x512_8.sp
+name: mentor-calibre-comparison-nobbox
+outputs:
+- lvs.report
+parameters:
+  design_name: user_analog_project_wrapper
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/chip_merge/design/mentor-calibre-comparison-nobbox

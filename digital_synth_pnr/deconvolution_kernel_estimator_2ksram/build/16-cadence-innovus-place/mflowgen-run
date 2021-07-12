@@ -1,0 +1,28 @@
+#! /usr/bin/env bash
+set -euo pipefail
+#=========================================================================
+# mflowgen-run
+#=========================================================================
+# Generator : /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/mflowgen/core/build_orchestrator.py
+
+# Pre
+
+rm -f .time_end
+date +%Y-%m%d-%H%M-%S > .time_start
+MFLOWGEN_STEP_HOME=$PWD
+export useful_skew=True
+export order=setup-optmode.tcl,setup-cellpad.tcl,main.tcl,clean-cellpad.tcl,reporting.tcl
+export cell_padding=2
+
+# Commands
+
+ln -sf inputs/innovus-foundation-flow
+innovus -overwrite -64 -nowin -init START.tcl -log logs/run.log
+cd outputs
+ln -sf ../checkpoints/design.checkpoint
+
+# Post
+
+cd $MFLOWGEN_STEP_HOME
+date +%Y-%m%d-%H%M-%S > .time_end
+

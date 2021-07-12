@@ -1,0 +1,35 @@
+#=========================================================================
+# OpenRAM SRAM Compiler 
+#=========================================================================
+# Author : Nikhil Poole
+# Date   : July 9, 2021
+#
+
+name: sram
+
+#-------------------------------------------------------------------------
+# Outputs
+#-------------------------------------------------------------------------
+
+outputs:
+  - sky130_sram_2kbyte_1rw1r_32x512_8.sp
+  - sky130_sram_2kbyte_1rw1r_32x512_8.v
+  - sky130_sram_2kbyte_1rw1r_32x512_8.lef
+  - sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib
+  - sky130_sram_2kbyte_1rw1r_32x512_8.gds
+  - sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.db
+
+#-------------------------------------------------------------------------
+# Commands
+#-------------------------------------------------------------------------
+
+commands:
+  - cp ~/PDKS/sky130A/libs.ref/sky130_sram_macros/spice/sky130_sram_2kbyte_1rw1r_32x512_8.sp outputs/
+  - cp ~/PDKS/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_2kbyte_1rw1r_32x512_8.v outputs/
+  - cp ~/PDKS/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_2kbyte_1rw1r_32x512_8.lef outputs/
+  - cp ~/PDKS/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib outputs/
+  - cp ~/PDKS/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_2kbyte_1rw1r_32x512_8.gds outputs/
+  - cp ~/PDKS/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.db outputs/
+
+  - sed -i '/SHAPE ABUTMENT/d' outputs/sky130_sram_2kbyte_1rw1r_32x512_8.lef
+    

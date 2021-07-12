@@ -1,0 +1,25 @@
+build_dir: 30-netgen-lvs-gds
+build_id: '30'
+commands:
+- sh run_lvs.sh
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.lvs.v:
+  - f: design.lvs.v
+    step: 18-cadence-innovus-signoff
+  design_extracted.spice:
+  - f: design_extracted.spice
+    step: 27-open-magic-gds2spice
+edges_o: {}
+inputs:
+- adk
+- design_extracted.spice
+- design.lvs.v
+name: netgen-lvs-gds
+outputs:
+- lvs_results.log
+parameters:
+  design_name: sar_adc_controller
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/design/open-netgen-lvs

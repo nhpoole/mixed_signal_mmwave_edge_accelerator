@@ -1,0 +1,2620 @@
+ 
+****************************************
+Report : timing
+        -path full_clock
+        -delay min
+        -nworst 10
+        -input_pins
+        -nets
+        -max_paths 30
+        -transition_time
+        -capacitance
+Design : deconv_kernel_estimator_top_level
+Version: L-2016.03-SP5-5
+Date   : Sat Jul 10 21:01:38 2021
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: tt_025C_1v80   Library: sky130_fd_sc_hd__tt_025C_1v80
+Wire Load Model Mode: Inactive.
+
+  Startpoint: debug_en (input port clocked by ideal_clock)
+  Endpoint: debug_en_d1_reg
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 f
+  debug_en (in)                                                   0.0267    0.0175    10.0175 f
+  debug_en (net)                                2       0.0108              0.0000    10.0175 f
+  debug_en_d1_reg/D (sky130_fd_sc_hd__dfxtp_1)                    0.0267    0.0001 *  10.0176 f
+  data arrival time                                                                   10.0176
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  debug_en_d1_reg/CLK (sky130_fd_sc_hd__dfxtp_1)                            0.0000     0.0000 r
+  library hold time                                                        -0.0561    -0.0561
+  data required time                                                                  -0.0561
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0561
+  data arrival time                                                                  -10.0176
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.0736
+
+
+  Startpoint: debug_en (input port clocked by ideal_clock)
+  Endpoint: debug_en_d1_reg
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  debug_en (in)                                                   0.0581    0.0378    10.0378 r
+  debug_en (net)                                2       0.0112              0.0000    10.0378 r
+  debug_en_d1_reg/D (sky130_fd_sc_hd__dfxtp_1)                    0.0581    0.0001 *  10.0379 r
+  data arrival time                                                                   10.0379
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  debug_en_d1_reg/CLK (sky130_fd_sc_hd__dfxtp_1)                            0.0000     0.0000 r
+  library hold time                                                        -0.0400    -0.0400
+  data required time                                                                  -0.0400
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0400
+  data arrival time                                                                  -10.0379
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.0779
+
+
+  Startpoint: load_en (input port clocked by ideal_clock)
+  Endpoint: deserializer_inst/clk_gate_parallel_data_reg/latch
+            (gating element for clock ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  load_en (in)                                                    0.0547    0.0354    10.0354 r
+  load_en (net)                                 3       0.0104              0.0000    10.0354 r
+  deserializer_inst/en (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0)   0.0000  10.0354 r
+  deserializer_inst/en (net)                            0.0104              0.0000    10.0354 r
+  deserializer_inst/U9/A_N (sky130_fd_sc_hd__nand2b_1)            0.0547    0.0000 *  10.0354 r
+  deserializer_inst/U9/Y (sky130_fd_sc_hd__nand2b_1)              0.0438    0.0928    10.1282 r
+  deserializer_inst/net18132 (net)              1       0.0025              0.0000    10.1282 r
+  deserializer_inst/clk_gate_parallel_data_reg/EN (deconv_kernel_estimator_top_level_SNPS_CLOCK_GATE_HIGH_deserializer_FETCH_WIDTH16_0)   0.0000  10.1282 r
+  deserializer_inst/clk_gate_parallel_data_reg/EN (net)   0.0025            0.0000    10.1282 r
+  deserializer_inst/clk_gate_parallel_data_reg/latch/GATE (sky130_fd_sc_hd__sdlclkp_1)   0.0438   0.0000 *  10.1282 r so 
+  data arrival time                                                                   10.1282
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  deserializer_inst/clk_gate_parallel_data_reg/latch/CLK (sky130_fd_sc_hd__sdlclkp_1)   0.0000   0.0000 r
+  clock gating hold time                                                   -0.0580    -0.0580
+  data required time                                                                  -0.0580
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0580
+  data arrival time                                                                  -10.1282
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.1863
+
+
+  Startpoint: frequency_adc_done
+              (input port clocked by ideal_clock)
+  Endpoint: state_r_reg_0_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 f
+  frequency_adc_done (in)                                         0.0172    0.0104    10.0104 f
+  frequency_adc_done (net)                      1       0.0064              0.0000    10.0104 f
+  U192/A (sky130_fd_sc_hd__nand3_1)                               0.0172    0.0001 *  10.0105 f
+  U192/Y (sky130_fd_sc_hd__nand3_1)                               0.0962    0.0844    10.0949 r
+  n105 (net)                                    1       0.0079              0.0000    10.0949 r
+  U193/A3 (sky130_fd_sc_hd__a31oi_1)                              0.0962    0.0002 *  10.0951 r
+  U193/Y (sky130_fd_sc_hd__a31oi_1)                               0.0383    0.0830    10.1781 f
+  N111 (net)                                    1       0.0020              0.0000    10.1781 f
+  state_r_reg_0_/D (sky130_fd_sc_hd__dfxtp_1)                     0.0383    0.0000 *  10.1781 f
+  data arrival time                                                                   10.1781
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  state_r_reg_0_/CLK (sky130_fd_sc_hd__dfxtp_1)                             0.0000     0.0000 r
+  library hold time                                                        -0.0609    -0.0609
+  data required time                                                                  -0.0609
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0609
+  data arrival time                                                                  -10.1781
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2390
+
+
+  Startpoint: amplitude_adc_done
+              (input port clocked by ideal_clock)
+  Endpoint: state_r_reg_0_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 f
+  amplitude_adc_done (in)                                         0.0173    0.0105    10.0105 f
+  amplitude_adc_done (net)                      1       0.0065              0.0000    10.0105 f
+  U192/B (sky130_fd_sc_hd__nand3_1)                               0.0173    0.0001 *  10.0106 f
+  U192/Y (sky130_fd_sc_hd__nand3_1)                               0.0962    0.0994    10.1100 r
+  n105 (net)                                    1       0.0079              0.0000    10.1100 r
+  U193/A3 (sky130_fd_sc_hd__a31oi_1)                              0.0962    0.0002 *  10.1102 r
+  U193/Y (sky130_fd_sc_hd__a31oi_1)                               0.0383    0.0830    10.1932 f
+  N111 (net)                                    1       0.0020              0.0000    10.1932 f
+  state_r_reg_0_/D (sky130_fd_sc_hd__dfxtp_1)                     0.0383    0.0000 *  10.1932 f
+  data arrival time                                                                   10.1932
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  state_r_reg_0_/CLK (sky130_fd_sc_hd__dfxtp_1)                             0.0000     0.0000 r
+  library hold time                                                        -0.0609    -0.0609
+  data required time                                                                  -0.0609
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0609
+  data arrival time                                                                  -10.1932
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2540
+
+
+  Startpoint: load_en (input port clocked by ideal_clock)
+  Endpoint: deserializer_inst/count_r_reg_2_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 f
+  load_en (in)                                                    0.0244    0.0158    10.0158 f
+  load_en (net)                                 3       0.0098              0.0000    10.0158 f
+  deserializer_inst/en (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0)   0.0000  10.0158 f
+  deserializer_inst/en (net)                            0.0098              0.0000    10.0158 f
+  deserializer_inst/U3/B (sky130_fd_sc_hd__nand2_1)               0.0244    0.0000 *  10.0159 f
+  deserializer_inst/U3/Y (sky130_fd_sc_hd__nand2_1)               0.1469    0.1249    10.1407 r
+  deserializer_inst/N56 (net)                   5       0.0146              0.0000    10.1407 r
+  deserializer_inst/U53/A (sky130_fd_sc_hd__nor2b_1)              0.1469    0.0000 *  10.1408 r
+  deserializer_inst/U53/Y (sky130_fd_sc_hd__nor2b_1)              0.0288    0.0577    10.1985 f
+  deserializer_inst/n51 (net)                   1       0.0018              0.0000    10.1985 f
+  deserializer_inst/count_r_reg_2_/D (sky130_fd_sc_hd__dfxtp_1)   0.0288    0.0000 *  10.1985 f
+  data arrival time                                                                   10.1985
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  deserializer_inst/count_r_reg_2_/CLK (sky130_fd_sc_hd__dfxtp_1)           0.0000     0.0000 r
+  library hold time                                                        -0.0569    -0.0569
+  data required time                                                                  -0.0569
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0569
+  data arrival time                                                                  -10.1985
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2554
+
+
+  Startpoint: load_en (input port clocked by ideal_clock)
+  Endpoint: deserializer_inst/count_r_reg_0_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 f
+  load_en (in)                                                    0.0244    0.0158    10.0158 f
+  load_en (net)                                 3       0.0098              0.0000    10.0158 f
+  deserializer_inst/en (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0)   0.0000  10.0158 f
+  deserializer_inst/en (net)                            0.0098              0.0000    10.0158 f
+  deserializer_inst/U3/B (sky130_fd_sc_hd__nand2_1)               0.0244    0.0000 *  10.0159 f
+  deserializer_inst/U3/Y (sky130_fd_sc_hd__nand2_1)               0.1469    0.1249    10.1407 r
+  deserializer_inst/N56 (net)                   5       0.0146              0.0000    10.1407 r
+  deserializer_inst/U55/A (sky130_fd_sc_hd__nor2b_1)              0.1469    0.0001 *  10.1408 r
+  deserializer_inst/U55/Y (sky130_fd_sc_hd__nor2b_1)              0.0290    0.0580    10.1987 f
+  deserializer_inst/n53 (net)                   1       0.0019              0.0000    10.1987 f
+  deserializer_inst/count_r_reg_0_/D (sky130_fd_sc_hd__dfxtp_1)   0.0290    0.0000 *  10.1988 f
+  data arrival time                                                                   10.1988
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  deserializer_inst/count_r_reg_0_/CLK (sky130_fd_sc_hd__dfxtp_1)           0.0000     0.0000 r
+  library hold time                                                        -0.0570    -0.0570
+  data required time                                                                  -0.0570
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0570
+  data arrival time                                                                  -10.1988
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2558
+
+
+  Startpoint: sig_amplitude[6]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_10_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sig_amplitude[6] (in)                                           0.0846    0.0565    10.0565 r
+  sig_amplitude[6] (net)                        2       0.0171              0.0000    10.0565 r
+  U272/A1 (sky130_fd_sc_hd__a22o_1)                               0.0846    0.0000 *  10.0565 r
+  U272/X (sky130_fd_sc_hd__a22o_1)                                0.0717    0.1567    10.2132 r
+  N102 (net)                                    1       0.0058              0.0000    10.2132 r
+  tf_coeff_radr_reg_10_/D (sky130_fd_sc_hd__dfxtp_1)              0.0717    0.0001 *  10.2133 r
+  data arrival time                                                                   10.2133
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_10_/CLK (sky130_fd_sc_hd__dfxtp_1)                      0.0000     0.0000 r
+  library hold time                                                        -0.0428    -0.0428
+  data required time                                                                  -0.0428
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0428
+  data arrival time                                                                  -10.2133
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2561
+
+
+  Startpoint: load_en (input port clocked by ideal_clock)
+  Endpoint: deserializer_inst/count_r_reg_3_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 f
+  load_en (in)                                                    0.0244    0.0158    10.0158 f
+  load_en (net)                                 3       0.0098              0.0000    10.0158 f
+  deserializer_inst/en (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0)   0.0000  10.0158 f
+  deserializer_inst/en (net)                            0.0098              0.0000    10.0158 f
+  deserializer_inst/U3/B (sky130_fd_sc_hd__nand2_1)               0.0244    0.0000 *  10.0159 f
+  deserializer_inst/U3/Y (sky130_fd_sc_hd__nand2_1)               0.1469    0.1249    10.1407 r
+  deserializer_inst/N56 (net)                   5       0.0146              0.0000    10.1407 r
+  deserializer_inst/U52/A (sky130_fd_sc_hd__nor2b_1)              0.1469    0.0000 *  10.1407 r
+  deserializer_inst/U52/Y (sky130_fd_sc_hd__nor2b_1)              0.0299    0.0592    10.2000 f
+  deserializer_inst/n50 (net)                   1       0.0021              0.0000    10.2000 f
+  deserializer_inst/count_r_reg_3_/D (sky130_fd_sc_hd__dfxtp_1)   0.0299    0.0000 *  10.2000 f
+  data arrival time                                                                   10.2000
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  deserializer_inst/count_r_reg_3_/CLK (sky130_fd_sc_hd__dfxtp_1)           0.0000     0.0000 r
+  library hold time                                                        -0.0574    -0.0574
+  data required time                                                                  -0.0574
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0574
+  data arrival time                                                                  -10.2000
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2574
+
+
+  Startpoint: load_en (input port clocked by ideal_clock)
+  Endpoint: deserializer_inst/count_r_reg_1_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 f
+  load_en (in)                                                    0.0244    0.0158    10.0158 f
+  load_en (net)                                 3       0.0098              0.0000    10.0158 f
+  deserializer_inst/en (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0)   0.0000  10.0158 f
+  deserializer_inst/en (net)                            0.0098              0.0000    10.0158 f
+  deserializer_inst/U3/B (sky130_fd_sc_hd__nand2_1)               0.0244    0.0000 *  10.0159 f
+  deserializer_inst/U3/Y (sky130_fd_sc_hd__nand2_1)               0.1469    0.1249    10.1407 r
+  deserializer_inst/N56 (net)                   5       0.0146              0.0000    10.1407 r
+  deserializer_inst/U54/A (sky130_fd_sc_hd__nor2b_1)              0.1469    0.0000 *  10.1408 r
+  deserializer_inst/U54/Y (sky130_fd_sc_hd__nor2b_1)              0.0307    0.0604    10.2011 f
+  deserializer_inst/n52 (net)                   1       0.0022              0.0000    10.2011 f
+  deserializer_inst/count_r_reg_1_/D (sky130_fd_sc_hd__dfxtp_1)   0.0307    0.0000 *  10.2011 f
+  data arrival time                                                                   10.2011
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  deserializer_inst/count_r_reg_1_/CLK (sky130_fd_sc_hd__dfxtp_1)           0.0000     0.0000 r
+  library hold time                                                        -0.0577    -0.0577
+  data required time                                                                  -0.0577
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0577
+  data arrival time                                                                  -10.2011
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2589
+
+
+  Startpoint: sig_frequency[6]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_7_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sig_frequency[6] (in)                                           0.0820    0.0547    10.0547 r
+  sig_frequency[6] (net)                        2       0.0166              0.0000    10.0547 r
+  U275/A1 (sky130_fd_sc_hd__a22o_1)                               0.0820    0.0000 *  10.0548 r
+  U275/X (sky130_fd_sc_hd__a22o_1)                                0.0772    0.1602    10.2149 r
+  N99 (net)                                     1       0.0064              0.0000    10.2149 r
+  tf_coeff_radr_reg_7_/D (sky130_fd_sc_hd__dfxtp_1)               0.0772    0.0001 *  10.2150 r
+  data arrival time                                                                   10.2150
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_7_/CLK (sky130_fd_sc_hd__dfxtp_1)                       0.0000     0.0000 r
+  library hold time                                                        -0.0440    -0.0440
+  data required time                                                                  -0.0440
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0440
+  data arrival time                                                                  -10.2150
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2590
+
+
+  Startpoint: sig_frequency[3]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_4_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sig_frequency[3] (in)                                           0.0815    0.0543    10.0543 r
+  sig_frequency[3] (net)                        2       0.0164              0.0000    10.0543 r
+  U278/A1 (sky130_fd_sc_hd__a22o_1)                               0.0815    0.0000 *  10.0543 r
+  U278/X (sky130_fd_sc_hd__a22o_1)                                0.0789    0.1614    10.2157 r
+  N96 (net)                                     1       0.0066              0.0000    10.2157 r
+  tf_coeff_radr_reg_4_/D (sky130_fd_sc_hd__dfxtp_1)               0.0789    0.0001 *  10.2158 r
+  data arrival time                                                                   10.2158
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_4_/CLK (sky130_fd_sc_hd__dfxtp_1)                       0.0000     0.0000 r
+  library hold time                                                        -0.0444    -0.0444
+  data required time                                                                  -0.0444
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0444
+  data arrival time                                                                  -10.2158
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2602
+
+
+  Startpoint: sig_frequency[7]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_8_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sig_frequency[7] (in)                                           0.0864    0.0577    10.0577 r
+  sig_frequency[7] (net)                        2       0.0175              0.0000    10.0577 r
+  U274/A1 (sky130_fd_sc_hd__a22o_1)                               0.0864    0.0000 *  10.0578 r
+  U274/X (sky130_fd_sc_hd__a22o_1)                                0.0746    0.1597    10.2174 r
+  N100 (net)                                    1       0.0061              0.0000    10.2174 r
+  tf_coeff_radr_reg_8_/D (sky130_fd_sc_hd__dfxtp_1)               0.0746    0.0001 *  10.2175 r
+  data arrival time                                                                   10.2175
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_8_/CLK (sky130_fd_sc_hd__dfxtp_1)                       0.0000     0.0000 r
+  library hold time                                                        -0.0434    -0.0434
+  data required time                                                                  -0.0434
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0434
+  data arrival time                                                                  -10.2175
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2610
+
+
+  Startpoint: sig_amplitude[7]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_11_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sig_amplitude[7] (in)                                           0.0864    0.0578    10.0578 r
+  sig_amplitude[7] (net)                        2       0.0175              0.0000    10.0578 r
+  U271/A1 (sky130_fd_sc_hd__a22o_1)                               0.0864    0.0000 *  10.0578 r
+  U271/X (sky130_fd_sc_hd__a22o_1)                                0.0767    0.1613    10.2192 r
+  N103 (net)                                    1       0.0064              0.0000    10.2192 r
+  tf_coeff_radr_reg_11_/D (sky130_fd_sc_hd__dfxtp_1)              0.0767    0.0001 *  10.2193 r
+  data arrival time                                                                   10.2193
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_11_/CLK (sky130_fd_sc_hd__dfxtp_1)                      0.0000     0.0000 r
+  library hold time                                                        -0.0439    -0.0439
+  data required time                                                                  -0.0439
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0439
+  data arrival time                                                                  -10.2193
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2632
+
+
+  Startpoint: load_en (input port clocked by ideal_clock)
+  Endpoint: deserializer_inst/out_valid_reg
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 f
+  load_en (in)                                                    0.0244    0.0158    10.0158 f
+  load_en (net)                                 3       0.0098              0.0000    10.0158 f
+  deserializer_inst/en (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0)   0.0000  10.0158 f
+  deserializer_inst/en (net)                            0.0098              0.0000    10.0158 f
+  deserializer_inst/U3/B (sky130_fd_sc_hd__nand2_1)               0.0244    0.0000 *  10.0159 f
+  deserializer_inst/U3/Y (sky130_fd_sc_hd__nand2_1)               0.1469    0.1249    10.1407 r
+  deserializer_inst/N56 (net)                   5       0.0146              0.0000    10.1407 r
+  deserializer_inst/U51/A (sky130_fd_sc_hd__nor2b_1)              0.1469    0.0001 *  10.1408 r
+  deserializer_inst/U51/Y (sky130_fd_sc_hd__nor2b_1)              0.0334    0.0641    10.2049 f
+  deserializer_inst/n49 (net)                   1       0.0028              0.0000    10.2049 f
+  deserializer_inst/out_valid_reg/D (sky130_fd_sc_hd__dfxtp_1)    0.0334    0.0000 *  10.2049 f
+  data arrival time                                                                   10.2049
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  deserializer_inst/out_valid_reg/CLK (sky130_fd_sc_hd__dfxtp_1)            0.0000     0.0000 r
+  library hold time                                                        -0.0588    -0.0588
+  data required time                                                                  -0.0588
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0588
+  data arrival time                                                                  -10.2049
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2637
+
+
+  Startpoint: sig_frequency[2]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_3_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sig_frequency[2] (in)                                           0.0875    0.0585    10.0585 r
+  sig_frequency[2] (net)                        2       0.0178              0.0000    10.0585 r
+  U279/A1 (sky130_fd_sc_hd__a22o_1)                               0.0875    0.0000 *  10.0586 r
+  U279/X (sky130_fd_sc_hd__a22o_1)                                0.0774    0.1623    10.2208 r
+  N95 (net)                                     1       0.0064              0.0000    10.2208 r
+  tf_coeff_radr_reg_3_/D (sky130_fd_sc_hd__dfxtp_1)               0.0774    0.0001 *  10.2210 r
+  data arrival time                                                                   10.2210
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_3_/CLK (sky130_fd_sc_hd__dfxtp_1)                       0.0000     0.0000 r
+  library hold time                                                        -0.0440    -0.0440
+  data required time                                                                  -0.0440
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0440
+  data arrival time                                                                  -10.2210
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2650
+
+
+  Startpoint: sig_frequency[4]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_5_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sig_frequency[4] (in)                                           0.0873    0.0584    10.0584 r
+  sig_frequency[4] (net)                        2       0.0177              0.0000    10.0584 r
+  U277/A1 (sky130_fd_sc_hd__a22o_1)                               0.0873    0.0000 *  10.0584 r
+  U277/X (sky130_fd_sc_hd__a22o_1)                                0.0811    0.1652    10.2236 r
+  N97 (net)                                     1       0.0069              0.0000    10.2236 r
+  tf_coeff_radr_reg_5_/D (sky130_fd_sc_hd__dfxtp_1)               0.0811    0.0002 *  10.2237 r
+  data arrival time                                                                   10.2237
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_5_/CLK (sky130_fd_sc_hd__dfxtp_1)                       0.0000     0.0000 r
+  library hold time                                                        -0.0448    -0.0448
+  data required time                                                                  -0.0448
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0448
+  data arrival time                                                                  -10.2237
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2686
+
+
+  Startpoint: sig_amplitude[5]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_9_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sig_amplitude[5] (in)                                           0.0888    0.0594    10.0594 r
+  sig_amplitude[5] (net)                        2       0.0181              0.0000    10.0594 r
+  U273/A1 (sky130_fd_sc_hd__a22o_1)                               0.0888    0.0000 *  10.0595 r
+  U273/X (sky130_fd_sc_hd__a22o_1)                                0.0801    0.1649    10.2244 r
+  N101 (net)                                    1       0.0068              0.0000    10.2244 r
+  tf_coeff_radr_reg_9_/D (sky130_fd_sc_hd__dfxtp_1)               0.0801    0.0001 *  10.2245 r
+  data arrival time                                                                   10.2245
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_9_/CLK (sky130_fd_sc_hd__dfxtp_1)                       0.0000     0.0000 r
+  library hold time                                                        -0.0446    -0.0446
+  data required time                                                                  -0.0446
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0446
+  data arrival time                                                                  -10.2245
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2691
+
+
+  Startpoint: sig_frequency[1]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_2_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sig_frequency[1] (in)                                           0.0891    0.0596    10.0596 r
+  sig_frequency[1] (net)                        2       0.0181              0.0000    10.0596 r
+  U280/A1 (sky130_fd_sc_hd__a22o_1)                               0.0891    0.0000 *  10.0597 r
+  U280/X (sky130_fd_sc_hd__a22o_1)                                0.0800    0.1649    10.2246 r
+  N94 (net)                                     1       0.0067              0.0000    10.2246 r
+  tf_coeff_radr_reg_2_/D (sky130_fd_sc_hd__dfxtp_1)               0.0800    0.0001 *  10.2247 r
+  data arrival time                                                                   10.2247
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_2_/CLK (sky130_fd_sc_hd__dfxtp_1)                       0.0000     0.0000 r
+  library hold time                                                        -0.0446    -0.0446
+  data required time                                                                  -0.0446
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0446
+  data arrival time                                                                  -10.2247
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2693
+
+
+  Startpoint: sig_frequency[5]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_6_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sig_frequency[5] (in)                                           0.0870    0.0582    10.0582 r
+  sig_frequency[5] (net)                        2       0.0177              0.0000    10.0582 r
+  U276/A1 (sky130_fd_sc_hd__a22o_1)                               0.0870    0.0000 *  10.0582 r
+  U276/X (sky130_fd_sc_hd__a22o_1)                                0.0840    0.1674    10.2256 r
+  N98 (net)                                     1       0.0072              0.0000    10.2256 r
+  tf_coeff_radr_reg_6_/D (sky130_fd_sc_hd__dfxtp_1)               0.0840    0.0002 *  10.2258 r
+  data arrival time                                                                   10.2258
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_6_/CLK (sky130_fd_sc_hd__dfxtp_1)                       0.0000     0.0000 r
+  library hold time                                                        -0.0454    -0.0454
+  data required time                                                                  -0.0454
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0454
+  data arrival time                                                                  -10.2258
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2712
+
+
+  Startpoint: rst_n (input port clocked by ideal_clock)
+  Endpoint: state_r_reg_2_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 f
+  rst_n (in)                                                      0.1301    0.0955    10.0955 f
+  rst_n (net)                                  12       0.0595              0.0000    10.0955 f
+  U196/B1 (sky130_fd_sc_hd__o21a_1)                               0.1301    0.0024 *  10.0979 f
+  U196/X (sky130_fd_sc_hd__o21a_1)                                0.0309    0.1362    10.2341 f
+  N113 (net)                                    1       0.0028              0.0000    10.2341 f
+  state_r_reg_2_/D (sky130_fd_sc_hd__dfxtp_1)                     0.0309    0.0000 *  10.2341 f
+  data arrival time                                                                   10.2341
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  state_r_reg_2_/CLK (sky130_fd_sc_hd__dfxtp_1)                             0.0000     0.0000 r
+  library hold time                                                        -0.0578    -0.0578
+  data required time                                                                  -0.0578
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0578
+  data arrival time                                                                  -10.2341
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2919
+
+
+  Startpoint: load_en (input port clocked by ideal_clock)
+  Endpoint: deserializer_inst/count_r_reg_2_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  load_en (in)                                                    0.0547    0.0354    10.0354 r
+  load_en (net)                                 3       0.0104              0.0000    10.0354 r
+  deserializer_inst/en (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0)   0.0000  10.0354 r
+  deserializer_inst/en (net)                            0.0104              0.0000    10.0354 r
+  deserializer_inst/U3/B (sky130_fd_sc_hd__nand2_1)               0.0547    0.0000 *  10.0354 r
+  deserializer_inst/U3/Y (sky130_fd_sc_hd__nand2_1)               0.1041    0.1070    10.1424 f
+  deserializer_inst/N56 (net)                   5       0.0137              0.0000    10.1424 f
+  deserializer_inst/U53/A (sky130_fd_sc_hd__nor2b_1)              0.1041    0.0000 *  10.1425 f
+  deserializer_inst/U53/Y (sky130_fd_sc_hd__nor2b_1)              0.0673    0.1118    10.2542 r
+  deserializer_inst/n51 (net)                   1       0.0018              0.0000    10.2542 r
+  deserializer_inst/count_r_reg_2_/D (sky130_fd_sc_hd__dfxtp_1)   0.0673    0.0000 *  10.2542 r
+  data arrival time                                                                   10.2542
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  deserializer_inst/count_r_reg_2_/CLK (sky130_fd_sc_hd__dfxtp_1)           0.0000     0.0000 r
+  library hold time                                                        -0.0419    -0.0419
+  data required time                                                                  -0.0419
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0419
+  data arrival time                                                                  -10.2542
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2961
+
+
+  Startpoint: load_en (input port clocked by ideal_clock)
+  Endpoint: deserializer_inst/count_r_reg_0_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  load_en (in)                                                    0.0547    0.0354    10.0354 r
+  load_en (net)                                 3       0.0104              0.0000    10.0354 r
+  deserializer_inst/en (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0)   0.0000  10.0354 r
+  deserializer_inst/en (net)                            0.0104              0.0000    10.0354 r
+  deserializer_inst/U3/B (sky130_fd_sc_hd__nand2_1)               0.0547    0.0000 *  10.0354 r
+  deserializer_inst/U3/Y (sky130_fd_sc_hd__nand2_1)               0.1041    0.1070    10.1424 f
+  deserializer_inst/N56 (net)                   5       0.0137              0.0000    10.1424 f
+  deserializer_inst/U55/A (sky130_fd_sc_hd__nor2b_1)              0.1041    0.0001 *  10.1425 f
+  deserializer_inst/U55/Y (sky130_fd_sc_hd__nor2b_1)              0.0679    0.1123    10.2547 r
+  deserializer_inst/n53 (net)                   1       0.0019              0.0000    10.2547 r
+  deserializer_inst/count_r_reg_0_/D (sky130_fd_sc_hd__dfxtp_1)   0.0679    0.0000 *  10.2547 r
+  data arrival time                                                                   10.2547
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  deserializer_inst/count_r_reg_0_/CLK (sky130_fd_sc_hd__dfxtp_1)           0.0000     0.0000 r
+  library hold time                                                        -0.0420    -0.0420
+  data required time                                                                  -0.0420
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0420
+  data arrival time                                                                  -10.2547
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.2968
+
+
+  Startpoint: load_en (input port clocked by ideal_clock)
+  Endpoint: deserializer_inst/count_r_reg_3_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  load_en (in)                                                    0.0547    0.0354    10.0354 r
+  load_en (net)                                 3       0.0104              0.0000    10.0354 r
+  deserializer_inst/en (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0)   0.0000  10.0354 r
+  deserializer_inst/en (net)                            0.0104              0.0000    10.0354 r
+  deserializer_inst/U3/B (sky130_fd_sc_hd__nand2_1)               0.0547    0.0000 *  10.0354 r
+  deserializer_inst/U3/Y (sky130_fd_sc_hd__nand2_1)               0.1041    0.1070    10.1424 f
+  deserializer_inst/N56 (net)                   5       0.0137              0.0000    10.1424 f
+  deserializer_inst/U52/A (sky130_fd_sc_hd__nor2b_1)              0.1041    0.0000 *  10.1424 f
+  deserializer_inst/U52/Y (sky130_fd_sc_hd__nor2b_1)              0.0713    0.1148    10.2572 r
+  deserializer_inst/n50 (net)                   1       0.0020              0.0000    10.2572 r
+  deserializer_inst/count_r_reg_3_/D (sky130_fd_sc_hd__dfxtp_1)   0.0713    0.0000 *  10.2572 r
+  data arrival time                                                                   10.2572
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  deserializer_inst/count_r_reg_3_/CLK (sky130_fd_sc_hd__dfxtp_1)           0.0000     0.0000 r
+  library hold time                                                        -0.0428    -0.0428
+  data required time                                                                  -0.0428
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0428
+  data arrival time                                                                  -10.2572
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.3000
+
+
+  Startpoint: sram_select[1]
+              (input port clocked by ideal_clock)
+  Endpoint: nfft_cntr_en_reg
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sram_select[1] (in)                                             0.0968    0.0650    10.0650 r
+  sram_select[1] (net)                          5       0.0199              0.0000    10.0650 r
+  U184/A (sky130_fd_sc_hd__nor4_1)                                0.0968    0.0001 *  10.0651 r
+  U184/Y (sky130_fd_sc_hd__nor4_1)                                0.0333    0.0593    10.1244 f
+  N30 (net)                                     1       0.0020              0.0000    10.1244 f
+  U17/A (sky130_fd_sc_hd__and2_1)                                 0.0333    0.0000 *  10.1244 f
+  U17/X (sky130_fd_sc_hd__and2_1)                                 0.0297    0.1207    10.2452 f
+  n14 (net)                                     1       0.0017              0.0000    10.2452 f
+  nfft_cntr_en_reg/D (sky130_fd_sc_hd__dfxtp_1)                   0.0297    0.0000 *  10.2452 f
+  data arrival time                                                                   10.2452
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  nfft_cntr_en_reg/CLK (sky130_fd_sc_hd__dfxtp_1)                           0.0000     0.0000 r
+  library hold time                                                        -0.0573    -0.0573
+  data required time                                                                  -0.0573
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0573
+  data arrival time                                                                  -10.2452
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.3025
+
+
+  Startpoint: load_en (input port clocked by ideal_clock)
+  Endpoint: deserializer_inst/count_r_reg_1_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  load_en (in)                                                    0.0547    0.0354    10.0354 r
+  load_en (net)                                 3       0.0104              0.0000    10.0354 r
+  deserializer_inst/en (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0)   0.0000  10.0354 r
+  deserializer_inst/en (net)                            0.0104              0.0000    10.0354 r
+  deserializer_inst/U3/B (sky130_fd_sc_hd__nand2_1)               0.0547    0.0000 *  10.0354 r
+  deserializer_inst/U3/Y (sky130_fd_sc_hd__nand2_1)               0.1041    0.1070    10.1424 f
+  deserializer_inst/N56 (net)                   5       0.0137              0.0000    10.1424 f
+  deserializer_inst/U54/A (sky130_fd_sc_hd__nor2b_1)              0.1041    0.0000 *  10.1425 f
+  deserializer_inst/U54/Y (sky130_fd_sc_hd__nor2b_1)              0.0744    0.1171    10.2596 r
+  deserializer_inst/n52 (net)                   1       0.0022              0.0000    10.2596 r
+  deserializer_inst/count_r_reg_1_/D (sky130_fd_sc_hd__dfxtp_1)   0.0744    0.0000 *  10.2596 r
+  data arrival time                                                                   10.2596
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  deserializer_inst/count_r_reg_1_/CLK (sky130_fd_sc_hd__dfxtp_1)           0.0000     0.0000 r
+  library hold time                                                        -0.0434    -0.0434
+  data required time                                                                  -0.0434
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0434
+  data arrival time                                                                  -10.2596
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.3030
+
+
+  Startpoint: sram_select[0]
+              (input port clocked by ideal_clock)
+  Endpoint: nfft_cntr_en_reg
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  sram_select[0] (in)                                             0.1042    0.0702    10.0702 r
+  sram_select[0] (net)                          5       0.0215              0.0000    10.0702 r
+  U184/B (sky130_fd_sc_hd__nor4_1)                                0.1042    0.0001 *  10.0703 r
+  U184/Y (sky130_fd_sc_hd__nor4_1)                                0.0333    0.0600    10.1302 f
+  N30 (net)                                     1       0.0020              0.0000    10.1302 f
+  U17/A (sky130_fd_sc_hd__and2_1)                                 0.0333    0.0000 *  10.1302 f
+  U17/X (sky130_fd_sc_hd__and2_1)                                 0.0297    0.1207    10.2510 f
+  n14 (net)                                     1       0.0017              0.0000    10.2510 f
+  nfft_cntr_en_reg/D (sky130_fd_sc_hd__dfxtp_1)                   0.0297    0.0000 *  10.2510 f
+  data arrival time                                                                   10.2510
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  nfft_cntr_en_reg/CLK (sky130_fd_sc_hd__dfxtp_1)                           0.0000     0.0000 r
+  library hold time                                                        -0.0573    -0.0573
+  data required time                                                                  -0.0573
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0573
+  data arrival time                                                                  -10.2510
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.3083
+
+
+  Startpoint: sig_amplitude[6]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_10_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 f
+  sig_amplitude[6] (in)                                           0.0393    0.0269    10.0269 f
+  sig_amplitude[6] (net)                        2       0.0167              0.0000    10.0269 f
+  U272/A1 (sky130_fd_sc_hd__a22o_1)                               0.0393    0.0000 *  10.0269 f
+  U272/X (sky130_fd_sc_hd__a22o_1)                                0.0541    0.2161    10.2430 f
+  N102 (net)                                    1       0.0058              0.0000    10.2430 f
+  tf_coeff_radr_reg_10_/D (sky130_fd_sc_hd__dfxtp_1)              0.0541    0.0001 *  10.2431 f
+  data arrival time                                                                   10.2431
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_10_/CLK (sky130_fd_sc_hd__dfxtp_1)                      0.0000     0.0000 r
+  library hold time                                                        -0.0675    -0.0675
+  data required time                                                                  -0.0675
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0675
+  data arrival time                                                                  -10.2431
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.3106
+
+
+  Startpoint: load_en (input port clocked by ideal_clock)
+  Endpoint: deserializer_inst/out_valid_reg
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 r
+  load_en (in)                                                    0.0547    0.0354    10.0354 r
+  load_en (net)                                 3       0.0104              0.0000    10.0354 r
+  deserializer_inst/en (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0)   0.0000  10.0354 r
+  deserializer_inst/en (net)                            0.0104              0.0000    10.0354 r
+  deserializer_inst/U3/B (sky130_fd_sc_hd__nand2_1)               0.0547    0.0000 *  10.0354 r
+  deserializer_inst/U3/Y (sky130_fd_sc_hd__nand2_1)               0.1041    0.1070    10.1424 f
+  deserializer_inst/N56 (net)                   5       0.0137              0.0000    10.1424 f
+  deserializer_inst/U51/A (sky130_fd_sc_hd__nor2b_1)              0.1041    0.0001 *  10.1425 f
+  deserializer_inst/U51/Y (sky130_fd_sc_hd__nor2b_1)              0.0847    0.1248    10.2673 r
+  deserializer_inst/n49 (net)                   1       0.0028              0.0000    10.2673 r
+  deserializer_inst/out_valid_reg/D (sky130_fd_sc_hd__dfxtp_1)    0.0847    0.0000 *  10.2673 r
+  data arrival time                                                                   10.2673
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  deserializer_inst/out_valid_reg/CLK (sky130_fd_sc_hd__dfxtp_1)            0.0000     0.0000 r
+  library hold time                                                        -0.0456    -0.0456
+  data required time                                                                  -0.0456
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0456
+  data arrival time                                                                  -10.2673
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.3129
+
+
+  Startpoint: sig_frequency[6]
+              (input port clocked by ideal_clock)
+  Endpoint: tf_coeff_radr_reg_7_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  input external delay                                                     10.0000    10.0000 f
+  sig_frequency[6] (in)                                           0.0381    0.0260    10.0260 f
+  sig_frequency[6] (net)                        2       0.0161              0.0000    10.0260 f
+  U275/A1 (sky130_fd_sc_hd__a22o_1)                               0.0381    0.0000 *  10.0260 f
+  U275/X (sky130_fd_sc_hd__a22o_1)                                0.0570    0.2191    10.2451 f
+  N99 (net)                                     1       0.0064              0.0000    10.2451 f
+  tf_coeff_radr_reg_7_/D (sky130_fd_sc_hd__dfxtp_1)               0.0570    0.0001 *  10.2452 f
+  data arrival time                                                                   10.2452
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  tf_coeff_radr_reg_7_/CLK (sky130_fd_sc_hd__dfxtp_1)                       0.0000     0.0000 r
+  library hold time                                                        -0.0687    -0.0687
+  data required time                                                                  -0.0687
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0687
+  data arrival time                                                                  -10.2452
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         10.3139
+
+
+  Startpoint: serializer_inst/out_valid_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: serial_out_valid
+            (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  serializer_inst/out_valid_reg/CLK (sky130_fd_sc_hd__dfxtp_1)    0.0000    0.0000     0.0000 r
+  serializer_inst/out_valid_reg/Q (sky130_fd_sc_hd__dfxtp_1)      0.0808    0.3235     0.3235 f
+  serializer_inst/out_valid (net)               1       0.0156              0.0000     0.3235 f
+  serializer_inst/out_valid (deconv_kernel_estimator_top_level_serializer_FETCH_WIDTH16_0)   0.0000   0.3235 f
+  serial_out_valid (net)                                0.0156              0.0000     0.3235 f
+  serial_out_valid (out)                                          0.0808    0.0004 *   0.3239 f
+  data arrival time                                                                    0.3239
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  output external delay                                                     0.0000     0.0000
+  data required time                                                                   0.0000
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                   0.0000
+  data arrival time                                                                   -0.3239
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3239
+
+
+  Startpoint: serializer_inst/serial_data_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: serial_out (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  serializer_inst/serial_data_reg/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000     0.0000 r
+  serializer_inst/serial_data_reg/Q (sky130_fd_sc_hd__dfxtp_1)    0.0944    0.3349     0.3349 f
+  serializer_inst/serial_data (net)             1       0.0189              0.0000     0.3349 f
+  serializer_inst/serial_data (deconv_kernel_estimator_top_level_serializer_FETCH_WIDTH16_0)   0.0000   0.3349 f
+  serial_out (net)                                      0.0189              0.0000     0.3349 f
+  serial_out (out)                                                0.0944    0.0010 *   0.3360 f
+  data arrival time                                                                    0.3360
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  output external delay                                                     0.0000     0.0000
+  data required time                                                                   0.0000
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                   0.0000
+  data arrival time                                                                   -0.3360
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3360
+
+
+  Startpoint: iir_notch_filter_inst/freq_eval_done_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: freq_eval_done
+            (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/freq_eval_done_reg/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/freq_eval_done_reg/Q (sky130_fd_sc_hd__dfxtp_1)   0.1303   0.3637   0.3637 f
+  iir_notch_filter_inst/freq_eval_done (net)     3      0.0273              0.0000     0.3637 f
+  iir_notch_filter_inst/freq_eval_done (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_0)   0.0000   0.3637 f
+  freq_eval_done (net)                                  0.0273              0.0000     0.3637 f
+  freq_eval_done (out)                                            0.1303    0.0002 *   0.3639 f
+  data arrival time                                                                    0.3639
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  output external delay                                                     0.0000     0.0000
+  data required time                                                                   0.0000
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                   0.0000
+  data arrival time                                                                   -0.3639
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3639
+
+
+  Startpoint: serializer_inst/out_valid_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: serial_out_valid
+            (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  serializer_inst/out_valid_reg/CLK (sky130_fd_sc_hd__dfxtp_1)    0.0000    0.0000     0.0000 r
+  serializer_inst/out_valid_reg/Q (sky130_fd_sc_hd__dfxtp_1)      0.1561    0.3669     0.3669 r
+  serializer_inst/out_valid (net)               1       0.0156              0.0000     0.3669 r
+  serializer_inst/out_valid (deconv_kernel_estimator_top_level_serializer_FETCH_WIDTH16_0)   0.0000   0.3669 r
+  serial_out_valid (net)                                0.0156              0.0000     0.3669 r
+  serial_out_valid (out)                                          0.1561    0.0004 *   0.3673 r
+  data arrival time                                                                    0.3673
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  output external delay                                                     0.0000     0.0000
+  data required time                                                                   0.0000
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                   0.0000
+  data arrival time                                                                   -0.3673
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3673
+
+
+  Startpoint: serializer_inst/serial_data_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: serial_out (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  serializer_inst/serial_data_reg/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000     0.0000 r
+  serializer_inst/serial_data_reg/Q (sky130_fd_sc_hd__dfxtp_1)    0.1856    0.3879     0.3879 r
+  serializer_inst/serial_data (net)             1       0.0189              0.0000     0.3879 r
+  serializer_inst/serial_data (deconv_kernel_estimator_top_level_serializer_FETCH_WIDTH16_0)   0.0000   0.3879 r
+  serial_out (net)                                      0.0189              0.0000     0.3879 r
+  serial_out (out)                                                0.1856    0.0010 *   0.3889 r
+  data arrival time                                                                    0.3889
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  output external delay                                                     0.0000     0.0000
+  data required time                                                                   0.0000
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                   0.0000
+  data arrival time                                                                   -0.3889
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3889
+
+
+  Startpoint: iir_notch_filter_inst/freq_eval_done_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: freq_eval_done
+            (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/freq_eval_done_reg/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/freq_eval_done_reg/Q (sky130_fd_sc_hd__dfxtp_1)   0.2651   0.4442   0.4442 r
+  iir_notch_filter_inst/freq_eval_done (net)     3      0.0276              0.0000     0.4442 r
+  iir_notch_filter_inst/freq_eval_done (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_0)   0.0000   0.4442 r
+  freq_eval_done (net)                                  0.0276              0.0000     0.4442 r
+  freq_eval_done (out)                                            0.2651    0.0002 *   0.4444 r
+  data arrival time                                                                    0.4444
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  output external delay                                                     0.0000     0.0000
+  data required time                                                                   0.0000
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                   0.0000
+  data arrival time                                                                   -0.4444
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.4444
+
+
+  Startpoint: debug_en_d1_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: debug_en_d2_reg
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  debug_en_d1_reg/CLK (sky130_fd_sc_hd__dfxtp_1)                  0.0000    0.0000     0.0000 r
+  debug_en_d1_reg/Q (sky130_fd_sc_hd__dfxtp_1)                    0.0391    0.2804     0.2804 r
+  debug_en_d1 (net)                             1       0.0024              0.0000     0.2804 r
+  debug_en_d2_reg/D (sky130_fd_sc_hd__dfxtp_1)                    0.0391    0.0000 *   0.2804 r
+  data arrival time                                                                    0.2804
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  debug_en_d2_reg/CLK (sky130_fd_sc_hd__dfxtp_1)                            0.0000     0.0000 r
+  library hold time                                                        -0.0360    -0.0360
+  data required time                                                                  -0.0360
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0360
+  data arrival time                                                                   -0.2804
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3164
+
+
+  Startpoint: debug_en_d1_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: debug_en_d2_reg
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  debug_en_d1_reg/CLK (sky130_fd_sc_hd__dfxtp_1)                  0.0000    0.0000     0.0000 r
+  debug_en_d1_reg/Q (sky130_fd_sc_hd__dfxtp_1)                    0.0260    0.2727     0.2727 f
+  debug_en_d1 (net)                             1       0.0024              0.0000     0.2727 f
+  debug_en_d2_reg/D (sky130_fd_sc_hd__dfxtp_1)                    0.0260    0.0000 *   0.2727 f
+  data arrival time                                                                    0.2727
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  debug_en_d2_reg/CLK (sky130_fd_sc_hd__dfxtp_1)                            0.0000     0.0000 r
+  library hold time                                                        -0.0558    -0.0558
+  data required time                                                                  -0.0558
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0558
+  data arrival time                                                                   -0.2727
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3285
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_12_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_12_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_12_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0586   0.2960   0.2960 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_12 (net)     2   0.0047   0.0000   0.2960 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_12_/D (sky130_fd_sc_hd__dfxtp_1)   0.0586   0.0000 *   0.2960 r
+  data arrival time                                                                    0.2960
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0401    -0.0401
+  data required time                                                                  -0.0401
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0401
+  data arrival time                                                                   -0.2960
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3361
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_14_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_14_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_14_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_14_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0602   0.2972   0.2972 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_14 (net)     2   0.0049   0.0000   0.2972 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_14_/D (sky130_fd_sc_hd__dfxtp_1)   0.0602   0.0000 *   0.2972 r
+  data arrival time                                                                    0.2972
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_14_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0404    -0.0404
+  data required time                                                                  -0.0404
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0404
+  data arrival time                                                                   -0.2972
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3376
+
+
+  Startpoint: iir_notch_filter_inst/complex_phases_reg_0__12_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_12_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/complex_phases_reg_0__12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/complex_phases_reg_0__12_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0608   0.2977   0.2977 r
+  iir_notch_filter_inst/complex_phases[12] (net)     2   0.0049             0.0000     0.2977 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/i_phase[12] (deconv_kernel_estimator_top_level_cordic_polar_to_rect_3)   0.0000   0.2977 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/i_phase[12] (net)   0.0049   0.0000   0.2977 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_12_/D (sky130_fd_sc_hd__dfxtp_1)   0.0608   0.0000 *   0.2977 r
+  data arrival time                                                                    0.2977
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0405    -0.0405
+  data required time                                                                  -0.0405
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0405
+  data arrival time                                                                   -0.2977
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3382
+
+
+  Startpoint: iir_notch_filter_inst/complex_phases_reg_0__12_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_12_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/complex_phases_reg_0__12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/complex_phases_reg_0__12_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0608   0.2977   0.2977 r
+  iir_notch_filter_inst/complex_phases[12] (net)     2   0.0049             0.0000     0.2977 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/i_phase[12] (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0)   0.0000   0.2977 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/i_phase[12] (net)   0.0049   0.0000   0.2977 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_12_/D (sky130_fd_sc_hd__dfxtp_1)   0.0608   0.0000 *   0.2977 r
+  data arrival time                                                                    0.2977
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0405    -0.0405
+  data required time                                                                  -0.0405
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0405
+  data arrival time                                                                   -0.2977
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3382
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_2_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_2_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_2_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_2_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0616   0.2983   0.2983 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_2 (net)     2   0.0050   0.0000   0.2983 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_2_/D (sky130_fd_sc_hd__dfxtp_1)   0.0616   0.0000 *   0.2983 r
+  data arrival time                                                                    0.2983
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_2_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0407    -0.0407
+  data required time                                                                  -0.0407
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0407
+  data arrival time                                                                   -0.2983
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3390
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_5_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_5_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_5_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_5_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0618   0.2985   0.2985 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_5 (net)     2   0.0051   0.0000   0.2985 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_5_/D (sky130_fd_sc_hd__dfxtp_1)   0.0618   0.0000 *   0.2985 r
+  data arrival time                                                                    0.2985
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_5_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0408    -0.0408
+  data required time                                                                  -0.0408
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0408
+  data arrival time                                                                   -0.2985
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3392
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_0_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_0_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_0_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_0_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0621   0.2987   0.2987 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_0 (net)     2   0.0051   0.0000   0.2987 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_0_/D (sky130_fd_sc_hd__dfxtp_1)   0.0621   0.0000 *   0.2987 r
+  data arrival time                                                                    0.2987
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_0_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0408    -0.0408
+  data required time                                                                  -0.0408
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0408
+  data arrival time                                                                   -0.2987
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3395
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_9_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_9_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_9_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_9_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0621   0.2987   0.2987 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_9 (net)     2   0.0051   0.0000   0.2987 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_9_/D (sky130_fd_sc_hd__dfxtp_1)   0.0621   0.0000 *   0.2987 r
+  data arrival time                                                                    0.2987
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_9_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0408    -0.0408
+  data required time                                                                  -0.0408
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0408
+  data arrival time                                                                   -0.2987
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3395
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_11_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_11_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_11_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_11_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0628   0.2991   0.2991 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_11 (net)     2   0.0052   0.0000   0.2991 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_11_/D (sky130_fd_sc_hd__dfxtp_1)   0.0628   0.0000 *   0.2991 r
+  data arrival time                                                                    0.2991
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_11_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0409    -0.0409
+  data required time                                                                  -0.0409
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0409
+  data arrival time                                                                   -0.2991
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3401
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_3_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_3_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_3_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_3_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0638   0.2999   0.2999 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_3 (net)     2   0.0053   0.0000   0.2999 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_3_/D (sky130_fd_sc_hd__dfxtp_1)   0.0638   0.0000 *   0.2999 r
+  data arrival time                                                                    0.2999
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_3_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0412    -0.0412
+  data required time                                                                  -0.0412
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0412
+  data arrival time                                                                   -0.2999
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3411
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_12_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_12_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_12_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0347   0.2819   0.2819 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_12 (net)     2   0.0044   0.0000   0.2819 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_12_/D (sky130_fd_sc_hd__dfxtp_1)   0.0347   0.0000 *   0.2819 f
+  data arrival time                                                                    0.2819
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0594    -0.0594
+  data required time                                                                  -0.0594
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0594
+  data arrival time                                                                   -0.2819
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3413
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_4_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_4_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_4_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_4_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0648   0.3007   0.3007 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_4 (net)     2   0.0054   0.0000   0.3007 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_4_/D (sky130_fd_sc_hd__dfxtp_1)   0.0648   0.0000 *   0.3007 r
+  data arrival time                                                                    0.3007
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_4_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0414    -0.0414
+  data required time                                                                  -0.0414
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0414
+  data arrival time                                                                   -0.3007
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3421
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_14_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_14_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_14_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_14_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0360   0.2833   0.2833 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_14 (net)     2   0.0048   0.0000   0.2833 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_14_/D (sky130_fd_sc_hd__dfxtp_1)   0.0360   0.0000 *   0.2833 f
+  data arrival time                                                                    0.2833
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_14_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0599    -0.0599
+  data required time                                                                  -0.0599
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0599
+  data arrival time                                                                   -0.2833
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3432
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_9_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_9_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_9_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_9_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0361   0.2834   0.2834 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_9 (net)     2   0.0048   0.0000   0.2834 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_9_/D (sky130_fd_sc_hd__dfxtp_1)   0.0361   0.0000 *   0.2834 f
+  data arrival time                                                                    0.2834
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_9_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0600    -0.0600
+  data required time                                                                  -0.0600
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0600
+  data arrival time                                                                   -0.2834
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3434
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_0_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_0_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_0_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_0_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0363   0.2836   0.2836 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_0 (net)     2   0.0048   0.0000   0.2836 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_0_/D (sky130_fd_sc_hd__dfxtp_1)   0.0363   0.0000 *   0.2836 f
+  data arrival time                                                                    0.2836
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_0_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0601    -0.0601
+  data required time                                                                  -0.0601
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0601
+  data arrival time                                                                   -0.2836
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3436
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_11_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_11_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_11_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_11_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0364   0.2837   0.2837 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_11 (net)     2   0.0049   0.0000   0.2837 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_11_/D (sky130_fd_sc_hd__dfxtp_1)   0.0364   0.0000 *   0.2837 f
+  data arrival time                                                                    0.2837
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_11_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0601    -0.0601
+  data required time                                                                  -0.0601
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0601
+  data arrival time                                                                   -0.2837
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3438
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_2_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_2_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_2_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_2_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0364   0.2837   0.2837 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_2 (net)     2   0.0049   0.0000   0.2837 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_2_/D (sky130_fd_sc_hd__dfxtp_1)   0.0364   0.0000 *   0.2837 f
+  data arrival time                                                                    0.2837
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_2_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0601    -0.0601
+  data required time                                                                  -0.0601
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0601
+  data arrival time                                                                   -0.2837
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3438
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_5_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_5_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_5_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_5_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0365   0.2838   0.2838 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_5 (net)     2   0.0049   0.0000   0.2838 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_5_/D (sky130_fd_sc_hd__dfxtp_1)   0.0365   0.0000 *   0.2838 f
+  data arrival time                                                                    0.2838
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_5_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0602    -0.0602
+  data required time                                                                  -0.0602
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0602
+  data arrival time                                                                   -0.2838
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3439
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_1_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_1_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_1_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_1_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0668   0.3022   0.3022 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_1 (net)     2   0.0056   0.0000   0.3022 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_1_/D (sky130_fd_sc_hd__dfxtp_1)   0.0668   0.0000 *   0.3022 r
+  data arrival time                                                                    0.3022
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_1_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0418    -0.0418
+  data required time                                                                  -0.0418
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0418
+  data arrival time                                                                   -0.3022
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3440
+
+
+  Startpoint: iir_notch_filter_inst/complex_phases_reg_0__12_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_12_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/complex_phases_reg_0__12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/complex_phases_reg_0__12_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0368   0.2840   0.2840 f
+  iir_notch_filter_inst/complex_phases[12] (net)     2   0.0050             0.0000     0.2840 f
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/i_phase[12] (deconv_kernel_estimator_top_level_cordic_polar_to_rect_3)   0.0000   0.2840 f
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/i_phase[12] (net)   0.0050   0.0000   0.2840 f
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_12_/D (sky130_fd_sc_hd__dfxtp_1)   0.0368   0.0000 *   0.2841 f
+  data arrival time                                                                    0.2841
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0603    -0.0603
+  data required time                                                                  -0.0603
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0603
+  data arrival time                                                                   -0.2841
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3443
+
+
+  Startpoint: iir_notch_filter_inst/complex_phases_reg_0__12_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_12_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/complex_phases_reg_0__12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/complex_phases_reg_0__12_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0368   0.2840   0.2840 f
+  iir_notch_filter_inst/complex_phases[12] (net)     2   0.0050             0.0000     0.2840 f
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/i_phase[12] (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0)   0.0000   0.2840 f
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/i_phase[12] (net)   0.0050   0.0000   0.2840 f
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_12_/D (sky130_fd_sc_hd__dfxtp_1)   0.0368   0.0000 *   0.2841 f
+  data arrival time                                                                    0.2841
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_12_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0603    -0.0603
+  data required time                                                                  -0.0603
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0603
+  data arrival time                                                                   -0.2841
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3443
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_3_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_3_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_3_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_3_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0374   0.2847   0.2847 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_3 (net)     2   0.0051   0.0000   0.2847 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_3_/D (sky130_fd_sc_hd__dfxtp_1)   0.0374   0.0000 *   0.2847 f
+  data arrival time                                                                    0.2847
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_3_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0605    -0.0605
+  data required time                                                                  -0.0605
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0605
+  data arrival time                                                                   -0.2847
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3452
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_4_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_4_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_4_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_4_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0379   0.2852   0.2852 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_4 (net)     2   0.0052   0.0000   0.2852 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_4_/D (sky130_fd_sc_hd__dfxtp_1)   0.0379   0.0000 *   0.2852 f
+  data arrival time                                                                    0.2852
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_4_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0607    -0.0607
+  data required time                                                                  -0.0607
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0607
+  data arrival time                                                                   -0.2852
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3459
+
+
+  Startpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_1_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_1_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_1_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_reg_1_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0388   0.2861   0.2861 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_working_quotient_1 (net)     2   0.0055   0.0000   0.2861 f
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_1_/D (sky130_fd_sc_hd__dfxtp_1)   0.0388   0.0000 *   0.2861 f
+  data arrival time                                                                    0.2861
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/fixed_pt_div_inst/reg_quotient_reg_1_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0611    -0.0611
+  data required time                                                                  -0.0611
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0611
+  data arrival time                                                                   -0.2861
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3472
+
+
+  Startpoint: iir_notch_filter_inst/complex_phases_reg_0__8_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_8_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/complex_phases_reg_0__8_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/complex_phases_reg_0__8_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0706   0.3050   0.3050 r
+  iir_notch_filter_inst/complex_phases[8] (net)     2   0.0061              0.0000     0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/i_phase[8] (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0)   0.0000   0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/i_phase[8] (net)   0.0061   0.0000   0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_8_/D (sky130_fd_sc_hd__dfxtp_1)   0.0706   0.0001 *   0.3051 r
+  data arrival time                                                                    0.3051
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_8_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0426    -0.0426
+  data required time                                                                  -0.0426
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0426
+  data arrival time                                                                   -0.3051
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3477
+
+
+  Startpoint: iir_notch_filter_inst/complex_phases_reg_0__8_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_8_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/complex_phases_reg_0__8_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/complex_phases_reg_0__8_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0706   0.3050   0.3050 r
+  iir_notch_filter_inst/complex_phases[8] (net)     2   0.0061              0.0000     0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/i_phase[8] (deconv_kernel_estimator_top_level_cordic_polar_to_rect_3)   0.0000   0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/i_phase[8] (net)   0.0061   0.0000   0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_8_/D (sky130_fd_sc_hd__dfxtp_1)   0.0706   0.0001 *   0.3051 r
+  data arrival time                                                                    0.3051
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_8_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0426    -0.0426
+  data required time                                                                  -0.0426
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0426
+  data arrival time                                                                   -0.3051
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3477
+
+
+  Startpoint: iir_notch_filter_inst/complex_phases_reg_0__5_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_5_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/complex_phases_reg_0__5_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/complex_phases_reg_0__5_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0706   0.3050   0.3050 r
+  iir_notch_filter_inst/complex_phases[5] (net)     2   0.0061              0.0000     0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/i_phase[5] (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0)   0.0000   0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/i_phase[5] (net)   0.0061   0.0000   0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_5_/D (sky130_fd_sc_hd__dfxtp_1)   0.0706   0.0001 *   0.3051 r
+  data arrival time                                                                    0.3051
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_a/preph_reg_5_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0426    -0.0426
+  data required time                                                                  -0.0426
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0426
+  data arrival time                                                                   -0.3051
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3477
+
+
+  Startpoint: iir_notch_filter_inst/complex_phases_reg_0__5_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_5_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout       Cap     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/complex_phases_reg_0__5_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000   0.0000 r
+  iir_notch_filter_inst/complex_phases_reg_0__5_/Q (sky130_fd_sc_hd__dfxtp_1)   0.0706   0.3050   0.3050 r
+  iir_notch_filter_inst/complex_phases[5] (net)     2   0.0061              0.0000     0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/i_phase[5] (deconv_kernel_estimator_top_level_cordic_polar_to_rect_3)   0.0000   0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/i_phase[5] (net)   0.0061   0.0000   0.3050 r
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_5_/D (sky130_fd_sc_hd__dfxtp_1)   0.0706   0.0001 *   0.3051 r
+  data arrival time                                                                    0.3051
+
+  clock ideal_clock (rise edge)                                             0.0000     0.0000
+  clock network delay (ideal)                                               0.0000     0.0000
+  iir_notch_filter_inst/genblk2_0__cordic_polar_to_rect_inst_b/preph_reg_5_/CLK (sky130_fd_sc_hd__dfxtp_1)   0.0000   0.0000 r
+  library hold time                                                        -0.0426    -0.0426
+  data required time                                                                  -0.0426
+  -------------------------------------------------------------------------------------------------------------------
+  data required time                                                                  -0.0426
+  data arrival time                                                                   -0.3051
+  -------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.3477
+
+
+1

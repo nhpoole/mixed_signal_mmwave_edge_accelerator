@@ -1,0 +1,20 @@
+build_dir: 4-rtl
+build_id: '4'
+commands:
+- cat *.v > outputs/design.v
+- cp outputs/design.v outputs/design.vcs.v
+edges_i: {}
+edges_o:
+  design.v:
+  - f: design.v
+    step: 9-cadence-ncsim-sim
+  - f: design.v
+    step: 11-synopsys-dc-synthesis
+  design.vcs.v:
+  - f: design.vcs.v
+    step: 10-synopsys-vcs-sim
+name: rtl
+outputs:
+- design.v
+- design.vcs.v
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/design/rtl

@@ -1,0 +1,76 @@
+build_dir: 14-cadence-innovus-init
+build_id: '14'
+commands:
+- ln -sf inputs/innovus-foundation-flow
+- innovus -overwrite -64 -nowin -init START.tcl -log logs/run.log
+- cd outputs
+- ln -sf ../checkpoints/design.checkpoint
+debug:
+- innovus -overwrite -64 -init innovus-foundation-flow/custom-scripts/run-debug.tcl
+  -log logs/debug.log
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.sdc:
+  - f: design.sdc
+    step: 11-synopsys-dc-synthesis
+  design.v:
+  - f: design.v
+    step: 11-synopsys-dc-synthesis
+  dont-use-cells.tcl:
+  - f: dont-use-cells.tcl
+    step: 2-cadence-innovus-dont-use-cells
+  floorplan.tcl:
+  - f: floorplan.tcl
+    step: 1-floorplan
+  innovus-foundation-flow:
+  - f: innovus-foundation-flow
+    step: 13-cadence-innovus-flowsetup
+  pin-assignments.tcl:
+  - f: pin-assignments.tcl
+    step: 3-pin-placement
+  sky130_sram_2kbyte_1rw1r_32x512_8.lef:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.lef
+    step: 6-sram
+  sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib
+    step: 6-sram
+edges_o:
+  design.checkpoint:
+  - f: design.checkpoint
+    step: 15-cadence-innovus-power
+inputs:
+- innovus-foundation-flow
+- adk
+- design.v
+- design.sdc
+- sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib
+- sky130_sram_2kbyte_1rw1r_32x512_8.lef
+- floorplan.tcl
+- pin-assignments.tcl
+- dont-use-cells.tcl
+name: cadence-innovus-init
+outputs:
+- design.checkpoint
+parameters:
+  order:
+  - main.tcl
+  - quality-of-life.tcl
+  - floorplan.tcl
+  - add-endcaps-welltaps.tcl
+  - pin-assignments.tcl
+  - make-path-groups.tcl
+  - reporting.tcl
+  - dont-use-cells.tcl
+postconditions:
+- assert File( 'outputs/design.checkpoint' )
+- assert 'Inconsistency detected in the capacitance units' not in File( 'logs/run.log'
+  )
+preconditions:
+- assert Tool( 'innovus' )
+- assert File( 'inputs/innovus-foundation-flow' )
+- assert File( 'inputs/adk' )
+- assert File( 'inputs/design.v' )
+- assert File( 'inputs/design.sdc' )
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/steps/cadence-innovus-init

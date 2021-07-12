@@ -1,0 +1,104 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+Warning: Design has unannotated black box outputs. (PWR-428)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : deconv_kernel_estimator_top_level
+Version: L-2016.03-SP5-5
+Date   : Sat Jul 10 21:01:41 2021
+****************************************
+
+
+Library(s) Used:
+
+    sky130_fd_sc_hd__tt_025C_1v80 (File: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/adk/stdcells.db)
+    sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C_lib (File: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/11-synopsys-dc-synthesis/inputs/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.db)
+
+
+Operating Conditions: tt_025C_1v80   Library: sky130_fd_sc_hd__tt_025C_1v80
+Wire Load Model Mode: Inactive.
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+deconv_kernel_estimator_top_level         0.169   46.339 2.84e+05   46.792 100.0
+  add_x_3 (deconv_kernel_estimator_top_level_deconv_kernel_estimator_top_level_DW01_inc_J4_0_0) 7.02e-06 3.64e-06    0.125 1.08e-05   0.0
+  deconv_kernel_phase_sram_interface_inst (deconv_kernel_estimator_top_level_deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0) 1.03e-02   11.083 7.09e+04   11.164  23.9
+    add_x_1 (deconv_kernel_estimator_top_level_deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_1_0) 5.81e-06 6.40e-06    0.103 1.23e-05   0.0
+    add_x_2 (deconv_kernel_estimator_top_level_deconv_kernel_phase_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_0_0) 2.48e-06 2.59e-06    0.124 5.19e-06   0.0
+    ram_sync_1rw1r_inst (deconv_kernel_estimator_top_level_ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_3) 5.98e-03   11.055 7.09e+04   11.131  23.8
+  deconv_kernel_magnitude_sram_interface_inst (deconv_kernel_estimator_top_level_deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0) 9.25e-03   11.083 7.09e+04   11.163  23.9
+    add_x_1 (deconv_kernel_estimator_top_level_deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_1_0) 7.36e-06 8.00e-06    0.104 1.55e-05   0.0
+    add_x_2 (deconv_kernel_estimator_top_level_deconv_kernel_magnitude_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J2_0_0) 2.58e-06 2.19e-06    0.124 4.90e-06   0.0
+    ram_sync_1rw1r_inst (deconv_kernel_estimator_top_level_ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_1) 4.96e-03   11.054 7.09e+04   11.130  23.8
+  tf_coeff_sram_interface_inst (deconv_kernel_estimator_top_level_tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0) 2.10e-02   11.107 7.09e+04   11.199  23.9
+    add_x_7 (deconv_kernel_estimator_top_level_tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J4_1_0) 2.77e-07 3.03e-07    0.125 7.05e-07   0.0
+    add_x_8 (deconv_kernel_estimator_top_level_tf_coeff_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J4_0_0) 1.32e-06 1.39e-06    0.125 2.83e-06   0.0
+    ram_sync_1rw1r_inst (deconv_kernel_estimator_top_level_ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0) 1.28e-02   11.058 7.09e+04   11.141  23.8
+  phase_vec_sram_interface_inst (deconv_kernel_estimator_top_level_phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_0) 2.08e-02   11.117 7.09e+04   11.209  24.0
+    add_x_7 (deconv_kernel_estimator_top_level_phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J1_1_0)    0.000    0.000    0.125 1.25e-07   0.0
+    add_x_8 (deconv_kernel_estimator_top_level_phase_vec_sram_interface_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_DW01_inc_J1_0_0)    0.000    0.000    0.125 1.25e-07   0.0
+    ram_sync_1rw1r_inst (deconv_kernel_estimator_top_level_ram_sync_1rw1r_DATA_WIDTH16_ADDR_WIDTH12_DEPTH2048_2) 1.23e-02   11.063 7.09e+04   11.147  23.8
+  iir_notch_filter_inst (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_0) 9.10e-02    1.850   32.063    1.941   4.1
+    mult_x_1 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_3_0)    0.000    0.000    1.111 1.11e-06   0.0
+    mult_x_2 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_2_0)    0.000    0.000    1.111 1.11e-06   0.0
+    mult_x_3 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_1_0)    0.000    0.000    1.112 1.11e-06   0.0
+    mult_x_4 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW02_mult_J3_0_0)    0.000    0.000    1.111 1.11e-06   0.0
+    mult_x_5 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW_mult_uns_J3_1_0) 2.08e-05 2.12e-05    1.004 4.30e-05   0.0
+    mult_x_6 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW_mult_uns_J3_0_0) 1.65e-05 1.75e-05    1.003 3.50e-05   0.0
+    add_x_7 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_add_J3_2_0) 6.88e-07 9.34e-07    0.146 1.77e-06   0.0
+    add_x_8 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_add_J3_1_0) 1.09e-06 1.36e-06    0.144 2.60e-06   0.0
+    add_x_9 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_inc_J3_1_0)    0.000    0.000    0.125 1.25e-07   0.0
+    add_x_10 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_inc_J3_0_0)    0.000    0.000    0.125 1.25e-07   0.0
+    sub_x_11 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_sub_J3_1_0)    0.000    0.000    0.108 1.08e-07   0.0
+    sub_x_13 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DW01_sub_J3_0_0) 8.62e-06 5.65e-06    0.179 1.44e-05   0.0
+    DP_OP_78J3_122_9085 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DP_OP_78J3_122_9085_J3_0_0) 1.11e-05 1.21e-05    0.114 2.34e-05   0.0
+    DP_OP_79J3_123_8471 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DP_OP_79J3_123_8471_J3_0_0) 2.74e-06 3.04e-06    0.296 6.07e-06   0.0
+    DP_OP_80J3_124_8471 (deconv_kernel_estimator_top_level_iir_notch_filter_CONFIG_SIZE12_CORDIC_XY_BITS16_CORDIC_PHASE_BITS16_ADC_BITS8_FIXED_Q13_FILTER_ORDER2_LATENCY4_DP_OP_80J3_124_8471_J3_0_0) 3.76e-06 3.80e-06    0.294 7.85e-06   0.0
+    fixed_pt_div_inst (deconv_kernel_estimator_top_level_fixed_pt_div_Q13_N16_0) 8.04e-03 3.95e-02    1.781 4.76e-02   0.1
+      sub_x_1 (deconv_kernel_estimator_top_level_fixed_pt_div_Q13_N16_DW01_dec_J4_0_0) 2.35e-04 1.56e-04 8.17e-02 3.91e-04   0.0
+      gte_x_2 (deconv_kernel_estimator_top_level_fixed_pt_div_Q13_N16_DW_cmp_J4_0_0) 3.92e-05 3.14e-05    0.152 7.07e-05   0.0
+      sub_x_3 (deconv_kernel_estimator_top_level_fixed_pt_div_Q13_N16_DW01_sub_J4_0_0) 5.94e-05 5.26e-05    0.191 1.12e-04   0.0
+    cordic_rect_to_polar_inst_den (deconv_kernel_estimator_top_level_cordic_rect_to_polar_1) 3.33e-03    0.226    3.955    0.229   0.5
+      DP_OP_67J1_123_1532 (deconv_kernel_estimator_top_level_cordic_rect_to_polar_0_DP_OP_67J1_123_1532_J1_0_1) 1.37e-04 1.25e-04    0.469 2.62e-04   0.0
+      DP_OP_70J1_126_5376 (deconv_kernel_estimator_top_level_cordic_rect_to_polar_0_DP_OP_70J1_126_5376_J1_0_1) 2.18e-04 2.04e-04    0.235 4.23e-04   0.0
+      DP_OP_73J1_129_6861 (deconv_kernel_estimator_top_level_cordic_rect_to_polar_0_DP_OP_73J1_129_6861_J1_0_1) 6.47e-05 7.20e-05    0.164 1.37e-04   0.0
+      DP_OP_70J1_122_3253 (deconv_kernel_estimator_top_level_cordic_rect_to_polar_0_DP_OP_70J1_122_3253_J1_0_1) 1.35e-04 1.32e-04    0.279 2.68e-04   0.0
+    cordic_rect_to_polar_inst_num (deconv_kernel_estimator_top_level_cordic_rect_to_polar_0) 3.83e-03    0.226    3.996    0.230   0.5
+      DP_OP_67J1_123_1532 (deconv_kernel_estimator_top_level_cordic_rect_to_polar_0_DP_OP_67J1_123_1532_J1_0_0) 1.60e-04 1.51e-04    0.468 3.11e-04   0.0
+      DP_OP_70J1_126_5376 (deconv_kernel_estimator_top_level_cordic_rect_to_polar_0_DP_OP_70J1_126_5376_J1_0_0) 2.55e-04 2.36e-04    0.235 4.91e-04   0.0
+      DP_OP_73J1_129_6861 (deconv_kernel_estimator_top_level_cordic_rect_to_polar_0_DP_OP_73J1_129_6861_J1_0_0) 7.09e-05 8.09e-05    0.163 1.52e-04   0.0
+      DP_OP_70J1_122_3253 (deconv_kernel_estimator_top_level_cordic_rect_to_polar_0_DP_OP_70J1_122_3253_J1_0_0) 1.36e-04 1.33e-04    0.279 2.69e-04   0.0
+    genblk2_1__cordic_polar_to_rect_inst_b (deconv_kernel_estimator_top_level_cordic_polar_to_rect_1) 1.03e-03    0.224    2.862    0.225   0.5
+      DP_OP_83J2_126_2151 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_1) 1.14e-04 1.12e-04    0.203 2.26e-04   0.0
+      DP_OP_86J2_129_110 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_1) 1.02e-04 1.02e-04    0.342 2.04e-04   0.0
+      DP_OP_89J2_132_2642 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_1) 2.75e-06 3.53e-06 9.85e-02 6.38e-06   0.0
+    genblk2_1__cordic_polar_to_rect_inst_a (deconv_kernel_estimator_top_level_cordic_polar_to_rect_2) 1.04e-03    0.224    2.836    0.225   0.5
+      DP_OP_83J2_126_2151 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_2) 1.13e-04 1.13e-04    0.203 2.26e-04   0.0
+      DP_OP_86J2_129_110 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_2) 1.11e-04 1.08e-04    0.342 2.19e-04   0.0
+      DP_OP_89J2_132_2642 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_2) 2.63e-06 3.33e-06 9.85e-02 6.06e-06   0.0
+    genblk2_0__cordic_polar_to_rect_inst_b (deconv_kernel_estimator_top_level_cordic_polar_to_rect_3) 1.10e-03    0.224    2.896    0.225   0.5
+      DP_OP_83J2_126_2151 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_3) 1.16e-04 1.19e-04    0.203 2.35e-04   0.0
+      DP_OP_86J2_129_110 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_3) 1.10e-04 1.10e-04    0.342 2.21e-04   0.0
+      DP_OP_89J2_132_2642 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_3) 2.79e-06 3.47e-06 9.83e-02 6.35e-06   0.0
+    genblk2_0__cordic_polar_to_rect_inst_a (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0) 1.06e-03    0.224    2.896    0.225   0.5
+      DP_OP_83J2_126_2151 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_83J2_126_2151_J2_0_0) 1.17e-04 1.18e-04    0.203 2.35e-04   0.0
+      DP_OP_86J2_129_110 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_86J2_129_110_J2_0_0) 1.07e-04 1.08e-04    0.342 2.15e-04   0.0
+      DP_OP_89J2_132_2642 (deconv_kernel_estimator_top_level_cordic_polar_to_rect_0_DP_OP_89J2_132_2642_J2_0_0) 2.99e-06 3.58e-06 9.83e-02 6.66e-06   0.0
+  serializer_inst (deconv_kernel_estimator_top_level_serializer_FETCH_WIDTH16_0) 4.90e-03 1.84e-02    0.129 2.33e-02   0.0
+  deserializer_inst (deconv_kernel_estimator_top_level_deserializer_FETCH_WIDTH16_0) 4.15e-03 2.02e-02    0.347 2.44e-02   0.1
+1

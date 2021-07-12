@@ -1,0 +1,75 @@
+=================================================
+<FF>      Foundation Flow Code Generator
+<FF>        Version : 19.11-s001_1
+=================================================
+<FF> FLOW MODE == flat
+<FF> VERBOSE == true
+<FF> GENERATE MAKEFILE == false
+<FF> SETUP PATH == .
+<FF> OUTPUT DIRECTORY == innovus-foundation-flow
+<FF> LOADING CONFIGURATION FILES:
+<FF>    setup_tcl -> ./setup.tcl
+<FF> Seeding variables ...
+-------------------------------------------------
+<FF> Generating scripts for deconv_kernel_estimator_top_level
+-------------------------------------------------
+<FF> Seeding variables ...
+<FF> Generating step init
+<FF> Generating step place
+<FF> Generating step cts
+<FF> Generating step postcts_hold
+<FF> Generating step route
+<FF> Generating step postroute
+<FF> Generating step signoff
+<FF> Generating step debug
+-------------------------------------------------
+<FF> Generating step lec
+-------------------------------------------------
+
+                Plug-ins Defined
+               ------------------
+               > always_source_tcl
+
+                 Plug-ins Found
+               ------------------
+               > always_source_tcl
+
+                Tagged Commands
+               ------------------
+               > init,save_design,replace_tcl
+               > place,restore_design,skip
+               > place,save_design,replace_tcl
+               > cts,set_ccopt_mode,skip
+               > cts,restore_design,skip
+               > cts,save_design,replace_tcl
+               > postcts_hold,restore_design,skip
+               > postcts_hold,save_design,replace_tcl
+               > route,check_place,skip
+               > route,time_design,skip
+               > route,restore_design,skip
+               > route,save_design,replace_tcl
+               > postroute,restore_design,skip
+               > postroute,save_design,replace_tcl
+               > signoff,stream_out,replace_tcl
+               > signoff,summary_report,replace_tcl
+               > signoff,verify_metal_density,skip
+               > signoff,restore_design,skip
+               > signoff,save_design,replace_tcl
+
+                  Warning Summary
+                  ---------------
+    (1) Either fp_file, def_files, fp_tcl_file, fp_tcl_proc should be defined
+    (2) Recommended variables dont_use_list and dont_use_file not defined
+    (3) No scale factors set for rc corner (typical)
+    (4) No derating factors set for delay corner (delay_default)
+
+
+-------------------------------------------------
+<FF> CODE GENERATION COMPLETE
+<FF> ... VERSION  -> 18.1.0
+<FF> ... RUN DIRECTORY  -> /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/13-cadence-innovus-flowsetup
+<FF> ... SCRIPTS  -> innovus-foundation-flow
+<FF> ... PLUGINS  -> 1 defined, 1 found
+<FF> ... REPORT   -> innovus-foundation-flow/check.rpt
+-------------------------------------------------
+<FF> Creating innovus-foundation-flow/procs.tcl

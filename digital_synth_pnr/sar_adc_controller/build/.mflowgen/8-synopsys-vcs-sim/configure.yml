@@ -1,0 +1,35 @@
+build_dir: 8-synopsys-vcs-sim
+build_id: '8'
+commands:
+- ./run.sh
+edges_i:
+  design.args:
+  - f: design.args
+    step: 6-testbench
+  design.vcs.v:
+  - f: design.vcs.v
+    step: 4-rtl
+  testbench.sv:
+  - f: testbench.sv
+    step: 6-testbench
+edges_o:
+  run.saif:
+  - f: run.saif
+    step: 9-synopsys-dc-synthesis
+  - f: run.saif
+    step: 22-synopsys-ptpx-rtl
+inputs:
+- adk
+- design.vcs.v
+- testbench.sv
+- design.sdf
+- design.args
+name: synopsys-vcs-sim
+outputs:
+- design.vpd
+- run.saif
+parameters:
+  clock_period: 20.0
+  testbench_name: sar_adc_controller_tb
+  waveform: true
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/design/synopsys-vcs-sim

@@ -1,0 +1,13 @@
+build_dir: 7-synopsys-dc-compile
+build_id: '7'
+commands:
+- 'true'
+edges_i: {}
+edges_o:
+  compile.tcl:
+  - f: compile.tcl
+    step: 11-synopsys-dc-synthesis
+name: synopsys-dc-compile
+outputs:
+- compile.tcl
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator/design/synopsys-dc-compile

@@ -1,0 +1,38 @@
+build_dir: 23-gl-sim
+build_id: '23'
+commands:
+- ./run.sh
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.args:
+  - f: design.args.gls
+    step: 6-testbench
+  design.sdf:
+  - f: design.sdf
+    step: 21-synopsys-pt-timing-signoff
+  design.vcs.v:
+  - f: design.vcs.pg.v
+    step: 18-cadence-innovus-signoff
+  testbench.sv:
+  - f: testbench.sv
+    step: 6-testbench
+edges_o:
+  design.vpd:
+  - f: run.vcd
+    step: 28-gen-saif-gl
+inputs:
+- adk
+- design.vcs.v
+- testbench.sv
+- design.sdf
+- design.args
+name: gl-sim
+outputs:
+- design.vpd
+parameters:
+  clock_period: 20.0
+  testbench_name: sar_adc_controller_tb
+  waveform: true
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/design/synopsys-vcs-sim

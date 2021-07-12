@@ -1,0 +1,586 @@
+[07/11 20:05:11      0s] 
+[07/11 20:05:11      0s] Cadence Innovus(TM) Implementation System.
+[07/11 20:05:11      0s] Copyright 2020 Cadence Design Systems, Inc. All rights reserved worldwide.
+[07/11 20:05:11      0s] 
+[07/11 20:05:11      0s] Version:	v20.13-s083_1, built Tue Jan 19 16:51:46 PST 2021
+[07/11 20:05:11      0s] Options:	-overwrite -init innovus-foundation-flow/custom-scripts/run-debug.tcl -log logs/debug.log 
+[07/11 20:05:11      0s] Date:		Sun Jul 11 20:05:11 2021
+[07/11 20:05:11      0s] Host:		caddy13 (x86_64 w/Linux 3.10.0-1160.31.1.el7.x86_64) (8cores*16cpus*Common KVM processor 16384KB)
+[07/11 20:05:11      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[07/11 20:05:11      0s] 
+[07/11 20:05:11      0s] License:
+[07/11 20:05:11      0s] 		invs	Innovus Implementation System	20.1	checkout succeeded
+[07/11 20:05:11      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[07/11 20:06:08     36s] @(#)CDS: Innovus v20.13-s083_1 (64bit) 01/19/2021 16:51 (Linux 2.6.32-431.11.2.el6.x86_64)
+[07/11 20:06:08     36s] @(#)CDS: NanoRoute 20.13-s083_1 NR201221-0721/20_13-UB (database version 18.20.538) {superthreading v2.13}
+[07/11 20:06:08     36s] @(#)CDS: AAE 20.13-s024 (64bit) 01/19/2021 (Linux 2.6.32-431.11.2.el6.x86_64)
+[07/11 20:06:08     36s] @(#)CDS: CTE 20.13-s042_1 () Jan 14 2021 08:49:42 ( )
+[07/11 20:06:08     36s] @(#)CDS: SYNTECH 20.13-s015_1 () Jan  6 2021 07:44:41 ( )
+[07/11 20:06:08     36s] @(#)CDS: CPE v20.13-s092
+[07/11 20:06:08     36s] @(#)CDS: IQuantus/TQuantus 20.1.1-s453 (64bit) Fri Nov 20 21:16:44 PST 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[07/11 20:06:08     36s] @(#)CDS: OA 22.60-p048 Wed Nov 11 13:31:42 2020
+[07/11 20:06:08     36s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[07/11 20:06:08     36s] @(#)CDS: RCDB 11.15.0
+[07/11 20:06:08     36s] @(#)CDS: STYLUS 20.10-p024_1 (12/01/2020 07:22 PST)
+[07/11 20:06:08     36s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_17036_caddy13_nhpoole_yP4H17.
+
+[07/11 20:06:08     36s] The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+[07/11 20:06:14     40s] 
+[07/11 20:06:14     40s] **INFO:  MMMC transition support version v31-84 
+[07/11 20:06:14     40s] 
+[07/11 20:06:14     40s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[07/11 20:06:14     40s] <CMD> suppressMessage ENCEXT-2799
+[07/11 20:06:14     41s] Sourcing file "innovus-foundation-flow/custom-scripts/run-debug.tcl" ...
+[07/11 20:06:14     41s] <CMD> is_common_ui_mode
+[07/11 20:06:14     41s] <CMD> restoreDesign /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat deconv_kernel_estimator_top_level
+[07/11 20:06:14     41s] #% Begin load design ... (date=07/11 20:06:14, mem=634.9M)
+[07/11 20:06:14     41s] Set Default Input Pin Transition as 0.1 ps.
+[07/11 20:06:15     41s] Loading design 'deconv_kernel_estimator_top_level' saved by 'Innovus' '20.13-s083_1' on 'Sun Jul 11 20:01:19 2021'.
+[07/11 20:06:15     41s] % Begin Load MMMC data ... (date=07/11 20:06:15, mem=636.8M)
+[07/11 20:06:15     41s] % End Load MMMC data ... (date=07/11 20:06:15, total cpu=0:00:00.1, real=0:00:00.0, peak res=637.6M, current mem=637.6M)
+[07/11 20:06:15     41s] 
+[07/11 20:06:15     41s] Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/libs/lef/rtk-tech.lef ...
+[07/11 20:06:15     41s] 
+[07/11 20:06:15     41s] Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/libs/lef/stdcells.lef ...
+[07/11 20:06:15     41s] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+[07/11 20:06:15     41s] The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/libs/lef/stdcells.lef at line 18.
+[07/11 20:06:15     41s] Set DBUPerIGU to M1 pitch 460.
+[07/11 20:06:15     42s] 
+[07/11 20:06:15     42s] Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/libs/lef/sky130_sram_2kbyte_1rw1r_32x512_8.lef ...
+[07/11 20:06:15     42s] **WARN: (IMPLF-246):	The 'UNITS' attribute is only allowed to be set in the first LEF file (technology LEF). The attribute was found in this LEF file, and will be ignored.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[0]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[1]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[2]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[3]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[4]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[5]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[6]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[7]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[8]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[9]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[10]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[11]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[12]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[13]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[14]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[15]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[16]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[17]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[18]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-200):	Pin 'din0[19]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-200' for more detail.
+[07/11 20:06:15     42s] **WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+[07/11 20:06:15     42s] To increase the message display limit, refer to the product command reference manual.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[0]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[1]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[2]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[3]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[4]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[5]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[6]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[7]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[8]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[9]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[10]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[11]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[12]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[13]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[14]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[15]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[16]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[17]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[18]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (IMPLF-201):	Pin 'dout0[19]' in macro 'sky130_sram_2kbyte_1rw1r_32x512_8' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[07/11 20:06:15     42s] Type 'man IMPLF-201' for more detail.
+[07/11 20:06:15     42s] **WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+[07/11 20:06:15     42s] To increase the message display limit, refer to the product command reference manual.
+[07/11 20:06:15     42s] 
+[07/11 20:06:15     42s] viaInitial starts at Sun Jul 11 20:06:15 2021
+viaInitial ends at Sun Jul 11 20:06:15 2021
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[07/11 20:06:15     42s] Loading view definition file from /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/viewDefinition.tcl
+[07/11 20:06:15     42s] Reading libs_typical timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib' ...
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells.lib)
+[07/11 20:06:16     43s] Read 427 cells in library 'sky130_fd_sc_hd__tt_025C_1v80' 
+[07/11 20:06:16     43s] Reading libs_typical timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/6-sram/outputs/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib' ...
+[07/11 20:06:16     43s] Read 1 cells in library 'sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C_lib' 
+[07/11 20:06:16     43s] Reading libs_bc timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib' ...
+[07/11 20:06:17     44s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+[07/11 20:06:17     44s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+[07/11 20:06:17     44s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+[07/11 20:06:17     44s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+[07/11 20:06:17     44s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+[07/11 20:06:17     44s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+[07/11 20:06:17     44s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+[07/11 20:06:17     44s] **WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+[07/11 20:06:17     44s] Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[07/11 20:06:17     44s] Read 427 cells in library 'sky130_fd_sc_hd__ff_100C_1v95' 
+[07/11 20:06:17     44s] Starting consistency checks on late and early library sets of delay corner 'delay_default'
+[07/11 20:06:17     44s] late library set: libs_typical
+[07/11 20:06:17     44s] early library set: libs_bc
+[07/11 20:06:17     44s] Completed consistency checks. Status: Successful
+[07/11 20:06:17     44s] Ending "PreSetAnalysisView" (total cpu=0:00:02.2, real=0:00:02.0, peak res=721.6M, current mem=660.9M)
+[07/11 20:06:17     44s] *** End library_loading (cpu=0.04min, real=0.03min, mem=15.9M, fe_cpu=0.74min, fe_real=1.10min, fe_mem=735.4M) ***
+[07/11 20:06:17     44s] % Begin Load netlist data ... (date=07/11 20:06:17, mem=660.9M)
+[07/11 20:06:17     44s] *** Begin netlist parsing (mem=735.4M) ***
+[07/11 20:06:18     44s] Created 428 new cells from 3 timing libraries.
+[07/11 20:06:18     44s] Reading netlist ...
+[07/11 20:06:18     44s] Backslashed names will retain backslash and a trailing blank character.
+[07/11 20:06:18     44s] Reading verilogBinary netlist '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/vbin/deconv_kernel_estimator_top_level.v.bin'
+[07/11 20:06:18     44s] Reading binary database version 2 in 1-threaded mode
+[07/11 20:06:18     44s] 
+[07/11 20:06:18     44s] *** Memory Usage v#2 (Current mem = 748.418M, initial mem = 267.602M) ***
+[07/11 20:06:18     44s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:01.0, mem=748.4M) ***
+[07/11 20:06:18     44s] % End Load netlist data ... (date=07/11 20:06:18, total cpu=0:00:00.1, real=0:00:01.0, peak res=672.5M, current mem=672.5M)
+[07/11 20:06:18     44s] Set top cell to deconv_kernel_estimator_top_level.
+[07/11 20:06:18     44s] Starting consistency checks on late and early library sets of delay corner 'delay_default'
+[07/11 20:06:18     44s] late library set: libs_typical
+[07/11 20:06:18     44s] early library set: libs_bc
+[07/11 20:06:18     44s] Completed consistency checks. Status: Successful
+[07/11 20:06:18     44s] Starting consistency checks on late and early library sets of delay corner 'delay_default'
+[07/11 20:06:18     44s] late library set: libs_typical
+[07/11 20:06:18     44s] early library set: libs_bc
+[07/11 20:06:18     44s] Completed consistency checks. Status: Successful
+[07/11 20:06:18     44s] Hooked 855 DB cells to tlib cells.
+[07/11 20:06:18     44s] Ending "BindLib:" (total cpu=0:00:00.2, real=0:00:00.0, peak res=688.4M, current mem=688.4M)
+[07/11 20:06:18     44s] Starting recursive module instantiation check.
+[07/11 20:06:18     44s] No recursion found.
+[07/11 20:06:18     44s] Building hierarchical netlist for Cell deconv_kernel_estimator_top_level ...
+[07/11 20:06:18     44s] *** Netlist is unique.
+[07/11 20:06:18     44s] Setting Std. cell height to 2720 DBU (smallest netlist inst).
+[07/11 20:06:18     44s] ** info: there are 960 modules.
+[07/11 20:06:18     44s] ** info: there are 9889 stdCell insts.
+[07/11 20:06:18     44s] ** info: there are 16 macros.
+[07/11 20:06:18     44s] 
+[07/11 20:06:18     44s] *** Memory Usage v#2 (Current mem = 793.391M, initial mem = 267.602M) ***
+[07/11 20:06:18     44s] *info: set bottom ioPad orient R0
+[07/11 20:06:18     44s] **WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[07/11 20:06:18     44s] Type 'man IMPFP-3961' for more detail.
+[07/11 20:06:18     45s] Adjust met3 preferred direction offset from 0.34 to 0.17.
+[07/11 20:06:18     45s] Adjust met4 preferred direction offset from 0.46 to 0.23.
+[07/11 20:06:18     45s] Adjust met5 preferred direction offset from 1.7 to 0.17.
+[07/11 20:06:18     45s] Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+[07/11 20:06:18     45s] Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+[07/11 20:06:18     45s] Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+[07/11 20:06:18     45s] Set Default Net Delay as 1000 ps.
+[07/11 20:06:18     45s] Set Default Net Load as 0.5 pF. 
+[07/11 20:06:18     45s] Set Default Input Pin Transition as 0.1 ps.
+[07/11 20:06:18     45s] Loading preference file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/gui.pref.tcl ...
+[07/11 20:06:19     45s] ##  Process: 130           (User Set)               
+[07/11 20:06:19     45s] ##     Node: (not set)                           
+[07/11 20:06:19     45s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[07/11 20:06:19     45s] Applying the recommended capacitance filtering threshold values for 130nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.4.
+[07/11 20:06:19     45s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[07/11 20:06:19     45s] 	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+[07/11 20:06:19     45s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+[07/11 20:06:19     45s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+[07/11 20:06:19     45s] **WARN: (IMPOPT-3602):	The specified path group name Reg2Reg is not defined.
+[07/11 20:06:19     45s] Type 'man IMPOPT-3602' for more detail.
+[07/11 20:06:19     45s] Effort level <high> specified for Reg2Reg path_group
+[07/11 20:06:19     45s] **WARN: (IMPOPT-3602):	The specified path group name Reg2Out is not defined.
+[07/11 20:06:19     45s] Type 'man IMPOPT-3602' for more detail.
+[07/11 20:06:19     45s] Effort level <low> specified for Reg2Out path_group
+[07/11 20:06:19     45s] **WARN: (IMPOPT-3602):	The specified path group name Reg2ClkGate is not defined.
+[07/11 20:06:19     45s] Type 'man IMPOPT-3602' for more detail.
+[07/11 20:06:19     45s] Effort level <low> specified for Reg2ClkGate path_group
+[07/11 20:06:19     45s] **WARN: (IMPOPT-3602):	The specified path group name Macro2All is not defined.
+[07/11 20:06:19     45s] Type 'man IMPOPT-3602' for more detail.
+[07/11 20:06:19     45s] Effort level <high> specified for Macro2All path_group
+[07/11 20:06:19     45s] **WARN: (IMPOPT-3602):	The specified path group name In2Reg is not defined.
+[07/11 20:06:19     45s] Type 'man IMPOPT-3602' for more detail.
+[07/11 20:06:19     45s] Effort level <low> specified for In2Reg path_group
+[07/11 20:06:19     45s] **WARN: (IMPOPT-3602):	The specified path group name In2Out is not defined.
+[07/11 20:06:19     45s] Type 'man IMPOPT-3602' for more detail.
+[07/11 20:06:19     45s] Effort level <low> specified for In2Out path_group
+[07/11 20:06:19     45s] **WARN: (IMPOPT-3602):	The specified path group name All2Macro is not defined.
+[07/11 20:06:19     45s] Type 'man IMPOPT-3602' for more detail.
+[07/11 20:06:19     45s] Effort level <high> specified for All2Macro path_group
+[07/11 20:06:19     45s] #WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+[07/11 20:06:19     45s] Setting -ignore_DRC to 0. ViaGen will do DRC check while creating vias.
+[07/11 20:06:19     45s] Setting -viarule_preference to default order. ViaGen will consider via rule priority based on the order of appearance in the technology file.
+[07/11 20:06:19     45s] **WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+[07/11 20:06:19     45s] addRing command will ignore shorts while creating rings.
+[07/11 20:06:19     45s] addRing command will disallow rings to go over rows.
+[07/11 20:06:19     45s] addRing command will consider rows while creating rings.
+[07/11 20:06:19     45s] The ring targets are set to core/block ring wires.
+[07/11 20:06:19     45s] Stripe will break at block ring.
+[07/11 20:06:19     45s] **WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+[07/11 20:06:19     45s] Change floorplan default-technical-site to 'unithd'.
+[07/11 20:06:19     45s] Extraction setup Delayed 
+[07/11 20:06:19     45s] *Info: initialize multi-corner CTS.
+[07/11 20:06:19     45s] Ending "SetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=921.2M, current mem=719.4M)
+[07/11 20:06:19     45s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[07/11 20:06:19     45s] 
+[07/11 20:06:19     45s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[07/11 20:06:19     45s] Summary for sequential cells identification: 
+[07/11 20:06:19     45s]   Identified SBFF number: 45
+[07/11 20:06:19     45s]   Identified MBFF number: 0
+[07/11 20:06:19     45s]   Identified SB Latch number: 0
+[07/11 20:06:19     45s]   Identified MB Latch number: 0
+[07/11 20:06:19     45s]   Not identified SBFF number: 0
+[07/11 20:06:19     45s]   Not identified MBFF number: 0
+[07/11 20:06:19     45s]   Not identified SB Latch number: 0
+[07/11 20:06:19     45s]   Not identified MB Latch number: 0
+[07/11 20:06:19     45s]   Number of sequential cells which are not FFs: 23
+[07/11 20:06:19     45s] Total number of combinational cells: 328
+[07/11 20:06:19     45s] Total number of sequential cells: 68
+[07/11 20:06:19     45s] Total number of tristate cells: 13
+[07/11 20:06:19     45s] Total number of level shifter cells: 7
+[07/11 20:06:19     45s] Total number of power gating cells: 0
+[07/11 20:06:19     45s] Total number of isolation cells: 11
+[07/11 20:06:19     45s] Total number of power switch cells: 0
+[07/11 20:06:19     45s] Total number of pulse generator cells: 0
+[07/11 20:06:19     45s] Total number of always on buffers: 0
+[07/11 20:06:19     45s] Total number of retention cells: 0
+[07/11 20:06:19     45s] List of usable buffers: sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_12 sky130_fd_sc_hd__buf_16 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_6 sky130_fd_sc_hd__buf_8 sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_16 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8 sky130_fd_sc_hd__dlymetal6s2s_1 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__probe_p_8
+[07/11 20:06:19     45s] Total number of usable buffers: 15
+[07/11 20:06:19     45s] List of unusable buffers:
+[07/11 20:06:19     45s] Total number of unusable buffers: 0
+[07/11 20:06:19     45s] List of usable inverters: sky130_fd_sc_hd__bufinv_16 sky130_fd_sc_hd__clkinv_1 sky130_fd_sc_hd__bufinv_8 sky130_fd_sc_hd__clkinv_16 sky130_fd_sc_hd__clkinv_2 sky130_fd_sc_hd__clkinv_4 sky130_fd_sc_hd__clkinv_8 sky130_fd_sc_hd__inv_1 sky130_fd_sc_hd__clkinvlp_2 sky130_fd_sc_hd__clkinvlp_4 sky130_fd_sc_hd__inv_12 sky130_fd_sc_hd__inv_16 sky130_fd_sc_hd__inv_2 sky130_fd_sc_hd__inv_4 sky130_fd_sc_hd__inv_6 sky130_fd_sc_hd__inv_8
+[07/11 20:06:19     45s] Total number of usable inverters: 16
+[07/11 20:06:19     45s] List of unusable inverters:
+[07/11 20:06:19     45s] Total number of unusable inverters: 0
+[07/11 20:06:19     45s] List of identified usable delay cells: sky130_fd_sc_hd__bufbuf_16 sky130_fd_sc_hd__bufbuf_8 sky130_fd_sc_hd__clkdlybuf4s15_1 sky130_fd_sc_hd__clkdlybuf4s15_2 sky130_fd_sc_hd__clkdlybuf4s18_1 sky130_fd_sc_hd__clkdlybuf4s18_2 sky130_fd_sc_hd__clkdlybuf4s25_1 sky130_fd_sc_hd__clkdlybuf4s50_1 sky130_fd_sc_hd__clkdlybuf4s25_2 sky130_fd_sc_hd__clkdlybuf4s50_2 sky130_fd_sc_hd__dlygate4sd2_1 sky130_fd_sc_hd__dlygate4sd1_1 sky130_fd_sc_hd__dlygate4sd3_1 sky130_fd_sc_hd__dlymetal6s6s_1 sky130_fd_sc_hd__dlymetal6s4s_1
+[07/11 20:06:19     45s] Total number of identified usable delay cells: 15
+[07/11 20:06:19     45s] List of identified unusable delay cells:
+[07/11 20:06:19     45s] Total number of identified unusable delay cells: 0
+[07/11 20:06:19     45s] 
+[07/11 20:06:19     45s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[07/11 20:06:19     45s] 
+[07/11 20:06:19     45s] TimeStamp Deleting Cell Server Begin ...
+[07/11 20:06:19     45s] 
+[07/11 20:06:19     45s] TimeStamp Deleting Cell Server End ...
+[07/11 20:06:19     45s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=936.4M, current mem=930.5M)
+[07/11 20:06:19     45s] 
+[07/11 20:06:19     45s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[07/11 20:06:19     45s] Summary for sequential cells identification: 
+[07/11 20:06:19     45s]   Identified SBFF number: 45
+[07/11 20:06:19     45s]   Identified MBFF number: 0
+[07/11 20:06:19     45s]   Identified SB Latch number: 0
+[07/11 20:06:19     45s]   Identified MB Latch number: 0
+[07/11 20:06:19     45s]   Not identified SBFF number: 0
+[07/11 20:06:19     45s]   Not identified MBFF number: 0
+[07/11 20:06:19     45s]   Not identified SB Latch number: 0
+[07/11 20:06:19     45s]   Not identified MB Latch number: 0
+[07/11 20:06:19     45s]   Number of sequential cells which are not FFs: 23
+[07/11 20:06:19     45s]  Visiting view : analysis_default
+[07/11 20:06:19     45s]    : PowerDomain = none : Weighted F : unweighted  = 39.70 (1.000) with rcCorner = 0
+[07/11 20:06:19     45s]    : PowerDomain = none : Weighted F : unweighted  = 31.10 (1.000) with rcCorner = -1
+[07/11 20:06:19     45s]  Visiting view : analysis_default
+[07/11 20:06:19     45s]    : PowerDomain = none : Weighted F : unweighted  = 39.70 (1.000) with rcCorner = 0
+[07/11 20:06:19     45s]    : PowerDomain = none : Weighted F : unweighted  = 31.10 (1.000) with rcCorner = -1
+[07/11 20:06:19     45s] 
+[07/11 20:06:19     45s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[07/11 20:06:20     45s] Reading floorplan file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.fp.gz (mem = 1014.0M).
+[07/11 20:06:20     46s] % Begin Load floorplan data ... (date=07/11 20:06:20, mem=931.0M)
+[07/11 20:06:21     46s] *info: reset 13249 existing net BottomPreferredLayer and AvoidDetour
+[07/11 20:06:21     46s] Deleting old partition specification.
+[07/11 20:06:22     46s] Set FPlanBox to (0 0 2568640 2564960)
+[07/11 20:06:22     46s] **WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[07/11 20:06:22     46s] Type 'man IMPFP-3961' for more detail.
+[07/11 20:06:22     46s] Adjust met3 preferred direction offset from 0.34 to 0.17.
+[07/11 20:06:22     46s] Adjust met4 preferred direction offset from 0.46 to 0.23.
+[07/11 20:06:22     46s] Adjust met5 preferred direction offset from 1.7 to 0.17.
+[07/11 20:06:22     46s] Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+[07/11 20:06:22     46s] Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+[07/11 20:06:22     46s] Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+[07/11 20:06:22     46s]  ... processed partition successfully.
+[07/11 20:06:22     46s] Reading binary special route file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.fp.spr.gz (Created by Innovus v20.13-s083_1 on Sun Jul 11 20:01:14 2021, version: 1)
+[07/11 20:06:22     46s] Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=935.6M, current mem=935.6M)
+[07/11 20:06:22     46s] Extracting standard cell pins and blockage ...... 
+[07/11 20:06:22     46s] Pin and blockage extraction finished
+[07/11 20:06:22     46s] % End Load floorplan data ... (date=07/11 20:06:22, total cpu=0:00:00.1, real=0:00:02.0, peak res=937.2M, current mem=936.5M)
+[07/11 20:06:22     46s] Reading congestion map file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.route.congmap.gz ...
+[07/11 20:06:22     46s] % Begin Load SymbolTable ... (date=07/11 20:06:22, mem=936.8M)
+[07/11 20:06:23     46s] % End Load SymbolTable ... (date=07/11 20:06:23, total cpu=0:00:00.1, real=0:00:01.0, peak res=940.3M, current mem=940.3M)
+[07/11 20:06:23     46s] Loading place ...
+[07/11 20:06:23     46s] % Begin Load placement data ... (date=07/11 20:06:23, mem=940.3M)
+[07/11 20:06:23     46s] Reading placement file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.place.gz.
+[07/11 20:06:23     46s] ** Reading stdCellPlacement_binary (Created by Innovus v20.13-s083_1 on Sun Jul 11 20:01:14 2021, version# 2) ...
+[07/11 20:06:23     46s] Read Views for adaptive view pruning ...
+[07/11 20:06:23     46s] Read 0 views from Binary DB for adaptive view pruning
+[07/11 20:06:23     46s] *** Checked 6 GNC rules.
+[07/11 20:06:23     46s] *** applyConnectGlobalNets disabled.
+[07/11 20:06:23     46s] *** Completed restorePlace (cpu=0:00:00.2 real=0:00:00.0 mem=1031.6M) ***
+[07/11 20:06:23     46s] Total net length = 5.054e+03 (2.509e+03 2.546e+03) (ext = 4.919e+03)
+[07/11 20:06:23     46s] % End Load placement data ... (date=07/11 20:06:23, total cpu=0:00:00.2, real=0:00:00.0, peak res=952.3M, current mem=949.9M)
+[07/11 20:06:24     46s] Reading PG file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.pg.gz, version#2, (Created by Innovus v20.13-s083_1 on       Sun Jul 11 20:01:14 2021)
+[07/11 20:06:24     46s] *** Completed restorePGFile (cpu=0:00:00.0 real=0:00:01.0 mem=1029.6M) ***
+[07/11 20:06:24     46s] % Begin Load routing data ... (date=07/11 20:06:24, mem=950.9M)
+[07/11 20:06:24     46s] Reading routing file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.route.gz.
+[07/11 20:06:25     46s] Reading Innovus routing data (Created by Innovus v20.13-s083_1 on Sun Jul 11 20:01:14 2021 Format: 20.1) ...
+[07/11 20:06:25     46s] *** Total 12499 nets are successfully restored.
+[07/11 20:06:25     46s] *** Completed restoreRoute (cpu=0:00:00.0 real=0:00:01.0 mem=1034.6M) ***
+[07/11 20:06:25     46s] % End Load routing data ... (date=07/11 20:06:25, total cpu=0:00:00.1, real=0:00:01.0, peak res=956.3M, current mem=955.3M)
+[07/11 20:06:25     46s] Loading Drc markers ...
+[07/11 20:06:26     46s] ... 8596 markers are loaded ...
+[07/11 20:06:26     46s] ... 0 geometry drc markers are loaded ...
+[07/11 20:06:26     46s] ... 0 antenna drc markers are loaded ...
+[07/11 20:06:26     46s] TAT_INFO: restoreCongMap REAL = 1 : CPU = 0 : MEM = 0.
+[07/11 20:06:26     46s] Reading property file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/deconv_kernel_estimator_top_level.prop
+[07/11 20:06:26     46s] *** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1040.6M) ***
+[07/11 20:06:27     46s] Set Default Input Pin Transition as 0.1 ps.
+[07/11 20:06:27     47s] eee: readRCCornerMetaData, file read unsuccessful: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/extraction/extractionMetaData.gz
+[07/11 20:06:27     47s] Extraction setup Started 
+[07/11 20:06:27     47s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[07/11 20:06:27     47s] Reading Capacitance Table File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable ...
+[07/11 20:06:27     47s] Process name: (null).
+[07/11 20:06:27     47s] Allocated an empty WireEdgeEnlargement table in typical [6].
+[07/11 20:06:27     47s] Allocated an empty WireEdgeEnlargement table in typical [6].
+[07/11 20:06:27     47s] Importing multi-corner RC tables ... 
+[07/11 20:06:27     47s] Summary of Active RC-Corners : 
+[07/11 20:06:27     47s]  
+[07/11 20:06:27     47s]  Analysis View: analysis_default
+[07/11 20:06:27     47s]     RC-Corner Name        : typical
+[07/11 20:06:27     47s]     RC-Corner Index       : 0
+[07/11 20:06:27     47s]     RC-Corner Temperature : 25 Celsius
+[07/11 20:06:27     47s]     RC-Corner Cap Table   : '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/build/15-cadence-innovus-power/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable'
+[07/11 20:06:27     47s]     RC-Corner PreRoute Res Factor         : 1
+[07/11 20:06:27     47s]     RC-Corner PreRoute Cap Factor         : 1
+[07/11 20:06:27     47s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[07/11 20:06:27     47s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[07/11 20:06:27     47s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[07/11 20:06:27     47s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[07/11 20:06:27     47s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[07/11 20:06:27     47s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[07/11 20:06:27     47s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[07/11 20:06:27     47s] LayerId::1 widthSet size::4
+[07/11 20:06:27     47s] LayerId::2 widthSet size::4
+[07/11 20:06:27     47s] LayerId::3 widthSet size::5
+[07/11 20:06:27     47s] LayerId::4 widthSet size::4
+[07/11 20:06:27     47s] LayerId::5 widthSet size::5
+[07/11 20:06:27     47s] LayerId::6 widthSet size::2
+[07/11 20:06:27     47s] Updating RC grid for preRoute extraction ...
+[07/11 20:06:27     47s] Initializing multi-corner capacitance tables ... 
+[07/11 20:06:27     47s] Initializing multi-corner resistance tables ...
+[07/11 20:06:27     47s] {RT typical 0 6 6 {4 0} {5 0} 2}
+[07/11 20:06:27     47s] Preroute length aware model : n: 40 ; LLS: 2-3 ; HLS: 3-5 ; rDens: 0.322635 ; uaWl: 0.000000 ; uaWlH: 0.000000 ; aWlH: 0.000000 ; Pmax: 0.850000 ; wcR: 0.000000 ; newSi: 0.000000 ; pMod: 82 ; 
+[07/11 20:06:27     47s] Start generating vias ..
+[07/11 20:06:28     47s] #create default rule from bind_ndr_rule rule=0x2b69af0b6110 0x2b69c50d4fc0
+[07/11 20:06:28     47s] ### import design signature (1): route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1 halo=0
+[07/11 20:06:28     47s] #Skip building auto via since it is not turned on.
+[07/11 20:06:28     47s] Extracting standard cell pins and blockage ...... 
+[07/11 20:06:28     47s] Pin and blockage extraction finished
+[07/11 20:06:28     47s] Via generation completed.
+[07/11 20:06:28     47s] % Begin Load power constraints ... (date=07/11 20:06:28, mem=970.3M)
+[07/11 20:06:28     47s] % End Load power constraints ... (date=07/11 20:06:28, total cpu=0:00:00.1, real=0:00:00.0, peak res=970.4M, current mem=970.4M)
+[07/11 20:06:28     47s] % Begin load AAE data ... (date=07/11 20:06:28, mem=1014.2M)
+[07/11 20:06:28     48s] **WARN: (IMPESI-3505):	setDelayCalMode -eng_copyNetPropToNewNet true (default=false) will be obsoleted along with its sgs2set equivalent.  This parameter will continue to be supported in the current release, but will be removed in the next major release of the software.
+[07/11 20:06:28     48s] AAE DB initialization (MEM=1114.7 CPU=0:00:00.0 REAL=0:00:00.0) 
+[07/11 20:06:29     48s] % End load AAE data ... (date=07/11 20:06:28, total cpu=0:00:00.7, real=0:00:00.0, peak res=1022.9M, current mem=1022.9M)
+[07/11 20:06:29     48s] 
+[07/11 20:06:29     48s] TimeStamp Deleting Cell Server Begin ...
+[07/11 20:06:29     48s] 
+[07/11 20:06:29     48s] TimeStamp Deleting Cell Server End ...
+[07/11 20:06:29     48s] 
+[07/11 20:06:29     48s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[07/11 20:06:29     48s] Summary for sequential cells identification: 
+[07/11 20:06:29     48s]   Identified SBFF number: 45
+[07/11 20:06:29     48s]   Identified MBFF number: 0
+[07/11 20:06:29     48s]   Identified SB Latch number: 0
+[07/11 20:06:29     48s]   Identified MB Latch number: 0
+[07/11 20:06:29     48s]   Not identified SBFF number: 0
+[07/11 20:06:29     48s]   Not identified MBFF number: 0
+[07/11 20:06:29     48s]   Not identified SB Latch number: 0
+[07/11 20:06:29     48s]   Not identified MB Latch number: 0
+[07/11 20:06:29     48s]   Number of sequential cells which are not FFs: 23
+[07/11 20:06:29     48s] Total number of combinational cells: 328
+[07/11 20:06:29     48s] Total number of sequential cells: 68
+[07/11 20:06:29     48s] Total number of tristate cells: 13
+[07/11 20:06:29     48s] Total number of level shifter cells: 7
+[07/11 20:06:29     48s] Total number of power gating cells: 0
+[07/11 20:06:29     48s] Total number of isolation cells: 11
+[07/11 20:06:29     48s] Total number of power switch cells: 0
+[07/11 20:06:29     48s] Total number of pulse generator cells: 0
+[07/11 20:06:29     48s] Total number of always on buffers: 0
+[07/11 20:06:29     48s] Total number of retention cells: 0
+[07/11 20:06:29     48s] List of usable buffers: sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_12 sky130_fd_sc_hd__buf_16 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_6 sky130_fd_sc_hd__buf_8 sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_16 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8
+[07/11 20:06:29     48s] Total number of usable buffers: 12
+[07/11 20:06:29     48s] List of unusable buffers: sky130_fd_sc_hd__dlymetal6s2s_1 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__probe_p_8
+[07/11 20:06:29     48s] Total number of unusable buffers: 3
+[07/11 20:06:29     48s] List of usable inverters: sky130_fd_sc_hd__bufinv_16 sky130_fd_sc_hd__clkinv_1 sky130_fd_sc_hd__bufinv_8 sky130_fd_sc_hd__clkinv_2 sky130_fd_sc_hd__clkinv_4 sky130_fd_sc_hd__clkinv_8 sky130_fd_sc_hd__inv_1 sky130_fd_sc_hd__inv_12 sky130_fd_sc_hd__inv_16 sky130_fd_sc_hd__inv_2 sky130_fd_sc_hd__inv_4 sky130_fd_sc_hd__inv_6 sky130_fd_sc_hd__inv_8
+[07/11 20:06:29     48s] Total number of usable inverters: 13
+[07/11 20:06:29     48s] List of unusable inverters: sky130_fd_sc_hd__clkinv_16 sky130_fd_sc_hd__clkinvlp_2 sky130_fd_sc_hd__clkinvlp_4
+[07/11 20:06:29     48s] Total number of unusable inverters: 3
+[07/11 20:06:29     48s] List of identified usable delay cells: sky130_fd_sc_hd__bufbuf_16 sky130_fd_sc_hd__bufbuf_8 sky130_fd_sc_hd__clkdlybuf4s15_1 sky130_fd_sc_hd__clkdlybuf4s15_2 sky130_fd_sc_hd__clkdlybuf4s18_1 sky130_fd_sc_hd__clkdlybuf4s18_2 sky130_fd_sc_hd__clkdlybuf4s25_1 sky130_fd_sc_hd__clkdlybuf4s50_1 sky130_fd_sc_hd__clkdlybuf4s25_2 sky130_fd_sc_hd__clkdlybuf4s50_2
+[07/11 20:06:29     48s] Total number of identified usable delay cells: 10
+[07/11 20:06:29     48s] List of identified unusable delay cells: sky130_fd_sc_hd__dlygate4sd2_1 sky130_fd_sc_hd__dlygate4sd1_1 sky130_fd_sc_hd__dlygate4sd3_1 sky130_fd_sc_hd__dlymetal6s6s_1 sky130_fd_sc_hd__dlymetal6s4s_1
+[07/11 20:06:29     48s] Total number of identified unusable delay cells: 5
+[07/11 20:06:29     48s] 
+[07/11 20:06:29     48s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[07/11 20:06:29     48s] 
+[07/11 20:06:29     48s] TimeStamp Deleting Cell Server Begin ...
+[07/11 20:06:29     48s] 
+[07/11 20:06:29     48s] TimeStamp Deleting Cell Server End ...
+[07/11 20:06:29     48s] **WARN: (IMPCTE-107):	The following globals have been obsoleted since version 20.13-s083_1. They will be removed in the next release. 
+[07/11 20:06:29     48s] timing_enable_default_delay_arc
+[07/11 20:06:29     48s] #% End load design ... (date=07/11 20:06:29, total cpu=0:00:07.6, real=0:00:15.0, peak res=1044.8M, current mem=1022.0M)
+[07/11 20:06:29     48s] 
+[07/11 20:06:29     48s] *** Summary of all messages that are not suppressed in this session:
+[07/11 20:06:29     48s] Severity  ID               Count  Summary                                  
+[07/11 20:06:29     48s] WARNING   IMPLF-200           59  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[07/11 20:06:29     48s] WARNING   IMPLF-201           66  Pin '%s' in macro '%s' has no ANTENNADIF...
+[07/11 20:06:29     48s] WARNING   IMPLF-246            1  The '%s' attribute is only allowed to be...
+[07/11 20:06:29     48s] WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+[07/11 20:06:29     48s] WARNING   IMPPTN-867           1  Found use of %s. This will continue to w...
+[07/11 20:06:29     48s] WARNING   IMPESI-3505          1  setDelayCalMode -eng_%s (default=%s) wil...
+[07/11 20:06:29     48s] WARNING   IMPOPT-3602          7  The specified path group name %s is not ...
+[07/11 20:06:29     48s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[07/11 20:06:29     48s] WARNING   IMPPSP-1003          1  Found use of '%s'. This will continue to...
+[07/11 20:06:29     48s] WARNING   TECHLIB-302         24  No function defined for cell '%s'. The c...
+[07/11 20:06:29     48s] *** Message Summary: 163 warning(s), 0 error(s)
+[07/11 20:06:29     48s] 
+[07/11 20:06:29     48s] <CMD> setDistributeHost -local
+[07/11 20:06:29     48s] The timeout for a remote job to respond is 3600 seconds.
+[07/11 20:06:29     48s] Submit command for task runs will be: local
+[07/11 20:06:29     48s] <CMD> setMultiCpuUsage -localCpu 16
+[07/11 20:06:29     48s] <FF> LOADING 'always_source_tcl' PLUG-IN FILE(s) 
+[07/11 20:06:29     48s] <FF> -> innovus-foundation-flow/custom-scripts/always-source.tcl
+[07/11 20:06:29     48s] <CMD> win
+[07/11 20:06:55     56s] <CMD> verifyConnectivity -type all -error 1000000 -warning 50000
+[07/11 20:06:55     56s] VERIFY_CONNECTIVITY use new engine.
+[07/11 20:06:55     56s] 
+[07/11 20:06:55     56s] ******** Start: VERIFY CONNECTIVITY ********
+[07/11 20:06:55     56s] Start Time: Sun Jul 11 20:06:55 2021
+[07/11 20:06:55     56s] 
+[07/11 20:06:55     56s] Design Name: deconv_kernel_estimator_top_level
+[07/11 20:06:55     56s] Database Units: 1000
+[07/11 20:06:55     56s] Design Boundary: (0.0000, 0.0000) (2568.6400, 2564.9600)
+[07/11 20:06:55     56s] Error Limit = 1000000; Warning Limit = 50000
+[07/11 20:06:55     56s] Check all nets
+[07/11 20:06:55     56s] Use 16 pthreads
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance state_r_reg_1_ is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance state_r_reg_0_ is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance state_r_reg_2_ is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance debug_en_d2_reg is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance debug_en_d1_reg is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance nfft_cntr_en_d1_reg is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance nfft_cntr_en_reg is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance clk_gate_b_coeffs_reg_2_/latch is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance clk_gate_a_coeffs_reg_0_/latch is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance clk_gate_a_coeffs_reg_1_/latch is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance clk_gate_a_coeffs_reg_2_/latch is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance clk_gate_tf_coeff_radr_reg/latch is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance clk_gate_coeff_table_base_addr_bypass_reg/latch is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance clk_gate_nfft_cntr_reg/latch is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance clk_gate_config_nfft_reg/latch is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance deconv_kernel_phase_sram_interface_inst/clk_gate_wadr_r_reg/latch is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin CLK of net clk has not been placed. Please make sure instance deconv_kernel_phase_sram_interface_inst/clk_gate_radr_r_reg/latch is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (EMS-27):	Message (IMPVFC-96) has exceeded the current message display limit of 20.
+[07/11 20:06:55     56s] To increase the message display limit, refer to the product command reference manual.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin A of net debug_en has not been placed. Please make sure instance U158 is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin A of net rst_n has not been placed. Please make sure instance U285 is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] **WARN: (IMPVFC-96):	Instance pin A of net load_en has not been placed. Please make sure instance U178 is placed and rerun verifyConnectivity.
+[07/11 20:06:55     56s] Net clk: no routing.
+[07/11 20:06:55     56s] Net deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/n_16_net_: no routing.
+[07/11 20:06:55     56s] Net deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/n_6_net_: no routing.
+[07/11 20:06:55     56s] Net deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/n_11_net_: no routing.
+[07/11 20:06:55     56s] Net deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/n_16_net_: no routing.
+[07/11 20:06:55     56s] Net deconv_kernel_magnitude_sram_interface_inst/ram_sync_1rw1r_inst/n_1_net_: no routing.
+[07/11 20:06:55     56s] Net tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/n_1_net_: no routing.
+[07/11 20:06:55     56s] Net tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/n_6_net_: no routing.
+[07/11 20:06:55     56s] Net tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/n_11_net_: no routing.
+[07/11 20:06:55     56s] Net deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/n_1_net_: no routing.
+[07/11 20:06:55     56s] Net tf_coeff_sram_interface_inst/ram_sync_1rw1r_inst/n_16_net_: no routing.
+[07/11 20:06:55     56s] Net deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/n_6_net_: no routing.
+[07/11 20:06:55     56s] Net deconv_kernel_phase_sram_interface_inst/ram_sync_1rw1r_inst/n_11_net_: no routing.
+[07/11 20:06:55     57s] Net VDD: dangling Wire.
+[07/11 20:06:55     57s] Net VSS: dangling Wire.
+[07/11 20:06:55     57s] 
+[07/11 20:06:55     57s] Begin Summary 
+[07/11 20:06:55     57s]     13 Problem(s) (IMPVFC-98): Net has no global routing and no special routing.
+[07/11 20:06:55     57s]     1358 Problem(s) (IMPVFC-94): The net has dangling wire(s).
+[07/11 20:06:55     57s]     1371 total info(s) created.
+[07/11 20:06:55     57s] End Summary
+[07/11 20:06:55     57s] 
+[07/11 20:06:55     57s] End Time: Sun Jul 11 20:06:55 2021
+[07/11 20:06:55     57s] Time Elapsed: 0:00:00.0
+[07/11 20:06:55     57s] 
+[07/11 20:06:55     57s] ******** End: VERIFY CONNECTIVITY ********
+[07/11 20:06:55     57s]   Verification Complete : 1371 Viols.  0 Wrngs.
+[07/11 20:06:55     57s]   (CPU Time: 0:00:01.2  MEM: 82.062M)
+[07/11 20:06:55     57s] 
+[07/11 20:06:57     57s] <CMD> setLayerPreference violation -isVisible 1
+[07/11 20:06:58     57s] <CMD> violationBrowser -all -no_display_false -displayByLayer
+[07/11 20:07:03     59s] <CMD_INTERNAL> violationBrowserClose
+[07/11 20:07:06     59s] 
+--------------------------------------------------------------------------------
+Exiting Innovus on Sun Jul 11 20:07:06 2021
+  Total CPU time:     0:01:09
+  Total real time:    0:01:57
+  Peak memory (main): 1154.46MB
+
+[07/11 20:07:06     59s] 
+[07/11 20:07:06     59s] *** Memory Usage v#2 (Current mem = 1266.809M, initial mem = 267.602M) ***
+[07/11 20:07:06     59s] 
+[07/11 20:07:06     59s] *** Summary of all messages that are not suppressed in this session:
+[07/11 20:07:06     59s] Severity  ID               Count  Summary                                  
+[07/11 20:07:06     59s] WARNING   IMPLF-200           59  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[07/11 20:07:06     59s] WARNING   IMPLF-201           66  Pin '%s' in macro '%s' has no ANTENNADIF...
+[07/11 20:07:06     59s] WARNING   IMPLF-246            1  The '%s' attribute is only allowed to be...
+[07/11 20:07:06     59s] WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+[07/11 20:07:06     59s] WARNING   IMPPTN-867           1  Found use of %s. This will continue to w...
+[07/11 20:07:06     59s] WARNING   IMPESI-3505          1  setDelayCalMode -eng_%s (default=%s) wil...
+[07/11 20:07:06     59s] WARNING   IMPVFC-96        30883  Instance pin %s of net %s has not been p...
+[07/11 20:07:06     59s] WARNING   IMPOPT-3602          7  The specified path group name %s is not ...
+[07/11 20:07:06     59s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[07/11 20:07:06     59s] WARNING   IMPPSP-1003          1  Found use of '%s'. This will continue to...
+[07/11 20:07:06     59s] WARNING   TECHLIB-302         24  No function defined for cell '%s'. The c...
+[07/11 20:07:06     59s] *** Message Summary: 31046 warning(s), 0 error(s)
+[07/11 20:07:06     59s] 
+[07/11 20:07:06     59s] --- Ending "Innovus" (totcpu=0:00:59.9, real=0:01:55, mem=1266.8M) ---

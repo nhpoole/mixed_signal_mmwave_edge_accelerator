@@ -1,0 +1,18 @@
+build_dir: 29-gen-saif-gl
+build_id: '29'
+commands:
+- vcd2saif -input inputs/run.vcd -output outputs/run.saif
+edges_i:
+  run.vcd:
+  - f: design.vpd
+    step: 25-gl-sim
+edges_o:
+  run.saif:
+  - f: run.saif
+    step: 32-synopsys-ptpx-gl
+inputs:
+- run.vcd
+name: gen-saif-gl
+outputs:
+- run.saif
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/steps/synopsys-vcd2saif-convert

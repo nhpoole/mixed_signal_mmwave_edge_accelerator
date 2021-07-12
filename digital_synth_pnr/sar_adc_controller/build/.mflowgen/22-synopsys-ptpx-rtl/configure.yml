@@ -1,0 +1,44 @@
+build_dir: 22-synopsys-ptpx-rtl
+build_id: '22'
+commands:
+- pt_shell -file pt_px.tcl
+- cp reports/*.pwr.rpt outputs/design.pwr.rpt
+- cp reports/*.pwr.hier.rpt outputs/design.pwr.hier.rpt
+- cp reports/*.sw.rpt outputs/design.sw.rpt
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.namemap:
+  - f: design.namemap
+    step: 9-synopsys-dc-synthesis
+  design.pt.sdc:
+  - f: design.pt.sdc
+    step: 18-cadence-innovus-signoff
+  design.spef.gz:
+  - f: design.spef.gz
+    step: 18-cadence-innovus-signoff
+  design.vcs.v:
+  - f: design.vcs.v
+    step: 18-cadence-innovus-signoff
+  run.saif:
+  - f: run.saif
+    step: 8-synopsys-vcs-sim
+edges_o: {}
+inputs:
+- adk
+- design.vcs.v
+- design.spef.gz
+- design.pt.sdc
+- run.saif
+- design.namemap
+name: synopsys-ptpx-rtl
+outputs:
+- design.pwr.rpt
+- design.pwr.hier.rpt
+- design.sw.rpt
+parameters:
+  clock_period: 20.0
+  design_name: sar_adc_controller
+  strip_path: sar_adc_controller_tb/sar_adc_controller_inst
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/design/synopsys-ptpx-rtl

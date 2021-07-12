@@ -1,0 +1,60 @@
+build_dir: 13-cadence-innovus-flowsetup
+build_id: '13'
+commands:
+- source ./run.sh
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.sdc:
+  - f: design.sdc
+    step: 11-synopsys-dc-synthesis
+  design.v:
+  - f: design.v
+    step: 11-synopsys-dc-synthesis
+  sky130_sram_2kbyte_1rw1r_32x512_8.lef:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.lef
+    step: 6-sram
+  sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib
+    step: 6-sram
+edges_o:
+  innovus-foundation-flow:
+  - f: innovus-foundation-flow
+    step: 14-cadence-innovus-init
+  - f: innovus-foundation-flow
+    step: 15-cadence-innovus-power
+  - f: innovus-foundation-flow
+    step: 16-cadence-innovus-place
+  - f: innovus-foundation-flow
+    step: 17-cadence-innovus-cts
+  - f: innovus-foundation-flow
+    step: 18-cadence-innovus-postcts_hold
+  - f: innovus-foundation-flow
+    step: 19-cadence-innovus-route
+  - f: innovus-foundation-flow
+    step: 20-cadence-innovus-postroute
+  - f: innovus-foundation-flow
+    step: 21-cadence-innovus-signoff
+inputs:
+- adk
+- design.v
+- design.sdc
+- sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib
+- sky130_sram_2kbyte_1rw1r_32x512_8.lef
+name: cadence-innovus-flowsetup
+outputs:
+- innovus-foundation-flow
+parameters:
+  design_name: deconv_kernel_estimator_top_level
+  express_flow: false
+  nthreads: 16
+  skip_verify_connectivity: false
+postconditions:
+- assert File( 'outputs/innovus-foundation-flow' )
+preconditions:
+- assert Tool( 'innovus' )
+- assert File( 'inputs/adk' )
+- assert File( 'inputs/design.sdc' )
+- assert File( 'inputs/design.v' )
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/steps/cadence-innovus-flowsetup

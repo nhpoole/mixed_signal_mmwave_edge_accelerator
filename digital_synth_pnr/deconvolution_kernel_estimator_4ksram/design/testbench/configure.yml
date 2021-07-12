@@ -1,0 +1,20 @@
+name: testbench
+
+inputs:
+  - adk
+
+outputs:
+  - testbench.sv
+  - testbench.v
+  - freq_vec_data.txt
+  - tf_coeff_data.txt
+  - design.args
+  - design.args.gls
+
+commands:
+  - cp deconv_kernel_estimator_top_level_tb.v outputs/testbench.sv
+  - cp deconv_kernel_estimator_top_level_tb.v outputs/testbench.v
+  - mv freq_vec_data.txt outputs/
+  - mv tf_coeff_data.txt outputs/
+#  - cat design.args.gls inputs/adk/vcs_incdir.txt > outputs/design.args.gls
+  - cp design.args.gls outputs/design.args.gls

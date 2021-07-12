@@ -1,0 +1,32 @@
+build_dir: 34-netgen-lvs-gds
+build_id: '34'
+commands:
+- v2lvs -i -lsp inputs/adk/stdcells.spi -s inputs/adk/stdcells.spi -lsp inputs/*.sp
+  -s inputs/*.sp -v inputs/design.lvs.v -o design_lvs.spice
+- cat inputs/adk/netgen-setup.tcl blackbox.tcl > netgen_blackbox_setup.tcl
+- sh run_lvs.sh
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.lvs.v:
+  - f: design.lvs.v
+    step: 21-cadence-innovus-signoff
+  design_extracted.spice:
+  - f: design_extracted.spice
+    step: 30-open-magic-gds2spice-nobbox
+  sky130_sram_2kbyte_1rw1r_32x512_8.sp:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.sp
+    step: 6-sram
+edges_o: {}
+inputs:
+- adk
+- design_extracted.spice
+- design.lvs.v
+- sky130_sram_2kbyte_1rw1r_32x512_8.sp
+name: netgen-lvs-gds
+outputs:
+- lvs_results.log
+parameters:
+  design_name: deconv_kernel_estimator_top_level
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/design/open-netgen-lvs

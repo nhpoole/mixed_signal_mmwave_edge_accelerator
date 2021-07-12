@@ -1,0 +1,16 @@
+build_dir: 0-constraints
+build_id: '0'
+commands:
+- cat constraints.tcl > outputs/constraints.tcl
+edges_i: {}
+edges_o:
+  constraints.tcl:
+  - f: constraints.tcl
+    step: 9-synopsys-dc-synthesis
+name: constraints
+outputs:
+- constraints.tcl
+parameters:
+  clock_period: 20.0
+  design_name: sar_adc_controller
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/design/constraints

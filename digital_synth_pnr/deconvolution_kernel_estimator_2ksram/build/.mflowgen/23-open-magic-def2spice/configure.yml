@@ -1,0 +1,36 @@
+build_dir: 23-open-magic-def2spice
+build_id: '23'
+commands:
+- cp /home/users/nhpoole/PDKS/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+- cp inputs/adk/sky130A.tech sky130A.tech
+- cp inputs/adk/sky130A.tcl sky130A.tcl
+- cp inputs/adk/rtk-tech.lef rtk-tech-nolicon.lef
+- sed -i '/LAYER licon/,/END licon/d' rtk-tech-nolicon.lef
+- cp -L inputs/design.def.gz design.def.gz
+- gunzip design.def.gz
+- sed -i 's/\//____/g' design.def
+- magic -noconsole -dnull extract.tcl | tee def2spice.log
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.def.gz:
+  - f: design.def.gz
+    step: 21-cadence-innovus-signoff
+  sky130_sram_2kbyte_1rw1r_32x512_8.lef:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.lef
+    step: 6-sram
+edges_o:
+  design_extracted.spice:
+  - f: design_extracted.spice
+    step: 27-netgen-lvs-def
+inputs:
+- adk
+- design.def.gz
+- sky130_sram_2kbyte_1rw1r_32x512_8.lef
+name: open-magic-def2spice
+outputs:
+- design_extracted.spice
+parameters:
+  design_name: deconv_kernel_estimator_top_level
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/design/open-magic-def2spice

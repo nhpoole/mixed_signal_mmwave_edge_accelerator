@@ -1,0 +1,22 @@
+build_dir: 25-open-magic-antenna
+build_id: '25'
+commands:
+- cp /home/users/nhpoole/PDKS/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+- magic -noconsole -dnull run_antenna.tcl | tee outputs/antenna_check.log
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design_merged.gds:
+  - f: design_merged.gds
+    step: 19-mentor-calibre-gdsmerge
+edges_o: {}
+inputs:
+- adk
+- design_merged.gds
+name: open-magic-antenna
+outputs:
+- antenna_check.log
+parameters:
+  design_name: sar_adc_controller
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/design/open-magic-antenna

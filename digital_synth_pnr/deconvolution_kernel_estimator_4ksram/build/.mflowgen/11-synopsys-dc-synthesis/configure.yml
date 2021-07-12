@@ -1,0 +1,118 @@
+build_dir: 11-synopsys-dc-synthesis
+build_id: '11'
+commands:
+- bash run.sh
+debug:
+- export DC_EXIT_AFTER_SETUP=1
+- ln -sf results/*.mapped.ddc debug.ddc
+- design_vision-xg -topographical -x "source START.tcl; read_ddc debug.ddc"
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  compile.tcl:
+  - f: compile.tcl
+    step: 7-synopsys-dc-compile
+  constraints.tcl:
+  - f: constraints.tcl
+    step: 0-constraints
+  design.v:
+  - f: design.v
+    step: 4-rtl
+  run.saif:
+  - f: run.saif
+    step: 10-synopsys-vcs-sim
+  sky130_sram_4kbyte_1rw1r_32x1024_8.lef:
+  - f: sky130_sram_4kbyte_1rw1r_32x1024_8.lef
+    step: 6-sram
+  sky130_sram_4kbyte_1rw1r_32x1024_8_TT_1p8V_25C.db:
+  - f: sky130_sram_4kbyte_1rw1r_32x1024_8_TT_1p8V_25C.db
+    step: 6-sram
+edges_o:
+  design.namemap:
+  - f: design.namemap
+    step: 24-synopsys-ptpx-rtl
+  design.sdc:
+  - f: design.sdc
+    step: 12-cadence-innovus-flowsetup
+  - f: design.sdc
+    step: 13-cadence-innovus-init
+  - f: design.sdc
+    step: 14-cadence-innovus-power
+  - f: design.sdc
+    step: 15-cadence-innovus-place
+  - f: design.sdc
+    step: 16-cadence-innovus-cts
+  design.v:
+  - f: design.v
+    step: 12-cadence-innovus-flowsetup
+  - f: design.v
+    step: 13-cadence-innovus-init
+inputs:
+- adk
+- design.v
+- constraints.tcl
+- run.saif
+- sky130_sram_4kbyte_1rw1r_32x1024_8_TT_1p8V_25C.db
+- sky130_sram_4kbyte_1rw1r_32x1024_8.lef
+- compile.tcl
+name: synopsys-dc-synthesis
+outputs:
+- design.v
+- design.sdc
+- design.namemap
+- design.svf
+parameters:
+  clock_period: 20.0
+  design_name: deconv_kernel_estimator_top_level
+  flatten_effort: 0
+  gate_clock: true
+  high_effort_area_opt: false
+  nthreads: 16
+  order:
+  - designer-interface.tcl
+  - setup-session.tcl
+  - read-design.tcl
+  - constraints.tcl
+  - make-path-groups.tcl
+  - compile-options.tcl
+  - compile.tcl
+  - generate-results.tcl
+  - reporting.tcl
+  saif_instance: deconv_kernel_estimator_top_level_tb/deconv_kernel_estimator_top_level_inst
+  suppress_msg: false
+  suppressed_msg:
+  - TFCHK-072
+  - TFCHK-014
+  - TFCHK-049
+  - TFCHK-050
+  - TFCHK-012
+  - TFCHK-073
+  - TFCHK-092
+  - PSYN-651
+  - PSYN-650
+  topographical: true
+  uniquify_with_design_name: true
+postconditions:
+- assert File( 'outputs/design.v' )
+- assert File( 'outputs/design.sdc' )
+- assert 'error:' not in File( 'logs/dc.log' )
+- assert 'Unresolved references' not in File( 'logs/dc.log' )
+- assert 'Unable to resolve' not in File( 'logs/dc.log' )
+- assert 'Presto compilation terminated' not in File( 'logs/dc.log' )
+- assert 'GTECH' not in File( 'outputs/design.v' )
+- assert 'ELAB-405' not in File( 'logs/dc.log' )
+- assert 'PSYN-024' not in File( 'logs/dc.log' )
+- assert 'PSYN-025' not in File( 'logs/dc.log' )
+- assert 'PSYN-039' not in File( 'logs/dc.log' )
+- assert 'create_clock' in File( 'outputs/design.sdc' )
+- |
+  from assertion_helpers import percent_clock_gated, n_regs
+  if n_regs() > 10:
+    assert percent_clock_gated() > 0.50
+preconditions:
+- assert Tool( 'dc_shell-xg-t' )
+- assert File( 'inputs/adk' )
+- assert File( 'inputs/design.v' )
+- assert File( 'inputs/constraints.tcl' )
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/steps/synopsys-dc-synthesis

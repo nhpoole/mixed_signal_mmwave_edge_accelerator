@@ -1,0 +1,28 @@
+#! /usr/bin/env bash
+set -euo pipefail
+#=========================================================================
+# mflowgen-debug
+#=========================================================================
+# Generator : /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/mflowgen/core/build_orchestrator.py
+
+# Pre
+
+export design_name=sar_adc_controller
+export clock_period=20.0
+export saif_instance=sar_adc_controller_tb/sar_adc_controller_inst
+export flatten_effort=0
+export topographical=True
+export nthreads=16
+export high_effort_area_opt=False
+export gate_clock=True
+export uniquify_with_design_name=True
+export suppress_msg=False
+export suppressed_msg=TFCHK-072,TFCHK-014,TFCHK-049,TFCHK-050,TFCHK-012,TFCHK-073,TFCHK-092,PSYN-651,PSYN-650
+export order=designer-interface.tcl,setup-session.tcl,read-design.tcl,constraints.tcl,make-path-groups.tcl,compile-options.tcl,compile.tcl,generate-results.tcl,reporting.tcl
+
+# Debug
+
+export DC_EXIT_AFTER_SETUP=1
+ln -sf results/*.mapped.ddc debug.ddc
+design_vision-xg -topographical -x "source START.tcl; read_ddc debug.ddc"
+

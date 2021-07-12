@@ -1,0 +1,31 @@
+build_dir: 32-mentor-calibre-comparison
+build_id: '32'
+commands:
+- sh run_lvs.sh
+debug:
+- calibre -rve -lvs svdb
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+  design.flatbuslvs.v:
+  - f: design.flatbuslvs.v
+    step: 21-cadence-innovus-signoff
+  design_extracted.spice:
+  - f: design_extracted.spice
+    step: 30-open-magic-gds2spice-nobbox
+  sky130_sram_2kbyte_1rw1r_32x512_8.sp:
+  - f: sky130_sram_2kbyte_1rw1r_32x512_8.sp
+    step: 6-sram
+edges_o: {}
+inputs:
+- adk
+- design_extracted.spice
+- design.flatbuslvs.v
+- sky130_sram_2kbyte_1rw1r_32x512_8.sp
+name: mentor-calibre-comparison
+outputs:
+- lvs.report
+parameters:
+  design_name: deconv_kernel_estimator_top_level
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/deconvolution_kernel_estimator_2ksram/design/mentor-calibre-comparison

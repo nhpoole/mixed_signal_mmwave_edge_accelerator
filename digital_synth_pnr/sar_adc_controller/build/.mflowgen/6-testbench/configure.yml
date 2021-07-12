@@ -1,0 +1,36 @@
+build_dir: 6-testbench
+build_id: '6'
+commands:
+- cp sar_adc_controller_tb.v outputs/testbench.sv
+- cp sar_adc_controller_tb.v outputs/testbench.v
+- cp design.args.gls outputs/design.args.gls
+edges_i:
+  adk:
+  - f: adk
+    step: 5-skywater-130nm
+edges_o:
+  design.args:
+  - f: design.args
+    step: 7-cadence-ncsim-sim
+  - f: design.args
+    step: 8-synopsys-vcs-sim
+  design.args.gls:
+  - f: design.args
+    step: 23-gl-sim
+  testbench.sv:
+  - f: testbench.sv
+    step: 8-synopsys-vcs-sim
+  - f: testbench.sv
+    step: 23-gl-sim
+  testbench.v:
+  - f: testbench.v
+    step: 7-cadence-ncsim-sim
+inputs:
+- adk
+name: testbench
+outputs:
+- testbench.sv
+- testbench.v
+- design.args
+- design.args.gls
+source: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/design/testbench
