@@ -1,0 +1,113 @@
+.subckt pulse_generator_lvs trigb VDD VSS clk pulse
+*.ipin trigb
+*.ipin VDD
+*.ipin VSS
+*.ipin clk
+*.opin pulse
+x1 net4 net2 clk net6 VDD VSS dff_stdcell
+x2 trigb trig VDD VSS inv1
+x3 net2 net7 clk net3 VDD VSS dff_stdcell
+x4 net3 net1 clk net5 VDD VSS dff_stdcell
+x5 trig net4 clk net8 VDD VSS dff_stdcell
+x6 net2 pulse net1 VDD VSS and2 M=1
+.ends
+
+* expanding   symbol:
+*+  /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/dff_stdcell.sym # of pins=6
+* sym_path:
+*+ /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/dff_stdcell.sym
+* sch_path:
+*+ /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/dff_stdcell.sch
+.subckt dff_stdcell  D Q CLK QB VDD VSS
+*.ipin D
+*.ipin CLK
+*.opin Q
+*.opin QB
+*.ipin VDD
+*.ipin VSS
+x12 CLK D VSS VSS VDD VDD Q QB sky130_fd_sc_hd__dfxbp_1
+**** begin user architecture code
+
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/dfxbp/sky130_fd_sc_hd__dfxbp_1.spice
+
+**** end user architecture code
+.ends
+
+
+* expanding   symbol:
+*+  /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv1.sym # of pins=4
+* sym_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv1.sym
+* sch_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv1.sch
+.subckt inv1  A Y VDD VSS
+*.ipin A
+*.opin Y
+*.ipin VDD
+*.ipin VSS
+XM2 Y A VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.65 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM1 Y A VDD VDD sky130_fd_pr__pfet_01v8_hvt L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+.ends
+
+
+* expanding   symbol:
+*+  /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/and2.sym # of pins=5
+* sym_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/and2.sym
+* sch_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/and2.sch
+.subckt and2  A Y B VDD VSS   M=1
+*.ipin A
+*.ipin B
+*.opin Y
+*.ipin VDD
+*.ipin VSS
+x1 A net1 B VDD VSS nand2 M=M
+x2 net1 Y VDD VSS inv M=M
+.ends
+
+
+* expanding   symbol:
+*+  /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/nand2.sym # of pins=5
+* sym_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/nand2.sym
+* sch_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/nand2.sch
+.subckt nand2  A Y B VDD VSS   M=1
+*.ipin A
+*.ipin B
+*.opin Y
+*.ipin VDD
+*.ipin VSS
+XM2 Y A net1 VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.65 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=M m=M 
+XM1 Y A VDD VDD sky130_fd_pr__pfet_01v8_hvt L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=M m=M 
+XM3 net1 B VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.65 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=M m=M 
+XM4 Y B VDD VDD sky130_fd_pr__pfet_01v8_hvt L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=M m=M 
+.ends
+
+
+* expanding   symbol:
+*+  /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv.sym # of pins=4
+* sym_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv.sym
+* sch_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv.sch
+.subckt inv  A Y VDD VSS   M=1
+*.ipin A
+*.opin Y
+*.ipin VDD
+*.ipin VSS
+XM2 Y A VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.65 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=M m=M 
+XM1 Y A VDD VDD sky130_fd_pr__pfet_01v8_hvt L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=M m=M 
+.ends
+
+** flattened .save nodes
+.end

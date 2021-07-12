@@ -1,0 +1,108 @@
+* Stimulus file.
+
+.include ../layouts/latched_comparator_folded/latched_comparator_folded_pex.spice
+.include latched_comparator_folded_lvs.spice
+.include latched_comparator_test.spice
+.include latched_comparator_test2.spice
+
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_nfet_01v8/sky130_fd_pr__esd_nfet_01v8__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_pfet_g5v0d10v5/sky130_fd_pr__esd_pfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_nfet_g5v0d10v5/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/nonfet.spice
+* Mismatch parameters
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__mismatch.corner.spice
+* Resistor~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/Capacitor
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/r+c/res_typical__cap_typical.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/r+c/res_typical__cap_typical__lin.spice
+* Special cells
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/specialized_cells.spice
+* All models
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/all.spice
+* Corner
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/rf.spice
+
+.param vincm_comp=0.7 vstep=1m vsig=0 vdd=1.8 ibias=10u
+
+*x1 vip vim vop vom clk ibiasp VDD VSS latched_comparator_folded_flat
+x1 vip vim vop vom clk ibiasp VDD VSS latched_comparator_folded_lvs
+*x1 vip vim vop vom clk ibiasp VDD VSS latched_comparator_test
+*x1 vip vim vop vom clkb ibiasp VDD VSS latched_comparator_test2
+
+vdd VDD VSS 'vdd'
+vss VSS 0 0
+i1 ibiasp VSS 'ibias'
+
+*vip vip VSS pulse('vincm_comp-vstep' 'vincm_comp+vstep' 100u 1u 1u 700u 4000u)
+vip vip VSS pulse('vincm_comp-vstep' 'vincm_comp+vstep' 10n 1n 1n 70n 400n)
+*vip vip GND pwl(0 'vincm_comp' 10n 'vincm_comp' 11n 'vincm_comp+vstep' 80n 'vincm_comp+vstep'
+*+   81n 'vincm_comp-vstep' 410n 'vincm_comp-vstep' 411n 'vincm_comp+vstep' 580n 'vincm_comp+vstep'
+*+   581n 'vincm_comp-vstep' 700n 'vincm_comp-vstep')
+*vip vip VSS dc 'vincm_comp+vsig' ac 0.5 0
+
+*vim vim VSS pulse('vincm_comp+vstep' 'vincm_comp-vstep' 100u 1u 1u 700u 4000u)
+*vim vim VSS pulse('vincm_comp+vstep' 'vincm_comp-vstep' 10n 1n 1n 70n 400n)
+vim vim VSS dc 'vincm_comp-vsig' ac 0.5 180
+
+*vclk clk VSS pulse(0 'vdd' 300u 1n 1n 1000u 2000u)
+*vclk clk VSS 'vdd'
+vclk clk VSS pulse(0 'vdd' 30n 1n 1n 100n 200n)
+
+*vclkb clkb VSS pulse('vdd' 0 30n 1n 1n 100n 200n)
+vclkb clkb VSS 0
+
+.control
+options rshunt=1e40
+save all
++ @m.x1.xm16.msky130_fd_pr__pfet_01v8[id]
++ @m.x1.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.x1.xm2.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.x1.xm14.msky130_fd_pr__nfet_01v8[id]
++ @m.x1.xm12.msky130_fd_pr__nfet_01v8[id]
++ @m.x1.xm17.msky130_fd_pr__nfet_01v8[id]
++ @m.x1.xm28.msky130_fd_pr__nfet_01v8[id]
++ @m.x1.xm32.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.x1.xm5.msky130_fd_pr__pfet_01v8[id]
++ @m.x1.xm6.msky130_fd_pr__pfet_01v8[id]
++ @m.x1.xm40.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.x1.xm41.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.x1.xm42.msky130_fd_pr__pfet_01v8[id]
++ @m.x1.xm43.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.x1.xm43.msky130_fd_pr__nfet_01v8_lvt[id]
+
+op
+run
+print all
+*write latched_comparator_folded_lvs_op.raw
+
+tran 0.1n 700n
+run
+write latched_comparator_folded_lvs_tran.raw
+
+*dc vip 0.89 0.91 1e-6
+*run
+*write latched_comparator_folded_lvs_dc.raw
+
+*ac dec 100 0.1 1g
+*run
+*write latched_comparator_folded_lvs_ac.raw
+quit
+.endc

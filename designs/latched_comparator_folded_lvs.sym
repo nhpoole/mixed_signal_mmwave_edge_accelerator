@@ -1,0 +1,44 @@
+v {xschem version=2.9.9 file_version=1.2 }
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+V {}
+S {}
+E {}
+L 4 -60 30 -40 30 {}
+L 4 -60 -30 -40 -30 {}
+L 4 40 -20 60 -20 {}
+L 4 40 20 60 20 {}
+L 4 -60 -10 -40 -10 {}
+L 4 -40 -70 -40 70 {}
+L 4 -40 -70 70 0 {}
+L 4 -40 70 70 0 {}
+L 4 -20 10 -10 10 {}
+L 4 -10 10 0 -10 {}
+L 4 0 -10 10 -10 {}
+L 4 -10 10 0 10 {}
+L 4 0 10 10 -10 {}
+L 4 10 -10 20 -10 {}
+L 4 10 -60 10 -40 {}
+L 4 10 40 10 60 {}
+L 4 -60 10 -40 10 {}
+B 5 -62.5 27.5 -57.5 32.5 {name=vim sig_type=std_logic dir=in }
+B 5 -62.5 -32.5 -57.5 -27.5 {name=vip sig_type=std_logic dir=in }
+B 5 57.5 -22.5 62.5 -17.5 {name=vop dir=out }
+B 5 57.5 17.5 62.5 22.5 {name=vom dir=out }
+B 5 -62.5 -12.5 -57.5 -7.5 {name=ibiasp sig_type=std_logic dir=in }
+B 5 7.5 -62.5 12.5 -57.5 {name=VDD sig_type=std_logic dir=in }
+B 5 7.5 57.5 12.5 62.5 {name=VSS sig_type=std_logic dir=in }
+B 5 -62.5 7.5 -57.5 12.5 {name=clk sig_type=std_logic dir=in }
+T {@symname} -69 74 0 0 0.3 0.3 {}
+T {@name} -45 -82 0 0 0.2 0.2 {}
+T {vim} -35 26 0 0 0.2 0.2 {}
+T {vip} -35 -34 0 0 0.2 0.2 {}
+T {vop} 35 -24 0 1 0.2 0.2 {}
+T {vom} 35 6 0 1 0.2 0.2 {}
+T {ibiasp} -35 -6 2 1 0.2 0.2 {}
+T {VDD} 35 -46 2 0 0.2 0.2 {}
+T {VSS} 35 46 0 1 0.2 0.2 {}
+T {clk} -35 14 2 1 0.2 0.2 {}

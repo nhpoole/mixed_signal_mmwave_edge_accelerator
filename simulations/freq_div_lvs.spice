@@ -1,0 +1,99 @@
+.subckt freq_div_lvs vin vout VDD VSS
+*.ipin vin
+*.opin vout
+*.ipin VDD
+*.ipin VSS
+x1 net1 vdff1 vin net2 VDD VSS dff_stdcell
+x2 net3 vdff2 vdff1 net4 VDD VSS dff_stdcell
+x3 vdff3D vdff3 vdff2 vdff3QB VDD VSS dff_stdcell
+x4 net5 vdff4 vdff3 net6 VDD VSS dff_stdcell
+x5 net13 net15 vdff7 net14 VDD VSS dff_stdcell
+x6 net11 vdff7 vdff6 net12 VDD VSS dff_stdcell
+x7 net9 vdff6 vdff5 net10 VDD VSS dff_stdcell
+x8 net7 vdff5 vdff4 net8 VDD VSS dff_stdcell
+x31 net16 net18 net15 net17 VDD VSS dff_stdcell
+x32 net19 net21 net18 net20 VDD VSS dff_stdcell
+x33 net22 vout net21 net23 VDD VSS dff_stdcell
+x15 net2 net24 VDD VSS inv1
+x16 net24 net1 VDD VSS inv4
+x9 net4 net25 VDD VSS inv1
+x10 net25 net3 VDD VSS inv4
+x11 vdff3QB net26 VDD VSS inv1
+x12 net26 vdff3D VDD VSS inv4
+x13 net6 net27 VDD VSS inv1
+x14 net27 net5 VDD VSS inv4
+x17 net8 net28 VDD VSS inv1
+x18 net28 net7 VDD VSS inv4
+x19 net10 net29 VDD VSS inv1
+x20 net29 net9 VDD VSS inv4
+x21 net12 net30 VDD VSS inv1
+x22 net30 net11 VDD VSS inv4
+x23 net14 net31 VDD VSS inv1
+x24 net31 net13 VDD VSS inv4
+x25 net17 net32 VDD VSS inv1
+x26 net32 net16 VDD VSS inv4
+x27 net20 net33 VDD VSS inv1
+x28 net33 net19 VDD VSS inv4
+x29 net23 net34 VDD VSS inv1
+x30 net34 net22 VDD VSS inv4
+.ends
+
+* expanding   symbol:
+*+  /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/dff_stdcell.sym # of pins=6
+* sym_path:
+*+ /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/dff_stdcell.sym
+* sch_path:
+*+ /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/dff_stdcell.sch
+.subckt dff_stdcell  D Q CLK QB VDD VSS
+*.ipin D
+*.ipin CLK
+*.opin Q
+*.opin QB
+*.ipin VDD
+*.ipin VSS
+x12 CLK D VSS VSS VDD VDD Q QB sky130_fd_sc_hd__dfxbp_1
+**** begin user architecture code
+
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/dfxbp/sky130_fd_sc_hd__dfxbp_1.spice
+
+**** end user architecture code
+.ends
+
+
+* expanding   symbol:
+*+  /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv1.sym # of pins=4
+* sym_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv1.sym
+* sch_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv1.sch
+.subckt inv1  A Y VDD VSS
+*.ipin A
+*.opin Y
+*.ipin VDD
+*.ipin VSS
+XM2 Y A VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.65 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM1 Y A VDD VDD sky130_fd_pr__pfet_01v8_hvt L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+.ends
+
+
+* expanding   symbol:
+*+  /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv4.sym # of pins=4
+* sym_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv4.sym
+* sch_path: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/designs/inv4.sch
+.subckt inv4  A Y VDD VSS
+*.ipin A
+*.opin Y
+*.ipin VDD
+*.ipin VSS
+XM2 Y A VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=0.65 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM1 Y A VDD VDD sky130_fd_pr__pfet_01v8_hvt L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+.ends
+
+** flattened .save nodes
+.end

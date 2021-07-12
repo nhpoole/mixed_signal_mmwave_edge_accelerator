@@ -1,0 +1,167 @@
+* Stimulus file.
+
+.param Itail=10u Ibias=10u vcmdes=1 vincm=1 vsig=0 vdd=1.8 Wp=16 Wn=2 Wpcm=64 Wncm=4 Wbias=1
++ Lbias=4.8 nfactorL=1 nfactorW=6 K=1 K2=0.25 Ccomp=2p
+
+vdd VDD GND 'vdd'
+vip vip GND dc 'vincm+vsig' ac 1 0
+vim vim GND dc 'vincm-vsig'
+vocm vocm GND 'vcmdes'
+
+.options savecurrents
+.save all
++ @m.xm5.msky130_fd_pr__nfet_01v8[id]
++ @m.xm5.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm7.msky130_fd_pr__nfet_01v8[id]
++ @m.xm7.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm10.msky130_fd_pr__nfet_01v8[id]
++ @m.xm10.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm12.msky130_fd_pr__pfet_01v8[id]
++ @m.xm12.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm15.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.xm15.msky130_fd_pr__pfet_01v8_lvt[vth]
++ @m.xm27.msky130_fd_pr__nfet_01v8[id]
++ @m.xm27.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm31.msky130_fd_pr__pfet_01v8[id]
++ @m.xm31.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm32.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.xm32.msky130_fd_pr__pfet_01v8_lvt[vth]
++ @m.xm33.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.xm33.msky130_fd_pr__pfet_01v8_lvt[vth]
++ @m.xm34.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.xm34.msky130_fd_pr__pfet_01v8_lvt[vth]
++ @m.xm35.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.xm35.msky130_fd_pr__pfet_01v8_lvt[vth]
++ @m.xm36.msky130_fd_pr__pfet_01v8[id]
++ @m.xm36.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm37.msky130_fd_pr__pfet_01v8[id]
++ @m.xm37.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm38.msky130_fd_pr__pfet_01v8[id]
++ @m.xm38.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm39.msky130_fd_pr__pfet_01v8[id]
++ @m.xm39.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm40.msky130_fd_pr__pfet_01v8[id]
++ @m.xm40.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm41.msky130_fd_pr__nfet_01v8[id]
++ @m.xm41.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm42.msky130_fd_pr__nfet_01v8[id]
++ @m.xm42.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm43.msky130_fd_pr__nfet_01v8[id]
++ @m.xm43.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm44.msky130_fd_pr__nfet_01v8[id]
++ @m.xm44.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm45.msky130_fd_pr__nfet_01v8[id]
++ @m.xm45.msky130_fd_pr__nfet_01v8[vth]
+
++ @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vth]
++ @m.xm2.msky130_fd_pr__nfet_01v8[gm]
++ @m.xm2.msky130_fd_pr__nfet_01v8[id]
++ @m.xm2.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm3.msky130_fd_pr__pfet_01v8[id]
++ @m.xm3.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm4.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.xm4.msky130_fd_pr__nfet_01v8_lvt[vth]
++ @m.xm6.msky130_fd_pr__pfet_01v8[id]
++ @m.xm6.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm8.msky130_fd_pr__nfet_01v8[id]
++ @m.xm8.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm8.msky130_fd_pr__nfet_01v8[cgd]
++ @m.xm9.msky130_fd_pr__nfet_01v8[id]
++ @m.xm9.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm9.msky130_fd_pr__nfet_01v8[cgd]
++ @m.xm11.msky130_fd_pr__pfet_01v8[id]
++ @m.xm11.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm13.msky130_fd_pr__nfet_01v8[id]
++ @m.xm13.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm14.msky130_fd_pr__nfet_01v8[id]
++ @m.xm14.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm16.msky130_fd_pr__pfet_01v8[id]
++ @m.xm16.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm17.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.xm17.msky130_fd_pr__nfet_01v8_lvt[vth]
++ @m.xm18.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.xm18.msky130_fd_pr__nfet_01v8_lvt[vth]
++ @m.xm19.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.xm19.msky130_fd_pr__nfet_01v8_lvt[vth]
++ @m.xm20.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.xm20.msky130_fd_pr__nfet_01v8_lvt[vth]
++ @m.xm21.msky130_fd_pr__nfet_01v8[id]
++ @m.xm21.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm22.msky130_fd_pr__nfet_01v8[id]
++ @m.xm22.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm23.msky130_fd_pr__pfet_01v8[id]
++ @m.xm23.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm24.msky130_fd_pr__pfet_01v8[id]
++ @m.xm24.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm25.msky130_fd_pr__pfet_01v8[id]
++ @m.xm25.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm26.msky130_fd_pr__nfet_01v8[id]
++ @m.xm26.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm28.msky130_fd_pr__nfet_01v8[id]
++ @m.xm28.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm29.msky130_fd_pr__nfet_01v8[id]
++ @m.xm29.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm30.msky130_fd_pr__pfet_01v8[id]
++ @m.xm30.msky130_fd_pr__pfet_01v8[vth]
+
+*.op
+*.print all
+*write diff_fold_casc_ota_op.raw
+
+* Control Block 1
+*.control
+*    op
+*    print all
+*    ac dec 100 0.1 1g
+*    *noise v(vop, vom) vip dec 100 1 10meg
+*    run
+*    write diff_fold_casc_ota_ac.raw
+*    *setplot noise1
+*    *write diff_fold_casc_ota_noise1.raw v(onoise_spectrum) v(inoise_spectrum)
+*    *setplot noise2
+*    *write diff_fold_casc_ota_noise2.raw v(onoise_total) v(inoise_total)
+*    quit
+*.endc
+
+* Control Block 2
+.ac dec 100 0.1 1g
+.control
+    let incm = 0.5
+    while incm < 1.9
+        set incm = $&incm
+        alter @vip[dc]=$incm
+        alter @vim[dc]=$incm
+        run
+        write diff_fold_casc_ota_stability_ac_{$incm}.raw
+        let incm = incm + 0.1
+    end
+    quit
+.endc
+
+* Control Block 3
+*.ac dec 100 0.1 1g
+*.control
+*    let temperature = -40
+*    while temperature < 130
+*        set temp = $&temperature
+*        run
+*        write diff_fold_casc_ota_temp_{$temp}.raw
+*        let temperature = temperature + 10
+*    end
+*    quit
+*.endc
+
+* Control Block 4
+*.ac dec 100 0.1 1g
+*.control
+*    let supply = 1.62
+*    while supply < 2
+*        alterparam vdd = {$&supply}
+*        reset
+*        run
+*        write diff_fold_casc_ota_vdd_{$&supply}.raw
+*        let supply = supply + 0.04
+*    end
+*    quit
+*.endc

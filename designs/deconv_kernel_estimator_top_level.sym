@@ -1,0 +1,104 @@
+v {xschem version=2.9.9 file_version=1.2}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+T {@symname} -166.5 -6 0 0 0.3 0.3 {}
+T {@name} 135 -292 0 0 0.2 0.2 {}
+L 4 -130 -280 130 -280 {}
+L 4 -130 280 130 280 {}
+L 4 -130 -280 -130 280 {}
+L 4 130 -280 130 280 {}
+B 5 147.5 -272.5 152.5 -267.5 {name=serial_out dir=out }
+L 4 130 -270 150 -270 {}
+T {serial_out} 125 -274 0 1 0.2 0.2 {}
+B 5 -152.5 -272.5 -147.5 -267.5 {name=VDD dir=in }
+L 4 -150 -270 -130 -270 {}
+T {VDD} -125 -274 0 0 0.2 0.2 {}
+B 5 147.5 -252.5 152.5 -247.5 {name=serial_out_valid dir=out }
+L 4 130 -250 150 -250 {}
+T {serial_out_valid} 125 -254 0 1 0.2 0.2 {}
+B 5 -152.5 -252.5 -147.5 -247.5 {name=VSS dir=in }
+L 4 -150 -250 -130 -250 {}
+T {VSS} -125 -254 0 0 0.2 0.2 {}
+B 5 -152.5 -232.5 -147.5 -227.5 {name=clk dir=in }
+L 4 -150 -230 -130 -230 {}
+T {clk} -125 -234 0 0 0.2 0.2 {}
+B 5 147.5 -232.5 152.5 -227.5 {name=freq_eval_done dir=out }
+L 4 130 -230 150 -230 {}
+T {freq_eval_done} 125 -234 0 1 0.2 0.2 {}
+B 5 -152.5 -212.5 -147.5 -207.5 {name=rst_n dir=in }
+L 4 -150 -210 -130 -210 {}
+T {rst_n} -125 -214 0 0 0.2 0.2 {}
+B 5 -152.5 -192.5 -147.5 -187.5 {name=load_en dir=in }
+L 4 -150 -190 -130 -190 {}
+T {load_en} -125 -194 0 0 0.2 0.2 {}
+B 5 -152.5 -172.5 -147.5 -167.5 {name=debug_en dir=in }
+L 4 -150 -170 -130 -170 {}
+T {debug_en} -125 -174 0 0 0.2 0.2 {}
+B 5 -152.5 -152.5 -147.5 -147.5 {name=serial_in dir=in }
+L 4 -150 -150 -130 -150 {}
+T {serial_in} -125 -154 0 0 0.2 0.2 {}
+B 5 -152.5 -132.5 -147.5 -127.5 {name=sram_select[0] dir=in }
+L 4 -150 -130 -130 -130 {}
+T {sram_select[0]} -125 -134 0 0 0.2 0.2 {}
+B 5 -152.5 -112.5 -147.5 -107.5 {name=sram_select[1] dir=in }
+L 4 -150 -110 -130 -110 {}
+T {sram_select[1]} -125 -114 0 0 0.2 0.2 {}
+B 5 -152.5 -92.5 -147.5 -87.5 {name=frequency_adc_done dir=in }
+L 4 -150 -90 -130 -90 {}
+T {frequency_adc_done} -125 -94 0 0 0.2 0.2 {}
+B 5 -152.5 -72.5 -147.5 -67.5 {name=amplitude_adc_done dir=in }
+L 4 -150 -70 -130 -70 {}
+T {amplitude_adc_done} -125 -74 0 0 0.2 0.2 {}
+B 5 -152.5 -52.5 -147.5 -47.5 {name=sig_frequency[0] dir=in }
+L 4 -150 -50 -130 -50 {}
+T {sig_frequency[0]} -125 -54 0 0 0.2 0.2 {}
+B 5 -152.5 -32.5 -147.5 -27.5 {name=sig_frequency[1] dir=in }
+L 4 -150 -30 -130 -30 {}
+T {sig_frequency[1]} -125 -34 0 0 0.2 0.2 {}
+B 5 -152.5 -12.5 -147.5 -7.5 {name=sig_frequency[2] dir=in }
+L 4 -150 -10 -130 -10 {}
+T {sig_frequency[2]} -125 -14 0 0 0.2 0.2 {}
+B 5 -152.5 7.5 -147.5 12.5 {name=sig_frequency[3] dir=in }
+L 4 -150 10 -130 10 {}
+T {sig_frequency[3]} -125 6 0 0 0.2 0.2 {}
+B 5 -152.5 27.5 -147.5 32.5 {name=sig_frequency[4] dir=in }
+L 4 -150 30 -130 30 {}
+T {sig_frequency[4]} -125 26 0 0 0.2 0.2 {}
+B 5 -152.5 47.5 -147.5 52.5 {name=sig_frequency[5] dir=in }
+L 4 -150 50 -130 50 {}
+T {sig_frequency[5]} -125 46 0 0 0.2 0.2 {}
+B 5 -152.5 67.5 -147.5 72.5 {name=sig_frequency[6] dir=in }
+L 4 -150 70 -130 70 {}
+T {sig_frequency[6]} -125 66 0 0 0.2 0.2 {}
+B 5 -152.5 87.5 -147.5 92.5 {name=sig_frequency[7] dir=in }
+L 4 -150 90 -130 90 {}
+T {sig_frequency[7]} -125 86 0 0 0.2 0.2 {}
+B 5 -152.5 107.5 -147.5 112.5 {name=sig_amplitude[0] dir=in }
+L 4 -150 110 -130 110 {}
+T {sig_amplitude[0]} -125 106 0 0 0.2 0.2 {}
+B 5 -152.5 127.5 -147.5 132.5 {name=sig_amplitude[1] dir=in }
+L 4 -150 130 -130 130 {}
+T {sig_amplitude[1]} -125 126 0 0 0.2 0.2 {}
+B 5 -152.5 147.5 -147.5 152.5 {name=sig_amplitude[2] dir=in }
+L 4 -150 150 -130 150 {}
+T {sig_amplitude[2]} -125 146 0 0 0.2 0.2 {}
+B 5 -152.5 167.5 -147.5 172.5 {name=sig_amplitude[3] dir=in }
+L 4 -150 170 -130 170 {}
+T {sig_amplitude[3]} -125 166 0 0 0.2 0.2 {}
+B 5 -152.5 187.5 -147.5 192.5 {name=sig_amplitude[4] dir=in }
+L 4 -150 190 -130 190 {}
+T {sig_amplitude[4]} -125 186 0 0 0.2 0.2 {}
+B 5 -152.5 207.5 -147.5 212.5 {name=sig_amplitude[5] dir=in }
+L 4 -150 210 -130 210 {}
+T {sig_amplitude[5]} -125 206 0 0 0.2 0.2 {}
+B 5 -152.5 227.5 -147.5 232.5 {name=sig_amplitude[6] dir=in }
+L 4 -150 230 -130 230 {}
+T {sig_amplitude[6]} -125 226 0 0 0.2 0.2 {}
+B 5 -152.5 247.5 -147.5 252.5 {name=sig_amplitude[7] dir=in }
+L 4 -150 250 -130 250 {}
+T {sig_amplitude[7]} -125 246 0 0 0.2 0.2 {}
+B 5 -152.5 267.5 -147.5 272.5 {name=adc_bypass_en dir=in }
+L 4 -150 270 -130 270 {}
+T {adc_bypass_en} -125 266 0 0 0.2 0.2 {}

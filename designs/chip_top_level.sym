@@ -1,0 +1,138 @@
+v {xschem version=2.9.9 file_version=1.2}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+
+T {@symname} -81 -6 0 0 0.3 0.3 {}
+T {@name} 135 -262 0 0 0.2 0.2 {}
+L 4 -130 -250 130 -250 {}
+L 4 -130 250 130 250 {}
+L 4 -130 -250 -130 250 {}
+L 4 130 -250 130 250 {}
+B 5 -152.5 -242.5 -147.5 -237.5 {name=adc_bypass_en dir=in }
+L 4 -150 -240 -130 -240 {}
+T {adc_bypass_en} -125 -244 0 0 0.2 0.2 {}
+B 5 -152.5 -222.5 -147.5 -217.5 {name=adc_start dir=in }
+L 4 -150 -220 -130 -220 {}
+T {adc_start} -125 -224 0 0 0.2 0.2 {}
+B 5 147.5 -242.5 152.5 -237.5 {name=amplitude_comparator_val dir=out }
+L 4 130 -240 150 -240 {}
+T {amplitude_comparator_val} 125 -244 0 1 0.2 0.2 {}
+B 5 -152.5 -202.5 -147.5 -197.5 {name=clk dir=in }
+L 4 -150 -200 -130 -200 {}
+T {clk} -125 -204 0 0 0.2 0.2 {}
+B 5 -152.5 -182.5 -147.5 -177.5 {name=debug_en dir=in }
+L 4 -150 -180 -130 -180 {}
+T {debug_en} -125 -184 0 0 0.2 0.2 {}
+B 5 147.5 -222.5 152.5 -217.5 {name=freq_eval_done dir=out }
+L 4 130 -220 150 -220 {}
+T {freq_eval_done} 125 -224 0 1 0.2 0.2 {}
+B 5 147.5 -202.5 152.5 -197.5 {name=frequency_comparator_val dir=out }
+L 4 130 -200 150 -200 {}
+T {frequency_comparator_val} 125 -204 0 1 0.2 0.2 {}
+B 5 -152.5 -162.5 -147.5 -157.5 {name=gain_ctrl_0 dir=in }
+L 4 -150 -160 -130 -160 {}
+T {gain_ctrl_0} -125 -164 0 0 0.2 0.2 {}
+B 5 -152.5 -142.5 -147.5 -137.5 {name=gain_ctrl_1 dir=in }
+L 4 -150 -140 -130 -140 {}
+T {gain_ctrl_1} -125 -144 0 0 0.2 0.2 {}
+B 5 -152.5 -122.5 -147.5 -117.5 {name=load_en dir=in }
+L 4 -150 -120 -130 -120 {}
+T {load_en} -125 -124 0 0 0.2 0.2 {}
+B 5 -152.5 -102.5 -147.5 -97.5 {name=rst_n dir=in }
+L 4 -150 -100 -130 -100 {}
+T {rst_n} -125 -104 0 0 0.2 0.2 {}
+B 5 -152.5 -82.5 -147.5 -77.5 {name=serial_in dir=in }
+L 4 -150 -80 -130 -80 {}
+T {serial_in} -125 -84 0 0 0.2 0.2 {}
+B 5 147.5 -182.5 152.5 -177.5 {name=serial_out dir=out }
+L 4 130 -180 150 -180 {}
+T {serial_out} 125 -184 0 1 0.2 0.2 {}
+B 5 147.5 -162.5 152.5 -157.5 {name=serial_out_valid dir=out }
+L 4 130 -160 150 -160 {}
+T {serial_out_valid} 125 -164 0 1 0.2 0.2 {}
+B 5 -152.5 -62.5 -147.5 -57.5 {name=sram_select_0 dir=in }
+L 4 -150 -60 -130 -60 {}
+T {sram_select_0} -125 -64 0 0 0.2 0.2 {}
+B 5 -152.5 -42.5 -147.5 -37.5 {name=sram_select_1 dir=in }
+L 4 -150 -40 -130 -40 {}
+T {sram_select_1} -125 -44 0 0 0.2 0.2 {}
+B 5 147.5 -142.5 152.5 -137.5 {name=vampm dir=out }
+L 4 130 -140 150 -140 {}
+T {vampm} 125 -144 0 1 0.2 0.2 {}
+B 5 147.5 -122.5 152.5 -117.5 {name=vampp dir=out }
+L 4 130 -120 150 -120 {}
+T {vampp} 125 -124 0 1 0.2 0.2 {}
+B 5 -152.5 -22.5 -147.5 -17.5 {name=vbiasn dir=in }
+L 4 -150 -20 -130 -20 {}
+T {vbiasn} -125 -24 0 0 0.2 0.2 {}
+B 5 -152.5 -2.5 -147.5 2.5 {name=vbiasp dir=in }
+L 4 -150 0 -130 0 {}
+T {vbiasp} -125 -4 0 0 0.2 0.2 {}
+B 5 -152.5 17.5 -147.5 22.5 {name=vccd1 dir=in }
+L 4 -150 20 -130 20 {}
+T {vccd1} -125 16 0 0 0.2 0.2 {}
+B 5 -152.5 37.5 -147.5 42.5 {name=vccd2 dir=in }
+L 4 -150 40 -130 40 {}
+T {vccd2} -125 36 0 0 0.2 0.2 {}
+B 5 147.5 -102.5 152.5 -97.5 {name=vcomp dir=out }
+L 4 130 -100 150 -100 {}
+T {vcomp} 125 -104 0 1 0.2 0.2 {}
+B 5 147.5 -82.5 152.5 -77.5 {name=vcp dir=out }
+L 4 130 -80 150 -80 {}
+T {vcp} 125 -84 0 1 0.2 0.2 {}
+B 5 147.5 -62.5 152.5 -57.5 {name=vcp_sampled dir=out }
+L 4 130 -60 150 -60 {}
+T {vcp_sampled} 125 -64 0 1 0.2 0.2 {}
+B 5 147.5 -42.5 152.5 -37.5 {name=vfiltm dir=out }
+L 4 130 -40 150 -40 {}
+T {vfiltm} 125 -44 0 1 0.2 0.2 {}
+B 5 147.5 -22.5 152.5 -17.5 {name=vfiltp dir=out }
+L 4 130 -20 150 -20 {}
+T {vfiltp} 125 -24 0 1 0.2 0.2 {}
+B 5 -152.5 57.5 -147.5 62.5 {name=vhpf dir=in }
+L 4 -150 60 -130 60 {}
+T {vhpf} -125 56 0 0 0.2 0.2 {}
+B 5 -152.5 77.5 -147.5 82.5 {name=vincm dir=in }
+L 4 -150 80 -130 80 {}
+T {vincm} -125 76 0 0 0.2 0.2 {}
+B 5 147.5 -2.5 152.5 2.5 {name=vintm dir=out }
+L 4 130 0 150 0 {}
+T {vintm} 125 -4 0 1 0.2 0.2 {}
+B 5 147.5 17.5 152.5 22.5 {name=vintp dir=out }
+L 4 130 20 150 20 {}
+T {vintp} 125 16 0 1 0.2 0.2 {}
+B 5 -152.5 97.5 -147.5 102.5 {name=vlow_amplitude dir=in }
+L 4 -150 100 -130 100 {}
+T {vlow_amplitude} -125 96 0 0 0.2 0.2 {}
+B 5 -152.5 117.5 -147.5 122.5 {name=vlow_frequency dir=in }
+L 4 -150 120 -130 120 {}
+T {vlow_frequency} -125 116 0 0 0.2 0.2 {}
+B 5 -152.5 137.5 -147.5 142.5 {name=vocm dir=in }
+L 4 -150 140 -130 140 {}
+T {vocm} -125 136 0 0 0.2 0.2 {}
+B 5 -152.5 157.5 -147.5 162.5 {name=vocm_filt dir=in }
+L 4 -150 160 -130 160 {}
+T {vocm_filt} -125 156 0 0 0.2 0.2 {}
+B 5 147.5 37.5 152.5 42.5 {name=vpeak dir=out }
+L 4 130 40 150 40 {}
+T {vpeak} 125 36 0 1 0.2 0.2 {}
+B 5 147.5 57.5 152.5 62.5 {name=vpeak_sampled dir=out }
+L 4 130 60 150 60 {}
+T {vpeak_sampled} 125 56 0 1 0.2 0.2 {}
+B 5 -152.5 177.5 -147.5 182.5 {name=vref_amplitude dir=in }
+L 4 -150 180 -130 180 {}
+T {vref_amplitude} -125 176 0 0 0.2 0.2 {}
+B 5 -152.5 197.5 -147.5 202.5 {name=vref_frequency dir=in }
+L 4 -150 200 -130 200 {}
+T {vref_frequency} -125 196 0 0 0.2 0.2 {}
+B 5 147.5 77.5 152.5 82.5 {name=vse dir=out }
+L 4 130 80 150 80 {}
+T {vse} 125 76 0 1 0.2 0.2 {}
+B 5 -152.5 217.5 -147.5 222.5 {name=vssa1 dir=in }
+L 4 -150 220 -130 220 {}
+T {vssa1} -125 216 0 0 0.2 0.2 {}
+B 5 -152.5 237.5 -147.5 242.5 {name=vssd1 dir=in }
+L 4 -150 240 -130 240 {}
+T {vssd1} -125 236 0 0 0.2 0.2 {}

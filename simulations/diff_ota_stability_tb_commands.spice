@@ -1,0 +1,16 @@
+* Stimulus file.
+
+.param Itail=10u Ibias=10u vcmdes=1 vincm=1 vsig=0.3 vdd=1.8 Wp=16 Wn=2 Wpcm=64 Wncm=4 Wbias=1
++ Lbias=3.2 nfactorL=0.5 nfactorW=4 K=1 K2=0.5
+
+vdd VDD GND 'vdd'
+
+.control
+options savecurrents
+save all
+op
+ac dec 100 0.1 1g
+run
+write diff_ota_stability_tb_ac.raw
+quit
+.endc

@@ -1,0 +1,89 @@
+.subckt bias_current_distribution_lvs VDD VSS vbiasp input_amplifier_ibiasn1
++ input_amplifier_ibiasn2 diff_to_se_converter_ibiasn peak_detector_ibiasn1 peak_detector_ibiasn2 sample_and_hold_ibiasn_A
++ dac_8bit_ibiasn_A sample_and_hold_ibiasn_B dac_8bit_ibiasn_B comparator_ibiasn biquad_gm_c_filter_ibiasn1
++ biquad_gm_c_filter_ibiasn2 biquad_gm_c_filter_ibiasn3 biquad_gm_c_filter_ibiasn4 low_freq_pll_ibiasn vbiasn dac_8bit_ibiasp_A
++ dac_8bit_ibiasp_B
+*.ipin VDD
+*.ipin VSS
+*.ipin vbiasp
+*.opin input_amplifier_ibiasn1
+*.opin input_amplifier_ibiasn2
+*.opin diff_to_se_converter_ibiasn
+*.opin peak_detector_ibiasn1
+*.opin peak_detector_ibiasn2
+*.opin sample_and_hold_ibiasn_A
+*.opin dac_8bit_ibiasn_A
+*.opin sample_and_hold_ibiasn_B
+*.opin dac_8bit_ibiasn_B
+*.opin comparator_ibiasn
+*.opin biquad_gm_c_filter_ibiasn1
+*.opin biquad_gm_c_filter_ibiasn2
+*.opin biquad_gm_c_filter_ibiasn3
+*.opin biquad_gm_c_filter_ibiasn4
+*.opin low_freq_pll_ibiasn
+*.ipin vbiasn
+*.opin dac_8bit_ibiasp_A
+*.opin dac_8bit_ibiasp_B
+XM1 input_amplifier_ibiasn1 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM2 input_amplifier_ibiasn2 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM3 diff_to_se_converter_ibiasn vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM4 peak_detector_ibiasn1 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM5 peak_detector_ibiasn2 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM6 sample_and_hold_ibiasn_A vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM7 dac_8bit_ibiasn_A vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM8 sample_and_hold_ibiasn_B vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM9 dac_8bit_ibiasn_B vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM10 comparator_ibiasn vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM11 biquad_gm_c_filter_ibiasn1 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM12 biquad_gm_c_filter_ibiasn2 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM13 biquad_gm_c_filter_ibiasn3 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM14 biquad_gm_c_filter_ibiasn4 vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM15 low_freq_pll_ibiasn vbiasp VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM16 dac_8bit_ibiasp_A vbiasn VSS VSS sky130_fd_pr__nfet_01v8 L=2 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM17 dac_8bit_ibiasp_B vbiasn VSS VSS sky130_fd_pr__nfet_01v8 L=2 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM18 dac_8bit_ibiasp_A VSS VSS VSS sky130_fd_pr__nfet_01v8 L=2 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=2 m=2 
+XM19 dac_8bit_ibiasp_B VSS VSS VSS sky130_fd_pr__nfet_01v8 L=2 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=2 m=2 
+XM20 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8 L=4 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=10 m=10 
+**.ends
+** flattened .save nodes
+.ends

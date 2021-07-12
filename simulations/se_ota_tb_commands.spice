@@ -1,0 +1,32 @@
+* Stimulus file.
+
+.param Itail=10u Ibias=10u vcmdes=1 vincm=1.2 vsig=0.3 vdd=1.8 Wp=16 Wn=2 Wpcm=64 Wncm=4 Wbias=1
++ Lbias=6.4 nfactorL=1 nfactorW=6 K=1 K2=0.5
+
+vdd VDD GND 'vdd'
+vin vin GND pwl(0 'vincm' 100n 'vincm' 101n 'vincm+10m' 1u 'vincm+10m')
+*vin vin GND sin('vdd/2' '0.4*vdd/2' 50 0)
+
+.control
+options savecurrents
+save all @c1[i] @c.x1.c2[i]
++ @m.x1.xm27.msky130_fd_pr__nfet_01v8[id]
++ @m.x1.xm28.msky130_fd_pr__nfet_01v8[id]
++ @m.x1.xm31.msky130_fd_pr__pfet_01v8[id]
++ @m.x1.xm32.msky130_fd_pr__pfet_01v8_lvt[id]
+
+op
+run
+print all
+*write diff_ota_tb_op.raw
+
+tran 1n 20u
+*tran 100u 200m
+run
+write se_ota_tb_tran.raw
+
+*ac dec 100 1 1g
+*run
+*write se_ota_tb_ac.raw
+quit
+.endc

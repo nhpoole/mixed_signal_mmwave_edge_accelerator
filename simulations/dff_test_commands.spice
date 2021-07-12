@@ -1,0 +1,28 @@
+* Stimulus file.
+
+.param vdd=1.8 vctrl=1 Wpbias=16 Wnbias=1 Wpint=6 Wnint=0.5 Wpinv=6 Wninv=0.5 Lpmos=8 Lnmos=8 Mpmos=1 Mnmos=1
+
+vdd VDD GND 'vdd'
+vctrl vctrl GND 'vctrl'
+
+Aadc [vin_buf] [clk_digital] myadc
+.model myadc adc_bridge(in_low=0.9 in_high=0.9 rise_delay=10e-12 fall_delay=10e-12)
+
+Adiv clk_digital clk_div_digital myclkdiv
+.model myclkdiv d_fdiv(div_factor=16 high_cycles=8 rise_delay=10e-12 fall_delay=10e-12)
+
+Adac [clk_div_digital] [clk_div] mydac
+.model mydac dac_bridge(out_low=0 out_high='vdd' t_rise=10e-12 t_fall=10e-12)
+
+.ic v(vin)=0
+*.options savecurrents
+*.save vin
+
+.tran 0.1u 100u
+
+.control
+save vin vin2 vin_buf clk_div
+run
+write dff_test_tran.raw vin vin2 vin_buf clk_div
+quit
+.endc

@@ -1,0 +1,30 @@
+* Stimulus file.
+
+.param vdd=1.8 vcmdes=1 vcmdes_filt=1.1 vincm=1.1
++   Ibias_se=10u Wp=16 Wn=2 Wpcm=64 Wncm=4 Wbias=1 Lbias_diff=4.8 Lbias_se=6.4 nfactorL=1 nfactorW=6 K=1 K2=0.5
++   Cacc=1n Rhpf=10meg Kcap=10000 Rbase=100 Cfilt=5p Cpeak=2p Wpeakn=1 Wpeakp=2 Lpeak=1 Chold=1p
+
+vdd VDD GND 'vdd'
+vin vin GND sin('vdd/2' '0.1*vdd/2' 50 0)
+vincm vincm GND 'vincm'
+vocm vocm GND 'vcmdes'
+vocm_filt vocm_filt GND 'vcmdes_filt'
+vgc0 gain_ctrl_0 GND 0
+vgc1 gain_ctrl_1 GND 0
+vrst rst GND pulse(0 'vdd' 200m 0.1m 0.1m 10m 200m)
+vclk clk GND pulse(0 'vdd' 50m 0.1m 0.1m 10m 200m)
+
+.ic v(net6)='vcmdes'
+.ic v(net3)='vcmdes'
+.ic v(net10)='vcmdes_filt'
+.ic v(net11)='vcmdes_filt'
+*.options savecurrents
+.save all @r8[i] @r9[i] @r10[i] @r11[i] @c17[i] @c21[i] @c16[i] @c19[i]
+*.save vin vhpf votap votam vop vom vcm vip vim vhpf_buf vstimp vstimm vfiltp vfiltm
+.tran 200u 500m
+
+.control
+run
+write amplitude_processing_top_level_tran.raw
+quit
+.endc

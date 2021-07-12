@@ -1,0 +1,48 @@
+* Stimulus file.
+
+.param vdd=1.8 Ibias_comp=10u vincm_comp=0.7 Wp_latch=8 Wp_comp=16 Wn_latch=1 Wn_mid=1
++   Lp_comp=1 Ln_latch=0.3 Ln_mid=0.3 Clsb=0.1p
++   Itail=10u Ibias=10u Wp=16 Wn=2 Wbias=1 Lbias=6.4 nfactorL=1 nfactorW=6 K=1 K2=0.5
+
+vdd VDD GND 'vdd'
+vin vin GND 1.1
+vlow vlow GND 0.7
+vref vref GND 1.2
+vclk adc_clk GND pulse(0 'vdd' 250u 1n 1n 50u 100u)
+vtrig sample GND pwl(0 'vdd' 100u 'vdd' 101u 0 2m 0)
+vq7 q7 GND pwl(0 0 200u 0 201u 'vdd' 300u 'vdd' 301u 'vdd' 2m 'vdd')
+vq6 q6 GND pwl(0 0 300u 0 301u 'vdd' 400u 'vdd' 401u 'vdd' 2m 'vdd')
+vq5 q5 GND pwl(0 0 400u 0 401u 'vdd' 500u 'vdd' 501u 0 2m 0)
+vq4 q4 GND pwl(0 0 500u 0 501u 'vdd' 600u 'vdd' 601u 0 2m 0)
+vq3 q3 GND pwl(0 0 600u 0 601u 'vdd' 700u 'vdd' 701u 'vdd' 2m 'vdd')
+vq2 q2 GND pwl(0 0 700u 0 701u 'vdd' 800u 'vdd' 801u 'vdd' 2m 'vdd')
+vq1 q1 GND pwl(0 0 800u 0 801u 'vdd' 900u 'vdd' 901u 0 2m 0)
+vq0 q0 GND pwl(0 0 900u 0 901u 'vdd' 1000u 'vdd' 1001u 0 2m 0)
+*vq7 q7 GND pwl(0 0 200u 0 201u 'vdd' 300u 'vdd' 301u v(comp_out))
+*vq6 q6 GND pwl(0 0 300u 0 301u 'vdd' 400u 'vdd' 401u v(comp_out))
+*vq5 q5 GND pwl(0 0 400u 0 401u 'vdd' 500u 'vdd' 501u v(comp_out))
+*vq4 q4 GND pwl(0 0 500u 0 501u 'vdd' 600u 'vdd' 601u v(comp_out))
+*vq3 q3 GND pwl(0 0 600u 0 601u 'vdd' 700u 'vdd' 701u v(comp_out))
+*vq2 q2 GND pwl(0 0 700u 0 701u 'vdd' 800u 'vdd' 801u v(comp_out))
+*vq1 q1 GND pwl(0 0 800u 0 801u 'vdd' 900u 'vdd' 901u v(comp_out))
+*vq0 q0 GND pwl(0 0 900u 0 901u 'vdd' 1000u 'vdd' 1001u v(comp_out))
+
+*.ic v(sample)='vdd'
+.save all vin vlow vref sample adc_run comp_out comp_outm vcom adc_clk vcom_buf
++   q7 q6 q5 q4 q3 q2 q1 q0
++   c7m c6m c5m c4m c3m c2m c1m c0m cdumm
+*+   r7 r6 r5 r4 r3 r2 r1 r0 rdum
+*.options savecurrents
+
+.control
+op
+run
+print all
+tran 1u 2m
+run
+write dac_8bit_tran.raw all vin vlow vref sample adc_run comp_out comp_outm vcom adc_clk vcom_buf
++   q7 q6 q5 q4 q3 q2 q1 q0
++   c7m c6m c5m c4m c3m c2m c1m c0m cdumm
+*+   r7 r6 r5 r4 r3 r2 r1 r0 rdum
+quit
+.endc

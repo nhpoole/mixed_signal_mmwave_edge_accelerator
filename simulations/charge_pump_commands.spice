@@ -1,0 +1,51 @@
+* Stimulus file.
+
+.param Itail=10u Ibias=10u vcmdes=0.9 vincm=1 vsig=0 vdd=1.8 Wp=16 Wn=2 Wpcm=64 Wncm=4 Wbias=1
++   Lbias=3.2 nfactorL=1 nfactorW=2 K=1 K2=0.5 Kcap=100000 Ccp=0.01n Rbase=100 Mpcp=8 Wpcp=1 Lcp=16
++   Lswitch=0.5 Wswitchp=2 Wswitchn=1 vcp_init=0.7
+
+vdd VDD GND 'vdd'
+vinA vinA GND pulse(0 'vdd' 1u 1u 1u 10m 20m)
+*vinA vinA GND 'vdd'
+*vinB vinB GND pulse(0 'vdd' 1u 1u 1u 10m 20m)
+vinB vinB GND 0
+*vin vin GND sin('vdd/2-0.3' '0.1*vdd/2' 50 0)
+*e1 vbuf 0 vcap vbuf 10000
+
+.ic v(vcap)='vcp_init'
+.ic v(vbuf)='vcp_init'
+.ic v(vcp)='vcp_init'
+.ic v(vcp1)='vcp_init'
+.options savecurrents
+.save all @c1[i]
++ @m.xm1.msky130_fd_pr__nfet_01v8[id]
++ @m.xm1.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm2.msky130_fd_pr__nfet_01v8[id]
++ @m.xm2.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm3.msky130_fd_pr__pfet_01v8[id]
++ @m.xm3.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm4.msky130_fd_pr__pfet_01v8[id]
++ @m.xm4.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm5.msky130_fd_pr__nfet_01v8[id]
++ @m.xm5.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm6.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.xm6.msky130_fd_pr__nfet_01v8_lvt[vth]
++ @m.xm7.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.xm7.msky130_fd_pr__pfet_01v8_lvt[vth]
+
+*.measure tran cp_rise_delay
+*+   TRIG v(vin)  VAL='vdd/2' FALL=2
+*+   TARG v(vcp) VAL='vdd/2' RISE=2
+*.measure tran cp_fall_delay
+*+   TRIG v(vin)  VAL='vdd/2' RISE=2
+*+   TARG v(vcp) VAL='vdd/2' FALL=2
+
+.control
+op
+run
+print all
+tran 0.1m 0.2s
+run
+write charge_pump_tran.raw
+quit
+.endc

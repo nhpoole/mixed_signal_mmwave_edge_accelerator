@@ -1,0 +1,20 @@
+* Stimulus file.
+
+.param Itail=10u Ibias=10u vcmdes=0.9 vincm=1 vsig=0 vdd=1.8 Wp=16 Wn=2 Wpcm=64 Wncm=4 Wbias=1
++ Lbias=3.2 nfactorL=1 nfactorW=2 K=1 K2=0.5 Kcap=100000 Clpf=0.01n Rlpf=10meg Rbase=100
+
+vdd VDD GND 'vdd'
+*vin vin GND pulse(0 'vdd' 1u 1u 1u 5m 20m)
+vin vin GND sin('vdd/2-0.3' '0.1*vdd/2' 50 0)
+*e1 vbuf 0 vcap vbuf 10000
+
+.ic v(vlpf)='vdd/2'
+*.options savecurrents
+.save vin vlpf vbuf vcap @r1[i] @r2[i] @r3[i] @c1[i]
+.tran 0.1m 1s
+
+.control
+run
+write cap_mult_test_tran.raw
+quit
+.endc

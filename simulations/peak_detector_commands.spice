@@ -1,0 +1,27 @@
+* Stimulus file.
+
+.param Itail=10u Ibias=10u vincm=0.9 vsig=0 vdd=1.8 Wp=16 Wn=2 Wbias=1
++ Lbias=6.4 nfactorL=1 nfactorW=6 K=1 K2=0.5 Cpeak=2p Wpeakn=1 Wpeakp=2 Lpeak=1
+
+vdd VDD GND 'vdd'
+vina vina GND sin(0 0.5 100 0)
+vinb vinb GND sin(0 0.5 10 0)
+ein1 vin1 GND value='v(vina)*v(vinb)+(vdd/2)'
+ein2 vin2 GND value='v(vina)*v(vinb)+(vdd/2)'
+vrst rst GND pulse(0 'vdd' 200m 0.1m 0.1m 10m 200m)
+*vrst rst GND 0
+
+*.options savecurrents
+.save vin1 vin2 vpeak1 vpeakh vpeak_out rst
+
+.control
+    op
+    run
+    print all
+    tran 0.1m 500m
+    run
+    write peak_detector_tran.raw vin1 vin2 vpeak1 vpeakh vpeak_out rst
+    quit
+.endc
+
+

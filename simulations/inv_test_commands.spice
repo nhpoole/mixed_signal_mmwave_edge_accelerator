@@ -1,0 +1,29 @@
+* Stimulus file.
+.param vdd=1.8
+vdd VDD VSS 'vdd'
+vss VSS GND 0
+vin in VSS pulse(0 'vdd' 1p 1p 1p 50p 100p)
+
+.measure tran inv_rise_delay1
++   TRIG v(in)  VAL='vdd/2' FALL=1
++   TARG v(out) VAL='vdd/2' RISE=1
+.measure tran inv_fall_delay1
++   TRIG v(in)  VAL='vdd/2' RISE=1
++   TARG v(out) VAL='vdd/2' FALL=1
+.measure tran inv_rise_delay2
++   TRIG v(in)  VAL='vdd/2' FALL=1
++   TARG v(out2) VAL='vdd/2' RISE=1
+.measure tran inv_fall_delay2
++   TRIG v(in)  VAL='vdd/2' RISE=1
++   TARG v(out2) VAL='vdd/2' FALL=1
+
+.ic v(in)=0
+
+.control
+options savecurrents
+save all
+tran 1p 500p
+run
+write inv_test_tran.raw
+quit
+.endc

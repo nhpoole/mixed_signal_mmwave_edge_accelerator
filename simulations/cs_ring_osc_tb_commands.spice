@@ -1,0 +1,55 @@
+* Stimulus file.
+
+.param vdd=1.8 vctrl=0.8 Wpbias=16 Wnbias=1 Wpint=6 Wnint=1 Wpinv=6 Wninv=1 Lpmos=16 Lnmos=16 Mpmos=1
++ Mnmos=1 Cstage=0.1p
+
+vdd VDD GND 'vdd'
+*vip vip GND pwl(0 'vincm' 10n 'vincm' 11n 'vincm+5m' 50n 'vincm+5m' 51n 'vincm-5m' 90n 'vincm-5m' 91n 'vincm+5m' 130n 'vincm+5m')
+*vim vim GND pwl(0 'vincm' 10n 'vincm' 11n 'vincm-5m' 50n 'vincm-5m' 51n 'vincm+5m' 90n 'vincm+5m' 91n 'vincm-5m' 130n 'vincm-5m')
+*vip vip GND dc 'vincm+vsig' ac 0.5 0
+*vim vim GND dc 'vincm-vsig' ac 0.5 180
+vctrl vctrl GND 'vctrl'
+*vin vin GND pwl(0 0 10n 0 11n 'vdd' 10000n 'vdd' 10001n 0 20000n 0 20001n 'vdd' 30000n 'vdd')
+
+*.measure tran cs1_rise_delay
+*+   TRIG v(vin)  VAL='vdd/2' FALL=1
+*+   TARG v(vcs0) VAL='vdd/2' RISE=1
+*.measure tran cs1_fall_delay
+*+   TRIG v(vin)  VAL='vdd/2' RISE=1
+*+   TARG v(vcs0) VAL='vdd/2' FALL=1
+*.measure tran vout1_rise_delay
+*+   TRIG v(vcs1)  VAL='vdd/2' FALL=1
+*+   TARG v(vout1) VAL='vdd/2' RISE=1
+*.measure tran vout1_fall_delay
+*+   TRIG v(vcs1)  VAL='vdd/2' RISE=1
+*+   TARG v(vout1) VAL='vdd/2' FALL=1
+
+.ic v(vin)=0
+.options savecurrents
+.save all
++ @m.x7.xm1.msky130_fd_pr__pfet_01v8_hvt[id]
++ @m.x7.xm7.msky130_fd_pr__nfet_01v8[id]
++ @m.xm2.msky130_fd_pr__pfet_01v8_hvt[id]
++ @m.xm1.msky130_fd_pr__nfet_01v8[id]
+
+.tran 1u 1m
+
+.control
+*run
+*write cs_ring_osc_tb_tran.raw vin vin_buf vpbias
+*+ @m.x7.xm1.msky130_fd_pr__pfet_01v8_hvt[id]
+*+ @m.x7.xm7.msky130_fd_pr__nfet_01v8[id]
+*+ @m.xm2.msky130_fd_pr__pfet_01v8_hvt[id]
+*+ @m.xm1.msky130_fd_pr__nfet_01v8[id]
+
+let ctrl = 0.6
+while ctrl < 1.2
+    set ctrl = $&ctrl
+    alter vctrl dc ctrl
+    save vin vin_buf
+    run
+    write cs_ring_osc_tb_tran_{$ctrl}.raw vin vin_buf
+    let ctrl = ctrl + 0.05
+end
+quit
+.endc

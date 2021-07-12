@@ -1,0 +1,7 @@
+* ideal balun
+* example instantiation
+* x1 vdm vcm vp vm balun 
+.subckt balun vdm vcm vp vm
+e1 vp vcm vdm 0 0.5
+e2 vcm vm vdm 0 0.5
+.ends balun

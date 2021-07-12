@@ -1,0 +1,42 @@
+* Stimulus file.
+
+.param vdd=1.8 vctrl=0.95 Wpbias=16 Wnbias=1 Wpint=6 Wnint=0.5 Wpinv=6 Wninv=0.5 Lpmos=64 Lnmos=64 Mpmos=1
++   Mnmos=1 Itail=10u Ibias=10u vcmdes=0.9 vincm=1 vsig=0 Wp=16 Wn=2 Wbias=1
++   Lbias=6.4 nfactorL=1 nfactorW=6 K=1 K2=0.25 Kcap=100000 Ccp=10n Rbase=100 Mpcp=8 Wpcp=1 Lcp=16
++   Lswitch=0.5 Wswitchp=2 Wswitchn=1 vcp_init=0.8 Rlhpz=10meg
+
+vdd VDD GND 'vdd'
+vctrl vctrl 0 'vctrl'
+vsigin vsig_in GND pulse(0 'vdd' 1u 1u 1u 10m 20m)
+*vinbuf vin_buf GND pulse(0 'vdd' 1u 1u 1u 0.0753m 0.156m)
+
+* Digital VCO.
+.include digital_vco.spice
+xvco vin_buf vco_dclk vcp d_osc_vco vdd='vdd'
+
+*Aadc [vin_buf] [vco_dclk] myadc
+*.model myadc adc_bridge(in_low='vdd/2' in_high='vdd/2' rise_delay=10e-12 fall_delay=10e-12)
+
+Adiv vco_dclk clk_div_digital myclkdiv
+.model myclkdiv d_fdiv(div_factor=128 high_cycles=64 rise_delay=10e-12 fall_delay=10e-12)
+
+Adac [clk_div_digital] [vin_div] mydac
+.model mydac dac_bridge(out_low=0 out_high='vdd' t_rise=10e-12 t_fall=10e-12)
+
+*.ic v(vin)=0
+.ic v(vcap)='vcp_init'
+.ic v(vbuf)='vcp_init'
+.ic v(vcp)='vcp_init'
+.ic v(vcp1)='vcp_init'
+.save vin_buf vin_div vQA vQB vQAb vQBb vcp1 vcap vbuf vcp vsig_in
+*.options savecurrents
+
+.control
+op
+run
+print all
+tran 1m 3000m
+run
+write low_freq_pll_final_tran.raw vin_buf vin_div vQA vQB vQAb vQBb vcp1 vcap vbuf vcp vsig_in
+quit
+.endc

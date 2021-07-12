@@ -1,0 +1,25 @@
+* Stimulus file.
+
+.param Itail=10u Ibias=10u vincm=0.9 vsig=0 vdd=1.8 Wp=16 Wn=2 Wbias=1
++ Lbias=3.2 nfactorL=1 nfactorW=2 K=1 K2=0.5 Chold=1p
+
+vdd VDD GND 'vdd'
+vcm vcm GND 'vdd/2'
+vholdp vholdp GND 'vdd/2'
+vin vin GND sin('vdd/2' '0.2*vdd/2' 100 0)
+vclk clk GND pulse(0 'vdd' 1u 1u 1u 0.5m 1m)
+
+*.options savecurrents
+.save vin vint vhold vholdp vout clk phi phib
+
+.control
+    op
+    run
+    print all
+    tran 0.1m 5m
+    run
+    write sample_and_hold_tran.raw vin vint vhold vholdp vout clk phi phib
+    quit
+.endc
+
+

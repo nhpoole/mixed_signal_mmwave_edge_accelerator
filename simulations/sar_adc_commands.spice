@@ -1,0 +1,30 @@
+* Stimulus file.
+
+.param vdd=1.8 Ibias_comp=10u vincm_comp=0.9 Wp_comp=4 Wn_comp=2 Clsb=0.1p
+
+vdd VDD GND 'vdd'
+vin vin GND 1.1
+vlow vlow GND 0.7
+vref vref GND 0.5
+vclk fsm_clk GND pulse(0 'vdd' 1u 1u 1u 50u 100u)
+vtrig sample GND pwl(0 'vdd' 100u 'vdd' 101u 0 2m 0)
+
+.ic v(sample)='vdd'
+.save vin vlow vref fsm_clk sample adc_run comp_out vcom
++   q7 q6 q5 q4 q3 q2 q1 q0 qdum
++   r7 r6 r5 r4 r3 r2 r1 r0 rdum
++   c7m c6m c5m c4m c3m c2m c1m c0m cdumm
+*.options savecurrents
+
+.control
+op
+run
+print all
+tran 1u 2m
+run
+write dac_8bit_tran.raw vin vlow vref fsm_clk sample adc_run comp_out vcom
++   q7 q6 q5 q4 q3 q2 q1 q0 qdum
++   r7 r6 r5 r4 r3 r2 r1 r0 rdum
++   c7m c6m c5m c4m c3m c2m c1m c0m cdumm
+quit
+.endc

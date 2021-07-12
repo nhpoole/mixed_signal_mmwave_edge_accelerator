@@ -1,0 +1,76 @@
+* Stimulus file.
+
+.param vcmdes=1 vincm=1 vsig=0 vdd=1.8
+
+vdd VDD GND 'vdd'
+vip vip GND dc 'vincm+vsig' ac 1 0
+vim vim GND dc 'vincm-vsig'
+vocm vocm GND 'vcmdes'
+
+.save all
++ @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.xm2.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.xm6.msky130_fd_pr__pfet_01v8_lvt[id]
++ @m.xm26.msky130_fd_pr__nfet_01v8[id]
++ @m.xm50.msky130_fd_pr__nfet_01v8[id]
+
+*.op
+*.print all
+*write diff_fold_casc_ota_final_op.raw
+
+* Control Block 1
+*.control
+*    op
+*    print all
+*    ac dec 100 0.1 1g
+*    *noise v(vop, vom) vip dec 100 1 10meg
+*    run
+*    write diff_fold_casc_ota_final_ac.raw
+*    *setplot noise1
+*    *write diff_fold_casc_ota_final_noise1.raw v(onoise_spectrum) v(inoise_spectrum)
+*    *setplot noise2
+*    *write diff_fold_casc_ota_final_noise2.raw v(onoise_total) v(inoise_total)
+*    quit
+*.endc
+
+* Control Block 2
+.ac dec 100 0.1 1g
+.control
+    let incm = 0.5
+    while incm < 1.7
+        set incm = $&incm
+        alter @vip[dc]=$incm
+        alter @vim[dc]=$incm
+        run
+        write diff_fold_casc_ota_final_ac_{$incm}.raw
+        let incm = incm + 0.1
+    end
+    quit
+.endc
+
+* Control Block 3
+*.ac dec 100 0.1 1g
+*.control
+*    let temperature = -40
+*    while temperature < 130
+*        set temp = $&temperature
+*        run
+*        write diff_fold_casc_ota_final_temp_{$temp}.raw
+*        let temperature = temperature + 10
+*    end
+*    quit
+*.endc
+
+* Control Block 4
+*.ac dec 100 0.1 1g
+*.control
+*    let supply = 1.62
+*    while supply < 2
+*        alterparam vdd = {$&supply}
+*        reset
+*        run
+*        write diff_fold_casc_ota_final_vdd_{$&supply}.raw
+*        let supply = supply + 0.04
+*    end
+*    quit
+*.endc

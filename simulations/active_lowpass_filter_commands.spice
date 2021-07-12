@@ -1,0 +1,22 @@
+* Stimulus file.
+
+.param Itail_filt=10u vcmdes_filt=1.1 vincm=1.1 vsig=0 vdd=1.8 Cfilt=5n
+
+vdd VDD GND 'vdd'
+vocm_filt vocm_filt GND 'vcmdes_filt'
+*vstimp vstimp GND sin('vdd/2' '0.2*vdd/2' 5e9 0 0 0)
+*vstimm vstimm GND sin('vdd/2' '0.2*vdd/2' 5e9 0 0 180)
+vstimp vstimp GND dc 'vincm' ac 1 0
+vstimm vstimm GND dc 'vincm'
+
+.options savecurrents
+.save all @c17[i] @c21[i] @c16[i] @c19[i] vstimp vstimm vfiltp vfiltm
+*.tran 1p 2n
+.ac dec 100 1 10g
+
+.control
+run
+*write active_lowpass_filter_tran.raw
+write active_lowpass_filter_ac.raw
+quit
+.endc

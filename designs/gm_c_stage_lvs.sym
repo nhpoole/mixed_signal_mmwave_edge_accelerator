@@ -1,0 +1,36 @@
+v {xschem version=2.9.9 file_version=1.2 }
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname Itail=@Itail Wp=@Wp Wn_diff=@Wn_diff Wpcm=@Wpcm Wncm=@Wncm Wn_bias=@Wn_bias Lp=@Lp Ln_diff=@Ln_diff Lpcm=@Lpcm Lncm=@Lncm Ln_bias=@Ln_bias"
+template="name=x1 Itail=0.01u Wp=0.5 Wn_diff=8 Wpcm=0.5 Wncm=8 Wn_bias=1 Lp=1 Ln_diff=1 Lpcm=1 Lncm=1 Ln_bias=4"
+}
+V {}
+S {}
+E {}
+L 4 40 -20 60 -20 {}
+L 4 40 20 60 20 {}
+L 4 -60 -30 -40 -30 {}
+L 4 -60 30 -40 30 {}
+L 4 -60 0 -40 0 {}
+L 4 0 -70 0 -50 {}
+L 4 0 50 0 70 {}
+L 4 -30 -80 -30 -60 {}
+B 5 57.5 -22.5 62.5 -17.5 {name=vom dir=out }
+B 5 57.5 17.5 62.5 22.5 {name=vop dir=out }
+B 5 -62.5 -32.5 -57.5 -27.5 {name=vip dir=in }
+B 5 -62.5 27.5 -57.5 32.5 {name=vim dir=in }
+B 5 -62.5 -2.5 -57.5 2.5 {name=vocm dir=in }
+B 5 -2.5 -72.5 2.5 -67.5 {name=VDD dir=in }
+B 5 -2.5 67.5 2.5 72.5 {name=VSS dir=in }
+B 5 -32.5 -82.5 -27.5 -77.5 {name=ibiasn dir=in }
+P 4 5 -40 -60 -40 60 40 40 40 -40 -40 -60 {}
+T {@symname} -48 74 0 0 0.3 0.3 {}
+T {@name} 5 -62 0 0 0.2 0.2 {}
+T {vom} 35 -24 0 1 0.2 0.2 {}
+T {vop} 35 16 0 1 0.2 0.2 {}
+T {vip} -35 -34 0 0 0.2 0.2 {}
+T {vim} -35 26 0 0 0.2 0.2 {}
+T {vocm} -35 -4 0 0 0.2 0.2 {}
+T {VDD} 4 -45 1 0 0.2 0.2 {}
+T {VSS} -4 45 3 0 0.2 0.2 {}
+T {ibiasn} -35 -66 2 0 0.2 0.2 {}

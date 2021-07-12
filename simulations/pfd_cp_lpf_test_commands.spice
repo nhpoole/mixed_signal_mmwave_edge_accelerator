@@ -1,0 +1,27 @@
+* Stimulus file.
+
+.param vdd=1.8 vctrl=0.95 Wpbias=16 Wnbias=1 Wpint=6 Wnint=0.5 Wpinv=6 Wninv=0.5 Lpmos=64 Lnmos=64 Mpmos=1
++   Mnmos=1 Itail=10u Ibias=10u vcmdes=0.9 vincm=1 vsig=0 Wp=16 Wn=2 Wpcm=64 Wncm=4 Wbias=1
++   Lbias=3.2 nfactorL=1 nfactorW=2 K=1 K2=0.5 Kcap=100000 Ccp=0.01n Rbase=100 Mpcp=8 Wpcp=1 Lcp=16
++   Lswitch=0.5 Wswitchp=2 Wswitchn=1 vcp_init=0.8 Rlhpz=100k
+
+vdd VDD GND 'vdd'
+vsigin vsig_in GND pulse(0 'vdd' 1u 1u 1u 10m 20m)
+vindiv vin_div GND pulse(0 'vdd' 1u 1u 1u 9m 18m)
+
+.ic v(vcap)='vcp_init'
+.ic v(vbuf)='vcp_init'
+.ic v(vcp)='vcp_init'
+.ic v(vcp1)='vcp_init'
+.save vin_div vQA vQB vQAb vQBb vRSTN vcp1 vcap vbuf vcp vsig_in
+*.options savecurrents
+
+.control
+op
+run
+print all
+tran 0.1m 90m
+run
+write pfd_cp_lpf_test_tran.raw vin_div vQA vQB vQAb vQBb vRSTN vcp1 vcap vbuf vcp vsig_in
+quit
+.endc

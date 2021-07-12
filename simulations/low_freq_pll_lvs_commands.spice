@@ -1,0 +1,84 @@
+* Stimulus file.
+
+*.include ../layouts/low_freq_pll/low_freq_pll_pex.spice
+*.include low_freq_pll_lvs.spice
+.include low_freq_pll_final_lvs.spice
+
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_nfet_01v8/sky130_fd_pr__esd_nfet_01v8__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_pfet_g5v0d10v5/sky130_fd_pr__esd_pfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_nfet_g5v0d10v5/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/nonfet.spice
+* Mismatch parameters
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__mismatch.corner.spice
+* Resistor~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/Capacitor
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/r+c/res_typical__cap_typical.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/r+c/res_typical__cap_typical__lin.spice
+* Special cells
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/specialized_cells.spice
+* All models
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/all.spice
+* Corner
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/rf.spice
+
+.param vdd=1.8
++   Kcap=100000 Ccp=1n Ccp_snub=1000n Rbase=100 Mpcp=8 Wpcp=1 Lcp=4
++   Lswitch=1 Wswitchp=2 Wswitchn=1 vcp_init=0.8 Rlhpz=10meg
+
+vdd VDD VSS 'vdd'
+vss VSS GND 0
+vsigin vsig_in VSS pulse(0 'vdd' 1u 1u 1u 10m 20m)
+*x1 VDD VSS vin_div vsig_in vcp ibiasn low_freq_pll_lvs
+x1 VDD VSS vin_div vsig_in vcp ibiasn low_freq_pll_final_lvs
+i1 VDD ibiasn 10u
+
+* Digital VCO.
+.include digital_vco.spice
+xvco vin_buf vco_dclk vcp d_osc_vco vdd='vdd'
+
+*Aadc [vin_buf] [vco_dclk] myadc
+*.model myadc adc_bridge(in_low='vdd/2' in_high='vdd/2' rise_delay=10e-12 fall_delay=10e-12)
+
+Adiv vco_dclk clk_div_digital myclkdiv
+.model myclkdiv d_fdiv(div_factor=2048 high_cycles=1024 rise_delay=10e-12 fall_delay=10e-12)
+
+Adac [clk_div_digital] [vin_div] mydac
+.model mydac dac_bridge(out_low=0 out_high='vdd' t_rise=10e-12 t_fall=10e-12)
+
+*.ic v(vin)=0
+*.ic v(x1.vcap)='vcp_init'
+*.ic v(x1.vbuf)='vcp_init'
+.ic v(vcp)='vcp_init'
+.ic v(x1.vcp1)='vcp_init'
+*.save vin_buf vin_div x1.vQA x1.vQB x1.vQAb x1.vQBb x1.vcp1 x1.vcap x1.vbuf vcp vsig_in
+.save vin_buf vin_div x1.vQA x1.vQB x1.vQAb x1.vQBb x1.vcp1 vcp vsig_in
+*.options savecurrents
+
+.control
+op
+run
+print all
+tran 1m 2000m
+run
+*write low_freq_pll_lvs_tran.raw vin_buf vin_div x1.vQA x1.vQB x1.vQAb x1.vQBb x1.vcp1 x1.vcap x1.vbuf vcp vsig_in
+write low_freq_pll_final_lvs_tran.raw vin_buf vin_div x1.vQA x1.vQB x1.vQAb x1.vQBb x1.vcp1 vcp vsig_in
+quit
+.endc

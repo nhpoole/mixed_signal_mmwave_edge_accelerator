@@ -1,0 +1,23 @@
+***** XSPICE digital controlled oscillator d_osc as vco *************** 
+* 1.6 kHz to 6.6 kHz
+* name: d_osc_vco
+* aout analog out
+* dout digital out 
+* vctrl control voltage
+* vdd supply voltage
+
+.subckt d_osc_vco aout dout vctrl vdd=1.8
+
+* Linear interpolation, input data from measured analog ring oscillator VCO.
+a1 vctrl dout vco_clock
+.model vco_clock d_osc(cntl_array = [0.7 0.8 0.9 1.0]
++ freq_array = [1.609e+003 3.222e+003 4.975e+003 6.569e+003]
++ duty_cycle = 0.5 init_phase = 180.0
++ rise_delay = 1e-7 fall_delay=1e-7)
+
+*generate an analog output for plotting
+abridge-fit [dout] [aout] dac1
+.model dac1 dac_bridge(out_low=0 out_high='vdd' out_undef='vdd/2'
++ input_load=5.0e-12 t_rise=1e-7 t_fall=1e-7)
+
+.ends d_osc_vco

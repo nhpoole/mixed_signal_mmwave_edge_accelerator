@@ -1,0 +1,74 @@
+* Stimulus file.
+
+.param Ibias_comp=10u vincm_comp=0.9 vstep=5m vsig=0 vdd=1.8 Wp_latch=8 Wn_comp=16 Wn_latch=1 Ln_comp=1 Ln_latch=0.3
+
+vdd VDD GND 'vdd'
+*vip vip GND pwl(0 'vincm_comp' 10n 'vincm_comp' 10.1n 'vincm_comp+5m' 90n 'vincm_comp+5m' 90.1n 'vincm_comp-5m' 170n 'vincm_comp-5m' 170.1n 'vincm_comp+5m' 250n 'vincm_comp+5m')
+*vim vim GND pwl(0 'vincm_comp' 10n 'vincm_comp' 10.1n 'vincm_comp-5m' 90n 'vincm_comp-5m' 90.1n 'vincm_comp+5m' 170n 'vincm_comp+5m' 170.1n 'vincm_comp-5m' 250n 'vincm_comp-5m')
+vip vip GND pulse('vincm_comp-vstep' 'vincm_comp+vstep' 100u 1u 1u 700u 4000u)
+*vim vim GND pulse('vincm_comp+vstep' 'vincm_comp-vstep' 100u 1u 1u 700u 4000u)
+vclk clk GND pulse(0 'vdd' 300u 0.01n 0.01n 1000u 2000u)
+*vip vip GND dc 'vincm_comp+vsig' ac 0.5 0
+vim vim GND dc 'vincm_comp-vsig' ac 0.5 180
+*vclk clk GND 'vdd'
+
+.control
+options savecurrents
+save all
++ @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vth]
++ @m.xm2.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vth]
++ @m.xm3.msky130_fd_pr__pfet_01v8[id]
++ @m.xm3.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm4.msky130_fd_pr__nfet_01v8_lvt[id]
++ @m.xm4.msky130_fd_pr__nfet_01v8_lvt[vth]
++ @m.xm5.msky130_fd_pr__pfet_01v8[id]
++ @m.xm5.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm6.msky130_fd_pr__pfet_01v8[id]
++ @m.xm6.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm7.msky130_fd_pr__pfet_01v8[id]
++ @m.xm7.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm8.msky130_fd_pr__pfet_01v8[id]
++ @m.xm8.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm9.msky130_fd_pr__nfet_01v8[id]
++ @m.xm9.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm10.msky130_fd_pr__pfet_01v8[id]
++ @m.xm10.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm11.msky130_fd_pr__nfet_01v8[id]
++ @m.xm11.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm12.msky130_fd_pr__nfet_01v8[id]
++ @m.xm12.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm13.msky130_fd_pr__nfet_01v8[id]
++ @m.xm13.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm14.msky130_fd_pr__nfet_01v8[id]
++ @m.xm14.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm15.msky130_fd_pr__pfet_01v8_hvt[id]
++ @m.xm15.msky130_fd_pr__pfet_01v8_hvt[vth]
++ @m.xm16.msky130_fd_pr__pfet_01v8[id]
++ @m.xm16.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm17.msky130_fd_pr__pfet_01v8[id]
++ @m.xm17.msky130_fd_pr__pfet_01v8[vth]
++ @m.xm18.msky130_fd_pr__nfet_01v8[id]
++ @m.xm18.msky130_fd_pr__nfet_01v8[vth]
++ @m.xm19.msky130_fd_pr__nfet_01v8[id]
++ @m.xm19.msky130_fd_pr__nfet_01v8[vth]
+
+op
+run
+print all
+*write latched_comparator_op.raw
+
+tran 1u 7000u
+run
+write latched_comparator_tran.raw
+
+*dc vip 0.89 0.91 1e-6
+*run
+*write latched_comparator_dc.raw
+
+*ac dec 100 0.1 1g
+*run
+*write latched_comparator_ac.raw
+quit
+.endc

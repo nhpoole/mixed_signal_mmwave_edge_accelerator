@@ -1,0 +1,17 @@
+.subckt dffr_stdcell D CLK Q QB RN VDD VSS
+*.ipin D
+*.ipin CLK
+*.opin Q
+*.opin QB
+*.ipin RN
+*.ipin VDD
+*.ipin VSS
+x1 CLK D RN VSS VSS VDD VDD Q QB sky130_fd_sc_hd__dfrbp_1
+**** begin user architecture code
+
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/dfrbp/sky130_fd_sc_hd__dfrbp_1.spice
+
+**** end user architecture code
+**.ends
+** flattened .save nodes
+.ends
