@@ -9,4 +9,4 @@ This repository contains the complete designs, layouts, verification files, proc
 <br />matlab_scripts/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Post-processing and simulation MATLAB scripts for the various analog and digital designs.
 <br />saved_gds_files/&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;The final GDS files for the chip.
 <br />simulations/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;SPICE design files and SPICE testbench files for the analog designs.
-<br />verilog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;RTL for the digital designs.
+<br />verilog/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;RTL for the digital designs.
