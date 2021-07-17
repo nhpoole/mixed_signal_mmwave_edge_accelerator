@@ -1,0 +1,1296 @@
+timestamp 1626487822
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+use sky130_fd_sc_hd__fill_1 FILL_38 1 0 10212 0 -1 14416
+use sky130_fd_sc_hd__fill_2 FILL_13 1 0 9752 0 -1 14416
+use sky130_fd_sc_hd__fill_2 FILL_14 1 0 9476 0 -1 14416
+use sky130_fd_sc_hd__nor2_1 U99 1 0 9936 0 -1 14416
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_43 1 0 9660 0 -1 14416
+use sky130_fd_sc_hd__fill_1 FILL_39 1 0 9108 0 -1 14416
+use sky130_fd_sc_hd__fill_2 FILL_15 1 0 8924 0 -1 14416
+use sky130_fd_sc_hd__fill_2 FILL_16 1 0 8464 0 -1 14416
+use sky130_fd_sc_hd__nand3_1 U89 -1 0 8372 0 -1 14416
+use sky130_fd_sc_hd__clkinv_1 U84 1 0 9200 0 -1 14416
+use sky130_fd_sc_hd__and2_0 U20 1 0 7544 0 -1 14416
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_42 1 0 8372 0 -1 14416
+use sky130_fd_sc_hd__nand2_1 U85 -1 0 8924 0 -1 14416
+use sky130_fd_sc_hd__fill_1 FILL_40 1 0 5888 0 -1 14416
+use sky130_fd_sc_hd__fill_2 FILL_17 1 0 6256 0 -1 14416
+use sky130_fd_sc_hd__clkinv_1 U68 -1 0 6256 0 -1 14416
+use sky130_fd_sc_hd__fill_4 FILL_4 1 0 7176 0 -1 14416
+use sky130_fd_sc_hd__fill_4 FILL_5 1 0 6716 0 -1 14416
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_41 1 0 7084 0 -1 14416
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_40 1 0 5796 0 -1 14416
+use sky130_fd_sc_hd__nand2_1 U88 -1 0 6716 0 -1 14416
+use sky130_fd_sc_hd__fill_2 FILL_20 1 0 10120 0 -1 13328
+use sky130_fd_sc_hd__a21oi_1 U101 1 0 9752 0 -1 13328
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_39 1 0 10212 0 1 13328
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_36 1 0 9660 0 -1 13328
+use sky130_fd_sc_hd__fill_1 FILL_41 1 0 8648 0 -1 13328
+use sky130_fd_sc_hd__clkinv_1 U86 1 0 8464 0 1 13328
+use sky130_fd_sc_hd__and2_0 U19 -1 0 9660 0 -1 13328
+use sky130_fd_sc_hd__nand2b_1 U18 -1 0 9200 0 -1 13328
+use sky130_fd_sc_hd__dfxtp_1 out_valid_reg 1 0 8740 0 1 13328
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_38 1 0 8372 0 1 13328
+use sky130_fd_sc_hd__dfxtp_1 run_adc_n_reg -1 0 8648 0 -1 13328
+use sky130_fd_sc_hd__dfxtp_1 state_r_reg_1_ -1 0 8372 0 1 13328
+use sky130_fd_sc_hd__fill_1 FILL_42 1 0 6992 0 -1 13328
+use sky130_fd_sc_hd__fill_2 FILL_18 1 0 6716 0 1 13328
+use sky130_fd_sc_hd__nor2_1 U77 1 0 6716 0 -1 13328
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_35 1 0 7084 0 -1 13328
+use sky130_fd_sc_hd__fill_1 FILL_43 1 0 5980 0 -1 13328
+use sky130_fd_sc_hd__fill_2 FILL_21 1 0 5796 0 -1 13328
+use sky130_fd_sc_hd__fill_2 FILL_19 1 0 6256 0 1 13328
+use sky130_fd_sc_hd__clkinv_1 U78 -1 0 6716 0 1 13328
+use sky130_fd_sc_hd__clkinv_1 U76 -1 0 6348 0 -1 13328
+use sky130_fd_sc_hd__fill_4 FILL_7 1 0 6348 0 -1 13328
+use sky130_fd_sc_hd__fill_4 FILL_6 1 0 5888 0 1 13328
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_37 1 0 5796 0 1 13328
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_34 1 0 10212 0 1 12240
+use sky130_fd_sc_hd__fill_1 FILL_44 1 0 8648 0 1 12240
+use sky130_fd_sc_hd__fill_2 FILL_22 1 0 8464 0 1 12240
+use sky130_fd_sc_hd__and2_0 U22 1 0 7912 0 1 12240
+use sky130_fd_sc_hd__dfxtp_1 state_r_reg_0_ 1 0 8740 0 1 12240
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_33 1 0 8372 0 1 12240
+use sky130_fd_sc_hd__fill_1 FILL_45 1 0 5888 0 1 12240
+use sky130_fd_sc_hd__dfxtp_1 dac_mask_reg_1_ 1 0 5980 0 1 12240
+use sky130_fd_sc_hd__nor2b_1 U110 1 0 7452 0 1 12240
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_32 1 0 5796 0 1 12240
+use sky130_fd_sc_hd__fill_1 FILL_46 1 0 10212 0 -1 12240
+use sky130_fd_sc_hd__fill_2 FILL_23 1 0 10028 0 -1 12240
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_31 1 0 9660 0 -1 12240
+use sky130_fd_sc_hd__nand2_1 U90 -1 0 10028 0 -1 12240
+use sky130_fd_sc_hd__dfxtp_1 dac_select_bits_reg_1_ 1 0 8188 0 -1 12240
+use sky130_fd_sc_hd__fill_1 FILL_47 1 0 5796 0 -1 12240
+use sky130_fd_sc_hd__nor2_1 U93 -1 0 7084 0 -1 12240
+use sky130_fd_sc_hd__nor2_1 U103 1 0 7176 0 -1 12240
+use sky130_fd_sc_hd__and2_0 U4 1 0 5888 0 -1 12240
+use sky130_fd_sc_hd__and2_0 U5 1 0 6348 0 -1 12240
+use sky130_fd_sc_hd__fill_8 FILL_1 1 0 7452 0 -1 12240
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_30 1 0 7084 0 -1 12240
+use sky130_fd_sc_hd__clkinv_1 U83 -1 0 10212 0 1 11152
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_29 1 0 10212 0 1 11152
+use sky130_fd_sc_hd__and2_0 U17 1 0 7912 0 1 11152
+use sky130_fd_sc_hd__dfxtp_1 dac_mask_reg_0_ 1 0 8464 0 1 11152
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_28 1 0 8372 0 1 11152
+use sky130_fd_sc_hd__fill_1 FILL_48 1 0 5888 0 1 11152
+use sky130_fd_sc_hd__and2_0 U3 1 0 5980 0 1 11152
+use sky130_fd_sc_hd__dfxtp_1 dac_select_bits_reg_2_ -1 0 7912 0 1 11152
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_27 1 0 5796 0 1 11152
+use sky130_fd_sc_hd__fill_1 FILL_49 1 0 10212 0 -1 11152
+use sky130_fd_sc_hd__fill_1 FILL_50 1 0 9752 0 -1 11152
+use sky130_fd_sc_hd__fill_1 FILL_51 1 0 9568 0 -1 11152
+use sky130_fd_sc_hd__o21ai_1 U102 -1 0 10212 0 -1 11152
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_26 1 0 9660 0 -1 11152
+use sky130_fd_sc_hd__fill_8 FILL_2 1 0 8832 0 -1 11152
+use sky130_fd_sc_hd__fill_2 FILL_24 1 0 5796 0 -1 11152
+use sky130_fd_sc_hd__nor2_1 U92 1 0 5980 0 -1 11152
+use sky130_fd_sc_hd__nor2b_1 U109 -1 0 7084 0 -1 11152
+use sky130_fd_sc_hd__sdlclkp_4 clk_gate_dac_select_bits_reg_latch -1 0 8832 0 -1 11152
+use sky130_fd_sc_hd__clkinv_2 CTS_ccl_a_inv_00006 -1 0 6624 0 -1 11152
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_25 1 0 7084 0 -1 11152
+use sky130_fd_sc_hd__clkinv_1 U100 1 0 9936 0 1 10064
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_24 1 0 10212 0 1 10064
+use sky130_fd_sc_hd__dfxtp_1 dac_mask_reg_7_ 1 0 8464 0 1 10064
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_23 1 0 8372 0 1 10064
+use sky130_fd_sc_hd__nor2_1 U75 1 0 6624 0 1 10064
+use sky130_fd_sc_hd__nor2_1 U91 -1 0 6164 0 1 10064
+use sky130_fd_sc_hd__and2_0 U16 1 0 6164 0 1 10064
+use sky130_fd_sc_hd__dfxtp_1 dac_select_bits_reg_7_ 1 0 6900 0 1 10064
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_22 1 0 5796 0 1 10064
+use sky130_fd_sc_hd__fill_1 FILL_52 1 0 10212 0 -1 10064
+use sky130_fd_sc_hd__fill_2 FILL_28 1 0 10028 0 1 8976
+use sky130_fd_sc_hd__nor2_1 U67 -1 0 9660 0 -1 10064
+use sky130_fd_sc_hd__and2_0 U21 -1 0 10212 0 -1 10064
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_21 1 0 9660 0 -1 10064
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_19 1 0 10212 0 1 8976
+use sky130_fd_sc_hd__fill_1 FILL_53 1 0 8832 0 -1 10064
+use sky130_fd_sc_hd__fill_1 FILL_55 1 0 8464 0 1 8976
+use sky130_fd_sc_hd__fill_1 FILL_56 1 0 8280 0 1 8976
+use sky130_fd_sc_hd__fill_2 FILL_25 1 0 9200 0 -1 10064
+use sky130_fd_sc_hd__fill_2 FILL_26 1 0 8648 0 -1 10064
+use sky130_fd_sc_hd__dfxtp_1 dac_mask_reg_5_ 1 0 8556 0 1 8976
+use sky130_fd_sc_hd__nor2b_1 U107 -1 0 8280 0 1 8976
+use sky130_fd_sc_hd__conb_1 clk_gate_dac_select_bits_reg_LTIE -1 0 9200 0 -1 10064
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_18 1 0 8372 0 1 8976
+use sky130_fd_sc_hd__fill_1 FILL_54 1 0 6992 0 -1 10064
+use sky130_fd_sc_hd__fill_2 FILL_27 1 0 6164 0 -1 10064
+use sky130_fd_sc_hd__and2_0 U14 -1 0 7820 0 1 8976
+use sky130_fd_sc_hd__fill_4 FILL_8 1 0 5796 0 -1 10064
+use sky130_fd_sc_hd__dfxtp_1 dac_select_bits_reg_0_ 1 0 7176 0 -1 10064
+use sky130_fd_sc_hd__dfxtp_1 dac_mask_reg_2_ -1 0 7360 0 1 8976
+use sky130_fd_sc_hd__clkinv_4 CTS_ccl_a_inv_00003 -1 0 6992 0 -1 10064
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_20 1 0 7084 0 -1 10064
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_17 1 0 5796 0 1 8976
+use sky130_fd_sc_hd__fill_1 FILL_57 1 0 10212 0 -1 8976
+use sky130_fd_sc_hd__and2_0 U12 -1 0 10212 0 -1 8976
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_16 1 0 9660 0 -1 8976
+use sky130_fd_sc_hd__fill_2 FILL_29 1 0 9016 0 -1 8976
+use sky130_fd_sc_hd__fill_4 FILL_9 1 0 8648 0 -1 8976
+use sky130_fd_sc_hd__nor2b_1 U104 -1 0 9660 0 -1 8976
+use sky130_fd_sc_hd__fill_1 FILL_58 1 0 5796 0 -1 8976
+use sky130_fd_sc_hd__fill_2 FILL_30 1 0 6900 0 -1 8976
+use sky130_fd_sc_hd__clkinv_1 U74 1 0 5888 0 -1 8976
+use sky130_fd_sc_hd__clkinv_1 U82 -1 0 6440 0 -1 8976
+use sky130_fd_sc_hd__and2_0 U6 1 0 6440 0 -1 8976
+use sky130_fd_sc_hd__dfxtp_1 dac_mask_reg_6_ 1 0 7176 0 -1 8976
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_15 1 0 7084 0 -1 8976
+use sky130_fd_sc_hd__nor2_1 U79 1 0 9936 0 1 7888
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_14 1 0 10212 0 1 7888
+use sky130_fd_sc_hd__fill_1 FILL_59 1 0 8280 0 1 7888
+use sky130_fd_sc_hd__fill_2 FILL_31 1 0 8096 0 1 7888
+use sky130_fd_sc_hd__nor2_1 U81 1 0 7820 0 1 7888
+use sky130_fd_sc_hd__dfxtp_1 dac_select_bits_reg_6_ 1 0 8464 0 1 7888
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_13 1 0 8372 0 1 7888
+use sky130_fd_sc_hd__and2_0 U8 -1 0 7820 0 1 7888
+use sky130_fd_sc_hd__dfxtp_1 dac_mask_reg_3_ -1 0 7360 0 1 7888
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_12 1 0 5796 0 1 7888
+use sky130_fd_sc_hd__fill_1 FILL_60 1 0 10212 0 -1 7888
+use sky130_fd_sc_hd__and2_0 U10 1 0 9752 0 -1 7888
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_11 1 0 9660 0 -1 7888
+use sky130_fd_sc_hd__fill_2 FILL_32 1 0 9016 0 -1 7888
+use sky130_fd_sc_hd__fill_4 FILL_10 1 0 8648 0 -1 7888
+use sky130_fd_sc_hd__nor2b_1 U105 1 0 9200 0 -1 7888
+use sky130_fd_sc_hd__fill_1 FILL_61 1 0 5796 0 -1 7888
+use sky130_fd_sc_hd__nor2_1 U73 -1 0 6164 0 -1 7888
+use sky130_fd_sc_hd__and2_0 U7 1 0 6624 0 -1 7888
+use sky130_fd_sc_hd__dfxtp_1 dac_select_bits_reg_3_ 1 0 7176 0 -1 7888
+use sky130_fd_sc_hd__nor2b_1 U108 1 0 6164 0 -1 7888
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_10 1 0 7084 0 -1 7888
+use sky130_fd_sc_hd__fill_1 FILL_62 1 0 10120 0 1 6800
+use sky130_fd_sc_hd__fill_2 FILL_33 1 0 9936 0 1 6800
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_9 1 0 10212 0 1 6800
+use sky130_fd_sc_hd__dfxtp_1 dac_mask_reg_4_ -1 0 9936 0 1 6800
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_8 1 0 8372 0 1 6800
+use sky130_fd_sc_hd__nor2_1 U94 -1 0 6164 0 1 6800
+use sky130_fd_sc_hd__nor2_1 U95 -1 0 6440 0 1 6800
+use sky130_fd_sc_hd__and2_0 U9 1 0 6440 0 1 6800
+use sky130_fd_sc_hd__dfxtp_1 dac_select_bits_reg_4_ 1 0 6900 0 1 6800
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_7 1 0 5796 0 1 6800
+use sky130_fd_sc_hd__fill_1 FILL_67 1 0 10212 0 1 5712
+use sky130_fd_sc_hd__fill_1 FILL_63 1 0 10212 0 -1 6800
+use sky130_fd_sc_hd__fill_2 FILL_34 1 0 10028 0 -1 6800
+use sky130_fd_sc_hd__fill_1 FILL_64 1 0 9568 0 -1 6800
+use sky130_fd_sc_hd__fill_2 FILL_35 1 0 9384 0 -1 6800
+use sky130_fd_sc_hd__nor2_1 U71 -1 0 9660 0 1 5712
+use sky130_fd_sc_hd__nor2_1 U69 1 0 9752 0 -1 6800
+use sky130_fd_sc_hd__nor2b_1 U106 -1 0 10212 0 1 5712
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_4 1 0 9660 0 1 5712
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_6 1 0 9660 0 -1 6800
+use sky130_fd_sc_hd__fill_1 FILL_68 1 0 8280 0 1 5712
+use sky130_fd_sc_hd__fill_2 FILL_37 1 0 8464 0 1 5712
+use sky130_fd_sc_hd__nor2_1 U97 -1 0 7820 0 1 5712
+use sky130_fd_sc_hd__nor2_1 U98 1 0 9108 0 1 5712
+use sky130_fd_sc_hd__and2_0 U13 1 0 7820 0 1 5712
+use sky130_fd_sc_hd__and2_0 U15 -1 0 9108 0 1 5712
+use sky130_fd_sc_hd__fill_8 FILL_3 1 0 8648 0 -1 6800
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_3 1 0 8372 0 1 5712
+use sky130_fd_sc_hd__dfxtp_1 dac_select_bits_reg_5_ 1 0 7176 0 -1 6800
+use sky130_fd_sc_hd__fill_4 FILL_12 1 0 7176 0 1 5712
+use sky130_fd_sc_hd__fill_4 FILL_11 1 0 6716 0 -1 6800
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_2 1 0 7084 0 1 5712
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_5 1 0 7084 0 -1 6800
+use sky130_fd_sc_hd__and2_0 U11 1 0 6624 0 1 5712
+use sky130_fd_sc_hd__fill_1 FILL_65 1 0 6348 0 -1 6800
+use sky130_fd_sc_hd__fill_1 FILL_69 1 0 6256 0 1 5712
+use sky130_fd_sc_hd__nor2_1 U96 -1 0 6716 0 -1 6800
+use sky130_fd_sc_hd__clkinv_1 U80 -1 0 6624 0 1 5712
+use sky130_fd_sc_hd__fill_1 FILL_66 1 0 5796 0 -1 6800
+use sky130_fd_sc_hd__fill_1 FILL_70 1 0 5888 0 1 5712
+use sky130_fd_sc_hd__fill_2 FILL_36 1 0 6164 0 -1 6800
+use sky130_fd_sc_hd__clkinv_1 U70 -1 0 6164 0 -1 6800
+use sky130_fd_sc_hd__clkinv_1 U72 -1 0 6256 0 1 5712
+use sky130_fd_sc_hd__tapvpwrvgnd_1 WELLTAP_1 1 0 5796 0 1 5712
+port "VDD" 16 3348 0 4980 1632 m4
+port "VDD" 16 3348 18496 4980 20128 m4
+port "VDD" 16 11120 0 12752 1632 m4
+port "VDD" 16 11120 18496 12752 20128 m4
+port "VDD" 16 0 3264 1632 4896 m5
+port "VDD" 16 14468 3264 16100 4896 m5
+port "VDD" 16 0 15232 1632 16864 m5
+port "VDD" 16 14468 15232 16100 16864 m5
+port "VSS" 15 900 0 2532 1632 m4
+port "VSS" 15 900 18496 2532 20128 m4
+port "VSS" 15 13568 0 15200 1632 m4
+port "VSS" 15 13568 18496 15200 20128 m4
+port "VSS" 15 0 816 1632 2448 m5
+port "VSS" 15 14468 816 16100 2448 m5
+port "VSS" 15 0 17680 1632 19312 m5
+port "VSS" 15 14468 17680 16100 19312 m5
+port "adc_val[6]" 7 0 4440 97 4468 m2
+port "adc_val[7]" 6 0 2196 97 2224 m2
+port "adc_val[5]" 8 0 6684 97 6712 m2
+port "adc_val[4]" 9 0 8928 97 8956 m2
+port "adc_val[3]" 10 0 11104 97 11132 m2
+port "clk" 1 216 20031 244 20128 m2
+port "adc_start" 3 15856 20031 15884 20128 m2
+port "adc_val[2]" 11 0 13348 97 13376 m2
+port "out_valid" 14 16003 20080 16100 20108 m2
+port "adc_val[1]" 12 0 15592 97 15620 m2
+port "rst_n" 2 8036 20031 8064 20128 m2
+port "run_adc_n" 5 0 20 97 48 m2
+port "adc_val[0]" 13 0 17836 97 17864 m2
+port "comparator_val" 4 0 20080 97 20108 m2
+node "VDD" 0 0 14468 15232 m5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "VSS" 0 0 14468 17680 m5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_val[6]" 0 0 0 4440 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_val[7]" 0 0 0 2196 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9062_6069#" 0 0 9062 6069 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7774_6069#" 0 0 7774 6069 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6210_5865#" 0 0 6210 5865 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6653_6069#" 0 0 6653 6069 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8602_6545#" 0 0 8602 6545 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6118_6545#" 0 0 6118 6545 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7021_6137#" 0 0 7021 6137 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_val[5]" 0 0 0 6684 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6837_6953#" 0 0 6837 6953 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6394_7157#" 0 0 6394 7157 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9628_6953#" 0 0 9628 6953 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9781_6137#" 0 0 9781 6137 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6101_7225#" 0 0 6101 7225 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6101_7633#" 0 0 6101 7633 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7021_7701#" 0 0 7021 7701 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9597_5933#" 0 0 9597 5933 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6561_5797#" 0 0 6561 5797 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8217_6069#" 0 0 8217 6069 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7052_8041#" 0 0 7052 8041 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7849_8109#" 0 0 7849 8109 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_5641_7633#" 0 0 5641 7633 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8585_8517#" 0 0 8585 8517 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9629_7633#" 0 0 9629 7633 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6469_8585#" 0 0 6469 8585 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6193_7021#" 0 0 6193 7021 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_val[4]" 0 0 0 8928 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_5457_7973#" 0 0 5457 7973 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_val[3]" 0 0 0 11104 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9965_6545#" 0 0 9965 6545 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7389_9061#" 0 0 7389 9061 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8852_9120#" 0 0 8852 9120 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8033_8109#" 0 0 8033 8109 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7757_8245#" 0 0 7757 8245 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6837_8857#" 0 0 6837 8857 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7757_9265#" 0 0 7757 9265 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8585_9673#" 0 0 8585 9673 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8309_10149#" 0 0 8309 10149 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6561_10149#" 0 0 6561 10149 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7190_10217#" 0 0 7190 10217 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9597_8789#" 0 0 9597 8789 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6118_10421#" 0 0 6118 10421 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_10057_10489#" 0 0 10057 10489 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9965_10761#" 0 0 9965 10761 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6561_9809#" 0 0 6561 9809 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8769_10829#" 0 0 8769 10829 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "clk" 0 0 216 20031 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_5641_9197#" 0 0 5641 9197 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9597_9809#" 0 0 9597 9809 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8309_11237#" 0 0 8309 11237 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6469_11237#" 0 0 6469 11237 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_5641_11033#" 0 0 5641 11033 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7205_11781#" 0 0 7205 11781 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6745_11781#" 0 0 6745 11781 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6377_11849#" 0 0 6377 11849 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_5549_10965#" 0 0 5549 10965 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6929_7021#" 0 0 6929 7021 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6377_11577#" 0 0 6377 11577 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8309_12325#" 0 0 8309 12325 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9030_12393#" 0 0 9030 12393 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6270_12393#" 0 0 6270 12393 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_10166_11373#" 0 0 10166 11373 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6009_10897#" 0 0 6009 10897 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7406_12461#" 0 0 7406 12461 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7866_12529#" 0 0 7866 12529 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9781_12869#" 0 0 9781 12869 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_start" 0 0 15856 20031 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6929_13073#" 0 0 6929 13073 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6653_12937#" 0 0 6653 12937 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_val[2]" 0 0 0 13348 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6302_13073#" 0 0 6302 13073 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8324_13141#" 0 0 8324 13141 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6193_10897#" 0 0 6193 10897 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9030_13481#" 0 0 9030 13481 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8677_13481#" 0 0 8677 13481 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6009_12529#" 0 0 6009 12529 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "out_valid" 0 0 16003 20080 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_val[1]" 0 0 0 15592 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_9597_13005#" 0 0 9597 13005 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8033_13957#" 0 0 8033 13957 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7941_13957#" 0 0 7941 13957 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_7573_14025#" 0 0 7573 14025 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_8861_14161#" 0 0 8861 14161 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "rst_n" 0 0 8036 20031 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6929_13753#" 0 0 6929 13753 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6561_14229#" 0 0 6561 14229 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6670_14161#" 0 0 6670 14161 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "run_adc_n" 0 0 0 20 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_5273_10897#" 0 0 5273 10897 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_val[0]" 0 0 0 17836 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "comparator_val" 0 0 0 20080 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U89/C" "U20/B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U20/B" "U19/B"
+merge "U19/B" "U18/B"
+merge "U18/B" "U22/B"
+merge "U22/B" "U17/B"
+merge "U17/B" "U4/B"
+merge "U4/B" "U5/B"
+merge "U5/B" "U3/B"
+merge "U3/B" "U16/B"
+merge "U16/B" "U21/B"
+merge "U21/B" "U12/B"
+merge "U12/B" "U14/B"
+merge "U14/B" "U6/B"
+merge "U6/B" "U10/B"
+merge "U10/B" "U8/B"
+merge "U8/B" "U7/B"
+merge "U7/B" "U9/B"
+merge "U9/B" "U15/B"
+merge "U15/B" "U13/B"
+merge "U13/B" "U11/B"
+merge "U11/B" "rst_n"
+merge "FILL_38/VPWR" "FILL_38/VPB" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "FILL_38/VPB" "U99/VPWR"
+merge "U99/VPWR" "U99/VPB"
+merge "U99/VPB" "FILL_20/VPWR"
+merge "FILL_20/VPWR" "FILL_20/VPB"
+merge "FILL_20/VPB" "WELLTAP_39/VPWR"
+merge "WELLTAP_39/VPWR" "FILL_13/VPWR"
+merge "FILL_13/VPWR" "FILL_13/VPB"
+merge "FILL_13/VPB" "FILL_14/VPWR"
+merge "FILL_14/VPWR" "FILL_14/VPB"
+merge "FILL_14/VPB" "WELLTAP_43/VPWR"
+merge "WELLTAP_43/VPWR" "FILL_39/VPWR"
+merge "FILL_39/VPWR" "FILL_39/VPB"
+merge "FILL_39/VPB" "FILL_15/VPWR"
+merge "FILL_15/VPWR" "FILL_15/VPB"
+merge "FILL_15/VPB" "FILL_16/VPWR"
+merge "FILL_16/VPWR" "FILL_16/VPB"
+merge "FILL_16/VPB" "U84/VPWR"
+merge "U84/VPWR" "U84/VPB"
+merge "U84/VPB" "U85/VPWR"
+merge "U85/VPWR" "U85/VPB"
+merge "U85/VPB" "U101/VPWR"
+merge "U101/VPWR" "U101/VPB"
+merge "U101/VPB" "WELLTAP_36/VPWR"
+merge "WELLTAP_36/VPWR" "FILL_41/VPWR"
+merge "FILL_41/VPWR" "FILL_41/VPB"
+merge "FILL_41/VPB" "U86/VPWR"
+merge "U86/VPWR" "U86/VPB"
+merge "U86/VPB" "out_valid_reg/VPB"
+merge "out_valid_reg/VPB" "U19/VPWR"
+merge "U19/VPWR" "U19/VPB"
+merge "U19/VPB" "U18/VPWR"
+merge "U18/VPWR" "U18/VPB"
+merge "U18/VPB" "out_valid_reg/VPWR"
+merge "out_valid_reg/VPWR" "FILL_44/VPWR"
+merge "FILL_44/VPWR" "FILL_22/VPWR"
+merge "FILL_22/VPWR" "state_r_reg_0_/VPWR"
+merge "state_r_reg_0_/VPWR" "U89/VPWR"
+merge "U89/VPWR" "U89/VPB"
+merge "U89/VPB" "U20/VPWR"
+merge "U20/VPWR" "U20/VPB"
+merge "U20/VPB" "WELLTAP_42/VPWR"
+merge "WELLTAP_42/VPWR" "FILL_4/VPWR"
+merge "FILL_4/VPWR" "FILL_4/VPB"
+merge "FILL_4/VPB" "WELLTAP_41/VPWR"
+merge "WELLTAP_41/VPWR" "WELLTAP_38/VPWR"
+merge "WELLTAP_38/VPWR" "run_adc_n_reg/VPWR"
+merge "run_adc_n_reg/VPWR" "run_adc_n_reg/VPB"
+merge "run_adc_n_reg/VPB" "WELLTAP_35/VPWR"
+merge "WELLTAP_35/VPWR" "U22/VPWR"
+merge "U22/VPWR" "U110/VPWR"
+merge "U110/VPWR" "FILL_40/VPWR"
+merge "FILL_40/VPWR" "FILL_40/VPB"
+merge "FILL_40/VPB" "FILL_17/VPWR"
+merge "FILL_17/VPWR" "FILL_17/VPB"
+merge "FILL_17/VPB" "U68/VPWR"
+merge "U68/VPWR" "U68/VPB"
+merge "U68/VPB" "FILL_5/VPWR"
+merge "FILL_5/VPWR" "FILL_5/VPB"
+merge "FILL_5/VPB" "WELLTAP_40/VPWR"
+merge "WELLTAP_40/VPWR" "U88/VPWR"
+merge "U88/VPWR" "U88/VPB"
+merge "U88/VPB" "state_r_reg_1_/VPWR"
+merge "state_r_reg_1_/VPWR" "state_r_reg_1_/VPB"
+merge "state_r_reg_1_/VPB" "U77/VPWR"
+merge "U77/VPWR" "U77/VPB"
+merge "U77/VPB" "FILL_18/VPWR"
+merge "FILL_18/VPWR" "FILL_18/VPB"
+merge "FILL_18/VPB" "FILL_42/VPWR"
+merge "FILL_42/VPWR" "FILL_42/VPB"
+merge "FILL_42/VPB" "WELLTAP_37/VPWR"
+merge "WELLTAP_37/VPWR" "FILL_6/VPB"
+merge "FILL_6/VPB" "U78/VPB"
+merge "U78/VPB" "FILL_19/VPB"
+merge "FILL_19/VPB" "FILL_6/VPWR"
+merge "FILL_6/VPWR" "FILL_7/VPWR"
+merge "FILL_7/VPWR" "FILL_7/VPB"
+merge "FILL_7/VPB" "U76/VPWR"
+merge "U76/VPWR" "U76/VPB"
+merge "U76/VPB" "U78/VPWR"
+merge "U78/VPWR" "FILL_19/VPWR"
+merge "FILL_19/VPWR" "FILL_21/VPWR"
+merge "FILL_21/VPWR" "FILL_21/VPB"
+merge "FILL_21/VPB" "FILL_43/VPWR"
+merge "FILL_43/VPWR" "FILL_43/VPB"
+merge "FILL_43/VPB" "FILL_45/VPWR"
+merge "FILL_45/VPWR" "dac_mask_reg_1_/VPWR"
+merge "dac_mask_reg_1_/VPWR" "WELLTAP_34/VPWR"
+merge "WELLTAP_34/VPWR" "FILL_44/VPB"
+merge "FILL_44/VPB" "state_r_reg_0_/VPB"
+merge "state_r_reg_0_/VPB" "FILL_22/VPB"
+merge "FILL_22/VPB" "U22/VPB"
+merge "U22/VPB" "WELLTAP_33/VPWR"
+merge "WELLTAP_33/VPWR" "FILL_45/VPB"
+merge "FILL_45/VPB" "U110/VPB"
+merge "U110/VPB" "dac_mask_reg_1_/VPB"
+merge "dac_mask_reg_1_/VPB" "WELLTAP_32/VPWR"
+merge "WELLTAP_32/VPWR" "FILL_46/VPWR"
+merge "FILL_46/VPWR" "FILL_46/VPB"
+merge "FILL_46/VPB" "FILL_23/VPWR"
+merge "FILL_23/VPWR" "FILL_23/VPB"
+merge "FILL_23/VPB" "U83/VPWR"
+merge "U83/VPWR" "U83/VPB"
+merge "U83/VPB" "WELLTAP_29/VPWR"
+merge "WELLTAP_29/VPWR" "WELLTAP_31/VPWR"
+merge "WELLTAP_31/VPWR" "U90/VPWR"
+merge "U90/VPWR" "U90/VPB"
+merge "U90/VPB" "dac_mask_reg_0_/VPWR"
+merge "dac_mask_reg_0_/VPWR" "dac_mask_reg_0_/VPB"
+merge "dac_mask_reg_0_/VPB" "dac_select_bits_reg_1_/VPWR"
+merge "dac_select_bits_reg_1_/VPWR" "dac_select_bits_reg_1_/VPB"
+merge "dac_select_bits_reg_1_/VPB" "U103/VPWR"
+merge "U103/VPWR" "U103/VPB"
+merge "U103/VPB" "FILL_1/VPWR"
+merge "FILL_1/VPWR" "FILL_1/VPB"
+merge "FILL_1/VPB" "WELLTAP_30/VPWR"
+merge "WELLTAP_30/VPWR" "U17/VPWR"
+merge "U17/VPWR" "U17/VPB"
+merge "U17/VPB" "WELLTAP_28/VPWR"
+merge "WELLTAP_28/VPWR" "FILL_47/VPWR"
+merge "FILL_47/VPWR" "FILL_47/VPB"
+merge "FILL_47/VPB" "U93/VPWR"
+merge "U93/VPWR" "U93/VPB"
+merge "U93/VPB" "U4/VPWR"
+merge "U4/VPWR" "U4/VPB"
+merge "U4/VPB" "U5/VPWR"
+merge "U5/VPWR" "U5/VPB"
+merge "U5/VPB" "FILL_48/VPWR"
+merge "FILL_48/VPWR" "FILL_48/VPB"
+merge "FILL_48/VPB" "U3/VPB"
+merge "U3/VPB" "dac_select_bits_reg_2_/VPB"
+merge "dac_select_bits_reg_2_/VPB" "U3/VPWR"
+merge "U3/VPWR" "dac_select_bits_reg_2_/VPWR"
+merge "dac_select_bits_reg_2_/VPWR" "WELLTAP_27/VPWR"
+merge "WELLTAP_27/VPWR" "FILL_49/VPWR"
+merge "FILL_49/VPWR" "FILL_49/VPB"
+merge "FILL_49/VPB" "U102/VPWR"
+merge "U102/VPWR" "U102/VPB"
+merge "U102/VPB" "U100/VPWR"
+merge "U100/VPWR" "U100/VPB"
+merge "U100/VPB" "WELLTAP_24/VPWR"
+merge "WELLTAP_24/VPWR" "FILL_50/VPWR"
+merge "FILL_50/VPWR" "FILL_50/VPB"
+merge "FILL_50/VPB" "FILL_51/VPWR"
+merge "FILL_51/VPWR" "FILL_51/VPB"
+merge "FILL_51/VPB" "WELLTAP_26/VPWR"
+merge "WELLTAP_26/VPWR" "FILL_2/VPWR"
+merge "FILL_2/VPWR" "FILL_2/VPB"
+merge "FILL_2/VPB" "dac_mask_reg_7_/VPWR"
+merge "dac_mask_reg_7_/VPWR" "dac_mask_reg_7_/VPB"
+merge "dac_mask_reg_7_/VPB" "clk_gate_dac_select_bits_reg_latch/VPWR"
+merge "clk_gate_dac_select_bits_reg_latch/VPWR" "clk_gate_dac_select_bits_reg_latch/VPB"
+merge "clk_gate_dac_select_bits_reg_latch/VPB" "WELLTAP_25/VPWR"
+merge "WELLTAP_25/VPWR" "WELLTAP_23/VPWR"
+merge "WELLTAP_23/VPWR" "FILL_24/VPWR"
+merge "FILL_24/VPWR" "FILL_24/VPB"
+merge "FILL_24/VPB" "U92/VPWR"
+merge "U92/VPWR" "U92/VPB"
+merge "U92/VPB" "U109/VPWR"
+merge "U109/VPWR" "U109/VPB"
+merge "U109/VPB" "CTS_ccl_a_inv_00006/VPWR"
+merge "CTS_ccl_a_inv_00006/VPWR" "CTS_ccl_a_inv_00006/VPB"
+merge "CTS_ccl_a_inv_00006/VPB" "U75/VPWR"
+merge "U75/VPWR" "U75/VPB"
+merge "U75/VPB" "dac_select_bits_reg_7_/VPB"
+merge "dac_select_bits_reg_7_/VPB" "U91/VPWR"
+merge "U91/VPWR" "U91/VPB"
+merge "U91/VPB" "U16/VPB"
+merge "U16/VPB" "U16/VPWR"
+merge "U16/VPWR" "dac_select_bits_reg_7_/VPWR"
+merge "dac_select_bits_reg_7_/VPWR" "WELLTAP_22/VPWR"
+merge "WELLTAP_22/VPWR" "FILL_52/VPWR"
+merge "FILL_52/VPWR" "FILL_52/VPB"
+merge "FILL_52/VPB" "FILL_28/VPWR"
+merge "FILL_28/VPWR" "FILL_28/VPB"
+merge "FILL_28/VPB" "WELLTAP_19/VPWR"
+merge "WELLTAP_19/VPWR" "U67/VPWR"
+merge "U67/VPWR" "U67/VPB"
+merge "U67/VPB" "U21/VPWR"
+merge "U21/VPWR" "U21/VPB"
+merge "U21/VPB" "WELLTAP_21/VPWR"
+merge "WELLTAP_21/VPWR" "FILL_53/VPWR"
+merge "FILL_53/VPWR" "FILL_53/VPB"
+merge "FILL_53/VPB" "FILL_55/VPWR"
+merge "FILL_55/VPWR" "FILL_55/VPB"
+merge "FILL_55/VPB" "FILL_25/VPWR"
+merge "FILL_25/VPWR" "FILL_25/VPB"
+merge "FILL_25/VPB" "FILL_26/VPWR"
+merge "FILL_26/VPWR" "FILL_26/VPB"
+merge "FILL_26/VPB" "dac_mask_reg_5_/VPWR"
+merge "dac_mask_reg_5_/VPWR" "dac_mask_reg_5_/VPB"
+merge "dac_mask_reg_5_/VPB" "clk_gate_dac_select_bits_reg_LTIE/VPB"
+merge "clk_gate_dac_select_bits_reg_LTIE/VPB" "clk_gate_dac_select_bits_reg_LTIE/VPWR"
+merge "clk_gate_dac_select_bits_reg_LTIE/VPWR" "FILL_56/VPWR"
+merge "FILL_56/VPWR" "FILL_56/VPB"
+merge "FILL_56/VPB" "U107/VPWR"
+merge "U107/VPWR" "U107/VPB"
+merge "U107/VPB" "WELLTAP_18/VPWR"
+merge "WELLTAP_18/VPWR" "U14/VPWR"
+merge "U14/VPWR" "U14/VPB"
+merge "U14/VPB" "dac_select_bits_reg_0_/VPWR"
+merge "dac_select_bits_reg_0_/VPWR" "dac_select_bits_reg_0_/VPB"
+merge "dac_select_bits_reg_0_/VPB" "WELLTAP_20/VPWR"
+merge "WELLTAP_20/VPWR" "FILL_54/VPWR"
+merge "FILL_54/VPWR" "FILL_54/VPB"
+merge "FILL_54/VPB" "FILL_27/VPWR"
+merge "FILL_27/VPWR" "FILL_27/VPB"
+merge "FILL_27/VPB" "FILL_8/VPWR"
+merge "FILL_8/VPWR" "FILL_8/VPB"
+merge "FILL_8/VPB" "dac_mask_reg_2_/VPWR"
+merge "dac_mask_reg_2_/VPWR" "dac_mask_reg_2_/VPB"
+merge "dac_mask_reg_2_/VPB" "CTS_ccl_a_inv_00003/VPB"
+merge "CTS_ccl_a_inv_00003/VPB" "CTS_ccl_a_inv_00003/VPWR"
+merge "CTS_ccl_a_inv_00003/VPWR" "WELLTAP_17/VPWR"
+merge "WELLTAP_17/VPWR" "FILL_57/VPWR"
+merge "FILL_57/VPWR" "FILL_57/VPB"
+merge "FILL_57/VPB" "U79/VPWR"
+merge "U79/VPWR" "U79/VPB"
+merge "U79/VPB" "WELLTAP_14/VPWR"
+merge "WELLTAP_14/VPWR" "FILL_60/VPWR"
+merge "FILL_60/VPWR" "FILL_60/VPB"
+merge "FILL_60/VPB" "FILL_62/VPWR"
+merge "FILL_62/VPWR" "FILL_62/VPB"
+merge "FILL_62/VPB" "FILL_33/VPWR"
+merge "FILL_33/VPWR" "FILL_33/VPB"
+merge "FILL_33/VPB" "WELLTAP_9/VPWR"
+merge "WELLTAP_9/VPWR" "U12/VPWR"
+merge "U12/VPWR" "U12/VPB"
+merge "U12/VPB" "WELLTAP_16/VPWR"
+merge "WELLTAP_16/VPWR" "FILL_29/VPWR"
+merge "FILL_29/VPWR" "FILL_29/VPB"
+merge "FILL_29/VPB" "FILL_9/VPWR"
+merge "FILL_9/VPWR" "FILL_9/VPB"
+merge "FILL_9/VPB" "U104/VPWR"
+merge "U104/VPWR" "U104/VPB"
+merge "U104/VPB" "dac_select_bits_reg_6_/VPWR"
+merge "dac_select_bits_reg_6_/VPWR" "dac_select_bits_reg_6_/VPB"
+merge "dac_select_bits_reg_6_/VPB" "U10/VPWR"
+merge "U10/VPWR" "U10/VPB"
+merge "U10/VPB" "WELLTAP_11/VPWR"
+merge "WELLTAP_11/VPWR" "FILL_32/VPWR"
+merge "FILL_32/VPWR" "FILL_32/VPB"
+merge "FILL_32/VPB" "FILL_10/VPWR"
+merge "FILL_10/VPWR" "FILL_10/VPB"
+merge "FILL_10/VPB" "U105/VPWR"
+merge "U105/VPWR" "U105/VPB"
+merge "U105/VPB" "dac_mask_reg_4_/VPWR"
+merge "dac_mask_reg_4_/VPWR" "dac_mask_reg_4_/VPB"
+merge "dac_mask_reg_4_/VPB" "dac_mask_reg_6_/VPWR"
+merge "dac_mask_reg_6_/VPWR" "dac_mask_reg_6_/VPB"
+merge "dac_mask_reg_6_/VPB" "WELLTAP_15/VPWR"
+merge "WELLTAP_15/VPWR" "FILL_59/VPWR"
+merge "FILL_59/VPWR" "FILL_59/VPB"
+merge "FILL_59/VPB" "FILL_31/VPWR"
+merge "FILL_31/VPWR" "FILL_31/VPB"
+merge "FILL_31/VPB" "U81/VPWR"
+merge "U81/VPWR" "U81/VPB"
+merge "U81/VPB" "WELLTAP_13/VPWR"
+merge "WELLTAP_13/VPWR" "U8/VPWR"
+merge "U8/VPWR" "U8/VPB"
+merge "U8/VPB" "dac_select_bits_reg_3_/VPWR"
+merge "dac_select_bits_reg_3_/VPWR" "dac_select_bits_reg_3_/VPB"
+merge "dac_select_bits_reg_3_/VPB" "WELLTAP_10/VPWR"
+merge "WELLTAP_10/VPWR" "WELLTAP_8/VPWR"
+merge "WELLTAP_8/VPWR" "FILL_58/VPWR"
+merge "FILL_58/VPWR" "FILL_58/VPB"
+merge "FILL_58/VPB" "FILL_30/VPWR"
+merge "FILL_30/VPWR" "FILL_30/VPB"
+merge "FILL_30/VPB" "U74/VPWR"
+merge "U74/VPWR" "U74/VPB"
+merge "U74/VPB" "U82/VPWR"
+merge "U82/VPWR" "U82/VPB"
+merge "U82/VPB" "U6/VPWR"
+merge "U6/VPWR" "U6/VPB"
+merge "U6/VPB" "dac_mask_reg_3_/VPWR"
+merge "dac_mask_reg_3_/VPWR" "dac_mask_reg_3_/VPB"
+merge "dac_mask_reg_3_/VPB" "WELLTAP_12/VPWR"
+merge "WELLTAP_12/VPWR" "FILL_61/VPWR"
+merge "FILL_61/VPWR" "FILL_61/VPB"
+merge "FILL_61/VPB" "U73/VPWR"
+merge "U73/VPWR" "U73/VPB"
+merge "U73/VPB" "U7/VPWR"
+merge "U7/VPWR" "U7/VPB"
+merge "U7/VPB" "U108/VPWR"
+merge "U108/VPWR" "U108/VPB"
+merge "U108/VPB" "U94/VPWR"
+merge "U94/VPWR" "U94/VPB"
+merge "U94/VPB" "U95/VPB"
+merge "U95/VPB" "U9/VPB"
+merge "U9/VPB" "dac_select_bits_reg_4_/VPB"
+merge "dac_select_bits_reg_4_/VPB" "U95/VPWR"
+merge "U95/VPWR" "U9/VPWR"
+merge "U9/VPWR" "dac_select_bits_reg_4_/VPWR"
+merge "dac_select_bits_reg_4_/VPWR" "WELLTAP_7/VPWR"
+merge "WELLTAP_7/VPWR" "FILL_34/VPWR"
+merge "FILL_34/VPWR" "FILL_34/VPB"
+merge "FILL_34/VPB" "FILL_63/VPWR"
+merge "FILL_63/VPWR" "FILL_63/VPB"
+merge "FILL_63/VPB" "FILL_67/VPWR"
+merge "FILL_67/VPWR" "FILL_67/VPB"
+merge "FILL_67/VPB" "WELLTAP_6/VPWR"
+merge "WELLTAP_6/VPWR" "WELLTAP_4/VPWR"
+merge "WELLTAP_4/VPWR" "U106/VPB"
+merge "U106/VPB" "U69/VPB"
+merge "U69/VPB" "U106/VPWR"
+merge "U106/VPWR" "U69/VPWR"
+merge "U69/VPWR" "U71/VPWR"
+merge "U71/VPWR" "U71/VPB"
+merge "U71/VPB" "FILL_35/VPWR"
+merge "FILL_35/VPWR" "FILL_35/VPB"
+merge "FILL_35/VPB" "FILL_64/VPB"
+merge "FILL_64/VPB" "FILL_64/VPWR"
+merge "FILL_64/VPWR" "FILL_37/VPWR"
+merge "FILL_37/VPWR" "FILL_37/VPB"
+merge "FILL_37/VPB" "U98/VPWR"
+merge "U98/VPWR" "U98/VPB"
+merge "U98/VPB" "U15/VPWR"
+merge "U15/VPWR" "U15/VPB"
+merge "U15/VPB" "FILL_3/VPWR"
+merge "FILL_3/VPWR" "FILL_3/VPB"
+merge "FILL_3/VPB" "FILL_68/VPWR"
+merge "FILL_68/VPWR" "FILL_68/VPB"
+merge "FILL_68/VPB" "U97/VPWR"
+merge "U97/VPWR" "U97/VPB"
+merge "U97/VPB" "U13/VPWR"
+merge "U13/VPWR" "U13/VPB"
+merge "U13/VPB" "WELLTAP_3/VPWR"
+merge "WELLTAP_3/VPWR" "dac_select_bits_reg_5_/VPWR"
+merge "dac_select_bits_reg_5_/VPWR" "dac_select_bits_reg_5_/VPB"
+merge "dac_select_bits_reg_5_/VPB" "WELLTAP_5/VPWR"
+merge "WELLTAP_5/VPWR" "WELLTAP_2/VPWR"
+merge "WELLTAP_2/VPWR" "FILL_12/VPB"
+merge "FILL_12/VPB" "FILL_12/VPWR"
+merge "FILL_12/VPWR" "FILL_11/VPWR"
+merge "FILL_11/VPWR" "FILL_11/VPB"
+merge "FILL_11/VPB" "U11/VPWR"
+merge "U11/VPWR" "U11/VPB"
+merge "U11/VPB" "FILL_65/VPWR"
+merge "FILL_65/VPWR" "FILL_65/VPB"
+merge "FILL_65/VPB" "FILL_69/VPWR"
+merge "FILL_69/VPWR" "FILL_69/VPB"
+merge "FILL_69/VPB" "U96/VPWR"
+merge "U96/VPWR" "U96/VPB"
+merge "U96/VPB" "U80/VPWR"
+merge "U80/VPWR" "U80/VPB"
+merge "U80/VPB" "FILL_66/VPWR"
+merge "FILL_66/VPWR" "FILL_66/VPB"
+merge "FILL_66/VPB" "FILL_70/VPWR"
+merge "FILL_70/VPWR" "FILL_70/VPB"
+merge "FILL_70/VPB" "FILL_36/VPWR"
+merge "FILL_36/VPWR" "FILL_36/VPB"
+merge "FILL_36/VPB" "U70/VPWR"
+merge "U70/VPWR" "U70/VPB"
+merge "U70/VPB" "U72/VPB"
+merge "U72/VPB" "U72/VPWR"
+merge "U72/VPWR" "WELLTAP_1/VPWR"
+merge "WELLTAP_1/VPWR" "VDD"
+merge "FILL_38/VGND" "U99/VGND" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U99/VGND" "FILL_13/VGND"
+merge "FILL_13/VGND" "FILL_14/VGND"
+merge "FILL_14/VGND" "FILL_39/VGND"
+merge "FILL_39/VGND" "FILL_15/VGND"
+merge "FILL_15/VGND" "FILL_16/VGND"
+merge "FILL_16/VGND" "U84/VGND"
+merge "U84/VGND" "U85/VGND"
+merge "U85/VGND" "U89/VGND"
+merge "U89/VGND" "U20/VGND"
+merge "U20/VGND" "FILL_4/VGND"
+merge "FILL_4/VGND" "FILL_40/VGND"
+merge "FILL_40/VGND" "FILL_17/VGND"
+merge "FILL_17/VGND" "U68/VGND"
+merge "U68/VGND" "FILL_5/VGND"
+merge "FILL_5/VGND" "U88/VGND"
+merge "U88/VGND" "FILL_38/VNB"
+merge "FILL_38/VNB" "U99/VNB"
+merge "U99/VNB" "FILL_20/VNB"
+merge "FILL_20/VNB" "FILL_20/VGND"
+merge "FILL_20/VGND" "WELLTAP_39/VGND"
+merge "WELLTAP_39/VGND" "FILL_13/VNB"
+merge "FILL_13/VNB" "FILL_14/VNB"
+merge "FILL_14/VNB" "WELLTAP_43/VGND"
+merge "WELLTAP_43/VGND" "FILL_39/VNB"
+merge "FILL_39/VNB" "FILL_15/VNB"
+merge "FILL_15/VNB" "FILL_16/VNB"
+merge "FILL_16/VNB" "U84/VNB"
+merge "U84/VNB" "U85/VNB"
+merge "U85/VNB" "U101/VNB"
+merge "U101/VNB" "U101/VGND"
+merge "U101/VGND" "WELLTAP_36/VGND"
+merge "WELLTAP_36/VGND" "FILL_41/VNB"
+merge "FILL_41/VNB" "FILL_41/VGND"
+merge "FILL_41/VGND" "U86/VNB"
+merge "U86/VNB" "U86/VGND"
+merge "U86/VGND" "U19/VNB"
+merge "U19/VNB" "U19/VGND"
+merge "U19/VGND" "U18/VNB"
+merge "U18/VNB" "U18/VGND"
+merge "U18/VGND" "out_valid_reg/VNB"
+merge "out_valid_reg/VNB" "out_valid_reg/VGND"
+merge "out_valid_reg/VGND" "U89/VNB"
+merge "U89/VNB" "U20/VNB"
+merge "U20/VNB" "WELLTAP_42/VGND"
+merge "WELLTAP_42/VGND" "FILL_4/VNB"
+merge "FILL_4/VNB" "WELLTAP_41/VGND"
+merge "WELLTAP_41/VGND" "WELLTAP_38/VGND"
+merge "WELLTAP_38/VGND" "run_adc_n_reg/VNB"
+merge "run_adc_n_reg/VNB" "run_adc_n_reg/VGND"
+merge "run_adc_n_reg/VGND" "WELLTAP_35/VGND"
+merge "WELLTAP_35/VGND" "FILL_40/VNB"
+merge "FILL_40/VNB" "FILL_17/VNB"
+merge "FILL_17/VNB" "U68/VNB"
+merge "U68/VNB" "FILL_5/VNB"
+merge "FILL_5/VNB" "WELLTAP_40/VGND"
+merge "WELLTAP_40/VGND" "U88/VNB"
+merge "U88/VNB" "state_r_reg_1_/VNB"
+merge "state_r_reg_1_/VNB" "state_r_reg_1_/VGND"
+merge "state_r_reg_1_/VGND" "U77/VGND"
+merge "U77/VGND" "U77/VNB"
+merge "U77/VNB" "FILL_18/VNB"
+merge "FILL_18/VNB" "FILL_18/VGND"
+merge "FILL_18/VGND" "FILL_42/VNB"
+merge "FILL_42/VNB" "FILL_42/VGND"
+merge "FILL_42/VGND" "WELLTAP_37/VGND"
+merge "WELLTAP_37/VGND" "FILL_6/VNB"
+merge "FILL_6/VNB" "FILL_6/VGND"
+merge "FILL_6/VGND" "FILL_7/VNB"
+merge "FILL_7/VNB" "FILL_7/VGND"
+merge "FILL_7/VGND" "U76/VGND"
+merge "U76/VGND" "U76/VNB"
+merge "U76/VNB" "U78/VNB"
+merge "U78/VNB" "U78/VGND"
+merge "U78/VGND" "FILL_19/VNB"
+merge "FILL_19/VNB" "FILL_19/VGND"
+merge "FILL_19/VGND" "FILL_21/VNB"
+merge "FILL_21/VNB" "FILL_21/VGND"
+merge "FILL_21/VGND" "FILL_43/VNB"
+merge "FILL_43/VNB" "FILL_43/VGND"
+merge "FILL_43/VGND" "WELLTAP_34/VGND"
+merge "WELLTAP_34/VGND" "FILL_46/VNB"
+merge "FILL_46/VNB" "FILL_46/VGND"
+merge "FILL_46/VGND" "FILL_23/VNB"
+merge "FILL_23/VNB" "FILL_23/VGND"
+merge "FILL_23/VGND" "FILL_44/VNB"
+merge "FILL_44/VNB" "FILL_44/VGND"
+merge "FILL_44/VGND" "FILL_22/VNB"
+merge "FILL_22/VNB" "FILL_22/VGND"
+merge "FILL_22/VGND" "state_r_reg_0_/VNB"
+merge "state_r_reg_0_/VNB" "state_r_reg_0_/VGND"
+merge "state_r_reg_0_/VGND" "WELLTAP_31/VGND"
+merge "WELLTAP_31/VGND" "U90/VNB"
+merge "U90/VNB" "U90/VGND"
+merge "U90/VGND" "U22/VNB"
+merge "U22/VNB" "U22/VGND"
+merge "U22/VGND" "WELLTAP_33/VGND"
+merge "WELLTAP_33/VGND" "U110/VGND"
+merge "U110/VGND" "U110/VNB"
+merge "U110/VNB" "dac_select_bits_reg_1_/VNB"
+merge "dac_select_bits_reg_1_/VNB" "dac_select_bits_reg_1_/VGND"
+merge "dac_select_bits_reg_1_/VGND" "U103/VNB"
+merge "U103/VNB" "U103/VGND"
+merge "U103/VGND" "FILL_1/VNB"
+merge "FILL_1/VNB" "FILL_1/VGND"
+merge "FILL_1/VGND" "WELLTAP_30/VGND"
+merge "WELLTAP_30/VGND" "FILL_45/VGND"
+merge "FILL_45/VGND" "FILL_45/VNB"
+merge "FILL_45/VNB" "dac_mask_reg_1_/VNB"
+merge "dac_mask_reg_1_/VNB" "dac_mask_reg_1_/VGND"
+merge "dac_mask_reg_1_/VGND" "WELLTAP_32/VGND"
+merge "WELLTAP_32/VGND" "FILL_47/VNB"
+merge "FILL_47/VNB" "FILL_47/VGND"
+merge "FILL_47/VGND" "U93/VNB"
+merge "U93/VNB" "U93/VGND"
+merge "U93/VGND" "U4/VNB"
+merge "U4/VNB" "U4/VGND"
+merge "U4/VGND" "U5/VNB"
+merge "U5/VNB" "U5/VGND"
+merge "U5/VGND" "U83/VGND"
+merge "U83/VGND" "U83/VNB"
+merge "U83/VNB" "WELLTAP_29/VGND"
+merge "WELLTAP_29/VGND" "FILL_49/VNB"
+merge "FILL_49/VNB" "FILL_49/VGND"
+merge "FILL_49/VGND" "U102/VNB"
+merge "U102/VNB" "U102/VGND"
+merge "U102/VGND" "U100/VNB"
+merge "U100/VNB" "U100/VGND"
+merge "U100/VGND" "WELLTAP_24/VGND"
+merge "WELLTAP_24/VGND" "FILL_52/VGND"
+merge "FILL_52/VGND" "dac_mask_reg_0_/VGND"
+merge "dac_mask_reg_0_/VGND" "dac_mask_reg_0_/VNB"
+merge "dac_mask_reg_0_/VNB" "FILL_50/VNB"
+merge "FILL_50/VNB" "FILL_50/VGND"
+merge "FILL_50/VGND" "FILL_51/VNB"
+merge "FILL_51/VNB" "FILL_51/VGND"
+merge "FILL_51/VGND" "WELLTAP_26/VGND"
+merge "WELLTAP_26/VGND" "FILL_2/VNB"
+merge "FILL_2/VNB" "FILL_2/VGND"
+merge "FILL_2/VGND" "dac_mask_reg_7_/VNB"
+merge "dac_mask_reg_7_/VNB" "dac_mask_reg_7_/VGND"
+merge "dac_mask_reg_7_/VGND" "U67/VGND"
+merge "U67/VGND" "U21/VGND"
+merge "U21/VGND" "FILL_53/VGND"
+merge "FILL_53/VGND" "FILL_25/VGND"
+merge "FILL_25/VGND" "FILL_26/VGND"
+merge "FILL_26/VGND" "clk_gate_dac_select_bits_reg_LTIE/VGND"
+merge "clk_gate_dac_select_bits_reg_LTIE/VGND" "U17/VNB"
+merge "U17/VNB" "U17/VGND"
+merge "U17/VGND" "WELLTAP_28/VGND"
+merge "WELLTAP_28/VGND" "clk_gate_dac_select_bits_reg_latch/VNB"
+merge "clk_gate_dac_select_bits_reg_latch/VNB" "clk_gate_dac_select_bits_reg_latch/VGND"
+merge "clk_gate_dac_select_bits_reg_latch/VGND" "WELLTAP_25/VGND"
+merge "WELLTAP_25/VGND" "WELLTAP_23/VGND"
+merge "WELLTAP_23/VGND" "dac_select_bits_reg_0_/VGND"
+merge "dac_select_bits_reg_0_/VGND" "FILL_48/VNB"
+merge "FILL_48/VNB" "FILL_48/VGND"
+merge "FILL_48/VGND" "U3/VGND"
+merge "U3/VGND" "U3/VNB"
+merge "U3/VNB" "dac_select_bits_reg_2_/VNB"
+merge "dac_select_bits_reg_2_/VNB" "dac_select_bits_reg_2_/VGND"
+merge "dac_select_bits_reg_2_/VGND" "WELLTAP_27/VGND"
+merge "WELLTAP_27/VGND" "FILL_24/VNB"
+merge "FILL_24/VNB" "FILL_24/VGND"
+merge "FILL_24/VGND" "U92/VNB"
+merge "U92/VNB" "U92/VGND"
+merge "U92/VGND" "U109/VNB"
+merge "U109/VNB" "U109/VGND"
+merge "U109/VGND" "CTS_ccl_a_inv_00006/VNB"
+merge "CTS_ccl_a_inv_00006/VNB" "CTS_ccl_a_inv_00006/VGND"
+merge "CTS_ccl_a_inv_00006/VGND" "U75/VNB"
+merge "U75/VNB" "U75/VGND"
+merge "U75/VGND" "U91/VNB"
+merge "U91/VNB" "U91/VGND"
+merge "U91/VGND" "U16/VGND"
+merge "U16/VGND" "U16/VNB"
+merge "U16/VNB" "dac_select_bits_reg_7_/VGND"
+merge "dac_select_bits_reg_7_/VGND" "dac_select_bits_reg_7_/VNB"
+merge "dac_select_bits_reg_7_/VNB" "WELLTAP_22/VGND"
+merge "WELLTAP_22/VGND" "FILL_54/VGND"
+merge "FILL_54/VGND" "FILL_27/VGND"
+merge "FILL_27/VGND" "FILL_8/VGND"
+merge "FILL_8/VGND" "CTS_ccl_a_inv_00003/VGND"
+merge "CTS_ccl_a_inv_00003/VGND" "FILL_52/VNB"
+merge "FILL_52/VNB" "FILL_28/VNB"
+merge "FILL_28/VNB" "FILL_28/VGND"
+merge "FILL_28/VGND" "WELLTAP_19/VGND"
+merge "WELLTAP_19/VGND" "FILL_57/VGND"
+merge "FILL_57/VGND" "U67/VNB"
+merge "U67/VNB" "U21/VNB"
+merge "U21/VNB" "WELLTAP_21/VGND"
+merge "WELLTAP_21/VGND" "FILL_53/VNB"
+merge "FILL_53/VNB" "FILL_55/VNB"
+merge "FILL_55/VNB" "FILL_55/VGND"
+merge "FILL_55/VGND" "FILL_25/VNB"
+merge "FILL_25/VNB" "FILL_26/VNB"
+merge "FILL_26/VNB" "dac_mask_reg_5_/VNB"
+merge "dac_mask_reg_5_/VNB" "dac_mask_reg_5_/VGND"
+merge "dac_mask_reg_5_/VGND" "clk_gate_dac_select_bits_reg_LTIE/VNB"
+merge "clk_gate_dac_select_bits_reg_LTIE/VNB" "U12/VGND"
+merge "U12/VGND" "FILL_29/VGND"
+merge "FILL_29/VGND" "FILL_9/VGND"
+merge "FILL_9/VGND" "U104/VGND"
+merge "U104/VGND" "FILL_56/VNB"
+merge "FILL_56/VNB" "FILL_56/VGND"
+merge "FILL_56/VGND" "U107/VNB"
+merge "U107/VNB" "U107/VGND"
+merge "U107/VGND" "WELLTAP_18/VGND"
+merge "WELLTAP_18/VGND" "U14/VNB"
+merge "U14/VNB" "U14/VGND"
+merge "U14/VGND" "dac_select_bits_reg_0_/VNB"
+merge "dac_select_bits_reg_0_/VNB" "WELLTAP_20/VGND"
+merge "WELLTAP_20/VGND" "dac_mask_reg_6_/VGND"
+merge "dac_mask_reg_6_/VGND" "FILL_54/VNB"
+merge "FILL_54/VNB" "FILL_27/VNB"
+merge "FILL_27/VNB" "FILL_8/VNB"
+merge "FILL_8/VNB" "dac_mask_reg_2_/VNB"
+merge "dac_mask_reg_2_/VNB" "dac_mask_reg_2_/VGND"
+merge "dac_mask_reg_2_/VGND" "CTS_ccl_a_inv_00003/VNB"
+merge "CTS_ccl_a_inv_00003/VNB" "WELLTAP_17/VGND"
+merge "WELLTAP_17/VGND" "FILL_58/VGND"
+merge "FILL_58/VGND" "FILL_30/VGND"
+merge "FILL_30/VGND" "U74/VGND"
+merge "U74/VGND" "U82/VGND"
+merge "U82/VGND" "U6/VGND"
+merge "U6/VGND" "FILL_57/VNB"
+merge "FILL_57/VNB" "U79/VNB"
+merge "U79/VNB" "U79/VGND"
+merge "U79/VGND" "WELLTAP_14/VGND"
+merge "WELLTAP_14/VGND" "FILL_60/VNB"
+merge "FILL_60/VNB" "FILL_60/VGND"
+merge "FILL_60/VGND" "U12/VNB"
+merge "U12/VNB" "WELLTAP_16/VGND"
+merge "WELLTAP_16/VGND" "FILL_29/VNB"
+merge "FILL_29/VNB" "FILL_9/VNB"
+merge "FILL_9/VNB" "U104/VNB"
+merge "U104/VNB" "dac_select_bits_reg_6_/VNB"
+merge "dac_select_bits_reg_6_/VNB" "dac_select_bits_reg_6_/VGND"
+merge "dac_select_bits_reg_6_/VGND" "U10/VNB"
+merge "U10/VNB" "U10/VGND"
+merge "U10/VGND" "WELLTAP_11/VGND"
+merge "WELLTAP_11/VGND" "FILL_32/VNB"
+merge "FILL_32/VNB" "FILL_32/VGND"
+merge "FILL_32/VGND" "FILL_10/VNB"
+merge "FILL_10/VNB" "FILL_10/VGND"
+merge "FILL_10/VGND" "U105/VNB"
+merge "U105/VNB" "U105/VGND"
+merge "U105/VGND" "dac_mask_reg_6_/VNB"
+merge "dac_mask_reg_6_/VNB" "WELLTAP_15/VGND"
+merge "WELLTAP_15/VGND" "FILL_59/VNB"
+merge "FILL_59/VNB" "FILL_59/VGND"
+merge "FILL_59/VGND" "FILL_31/VNB"
+merge "FILL_31/VNB" "FILL_31/VGND"
+merge "FILL_31/VGND" "U81/VNB"
+merge "U81/VNB" "U81/VGND"
+merge "U81/VGND" "WELLTAP_13/VGND"
+merge "WELLTAP_13/VGND" "U8/VNB"
+merge "U8/VNB" "U8/VGND"
+merge "U8/VGND" "dac_select_bits_reg_3_/VNB"
+merge "dac_select_bits_reg_3_/VNB" "dac_select_bits_reg_3_/VGND"
+merge "dac_select_bits_reg_3_/VGND" "WELLTAP_10/VGND"
+merge "WELLTAP_10/VGND" "FILL_58/VNB"
+merge "FILL_58/VNB" "FILL_30/VNB"
+merge "FILL_30/VNB" "U74/VNB"
+merge "U74/VNB" "U82/VNB"
+merge "U82/VNB" "U6/VNB"
+merge "U6/VNB" "dac_mask_reg_3_/VNB"
+merge "dac_mask_reg_3_/VNB" "dac_mask_reg_3_/VGND"
+merge "dac_mask_reg_3_/VGND" "WELLTAP_12/VGND"
+merge "WELLTAP_12/VGND" "FILL_61/VNB"
+merge "FILL_61/VNB" "FILL_61/VGND"
+merge "FILL_61/VGND" "U73/VNB"
+merge "U73/VNB" "U73/VGND"
+merge "U73/VGND" "U7/VNB"
+merge "U7/VNB" "U7/VGND"
+merge "U7/VGND" "U108/VNB"
+merge "U108/VNB" "U108/VGND"
+merge "U108/VGND" "FILL_62/VNB"
+merge "FILL_62/VNB" "FILL_62/VGND"
+merge "FILL_62/VGND" "FILL_33/VNB"
+merge "FILL_33/VNB" "FILL_33/VGND"
+merge "FILL_33/VGND" "WELLTAP_9/VGND"
+merge "WELLTAP_9/VGND" "FILL_34/VNB"
+merge "FILL_34/VNB" "FILL_34/VGND"
+merge "FILL_34/VGND" "FILL_63/VNB"
+merge "FILL_63/VNB" "FILL_63/VGND"
+merge "FILL_63/VGND" "FILL_67/VNB"
+merge "FILL_67/VNB" "FILL_67/VGND"
+merge "FILL_67/VGND" "dac_mask_reg_4_/VGND"
+merge "dac_mask_reg_4_/VGND" "dac_mask_reg_4_/VNB"
+merge "dac_mask_reg_4_/VNB" "WELLTAP_6/VGND"
+merge "WELLTAP_6/VGND" "WELLTAP_4/VGND"
+merge "WELLTAP_4/VGND" "U106/VNB"
+merge "U106/VNB" "U106/VGND"
+merge "U106/VGND" "U69/VNB"
+merge "U69/VNB" "U69/VGND"
+merge "U69/VGND" "U71/VNB"
+merge "U71/VNB" "U71/VGND"
+merge "U71/VGND" "FILL_35/VNB"
+merge "FILL_35/VNB" "FILL_35/VGND"
+merge "FILL_35/VGND" "FILL_64/VNB"
+merge "FILL_64/VNB" "FILL_64/VGND"
+merge "FILL_64/VGND" "FILL_37/VNB"
+merge "FILL_37/VNB" "FILL_37/VGND"
+merge "FILL_37/VGND" "U98/VNB"
+merge "U98/VNB" "U98/VGND"
+merge "U98/VGND" "U15/VNB"
+merge "U15/VNB" "U15/VGND"
+merge "U15/VGND" "FILL_3/VNB"
+merge "FILL_3/VNB" "FILL_3/VGND"
+merge "FILL_3/VGND" "WELLTAP_8/VGND"
+merge "WELLTAP_8/VGND" "FILL_68/VNB"
+merge "FILL_68/VNB" "FILL_68/VGND"
+merge "FILL_68/VGND" "U97/VNB"
+merge "U97/VNB" "U97/VGND"
+merge "U97/VGND" "U13/VNB"
+merge "U13/VNB" "U13/VGND"
+merge "U13/VGND" "WELLTAP_3/VGND"
+merge "WELLTAP_3/VGND" "dac_select_bits_reg_5_/VNB"
+merge "dac_select_bits_reg_5_/VNB" "dac_select_bits_reg_5_/VGND"
+merge "dac_select_bits_reg_5_/VGND" "WELLTAP_5/VGND"
+merge "WELLTAP_5/VGND" "WELLTAP_2/VGND"
+merge "WELLTAP_2/VGND" "FILL_12/VNB"
+merge "FILL_12/VNB" "FILL_12/VGND"
+merge "FILL_12/VGND" "U94/VGND"
+merge "U94/VGND" "U94/VNB"
+merge "U94/VNB" "U95/VGND"
+merge "U95/VGND" "U95/VNB"
+merge "U95/VNB" "U9/VNB"
+merge "U9/VNB" "U9/VGND"
+merge "U9/VGND" "dac_select_bits_reg_4_/VNB"
+merge "dac_select_bits_reg_4_/VNB" "dac_select_bits_reg_4_/VGND"
+merge "dac_select_bits_reg_4_/VGND" "WELLTAP_7/VGND"
+merge "WELLTAP_7/VGND" "FILL_11/VNB"
+merge "FILL_11/VNB" "FILL_11/VGND"
+merge "FILL_11/VGND" "U11/VNB"
+merge "U11/VNB" "U11/VGND"
+merge "U11/VGND" "FILL_65/VNB"
+merge "FILL_65/VNB" "FILL_65/VGND"
+merge "FILL_65/VGND" "FILL_69/VNB"
+merge "FILL_69/VNB" "FILL_69/VGND"
+merge "FILL_69/VGND" "U96/VNB"
+merge "U96/VNB" "U96/VGND"
+merge "U96/VGND" "U80/VNB"
+merge "U80/VNB" "U80/VGND"
+merge "U80/VGND" "FILL_66/VNB"
+merge "FILL_66/VNB" "FILL_66/VGND"
+merge "FILL_66/VGND" "FILL_70/VNB"
+merge "FILL_70/VNB" "FILL_70/VGND"
+merge "FILL_70/VGND" "FILL_36/VNB"
+merge "FILL_36/VNB" "FILL_36/VGND"
+merge "FILL_36/VGND" "U70/VNB"
+merge "U70/VNB" "U70/VGND"
+merge "U70/VGND" "U72/VNB"
+merge "U72/VNB" "U72/VGND"
+merge "U72/VGND" "WELLTAP_1/VGND"
+merge "WELLTAP_1/VGND" "VSUBS"
+merge "VSUBS" "VSS"
+merge "U74/A" "U73/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U73/Y" "U94/A"
+merge "U94/A" "li_5457_7973#"
+merge "dac_select_bits_reg_1_/CLK" "dac_select_bits_reg_2_/CLK" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_select_bits_reg_2_/CLK" "clk_gate_dac_select_bits_reg_latch/GCLK"
+merge "clk_gate_dac_select_bits_reg_latch/GCLK" "dac_select_bits_reg_0_/CLK"
+merge "dac_select_bits_reg_0_/CLK" "dac_select_bits_reg_7_/CLK"
+merge "dac_select_bits_reg_7_/CLK" "dac_select_bits_reg_6_/CLK"
+merge "dac_select_bits_reg_6_/CLK" "dac_select_bits_reg_3_/CLK"
+merge "dac_select_bits_reg_3_/CLK" "dac_select_bits_reg_4_/CLK"
+merge "dac_select_bits_reg_4_/CLK" "dac_select_bits_reg_5_/CLK"
+merge "dac_select_bits_reg_5_/CLK" "li_6929_7021#"
+merge "dac_mask_reg_6_/Q" "U105/B_N" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U105/B_N" "U71/A"
+merge "U71/A" "li_8585_8517#"
+merge "U22/A" "U110/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U110/Y" "li_7866_12529#"
+merge "U76/A" "U93/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U93/A" "U75/Y"
+merge "U75/Y" "li_6302_13073#"
+merge "dac_select_bits_reg_3_/Q" "U73/B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U73/B" "li_6101_7633#"
+merge "dac_mask_reg_0_/Q" "U100/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U100/A" "U67/B"
+merge "U67/B" "li_9597_9809#"
+merge "out_valid_reg/CLK" "run_adc_n_reg/CLK" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "run_adc_n_reg/CLK" "state_r_reg_1_/CLK"
+merge "state_r_reg_1_/CLK" "state_r_reg_0_/CLK"
+merge "state_r_reg_0_/CLK" "dac_mask_reg_0_/CLK"
+merge "dac_mask_reg_0_/CLK" "dac_mask_reg_1_/CLK"
+merge "dac_mask_reg_1_/CLK" "dac_mask_reg_7_/CLK"
+merge "dac_mask_reg_7_/CLK" "dac_mask_reg_5_/CLK"
+merge "dac_mask_reg_5_/CLK" "dac_mask_reg_2_/CLK"
+merge "dac_mask_reg_2_/CLK" "dac_mask_reg_6_/CLK"
+merge "dac_mask_reg_6_/CLK" "CTS_ccl_a_inv_00003/Y"
+merge "CTS_ccl_a_inv_00003/Y" "dac_mask_reg_4_/CLK"
+merge "dac_mask_reg_4_/CLK" "dac_mask_reg_3_/CLK"
+merge "dac_mask_reg_3_/CLK" "li_6009_12529#"
+merge "dac_select_bits_reg_5_/D" "U11/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U11/X" "li_7021_6137#"
+merge "U11/A" "U96/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U96/Y" "li_6653_6069#"
+merge "U99/Y" "U101/B1" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U101/B1" "U19/A"
+merge "U19/A" "li_9597_13005#"
+merge "U85/Y" "U20/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U20/A" "U86/A"
+merge "U86/A" "li_7573_14025#"
+merge "U90/Y" "U110/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U110/A" "U93/B"
+merge "U93/B" "U92/B"
+merge "U92/B" "U109/A"
+merge "U109/A" "U91/B"
+merge "U91/B" "U104/A"
+merge "U104/A" "U107/A"
+merge "U107/A" "U105/A"
+merge "U105/A" "U108/A"
+merge "U108/A" "U94/B"
+merge "U94/B" "U95/B"
+merge "U95/B" "U106/A"
+merge "U106/A" "U98/B"
+merge "U98/B" "U97/B"
+merge "U97/B" "U96/B"
+merge "U96/B" "li_6009_10897#"
+merge "U101/Y" "U102/B1" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U102/B1" "li_9781_12869#"
+merge "state_r_reg_0_/D" "U21/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U21/X" "li_9030_12393#"
+merge "U4/A" "U109/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U109/Y" "li_5549_10965#"
+merge "U109/B_N" "U75/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U75/A" "dac_mask_reg_2_/Q"
+merge "dac_mask_reg_2_/Q" "li_5641_9197#"
+merge "U7/X" "dac_select_bits_reg_3_/D" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_select_bits_reg_3_/D" "li_7021_7701#"
+merge "dac_mask_reg_7_/Q" "U104/B_N" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U104/B_N" "U79/A"
+merge "U79/A" "li_9597_8789#"
+merge "U89/Y" "clk_gate_dac_select_bits_reg_latch/GATE" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "clk_gate_dac_select_bits_reg_latch/GATE" "li_8033_13957#"
+merge "U102/A2" "U100/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U100/Y" "li_10057_10489#"
+merge "U99/B" "U84/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U84/Y" "U85/B"
+merge "U85/B" "U102/A1"
+merge "U102/A1" "li_8861_14161#"
+merge "U71/Y" "U97/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U97/A" "U72/A"
+merge "U72/A" "li_6210_5865#"
+merge "clk_gate_dac_select_bits_reg_latch/CLK" "CTS_ccl_a_inv_00006/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "CTS_ccl_a_inv_00006/A" "clk"
+merge "dac_select_bits_reg_7_/Q" "U79/B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U79/B" "li_8309_10149#"
+merge "U68/A" "U91/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U91/A" "U67/Y"
+merge "U67/Y" "li_5273_10897#"
+merge "U103/Y" "U17/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U17/A" "li_7205_11781#"
+merge "U95/Y" "U9/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U9/A" "li_6394_7157#"
+merge "U82/A" "U81/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U81/Y" "U95/A"
+merge "U95/A" "li_6193_7021#"
+merge "U14/X" "dac_mask_reg_6_/D" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_mask_reg_6_/D" "li_7389_9061#"
+merge "dac_select_bits_reg_6_/Q" "U71/B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U71/B" "li_9597_5933#"
+merge "dac_select_bits_reg_1_/D" "U3/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U3/X" "li_6377_11577#"
+merge "U84/A" "U89/B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U89/B" "state_r_reg_1_/Q"
+merge "state_r_reg_1_/Q" "U90/A"
+merge "U90/A" "U103/A"
+merge "U103/A" "li_6929_13753#"
+merge "U17/X" "dac_mask_reg_7_/D" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_mask_reg_7_/D" "li_8309_11237#"
+merge "dac_select_bits_reg_4_/D" "U9/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U9/X" "li_6837_6953#"
+merge "U7/A" "U94/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U94/Y" "li_6101_7225#"
+merge "U67/A" "dac_select_bits_reg_0_/Q" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_select_bits_reg_0_/Q" "li_8585_9673#"
+merge "dac_mask_reg_1_/Q" "U77/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U77/A" "li_6929_13073#"
+merge "li_6929_13073#" "U110/B_N"
+merge "U110/B_N" "li_7406_12461#"
+merge "dac_select_bits_reg_2_/D" "U5/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U5/X" "li_6745_11781#"
+merge "dac_select_bits_reg_7_/D" "U15/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U15/X" "li_7190_10217#"
+merge "dac_mask_reg_2_/D" "U6/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U6/X" "li_6837_8857#"
+merge "U10/X" "dac_mask_reg_4_/D" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_mask_reg_4_/D" "li_9628_6953#"
+merge "U77/B" "dac_select_bits_reg_1_/Q" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_select_bits_reg_1_/Q" "li_6653_12937#"
+merge "dac_mask_reg_5_/D" "U12/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U12/X" "li_8852_9120#"
+merge "U104/Y" "U14/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U14/A" "li_7757_9265#"
+merge "run_adc_n_reg/Q" "run_adc_n" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U98/Y" "U15/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U15/A" "li_9062_6069#"
+merge "U107/B_N" "dac_mask_reg_4_/Q" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_mask_reg_4_/Q" "U81/A"
+merge "U81/A" "li_8033_8109#"
+merge "U3/A" "U92/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U92/Y" "li_5641_11033#"
+merge "clk_gate_dac_select_bits_reg_latch/SCE" "clk_gate_dac_select_bits_reg_LTIE/LO" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "clk_gate_dac_select_bits_reg_LTIE/LO" "li_8769_10829#"
+merge "U18/Y" "run_adc_n_reg/D" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "run_adc_n_reg/D" "li_8324_13141#"
+merge "U107/Y" "U8/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U8/A" "li_7757_8245#"
+merge "dac_select_bits_reg_2_/Q" "U75/B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U75/B" "li_6469_11237#"
+merge "U78/Y" "adc_val[1]" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "out_valid_reg/Q" "out_valid" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U79/Y" "U98/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U98/A" "U80/A"
+merge "U80/A" "li_6561_5797#"
+merge "U97/Y" "U13/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U13/A" "li_7774_6069#"
+merge "dac_select_bits_reg_0_/D" "U16/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U16/X" "li_6561_10149#"
+merge "U69/Y" "U96/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U96/A" "U70/A"
+merge "U70/A" "li_6118_6545#"
+merge "CTS_ccl_a_inv_00006/Y" "CTS_ccl_a_inv_00003/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "CTS_ccl_a_inv_00003/A" "li_6561_9809#"
+merge "dac_mask_reg_3_/Q" "U73/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U73/A" "U108/B_N"
+merge "U108/B_N" "li_5641_7633#"
+merge "U99/A" "U85/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U85/A" "U88/B"
+merge "U88/B" "U90/B"
+merge "U90/B" "U83/Y"
+merge "U83/Y" "U103/B"
+merge "U103/B" "li_6670_14161#"
+merge "U12/A" "U105/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U105/Y" "li_9629_7633#"
+merge "dac_mask_reg_5_/Q" "U106/B_N" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U106/B_N" "U69/A"
+merge "U69/A" "li_9965_6545#"
+merge "U76/Y" "adc_val[2]" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U102/Y" "U21/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U21/A" "li_9965_10761#"
+merge "U20/X" "state_r_reg_1_/D" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "state_r_reg_1_/D" "li_7941_13957#"
+merge "dac_mask_reg_1_/D" "U4/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U4/X" "li_6270_12393#"
+merge "U89/A" "U88/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U88/Y" "li_6561_14229#"
+merge "state_r_reg_0_/Q" "U83/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U83/A" "li_10166_11373#"
+merge "U74/Y" "adc_val[3]" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U69/B" "dac_select_bits_reg_5_/Q" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_select_bits_reg_5_/Q" "li_8602_6545#"
+merge "U91/Y" "U16/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U16/A" "li_6118_10421#"
+merge "dac_mask_reg_0_/D" "U22/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U22/X" "li_8309_12325#"
+merge "U81/B" "dac_select_bits_reg_4_/Q" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_select_bits_reg_4_/Q" "li_7849_8109#"
+merge "U10/A" "U106/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U106/Y" "li_9781_6137#"
+merge "U8/X" "dac_mask_reg_3_/D" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_mask_reg_3_/D" "li_7052_8041#"
+merge "U93/Y" "U5/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U5/A" "li_6377_11849#"
+merge "U72/Y" "adc_val[6]" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U101/A2" "adc_start" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U77/Y" "U78/A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U78/A" "U92/A"
+merge "U92/A" "li_6193_10897#"
+merge "dac_select_bits_reg_6_/D" "U13/X" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U13/X" "li_8217_6069#"
+merge "U101/A1" "U86/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U86/Y" "U18/A_N"
+merge "U18/A_N" "li_8677_13481#"
+merge "U6/A" "U108/Y" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U108/Y" "li_6469_8585#"
+merge "U88/A" "comparator_val" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U70/Y" "adc_val[5]" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U19/X" "out_valid_reg/D" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "out_valid_reg/D" "li_9030_13481#"
+merge "U80/Y" "adc_val[7]" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U82/Y" "adc_val[4]" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "U68/Y" "adc_val[0]" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

@@ -1,0 +1,94 @@
+timestamp 1626487822
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+use gm_c_stage gm_c_stage_0 1 0 388 0 1 2736
+use gm_c_stage gm_c_stage_1 1 0 388 0 -1 -3540
+use gm_c_stage gm_c_stage_2 1 0 12188 0 -1 -3540
+use gm_c_stage gm_c_stage_3 1 0 12188 0 1 2736
+port "VSS" 5 11416 -406 11440 -390 m4
+port "VDD" 4 11516 5188 11546 5206 m4
+port "ibiasn3" 12 18656 -1896 18670 -1880 m2
+port "ibiasn4" 13 18640 1074 18656 1084 m2
+port "vocm" 3 11604 1874 11614 1882 m3
+port "vfiltp" 7 23360 1060 23382 1076 m3
+port "vfiltm" 6 23620 1100 23640 1116 m3
+port "ibiasn2" 11 6844 -1890 6870 -1878 m2
+port "ibiasn1" 10 6858 1072 6874 1080 m2
+port "vip" 1 4746 1978 4762 1992 m2
+port "vim" 2 5012 2710 5020 2724 m2
+port "vintp" 8 -562 1138 -542 1158 m3
+port "vintm" 9 -290 1124 -268 1144 m3
+node "m4_9904_n6020#" 0 0 9904 -6020 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "VSS" 0 0 11416 -406 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "VDD" 0 0 11516 5188 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_n1528_n6020#" 0 0 -1528 -6020 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "ibiasn3" 0 0 18656 -1896 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "ibiasn4" 0 0 18640 1074 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vocm" 0 0 11604 1874 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vfiltp" 0 0 23360 1060 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vfiltm" 0 0 23620 1100 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "ibiasn2" 0 0 6844 -1890 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "ibiasn1" 0 0 6858 1072 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vip" 0 0 4746 1978 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vim" 0 0 5012 2710 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_9286_n3544#" 0 0 9286 -3544 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vintp" 0 0 -562 1138 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_9578_2680#" 0 0 9578 2680 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_6074_n3776#" 0 0 6074 -3776 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_5046_n3776#" 0 0 5046 -3776 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_6602_n2822#" 0 0 6602 -2822 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_5690_n2822#" 0 0 5690 -2822 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vintm" 0 0 -290 1124 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "w_9590_n5978#" 0 0 9590 -5978 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "w_9590_3318#" 0 0 9590 3318 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_3/ibiasn" "ibiasn4" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_3/VSS" "gm_c_stage_0/VSS" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_0/VSS" "gm_c_stage_2/VSS"
+merge "gm_c_stage_2/VSS" "VSS"
+merge "VSS" "gm_c_stage_1/VSS"
+merge "gm_c_stage_1/VSS" "VSUBS"
+merge "gm_c_stage_3/VDD" "VDD" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "VDD" "gm_c_stage_0/VDD"
+merge "gm_c_stage_0/VDD" "w_9590_3318#"
+merge "w_9590_3318#" "gm_c_stage_2/VDD"
+merge "gm_c_stage_2/VDD" "gm_c_stage_1/VDD"
+merge "gm_c_stage_1/VDD" "m4_9904_n6020#"
+merge "m4_9904_n6020#" "w_9590_n5978#"
+merge "w_9590_n5978#" "m4_n1528_n6020#"
+merge "gm_c_stage_3/vip" "gm_c_stage_2/vop_uq0" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_2/vop_uq0" "vfiltp"
+merge "gm_c_stage_3/vim" "gm_c_stage_2/vom" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_2/vom" "vfiltm"
+merge "gm_c_stage_0/vip" "vip" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_3/vom" "gm_c_stage_0/vop_uq0" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_0/vop_uq0" "gm_c_stage_2/vip"
+merge "gm_c_stage_2/vip" "gm_c_stage_1/vip"
+merge "gm_c_stage_1/vip" "gm_c_stage_1/sky130_fd_pr__nfet_01v8_lvt_YXNJ6N_0/a_1003_n200#"
+merge "gm_c_stage_1/sky130_fd_pr__nfet_01v8_lvt_YXNJ6N_0/a_1003_n200#" "gm_c_stage_1/sky130_fd_pr__nfet_01v8_lvt_YXNJ6N_0/a_n29_n200#"
+merge "gm_c_stage_1/sky130_fd_pr__nfet_01v8_lvt_YXNJ6N_0/a_n29_n200#" "m1_6602_n2822#"
+merge "m1_6602_n2822#" "m1_5690_n2822#"
+merge "m1_5690_n2822#" "gm_c_stage_1/sky130_fd_pr__nfet_01v8_lvt_YXNJ6N_0/a_n1061_n200#"
+merge "gm_c_stage_1/sky130_fd_pr__nfet_01v8_lvt_YXNJ6N_0/a_n1061_n200#" "gm_c_stage_1/vom"
+merge "gm_c_stage_1/vom" "m2_9286_n3544#"
+merge "m2_9286_n3544#" "vintm"
+merge "gm_c_stage_3/vop" "gm_c_stage_0/vom" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_0/vom" "m2_9578_2680#"
+merge "m2_9578_2680#" "gm_c_stage_2/sky130_fd_pr__nfet_01v8_lvt_YXNJ6N_0/a_n745_n255#"
+merge "gm_c_stage_2/sky130_fd_pr__nfet_01v8_lvt_YXNJ6N_0/a_n745_n255#" "gm_c_stage_1/vop"
+merge "gm_c_stage_1/vop" "gm_c_stage_1/vim"
+merge "gm_c_stage_1/vim" "m1_6074_n3776#"
+merge "m1_6074_n3776#" "gm_c_stage_1/sky130_fd_pr__nfet_01v8_lvt_YXNJ6N_0/a_n745_n255#"
+merge "gm_c_stage_1/sky130_fd_pr__nfet_01v8_lvt_YXNJ6N_0/a_n745_n255#" "vintp"
+merge "vintp" "m1_5046_n3776#"
+merge "gm_c_stage_3/vocm" "gm_c_stage_0/vocm" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_0/vocm" "gm_c_stage_2/vocm"
+merge "gm_c_stage_2/vocm" "gm_c_stage_1/vocm"
+merge "gm_c_stage_1/vocm" "vocm"
+merge "gm_c_stage_0/ibiasn" "ibiasn1" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_1/ibiasn" "ibiasn2" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_2/ibiasn" "ibiasn3" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "gm_c_stage_0/vim" "vim" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

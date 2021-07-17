@@ -84,42 +84,42 @@ CPU TIME = 0  REAL TIME = 0  MALLOC = 5/5/5
 //  Entries in /proc/meminfo:
 //
 //  MemTotal:       98834184 kB
-//  MemFree:        78823856 kB
-//  MemAvailable:   95366740 kB
+//  MemFree:        78663212 kB
+//  MemAvailable:   96380192 kB
 //  Buffers:            1192 kB
-//  Cached:         15770076 kB
+//  Cached:         16556208 kB
 //  SwapCached:            0 kB
-//  Active:         13352960 kB
-//  Inactive:        3751832 kB
-//  Active(anon):    1392592 kB
-//  Inactive(anon):    32464 kB
-//  Active(file):   11960368 kB
-//  Inactive(file):  3719368 kB
+//  Active:         14232600 kB
+//  Inactive:        2602216 kB
+//  Active(anon):     336536 kB
+//  Inactive(anon):    48820 kB
+//  Active(file):   13896064 kB
+//  Inactive(file):  2553396 kB
 //  Unevictable:           0 kB
 //  Mlocked:               0 kB
 //  SwapTotal:       3354620 kB
 //  SwapFree:        3353844 kB
-//  Dirty:                44 kB
+//  Dirty:                 4 kB
 //  Writeback:             0 kB
-//  AnonPages:       1329728 kB
-//  Mapped:           293720 kB
-//  Shmem:             91532 kB
-//  Slab:            1616792 kB
-//  SReclaimable:    1524028 kB
-//  SUnreclaim:        92764 kB
-//  KernelStack:        7968 kB
-//  PageTables:        29720 kB
+//  AnonPages:        276128 kB
+//  Mapped:           154892 kB
+//  Shmem:            107796 kB
+//  Slab:            2034844 kB
+//  SReclaimable:    1928400 kB
+//  SUnreclaim:       106444 kB
+//  KernelStack:        7296 kB
+//  PageTables:        21800 kB
 //  NFS_Unstable:          0 kB
 //  Bounce:                0 kB
 //  WritebackTmp:          0 kB
 //  CommitLimit:    52771712 kB
-//  Committed_AS:    4193044 kB
+//  Committed_AS:    1993348 kB
 //  VmallocTotal:   34359738367 kB
 //  VmallocUsed:      240740 kB
 //  VmallocChunk:   34359447424 kB
 //  Percpu:             5440 kB
 //  HardwareCorrupted:     0 kB
-//  AnonHugePages:    448512 kB
+//  AnonHugePages:     67584 kB
 //  CmaTotal:              0 kB
 //  CmaFree:               0 kB
 //  HugePages_Total:       0
@@ -145,9 +145,9 @@ CPU TIME = 0  REAL TIME = 0  MALLOC = 5/5/5
 //  Max file descriptors: 1024
 //  64 bit virtual addressing enabled
 //  Running aoi_cal_2019.1_18.11/pkgs/icv/pvt/calibre -lvs -hier ./calibre_lvs.rule -hcell hcells -automatch
-//  Process ID: 26110
+//  Process ID: 31490
 //
-//  Starting time: Sun Jul 11 22:10:21 2021
+//  Starting time: Fri Jul 16 19:22:48 2021
 //
 
 --- CALIBRE_* ENVIRONMENT VARIABLES:
@@ -252,7 +252,7 @@ CALIBRE_READDB_LD_LIBRARY_PATH=/cad/mentor/2019.1/aoi_cal_2019.1_18.11/shared/pk
 CALIBRE_SKIP_OS_CHECKS=
 CALIBRE_SSE3_SUPPORTED=1
 
---- CALIBRE::LVS-H - Sun Jul 11 22:10:21 2021
+--- CALIBRE::LVS-H - Fri Jul 16 19:22:48 2021
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -264,7 +264,7 @@ Performing global initialization ...
 
 Initializing LVS ... 
 
---- CALIBRE::LVS/xRC INITIALIZATION MODULE COMPLETED.  CPU TIME = 0  REAL TIME = 0  LVHEAP = 65/67/67  MALLOC = 42/42/42  ELAPSED TIME = 1
+--- CALIBRE::LVS/xRC INITIALIZATION MODULE COMPLETED.  CPU TIME = 0  REAL TIME = 0  LVHEAP = 65/67/67  MALLOC = 42/42/42  ELAPSED TIME = 2
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -4493,13 +4493,13 @@ Cumulative REPORT Time:                                  CPU =       0,     REAL
 
 LVS completed. CORRECT. See report file: outputs/lvs.report
 
-LVS completed.  CPU TIME = 2  REAL TIME = 6  LVHEAP = 86/119/119  MALLOC = 100/100/102  ELAPSED TIME = 7
+LVS completed.  CPU TIME = 2  REAL TIME = 5  LVHEAP = 86/119/119  MALLOC = 100/100/101  ELAPSED TIME = 7
 
 --- LVS REPORT FILE = outputs/lvs.report
---- CALIBRE::LVS/xRC EXECUTIVE MODULE COMPLETED.  CPU TIME = 2  REAL TIME = 6  LVHEAP = 3/55/119  MALLOC = 100/100/102  ELAPSED TIME = 7
+--- CALIBRE::LVS/xRC EXECUTIVE MODULE COMPLETED.  CPU TIME = 2  REAL TIME = 5  LVHEAP = 3/55/119  MALLOC = 100/100/101  ELAPSED TIME = 7
 
---- CALIBRE::LVS/xRC COMPLETED - Sun Jul 11 22:10:27 2021
---- TOTAL CPU TIME = 2  REAL TIME = 6  LVHEAP = 3/55/119  MALLOC = 100/100/102  ELAPSED TIME = 7
+--- CALIBRE::LVS/xRC COMPLETED - Fri Jul 16 19:22:54 2021
+--- TOTAL CPU TIME = 2  REAL TIME = 5  LVHEAP = 3/55/119  MALLOC = 100/100/101  ELAPSED TIME = 7
 --- XDB CROSS REFERENCE DATABASE = svdb/user_analog_project_wrapper.xdb
 --- QUERY DATABASE = svdb  TOP CELL = user_analog_project_wrapper
 

@@ -1,0 +1,47 @@
+timestamp 1626487822
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+use freq_div freq_div_0 1 0 32794 0 1 8554
+use cs_ring_osc cs_ring_osc_0 1 0 -2466 0 1 6424
+use pfd_cp_lpf pfd_cp_lpf_0 -1 0 30256 0 1 14838
+port "VSS" 3 30452 9650 30462 9664 m4
+port "VDD" 4 33486 17114 33506 17132 m4
+port "ibiasn" 2 32196 12456 32208 12470 m2
+port "vsigin" 1 32888 14140 32900 14154 m1
+port "vcp" 5 23198 14118 23210 14134 m1
+node "m4_33074_5166#" 0 0 33074 5166 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_35772_8584#" 0 0 35772 8584 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "VSS" 0 0 30452 9650 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_23256_10806#" 0 0 23256 10806 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "VDD" 0 0 33486 17114 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "ibiasn" 0 0 32196 12456 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_29948_8646#" 0 0 29948 8646 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vsigin" 0 0 32888 14140 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vcp" 0 0 23198 14118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_27146_14096#" 0 0 27146 14096 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pfd_cp_lpf_0/ibiasn" "ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pfd_cp_lpf_0/VSS" "freq_div_0/VGND_uq0" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "freq_div_0/VGND_uq0" "m4_35772_8584#"
+merge "m4_35772_8584#" "freq_div_0/VGND"
+merge "freq_div_0/VGND" "freq_div_0/VSS"
+merge "freq_div_0/VSS" "VSS"
+merge "VSS" "freq_div_0/VSUBS"
+merge "freq_div_0/VSUBS" "m4_23256_10806#"
+merge "m4_23256_10806#" "cs_ring_osc_0/VSS"
+merge "cs_ring_osc_0/VSS" "VSUBS"
+merge "pfd_cp_lpf_0/vsig_in" "vsigin" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pfd_cp_lpf_0/vcp" "cs_ring_osc_0/vctrl" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "cs_ring_osc_0/vctrl" "vcp"
+merge "pfd_cp_lpf_0/vin_div" "freq_div_0/vout" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "freq_div_0/vout" "m1_27146_14096#"
+merge "pfd_cp_lpf_0/VDD" "freq_div_0/sky130_fd_sc_hd__dfxbp_1_3/VPWR" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "freq_div_0/sky130_fd_sc_hd__dfxbp_1_3/VPWR" "VDD"
+merge "VDD" "cs_ring_osc_0/VDD"
+merge "cs_ring_osc_0/VDD" "freq_div_0/sky130_fd_sc_hd__dfxbp_1_2/VPWR"
+merge "freq_div_0/sky130_fd_sc_hd__dfxbp_1_2/VPWR" "m4_33074_5166#"
+merge "cs_ring_osc_0/voscbuf" "freq_div_0/vin" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "freq_div_0/vin" "m1_29948_8646#"

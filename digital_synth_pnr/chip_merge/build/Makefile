@@ -1031,5 +1031,5 @@ graph:
 .PHONY: status
 
 status:
-	@/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/mflowgen/scripts/mflowgen-status --backend make -s 1-premerge,5-mentor-calibre-gdsmerge,2-skywater-130nm,8-open-magic-gds2spice-nobbox,0-lvs_setup,3-mentor-calibre-comparison,4-mentor-calibre-comparison-nobbox,6-netgen-lvs-gds,7-open-magic-gds2spice
+	@/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/mflowgen/mflowgen/scripts/mflowgen-status --backend make -s 0-lvs_setup,1-premerge,2-skywater-130nm,3-mentor-calibre-comparison,4-mentor-calibre-comparison-nobbox,5-mentor-calibre-gdsmerge,6-netgen-lvs-gds,7-open-magic-gds2spice,8-open-magic-gds2spice-nobbox
 

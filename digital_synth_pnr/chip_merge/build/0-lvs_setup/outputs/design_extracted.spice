@@ -30019,29 +30019,29 @@ X2 a_358_n100# a_158_n155# a_100_n100# w_n544_n300# sky130_fd_pr__nfet_01v8_lvt 
 
 .subckt pfd_cp_lpf vswitchl ibiasn vpdiode vswitchh vcp vQB vQA vsig_in vin_div vRSTN
 + VQBb vQAb vpbias VDD VSS vndiode
-Xsky130_fd_pr__pfet_01v8_2Q5KMA_0 VSS vpbias VDD VDD vswitchh vpbias VDD vpbias vpbias
-+ vpbias vpbias vpbias VDD VDD VDD VDD vpbias vswitchh VDD vpbias vpbias vpbias VDD
-+ sky130_fd_pr__pfet_01v8_2Q5KMA
-Xsky130_fd_pr__pfet_01v8_2Q5KMA_1 VSS vpbias VDD VDD vpbias vpbias VDD vpbias vswitchh
+Xsky130_fd_pr__pfet_01v8_2Q5KMA_0 VSS vpbias VDD VDD vpbias vpbias VDD vpbias vswitchh
 + vpbias vpbias vpbias VDD VDD VDD VDD vpbias vpbias VDD vpbias vswitchh vswitchh
 + VDD sky130_fd_pr__pfet_01v8_2Q5KMA
+Xsky130_fd_pr__pfet_01v8_2Q5KMA_1 VSS vpbias VDD VDD vswitchh vpbias VDD vpbias vpbias
++ vpbias vpbias vpbias VDD VDD VDD VDD vpbias vswitchh VDD vpbias vpbias vpbias VDD
++ sky130_fd_pr__pfet_01v8_2Q5KMA
 Xsky130_fd_pr__pfet_01v8_lvt_HJ2CZP_0 VSS VDD VDD vQAb vswitchh VDD vcp VDD VDD sky130_fd_pr__pfet_01v8_lvt_HJ2CZP
 Xsky130_fd_pr__nfet_01v8_N6QVV6_0 VSS vpdiode VQBb vndiode VSS vndiode VSS vswitchl
 + VSS VSS VSS VSS VSS VSS sky130_fd_pr__nfet_01v8_N6QVV6
-Xsky130_fd_pr__nfet_01v8_58Q5WU_0 ibiasn VSS ibiasn VSS VSS ibiasn VSS VSS ibiasn
-+ VSS VSS ibiasn VSS vswitchl ibiasn ibiasn VSS ibiasn VSS ibiasn sky130_fd_pr__nfet_01v8_58Q5WU
-Xsky130_fd_pr__nfet_01v8_58Q5WU_1 ibiasn ibiasn ibiasn VSS ibiasn VSS ibiasn VSS ibiasn
+Xsky130_fd_pr__nfet_01v8_58Q5WU_0 ibiasn ibiasn ibiasn VSS ibiasn VSS ibiasn VSS ibiasn
 + VSS vpbias VSS ibiasn VSS VSS VSS VSS ibiasn VSS ibiasn sky130_fd_pr__nfet_01v8_58Q5WU
+Xsky130_fd_pr__nfet_01v8_58Q5WU_1 ibiasn VSS ibiasn VSS VSS ibiasn VSS VSS ibiasn
++ VSS VSS ibiasn VSS vswitchl ibiasn ibiasn VSS ibiasn VSS ibiasn sky130_fd_pr__nfet_01v8_58Q5WU
 Xsky130_fd_pr__pfet_01v8_SCHXZ7_0 VSS VDD VDD vswitchh vQA VDD VDD VDD VDD vndiode
 + VDD VDD vpdiode VDD vpdiode sky130_fd_pr__pfet_01v8_SCHXZ7
-Xsky130_fd_sc_hd__dfrbp_1_0 vQB sky130_fd_sc_hd__dfrbp_1_0/Q_N vRSTN VDD vin_div VSS
+Xsky130_fd_sc_hd__dfrbp_1_0 vQA sky130_fd_sc_hd__dfrbp_1_0/Q_N vRSTN VDD vsig_in VSS
 + VDD VDD VSS sky130_fd_sc_hd__dfrbp_1
-Xsky130_fd_sc_hd__dfrbp_1_1 vQA sky130_fd_sc_hd__dfrbp_1_1/Q_N vRSTN VDD vsig_in VSS
+Xsky130_fd_sc_hd__dfrbp_1_1 vQB sky130_fd_sc_hd__dfrbp_1_1/Q_N vRSTN VDD vin_div VSS
 + VDD VDD VSS sky130_fd_sc_hd__dfrbp_1
-Xsky130_fd_sc_hd__nand2_1_0 vRSTN vQB vQA VDD VSS VSS VDD sky130_fd_sc_hd__nand2_1
 Xsky130_fd_pr__nfet_01v8_lvt_V7QMZR_0 VSS vswitchl vcp VSS vQB VSS VSS VSS sky130_fd_pr__nfet_01v8_lvt_V7QMZR
-Xsky130_fd_sc_hd__inv_1_1 vQAb vQA VDD VSS VSS VDD sky130_fd_sc_hd__inv_1
-Xsky130_fd_sc_hd__inv_1_0 VQBb vQB VDD VSS VSS VDD sky130_fd_sc_hd__inv_1
+Xsky130_fd_sc_hd__nand2_1_0 vRSTN vQB vQA VDD VSS VSS VDD sky130_fd_sc_hd__nand2_1
+Xsky130_fd_sc_hd__inv_1_1 VQBb vQB VDD VSS VSS VDD sky130_fd_sc_hd__inv_1
+Xsky130_fd_sc_hd__inv_1_0 vQAb vQA VDD VSS VSS VDD sky130_fd_sc_hd__inv_1
 .ends
 
 .subckt freq_div vin VDD vout VSS
@@ -30549,12 +30549,66 @@ X0 c1_n850_n200# m3_n950_n300# sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=8e+06u
 X0 c1_n850_n800# m3_n950_n900# sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=8e+06u
 .ends
 
+.subckt sky130_fd_pr__cap_mim_m3_1_GJFTVY VSUBS m3_n350_n900# c1_n250_n800#
+X0 c1_n250_n800# m3_n350_n900# sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+.ends
+
 .subckt sky130_fd_pr__cap_mim_m3_1_ZE2L9R VSUBS c1_n1250_n200# m3_n1350_n300#
 X0 c1_n1250_n200# m3_n1350_n300# sky130_fd_pr__cap_mim_m3_1 l=2e+06u w=1.2e+07u
 .ends
 
-.subckt sky130_fd_pr__cap_mim_m3_1_GJFTVY VSUBS m3_n350_n900# c1_n250_n800#
-X0 c1_n250_n800# m3_n350_n900# sky130_fd_pr__cap_mim_m3_1 l=8e+06u w=2e+06u
+.subckt diff_to_se_converter VSS vse vip ibiasn VDD rst_n rst vdiffp vim vdiffm vocm
++
+Xtxgate_1 rst vim vdiffm VDD VSS txgate_1/txb txgate
+Xtxgate_0 rst vip vdiffp VDD VSS txgate_0/txb txgate
+Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_3 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
+Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_4 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
+Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_5 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
+Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_6 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
+Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_7 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_10 VSS vim vdiffm sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_11 VSS vip vdiffp sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_12 VSS vim vdiffm sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_13 VSS vip vdiffp sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_14 VSS vip vdiffp sky130_fd_pr__cap_mim_m3_1_RR5544
+Xse_fold_casc_wide_swing_ota_0 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2
++ VSS se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4
++ se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vcascnp
++ se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/M16d
++ vip vim ibiasn se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vcascpm
++ VDD vse se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/vtail_cascp
++ se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_15 VSS vim vdiffm sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_0 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
+Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_1 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_0 VSS vse vim sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_1 VSS vip vocm sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_2 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_2 VSS vip vocm sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_3 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_3 VSS vse vim sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_4 VSS vse vim sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_4 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
+Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_0 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_5 VSS vip vocm sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_5 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
+Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_6 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
+Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_1 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_6 VSS vip vocm sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_7 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_7 VSS vse vim sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_2 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
+Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_3 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_8 VSS vip vdiffp sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_RR5544_9 VSS vim vdiffm sky130_fd_pr__cap_mim_m3_1_RR5544
+Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_4 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
+Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_5 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
+Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_6 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
+Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_7 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
+Xsky130_fd_sc_hd__inv_1_0 rst rst_n VDD VSS VSS VDD sky130_fd_sc_hd__inv_1
+Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_0 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
+Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_1 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
+Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_2 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
 .ends
 
 .subckt sky130_fd_pr__pfet_01v8_LEMKJU VSUBS a_n465_n200# w_n1155_n300# a_n247_n200#
@@ -30822,7 +30876,7 @@ Xsky130_fd_pr__cap_mim_m3_1_RR5544_21 VSS vim2 vop1 sky130_fd_pr__cap_mim_m3_1_R
 Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_8 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
 Xsky130_fd_pr__cap_mim_m3_1_RR5544_44 VSS vip1 vhpf sky130_fd_pr__cap_mim_m3_1_RR5544
 Xsky130_fd_pr__cap_mim_m3_1_RR5544_33 VSS vom1 vip1 sky130_fd_pr__cap_mim_m3_1_RR5544
-Xtxgate_6 rst vincm vip1 VDD VSS txgate_6/txb txgate
+Xtxgate_6 rst vincm vim1 VDD VSS txgate_6/txb txgate
 Xsky130_fd_pr__cap_mim_m3_1_RR5544_22 VSS vip2 vom1 sky130_fd_pr__cap_mim_m3_1_RR5544
 Xsky130_fd_pr__cap_mim_m3_1_RR5544_11 VSS venp2 vim2 sky130_fd_pr__cap_mim_m3_1_RR5544
 Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_9 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
@@ -30830,7 +30884,7 @@ Xsky130_fd_pr__cap_mim_m3_1_RR5544_45 VSS vim1 vincm sky130_fd_pr__cap_mim_m3_1_
 Xsky130_fd_pr__cap_mim_m3_1_RR5544_34 VSS vop1 vim1 sky130_fd_pr__cap_mim_m3_1_RR5544
 Xsky130_fd_pr__cap_mim_m3_1_RR5544_23 VSS vim2 vop1 sky130_fd_pr__cap_mim_m3_1_RR5544
 Xsky130_fd_pr__cap_mim_m3_1_RR5544_12 VSS venm2 vip2 sky130_fd_pr__cap_mim_m3_1_RR5544
-Xtxgate_7 rst vincm vim1 VDD VSS txgate_7/txb txgate
+Xtxgate_7 rst vincm vip1 VDD VSS txgate_7/txb txgate
 Xsky130_fd_pr__cap_mim_m3_1_RR5544_46 VSS vim1 vincm sky130_fd_pr__cap_mim_m3_1_RR5544
 Xsky130_fd_pr__cap_mim_m3_1_RR5544_35 VSS vom1 vip1 sky130_fd_pr__cap_mim_m3_1_RR5544
 Xsky130_fd_pr__cap_mim_m3_1_RR5544_24 VSS venp1 vop1 sky130_fd_pr__cap_mim_m3_1_RR5544
@@ -30939,60 +30993,6 @@ Xdiff_fold_casc_ota_1 diff_fold_casc_ota_1/vfoldm diff_fold_casc_ota_1/M1d diff_
 Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_2 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
 .ends
 
-.subckt diff_to_se_converter VSS vse vip ibiasn VDD rst_n rst vdiffp vim vdiffm vocm
-+
-Xtxgate_1 rst vim vdiffm VDD VSS txgate_1/txb txgate
-Xtxgate_0 rst vip vdiffp VDD VSS txgate_0/txb txgate
-Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_3 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
-Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_4 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
-Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_5 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
-Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_6 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
-Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_7 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_10 VSS vim vdiffm sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_11 VSS vip vdiffp sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_12 VSS vim vdiffm sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_13 VSS vip vdiffp sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_14 VSS vip vdiffp sky130_fd_pr__cap_mim_m3_1_RR5544
-Xse_fold_casc_wide_swing_ota_0 se_fold_casc_wide_swing_ota_0/vbias1 se_fold_casc_wide_swing_ota_0/vbias2
-+ VSS se_fold_casc_wide_swing_ota_0/vbias3 se_fold_casc_wide_swing_ota_0/vcascnm se_fold_casc_wide_swing_ota_0/vbias4
-+ se_fold_casc_wide_swing_ota_0/vtail_cascn se_fold_casc_wide_swing_ota_0/vcascnp
-+ se_fold_casc_wide_swing_ota_0/M8d se_fold_casc_wide_swing_ota_0/vmirror se_fold_casc_wide_swing_ota_0/M16d
-+ vip vim ibiasn se_fold_casc_wide_swing_ota_0/vcascpp se_fold_casc_wide_swing_ota_0/vcascpm
-+ VDD vse se_fold_casc_wide_swing_ota_0/M9d se_fold_casc_wide_swing_ota_0/vtail_cascp
-+ se_fold_casc_wide_swing_ota_0/M7d se_fold_casc_wide_swing_ota_0/M13d se_fold_casc_wide_swing_ota
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_15 VSS vim vdiffm sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_0 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
-Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_1 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_0 VSS vse vim sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_1 VSS vip vocm sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_2 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_2 VSS vip vocm sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_3 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_3 VSS vse vim sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_4 VSS vse vim sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_4 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
-Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_0 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_5 VSS vip vocm sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_5 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
-Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_6 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
-Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_1 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_6 VSS vip vocm sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_GJFTVY_7 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_GJFTVY
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_7 VSS vse vim sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_2 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
-Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_3 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_8 VSS vip vdiffp sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_RR5544_9 VSS vim vdiffm sky130_fd_pr__cap_mim_m3_1_RR5544
-Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_4 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
-Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_5 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
-Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_6 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
-Xsky130_fd_pr__cap_mim_m3_1_ZE2L9R_7 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_ZE2L9R
-Xsky130_fd_sc_hd__inv_1_0 rst rst_n VDD VSS VSS VDD sky130_fd_sc_hd__inv_1
-Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_0 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
-Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_1 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
-Xsky130_fd_pr__cap_mim_m3_1_JJFNVY_2 VSS VSS VSS sky130_fd_pr__cap_mim_m3_1_JJFNVY
-.ends
-
 .subckt analog_top_level VSS VDD q7A q6A q5A q4A q3A q2A q1A q0A vlowB vrefB vlowA
 + vrefA adc_clk q7B q6B q5B q4B q3B q2B q1B q0B sample vpeak_sampled vcp_sampled vpeak
 + vcp vcomp vocm_filt vampp vfiltp vfiltm vintm vintp gain_ctrl_0 vocm vse vbiasn
@@ -31026,14 +31026,14 @@ Xbias_current_distribution_0 low_freq_pll_0/ibiasn comparator_0/ibiasn biquad_gm
 + sample_and_hold_1/ibiasn peak_detector_0/ibiasn2 peak_detector_0/ibiasn1 diff_to_se_converter_0/ibiasn
 + input_amplifier_0/ibiasn2 input_amplifier_0/ibiasn1 dac_8bit_0/ibiasn sample_and_hold_0/ibiasn
 + dac_8bit_1/ibiasn vbiasp VDD vbiasn dac_8bit_1/ibiasp dac_8bit_0/ibiasp VSS bias_current_distribution
+Xdiff_to_se_converter_0 VSS vse diff_to_se_converter_0/vip diff_to_se_converter_0/ibiasn
++ VDD rst_n diff_to_se_converter_0/rst vfiltp diff_to_se_converter_0/vim vfiltm vocm_filt
++ diff_to_se_converter
 Xinput_amplifier_0 input_amplifier_0/vip1 input_amplifier_0/vim1 VSS input_amplifier_0/venp1
 + input_amplifier_0/venm1 input_amplifier_0/vim2 input_amplifier_0/vip2 input_amplifier_0/venp2
 + input_amplifier_0/venm2 vampp VDD gain_ctrl_0 gain_ctrl_1 vocm input_amplifier_0/ibiasn1
 + input_amplifier_0/ibiasn2 rst_n input_amplifier_0/rst input_amplifier_0/vop1 input_amplifier_0/vom1
 + vhpf vincm vampm input_amplifier
-Xdiff_to_se_converter_0 VSS vse diff_to_se_converter_0/vip diff_to_se_converter_0/ibiasn
-+ VDD rst_n diff_to_se_converter_0/rst vfiltp diff_to_se_converter_0/vim vfiltm vocm_filt
-+ diff_to_se_converter
 .ends
 
 .subckt user_analog_project_wrapper vdda1 vdda2 vssa1 vssa2 vccd1 vccd2 vssd1 vssd2 wb_clk_i

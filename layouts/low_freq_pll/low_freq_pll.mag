@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1625985445
+timestamp 1626477323
 << metal1 >>
 rect 23080 14160 23140 14166
 rect 23140 14100 24468 14160
@@ -54,17 +54,17 @@ rect 37936 16812 37972 17542
 rect 38702 16812 38736 17542
 rect 37936 6956 38736 16812
 use freq_div  freq_div_0 ~/ee272b/ee272b_mixed_signal_mmwave_accelerator/layouts/freq_div
-timestamp 1625985445
+timestamp 1626477166
 transform 1 0 32794 0 1 8554
 box -2674 -2906 3321 454
-use pfd_cp_lpf  pfd_cp_lpf_0 ~/ee272b/ee272b_mixed_signal_mmwave_accelerator/layouts/pfd_cp_lpf
-timestamp 1625985445
-transform -1 0 30256 0 1 14838
-box -2600 -3860 7000 2740
 use cs_ring_osc  cs_ring_osc_0 ~/ee272b/ee272b_mixed_signal_mmwave_accelerator/layouts/cs_ring_osc
 timestamp 1625985445
 transform 1 0 -2466 0 1 6424
 box 9760 -28686 41209 4472
+use pfd_cp_lpf  pfd_cp_lpf_0 ~/ee272b/ee272b_mixed_signal_mmwave_accelerator/layouts/pfd_cp_lpf
+timestamp 1625985445
+transform -1 0 30256 0 1 14838
+box -2600 -3860 7000 2740
 << labels >>
 flabel metal1 32888 14140 32900 14154 1 FreeSans 480 0 0 0 vsigin
 flabel metal2 32196 12456 32208 12470 1 FreeSans 480 0 0 0 ibiasn

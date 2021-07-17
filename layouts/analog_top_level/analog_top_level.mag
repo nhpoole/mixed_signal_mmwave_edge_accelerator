@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1625985445
+timestamp 1626485978
 << pwell >>
 rect 294184 -175166 295456 -174946
 << metal1 >>
@@ -1760,6 +1760,14 @@ rect 296598 -185812 296622 -185060
 rect 297374 -185812 297398 -185060
 rect 296598 -185836 297398 -185812
 rect 250904 -185864 251752 -185840
+use input_amplifier  input_amplifier_0 ~/ee272b/ee272b_mixed_signal_mmwave_accelerator/layouts/input_amplifier
+timestamp 1626485826
+transform -1 0 248960 0 1 -106680
+box -13477 -718 90192 28340
+use low_freq_pll  low_freq_pll_0 ~/ee272b/ee272b_mixed_signal_mmwave_accelerator/layouts/low_freq_pll
+timestamp 1626477323
+transform 1 0 211340 0 1 -129086
+box 7294 -22262 38743 17578
 use peak_detector  peak_detector_0 ~/ee272b/ee272b_mixed_signal_mmwave_accelerator/layouts/peak_detector
 timestamp 1624477805
 transform 1 0 173892 0 1 -185010
@@ -1784,14 +1792,6 @@ use diff_to_se_converter  diff_to_se_converter_0 ~/ee272b/ee272b_mixed_signal_mm
 timestamp 1625985445
 transform -1 0 194530 0 1 -150652
 box -13514 -718 35912 30940
-use input_amplifier  input_amplifier_0 ~/ee272b/ee272b_mixed_signal_mmwave_accelerator/layouts/input_amplifier
-timestamp 1625985445
-transform -1 0 248960 0 1 -106680
-box -13477 -718 90192 28340
-use low_freq_pll  low_freq_pll_0 ~/ee272b/ee272b_mixed_signal_mmwave_accelerator/layouts/low_freq_pll
-timestamp 1625985445
-transform 1 0 211340 0 1 -129086
-box 7294 -22262 38743 17578
 use dac_8bit  dac_8bit_0 ~/ee272b/ee272b_mixed_signal_mmwave_accelerator/layouts/dac_8bit
 timestamp 1625985445
 transform 1 0 326281 0 1 -59040

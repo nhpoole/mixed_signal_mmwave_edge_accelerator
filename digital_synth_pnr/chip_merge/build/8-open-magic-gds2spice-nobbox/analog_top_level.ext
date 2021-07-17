@@ -1,0 +1,360 @@
+timestamp 1626487822
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+use input_amplifier input_amplifier_0 -1 0 248960 0 1 -106680
+use low_freq_pll low_freq_pll_0 1 0 211340 0 1 -129086
+use peak_detector peak_detector_0 1 0 173892 0 1 -185010
+use biquad_gm_c_filter biquad_gm_c_filter_0 1 0 187212 0 1 -113396
+use sample_and_hold sample_and_hold_1 1 0 253730 0 1 -149196
+use sample_and_hold sample_and_hold_0 1 0 253730 0 1 -183720
+use comparator comparator_0 1 0 229012 0 1 -114708
+use diff_to_se_converter diff_to_se_converter_0 -1 0 194530 0 1 -150652
+use dac_8bit dac_8bit_1 1 0 326281 0 1 -59040
+use dac_8bit dac_8bit_0 1 0 326281 0 1 -110050
+use bias_current_distribution bias_current_distribution_0 1 0 268974 0 1 -98308
+use pulse_generator pulse_generator_0 -1 0 339666 0 1 -185362
+port "VDD" 2 252560 -154626 252626 -154538 m4
+port "VSS" 1 251350 -185504 251356 -185498 m5
+port "vrefB" 12 297928 -184958 297938 -184946 m3
+port "vlowB" 11 297672 -182972 297684 -182956 m3
+port "adc_vcaparrayB" 42 336538 -162098 336560 -162076 m3
+port "vrefA" 14 297816 -133942 297832 -133926 m3
+port "vlowA" 13 297592 -131956 297600 -131944 m3
+port "vintm" 34 186922 -111650 186936 -111624 m3
+port "vintp" 35 186656 -111776 186678 -111748 m3
+port "adc_vcaparrayA" 41 336424 -111070 336442 -111054 m3
+port "vincm" 50 257954 -105312 257972 -105298 m3
+port "vhpf" 49 257576 -100770 257584 -100760 m3
+port "vocm" 37 200836 -99526 200866 -99496 m3
+port "q0B" 23 336376 -188428 336404 -188404 m3
+port "q1B" 22 336380 -188130 336404 -188102 m3
+port "q2B" 21 336360 -187860 336384 -187828 m3
+port "q3B" 20 336360 -187572 336380 -187544 m3
+port "q4B" 19 336346 -187278 336366 -187250 m3
+port "q5B" 18 336360 -187004 336384 -186976 m3
+port "q6B" 17 336352 -186674 336380 -186650 m3
+port "q7B" 16 336360 -186390 336394 -186356 m3
+port "vpeak_sampled" 25 296034 -178004 296042 -178000 m3
+port "adc_compB" 44 384800 -152028 384810 -152024 m2
+port "q0A" 10 336388 -137080 336412 -137056 m3
+port "q1A" 9 336410 -136792 336422 -136778 m3
+port "q2A" 8 336402 -136498 336418 -136486 m3
+port "q3A" 7 336392 -136230 336400 -136218 m3
+port "q4A" 6 336394 -135924 336410 -135904 m3
+port "q5A" 5 336398 -135642 336402 -135632 m3
+port "q6A" 4 336392 -135326 336404 -135314 m3
+port "q7A" 3 336386 -135042 336406 -135028 m3
+port "vcp_sampled" 26 297150 -127600 297164 -127580 m2
+port "adc_compA" 43 384914 -101012 384932 -101002 m2
+port "vbiasn" 39 276048 -108136 276068 -108126 m2
+port "vcp" 28 252302 -151498 252314 -151468 m3
+port "vpeak" 27 252684 -184830 252706 -184802 m3
+port "vfiltm" 33 210828 -117166 210854 -117146 m2
+port "vfiltp" 32 210568 -116246 210592 -116228 m2
+port "gain_ctrl_0" 36 197976 -102334 197986 -102326 m2
+port "vbiasp" 40 280014 -96358 280028 -96342 m2
+port "vampp" 31 190664 -107802 190678 -107782 m2
+port "vampm" 45 196520 -107834 196534 -107828 m2
+port "gain_ctrl_1" 46 199398 -83588 199416 -83576 m2
+port "peak_detector_rst" 47 334794 -185540 334800 -185524 m2
+port "adc_clk" 15 340136 -184296 340154 -184284 m2
+port "adc_clk" 15 377876 -131602 377900 -131586 m2
+port "sample" 24 339852 -184050 339870 -184034 m1
+port "vse" 38 204160 -152696 204176 -152670 m2
+port "vocm_filt" 30 207498 -136864 207514 -136850 m2
+port "vcomp" 29 233848 -113906 233872 -113882 m3
+port "rst_n" 48 256268 -91234 256286 -91216 m2
+node "m5_335069_n139430#" 0 0 335069 -139430 m5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_295308_n185836#" 0 0 295308 -185836 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "VDD" 0 0 252560 -154626 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_200065_n151312#" 0 0 200065 -151312 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_294496_n129556#" 0 0 294496 -129556 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_249252_n120516#" 0 0 249252 -120516 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_185684_n120184#" 0 0 185684 -120184 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_342116_n118218#" 0 0 342116 -118218 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_225610_n118458#" 0 0 225610 -118458 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_229772_n112180#" 0 0 229772 -112180 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_258602_n107340#" 0 0 258602 -107340 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "VSS" 0 0 251350 -185504 m5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_208338_n114196#" 0 0 208338 -114196 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_247146_n79140#" 0 0 247146 -79140 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m4_157844_n108980#" 0 0 157844 -108980 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vrefB" 0 0 297928 -184958 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vlowB" 0 0 297672 -182972 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_vcaparrayB" 0 0 336538 -162098 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vrefA" 0 0 297816 -133942 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vlowA" 0 0 297592 -131956 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m3_338785_n119638#" 0 0 338785 -119638 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vintm" 0 0 186922 -111650 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vintp" 0 0 186656 -111776 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_vcaparrayA" 0 0 336424 -111070 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vincm" 0 0 257954 -105312 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vhpf" 0 0 257576 -100770 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vocm" 0 0 200836 -99526 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q0B" 0 0 336376 -188428 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q1B" 0 0 336380 -188130 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q2B" 0 0 336360 -187860 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q3B" 0 0 336360 -187572 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q4B" 0 0 336346 -187278 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q5B" 0 0 336360 -187004 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q6B" 0 0 336352 -186674 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q7B" 0 0 336360 -186390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_256782_n183890#" 0 0 256782 -183890 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vpeak_sampled" 0 0 296034 -178004 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_compB" 0 0 384800 -152028 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_336237_n137440#" 0 0 336237 -137440 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q0A" 0 0 336388 -137080 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q1A" 0 0 336410 -136792 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q2A" 0 0 336402 -136498 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q3A" 0 0 336392 -136230 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q4A" 0 0 336394 -135924 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q5A" 0 0 336398 -135642 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q6A" 0 0 336392 -135326 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "q7A" 0 0 336386 -135042 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_251432_n183910#" 0 0 251432 -183910 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_256528_n149366#" 0 0 256528 -149366 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vcp_sampled" 0 0 297150 -127600 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_compA" 0 0 384914 -101012 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vbiasn" 0 0 276048 -108136 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_275792_n107460#" 0 0 275792 -107460 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vcp" 0 0 252302 -151498 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_225367_n115524#" 0 0 225367 -115524 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vpeak" 0 0 252684 -184830 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_158376_n151698#" 0 0 158376 -151698 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vfiltm" 0 0 210828 -117166 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vfiltp" 0 0 210568 -116246 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_196618_n115310#" 0 0 196618 -115310 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m2_196578_n112346#" 0 0 196578 -112346 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "gain_ctrl_0" 0 0 197976 -102334 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vbiasp" 0 0 280014 -96358 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vampp" 0 0 190664 -107802 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vampm" 0 0 196520 -107834 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "gain_ctrl_1" 0 0 199398 -83588 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_333758_n185882#" 0 0 333758 -185882 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_334540_n185344#" 0 0 334540 -185344 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "peak_detector_rst" 0 0 334794 -185540 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "adc_clk" 0 0 377876 -131602 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_333766_n184794#" 0 0 333766 -184794 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "sample" 0 0 339852 -184050 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_340704_n167010#" 0 0 340704 -167010 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_259992_n149098#" 0 0 259992 -149098 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vse" 0 0 204160 -152696 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vocm_filt" 0 0 207498 -136864 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_340572_n116000#" 0 0 340572 -116000 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "vcomp" 0 0 233848 -113906 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_243263_n114661#" 0 0 243263 -114661 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_275244_n108030#" 0 0 275244 -108030 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_193222_n106070#" 0 0 193222 -106070 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_259902_n183622#" 0 0 259902 -183622 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_225734_n183616#" 0 0 225734 -183616 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_184660_n183616#" 0 0 184660 -183616 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_193666_n149088#" 0 0 193666 -149088 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_244754_n101754#" 0 0 244754 -101754 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_272572_n98078#" 0 0 272572 -98078 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_268876_n97882#" 0 0 268876 -97882 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_270862_n98096#" 0 0 270862 -98096 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "m1_274292_n98264#" 0 0 274292 -98264 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "rst_n" 0 0 256268 -91234 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "input_amplifier_0/diff_fold_casc_ota_1/VDD" "input_amplifier_0/diff_fold_casc_ota_0/VDD" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "input_amplifier_0/diff_fold_casc_ota_0/VDD" "bias_current_distribution_0/VDD"
+merge "bias_current_distribution_0/VDD" "biquad_gm_c_filter_0/gm_c_stage_0/VDD"
+merge "biquad_gm_c_filter_0/gm_c_stage_0/VDD" "biquad_gm_c_filter_0/gm_c_stage_2/VDD"
+merge "biquad_gm_c_filter_0/gm_c_stage_2/VDD" "m4_157844_n108980#"
+merge "m4_157844_n108980#" "biquad_gm_c_filter_0/gm_c_stage_1/VDD"
+merge "biquad_gm_c_filter_0/gm_c_stage_1/VDD" "biquad_gm_c_filter_0/m4_n1528_n6020#"
+merge "biquad_gm_c_filter_0/m4_n1528_n6020#" "sample_and_hold_1/se_fold_casc_wide_swing_ota_0/VDD"
+merge "sample_and_hold_1/se_fold_casc_wide_swing_ota_0/VDD" "sample_and_hold_1/VDD"
+merge "sample_and_hold_1/VDD" "low_freq_pll_0/VDD"
+merge "low_freq_pll_0/VDD" "m4_249252_n120516#"
+merge "m4_249252_n120516#" "diff_to_se_converter_0/VDD"
+merge "diff_to_se_converter_0/VDD" "diff_to_se_converter_0/se_fold_casc_wide_swing_ota_0/VDD"
+merge "diff_to_se_converter_0/se_fold_casc_wide_swing_ota_0/VDD" "dac_8bit_1/amux_2to1_8/VDD"
+merge "dac_8bit_1/amux_2to1_8/VDD" "low_freq_pll_0/cs_ring_osc_0/cs_ring_osc_stage_4/VDD"
+merge "low_freq_pll_0/cs_ring_osc_0/cs_ring_osc_stage_4/VDD" "dac_8bit_1/amux_2to1_17/VDD"
+merge "dac_8bit_1/amux_2to1_17/VDD" "dac_8bit_1/VDD"
+merge "dac_8bit_1/VDD" "low_freq_pll_0/cs_ring_osc_0/VDD"
+merge "low_freq_pll_0/cs_ring_osc_0/VDD" "m5_335069_n139430#"
+merge "m5_335069_n139430#" "low_freq_pll_0/cs_ring_osc_0/cs_ring_osc_stage_0/VDD"
+merge "low_freq_pll_0/cs_ring_osc_0/cs_ring_osc_stage_0/VDD" "m4_185684_n120184#"
+merge "m4_185684_n120184#" "sample_and_hold_0/se_fold_casc_wide_swing_ota_0/VDD"
+merge "sample_and_hold_0/se_fold_casc_wide_swing_ota_0/VDD" "sample_and_hold_0/VDD"
+merge "sample_and_hold_0/VDD" "peak_detector_0/se_fold_casc_wide_swing_ota_0/VDD"
+merge "peak_detector_0/se_fold_casc_wide_swing_ota_0/VDD" "VDD"
+merge "VDD" "dac_8bit_0/amux_2to1_8/VDD"
+merge "dac_8bit_0/amux_2to1_8/VDD" "pulse_generator_0/VDD"
+merge "pulse_generator_0/VDD" "m4_247146_n79140#"
+merge "m4_247146_n79140#" "pulse_generator_0/sky130_fd_sc_hd__dfxbp_1_2/VPWR"
+merge "pulse_generator_0/sky130_fd_sc_hd__dfxbp_1_2/VPWR" "pulse_generator_0/sky130_fd_sc_hd__dfxbp_1_0/VPWR"
+merge "pulse_generator_0/sky130_fd_sc_hd__dfxbp_1_0/VPWR" "pulse_generator_0/sky130_fd_sc_hd__inv_1_0/VPWR"
+merge "pulse_generator_0/sky130_fd_sc_hd__inv_1_0/VPWR" "pulse_generator_0/sky130_fd_sc_hd__tapvpwrvgnd_1_0/VPWR"
+merge "pulse_generator_0/sky130_fd_sc_hd__tapvpwrvgnd_1_0/VPWR" "m1_333766_n184794#"
+merge "m1_333766_n184794#" "pulse_generator_0/sky130_fd_sc_hd__tapvpwrvgnd_1_3/VPWR"
+merge "pulse_generator_0/sky130_fd_sc_hd__tapvpwrvgnd_1_3/VPWR" "pulse_generator_0/sky130_fd_sc_hd__dfxbp_1_1/VPWR"
+merge "pulse_generator_0/sky130_fd_sc_hd__dfxbp_1_1/VPWR" "pulse_generator_0/sky130_fd_sc_hd__tapvpwrvgnd_1_1/VPWR"
+merge "pulse_generator_0/sky130_fd_sc_hd__tapvpwrvgnd_1_1/VPWR" "dac_8bit_0/VDD"
+merge "dac_8bit_0/VDD" "m1_333758_n185882#"
+merge "dac_8bit_1/amux_2to1_8/SEL" "sample_and_hold_1/clk" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "sample_and_hold_1/clk" "m2_256528_n149366#"
+merge "m2_256528_n149366#" "dac_8bit_0/amux_2to1_8/SEL"
+merge "dac_8bit_0/amux_2to1_8/SEL" "sample_and_hold_0/clk"
+merge "sample_and_hold_0/clk" "m2_256782_n183890#"
+merge "m2_256782_n183890#" "m2_251432_n183910#"
+merge "dac_8bit_0/amux_2to1_9/SEL" "q0B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "input_amplifier_0/diff_fold_casc_ota_1/VSS" "input_amplifier_0/VSS" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "input_amplifier_0/VSS" "input_amplifier_0/VSUBS"
+merge "input_amplifier_0/VSUBS" "bias_current_distribution_0/VSS"
+merge "bias_current_distribution_0/VSS" "m4_258602_n107340#"
+merge "m4_258602_n107340#" "low_freq_pll_0/pfd_cp_lpf_0/VSS"
+merge "low_freq_pll_0/pfd_cp_lpf_0/VSS" "comparator_0/VSS"
+merge "comparator_0/VSS" "low_freq_pll_0/cs_ring_osc_0/cs_ring_osc_stage_0/VSS"
+merge "low_freq_pll_0/cs_ring_osc_0/cs_ring_osc_stage_0/VSS" "m4_225610_n118458#"
+merge "m4_225610_n118458#" "low_freq_pll_0/cs_ring_osc_0/VSS"
+merge "low_freq_pll_0/cs_ring_osc_0/VSS" "diff_to_se_converter_0/VSS"
+merge "diff_to_se_converter_0/VSS" "m4_200065_n151312#"
+merge "m4_200065_n151312#" "biquad_gm_c_filter_0/VSUBS"
+merge "biquad_gm_c_filter_0/VSUBS" "dac_8bit_1/amux_2to1_8/VSS"
+merge "dac_8bit_1/amux_2to1_8/VSS" "dac_8bit_1/VSS"
+merge "dac_8bit_1/VSS" "dac_8bit_1/VSUBS"
+merge "dac_8bit_1/VSUBS" "sample_and_hold_1/se_fold_casc_wide_swing_ota_0/VSS"
+merge "sample_and_hold_1/se_fold_casc_wide_swing_ota_0/VSS" "m4_294496_n129556#"
+merge "m4_294496_n129556#" "sample_and_hold_1/VSS"
+merge "sample_and_hold_1/VSS" "low_freq_pll_0/cs_ring_osc_0/cs_ring_osc_stage_1/m3_5698_2064#"
+merge "low_freq_pll_0/cs_ring_osc_0/cs_ring_osc_stage_1/m3_5698_2064#" "low_freq_pll_0/VSUBS"
+merge "low_freq_pll_0/VSUBS" "diff_to_se_converter_0/VSUBS"
+merge "diff_to_se_converter_0/VSUBS" "dac_8bit_0/amux_2to1_8/VSS"
+merge "dac_8bit_0/amux_2to1_8/VSS" "dac_8bit_0/VSS"
+merge "dac_8bit_0/VSS" "pulse_generator_0/VSS"
+merge "pulse_generator_0/VSS" "pulse_generator_0/sky130_fd_sc_hd__tapvpwrvgnd_1_3/VGND"
+merge "pulse_generator_0/sky130_fd_sc_hd__tapvpwrvgnd_1_3/VGND" "pulse_generator_0/sky130_fd_sc_hd__dfxbp_1_1/VGND"
+merge "pulse_generator_0/sky130_fd_sc_hd__dfxbp_1_1/VGND" "pulse_generator_0/sky130_fd_sc_hd__inv_1_0/VNB"
+merge "pulse_generator_0/sky130_fd_sc_hd__inv_1_0/VNB" "pulse_generator_0/sky130_fd_sc_hd__tapvpwrvgnd_1_0/VGND"
+merge "pulse_generator_0/sky130_fd_sc_hd__tapvpwrvgnd_1_0/VGND" "m1_334540_n185344#"
+merge "m1_334540_n185344#" "pulse_generator_0/VSUBS"
+merge "pulse_generator_0/VSUBS" "dac_8bit_0/VSUBS"
+merge "dac_8bit_0/VSUBS" "sample_and_hold_0/se_fold_casc_wide_swing_ota_0/VSS"
+merge "sample_and_hold_0/se_fold_casc_wide_swing_ota_0/VSS" "m4_295308_n185836#"
+merge "m4_295308_n185836#" "sample_and_hold_0/VSS"
+merge "sample_and_hold_0/VSS" "peak_detector_0/se_fold_casc_wide_swing_ota_0/VSS"
+merge "peak_detector_0/se_fold_casc_wide_swing_ota_0/VSS" "VSS"
+merge "VSS" "peak_detector_0/VSUBS"
+merge "peak_detector_0/VSUBS" "VSUBS"
+merge "low_freq_pll_0/pfd_cp_lpf_0/VDD" "comparator_0/VDD" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "comparator_0/VDD" "m4_229772_n112180#"
+merge "dac_8bit_1/sample" "m3_338785_n119638#" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "m3_338785_n119638#" "dac_8bit_0/sample"
+merge "dac_8bit_0/sample" "m2_336237_n137440#"
+merge "m2_336237_n137440#" "pulse_generator_0/trigb"
+merge "pulse_generator_0/trigb" "sample"
+merge "biquad_gm_c_filter_0/gm_c_stage_2/vocm" "diff_to_se_converter_0/vocm" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "diff_to_se_converter_0/vocm" "vocm_filt"
+merge "sample_and_hold_1/vin" "low_freq_pll_0/cs_ring_osc_0/vctrl" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "low_freq_pll_0/cs_ring_osc_0/vctrl" "vcp"
+merge "bias_current_distribution_0/m1_1452_1922#" "vbiasp" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/vcom" "adc_vcaparrayA" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_0/amux_2to1_16/SEL" "q6B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/amux_2to1_14/SEL" "q4A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "comparator_0/vip" "biquad_gm_c_filter_0/vfiltp" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "biquad_gm_c_filter_0/vfiltp" "diff_to_se_converter_0/vdiffp"
+merge "diff_to_se_converter_0/vdiffp" "vfiltp"
+merge "input_amplifier_0/vop" "biquad_gm_c_filter_0/vip" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "biquad_gm_c_filter_0/vip" "vampp"
+merge "comparator_0/vo" "low_freq_pll_0/vsigin" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "low_freq_pll_0/vsigin" "vcomp"
+merge "bias_current_distribution_0/sky130_fd_pr__pfet_01v8_8WETQ2_0/a_n4319_n600#" "bias_current_distribution_0/low_freq_pll_ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/low_freq_pll_ibiasn" "low_freq_pll_0/ibiasn"
+merge "low_freq_pll_0/ibiasn" "m1_270862_n98096#"
+merge "low_freq_pll_0/pfd_cp_lpf_0/sky130_fd_sc_hd__dfrbp_1_0/VPWR" "m1_243263_n114661#" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/diff_to_se_converter_ibiasn" "diff_to_se_converter_0/ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "diff_to_se_converter_0/ibiasn" "m1_193666_n149088#"
+merge "bias_current_distribution_0/sample_and_hold_ibiasn_B" "bias_current_distribution_0/sky130_fd_pr__pfet_01v8_8WETQ2_4/a_n2603_n600#" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/sky130_fd_pr__pfet_01v8_8WETQ2_4/a_n2603_n600#" "sample_and_hold_0/ibiasn"
+merge "sample_and_hold_0/ibiasn" "m1_259902_n183622#"
+merge "peak_detector_0/se_fold_casc_wide_swing_ota_1/vo" "sample_and_hold_0/vin" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "sample_and_hold_0/vin" "vpeak"
+merge "bias_current_distribution_0/biquad_gm_c_filter_ibiasn1" "biquad_gm_c_filter_0/gm_c_stage_0/ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "biquad_gm_c_filter_0/gm_c_stage_0/ibiasn" "m2_196578_n112346#"
+merge "comparator_0/vim" "biquad_gm_c_filter_0/vfiltm" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "biquad_gm_c_filter_0/vfiltm" "m2_225367_n115524#"
+merge "m2_225367_n115524#" "diff_to_se_converter_0/vdiffm"
+merge "diff_to_se_converter_0/vdiffm" "vfiltm"
+merge "input_amplifier_0/vincm" "vincm" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/amux_2to1_17/SEL" "q7A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/adc_clk" "dac_8bit_0/adc_clk" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_0/adc_clk" "pulse_generator_0/clk"
+merge "pulse_generator_0/clk" "adc_clk"
+merge "bias_current_distribution_0/sample_and_hold_ibiasn_A" "sample_and_hold_1/ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "sample_and_hold_1/ibiasn" "m1_259992_n149098#"
+merge "dac_8bit_1/amux_2to1_9/SEL" "q0A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "input_amplifier_0/vhpf" "vhpf" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/dac_8bit_ibiasn_A" "dac_8bit_1/ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/ibiasn" "m1_340572_n116000#"
+merge "bias_current_distribution_0/sky130_fd_pr__pfet_01v8_8WETQ2_0/a_n887_n600#" "bias_current_distribution_0/biquad_gm_c_filter_ibiasn3" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/biquad_gm_c_filter_ibiasn3" "biquad_gm_c_filter_0/gm_c_stage_2/ibiasn"
+merge "biquad_gm_c_filter_0/gm_c_stage_2/ibiasn" "m1_274292_n98264#"
+merge "diff_to_se_converter_0/vse" "peak_detector_0/se_fold_casc_wide_swing_ota_0/vim" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "peak_detector_0/se_fold_casc_wide_swing_ota_0/vim" "vse"
+merge "bias_current_distribution_0/vbiasn" "vbiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_0/comp_out" "adc_compB" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_0/vref" "vrefB" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/sky130_fd_pr__pfet_01v8_8WETQ2_3/a_n887_n600#" "peak_detector_0/se_fold_casc_wide_swing_ota_0/ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "peak_detector_0/se_fold_casc_wide_swing_ota_0/ibiasn" "m1_225734_n183616#"
+merge "dac_8bit_0/amux_2to1_12/SEL" "q2B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "input_amplifier_0/m1_46972_21860#" "biquad_gm_c_filter_0/gm_c_stage_3/VSS" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "biquad_gm_c_filter_0/gm_c_stage_3/VSS" "biquad_gm_c_filter_0/VSS"
+merge "biquad_gm_c_filter_0/VSS" "m4_208338_n114196#"
+merge "dac_8bit_1/amux_2to1_10/SEL" "q1A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/comparator_ibiasn" "comparator_0/ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "comparator_0/ibiasn" "m1_268876_n97882#"
+merge "sample_and_hold_0/se_fold_casc_wide_swing_ota_0/vo" "dac_8bit_0/vin" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_0/vin" "vpeak_sampled"
+merge "input_amplifier_0/vom" "biquad_gm_c_filter_0/gm_c_stage_0/vim" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "biquad_gm_c_filter_0/gm_c_stage_0/vim" "vampm"
+merge "input_amplifier_0/vocm" "vocm" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_0/vcom" "adc_vcaparrayB" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "input_amplifier_0/rst_n" "diff_to_se_converter_0/rst_n" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "diff_to_se_converter_0/rst_n" "rst_n"
+merge "dac_8bit_0/amux_2to1_15/SEL" "q5B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/amux_2to1_13/SEL" "q3A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "diff_to_se_converter_0/se_fold_casc_wide_swing_ota_0/vo" "m2_158376_n151698#" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/biquad_gm_c_filter_ibiasn2" "biquad_gm_c_filter_0/gm_c_stage_1/ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "biquad_gm_c_filter_0/gm_c_stage_1/ibiasn" "m2_196618_n115310#"
+merge "biquad_gm_c_filter_0/vintm" "vintm" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/vin" "sample_and_hold_1/se_fold_casc_wide_swing_ota_0/vo" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "sample_and_hold_1/se_fold_casc_wide_swing_ota_0/vo" "vcp_sampled"
+merge "dac_8bit_1/vlow" "vlowA" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/amux_2to1_16/SEL" "q6A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/peak_detector_ibiasn2" "peak_detector_0/se_fold_casc_wide_swing_ota_1/ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "peak_detector_0/se_fold_casc_wide_swing_ota_1/ibiasn" "m1_184660_n183616#"
+merge "biquad_gm_c_filter_0/vintp" "vintp" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/dac_8bit_ibiasn_B" "dac_8bit_0/ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_0/ibiasn" "m1_340704_n167010#"
+merge "dac_8bit_1/vref" "vrefA" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/input_amplifier_ibiasn1" "input_amplifier_0/ibiasn1" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "input_amplifier_0/ibiasn1" "m1_244754_n101754#"
+merge "dac_8bit_1/ibiasp" "bias_current_distribution_0/sky130_fd_pr__nfet_01v8_C5Q2Z6_0/a_n29_n200#" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/sky130_fd_pr__nfet_01v8_C5Q2Z6_0/a_n29_n200#" "m1_275244_n108030#"
+merge "bias_current_distribution_0/input_amplifier_ibiasn2" "input_amplifier_0/diff_fold_casc_ota_0/ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "input_amplifier_0/diff_fold_casc_ota_0/ibiasn" "m1_193222_n106070#"
+merge "bias_current_distribution_0/dac_8bit_ibiasp_B" "dac_8bit_0/ibiasp" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_0/ibiasp" "m2_275792_n107460#"
+merge "dac_8bit_1/m4_49716_n59180#" "dac_8bit_1/se_fold_casc_wide_swing_ota_0/VSS" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/se_fold_casc_wide_swing_ota_0/VSS" "dac_8bit_0/latched_comparator_folded_0/VSS"
+merge "dac_8bit_0/latched_comparator_folded_0/VSS" "m4_342116_n118218#"
+merge "dac_8bit_0/vlow" "vlowB" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "bias_current_distribution_0/biquad_gm_c_filter_ibiasn4" "biquad_gm_c_filter_0/gm_c_stage_3/ibiasn" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "biquad_gm_c_filter_0/gm_c_stage_3/ibiasn" "m1_272572_n98078#"
+merge "pulse_generator_0/pulse" "peak_detector_0/rst" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "peak_detector_0/rst" "peak_detector_rst"
+merge "dac_8bit_0/amux_2to1_14/SEL" "q4B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/amux_2to1_12/SEL" "q2A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_0/amux_2to1_17/SEL" "q7B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/amux_2to1_15/SEL" "q5A" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "input_amplifier_0/gain_ctrl_0" "gain_ctrl_0" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "input_amplifier_0/gain_ctrl_1" "gain_ctrl_1" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_1/comp_out" "adc_compA" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_0/amux_2to1_10/SEL" "q1B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dac_8bit_0/amux_2to1_13/SEL" "q3B" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
