@@ -1,0 +1,109 @@
++ vcs -R -sverilog -timescale=1ns/1ps -hsopt +vcs+dumpvars+outputs/design.vpd -top sar_adc_controller_tb inputs/design.vcs.v inputs/testbench.sv -file inputs/design.args
+*** Using c compiler gcc instead of cc ...
+                         Chronologic VCS (TM)
+       Version Q-2020.03-SP2_Full64 -- Mon Jul 19 15:59:20 2021
+               Copyright (c) 1991-2020 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS Release Notes
+
+Parsing design file 'inputs/design.vcs.v'
+
+Warning-[IPDW] Identifier previously declared
+inputs/design.vcs.v, 20
+  Second declaration for identifier 'run_adc_n' ignored
+  Identifier 'run_adc_n' previously declared as output port. 
+  [inputs/design.vcs.v, 16]
+
+Parsing design file 'inputs/testbench.sv'
+Top Level Modules:
+       sar_adc_controller_tb
+TimeScale is 1 ns / 1 ps
+Starting vcs inline pass...
+
+1 module and 0 UDP read.
+recompiling module sar_adc_controller_tb
+make[1]: Entering directory `/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/8-synopsys-vcs-sim/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/cad/synopsys/vcs/Q-2020.03-SP2/linux64/lib -L/cad/synopsys/vcs/Q-2020.03-SP2/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _6181_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /cad/synopsys/vcs/Q-2020.03-SP2/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /cad/synopsys/vcs/Q-2020.03-SP2/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory `/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/8-synopsys-vcs-sim/csrc'
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS Release Notes
+
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2_Full64; Runtime version Q-2020.03-SP2_Full64;  Jul 19 15:59 2021
+
+-----------------------SAR ADC Controller Tests--------------------------
+
+out_valid = 1, sample_val = 0b00100100, adc_val = 0b00100100
+out_valid = 1, sample_val = 0b10000001, adc_val = 0b10000001
+out_valid = 1, sample_val = 0b00001001, adc_val = 0b00001001
+out_valid = 1, sample_val = 0b01100011, adc_val = 0b01100011
+out_valid = 1, sample_val = 0b00001101, adc_val = 0b00001101
+out_valid = 1, sample_val = 0b10001101, adc_val = 0b10001101
+out_valid = 1, sample_val = 0b01100101, adc_val = 0b01100101
+out_valid = 1, sample_val = 0b00010010, adc_val = 0b00010010
+out_valid = 1, sample_val = 0b00000001, adc_val = 0b00000001
+out_valid = 1, sample_val = 0b00001101, adc_val = 0b00001101
+out_valid = 1, sample_val = 0b01110110, adc_val = 0b01110110
+out_valid = 1, sample_val = 0b00111101, adc_val = 0b00111101
+out_valid = 1, sample_val = 0b11101101, adc_val = 0b11101101
+out_valid = 1, sample_val = 0b10001100, adc_val = 0b10001100
+out_valid = 1, sample_val = 0b11111001, adc_val = 0b11111001
+out_valid = 1, sample_val = 0b11000110, adc_val = 0b11000110
+out_valid = 1, sample_val = 0b11000101, adc_val = 0b11000101
+out_valid = 1, sample_val = 0b10101010, adc_val = 0b10101010
+out_valid = 1, sample_val = 0b11100101, adc_val = 0b11100101
+out_valid = 1, sample_val = 0b01110111, adc_val = 0b01110111
+out_valid = 1, sample_val = 0b00010010, adc_val = 0b00010010
+out_valid = 1, sample_val = 0b10001111, adc_val = 0b10001111
+out_valid = 1, sample_val = 0b11110010, adc_val = 0b11110010
+out_valid = 1, sample_val = 0b11001110, adc_val = 0b11001110
+out_valid = 1, sample_val = 0b11101000, adc_val = 0b11101000
+out_valid = 1, sample_val = 0b11000101, adc_val = 0b11000101
+out_valid = 1, sample_val = 0b01011100, adc_val = 0b01011100
+out_valid = 1, sample_val = 0b10111101, adc_val = 0b10111101
+out_valid = 1, sample_val = 0b00101101, adc_val = 0b00101101
+out_valid = 1, sample_val = 0b01100101, adc_val = 0b01100101
+out_valid = 1, sample_val = 0b01100011, adc_val = 0b01100011
+out_valid = 1, sample_val = 0b00001010, adc_val = 0b00001010
+out_valid = 1, sample_val = 0b10000000, adc_val = 0b10000000
+out_valid = 1, sample_val = 0b00100000, adc_val = 0b00100000
+out_valid = 1, sample_val = 0b10101010, adc_val = 0b10101010
+out_valid = 1, sample_val = 0b10011101, adc_val = 0b10011101
+out_valid = 1, sample_val = 0b10010110, adc_val = 0b10010110
+out_valid = 1, sample_val = 0b00010011, adc_val = 0b00010011
+out_valid = 1, sample_val = 0b00001101, adc_val = 0b00001101
+out_valid = 1, sample_val = 0b01010011, adc_val = 0b01010011
+out_valid = 1, sample_val = 0b01101011, adc_val = 0b01101011
+out_valid = 1, sample_val = 0b11010101, adc_val = 0b11010101
+out_valid = 1, sample_val = 0b00000010, adc_val = 0b00000010
+out_valid = 1, sample_val = 0b10101110, adc_val = 0b10101110
+out_valid = 1, sample_val = 0b00011101, adc_val = 0b00011101
+out_valid = 1, sample_val = 0b11001111, adc_val = 0b11001111
+out_valid = 1, sample_val = 0b00100011, adc_val = 0b00100011
+out_valid = 1, sample_val = 0b00001010, adc_val = 0b00001010
+out_valid = 1, sample_val = 0b11001010, adc_val = 0b11001010
+out_valid = 1, sample_val = 0b00111100, adc_val = 0b00111100
+Test status: PASS
+$finish called from file "inputs/testbench.sv", line 80.
+$finish at simulation time             18000000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 18000000 ps
+CPU Time:      1.200 seconds;       Data structure size:   0.0Mb
+Mon Jul 19 15:59:35 2021
+CPU time: 2.035 seconds to compile + .713 seconds to elab + 3.436 seconds to link + 1.353 seconds in simulation

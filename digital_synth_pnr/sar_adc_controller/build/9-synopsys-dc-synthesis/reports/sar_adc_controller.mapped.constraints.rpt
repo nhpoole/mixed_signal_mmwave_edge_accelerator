@@ -1,0 +1,225 @@
+ 
+****************************************
+Report : constraint
+        -verbose
+Design : sar_adc_controller
+Version: L-2016.03-SP5-5
+Date   : Mon Jul 19 16:02:25 2021
+****************************************
+
+
+  Startpoint: adc_start (input port clocked by ideal_clock)
+  Endpoint: state_r_reg_0_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   10.00      10.00 f
+  adc_start (in)                                          0.00      10.00 f
+  U101/Y (sky130_fd_sc_hd__a21oi_1)                       0.11 *    10.12 r
+  U102/Y (sky130_fd_sc_hd__o21ai_1)                       0.06 *    10.18 f
+  U21/X (sky130_fd_sc_hd__and2_1)                         0.12 *    10.30 f
+  state_r_reg_0_/D (sky130_fd_sc_hd__dfxtp_1)             0.00 *    10.30 f
+  data arrival time                                                 10.30
+
+  clock ideal_clock (rise edge)                          20.00      20.00
+  clock network delay (ideal)                             0.00      20.00
+  state_r_reg_0_/CLK (sky130_fd_sc_hd__dfxtp_1)           0.00      20.00 r
+  library setup time                                     -0.12      19.88
+  data required time                                                19.88
+  --------------------------------------------------------------------------
+  data required time                                                19.88
+  data arrival time                                                -10.30
+  --------------------------------------------------------------------------
+  slack (MET)                                                        9.58
+
+
+  Startpoint: dac_mask_reg_4_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: adc_val[4] (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  dac_mask_reg_4_/CLK (sky130_fd_sc_hd__dfxtp_1)          0.00       0.00 r
+  dac_mask_reg_4_/Q (sky130_fd_sc_hd__dfxtp_1)            0.29       0.29 f
+  U81/Y (sky130_fd_sc_hd__nor2_1)                         0.15 *     0.45 r
+  U82/Y (sky130_fd_sc_hd__inv_1)                          0.09 *     0.54 f
+  adc_val[4] (out)                                        0.00 *     0.54 f
+  data arrival time                                                  0.54
+
+  clock ideal_clock (rise edge)                          20.00      20.00
+  clock network delay (ideal)                             0.00      20.00
+  output external delay                                   0.00      20.00
+  data required time                                                20.00
+  --------------------------------------------------------------------------
+  data required time                                                20.00
+  data arrival time                                                 -0.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                       19.46
+
+
+  Startpoint: state_r_reg_0_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: dac_mask_reg_1_
+            (rising edge-triggered flip-flop clocked by ideal_clock)
+  Path Group: ideal_clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_r_reg_0_/CLK (sky130_fd_sc_hd__dfxtp_1)           0.00       0.00 r
+  state_r_reg_0_/Q (sky130_fd_sc_hd__dfxtp_1)             0.30       0.30 r
+  U83/Y (sky130_fd_sc_hd__inv_2)                          0.05 *     0.35 f
+  U90/Y (sky130_fd_sc_hd__nand2_1)                        0.31 *     0.67 r
+  U109/Y (sky130_fd_sc_hd__nor2b_1)                       0.09 *     0.76 f
+  U4/X (sky130_fd_sc_hd__and2_1)                          0.16 *     0.92 f
+  dac_mask_reg_1_/D (sky130_fd_sc_hd__dfxtp_1)            0.00 *     0.92 f
+  data arrival time                                                  0.92
+
+  clock ideal_clock (rise edge)                          20.00      20.00
+  clock network delay (ideal)                             0.00      20.00
+  dac_mask_reg_1_/CLK (sky130_fd_sc_hd__dfxtp_1)          0.00      20.00 r
+  library setup time                                     -0.12      19.88
+  data required time                                                19.88
+  --------------------------------------------------------------------------
+  data required time                                                19.88
+  data arrival time                                                 -0.92
+  --------------------------------------------------------------------------
+  slack (MET)                                                       18.96
+
+
+  Startpoint: comparator_val
+              (input port clocked by ideal_clock)
+  Endpoint: clk_gate_dac_select_bits_reg/latch
+            (gating element for clock ideal_clock)
+  Path Group: REGIN
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   10.00      10.00 r
+  comparator_val (in)                                     0.01      10.01 r
+  U88/Y (sky130_fd_sc_hd__nand2_1)                        0.04 *    10.05 f
+  U89/Y (sky130_fd_sc_hd__nand3_1)                        0.05 *    10.10 r
+  clk_gate_dac_select_bits_reg/latch/GATE (sky130_fd_sc_hd__sdlclkp_1)     0.00 *    10.10 r
+  data arrival time                                                 10.10
+
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clk_gate_dac_select_bits_reg/latch/CLK (sky130_fd_sc_hd__sdlclkp_1)     0.00     0.00 r
+  clock gating hold time                                 -0.06      -0.06
+  data required time                                                -0.06
+  --------------------------------------------------------------------------
+  data required time                                                -0.06
+  data arrival time                                                -10.10
+  --------------------------------------------------------------------------
+  slack (MET)                                                       10.16
+
+
+  Startpoint: out_valid_reg
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: out_valid (output port clocked by ideal_clock)
+  Path Group: REGOUT
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  out_valid_reg/CLK (sky130_fd_sc_hd__dfxtp_1)            0.00       0.00 r
+  out_valid_reg/Q (sky130_fd_sc_hd__dfxtp_1)              0.30       0.30 f
+  out_valid (out)                                         0.00 *     0.30 f
+  data arrival time                                                  0.30
+
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  output external delay                                   0.00       0.00
+  data required time                                                 0.00
+  --------------------------------------------------------------------------
+  data required time                                                 0.00
+  data arrival time                                                 -0.30
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.30
+
+
+  Startpoint: state_r_reg_1_
+              (rising edge-triggered flip-flop clocked by ideal_clock)
+  Endpoint: clk_gate_dac_select_bits_reg/latch
+            (gating element for clock ideal_clock)
+  Path Group: ideal_clock
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_r_reg_1_/CLK (sky130_fd_sc_hd__dfxtp_1)           0.00       0.00 r
+  state_r_reg_1_/Q (sky130_fd_sc_hd__dfxtp_1)             0.31       0.31 f
+  U89/Y (sky130_fd_sc_hd__nand3_1)                        0.08 *     0.39 r
+  clk_gate_dac_select_bits_reg/latch/GATE (sky130_fd_sc_hd__sdlclkp_1)     0.00 *     0.39 r
+  data arrival time                                                  0.39
+
+  clock ideal_clock (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clk_gate_dac_select_bits_reg/latch/CLK (sky130_fd_sc_hd__sdlclkp_1)     0.00     0.00 r
+  clock gating hold time                                 -0.06      -0.06
+  data required time                                                -0.06
+  --------------------------------------------------------------------------
+  data required time                                                -0.06
+  data arrival time                                                 -0.39
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.45
+
+
+    Net: n47
+
+    max_transition         1.50
+  - Transition Time        0.41
+  ------------------------------
+    Slack                  1.09  (MET)
+
+
+    Net: N22
+
+    max_fanout            20.00
+  - Fanout                 0.00
+  ------------------------------
+    Slack                 20.00  (MET)
+
+
+    Net: n43
+
+    max_capacitance        0.07
+  - Capacitance            0.00
+  ------------------------------
+    Slack                  0.07  (MET)
+
+
+    Design: sar_adc_controller
+
+    max_leakage_power          0.00
+  - Current Leakage Power      0.36
+  ----------------------------------
+    Slack                     -0.36  (VIOLATED)
+
+
+Min pulse width constraints
+
+                       Required      Actual
+  Pin                pulse width   pulse width   Slack           Scenario
+--------------------------------------------------------------------------------
+  dac_mask_reg_0_/CLK(low)  0.20   10.00          9.80 (MET)
+
+1

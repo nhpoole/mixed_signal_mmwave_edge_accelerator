@@ -1,0 +1,185 @@
+#  ==============================================
+#               Required Variables
+#  ==============================================
+#  WARNING: Neither fp_file, def_files, fp_tcl_file, fp_tcl_proc are defined
+#  INFO:    netlist = inputs/design.v
+#  INFO:    flow = mmmc
+#  INFO:    process = 130
+#  INFO:    library_sets = libs_typical libs_bc
+#  INFO:    rc_corners = typical
+#  INFO:    delay_corners = delay_default
+#  INFO:    setup_analysis_views = analysis_default
+#  INFO:    hold_analysis_views = analysis_default
+#  INFO:    active_setup_views = analysis_default
+#  INFO:    active_hold_views = analysis_default
+#  INFO:    default_setup_view = analysis_default
+#  INFO:    default_hold_view = analysis_default
+#  ==============================================
+#                 Library Sets
+#  ==============================================
+#  INFO: libs_typical:
+#  INFO:    timing = 
+#  INFO:       inputs/adk/stdcells.lib
+#  INFO: libs_bc:
+#  INFO:    timing = 
+#  INFO:       inputs/adk/stdcells-bc.lib
+#  INFO:       inputs/adk/stdcells-bc.lib
+#  ==============================================
+#                 LEF Files
+#  ==============================================
+#  INFO: inputs/adk/rtk-tech.lef
+#  INFO: inputs/adk/stdcells.lef
+#  INFO: inputs/adk/rtk-tech.lef
+#  INFO: inputs/adk/stdcells.lef
+#  ==============================================
+#                  RC Corners
+#  ==============================================
+#  INFO: typical:
+#  INFO:    cap_table = inputs/adk/rtk-typical.captable
+#  INFO:    temperature = 25
+#  ==============================================
+#               Delay Corners
+#  ==============================================
+#  INFO: delay_default:
+#  INFO:    rc_corner = typical
+#  INFO:    early_library_set = libs_bc
+#  INFO:    late_library_set = libs_typical
+#  ==============================================
+#             Constraint Modes
+#  ==============================================
+#  INFO: constraints_default:
+#  INFO:    pre_cts_sdc = ./inputs/design.sdc
+#  INFO:    post_cts_sdc = ./inputs/design.sdc
+#  INFO:    Variable vars(constraints_default,incr_cts_sdc) not defined
+#  ==============================================
+#             Analysis Views
+#  ==============================================
+#  INFO: analysis_default:
+#  INFO:    delay_corner = delay_default
+#  INFO:    constraint_mode = constraints_default
+#  INFO: analysis_default:
+#  INFO:    delay_corner = delay_default
+#  INFO:    constraint_mode = constraints_default
+#  INFO: analysis_default:
+#  INFO:    delay_corner = delay_default
+#  INFO:    constraint_mode = constraints_default
+#  ==============================================
+#             Recommended Variables
+#  ==============================================
+#  INFO: gds_layer_map = inputs/adk/rtk-stream-out.map
+#  INFO: max_route_layer = 6
+#  INFO: filler_cells = sky130_fd_sc_hd__fill_8  sky130_fd_sc_hd__fill_4  sky130_fd_sc_hd__fill_2  sky130_fd_sc_hd__fill_1
+#  INFO: tie_cells = sky130_fd_sc_hd__conb_1
+#  WARNING: Recommended variables dont_use_list and dont_use_file not defined
+#  INFO: antenna_diode = sky130_fd_sc_hd__diode_2
+#  ==============================================
+#                 Other Variables
+#  ==============================================
+#  INFO: Variable vars(jtag_cells) not defined
+#  INFO: Variable vars(jtag_rows) not defined
+#  INFO: Variable vars(spare_cells) not defined
+#  ==============================================
+#                 Scale Factors
+#  ==============================================
+#  INFO: typical:
+#  WARNING: No scale factors set for rc corner (typical)
+#  ==============================================
+#                Derating Factors
+#  ==============================================
+#  INFO: delay_default:
+#  WARNING: No derating factors set for delay corner (delay_default)
+#  ==============================================
+#                Plug-ins
+#  ==============================================
+#  INFO: Plug-in always_source_tcl = innovus-foundation-flow/custom-scripts/always-source.tcl
+#  ==============================================
+#               Type Check
+#  ==============================================
+#  ==============================================
+#               File Check
+#  ==============================================
+#  INFO: Checking design files ...
+#  INFO:    ... found 2 files
+#  INFO: Checking LEF files ...
+#  INFO:    ... found (4/4) lef files
+#  INFO: Checking library sets ...
+#  INFO:    ... found (3/3) library files
+#  INFO: Checking rc corners ...
+#  INFO:    ... found 1 files
+#  INFO: Checking constraint modes ...
+#  INFO:    ... found 2 files
+#  INFO: Checking plugin files ...
+#  INFO:    ... found 1 files
+#  =====================================================
+#                    Flow Options
+#  =====================================================
+#                    Flow = flat
+#                   Power = high
+#                  Flavor = mmmc
+#                  Effort = standard
+#  -----------------------------------------------------
+#                    Placement Options
+#  -----------------------------------------------------
+#        Place Opt Design = true
+#           Place IO Pins = false
+#        Clock Gate Aware = true
+#       Congestion Effort = medium
+#  -----------------------------------------------------
+#                   Clock Tree Options
+#  -----------------------------------------------------
+#        Route Clock Nets = true
+#  -----------------------------------------------------
+#                 Optimization Options
+#  -----------------------------------------------------
+#              Enable PAC = false
+#  -----------------------------------------------------
+#                  Hold Fixing Options
+#  -----------------------------------------------------
+#                Fix Hold = postcts
+#             Ignore IOs  = false
+#   Allow TNS Degradation = true
+#  -----------------------------------------------------
+#                     Timing Options
+#  -----------------------------------------------------
+#             Enable CPPR = both
+#              Enable OCV = pre_place
+#             Enable AOCV = false
+#             Enable SOCV = false
+#               Enable SS = false
+#  -----------------------------------------------------
+#                    Routing Options
+#  -----------------------------------------------------
+#    In Route Optimization = false
+#        Multi-Cut Effort = high
+#    Litho Driven Routing = true
+#           Antenna Diode = sky130_fd_sc_hd__diode_2
+#  -----------------------------------------------------
+#                   Extraction Options
+#  -----------------------------------------------------
+#  Postroute Effort Level = low
+#    Signoff Effort Level = low
+#  -----------------------------------------------------
+#                        DFM Options
+#  -----------------------------------------------------
+#  -----------------------------------------------------
+#                Signal Integrity Options
+#  -----------------------------------------------------
+#                 Process = 130
+#  -----------------------------------------------------
+#                   Multiple CPUs
+#  -----------------------------------------------------
+#      CPUs On Local Host = 16
+#  =====================================================
+#    Abort on Setup Error = 0
+#  =====================================================
+#  -----------------------------------------------------
+#                   Warning Summary
+#  -----------------------------------------------------
+#  (1) Either fp_file, def_files, fp_tcl_file, fp_tcl_proc should be defined
+#  (2) Recommended variables dont_use_list and dont_use_file not defined
+#  (3) No scale factors set for rc corner (typical)
+#  (4) No derating factors set for delay corner (delay_default)
+#  -----------------------------------------------------
+#                   SETUP CHECK PASSED
+#  =====================================================
+

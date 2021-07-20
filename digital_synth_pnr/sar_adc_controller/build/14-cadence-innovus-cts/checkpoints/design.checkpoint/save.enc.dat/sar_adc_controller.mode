@@ -1,0 +1,72 @@
+catch { setDesignMode -powerEffort high }
+catch { setDesignMode -process 130 }
+catch { setDesignMode -propagateActivity true }
+catch { setDesignMode -topRoutingLayer met5 }
+catch { setAnalysisMode -analysisType onChipVariation }
+catch { setAnalysisMode -checkType setup }
+catch { setAnalysisMode -clkSrcPath true }
+catch { setAnalysisMode -clockPropagation sdcControl }
+catch { setAnalysisMode -cppr both }
+catch { setAnalysisMode -usefulSkew true }
+catch { setAnalysisMode -virtualIPO false }
+catch { setOptMode -activeSetupViews { analysis_default } }
+catch { setOptMode -autoSetupViews { analysis_default} }
+catch { setOptMode -autoTDGRSetupViews { analysis_default} }
+catch { setOptMode -drcMargin 0 }
+catch { setOptMode -fixDrc true }
+catch { setOptMode -fixFanoutLoad true }
+catch { setOptMode -optimizeFF true }
+catch { setOptMode -powerEffort high }
+catch { setOptMode -preserveAllSequential false }
+catch { setOptMode -setupTargetSlack 0 }
+catch { setOptMode -timeDesignCompressReports false }
+catch { setOptMode -usefulSkew true }
+catch { setOptMode -usefulSkewCCOpt standard }
+catch { setOptMode -usefulSkewPreCTS true }
+catch { setPathGroupOptions Reg2Reg -effortLevel high }
+catch { setPathGroupOptions Reg2Out -effortLevel low }
+catch { setPathGroupOptions Reg2ClkGate -effortLevel low }
+catch { setPathGroupOptions In2Reg -effortLevel low }
+catch { setPathGroupOptions In2Out -effortLevel low }
+catch { setExtractRCMode  -engine preRoute -total_c_th 0 -relative_c_th 1 -coupling_c_th 0.4 }
+catch {setNanoRouteMode -quiet -drouteUseMultiCutViaEffort "high"}
+catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
+catch {setNanoRouteMode -quiet -grouteExpTdStdDelay 44.000000}
+catch {setNanoRouteMode -quiet -routeTopRoutingLayer 6}
+catch {setNanoRouteMode -quiet -routeWithLithoDriven true}
+
+catch { setPlaceMode -MXPBoundaryLevel 7 }
+catch { setPlaceMode -MXPConstraintFile {} }
+catch { setPlaceMode -MXPControlSetting 0 }
+catch { setPlaceMode -MXPLogicHierAware 0 }
+catch { setPlaceMode -MXPPreplaceSetting 5 }
+catch { setPlaceMode -MXPRefineSetting 17 }
+catch { setPlaceMode -place_global_clock_gate_aware true }
+catch { setPlaceMode -place_global_cong_effort medium }
+catch { setPlaceMode -place_global_place_io_pins false }
+catch { setPlaceMode -timingDriven true }
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
+catch { setWireOptMode -expLocalWireReclaimRunSwap true }
+catch { setUsefulSkewMode -ecoRoute false }
+catch { setViaGenMode -ignore_DRC false }
+catch { setViaGenMode -viarule_preference default }
+catch { setDelayCalMode -enable_high_fanout true }
+catch { setDelayCalMode -eng_copyNetPropToNewNet true }
+catch { setDelayCalMode -engine aae }
+catch { setDelayCalMode -ignoreNetLoad false }
+catch { setDelayCalMode -socv_accuracy_mode low }
+catch { setPinAssignMode -maxLayer 6 }
+catch { setImportMode -config true }
+catch { setImportMode -discardFloatingVNets false }
+catch { setImportMode -keepEmptyModule true }
+catch { setTieHiLoMode -cell {sky130_fd_sc_hd__conb_1} }
+catch { setTieHiLoMode -maxDistance 20 }
+catch { setTieHiLoMode -maxFanout 8 }
+catch { setSIMode -separate_delta_delay_on_data true }
+catch { setAddStripeMode -stacked_via_bottom_layer 5 }
+catch { setAddStripeMode -stacked_via_top_layer 6 }
+catch { setRouteMode -earlyGlobalMaxRouteLayer 6 }
+catch { setRouteMode -earlyGlobalMinRouteLayer 2 }
+catch { setFPlanMode -defaultTechSite unithd }
+catch { setFPlanMode -maxIoHeight false }
+catch { setFPlanMode -powerRailLayer {} }

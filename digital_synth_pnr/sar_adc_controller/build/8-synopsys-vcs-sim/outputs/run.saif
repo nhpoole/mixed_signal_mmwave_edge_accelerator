@@ -1,0 +1,68 @@
+/** There is no explict set_gate_level_monitoring command, **/
+/** and the default behavior is to monitor internal nets  **/
+(SAIFILE
+(SAIFVERSION "2.0")
+(DIRECTION "backward")
+(DESIGN )
+(DATE "Mon Jul 19 15:59:35 2021")
+(VENDOR "Synopsys, Inc")
+(PROGRAM_NAME "VCS Q-2020.03-SP2_Full64")
+(VERSION "1.0")
+(DIVIDER / )
+(TIMESCALE 1 ps)
+(DURATION 18000000.00)
+(INSTANCE sar_adc_controller_tb
+   (INSTANCE sar_adc_controller_inst
+      (NET
+         (clk
+            (T0 9000000) (T1 9000000) (TX 0)
+            (TC 1799) (IG 0)
+         )
+         (rst_n
+            (T0 1000000) (T1 17000000) (TX 0)
+            (TC 100) (IG 0)
+         )
+         (adc_start
+            (T0 17000000) (T1 1000000) (TX 0)
+            (TC 100) (IG 0)
+         )
+         (comparator_val
+            (T0 4240000) (T1 13720000) (TX 40000)
+            (TC 228) (IG 0)
+         )
+         (adc_val\[7\]
+            (T0 10990000) (T1 6980000) (TX 30000)
+            (TC 100) (IG 0)
+         )
+         (adc_val\[6\]
+            (T0 11930000) (T1 6040000) (TX 30000)
+            (TC 100) (IG 0)
+         )
+         (adc_val\[5\]
+            (T0 12160000) (T1 5810000) (TX 30000)
+            (TC 99) (IG 0)
+         )
+         (adc_val\[4\]
+            (T0 13800000) (T1 4170000) (TX 30000)
+            (TC 99) (IG 0)
+         )
+         (adc_val\[3\]
+            (T0 12320000) (T1 5650000) (TX 30000)
+            (TC 99) (IG 0)
+         )
+         (adc_val\[2\]
+            (T0 12520000) (T1 5450000) (TX 30000)
+            (TC 99) (IG 0)
+         )
+         (adc_val\[1\]
+            (T0 13750000) (T1 4220000) (TX 30000)
+            (TC 100) (IG 0)
+         )
+         (adc_val\[0\]
+            (T0 13490000) (T1 4480000) (TX 30000)
+            (TC 100) (IG 0)
+         )
+      )
+   )
+)
+)

@@ -1,0 +1,124 @@
+++ innovus -64 -no_gui -no_logv -batch -execute writeFlowTemplate
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2020 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v20.13-s083_1, built Tue Jan 19 16:51:46 PST 2021
+Options:	-no_gui -no_logv -batch -execute writeFlowTemplate 
+Date:		Mon Jul 19 16:27:48 2021
+Host:		caddy13 (x86_64 w/Linux 3.10.0-1160.31.1.el7.x86_64) (8cores*16cpus*Common KVM processor 16384KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		invs	Innovus Implementation System	20.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_11774_caddy13_nhpoole_cBH59d.
+
+The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+
+**INFO:  MMMC transition support version v31-84 
+
+Executing cmd 'writeFlowTemplate' ...
+Saved Foundation Flow Templates to .
+
+*** Memory Usage v#2 (Current mem = 645.820M, initial mem = 267.602M) ***
+*** Message Summary: 0 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:40.7, real=0:01:06, mem=645.8M) ---
+
+++ ./SCRIPTS/gen_flow.tcl -m flat --Verbose --nomake --setup . --dir innovus-foundation-flow all
+++ tee flowsetup.log
+=================================================
+<FF>      Foundation Flow Code Generator
+<FF>        Version : 19.11-s001_1
+=================================================
+<FF> FLOW MODE == flat
+<FF> VERBOSE == true
+<FF> GENERATE MAKEFILE == false
+<FF> SETUP PATH == .
+<FF> OUTPUT DIRECTORY == innovus-foundation-flow
+<FF> LOADING CONFIGURATION FILES:
+<FF>    setup_tcl -> ./setup.tcl
+<FF> Seeding variables ...
+-------------------------------------------------
+<FF> Generating scripts for sar_adc_controller
+-------------------------------------------------
+<FF> Seeding variables ...
+<FF> Generating step init
+<FF> Generating step place
+<FF> Generating step cts
+<FF> Generating step postcts_hold
+<FF> Generating step route
+<FF> Generating step postroute
+<FF> Generating step signoff
+<FF> Generating step debug
+-------------------------------------------------
+<FF> Generating step lec
+-------------------------------------------------
+
+                Plug-ins Defined
+               ------------------
+               > always_source_tcl
+
+                 Plug-ins Found
+               ------------------
+               > always_source_tcl
+
+                Tagged Commands
+               ------------------
+               > init,save_design,replace_tcl
+               > place,restore_design,skip
+               > place,save_design,replace_tcl
+               > cts,set_ccopt_mode,skip
+               > cts,restore_design,skip
+               > cts,save_design,replace_tcl
+               > postcts_hold,restore_design,skip
+               > postcts_hold,save_design,replace_tcl
+               > route,check_place,skip
+               > route,time_design,skip
+               > route,restore_design,skip
+               > route,save_design,replace_tcl
+               > postroute,restore_design,skip
+               > postroute,save_design,replace_tcl
+               > signoff,stream_out,replace_tcl
+               > signoff,summary_report,replace_tcl
+               > signoff,verify_metal_density,skip
+               > signoff,restore_design,skip
+               > signoff,save_design,replace_tcl
+
+                  Warning Summary
+                  ---------------
+    (1) Either fp_file, def_files, fp_tcl_file, fp_tcl_proc should be defined
+    (2) Recommended variables dont_use_list and dont_use_file not defined
+    (3) No scale factors set for rc corner (typical)
+    (4) No derating factors set for delay corner (delay_default)
+
+
+-------------------------------------------------
+<FF> CODE GENERATION COMPLETE
+<FF> ... VERSION  -> 18.1.0
+<FF> ... RUN DIRECTORY  -> /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/10-cadence-innovus-flowsetup
+<FF> ... SCRIPTS  -> innovus-foundation-flow
+<FF> ... PLUGINS  -> 1 defined, 1 found
+<FF> ... REPORT   -> innovus-foundation-flow/check.rpt
+-------------------------------------------------
+<FF> Creating innovus-foundation-flow/procs.tcl
+++ [[ ! -d ./innovus-foundation-flow/INNOVUS ]]
+++ cd innovus-foundation-flow/INNOVUS
+++ [[ ! -f run_simple.tcl ]]
+++ cd ../..
+++ grep /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/10-cadence-innovus-flowsetup innovus-foundation-flow -rl
+++ xargs sed -i 's|/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/10-cadence-innovus-flowsetup|.|g'
+++ cd -P .
+++ grep /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/10-cadence-innovus-flowsetup innovus-foundation-flow -rl
+++ xargs sed -i 's|/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/10-cadence-innovus-flowsetup|.|g'
+++ true
+++ cd -
+++ sed -i 's|^set vars(config_files).*$|set vars(config_files) {}|' innovus-foundation-flow/vars.tcl
+++ sed -i 's/.*VPATH.*touch.*/#\0/' innovus-foundation-flow/INNOVUS/run_all.tcl innovus-foundation-flow/INNOVUS/run_cts.tcl innovus-foundation-flow/INNOVUS/run_debug.tcl innovus-foundation-flow/INNOVUS/run_init.tcl innovus-foundation-flow/INNOVUS/run_lec.tcl innovus-foundation-flow/INNOVUS/run_place.tcl innovus-foundation-flow/INNOVUS/run_postcts_hold.tcl innovus-foundation-flow/INNOVUS/run_postroute.tcl innovus-foundation-flow/INNOVUS/run_route.tcl innovus-foundation-flow/INNOVUS/run_signoff.tcl innovus-foundation-flow/INNOVUS/run_simple.tcl
+++ mkdir -p outputs
+++ cd outputs
+++ ln -sf ../innovus-foundation-flow .
+++ cd ..
++ cd /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/10-cadence-innovus-flowsetup
++ date +%Y-%m%d-%H%M-%S

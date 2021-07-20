@@ -1,0 +1,912 @@
+** NOTE: Created directory path 'logs' for file 'logs/run.log'.
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2020 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v20.13-s083_1, built Tue Jan 19 16:51:46 PST 2021
+Options:	-overwrite -nowin -init START.tcl -log logs/run.log 
+Date:		Mon Jul 19 16:29:16 2021
+Host:		caddy13 (x86_64 w/Linux 3.10.0-1160.31.1.el7.x86_64) (8cores*16cpus*Common KVM processor 16384KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		invs	Innovus Implementation System	20.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_12429_caddy13_nhpoole_vwkFtg.
+
+The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+
+**INFO:  MMMC transition support version v31-84 
+
+Sourcing file "START.tcl" ...
+The timeout for a remote job to respond is 3600 seconds.
+Submit command for task runs will be: local
+<FF> Plugin -> always_source_tcl
+<FF> LOADING 'always_source_tcl' PLUG-IN FILE(s) 
+<FF> -> innovus-foundation-flow/custom-scripts/always-source.tcl
+
+  > Info: Sourcing "scripts/main.tcl"
+
+### Start verbose source output (echo mode) for 'scripts/main.tcl' ...
+# source -verbose innovus-foundation-flow/INNOVUS/run_init.tcl
+### Start verbose source output (echo mode) for 'innovus-foundation-flow/INNOVUS/run_init.tcl' ...
+# if {[file exists innovus-foundation-flow/vars.tcl]} {
+   source innovus-foundation-flow/vars.tcl
+}
+# foreach file $vars(config_files) {
+   source $file
+}
+# source innovus-foundation-flow/procs.tcl
+# ff_procs::system_info
+# setDistributeHost -local
+The timeout for a remote job to respond is 3600 seconds.
+Submit command for task runs will be: local
+# setMultiCpuUsage -localCpu 16
+# set vars(step) init
+# set vars(init,start_time) [clock seconds]
+# exec mkdir -p $env(VPATH)
+# puts "<FF> Plugin -> pre_init_tcl"
+<FF> Plugin -> pre_init_tcl
+# source innovus-foundation-flow/init.tcl
+# init_design
+#% Begin Load MMMC data ... (date=07/19 16:29:57, mem=562.9M)
+#% End Load MMMC data ... (date=07/19 16:29:57, total cpu=0:00:00.1, real=0:00:00.0, peak res=563.7M, current mem=563.7M)
+
+Loading LEF file inputs/adk/rtk-tech.lef ...
+
+Loading LEF file inputs/adk/stdcells.lef ...
+WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file inputs/adk/stdcells.lef at line 18.
+Set DBUPerIGU to M1 pitch 460.
+**WARN: (IMPLF-201):	Pin 'HI' in macro 'sky130_fd_sc_hd__conb_1' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'LO' in macro 'sky130_fd_sc_hd__conb_1' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+
+viaInitial starts at Mon Jul 19 16:29:57 2021
+viaInitial ends at Mon Jul 19 16:29:57 2021
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from innovus-foundation-flow/view_definition.tcl
+Starting library reading in 'Multi-threaded flow' (with '16' threads)
+
+Threads Configured:16
+Reading libs_typical timing library /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib.
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+Read 427 cells in library sky130_fd_sc_hd__tt_025C_1v80.
+Library reading multithread flow ended.
+Starting library reading in 'Multi-threaded flow' (with '16' threads)
+
+Threads Configured:16
+Reading libs_bc timing library /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib.
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 427 cells in library sky130_fd_sc_hd__ff_100C_1v95.
+Library reading multithread flow ended.
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.18min, real=0.05min, mem=80.1M, fe_cpu=0.83min, fe_real=0.75min, fe_mem=727.7M) ***
+#% Begin Load netlist data ... (date=07/19 16:30:00, mem=600.6M)
+*** Begin netlist parsing (mem=727.7M) ***
+Created 427 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist './inputs/design.v'
+
+*** Memory Usage v#2 (Current mem = 727.707M, initial mem = 267.605M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=727.7M) ***
+#% End Load netlist data ... (date=07/19 16:30:00, total cpu=0:00:00.1, real=0:00:00.0, peak res=609.9M, current mem=609.9M)
+Set top cell to sar_adc_controller.
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Hooked 854 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell sar_adc_controller ...
+*** Netlist is unique.
+** info: there are 865 modules.
+** info: there are 84 stdCell insts.
+
+*** Memory Usage v#2 (Current mem = 737.121M, initial mem = 267.605M) ***
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Adjust met3 preferred direction offset from 0.34 to 0.17.
+Adjust met4 preferred direction offset from 0.46 to 0.23.
+Adjust met5 preferred direction offset from 1.7 to 0.17.
+Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Reading Capacitance Table File inputs/adk/rtk-typical.captable ...
+Process name: (null).
+Allocated an empty WireEdgeEnlargement table in typical [6].
+Allocated an empty WireEdgeEnlargement table in typical [6].
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: analysis_default
+    RC-Corner Name        : typical
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : 'inputs/adk/rtk-typical.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+*Info: initialize multi-corner CTS.
+Reading timing constraints file './inputs/design.sdc' ...
+Current (total cpu=0:00:51.7, real=0:00:46.0, peak res=844.1M, current mem=844.1M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ./inputs/design.sdc, Line 8).
+
+**WARN: (TCLNL-330):	set_input_delay on clock root 'clk' is not supported. You should use the -source option to set_clock_latency to provide this offset. You can also use the global timing_allow_input_delay_on_clock_source to allow set_input_delay assertion to have an effect on clock source paths beginning at this clock root. (File ./inputs/design.sdc, Line 29).
+
+INFO (CTE): Reading of timing constraints file ./inputs/design.sdc completed, with 2 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.2, real=0:00:00.0, peak res=865.6M, current mem=864.9M)
+Current (total cpu=0:00:51.8, real=0:00:46.0, peak res=865.6M, current mem=864.9M)
+**WARN: (TA-976):	Path groups asserted by the group_path constraint are considered by the software to be global in nature - they cannot be restricted to specific constraint modes. Due to this restriction, the group_path constraint is not supported directly in the constraint files which are configured in mode-specific commands such as create_constraint_mode. The current group_path entry will be ignored. You can enter the group_path constraint interactively or as part of a general command script -  where it will be interpreted as global and will be in effect for all modes.
+Total number of combinational cells: 328
+Total number of sequential cells: 68
+Total number of tristate cells: 13
+Total number of level shifter cells: 7
+Total number of power gating cells: 0
+Total number of isolation cells: 11
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_12 sky130_fd_sc_hd__buf_16 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_6 sky130_fd_sc_hd__buf_8 sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_16 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8 sky130_fd_sc_hd__dlymetal6s2s_1 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__probe_p_8
+Total number of usable buffers: 15
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: sky130_fd_sc_hd__bufinv_16 sky130_fd_sc_hd__clkinv_1 sky130_fd_sc_hd__bufinv_8 sky130_fd_sc_hd__clkinv_16 sky130_fd_sc_hd__clkinv_2 sky130_fd_sc_hd__clkinv_4 sky130_fd_sc_hd__clkinv_8 sky130_fd_sc_hd__inv_1 sky130_fd_sc_hd__clkinvlp_2 sky130_fd_sc_hd__clkinvlp_4 sky130_fd_sc_hd__inv_12 sky130_fd_sc_hd__inv_16 sky130_fd_sc_hd__inv_2 sky130_fd_sc_hd__inv_4 sky130_fd_sc_hd__inv_6 sky130_fd_sc_hd__inv_8
+Total number of usable inverters: 16
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: sky130_fd_sc_hd__bufbuf_16 sky130_fd_sc_hd__bufbuf_8 sky130_fd_sc_hd__clkdlybuf4s15_1 sky130_fd_sc_hd__clkdlybuf4s15_2 sky130_fd_sc_hd__clkdlybuf4s18_1 sky130_fd_sc_hd__clkdlybuf4s18_2 sky130_fd_sc_hd__clkdlybuf4s25_1 sky130_fd_sc_hd__clkdlybuf4s50_1 sky130_fd_sc_hd__clkdlybuf4s25_2 sky130_fd_sc_hd__clkdlybuf4s50_2 sky130_fd_sc_hd__dlygate4sd2_1 sky130_fd_sc_hd__dlygate4sd1_1 sky130_fd_sc_hd__dlygate4sd3_1 sky130_fd_sc_hd__dlymetal6s6s_1 sky130_fd_sc_hd__dlymetal6s4s_1
+Total number of identified usable delay cells: 15
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+#% Begin Load MMMC data ... (date=07/19 16:30:03, mem=886.5M)
+#% End Load MMMC data ... (date=07/19 16:30:03, total cpu=0:00:00.0, real=0:00:00.0, peak res=886.5M, current mem=886.5M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-201            2  Pin '%s' in macro '%s' has no ANTENNADIF...
+WARNING   IMPFP-3961           1  The techSite '%s' has no related standar...
+WARNING   TA-976               1  Path groups asserted by the group_path c...
+WARNING   TCLCMD-1461          1  Skipped unsupported command: %s          
+WARNING   TCLNL-330            1  set_input_delay on clock root '%s' is no...
+WARNING   TECHLIB-302         24  No function defined for cell '%s'. The c...
+*** Message Summary: 30 warning(s), 0 error(s)
+
+# um::enable_metrics -on
+# um::push_snapshot_stack
+# puts "<FF> Plugin -> always_source_tcl"
+<FF> Plugin -> always_source_tcl
+# ff_procs::source_plug always_source_tcl
+<FF> LOADING 'always_source_tcl' PLUG-IN FILE(s) 
+<FF> -> innovus-foundation-flow/custom-scripts/always-source.tcl
+# set_power_analysis_mode -analysis_view analysis_default
+** WARN:  (VOLTUS_POWR-3212): The 'set_power_analysis_mode -leakage_power_view |-dynamic_power_view|-analysis_view' will be obsolete in 18.20 release. Use 'set_analysis_view -leakage <> | -dynamic <>' to set leakage and dynamic power views.
+
+# source innovus-foundation-flow/timingderate.sdc
+<FF> DERATING DELAY CORNERS ...
+# setMaxRouteLayer 6
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+**WARN: (IMPSYT-21024):	Command "setMaxRouteLayer" has become obsolete. It will be removed in the next release and is replaced by "setDesignMode -topRoutingLayer". The obsolete command still works in this release, but to avoid this warning and to ensure compatibility with future releases, update your scripts.
+# setDesignMode -process 130 -powerEffort high
+##  Process: 130           (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 130nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.4.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+# puts "<FF> Plugin -> post_init_tcl"
+<FF> Plugin -> post_init_tcl
+# timeDesign -preplace -prefix preplace -outDir reports -expandedViews
+*** timeDesign #1 [begin] : totSession cpu/real = 0:00:52.3/0:00:45.9 (1.1), mem = 972.8M
+
+**INFO: Power effort not set by setOptMode, so setting 'setOptMode -powerEffort high', as set by setDesignMode
+Setting timing_disable_library_data_to_data_checks to 'true'.
+Setting timing_disable_user_data_to_data_checks to 'true'.
+Total CPU(s) requested: 16
+Total CPU(s) enabled with current License(s): 8
+Current free CPU(s): 8
+Additional license(s) checked out: 1 Innovus_CPU_Opt license(s) for 8 CPU(s)
+Total CPU(s) now enabled: 16
+Multithreaded Timing Analysis is initialized with 16 threads
+
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Setting High Fanout Nets ( > 100 ) as ideal temporarily for -prePlace option
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+Starting delay calculation for Setup views
+**WARN: (IMPESI-3505):	setDelayCalMode -eng_copyNetPropToNewNet true (default=false) will be obsoleted along with its sgs2set equivalent.  This parameter will continue to be supported in the current release, but will be removed in the next major release of the software.
+AAE DB initialization (MEM=1258.46 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: sar_adc_controller
+# Design Mode: 130nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (16 T). (MEM=1260.47)
+Total number of fetched objects 89
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+End delay calculation. (MEM=1709.38 CPU=0:00:00.5 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=1594.61 CPU=0:00:01.4 REAL=0:00:01.0)
+*** Done Building Timing Graph (cpu=0:00:02.6 real=0:00:02.0 totSessionCpu=0:00:56.2 mem=1562.6M)
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Setup views included:
+ analysis_default 
+
++--------------------+---------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg |reg2cgate| default |
++--------------------+---------+---------+---------+---------+
+|           WNS (ns):|  9.586  | 19.064  | 19.359  |  9.586  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |    0    |
+|          All Paths:|   31    |   20    |    1    |   31    |
++--------------------+---------+---------+---------+---------+
+|analysis_default    |  9.586  | 19.064  | 19.359  |  9.586  |
+|                    |  0.000  |  0.000  |  0.000  |  0.000  |
+|                    |    0    |    0    |    0    |    0    |
+|                    |   31    |   20    |    1    |   31    |
++--------------------+---------+---------+---------+---------+
+
+Density: 70.424%
+------------------------------------------------------------------
+Set Using Default Delay Limit as 1000.
+Resetting back High Fanout Nets as non-ideal
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Reported timing to dir reports
+Total CPU time: 4.32 sec
+Total Real time: 4.0 sec
+Total Memory Usage: 1334.078125 Mbytes
+*** timeDesign #1 [finish] : cpu/real = 0:00:04.3/0:00:03.7 (1.2), totSession cpu/real = 0:00:56.6/0:00:49.6 (1.1), mem = 1334.1M
+# checkDesign -all
+Creating directory checkDesign.
+**WARN: (IMPREPO-210):	There are 6 Cells PG Pins with missing geometry.
+Begin checking placement ... (start mem=1334.1M, init mem=1364.1M)
+*info: Recommended don't use cell = 0           
+*info: Placed = 0             
+*info: Unplaced = 84          
+Placement Density:70.42%(727/1032)
+Placement Density (including fixed std cells):70.42%(727/1032)
+Finished checkPlace (total: cpu=0:00:00.2, real=0:00:00.0; vio checks: cpu=0:00:00.0, real=0:00:00.0; mem=1364.1M)
+############################################################################
+# Innovus Netlist Design Rule Check
+# Mon Jul 19 16:30:07 2021
+
+############################################################################
+Design: sar_adc_controller
+
+------ Design Summary:
+Total Standard Cell Number   (cells) : 84
+Total Block Cell Number      (cells) : 0
+Total I/O Pad Cell Number    (cells) : 0
+Total Standard Cell Area     ( um^2) : 726.95
+Total Block Cell Area        ( um^2) : 0.00
+Total I/O Pad Cell Area      ( um^2) : 0.00
+
+------ Design Statistics:
+
+Number of Instances            : 84
+Number of Non-uniquified Insts : 78
+Number of Nets                 : 99
+Average number of Pins per Net : 2.61
+Maximum number of Pins in Net  : 22
+
+------ I/O Port summary
+
+Number of Primary I/O Ports    : 14
+Number of Input Ports          : 4
+Number of Output Ports         : 10
+Number of Bidirectional Ports  : 0
+Number of Power/Ground Ports   : 0
+Number of Floating Ports                     *: 0
+Number of Ports Connected to Multiple Pads   *: 0
+Number of Ports Connected to Core Instances   : 14
+**WARN: (IMPREPO-202):	There are 14 Ports connected to core instances.
+
+------ Design Rule Checking:
+
+Number of Output Pins connect to Power/Ground *: 0
+Number of Insts with Input Pins tied together ?: 0
+**WARN: (IMPDB-2148):	TieLo term 'SCE' of instance 'clk_gate_dac_select_bits_reg/latch' is tied to net 'clk_gate_dac_select_bits_reg/TE'.  However, none of the instance's ground terms is connected to the net.  Usually an instance's tieHi/Lo term and one of the Power/Ground (P/G) terms of the instance should connect to the same P/G net.  Check the input netlist, and also make sure proper global net connections are applied to the instance's tieHi/Lo terms and P/G terms.
+Type 'man IMPDB-2148' for more detail.
+Number of TieHi/Lo term nets not connected to instance's PG terms ?: 1
+Number of Input/InOut Floating Pins            : 0
+Number of Output Floating Pins                 : 0
+Number of Output Term Marked TieHi/Lo         *: 0
+
+**WARN: (IMPREPO-217):	There are 1 TieHi/Lo term nets not connected to instance's PG terms.
+Number of nets with tri-state drivers          : 0
+Number of nets with parallel drivers           : 0
+Number of nets with multiple drivers           : 0
+Number of nets with no driver (No FanIn)       : 0
+Number of Output Floating nets (No FanOut)     : 0
+Number of High Fanout nets (>50)               : 0
+**WARN: (IMPREPO-213):	There are 14 I/O Pins connected to Non-IO Insts.
+Checking for any assigns in the netlist...
+  No assigns found.
+Checking routing tracks.....
+Checking other grids.....
+Checking FINFET Grid is on Manufacture Grid.....
+
+Checking core/die box is on Grid.....
+
+WARNING (IMPFP-7236): DIE's corner: (34.7100000000 , 29.9200000000) is NOT on PlacementGrid,  Please use command getFPlanMode to check current Grid settings, use command setFPlanMode to change which grid to snap to. And use command get_snap_grid_info to get grids' offset and pitch. Command floorplan can be used to fix this issue.
+WARNING (IMPFP-7238): CORE's corner: (34.7100000000 , 29.9200000000) is NOT on PlacementGrid,  Please use command getFPlanMode to check current Grid settings, use command setFPlanMode to change which grid to snap to. And use command get_snap_grid_info to get grids' offset and pitch. Command floorplan can be used to fix this issue.
+Checking snap rule ......
+
+Checking Row is on grid......
+
+Checking AreaIO row.....
+Checking routing blockage.....
+Checking components.....
+Checking constraints (guide/region/fence).....
+Checking groups.....
+Checking Ptn Core Box.....
+
+Checking Preroutes.....
+No. of regular pre-routes not on tracks : 0 
+ Design check done.
+Report saved in file checkDesign/sar_adc_controller.main.htm.ascii
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPDB-2148           1  %sterm '%s' of %sinstance '%s' is tied t...
+WARNING   IMPREPO-202          1  There are %d Ports connected to core ins...
+WARNING   IMPREPO-210          1  There are %d Cells PG Pins with missing ...
+WARNING   IMPREPO-213          1  There are %d I/O Pins connected to Non-I...
+WARNING   IMPREPO-217          1  There are %d TieHi/Lo term nets not conn...
+*** Message Summary: 5 warning(s), 0 error(s)
+
+# check_timing
+###############################################################
+#  Generated by:      Cadence Innovus 20.13-s083_1
+#  OS:                Linux x86_64(Host ID caddy13)
+#  Generated on:      Mon Jul 19 16:30:07 2021
+#  Design:            sar_adc_controller
+#  Command:           check_timing
+###############################################################
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: sar_adc_controller
+# Design Mode: 130nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (16 T). (MEM=1364.09)
+Total number of fetched objects 89
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+End delay calculation. (MEM=1688.81 CPU=0:00:00.5 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1688.81 CPU=0:00:00.6 REAL=0:00:00.0)
+     +-----------------------------------------------------------+ 
+     |                   TIMING CHECK SUMMARY                    | 
+     |-----------------------------------------------------------| 
+     |       Warning        |   Warning Description   |  Number  | 
+     |                      |                         |    of    | 
+     |                      |                         | Warnings | 
+     |----------------------+-------------------------+----------| 
+     | ideal_clock_waveform | Clock waveform is ideal |        1 | 
+     +-----------------------------------------------------------+ 
+# um::pop_snapshot_stack
+# create_snapshot -name init -categories design
+------------------------------------------------------------
+	Current design flip-flop statistics
+
+Single-Bit FF Count  :           20
+Multi-Bit FF Count   :            0
+Total Bit Count      :           20
+Total FF Count       :           20
+Bits Per Flop        :        1.000
+------------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:          57.89             53          0.000 ns          9.586 ns  init
+# report_metric -file reports/metrics.html -format html
+# return
+### End verbose source output for 'innovus-foundation-flow/INNOVUS/run_init.tcl'.
+### End verbose source output for 'scripts/main.tcl'.
+
+  > Info: Sourcing "scripts/quality-of-life.tcl"
+
+### Start verbose source output (echo mode) for 'scripts/quality-of-life.tcl' ...
+# set timing_report_enable_clock_object_in_from_to true
+# set report_timing_format \
+  "instance arc cell transition delay arrival required"
+# setOptMode -timeDesignCompressReports false
+### End verbose source output for 'scripts/quality-of-life.tcl'.
+
+  > Info: Sourcing "inputs/floorplan.tcl"
+
+### Start verbose source output (echo mode) for 'inputs/floorplan.tcl' ...
+# set core_aspect_ratio   2.00;
+# set core_density_target 0.75;
+# set pwr_net_list {VDD VSS};
+# set M1_min_width   [dbGet [dbGetLayerByZ 1].minWidth]
+# set M1_min_spacing [dbGet [dbGetLayerByZ 1].minSpacing]
+# set savedvars(p_ring_width)   [expr 48 * $M1_min_width];
+# set savedvars(p_ring_spacing) [expr 24 * $M1_min_spacing];
+# set core_margin_t [expr ([llength $pwr_net_list] * ($savedvars(p_ring_width) + $savedvars(p_ring_spacing))) + $savedvars(p_ring_spacing)]
+# set core_margin_b [expr ([llength $pwr_net_list] * ($savedvars(p_ring_width) + $savedvars(p_ring_spacing))) + $savedvars(p_ring_spacing)]
+# set core_margin_r [expr ([llength $pwr_net_list] * ($savedvars(p_ring_width) + $savedvars(p_ring_spacing))) + $savedvars(p_ring_spacing)]
+# set core_margin_l [expr ([llength $pwr_net_list] * ($savedvars(p_ring_width) + $savedvars(p_ring_spacing))) + $savedvars(p_ring_spacing)]
+# floorPlan -r $core_aspect_ratio $core_density_target \
+             $core_margin_l $core_margin_b $core_margin_r $core_margin_t
+Adjusting coreMargin left    to finFet grid (PlacementGrid) : after adjusting :28.98
+Adjusting coreMargin right   to finFet grid (PlacementGrid) : after adjusting :28.98
+Adjusting core size to PlacementGrid : width :22.54 height : 43.52
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Adjust met3 preferred direction offset from 0.34 to 0.17.
+Adjust met4 preferred direction offset from 0.46 to 0.23.
+Adjust met5 preferred direction offset from 1.7 to 0.17.
+Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+# setFlipping s
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+# addHaloToBlock 70 40 10 10 -allBlock
+# planDesign
+#% Begin planDesign (date=07/19 16:30:09, mem=1236.7M)
+**WARN: (IMPAFP-9024):	This command is hidden and will be obsolete in the next major release. For module placement, use proto_design instead. For macro placement, use place_design -concurrent_macros to place both standard cells and macros together.
+**WARN: (IMPAFP-9024):	This command is hidden and will be obsolete in the next major release. For module placement, use proto_design instead. For macro placement, use place_design -concurrent_macros to place both standard cells and macros together.
+**WARN: (IMPTCM-77):	Option "-honorOrientation" for command getPlanDesignMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+**WARN: (IMPAFP-9024):	This command is hidden and will be obsolete in the next major release. For module placement, use proto_design instead. For macro placement, use place_design -concurrent_macros to place both standard cells and macros together.
+**WARN: (IMPTCM-77):	Option "-savePlacement" for command getPlanDesignMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+**WARN: (IMPAFP-9024):	This command is hidden and will be obsolete in the next major release. For module placement, use proto_design instead. For macro placement, use place_design -concurrent_macros to place both standard cells and macros together.
+**WARN: (IMPTCM-77):	Option "-moduleAware" for command getPlanDesignMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+ *** Starting placeMacroHigh flow *** 
+Deleted 0 physical inst  (cell - / prefix -).
+***** New seed flow = 1. *****  
+Ignore PD Guides: numIgnoredGuide = 0 
+INFO: #ExclusiveGroups=0
+INFO: There are no Exclusive Groups.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Extracting macro/IO cell pins and blockage ...... 
+Pin and blockage extraction finished
+*** Starting "NanoPlace(TM) placement v#4 (mem=1388.8M)" ...
+*** Build Buffered Sizing Timing Model
+(cpu=0:00:02.5 mem=1411.4M) ***
+*** Build Virtual Sizing Timing Model
+(cpu=0:00:02.7 mem=1411.4M) ***
+No user-set net weight.
+Net fanout histogram:
+2		: 62 (70.5%) nets
+3		: 19 (21.6%) nets
+4     -	14	: 5 (5.7%) nets
+15    -	39	: 2 (2.3%) nets
+40    -	79	: 0 (0.0%) nets
+80    -	159	: 0 (0.0%) nets
+160   -	319	: 0 (0.0%) nets
+320   -	639	: 0 (0.0%) nets
+640   -	1279	: 0 (0.0%) nets
+1280  -	2559	: 0 (0.0%) nets
+2560  -	5119	: 0 (0.0%) nets
+5120+		: 0 (0.0%) nets
+Options: timingDriven clkGateAware pinGuide congEffort=auto gpeffort=medium 
+#std cell=84 (0 fixed + 84 movable) #buf cell=0 #inv cell=12 #block=0 (0 floating + 0 preplaced)
+#ioInst=0 #net=88 #term=257 #term/net=2.92, #fixedIo=0, #floatIo=0, #fixedPin=0, #floatPin=14
+stdCell: 84 single + 0 double + 0 multi
+Total standard cell length = 0.2673 (mm), area = 0.0007 (mm^2)
+Average module density = 0.822.
+Density for the design = 0.822.
+       = stdcell_area 581 sites (727 um^2) / alloc_area 707 sites (885 um^2).
+Pin Density = 0.3278.
+            = total # of pins 257 / total area 784.
+Fence Initialization: numPrefixFence = 0,  numAutoFence = 0, numPrefixGuide = 0  numAutoGuide = 0 numNoCon = 0 
+Enabling multi-CPU acceleration with 16 CPU(s) for placement
+=== lastAutoLevel = 5 
+Iteration  1: Total net bbox = 0.000e+00 (0.00e+00 0.00e+00)
+              Est.  stn bbox = 0.000e+00 (0.00e+00 0.00e+00)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1418.4M
+User specified -module_cluster_mode =  0 
+
+Iteration  2: Total net bbox = 0.000e+00 (0.00e+00 0.00e+00)
+              Est.  stn bbox = 0.000e+00 (0.00e+00 0.00e+00)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1418.4M
+Iteration  3: Total net bbox = 1.190e+01 (5.27e+00 6.63e+00)
+              Est.  stn bbox = 1.385e+01 (6.04e+00 7.81e+00)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1419.8M
+
+
+Iteration  4: Total net bbox = 2.240e+02 (1.17e+00 2.23e+02)
+              Est.  stn bbox = 2.811e+02 (1.32e+00 2.80e+02)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 1419.8M
+Active setup views:
+    analysis_default
+
+ RelinkConst: Total constraint = 0, Relinked 0 constraints . 
+User specified -fenceSpacing =  -1.0000 
+User specified fence spacing: -1.0000 um
+*** The nonConstraint instance area ratio is 0.089730 
+*** The prefixed-fenceArea/coreBoxArea is 0.000000, The auto-ConstraintArea/coreBoxArea is 0.000000 
+Start Auto fence creation, hasNoConInst = 1  .
+
+================== Start Auto-Fence Creation ==================
+User define fence spacing: -1.0000 um
+Number of Movable Guide      : 0
+Number of Movable Region     : 0
+Number of Movable Fence      : 0
+Number of Movable Soft Guide : 0
+Total Movable Objects        : 0 (non-group: 0, group: 0)
+Total Prefixed Objects       : 0
+Total Partition Cut Objects  : 0
+
+
+
+Number of Nested Objects    : 0
+Number of Non-Nested Objects: 0
+Number of Nested Sets       : 0
+Number of Master&Clone Pairs: 0
+
+Fence Spacing: 2.0000 um
+Snap Spacing: X(0.4600 um), Y(2.7200 um)
+Fence2Core Spaceing: 0.0000 um
+
+==== Design Information ====
+Core site: (28980, 28560) - (51520, 72080)
+Design Whitespace% : 100.00%
+Maximum Logical Level: 0
+Has Non-constraint Instance: 1
+Allow Disjoint Whitespace: 0
+
+==To Place Non-Nested Objects==
+Targets: 
+Number of Total Targets: 0
+
+================== Finished Auto-Fence Creation ===============
+*** Done Auto-Fence Creation, (cpu = 0:00:00.0, mem = 1463.7M, mem_delta = 11.5M) ***
+End Auto fence creation 1.
+Iteration  5: Total net bbox = 1.680e+03 (7.49e+02 9.31e+02)
+              Est.  stn bbox = 1.845e+03 (8.06e+02 1.04e+03)
+              cpu = 0:00:00.2 real = 0:00:02.0 mem = 1463.7M
+*** cost = 1.680e+03 (7.49e+02 9.31e+02) (cpu for global=0:00:00.2) real=451871:30:14***
+Placement multithread real runtime: 451871:30:14 with 16 threads.
+Solver runtime cpu: 0:00:00.0 real: 0:00:00.0
+Core Placement runtime cpu: 0:00:00.1 real: 0:00:02.0
+*** Free Virtual Timing Model ...(mem=1463.7M)
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   final
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   global_place
+*** Finishing placeMacroHigh flow ***
+***** runMacroHigh mode(initial) =   0 
+checkFence: found no fence violation.
+Checking routing tracks.....
+Checking other grids.....
+Checking FINFET Grid is on Manufacture Grid.....
+Checking core/die box is on Grid.....
+Checking snap rule ......
+Checking Row is on grid......
+Checking AreaIO row.....
+Checking row out of die ...
+Checking routing blockage.....
+Checking components.....
+Checking IO Pads out of die...
+Checking constraints (guide/region/fence).....
+Checking groups.....
+
+Checking Preroutes.....
+No. of regular pre-routes not on tracks : 0 
+
+Reporting Utilizations.....
+
+Core utilization  = 74.107143
+Effective Utilizations
+Average module density = 0.741.
+Density for the design = 0.741.
+       = stdcell_area 581 sites (727 um^2) / alloc_area 784 sites (981 um^2).
+Pin Density = 0.3278.
+            = total # of pins 257 / total area 784.
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPAFP-9024          3  This command is hidden and will be obsol...
+WARNING   IMPTCM-77            3  Option "%s" for command %s is obsolete a...
+*** Message Summary: 6 warning(s), 0 error(s)
+
+#% End planDesign (date=07/19 16:30:14, total cpu=0:00:03.3, real=0:00:05.0, peak res=1281.1M, current mem=1249.9M)
+### End verbose source output for 'inputs/floorplan.tcl'.
+
+  > Info: Sourcing "scripts/add-endcaps-welltaps.tcl"
+
+### Start verbose source output (echo mode) for 'scripts/add-endcaps-welltaps.tcl' ...
+# addWellTap -cell [list $ADK_WELL_TAP_CELL] \
+           -prefix       WELLTAP \
+           -cellInterval $ADK_WELL_TAP_INTERVAL \
+           -checkerboard
+skipRow option will be disabled when checkerBoard is set
+**WARN: (IMPSP-5134):	Setting cellInterval to 12.880 (microns) as a multiple of cell sky130_fd_sc_hd__tapvpwrvgnd_1's techSite 'unithd' width of 0.460 microns
+Type 'man IMPSP-5134' for more detail.
+For 43 new insts, *** Applied 0 GNC rules (cpu = 0:00:00.0)
+Inserted 43 well-taps <sky130_fd_sc_hd__tapvpwrvgnd_1> cells (prefix WELLTAP).
+# verifyWellTap -cells [list $ADK_WELL_TAP_CELL] \
+              -report reports/welltap.rpt \
+              -rule   [ expr $ADK_WELL_TAP_INTERVAL/2 ]
+INFO: running in 130nm design.
+Begin to run verifyWellTap...
+init: done
+checking rule
+Finished verifyWellTap, 0 violations found.
+### End verbose source output for 'scripts/add-endcaps-welltaps.tcl'.
+
+  > Info: Sourcing "inputs/pin-assignments.tcl"
+
+### Start verbose source output (echo mode) for 'inputs/pin-assignments.tcl' ...
+# set pins_top {\
+    clk rst_n adc_start\
+}
+# set pins_right {\
+    out_valid\
+}
+# set pins_bottom []
+# set pins_left {\
+    run_adc_n\
+}
+# for {set i 7} {$i >= 0} {set i [expr {$i - 1}]} {
+    lappend pins_left "adc_val[$i]"
+}
+# lappend pins_left "comparator_val"
+# set ports_layer M3
+# editPin -layer $ports_layer -pin $pins_right  -side RIGHT  -spreadType SIDE
+To speed up, if you have to run multiple editPin commands then wrap all editPin commands within  'setPinAssignMode -pinEditInBatch true' (then editPin commands) and 'setPinAssignMode -pinEditInBatch false'
+Successfully spread [1] pins.
+editPin : finished (cpu = 0:00:00.7 real = 0:00:01.0, mem = 1488.8M).
+# editPin -layer $ports_layer -pin $pins_left   -side LEFT   -spreadType SIDE
+To speed up, if you have to run multiple editPin commands then wrap all editPin commands within  'setPinAssignMode -pinEditInBatch true' (then editPin commands) and 'setPinAssignMode -pinEditInBatch false'
+Successfully spread [10] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1488.8M).
+# editPin -layer $ports_layer -pin $pins_top    -side TOP    -spreadType SIDE
+To speed up, if you have to run multiple editPin commands then wrap all editPin commands within  'setPinAssignMode -pinEditInBatch true' (then editPin commands) and 'setPinAssignMode -pinEditInBatch false'
+Successfully spread [3] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1488.8M).
+### End verbose source output for 'inputs/pin-assignments.tcl'.
+
+  > Info: Sourcing "scripts/make-path-groups.tcl"
+
+### Start verbose source output (echo mode) for 'scripts/make-path-groups.tcl' ...
+# reset_path_group -all
+# resetPathGroupOptions
+# set inputs   [all_inputs -no_clocks]
+# set outputs  [all_outputs]
+# set icgs     [filter_collection [all_registers] "is_integrated_clock_gating_cell == true"]
+# set regs     [remove_from_collection [all_registers -edge_triggered] $icgs]
+# set allregs  [all_registers]
+# set blocks      [ dbGet top.insts.cell.baseClass block -p2 ]
+# set macro_refs  [ list ]
+# set macros      [ list ]
+# set blocks_exist  [ expr [ lindex $blocks 0 ] != 0 ]
+# if { $blocks_exist } {
+  foreach b $blocks {
+    set cell    [ dbGet $b.cell ]
+    set isBlock [ dbIsCellBlock $cell ]
+    set isPhys  [ dbGet $b.isPhysOnly ]
+    # Return all blocks that are _not_ physical-only (e.g., filter out IO bondpads)
+    if { [ expr $isBlock && ! $isPhys ] } {
+      puts [ dbGet $b.name ]
+      lappend macro_refs $b
+      lappend macros     [ dbGet $b.name ]
+    }
+  }
+}
+# group_path -name In2Out -from $inputs -to $outputs
+# if { $allregs != "" } {
+  group_path -name In2Reg  -from $inputs  -to $allregs
+  group_path -name Reg2Out -from $allregs -to $outputs
+}
+# if { $regs != "" } {
+  group_path -name Reg2Reg -from $regs -to $regs
+}
+# if { $allregs != "" && $icgs != "" } {
+  group_path -name Reg2ClkGate -from $allregs -to $icgs
+}
+# if { $macros != "" } {
+  group_path -name All2Macro -to   $macros
+  group_path -name Macro2All -from $macros
+}
+# if { $macros != "" } {
+  setPathGroupOptions All2Macro -effortLevel high
+  setPathGroupOptions Macro2All -effortLevel high
+}
+# if { $regs != "" } {
+  setPathGroupOptions Reg2Reg -effortLevel high
+}
+Effort level <high> specified for Reg2Reg path_group
+### End verbose source output for 'scripts/make-path-groups.tcl'.
+
+  > Info: Sourcing "scripts/reporting.tcl"
+
+### Start verbose source output (echo mode) for 'scripts/reporting.tcl' ...
+# timeDesign -preplace -hold -expandedViews -prefix preplace -outDir $vars(rpt_dir)
+*** timeDesign #2 [begin] : totSession cpu/real = 0:01:02.5/0:00:58.0 (1.1), mem = 1490.8M
+
+**INFO: Power effort not set by setOptMode, so setting 'setOptMode -powerEffort high', as set by setDesignMode
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Setting High Fanout Nets ( > 100 ) as ideal temporarily for -prePlace option
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+Starting delay calculation for Hold views
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: sar_adc_controller
+# Design Mode: 130nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (16 T). (MEM=1576.7)
+*** Calculating scaling factor for libs_bc libraries using the default operating condition of each library.
+Total number of fetched objects 89
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+End delay calculation. (MEM=1944.04 CPU=0:00:00.7 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1944.04 CPU=0:00:00.8 REAL=0:00:01.0)
+*** Done Building Timing Graph (cpu=0:00:01.4 real=0:00:01.0 totSessionCpu=0:01:04 mem=1912.0M)
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Hold views included:
+ analysis_default 
+
++--------------------+--------------------------------------------------+
+|     ID Number      |                 Path Group Name                  |
++--------------------+--------------------------------------------------+
+|         1          |Reg2ClkGate                                       |
++--------------------+--------------------------------------------------+
+
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+|     Hold mode      |   all   | default | In2Out  | In2Reg  |1:Reg..te| Reg2Out | Reg2Reg |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):|  0.210  |  0.000  |   N/A   | 10.102  |  0.297  |  0.210  |  0.349  |
+|           TNS (ns):|  0.000  |  0.000  |   N/A   |  0.000  |  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |   N/A   |    0    |    0    |    0    |    0    |
+|          All Paths:|   31    |    0    |   N/A   |   21    |    1    |   10    |   20    |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+|analysis_default    |  0.210  |  0.000  |   N/A   | 10.102  |  0.297  |  0.210  |  0.349  |
+|                    |  0.000  |  0.000  |   N/A   |  0.000  |  0.000  |  0.000  |  0.000  |
+|                    |    0    |    0    |   N/A   |    0    |    0    |    0    |    0    |
+|                    |   31    |    0    |   N/A   |   21    |    1    |   10    |   20    |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+
+Density: 78.408%
+------------------------------------------------------------------
+Set Using Default Delay Limit as 1000.
+Resetting back High Fanout Nets as non-ideal
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Reported timing to dir reports
+Total CPU time: 1.87 sec
+Total Real time: 1.0 sec
+Total Memory Usage: 1530.515625 Mbytes
+*** timeDesign #2 [finish] : cpu/real = 0:00:01.9/0:00:01.3 (1.4), totSession cpu/real = 0:01:04.4/0:00:59.3 (1.1), mem = 1530.5M
+# report_ports > $vars(rpt_dir)/$vars(step).ports.rpt
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: sar_adc_controller
+# Design Mode: 130nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (16 T). (MEM=1530.53)
+*** Calculating scaling factor for libs_typical libraries using the default operating condition of each library.
+Total number of fetched objects 89
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+End delay calculation. (MEM=1916.8 CPU=0:00:00.3 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1916.8 CPU=0:00:00.4 REAL=0:00:00.0)
+### End verbose source output for 'scripts/reporting.tcl'.
+#% Begin save design ... (date=07/19 16:30:17, mem=1388.1M)
+% Begin Save ccopt configuration ... (date=07/19 16:30:17, mem=1390.1M)
+% End Save ccopt configuration ... (date=07/19 16:30:17, total cpu=0:00:00.0, real=0:00:00.0, peak res=1391.0M, current mem=1391.0M)
+% Begin Save netlist data ... (date=07/19 16:30:17, mem=1391.0M)
+Writing Binary DB to checkpoints/design.checkpoint/save.enc.dat/vbin/sar_adc_controller.v.bin in multi-threaded mode...
+% End Save netlist data ... (date=07/19 16:30:17, total cpu=0:00:00.1, real=0:00:00.0, peak res=1400.0M, current mem=1400.0M)
+Saving symbol-table file in separate thread ...
+Saving congestion map file in separate thread ...
+Saving congestion map file checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.route.congmap.gz ...
+% Begin Save AAE data ... (date=07/19 16:30:17, mem=1400.3M)
+Saving AAE Data ...
+% End Save AAE data ... (date=07/19 16:30:17, total cpu=0:00:00.0, real=0:00:00.0, peak res=1400.4M, current mem=1400.4M)
+Saving preference file checkpoints/design.checkpoint/save.enc.dat/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+Saving special route data file in separate thread ...
+Saving PG Conn data in separate thread ...
+Saving placement file in separate thread ...
+Saving route file in separate thread ...
+Saving property file in separate thread ...
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+TAT_INFO: ::saveSpecialRoute REAL = 0 : CPU = 0 : MEM = 0.
+TAT_INFO: savePGConnFile REAL = 0 : CPU = 0 : MEM = 0.
+TAT_INFO: ::savePlace REAL = 0 : CPU = 0 : MEM = 0.
+Saving property file checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1645.4M) ***
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:01.0 mem=1645.4M) ***
+TAT_INFO: ::saveRoute REAL = 1 : CPU = 0 : MEM = 0.
+TAT_INFO: ::db::saveAnnotationAndProp REAL = 0 : CPU = 0 : MEM = 0.
+TAT_INFO: ::db::saveSymbolTable REAL = 2 : CPU = 0 : MEM = 0.
+TAT_INFO: ::saveCongMap REAL = 2 : CPU = 0 : MEM = 0.
+% Begin Save power constraints data ... (date=07/19 16:30:23, mem=1403.4M)
+% End Save power constraints data ... (date=07/19 16:30:23, total cpu=0:00:00.0, real=0:00:00.0, peak res=1403.5M, current mem=1403.5M)
+Generated self-contained design save.enc.dat
+#% End save design ... (date=07/19 16:30:25, total cpu=0:00:01.5, real=0:00:08.0, peak res=1419.4M, current mem=1419.4M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+
+*** Memory Usage v#2 (Current mem = 1651.723M, initial mem = 267.605M) ***
+*** Message Summary: 53 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:07, real=0:01:09, mem=1651.7M) ---
+

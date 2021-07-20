@@ -1,0 +1,26 @@
+
+#-------------------------------------------------------------
+set vars(step) debug
+set vars(debug,start_time) [clock seconds]
+um::push_snapshot_stack
+#-------------------------------------------------------------
+
+
+global env
+if {[info exists env(STEP)]} {
+
+   if {$vars(restore_design)} { # <BEGIN TAG> $env(STEP),restore_design
+   restoreDesign checkpoints/$env(STEP).enc.dat sar_adc_controller
+
+   # <END TAG> $env(STEP),restore_design }
+
+   um::enable_metrics -on
+   puts "<FF> Plugin -> always_source_tcl"
+   ff_procs::source_plug always_source_tcl
+
+}
+win
+#-------------------------------------------------------------
+
+
+

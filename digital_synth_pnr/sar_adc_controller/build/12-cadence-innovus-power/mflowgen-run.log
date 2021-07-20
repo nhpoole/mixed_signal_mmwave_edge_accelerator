@@ -1,0 +1,580 @@
+** NOTE: Created directory path 'logs' for file 'logs/run.log'.
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2020 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v20.13-s083_1, built Tue Jan 19 16:51:46 PST 2021
+Options:	-overwrite -nowin -init START.tcl -log logs/run.log 
+Date:		Mon Jul 19 16:30:37 2021
+Host:		caddy13 (x86_64 w/Linux 3.10.0-1160.31.1.el7.x86_64) (8cores*16cpus*Common KVM processor 16384KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		invs	Innovus Implementation System	20.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_13665_caddy13_nhpoole_VcgoYf.
+
+The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+
+**INFO:  MMMC transition support version v31-84 
+
+Sourcing file "START.tcl" ...
+#% Begin load design ... (date=07/19 16:31:18, mem=562.4M)
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'sar_adc_controller' saved by 'Innovus' '20.13-s083_1' on 'Mon Jul 19 16:30:25 2021'.
+% Begin Load MMMC data ... (date=07/19 16:31:19, mem=564.5M)
+% End Load MMMC data ... (date=07/19 16:31:19, total cpu=0:00:00.0, real=0:00:00.0, peak res=565.2M, current mem=565.2M)
+
+Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/libs/lef/rtk-tech.lef ...
+
+Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/libs/lef/stdcells.lef ...
+WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/libs/lef/stdcells.lef at line 18.
+Set DBUPerIGU to M1 pitch 460.
+**WARN: (IMPLF-201):	Pin 'HI' in macro 'sky130_fd_sc_hd__conb_1' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'LO' in macro 'sky130_fd_sc_hd__conb_1' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+
+viaInitial starts at Mon Jul 19 16:31:19 2021
+viaInitial ends at Mon Jul 19 16:31:19 2021
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/viewDefinition.tcl
+Reading libs_typical timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+Read 427 cells in library 'sky130_fd_sc_hd__tt_025C_1v80' 
+Reading libs_bc timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 427 cells in library 'sky130_fd_sc_hd__ff_100C_1v95' 
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.03min, real=0.03min, mem=18.9M, fe_cpu=0.69min, fe_real=0.73min, fe_mem=672.8M) ***
+% Begin Load netlist data ... (date=07/19 16:31:21, mem=588.6M)
+*** Begin netlist parsing (mem=672.8M) ***
+Created 427 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/vbin/sar_adc_controller.v.bin'
+Reading binary database version 2 in 1-threaded mode
+
+*** Memory Usage v#2 (Current mem = 681.840M, initial mem = 267.605M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=681.8M) ***
+% End Load netlist data ... (date=07/19 16:31:21, total cpu=0:00:00.1, real=0:00:00.0, peak res=597.2M, current mem=597.2M)
+Set top cell to sar_adc_controller.
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Hooked 854 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell sar_adc_controller ...
+*** Netlist is unique.
+** info: there are 865 modules.
+** info: there are 84 stdCell insts.
+
+*** Memory Usage v#2 (Current mem = 717.312M, initial mem = 267.605M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Adjust met3 preferred direction offset from 0.34 to 0.17.
+Adjust met4 preferred direction offset from 0.46 to 0.23.
+Adjust met5 preferred direction offset from 1.7 to 0.17.
+Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Loading preference file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/gui.pref.tcl ...
+##  Process: 130           (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 130nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.4.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+**WARN: (IMPOPT-3602):	The specified path group name Reg2Reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for Reg2Reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name Reg2Out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for Reg2Out path_group
+**WARN: (IMPOPT-3602):	The specified path group name Reg2ClkGate is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for Reg2ClkGate path_group
+**WARN: (IMPOPT-3602):	The specified path group name In2Reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for In2Reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name In2Out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for In2Out path_group
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+Change floorplan default-technical-site to 'unithd'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 328
+Total number of sequential cells: 68
+Total number of tristate cells: 13
+Total number of level shifter cells: 7
+Total number of power gating cells: 0
+Total number of isolation cells: 11
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_12 sky130_fd_sc_hd__buf_16 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_6 sky130_fd_sc_hd__buf_8 sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_16 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8 sky130_fd_sc_hd__dlymetal6s2s_1 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__probe_p_8
+Total number of usable buffers: 15
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: sky130_fd_sc_hd__bufinv_16 sky130_fd_sc_hd__clkinv_1 sky130_fd_sc_hd__bufinv_8 sky130_fd_sc_hd__clkinv_16 sky130_fd_sc_hd__clkinv_2 sky130_fd_sc_hd__clkinv_4 sky130_fd_sc_hd__clkinv_8 sky130_fd_sc_hd__inv_1 sky130_fd_sc_hd__clkinvlp_2 sky130_fd_sc_hd__clkinvlp_4 sky130_fd_sc_hd__inv_12 sky130_fd_sc_hd__inv_16 sky130_fd_sc_hd__inv_2 sky130_fd_sc_hd__inv_4 sky130_fd_sc_hd__inv_6 sky130_fd_sc_hd__inv_8
+Total number of usable inverters: 16
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: sky130_fd_sc_hd__bufbuf_16 sky130_fd_sc_hd__bufbuf_8 sky130_fd_sc_hd__clkdlybuf4s15_1 sky130_fd_sc_hd__clkdlybuf4s15_2 sky130_fd_sc_hd__clkdlybuf4s18_1 sky130_fd_sc_hd__clkdlybuf4s18_2 sky130_fd_sc_hd__clkdlybuf4s25_1 sky130_fd_sc_hd__clkdlybuf4s50_1 sky130_fd_sc_hd__clkdlybuf4s25_2 sky130_fd_sc_hd__clkdlybuf4s50_2 sky130_fd_sc_hd__dlygate4sd2_1 sky130_fd_sc_hd__dlygate4sd1_1 sky130_fd_sc_hd__dlygate4sd3_1 sky130_fd_sc_hd__dlymetal6s6s_1 sky130_fd_sc_hd__dlymetal6s4s_1
+Total number of identified usable delay cells: 15
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Reading floorplan file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.fp.gz (mem = 934.9M).
+% Begin Load floorplan data ... (date=07/19 16:31:23, mem=848.0M)
+*info: reset 99 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 80500 100640)
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Adjust met3 preferred direction offset from 0.34 to 0.17.
+Adjust met4 preferred direction offset from 0.46 to 0.23.
+Adjust met5 preferred direction offset from 1.7 to 0.17.
+Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+ ... processed partition successfully.
+Reading binary special route file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.fp.spr.gz (Created by Innovus v20.13-s083_1 on Mon Jul 19 16:30:20 2021, version: 1)
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=850.5M, current mem=850.5M)
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Delete all existing relative floorplan constraints.
+% End Load floorplan data ... (date=07/19 16:31:25, total cpu=0:00:00.1, real=0:00:02.0, peak res=850.5M, current mem=849.6M)
+% Begin Load SymbolTable ... (date=07/19 16:31:25, mem=849.9M)
+Reading congestion map file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.route.congmap.gz ...
+% End Load SymbolTable ... (date=07/19 16:31:27, total cpu=0:00:00.0, real=0:00:02.0, peak res=850.1M, current mem=850.1M)
+Loading place ...
+% Begin Load placement data ... (date=07/19 16:31:27, mem=850.1M)
+Reading placement file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v20.13-s083_1 on Mon Jul 19 16:30:20 2021, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=937.9M) ***
+Total net length = 1.480e-01 (7.400e-02 7.400e-02) (ext = 0.000e+00)
+% End Load placement data ... (date=07/19 16:31:27, total cpu=0:00:00.0, real=0:00:00.0, peak res=850.4M, current mem=850.4M)
+% Begin Load routing data ... (date=07/19 16:31:27, mem=850.4M)
+Reading routing file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.route.gz.
+Reading Innovus routing data (Created by Innovus v20.13-s083_1 on Mon Jul 19 16:30:20 2021 Format: 20.1) ...
+*** Total 99 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.0 real=0:00:01.0 mem=938.9M) ***
+% End Load routing data ... (date=07/19 16:31:28, total cpu=0:00:00.0, real=0:00:01.0, peak res=855.6M, current mem=854.6M)
+TAT_INFO: restoreCongMap REAL = 2 : CPU = 0 : MEM = 0.
+Reading property file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=943.9M) ***
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Reading Capacitance Table File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable ...
+Process name: (null).
+Allocated an empty WireEdgeEnlargement table in typical [6].
+Allocated an empty WireEdgeEnlargement table in typical [6].
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: analysis_default
+    RC-Corner Name        : typical
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=07/19 16:31:29, mem=861.0M)
+source /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/11-cadence-innovus-init/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller_power_constraints.tcl
+** WARN:  (VOLTUS_POWR-3212): The 'set_power_analysis_mode -leakage_power_view |-dynamic_power_view|-analysis_view' will be obsolete in 18.20 release. Use 'set_analysis_view -leakage <> | -dynamic <>' to set leakage and dynamic power views.
+
+% End Load power constraints ... (date=07/19 16:31:29, total cpu=0:00:00.0, real=0:00:00.0, peak res=861.1M, current mem=861.1M)
+% Begin load AAE data ... (date=07/19 16:31:29, mem=903.7M)
+**WARN: (IMPESI-3505):	setDelayCalMode -eng_copyNetPropToNewNet true (default=false) will be obsoleted along with its sgs2set equivalent.  This parameter will continue to be supported in the current release, but will be removed in the next major release of the software.
+AAE DB initialization (MEM=1008.49 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End load AAE data ... (date=07/19 16:31:30, total cpu=0:00:00.6, real=0:00:01.0, peak res=910.7M, current mem=910.7M)
+Total number of combinational cells: 328
+Total number of sequential cells: 68
+Total number of tristate cells: 13
+Total number of level shifter cells: 7
+Total number of power gating cells: 0
+Total number of isolation cells: 11
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_12 sky130_fd_sc_hd__buf_16 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_6 sky130_fd_sc_hd__buf_8 sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_16 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8 sky130_fd_sc_hd__dlymetal6s2s_1 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__probe_p_8
+Total number of usable buffers: 15
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: sky130_fd_sc_hd__bufinv_16 sky130_fd_sc_hd__clkinv_1 sky130_fd_sc_hd__bufinv_8 sky130_fd_sc_hd__clkinv_16 sky130_fd_sc_hd__clkinv_2 sky130_fd_sc_hd__clkinv_4 sky130_fd_sc_hd__clkinv_8 sky130_fd_sc_hd__inv_1 sky130_fd_sc_hd__clkinvlp_2 sky130_fd_sc_hd__clkinvlp_4 sky130_fd_sc_hd__inv_12 sky130_fd_sc_hd__inv_16 sky130_fd_sc_hd__inv_2 sky130_fd_sc_hd__inv_4 sky130_fd_sc_hd__inv_6 sky130_fd_sc_hd__inv_8
+Total number of usable inverters: 16
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: sky130_fd_sc_hd__bufbuf_16 sky130_fd_sc_hd__bufbuf_8 sky130_fd_sc_hd__clkdlybuf4s15_1 sky130_fd_sc_hd__clkdlybuf4s15_2 sky130_fd_sc_hd__clkdlybuf4s18_1 sky130_fd_sc_hd__clkdlybuf4s18_2 sky130_fd_sc_hd__clkdlybuf4s25_1 sky130_fd_sc_hd__clkdlybuf4s50_1 sky130_fd_sc_hd__clkdlybuf4s25_2 sky130_fd_sc_hd__clkdlybuf4s50_2 sky130_fd_sc_hd__dlygate4sd2_1 sky130_fd_sc_hd__dlygate4sd1_1 sky130_fd_sc_hd__dlygate4sd3_1 sky130_fd_sc_hd__dlymetal6s6s_1 sky130_fd_sc_hd__dlymetal6s4s_1
+Total number of identified usable delay cells: 15
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version 20.13-s083_1. They will be removed in the next release. 
+timing_enable_default_delay_arc
+#% End load design ... (date=07/19 16:31:30, total cpu=0:00:06.2, real=0:00:12.0, peak res=942.2M, current mem=912.5M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-201            2  Pin '%s' in macro '%s' has no ANTENNADIF...
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPPTN-867           1  Found use of %s. This will continue to w...
+WARNING   IMPESI-3505          1  setDelayCalMode -eng_%s (default=%s) wil...
+WARNING   IMPOPT-3602          5  The specified path group name %s is not ...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPPSP-1003          1  Found use of '%s'. This will continue to...
+WARNING   TECHLIB-302         24  No function defined for cell '%s'. The c...
+*** Message Summary: 37 warning(s), 0 error(s)
+
+The timeout for a remote job to respond is 3600 seconds.
+Submit command for task runs will be: local
+<FF> Plugin -> always_source_tcl
+<FF> LOADING 'always_source_tcl' PLUG-IN FILE(s) 
+<FF> -> innovus-foundation-flow/custom-scripts/always-source.tcl
+
+  > Info: Sourcing "scripts/globalnetconnect.tcl"
+
+### Start verbose source output (echo mode) for 'scripts/globalnetconnect.tcl' ...
+# globalNetConnect VDD    -type pgpin -pin VPWR    -inst * -verbose
+127 new pwr-pin connections were made to global net 'VDD'.
+# globalNetConnect VSS    -type pgpin -pin VGND    -inst * -verbose
+127 new gnd-pin connections were made to global net 'VSS'.
+# globalNetConnect VSS    -type pgpin -pin VNB     -inst * -verbose
+84 new gnd-pin connections were made to global net 'VSS'.
+# globalNetConnect VDD    -type pgpin -pin VPB     -inst * -verbose
+84 new pwr-pin connections were made to global net 'VDD'.
+# globalNetConnect VDD    -type pgpin -pin vccd1   -inst * -verbose
+**WARN: (IMPDB-1261):	No PG pin 'vccd1' in instances with basename '*' in the design.
+**ERROR: (IMPDB-1221):	A global net connection rule was specified to connect power pins with the name pattern 'vccd1' to a global net.  But the connections cannot be made because there is no such power pin with name matching the pattern in any cell.  Check the pin name in Lef or liberty and make sure it is correct.
+# globalNetConnect VSS    -type pgpin -pin vssd1   -inst * -verbose
+**WARN: (IMPDB-1261):	No PG pin 'vssd1' in instances with basename '*' in the design.
+**ERROR: (IMPDB-1221):	A global net connection rule was specified to connect ground pins with the name pattern 'vssd1' to a global net.  But the connections cannot be made because there is no such ground pin with name matching the pattern in any cell.  Check the pin name in Lef or liberty and make sure it is correct.
+### End verbose source output for 'scripts/globalnetconnect.tcl'.
+
+  > Info: Sourcing "scripts/main.tcl"
+
+### Start verbose source output (echo mode) for 'scripts/main.tcl' ...
+# set M2_direction [dbGet [dbGet head.layers.name 3 -p].direction]
+# if { $M2_direction == "Vertical" } {
+  # Vertical M2 -- Use single power mesh strategy
+  puts "Info: Using coarse-only power mesh because M2 is vertical"
+  if {[ file exists inputs/power-strategy-singlemesh.tcl ]} {
+    source -verbose inputs/power-strategy-singlemesh.tcl
+  } else {
+    source -verbose scripts/power-strategy-singlemesh.tcl
+  }
+} else {
+  # Horizontal M2 -- Use dual power mesh strategy
+  puts "Info: Using fine+coarse power mesh because M2 is horizontal"
+  if {[ file exists inputs/power-strategy-dualmesh.tcl ]} {
+    source -verbose inputs/power-strategy-dualmesh.tcl
+  } else {
+    source -verbose scripts/power-strategy-dualmesh.tcl
+  }
+}
+Info: Using coarse-only power mesh because M2 is vertical
+### Start verbose source output (echo mode) for 'scripts/power-strategy-singlemesh.tcl' ...
+# sroute -nets {VDD VSS}
+#% Begin sroute (date=07/19 16:31:30, mem=912.7M)
+*** Begin SPECIAL ROUTE on Mon Jul 19 16:31:30 2021 ***
+SPECIAL ROUTE ran on directory: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/12-cadence-innovus-power
+SPECIAL ROUTE ran on machine: caddy13 (Linux 3.10.0-1160.31.1.el7.x86_64 x86_64 2.39Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteConnectConverterPin set to false
+srouteFollowCorePinEnd set to 3
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2002.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 13 layers, 6 routing layers, 1 overlap layer
+Read in 436 macros, 13 used
+Read in 55 components
+  55 core components: 12 unplaced, 0 placed, 43 fixed
+Read in 14 physical pins
+  14 physical pins: 0 unplaced, 14 placed, 0 fixed
+Read in 14 nets
+Read in 10 special nets
+Read in 148 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-1254):	Unable to connect the specified objects, since block pins of the VDD net were not found in the design. Check netlist or change the parameter value to include block pins in the design.
+**WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the VDD net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net VDD. Check net list, or change port class in the technology file, or change option to include pin in given range.
+**WARN: (IMPSR-1254):	Unable to connect the specified objects, since block pins of the VSS net were not found in the design. Check netlist or change the parameter value to include block pins in the design.
+**WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the VSS net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net VSS. Check net list, or change port class in the technology file, or change option to include pin in given range.
+CPU time for FollowPin 0 seconds
+CPU time for FollowPin 0 seconds
+  Number of IO ports routed: 0
+  Number of Block ports routed: 0
+  Number of Stripe ports routed: 0
+  Number of Core ports routed: 0  open: 34
+  Number of Pad ports routed: 0
+  Number of Power Bump ports routed: 0
+  Number of Followpin connections: 17
+End power routing: cpu: 0:00:01, real: 0:00:00, peak: 2035.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 14 io pins ...
+ Updating DB with 0 via definition ...
+sroute created 17 wires.
+ViaGen created 0 via, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met1  |       17       |       NA       |
++--------+----------------+----------------+
+innovus 1> #% End sroute (date=07/19 16:31:31, total cpu=0:00:01.0, real=0:00:01.0, peak res=945.9M, current mem=937.1M)
+# set pmesh_bot $ADK_POWER_MESH_BOT_LAYER
+# set pmesh_top $ADK_POWER_MESH_TOP_LAYER
+# addRing -nets {VDD VSS} -type core_rings -follow core   \
+        -layer [list top  $pmesh_top bottom $pmesh_top  \
+                     left $pmesh_bot right  $pmesh_bot] \
+        -width $savedvars(p_ring_width)                 \
+        -spacing $savedvars(p_ring_spacing)             \
+        -offset $savedvars(p_ring_spacing)              \
+        -extend_corner {tl tr bl br lt lb rt rb}
+#% Begin addRing (date=07/19 16:31:31, mem=937.1M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1041.8M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  met4  |        4       |       NA       |
+|  via4  |        8       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+innovus 1> #% End addRing (date=07/19 16:31:31, total cpu=0:00:00.0, real=0:00:00.0, peak res=938.9M, current mem=938.9M)
+# set M1_min_width    [dbGet [dbGetLayerByZ 2].minWidth]
+# set M1_route_pitchX [dbGet [dbGetLayerByZ 2].pitchX]
+# set pmesh_bot_str_width [expr  8 *  3 * $M1_min_width   ]
+# set pmesh_bot_str_pitch [expr 4 * 10 * $M1_route_pitchX]
+# set pmesh_bot_str_intraset_spacing [expr $pmesh_bot_str_pitch - $pmesh_bot_str_width]
+# set pmesh_bot_str_interset_pitch   [expr 4*$pmesh_bot_str_pitch]
+# setViaGenMode -reset
+# setViaGenMode -viarule_preference default
+Setting -viarule_preference to default order. ViaGen will consider via rule priority based on the order of appearance in the technology file.
+# setViaGenMode -ignore_DRC false
+Setting -ignore_DRC to 0. ViaGen will do DRC check while creating vias.
+# setAddStripeMode -reset
+# setAddStripeMode -stacked_via_bottom_layer 2 \
+                 -stacked_via_top_layer    $pmesh_top
+# addStripe -nets {VSS VDD} -layer $pmesh_bot -direction vertical \
+    -width $pmesh_bot_str_width                                 \
+    -spacing $pmesh_bot_str_intraset_spacing                    \
+    -set_to_set_distance $pmesh_bot_str_interset_pitch          \
+    -max_same_layer_jog_length $pmesh_bot_str_pitch             \
+    -padcore_ring_bottom_layer_limit $pmesh_bot                 \
+    -padcore_ring_top_layer_limit $pmesh_top                    \
+    -start [expr 2*$pmesh_bot_str_pitch]
+#% Begin addStripe (date=07/19 16:31:31, mem=939.0M)
+
+Initialize fgc environment(mem: 1041.8M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1041.8M)
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1041.8M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1041.8M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1041.8M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Stripe generation is complete.
+vias are now being generated.
+addStripe created 2 wires.
+ViaGen created 55 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   via  |       17       |        0       |
+|  via2  |       17       |        0       |
+|  via3  |       17       |        0       |
+|  met4  |        2       |       NA       |
+|  via4  |        4       |        0       |
++--------+----------------+----------------+
+innovus 1> #% End addStripe (date=07/19 16:31:31, total cpu=0:00:00.0, real=0:00:00.0, peak res=939.8M, current mem=939.8M)
+# set pmesh_top_str_width [expr  8 *  3 * $M1_min_width   ]
+# set pmesh_top_str_pitch [expr 4 * 10 * $M1_route_pitchX]
+# set pmesh_top_str_intraset_spacing [expr $pmesh_top_str_pitch - $pmesh_top_str_width]
+# set pmesh_top_str_interset_pitch   [expr 2*$pmesh_top_str_pitch]
+# setViaGenMode -reset
+# setViaGenMode -viarule_preference default
+Setting -viarule_preference to default order. ViaGen will consider via rule priority based on the order of appearance in the technology file.
+# setViaGenMode -ignore_DRC false
+Setting -ignore_DRC to 0. ViaGen will do DRC check while creating vias.
+# setAddStripeMode -reset
+-stacked_via_bottom_layer bottomLayer
+-stacked_via_top_layer topLayer
+# setAddStripeMode -stacked_via_bottom_layer $pmesh_bot \
+                 -stacked_via_top_layer    $pmesh_top
+# addStripe -nets {VSS VDD} -layer $pmesh_top -direction horizontal \
+    -width $pmesh_top_str_width                                   \
+    -spacing $pmesh_top_str_intraset_spacing                      \
+    -set_to_set_distance $pmesh_top_str_interset_pitch            \
+    -max_same_layer_jog_length $pmesh_top_str_pitch               \
+    -padcore_ring_bottom_layer_limit $pmesh_bot                   \
+    -padcore_ring_top_layer_limit $pmesh_top                      \
+    -start [expr $pmesh_top_str_pitch]
+#% Begin addStripe (date=07/19 16:31:31, mem=939.9M)
+
+Initialize fgc environment(mem: 1041.8M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1041.8M)
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1041.8M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1041.8M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1041.8M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+**WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer via4 at (4.50, 13.60) (12.66, 14.72).
+**WARN: (IMPPP-531):	ViaGen Warning: Due to SPACING rule violation, viaGen fail to generate via on layer via4 at (67.84, 13.60) (76.00, 14.72).
+**WARN: (IMPPP-354):	The power planner did not generate the horizontal stripe at 4.500000 15.280000 67.839996 15.280000 with width 3.360000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, or the stripe would break the design rule.
+Type 'man IMPPP-354' for more detail.
+Stripe generation is complete.
+vias are now being generated.
+Total CPU(s) requested: 16
+Total CPU(s) enabled with current License(s): 8
+Current free CPU(s): 8
+Additional license(s) checked out: 1 Innovus_CPU_Opt license(s) for 8 CPU(s)
+Total CPU(s) now enabled: 16
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+Multi-CPU acceleration using 16 CPU(s).
+addStripe created 4 wires.
+ViaGen created 12 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  via4  |       12       |        0       |
+|  met5  |        4       |       NA       |
++--------+----------------+----------------+
+innovus 1> #% End addStripe (date=07/19 16:31:33, total cpu=0:00:01.1, real=0:00:02.0, peak res=940.4M, current mem=940.4M)
+### End verbose source output for 'scripts/power-strategy-singlemesh.tcl'.
+### End verbose source output for 'scripts/main.tcl'.
+#% Begin save design ... (date=07/19 16:31:33, mem=940.6M)
+% Begin Save ccopt configuration ... (date=07/19 16:31:33, mem=942.6M)
+% End Save ccopt configuration ... (date=07/19 16:31:33, total cpu=0:00:00.0, real=0:00:00.0, peak res=942.6M, current mem=941.7M)
+% Begin Save netlist data ... (date=07/19 16:31:33, mem=942.0M)
+Writing Binary DB to checkpoints/design.checkpoint/save.enc.dat/vbin/sar_adc_controller.v.bin in multi-threaded mode...
+% End Save netlist data ... (date=07/19 16:31:33, total cpu=0:00:00.1, real=0:00:00.0, peak res=958.4M, current mem=952.3M)
+Saving symbol-table file in separate thread ...
+Saving congestion map file in separate thread ...
+Saving congestion map file checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.route.congmap.gz ...
+% Begin Save AAE data ... (date=07/19 16:31:33, mem=952.6M)
+Saving AAE Data ...
+% End Save AAE data ... (date=07/19 16:31:33, total cpu=0:00:00.0, real=0:00:00.0, peak res=952.6M, current mem=952.6M)
+Saving preference file checkpoints/design.checkpoint/save.enc.dat/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+Saving Drc markers ...
+... 34 markers are saved ...
+... 0 geometry drc markers are saved ...
+... 0 antenna drc markers are saved ...
+Saving special route data file in separate thread ...
+Saving PG file in separate thread ...
+Saving placement file in separate thread ...
+Saving route file in separate thread ...
+Saving property file in separate thread ...
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+TAT_INFO: ::saveSpecialRoute REAL = 0 : CPU = 0 : MEM = 0.
+Saving PG file checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.pg.gz, version#2, (Created by Innovus v20.13-s083_1 on Mon Jul 19 16:31:37 2021)
+Saving property file checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1104.4M) ***
+*** Completed savePGFile (cpu=0:00:00.1 real=0:00:01.0 mem=1104.4M) ***
+TAT_INFO: ::savePGFile REAL = 1 : CPU = 0 : MEM = 0.
+TAT_INFO: ::savePlace REAL = 0 : CPU = 0 : MEM = 0.
+*** Completed saveRoute (cpu=0:00:00.1 real=0:00:01.0 mem=1104.4M) ***
+TAT_INFO: ::saveRoute REAL = 1 : CPU = 0 : MEM = 0.
+TAT_INFO: ::db::saveAnnotationAndProp REAL = 0 : CPU = 0 : MEM = 0.
+TAT_INFO: ::db::saveSymbolTable REAL = 2 : CPU = 0 : MEM = 0.
+TAT_INFO: ::saveCongMap REAL = 2 : CPU = 0 : MEM = 0.
+% Begin Save power constraints data ... (date=07/19 16:31:40, mem=959.5M)
+% End Save power constraints data ... (date=07/19 16:31:40, total cpu=0:00:00.0, real=0:00:00.0, peak res=959.6M, current mem=959.6M)
+Generated self-contained design save.enc.dat
+#% End save design ... (date=07/19 16:31:42, total cpu=0:00:01.6, real=0:00:09.0, peak res=991.2M, current mem=977.3M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+
+*** Memory Usage v#2 (Current mem = 1113.773M, initial mem = 267.605M) ***
+*** Message Summary: 46 warning(s), 2 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:48.8, real=0:01:06, mem=1113.8M) ---
+

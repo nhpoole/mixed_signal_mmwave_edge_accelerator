@@ -1,0 +1,3267 @@
+#@ # 
+#@ # Running lc_shell Version M-2017.06-SP3 for linux64 -- Oct 12, 2017
+#@ # Date:   Mon Jul 19 16:00:01 2021
+#@ # Run by: nhpoole@caddy13
+#@ 
+
+source /cad/synopsys/lc/M-2017.06-SP3/admin/setup//.synopsys_lc.setup
+#@ # -- Starting source /cad/synopsys/lc/M-2017.06-SP3/admin/setup//.synopsys_lc.setup
+
+#@ #
+#@ #
+#@ #		".synopsys_lc.setup" Initialization File for
+#@ #
+#@ #		    Lc_Shell and Library_compiler
+#@ #
+#@ #	The variables in this file define the behavior of many parts
+#@ #	of the Synopsys Synthesis Tools.  Upon installation, they should 
+#@ #	be reviewed and modified to fit your site's needs.  Each engineer
+#@ #	can have a .synopsys file in his/her home directory or current
+#@ #	directory to override variable settings in this file.  
+#@ #
+#@ 
+#@ # System variables
+#@ # system default value for sh_continue_on_error is "false"
+#@ set sh_continue_on_error         "true"
+#@ # system default value for sh_source_uses_search_path is "false"
+#@ set sh_source_uses_search_path   "true"
+#@ 
+#@ # Enable customer support banner on fatal
+#@ if { $sh_arch == "linux"    || $sh_arch == "amd64"    || $sh_arch == "linux64" ||      $sh_arch == "sparcOS5" || $sh_arch == "sparc64"  ||      $sh_arch == "x86sol32" || $sh_arch == "x86sol64" ||      $sh_arch == "rs6000"   || $sh_arch == "aix64" } {
+#@    setenv SYNOPSYS_TRACE ""
+#@ }
+#@ 
+#@ #
+#@ # Load the procedures which make up part of the user interface.
+#@ #
+#@ source $synopsys_root/auxx/syn/.lc_procs.tcl
+#@ # -- Starting source /cad/synopsys/lc/M-2017.06-SP3/auxx/syn/.lc_procs.tcl
+
+#@ ##############################################################################
+#@ #
+#@ #
+#@ # FILE:         auxx/syn/.lc_procs.tcl
+#@ #
+#@ # ABSTRACT:     These procedures are part of the lc_shell
+#@ #               user interface.
+#@ #               They are loaded by .synopsys_lc.setup.
+#@ #
+#@ ##############################################################################
+#@ #
+#@ #
+#@ 
+#@ ##############################################################################
+#@ #
+#@ #
+#@ #  PROCEDURE:  add_model
+#@ #
+#@ #  ABSTRACT:  dummy call
+#@ #
+#@ ##############################################################################
+#@ #
+#@ 
+#@ proc add_model { args } {
+#@   return [uplevel #0 $cmd]
+#@ }
+#@ 
+#@ ##############################################################################
+#@ #
+#@ #  PROCEDURE:   remove_design
+#@ #
+#@ #  ABSTRACT:    map remove_design to remove_lib
+#@ #
+#@ #  HISTORY :    2014/05/09, Junhan Yi, initial
+#@ #
+#@ ##############################################################################
+#@ 
+#@ proc remove_design { args } {
+#@   parse_proc_arguments -args $args ra
+#@ 
+#@   if {[info exists ra(-library)]} {
+#@     set cmd [format {remove_lib %s} $ra(-library)]
+#@   } elseif {[info exists ra(-all)]} {
+#@     set cmd {remove_lib -all}
+#@   } else {
+#@     set cmd [format {remove_lib [list %s]} $args]
+#@   }
+#@ 
+#@   return [uplevel #0 $cmd]
+#@ }
+#@ 
+#@ define_proc_attributes remove_design -hide_body     -info " alias of remove_lib "     -define_args {      {file_names "" file_names list {optional hidden}}    }
+#@ # -- End source /cad/synopsys/lc/M-2017.06-SP3/auxx/syn/.lc_procs.tcl
+
+#@ source $synopsys_root/auxx/lc/.lc_scripts.tcl
+#@ # -- Starting source /cad/synopsys/lc/M-2017.06-SP3/auxx/lc/.lc_scripts.tcl
+
+#@ ##############################################################################
+#@ #
+#@ #
+#@ # FILE:         lc_scripts.tcl
+#@ #
+#@ # ABSTRACT:     These procedures are part of the lc_shell
+#@ #               user interface.
+#@ #               They are loaded by .synopsys_lc.setup.
+#@ #
+#@ ##############################################################################
+#@ 
+#@ ##############################################################################
+#@ # Proc: read in the csv file to list of list
+#@ # Author: Junhan Yi
+#@ # Date: 2015/11/01
+#@ # -channel: the input csv file
+#@ # -header: == 1: use first line as index; header == 0: use row number as index
+#@ # -symbol: delimiter, default is ","
+#@ ##############################################################################
+#@ proc read_csv { channel { header 1 } { symbol , }} {
+#@ 	set quote 0	
+#@ 	set data [ split [ read $channel nonewline ] "\n" ]
+#@ 	foreach line $data {
+#@ 		set quote [ expr { $quote + [ regexp -all \" $line ]}]
+#@ 		if { [ expr { $quote % 2 }] == "0" } {
+#@ 			set quote 0
+#@ 			append row_temp $line
+#@ 			set row_temp [ split $row_temp , ]	
+#@ 			foreach section $row_temp {
+#@ 				set quote [ expr { $quote + [ regexp -all \" $section ]}]
+#@ 				if { [ expr { $quote % 2 }] == "0" } {
+#@ 					append cell_temp $section
+#@ 					set cell_temp [ regsub {^\s*(.*\S)\s*$} $cell_temp {\1} ]
+#@ 					set cell_temp [ regsub {^\s*$} $cell_temp {\1} ]
+#@ 					set cell_temp [ regsub {"(.*)"} $cell_temp {\1} ]
+#@ 					lappend cell $cell_temp
+#@ 					unset cell_temp
+#@ 					set quote 0
+#@ 				} else {
+#@ 					append cell_temp $section$symbol
+#@ 				}
+#@ 			}
+#@ 			lappend final [ regsub -all {""} $cell \" ]
+#@ 			unset cell
+#@ 			unset row_temp
+#@ 		} else {
+#@ 			append row_temp $line\n
+#@ 		}
+#@ 	}
+#@ 	# return list of list
+#@ 	return $final
+#@ }
+#@ 
+#@ # This proc is hidden
+#@ define_proc_attributes read_csv -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: sort the db_filename
+#@ # Author: Junhan Yi
+#@ # Date: 2015/11/01
+#@ # Return array: key is db name, value is a list of colomn number
+#@ ##############################################################################
+#@ proc sort_array_by_db_filename { final id } {
+#@ 	set row [ llength $final ]
+#@ 
+#@ 	for { set i 1 } { $i < $row } { incr i } {
+#@ 		set db_name [lindex [lindex $final $i] $id]
+#@     set db_ids [array names db_map $db_name]
+#@     if { [string length $db_ids] > 0} {
+#@       set db_map($db_name) [concat $db_map($db_name) $i]
+#@     } else {
+#@       set db_map($db_name) $i
+#@     }
+#@   }
+#@ 
+#@   return [ array get db_map ]
+#@ }
+#@ 
+#@ # This proc is hidden
+#@ define_proc_attributes sort_array_by_db_filename -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: get nldm delay point index/value
+#@ # Author: Junhan Yi
+#@ # Date: 2015/11/01
+#@ # Args: -matching_point: 1: fit; others: bucket;
+#@ # Return: for fit mode, return 1 grid point
+#@ #   for bucket mode, return a list of grid points
+#@ #
+#@ # Support NLDM NLPM query
+#@ #
+#@ # For different dimension lookup table
+#@ #         fit                     bucket
+#@ #   2-D:  1 (idx1,idx2,val)       4 * 3 (idx1,idx2,val)
+#@ #   1-D:  1 (idx1,val)            2 * 2 (idx1,val)
+#@ #   0-D:  1 (val)                 1 (val)
+#@ #
+#@ # The return array always contain 3 items (fit mode) or 12 items (bucket mode)
+#@ # The unused ones are left empty for 1-D/0-D lookup table
+#@ # If find any error, return array contains same number itmes with empty value
+#@ ##############################################################################
+#@ proc get_nldm_delay_point { line header idx {matching_point 1} } {
+#@ 
+#@   set column [llength $header]
+#@ 	for { set j 0 } { $j < $column } { incr j } {
+#@ 		set rec([ lindex $header $j ],$idx) [ lindex $line $j ]
+#@   }
+#@ 
+#@   # initial return array
+#@   if { $matching_point ==1 } {
+#@     set tb(idx1,$idx) ""
+#@     set tb(idx2,$idx) ""
+#@     set tb(value,$idx) ""
+#@   } else {
+#@     set tb(idx1_a,$idx) ""
+#@     set tb(idx2_a,$idx) ""
+#@     set tb(value_a,$idx) ""
+#@     set tb(idx1_b,$idx) ""
+#@     set tb(idx2_b,$idx) ""
+#@     set tb(value_b,$idx) ""
+#@     set tb(idx1_c,$idx) ""
+#@     set tb(idx2_c,$idx) ""
+#@     set tb(value_c,$idx) ""
+#@     set tb(idx1_d,$idx) ""
+#@     set tb(idx2_d,$idx) ""
+#@     set tb(value_d,$idx) ""
+#@   }
+#@ 
+#@   # check library
+#@   if { [string length [array names rec library,$idx]] ==0 ||
+#@     [string length $rec(library,$idx)] ==0} {
+#@     echo "line [expr $idx+1]: Error! Must specify field 'library' for query."
+#@     return [ array get tb ]
+#@   }
+#@   # check cell 
+#@   if { [string length [array names rec cell,$idx]] ==0 ||
+#@     [string length $rec(cell,$idx)] ==0} {
+#@     echo "line [expr $idx+1]: Error! Must specify field 'cell' for query."
+#@     return [ array get tb ]
+#@   }
+#@ 
+#@   # get the cell, save the collection into global array for fast access next time.
+#@   global lc_cells
+#@   set lib_cell_name [array names lc_cells $rec(library,$idx)/$rec(cell,$idx)]
+#@   if { [string length $lib_cell_name] > 0} {
+#@     set pcell $lc_cells($lib_cell_name)
+#@   } else {
+#@     set pcell [get_lib_cells $rec(library,$idx)/$rec(cell,$idx)]
+#@     if { [sizeof_collection $pcell] == 1 } {
+#@       set lc_cells($rec(library,$idx)/$rec(cell,$idx)) $pcell
+#@     } else {
+#@       echo "line [expr $idx+1]: Error! Can't find this cell group."
+#@       return [array get tb ]
+#@     }
+#@   }
+#@ 
+#@   # check group
+#@   if { [string length [array names rec group,$idx]] ==0 ||
+#@     [string length $rec(group,$idx)] ==0} {
+#@     echo "line [expr $idx+1]: Error! Must specify field 'group' for query."
+#@     return [ array get tb ]
+#@   }
+#@ 
+#@   # get value NOT from lookup table
+#@   if { [string equal $rec(group,$idx) leakage_power] } {
+#@     # leakage power
+#@  
+#@     # set filter
+#@     if { [string length [array names rec when_cond,$idx]] >0 &&
+#@       [string length $rec(when_cond,$idx)] >0 } {
+#@       set ft \(when==\"$rec(when_cond,$idx)\"\)
+#@     }
+#@     if { [string length [array names rec related_pg_pin,$idx]] >0 &&
+#@       [string length $rec(related_pg_pin,$idx)] >0 } {
+#@       if {[info exists ft]} {
+#@         set ft $ft&&\(related_pg_pin==$rec(related_pg_pin,$idx)\)
+#@       } else {
+#@         set ft \(related_pg_pin==$rec(related_pg_pin,$idx)\)
+#@       } 
+#@     }
+#@ 
+#@     # set options: of_object, class_type, filter
+#@     lappend opts -of_objects $pcell -class_type leakage_power
+#@     if {[info exists ft]} {
+#@       lappend opts -filter $ft
+#@     }
+#@ 
+#@     # get leakage power 
+#@     set arc [eval get_lib_objects $opts]
+#@     
+#@     if {[sizeof_collection $arc] == 0} {
+#@       echo "line [expr $idx+1]: Error! Can't find this timing/power group."
+#@       return [array get tb ]
+#@     } elseif {[sizeof_collection $arc] > 1} {
+#@     # using the first one !!!
+#@       echo "line [expr $idx+1]: Warning! Find multiple timing/power groups, use the first one!"
+#@       set arc [index_collection $arc 0]
+#@     }
+#@ 
+#@     set value [format %g [get_lib_attribute $arc value]]
+#@ 
+#@     if { $matching_point ==1 } {
+#@       if {[info exists value]} {
+#@         set tb(value,$idx) $value
+#@       }
+#@     } else {
+#@       if {[info exists value]} {
+#@         set tb(value_a,$idx) $value
+#@       }
+#@     }
+#@ 
+#@     return [ array get tb ]
+#@   }
+#@ 
+#@   # get value from lookup table
+#@   if { [string equal $rec(group,$idx) cell_rise] ||
+#@     [string equal $rec(group,$idx) cell_fall] ||
+#@     [string equal $rec(group,$idx) rise_constraint] ||
+#@     [string equal $rec(group,$idx) fall_constraint] ||
+#@     [string equal $rec(group,$idx) rise_propagation] ||
+#@     [string equal $rec(group,$idx) fall_propagation] ||
+#@     [string equal $rec(group,$idx) rise_transition] ||
+#@     [string equal $rec(group,$idx) fall_transition] ||
+#@     [string equal $rec(group,$idx) ocv_sigma_cell_rise] ||
+#@     [string equal $rec(group,$idx) ocv_sigma_cell_fall] ||
+#@     [string equal $rec(group,$idx) ocv_sigma_rise_constraint] ||
+#@     [string equal $rec(group,$idx) ocv_sigma_fall_constraint] ||
+#@     [string equal $rec(group,$idx) ocv_sigma_rise_transition] ||
+#@     [string equal $rec(group,$idx) ocv_sigma_fall_transition] } {
+#@     # NLDM timing
+#@ 
+#@     # set filter
+#@     if { [string length [array names rec timing_type,$idx]] >0 &&
+#@       [string length $rec(timing_type,$idx)] >0 } {
+#@       set ft \(timing_type==$rec(timing_type,$idx)\)
+#@     }
+#@     if { [string length [array names rec timing_sense,$idx]] >0 &&
+#@       [string length $rec(timing_sense,$idx)] >0 } {
+#@       if {[info exists ft]} {
+#@         set ft $ft&&\(timing_sense==$rec(timing_sense,$idx)\)
+#@       } else {
+#@         set ft \(timing_sense==$rec(timing_sense,$idx)\)
+#@       } 
+#@     }
+#@     if { [string length [array names rec when_cond,$idx]] >0 &&
+#@       [string length $rec(when_cond,$idx)] >0 } {
+#@       if {[info exists ft]} {
+#@         set ft $ft&&\(when==\"$rec(when_cond,$idx)\"\)
+#@       } else {
+#@         set ft \(when==\"$rec(when_cond,$idx)\"\)
+#@       }
+#@     }
+#@ 
+#@     # set options: of_object, from pin, to pin, filter
+#@     lappend opts -of_objects $pcell
+#@     if { [string length [array names rec pin,$idx]] >0 &&
+#@       [string length $rec(pin,$idx)] >0 } {
+#@       lappend opts -to $rec(pin,$idx)
+#@     }
+#@     if { [string length [array names rec related_pin,$idx]] >0 &&
+#@       [string length $rec(related_pin,$idx)] >0 } {
+#@       lappend opts -from $rec(related_pin,$idx)
+#@     }
+#@     if {[info exists ft]} {
+#@       lappend opts -filter $ft
+#@     }
+#@   
+#@     # get timing arc
+#@     set arc [eval get_lib_timing_arcs $opts]
+#@ 
+#@   } elseif { [string equal $rec(group,$idx) rise_power] ||
+#@     [string equal $rec(group,$idx) fall_power] } {
+#@     # NLPM internal power
+#@ 
+#@     # set filter
+#@     if { [string length [array names rec when_cond,$idx]] >0 &&
+#@       [string length $rec(when_cond,$idx)] >0 } {
+#@       set ft \(when==\"$rec(when_cond,$idx)\"\)
+#@     }
+#@     if { [string length [array names rec related_pg_pin,$idx]] >0 &&
+#@       [string length $rec(related_pg_pin,$idx)] >0 } {
+#@       if {[info exists ft]} {
+#@         set ft $ft&&\(related_pg_pin==$rec(related_pg_pin,$idx)\)
+#@       } else {
+#@         set ft \(related_pg_pin==$rec(related_pg_pin,$idx)\)
+#@       } 
+#@     }
+#@     if { [string length [array names rec related_pin,$idx]] >0 &&
+#@       [string length $rec(related_pin,$idx)] >0 } {
+#@       if {[info exists ft]} {
+#@         set ft $ft&&\(related_pin==$rec(related_pin,$idx)\)
+#@       } else {
+#@         set ft \(related_pin==$rec(related_pin,$idx)\)
+#@       } 
+#@     }
+#@ 
+#@     # get pin
+#@     if { [string length [array names rec pin,$idx]] >0 &&
+#@       [string length $rec(pin,$idx)] >0 } {
+#@       set pin [get_lib_objects -of_objects $pcell -class_type pin -filter name==$rec(pin,$idx)]
+#@       if {[sizeof_collection $pin] != 1} {
+#@         echo "line [expr $idx+1]: Error! Can't find this pin group."
+#@         return [array get tb ]
+#@       }
+#@ 
+#@       # set options: of_object, -class_type, filter
+#@       lappend opts -of_objects $pin -class_type internal_power
+#@       if {[info exists ft]} {
+#@         lappend opts -filter $ft
+#@       }
+#@       
+#@       # get internal power 
+#@       set arc [eval get_lib_objects $opts]
+#@     }
+#@   }
+#@ 
+#@   if {[sizeof_collection $arc] == 0} {
+#@     echo "line [expr $idx+1]: Error! Can't find this timing/power group."
+#@     return [array get tb ]
+#@   } elseif {[sizeof_collection $arc] > 1} {
+#@     # using the first one !!!
+#@     echo "line [expr $idx+1]: Warning! Find multiple timing/power groups, use the first one!"
+#@     set arc [index_collection $arc 0]
+#@   }
+#@ 
+#@   # get the lookup table
+#@   set lt [get_lookup_table -of_object $arc $rec(group,$idx)]
+#@ 
+#@   if {[sizeof_collection $lt] == 0} {
+#@     echo "line [expr $idx+1]: Error! Can't find this lookup table."
+#@     return [array get tb ]
+#@   } elseif {[sizeof_collection $lt] > 1} {
+#@     # using the first one !!!
+#@     echo "line [expr $idx+1]: Warning! Find multiple lookup table, use the first one!"
+#@     set lt [index_collection $lt 0]
+#@   }
+#@ 
+#@   # won't consider index pairing for now
+#@   # input_slew == input_net_transition/input_transition_time
+#@   # output_load == total_output_net_capacitance
+#@   set index1 input_net_transition
+#@   set index2 total_output_net_capacitance
+#@ 
+#@   set ids [lookup_table variables $lt]
+#@   
+#@   if { [llength $ids] == 1} {
+#@     set index1 [lindex $ids 0]
+#@   } elseif { [llength $ids] == 2} {
+#@     set index1 [lindex $ids 0]
+#@     set index2 [lindex $ids 1]
+#@   }
+#@     
+#@   # constraint template could have issue here
+#@   # constraint variable related_pin_transition/constrained_pin_transition
+#@   # doesn't follow the input csv table index name input_slew/output_load
+#@   # then we don't know how to pair them
+#@   if { $index1=="total_output_net_capacitance" } {
+#@     set tmp_index $index1
+#@     set index1 $index2
+#@     set index2 $tmp_index
+#@   }
+#@ 
+#@   if { [string length [array names rec input_slew,$idx]] >0 &&
+#@     [string length $rec(input_slew,$idx)] >0 } {
+#@     lappend pointl $index1 $rec(input_slew,$idx)
+#@   }
+#@   if { [string length [array names rec output_load,$idx]] >0 &&
+#@     [string length $rec(output_load,$idx)] >0 } {
+#@     lappend pointl $index2 $rec(output_load,$idx)
+#@   }
+#@ 
+#@   # lookup_table fit/bucket …
+#@   if { $matching_point ==1 } {
+#@     if {[info exists pointl]} {
+#@       redirect -variable msg {echo [set m_list [lookup_table fit $lt -index $pointl]]}
+#@     } else {
+#@       redirect -variable msg {echo [set m_list [lookup_table fit $lt]]}
+#@     }
+#@     if {[info exists m_list]} {
+#@       if {[llength $m_list] == 3} {
+#@         set tb(idx1,$idx) [format %g [lindex $m_list 0] ]
+#@         set tb(idx2,$idx) [format %g [lindex $m_list 1] ]
+#@         set tb(value,$idx) [format %g [lindex $m_list 2] ]
+#@       } elseif {[llength $m_list] == 2} {
+#@         set tb(idx1,$idx) [format %g [lindex $m_list 0] ]
+#@         set tb(value,$idx) [format %g [lindex $m_list 1] ]
+#@       } elseif {[llength $m_list] == 1} {
+#@         set tb(value,$idx) [format %g [lindex $m_list 0] ]
+#@       }
+#@     }
+#@   } else {
+#@     if {[info exists pointl]} {
+#@       redirect -variable msg {echo [set m_list [lookup_table bucket $lt -index $pointl]]}
+#@     } else {
+#@       redirect -variable msg {echo [set m_list [lookup_table bucket $lt]]}
+#@     }
+#@     if {[info exists m_list]} {
+#@       if {[llength $m_list] == 4} {
+#@         set tb(idx1_a,$idx) [format %g [lindex [lindex $m_list 0] 0] ]
+#@         set tb(idx2_a,$idx) [format %g [lindex [lindex $m_list 0] 1] ]
+#@         set tb(value_a,$idx)  [format %g [lindex [lindex $m_list 0] 2] ]
+#@         set tb(idx1_b,$idx) [format %g [lindex [lindex $m_list 1] 0] ]
+#@         set tb(idx2_b,$idx) [format %g [lindex [lindex $m_list 1] 1] ]
+#@         set tb(value_b,$idx)  [format %g [lindex [lindex $m_list 1] 2] ]
+#@         set tb(idx1_c,$idx) [format %g [lindex [lindex $m_list 2] 0] ]
+#@         set tb(idx2_c,$idx) [format %g [lindex [lindex $m_list 2] 1] ]
+#@         set tb(value_c,$idx)  [format %g [lindex [lindex $m_list 2] 2] ]
+#@         set tb(idx1_d,$idx) [format %g [lindex [lindex $m_list 3] 0] ]
+#@         set tb(idx2_d,$idx) [format %g [lindex [lindex $m_list 3] 1] ]
+#@         set tb(value_d,$idx)  [format %g [lindex [lindex $m_list 3] 2] ]
+#@       } elseif {[llength $m_list] == 2} {
+#@         set tb(idx1_a,$idx) [format %g [lindex [lindex $m_list 0] 0] ]
+#@         set tb(value_a,$idx)  [format %g [lindex [lindex $m_list 0] 1] ]
+#@         set tb(idx1_b,$idx) [format %g [lindex [lindex $m_list 1] 0] ]
+#@         set tb(value_b,$idx)  [format %g [lindex [lindex $m_list 1] 1] ]
+#@       } elseif {[llength $m_list] == 1} {
+#@         set tb(value_a,$idx) [format %g [lindex $m_list 0] ]
+#@       }
+#@     }
+#@   }
+#@   if {[string match {[a-zA-Z]*} $msg]} {
+#@     echo Line [expr $idx+1]: Error! [string trim $msg \n]
+#@   }
+#@ 
+#@   return [ array get tb ]
+#@ }
+#@ 
+#@ # This proc is hidden
+#@ define_proc_attributes get_nldm_delay_point -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: get_lib_grid_points
+#@ # Author: Junhan Yi
+#@ # Date: 2015/11/01
+#@ # -matching_point: 1 fit; 2 bucket
+#@ # -input_csv_file: the input csv file contains the querry condition
+#@ # -output_csv_file: the input csv file contains the querry condition and query result
+#@ #
+#@ # Modified: Junhan Yi 2015/12/10
+#@ #   change proc name from "check_qualified_data_point" to "get_lib_lookup_data"
+#@ # Modified: Junhan Yi 2016/01/05
+#@ #   change proc name from "get_lib_lookup_data" to "get_lib_grid_points"
+#@ ##############################################################################
+#@ proc get_lib_grid_points {args} {
+#@ 
+#@   # get the args
+#@   parse_proc_arguments -args $args ra
+#@   set input_csv_file $ra(input_csv_file)
+#@   set output_csv_file $ra(output_csv_file)
+#@ 
+#@   if { [string length [array names ra matching_point]] ==0 } {
+#@     set matching_point 1
+#@   } else {
+#@     set matching_point $ra(matching_point)
+#@   }
+#@ 
+#@   # get the input csv data, put in 2-D table (list of list)
+#@   set in [open $input_csv_file r]
+#@   set table [ read_csv $in ]
+#@   close $in
+#@ 	
+#@   # get row/column/header
+#@   set row [ llength $table ]
+#@   set header [ lindex $table 0 ]
+#@   set column [ llength $header ]
+#@ 
+#@   # check each header index name is correct
+#@   set all_header {db_filename instance library cell pin group related_pin timing_type timing_sense when_cond related_pg_pin input_slew output_load}
+#@   foreach item $header {
+#@     if {[lsearch -exact $all_header $item] <0 } {
+#@       echo "Error: Can't use '$item' as index."
+#@       echo "The allowed index names are 'db_filename instance library cell pin group related_pin timing_type timing_sense when_cond related_pg_pin input_slew output_load'."
+#@       return;
+#@     }
+#@   }
+#@   
+#@   # db_id is the colomn for "db_filename"
+#@   set db_id [lsearch -exact $header db_filename]
+#@   if { $db_id <0 } {
+#@     echo "Error: User must specify 'db_filename' index in the input_csv_file."
+#@     return
+#@   }
+#@   set lib_id [lsearch -exact $header library]
+#@   if { $lib_id <0 } {
+#@     echo "Error: User must specify 'library' index in the input_csv_file."
+#@     return
+#@   }
+#@   
+#@   # db_map is the mapping from db_filename to "row number" list
+#@   array set db_map [sort_array_by_db_filename $table $db_id]
+#@   set db_names [array names db_map]
+#@   global lc_cells
+#@   
+#@   # set process meter
+#@   incr row -1
+#@   set count 1
+#@   if { $row > 10000 } {
+#@     set pct_instance [expr $row/100]
+#@   } else {
+#@     set pct_instance 100
+#@   }
+#@   
+#@   # check each db at a time for saving memory
+#@   foreach db $db_names {
+#@     redirect -variable msg {echo [read_db $db]}
+#@     set idx_list $db_map($db)
+#@     array set lc_cells {0 0}
+#@     foreach idx $idx_list {
+#@ 
+#@       # echo process meter
+#@       if { $count % $pct_instance == 0 } {
+#@         echo "Processing Cell Instance $count : out of $row"
+#@         #echo [eval date]
+#@       }
+#@ 
+#@       # get the querry data
+#@       set line [lindex $table $idx]
+#@       array set result [get_nldm_delay_point $line $header $idx $matching_point]
+#@       
+#@       # save the querry result
+#@       if { $matching_point ==1 } {
+#@         lappend line $result(idx1,$idx)
+#@         lappend line $result(idx2,$idx)
+#@         lappend line $result(value,$idx)
+#@       } else {
+#@         lappend line $result(idx1_a,$idx)
+#@         lappend line $result(idx2_a,$idx)
+#@         lappend line $result(value_a,$idx)
+#@         lappend line $result(idx1_b,$idx)
+#@         lappend line $result(idx2_b,$idx)
+#@         lappend line $result(value_b,$idx)
+#@         lappend line $result(idx1_c,$idx)
+#@         lappend line $result(idx2_c,$idx)
+#@         lappend line $result(value_c,$idx)
+#@         lappend line $result(idx1_d,$idx)
+#@         lappend line $result(idx2_d,$idx)
+#@         lappend line $result(value_d,$idx)
+#@       }
+#@       set table [lreplace $table $idx $idx $line]
+#@       
+#@       incr count
+#@     }
+#@     unset lc_cells
+#@ 		set lib_name [lindex [lindex $table $idx] $lib_id]
+#@     redirect -variable msg {echo [remove_lib $db:$lib_name]}
+#@ 
+#@   }
+#@ 
+#@   # write to output csv file
+#@   set out [open $output_csv_file w+]
+#@ 
+#@   if { $matching_point ==1 } {
+#@     lappend header idx1 idx2 value
+#@   } else {
+#@     lappend header idx1_a idx2_a value_a idx1_b idx2_b value_b idx1_c idx2_c value_c idx1_d idx2_d value_d
+#@   }
+#@   set table [lreplace $table 0 0 $header]
+#@   set row [ llength $table ]
+#@   set column [ llength $header ]
+#@ 
+#@   set symbol ,
+#@   for { set i 0 } { $i < $row } { incr i } {		
+#@     puts -nonewline $out [lindex [lindex $table $i] 0]
+#@ 	  for { set j 1 } { $j < $column } { incr j } {
+#@       puts -nonewline $out $symbol
+#@       puts -nonewline $out [lindex [lindex $table $i] $j]
+#@ 		}
+#@     puts $out ""
+#@ 	}
+#@   close $out
+#@ 
+#@ }
+#@ 
+#@ define_proc_attributes get_lib_grid_points     -info " Get the qualified grid points based on query parameter"     -define_args {
+#@       {input_csv_file "The input file name contains query parameter" input_csv_file string required}
+#@       {output_csv_file "The output file name for query result" output_csv_file string required}
+#@       {matching_point "Query method: '1' for 1-closest grid point (default), '4' for 4 bucket grid points" matching_point one_of_string {optional value_help {values {1 4}}}}
+#@ }
+#@ 
+#@ ##############################################################################
+#@ # proc: write_records_in_csv
+#@ # Output the data extracted from SQL database to $out_file csv file
+#@ # file_id: fild id from csv filenam $out_file
+#@ # arr: collection from SQL query commands
+#@ # num_col: number of columns in $out_file
+#@ ##############################################################################
+#@ proc write_records_in_csv {file_id arr num_col} {
+#@   global out_file
+#@   set sz [expr [llength $arr]/$num_col]
+#@   for {set i 0} {$i < $sz} {incr i} {
+#@     set val ""
+#@     for {set j 0} {$j < $num_col} {incr j} {
+#@ 	set val1 [lindex $arr [expr $i*$num_col+$j]]   
+#@ 	if {$j == 0} {
+#@ 	    set val $val1
+#@ 	} else {  
+#@ 	    set val [concat $val,$val1]  
+#@ 	} 
+#@ 	#puts stdout j=$j
+#@     }
+#@     puts $file_id $val
+#@     #puts stdout i=$i
+#@   }
+#@   #puts stdout "$sz records written to $out_file"
+#@ }
+#@ 
+#@ define_proc_attributes write_records_in_csv -hidden
+#@ 
+#@ # -- End source /cad/synopsys/lc/M-2017.06-SP3/auxx/lc/.lc_scripts.tcl
+
+#@ source $synopsys_root/auxx/lc/analyze_trend.tcl
+#@ # -- Starting source /cad/synopsys/lc/M-2017.06-SP3/auxx/lc/analyze_trend.tcl
+
+#@ ##############################################################################
+#@ # Proc: analyze_trend   Author: Junhan Yi   Date: 2015/12/09
+#@ #   analyze the input float array monotonicity trend
+#@ #   return a char like "-, /, \, V, ^, N, u, M, W, X"
+#@ # float_list: input float list, must be at least 2 members
+#@ # -relative_tolerance: relative tolerance, default is 0.01
+#@ # -absolute_tolerance: absolute tolerance, default is 0.000001
+#@ ##############################################################################
+#@ proc analyze_trend { args } {
+#@ 
+#@   # get the args
+#@   parse_proc_arguments -args $args ra
+#@   set float_list $ra(float_list)
+#@ 
+#@   if { [string length [array names ra -relative_tolerance]] ==0 } {
+#@     set rel_tol 0.01
+#@   } else {
+#@     set rel_tol $ra(-relative_tolerance)
+#@   }
+#@   if { [string length [array names ra -absolute_tolerance]] ==0 } {
+#@     set abs_tol 0.000001
+#@   } else {
+#@     set abs_tol $ra(-absolute_tolerance)
+#@   }
+#@   
+#@   set count [llength $float_list]
+#@   if {$count <= 1} {
+#@     echo "Can't analysis: list must have at least 2 members."
+#@   }
+#@ 
+#@   set trend 0
+#@   
+#@   for { set i 0 } { $i < $count - 1 } { incr i } {
+#@     set fa [lindex $float_list $i]
+#@     set fb [lindex $float_list $i+1]
+#@ 
+#@     set gap [expr abs($fa-$fb)]
+#@     set rel_gap [expr ($fa+$fb)*0.5*$rel_tol]
+#@     
+#@     if {$gap <= $abs_tol || $gap <= $rel_gap} {
+#@       switch -exact -- $trend {
+#@         "0" { set trend "-" }
+#@         "-" { set trend "-" }
+#@         "\\" { set trend "\\" }
+#@         "/" { set trend "/" }
+#@         "V" { set trend "V" }
+#@         "^" { set trend "^" }
+#@         "N" { set trend "N" }
+#@         "u" { set trend "u" }
+#@         "M" { set trend "M" }
+#@         "W" { set trend "W" }
+#@         default { set trend "X" }
+#@       }
+#@     } elseif {$fa > $fb} {
+#@       switch -exact -- $trend {
+#@         "0" { set trend "\\" }
+#@         "-" { set trend "\\" }
+#@         "\\" { set trend "\\" }
+#@         "/" { set trend "^" }
+#@         "V" { set trend "u" }
+#@         "^" { set trend "^" }
+#@         "u" { set trend "u" }
+#@         "N" { set trend "M" }
+#@         "M" { set trend "M" }
+#@         "W" { set trend "X" }
+#@         default { set trend "X" }
+#@       }
+#@     } elseif {$fa < $fb} {
+#@       switch -exact -- $trend {
+#@         "0" { set trend "/" }
+#@         "-" { set trend "/" }
+#@         "\\" { set trend "V" }
+#@         "/" { set trend "/" }
+#@         "V" { set trend "V" }
+#@         "^" { set trend "N" }
+#@         "N" { set trend "N" }
+#@         "u" { set trend "W" }
+#@         "M" { set trend "X" }
+#@         "W" { set trend "W" }
+#@         default { set trend "X" }
+#@       }
+#@     }
+#@     if {$trend == "X"} {break}
+#@   }
+#@ 
+#@   return $trend
+#@ }
+#@ 
+#@ define_proc_attributes analyze_trend     -info " Analyze the trend of a float list"     -define_args {
+#@       {float_list "The list contains float array for analysis" float_list list required}
+#@       {-relative_tolerance "The relative tolerance for the float equal comparing, default is 0.01." relative_tolerance float optional}
+#@       {-absolute_tolerance "The absolute tolerance for the float equal comparing, default is 1e-6." absolute_tolerance float optional}
+#@ }
+#@ 
+#@ # -- End source /cad/synopsys/lc/M-2017.06-SP3/auxx/lc/analyze_trend.tcl
+
+#@ source $synopsys_root/auxx/lc/get_scale.tcl
+#@ # -- Starting source /cad/synopsys/lc/M-2017.06-SP3/auxx/lc/get_scale.tcl
+
+#@ ##############################################################################
+#@ # Proc: get_time_scale   Author: Junhan Yi   Date: 2015/12/09
+#@ #   unified time unit is 1ns
+#@ #   return the scale value from the unit to the unified unit. 
+#@ ##############################################################################
+#@ proc get_time_scale { unit } {
+#@ 
+#@   set val 0
+#@ 
+#@   scan $unit %f%s digit class
+#@   
+#@   switch -exact -- $class {
+#@     "fs"    { set val 1e-6 }
+#@     "ps"    { set val 1e-3 }
+#@     "ns"    { set val 1 }
+#@     "us"    { set val 1e3 }
+#@     "ms"    { set val 1e6 }
+#@     "s"     { set val 1e9 }
+#@     "ks"    { set val 1e12 }
+#@     default { echo "Error! The unit '$unit' is not a 'time' unit" }
+#@   }
+#@ 
+#@   set val [expr $val * $digit]
+#@   
+#@   return $val
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes get_time_scale -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: get_voltage_scale   Author: Junhan Yi   Date: 2015/12/09
+#@ #   unified voltage unit is 1v
+#@ #   return the scale value from the unit to the unified unit. 
+#@ ##############################################################################
+#@ proc get_voltage_scale { unit } {
+#@ 
+#@   set val 0
+#@ 
+#@   scan $unit %f%s digit class
+#@   
+#@   switch -exact -- $class {
+#@     "fv"    { set val 1e-15 }
+#@     "pv"    { set val 1e-12 }
+#@     "nv"    { set val 1e-9 }
+#@     "uv"    { set val 1e-6 }
+#@     "mv"    { set val 1e-3 }
+#@     "v"     { set val 1 }
+#@     "kv"    { set val 1e3 }
+#@     default { echo "Error! The unit '$unit' is not a 'voltage' unit" }
+#@   }
+#@ 
+#@   set val [expr $val * $digit]
+#@   
+#@   return $val
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes get_voltage_scale -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: get_current_scale   Author: Junhan Yi   Date: 2015/12/09
+#@ #   unified current unit is 1a
+#@ #   return the scale value from the unit to the unified unit. 
+#@ ##############################################################################
+#@ proc get_current_scale { unit } {
+#@ 
+#@   set val 0
+#@ 
+#@   scan $unit %f%s digit class
+#@ 
+#@   switch -exact -- $class {
+#@     "fa"    { set val 1e-15 }
+#@     "pa"    { set val 1e-12 }
+#@     "na"    { set val 1e-9 }
+#@     "ua"    { set val 1e-6 }
+#@     "ma"    { set val 1e-3 }
+#@     "a"     { set val 1 }
+#@     "ka"    { set val 1e3 }
+#@     default { echo "Error! The unit '$unit' is not a 'current' unit" }
+#@   }
+#@   
+#@   set val [expr $val * $digit]
+#@   
+#@   return $val
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes get_current_scale -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: get_power_scale   Author: Junhan Yi   Date: 2015/12/09
+#@ #   unified power unit is 1w
+#@ #   return the scale value from the unit to the unified unit. 
+#@ ##############################################################################
+#@ proc get_power_scale { unit } {
+#@ 
+#@   set val 0
+#@ 
+#@   scan $unit %f%s digit class
+#@ 
+#@   switch -exact -- $class {
+#@     "fw"    { set val 1e-15 }
+#@     "pw"    { set val 1e-12 }
+#@     "nw"    { set val 1e-9 }
+#@     "uw"    { set val 1e-6 }
+#@     "mw"    { set val 1e-3 }
+#@     "w"     { set val 1 }
+#@     "kw"    { set val 1e3 }
+#@     default { echo "Error! The unit '$unit' is not a 'power' unit" }
+#@   }
+#@   
+#@   set val [expr $val * $digit]
+#@   
+#@   return $val
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes get_power_scale -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: get_resistance_scale   Author: Junhan Yi   Date: 2015/12/09
+#@ #   unified resistance unit is 1ohm
+#@ #   return the scale value from the unit to the unified unit. 
+#@ ##############################################################################
+#@ proc get_resistance_scale { unit } {
+#@ 
+#@   set val 0
+#@ 
+#@   scan $unit %f%s digit class
+#@ 
+#@   switch -exact -- $class {
+#@     "fohm"    { set val 1e-15 }
+#@     "pohm"    { set val 1e-12 }
+#@     "nohm"    { set val 1e-9 }
+#@     "uohm"    { set val 1e-6 }
+#@     "mohm"    { set val 1e-3 }
+#@     "ohm"     { set val 1 }
+#@     "kohm"    { set val 1e3 }
+#@     default  { echo "Error! The unit '$unit' is not a 'resistance' unit" }
+#@   }
+#@   
+#@   set val [expr $val * $digit]
+#@   
+#@   return $val
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes get_resistance_scale -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: get_capacitance_scale   Author: Junhan Yi   Date: 2015/12/09
+#@ #   unified capacitance unit is 1f
+#@ #   return the scale value from the unit to the unified unit. 
+#@ ##############################################################################
+#@ proc get_capacitance_scale { unit } {
+#@ 
+#@   set val 0
+#@ 
+#@   scan $unit %f%s digit class
+#@ 
+#@   switch -exact -- $class {
+#@     "ff"    { set val 1e-15 }
+#@     "pf"    { set val 1e-12 }
+#@     "nf"    { set val 1e-9 }
+#@     "uf"    { set val 1e-6 }
+#@     "mf"    { set val 1e-3 }
+#@     "f"     { set val 1 }
+#@     "kf"    { set val 1e3 }
+#@     default { echo "Error! The unit '$unit' is not a 'capacitance' unit" }
+#@   }
+#@   
+#@   set val [expr $val * $digit]
+#@   
+#@   return $val
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes get_capacitance_scale -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: get_energy_scale   Author: Junhan Yi   Date: 2015/12/09
+#@ #   unified energy unit is 1j
+#@ #   return the scale value from the unit to the unified unit. 
+#@ ##############################################################################
+#@ proc get_energy_scale { unit } {
+#@ 
+#@   set val 0
+#@ 
+#@   scan $unit %f%s digit class
+#@ 
+#@   switch -exact -- $class {
+#@     "fj"    { set val 1e-15 }
+#@     "pj"    { set val 1e-12 }
+#@     "nj"    { set val 1e-9 }
+#@     "uj"    { set val 1e-6 }
+#@     "mj"    { set val 1e-3 }
+#@     "j"     { set val 1 }
+#@     "kj"    { set val 1e3 }
+#@     default { echo "Error! The unit '$unit' is not a 'energy' unit" }
+#@   }
+#@   
+#@   set val [expr $val * $digit]
+#@   
+#@   return $val
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes get_energy_scale -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: get_scale   Author: Junhan Yi   Date: 2015/12/09
+#@ #   This command will analyze the unit in the source library, and return 
+#@ #   the scale value from the library unit to the target unit. 
+#@ #   If any error happens, return 0.
+#@ # -type: Unit type (time| voltage| current | power| capacitance | resistance| energy)
+#@ # -target_unit: The target unit for sacle 
+#@ #     [float][magnitude][unit]
+#@ # -library: The source library.
+#@ # For example: get_scale time 10.0ps $lib
+#@ # Recommand unit type:
+#@ #     For time: 1ps| 1ns
+#@ #	    For voltage: 1mv| 1v
+#@ #	    For current: 1ua| 1ma| 1a
+#@ #	    For power: 1pw| 1nw| 1uw| 1mw
+#@ #	    For capacitance: 1ff| 1pf
+#@ #	    For resistance: 1ohm| 1kohm
+#@ #	    For energy: 1fj| 1pj| 1nj| 1uj
+#@ ##############################################################################
+#@ proc get_scale { args } {
+#@ 
+#@   set val 0 
+#@   
+#@   # get the args
+#@   parse_proc_arguments -args $args ra
+#@   set type $ra(type)
+#@   set target_unit $ra(target_unit)
+#@   set library $ra(library)
+#@   
+#@   # time
+#@   if { $type=="time" } {
+#@     set t_unit_scale [get_time_scale $target_unit]
+#@     set unit [get_lib_attribute $library time_unit]
+#@     set s_unit_scale [get_time_scale $unit]
+#@     if {$t_unit_scale>0 && $s_unit_scale>0} {
+#@       set val [expr $s_unit_scale/$t_unit_scale]
+#@     }
+#@ 
+#@   # voltage
+#@   } elseif { $type=="voltage" } {
+#@     set t_unit_scale [get_voltage_scale $target_unit]
+#@     set unit [get_lib_attribute $library voltage_unit]
+#@     set s_unit_scale [get_voltage_scale $unit]
+#@     if {$t_unit_scale>0 && $s_unit_scale>0} {
+#@       set val [expr $s_unit_scale/$t_unit_scale]
+#@     }
+#@ 
+#@   # current
+#@   } elseif { $type=="current" } {
+#@     set t_unit_scale [get_current_scale $target_unit]
+#@     set unit [get_lib_attribute $library current_unit]
+#@     set s_unit_scale [get_current_scale $unit]
+#@     if {$t_unit_scale>0 && $s_unit_scale>0} {
+#@       set val [expr $s_unit_scale/$t_unit_scale]
+#@     }
+#@ 
+#@   # power
+#@   } elseif { $type=="power" } {
+#@     set t_unit_scale [get_power_scale $target_unit]
+#@     set unit [get_lib_attribute $library leakage_power_unit]
+#@     set s_unit_scale [get_power_scale $unit]
+#@     if {$t_unit_scale>0 && $s_unit_scale>0} {
+#@       set val [expr $s_unit_scale/$t_unit_scale]
+#@     }
+#@ 
+#@   # capacitance
+#@   } elseif { $type=="capacitance" } {
+#@     set t_unit_scale [get_capacitance_scale $target_unit]
+#@     # unit is string like "xxxpf" or "xxxff" returned by get_lib_attribute
+#@     set unit [get_lib_attribute $library capacitive_load_unit]
+#@     set s_unit_scale [get_capacitance_scale $unit]
+#@     if {$t_unit_scale>0 && $s_unit_scale>0} {
+#@       set val [expr $s_unit_scale/$t_unit_scale]
+#@     }
+#@     
+#@   # resistance
+#@   } elseif { $type=="resistance" } {
+#@     set t_unit_scale [get_resistance_scale $target_unit]
+#@     set unit [get_lib_attribute $library pulling_resistance_unit]
+#@     set s_unit_scale [get_resistance_scale $unit]
+#@     if {$t_unit_scale>0 && $s_unit_scale>0} {
+#@       set val [expr $s_unit_scale/$t_unit_scale]
+#@     }
+#@ 
+#@   # energy
+#@   } elseif { $type=="energy" } {
+#@     set t_unit_scale [get_energy_scale $target_unit]
+#@     # c_unit is string like "xxxpf" or "xxxff" returned by get_lib_attribute
+#@     set c_unit [get_lib_attribute $library capacitive_load_unit]
+#@     set c_unit [get_capacitance_scale $c_unit]
+#@     set v_unit [get_lib_attribute $library voltage_unit]
+#@     set v_unit_scale [get_voltage_scale $v_unit]
+#@     set s_unit_scale [expr $c_unit * $v_unit_scale * $v_unit_scale]
+#@     if {$t_unit_scale>0 && $s_unit_scale>0} {
+#@       set val [expr $s_unit_scale/$t_unit_scale]
+#@     }
+#@   }
+#@  
+#@   return $val
+#@   
+#@ }
+#@ 
+#@ define_proc_attributes get_scale     -info " Get the scaling value from source library to target unit."     -define_args {
+#@       {type "Unit type" type one_of_string {required value_help {values {time voltage current power capacitance resistance energy}}}}
+#@       {target_unit "The target unit for scaling" target_unit string required }
+#@       {library "The source library object" library list required}
+#@ }
+#@ 
+#@ # -- End source /cad/synopsys/lc/M-2017.06-SP3/auxx/lc/get_scale.tcl
+
+#@ source $synopsys_root/auxx/lc/plot_table.tcl
+#@ # -- Starting source /cad/synopsys/lc/M-2017.06-SP3/auxx/lc/plot_table.tcl
+
+#@ ##############################################################################
+#@ # 'global' parameters   Author: James Zhang   Date: 2016/9/18
+#@ ##############################################################################
+#@ 
+#@ # temp path to accommodate plot data and script 
+#@ set lc_plot_table_base_dir  "/tmp/lc_plot_table_"
+#@ set lc_plot_table_list_dirs  ""  ;# a list for tmp dirs
+#@ 
+#@ # to accommodate PIDs & COMMANDs of xterm being executed
+#@ set lc_plot_table_pids      ""
+#@ set lc_plot_table_cmds      ""
+#@ 
+#@ ##############################################################################
+#@ # Proc: createUniqueDir   Author: James Zhang   Date: 2016/9/18
+#@ #   create one unique folder (without tailing backslash) under temp path
+#@ # Return: 
+#@ #   path of the created folder
+#@ ##############################################################################
+#@ proc createUniqueDir {} {
+#@   set sDir [pid]
+#@   append sDir "_" [clock microseconds]
+#@   file mkdir $::lc_plot_table_base_dir$sDir
+#@   lappend ::lc_plot_table_list_dirs $sDir
+#@   return $::lc_plot_table_base_dir$sDir
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes createUniqueDir -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: clearSpot   Author: James Zhang   Date: 2016/9/18
+#@ #   delete the previous intermediate gnuplot data and script
+#@ ##############################################################################
+#@ proc clearSpot {} {
+#@   # close the previous opened terminals
+#@   set i 0
+#@   foreach sPid $::lc_plot_table_pids {
+#@     # check if pid existed
+#@     if { [catch {exec kill -0 $sPid}]==0 } {
+#@       set sCmd [lindex $::lc_plot_table_cmds $i]
+#@       # check if the COMMAND of the pid is exactly the "xterm ..." which was forked by 'me' (plot_table)  
+#@       if { [catch {exec ps u | awk {{for(ii=11;ii<=NF;ii++)printf $ii" ";printf "\n"}} | grep -e ^$sCmd}]==0 } {
+#@         # kill the process
+#@         catch {exec kill $sPid} msg
+#@       }
+#@     }    
+#@     
+#@     incr i
+#@   }
+#@   set ::lc_plot_table_pids  ""
+#@   set ::lc_plot_table_cmds  ""
+#@   
+#@   # delete the previous intermediate gnuplot data and script
+#@   foreach sDir $::lc_plot_table_list_dirs {
+#@     file delete -force $::lc_plot_table_base_dir$sDir
+#@   }
+#@   set ::lc_plot_table_list_dirs  ""
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes clearSpot -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: genPlotData   Author: James Zhang   Date: 2016/10/28
+#@ #   generate plot data
+#@ # Arguments:
+#@ #   lut     lookup_table object
+#@ #   sDat    path of plot data file
+#@ # Return:
+#@ #   1 proc succeeded, 0 otherwise
+#@ ##############################################################################
+#@ proc genPlotData { lut sDat } {
+#@   if [catch {open $sDat w} pDat] {
+#@     puts "error, failed to open $sDat for write:$pDat"
+#@     return 0
+#@   }
+#@ 
+#@   set nDim [lookup_table dimension $lut]
+#@   
+#@   set vIdx [lookup_table index $lut]
+#@   set vIdx0 [lindex $vIdx 0]
+#@   
+#@   set vVal [lookup_table slice -all $lut]
+#@   set k 0
+#@   
+#@   if { $nDim==2 } {
+#@     set vIdx1 [lindex $vIdx 1]
+#@     foreach i $vIdx0 {
+#@       foreach j $vIdx1 {
+#@         puts $pDat "$i $j [lindex $vVal $k]"
+#@         incr k
+#@       }
+#@       puts $pDat ""
+#@     }
+#@   } else {
+#@     foreach i $vIdx0 {
+#@       puts $pDat "$i [lindex $vVal $k]"
+#@       incr k
+#@     }
+#@   }
+#@   
+#@   close $pDat
+#@   return 1
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes genPlotData -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: genPlotDataForCcs   Author: James Zhang   Date: 2016/10/21
+#@ #   generate plot data file for CCS object
+#@ # Arguments:
+#@ #   lut               lookup_table CCS object
+#@ #   sDat              path of plot data file
+#@ #   vVarIdx           grid points of the object e.g. {var1 index1 var2 index2}
+#@ #   fInitV1           Vss(Vdd) as initial V1 for derived voltage
+#@ #   sOvExpr(up-level) customized equation to derive voltage, it will be set to 
+#@ #                     empty if invalid expression. This makes 
+#@ #                     genPlotDataForCcsPlotAll() comfortable
+#@ # Return:
+#@ #   1 proc succeeded, 0 otherwise
+#@ ##############################################################################
+#@ proc genPlotDataForCcs { lut sDat vVarIdx fInitV1 } {
+#@   upvar sOvExpr sOvExprRef
+#@   
+#@   if [catch {open $sDat w} pDat] {
+#@     puts "error, failed to open $sDat for write:$pDat"
+#@     return 0
+#@   }
+#@   
+#@   set fLoad -1.0
+#@   if { [string equal [lindex $vVarIdx 0] "total_output_net_capacitance"]} {
+#@     set fLoad [lindex $vVarIdx 1]
+#@   } elseif { [string equal [lindex $vVarIdx 2] "total_output_net_capacitance"]} {
+#@     set fLoad [lindex $vVarIdx 3]
+#@   }
+#@   
+#@   set fVpre $fInitV1
+#@   set fI 0.0
+#@   set fIpre 0.0
+#@   set fT 0.0
+#@   set fTpre 0.0
+#@   set fV 0.0
+#@   
+#@   set fTRef [lookup_table slice $lut -data ref -index $vVarIdx]
+#@   if { [string length $fTRef]==0 } {
+#@     set fTRef 0.0
+#@   }
+#@   if { [string equal $fTRef "0.0"] } {
+#@     set fLoad -1.0
+#@   }
+#@   set vT [lookup_table slice $lut -data time -index $vVarIdx]
+#@   set vI [lookup_table slice $lut -data values -index $vVarIdx]
+#@   set nT [llength $vT]
+#@   set nI [llength $vI]
+#@   if { $nT!=$nI } {
+#@     puts "error, size of time ($nT) != size of values ($nI)"
+#@     close $pDat
+#@     return 0
+#@   }
+#@   
+#@   for { set i 0 } { $i<$nT } { incr i } {
+#@     set fT [expr [lindex $vT $i]-$fTRef]
+#@     set fI [lindex $vI $i]
+#@     if { $fLoad > 0 } {
+#@       if { [string length $sOvExprRef]!=0 } {
+#@         set sOvExprTmp $sOvExprRef
+#@         regsub -all "V1" $sOvExprTmp $fVpre sOvExprTmp
+#@         regsub -all "I2" $sOvExprTmp $fI sOvExprTmp
+#@         regsub -all "I1" $sOvExprTmp $fIpre sOvExprTmp
+#@         regsub -all "T2" $sOvExprTmp $fT sOvExprTmp
+#@         regsub -all "T1" $sOvExprTmp $fTpre sOvExprTmp
+#@         regsub -all "C" $sOvExprTmp $fLoad sOvExprTmp
+#@         if { [string length $sOvExprTmp]==0 } {
+#@           set fExpr ""
+#@         } else {
+#@           set fExpr [expr $sOvExprTmp]
+#@         }
+#@         if { [string length $fExpr]==0 } {
+#@           echo "warning, failed to get result of the process($sOvExprRef) from predefined variables: V1($fVpre), I2($fI), I1($fIpre), T2($fT), T1($fTpre), C($fLoad).\nTurn to use built-in default process(V1+0.5/C*(I2+I1)*(T2-T1))."
+#@           set sOvExprRef "" ;# make genPlotDataForCcsPlotAll() comfortable
+#@           set fV [expr $fVpre+0.5*($fI+$fIpre)*($fT-$fTpre)/$fLoad]
+#@         } else {
+#@           set fV $fExpr
+#@         }
+#@       } else {
+#@         set fV [expr $fVpre+0.5*($fI+$fIpre)*($fT-$fTpre)/$fLoad]
+#@       }
+#@       set fVpre $fV
+#@       set fIpre $fI
+#@       set fTpre $fT
+#@     } else {
+#@       # "total_output_net_capacitance" is not there?
+#@       # or no calculated voltage at all
+#@       set fV 0.0
+#@     }
+#@     puts $pDat "$fT $fI $fV"
+#@   }
+#@   
+#@   close $pDat
+#@   return 1
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes genPlotDataForCcs -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: genPlotDataForCcsPlotAll   Author: James Zhang   Date: 2016/10/21
+#@ #   generate plot data files for all grid points of the CCS object
+#@ # Arguments:
+#@ #   lut               lookup_table CCS object
+#@ #   sFnPrefix         folder (with tailing backslash) to accommodate data file
+#@ #   sOvExpr           customized equation to derive voltage
+#@ #   fInitV1           Vss(Vdd) as initial V1 for derived voltage
+#@ #   vDat(up-level)    paths of plot data files
+#@ # Return:
+#@ #   1 proc succeeded, 0 otherwise
+#@ ##############################################################################
+#@ proc genPlotDataForCcsPlotAll { lut sFnPrefix sOvExpr fInitV1 } {
+#@   # set an alias of up-level parameter, which will point to the same memory of
+#@   # the parameter in up-level proc. (I think this is most like using reference
+#@   # as function parameter in C++)
+#@   upvar vDat vDatRef
+#@   set vDatRef ""
+#@ 
+#@   set vVar [lookup_table variables $lut]  ;# e.g. "input_net_transition total_output_net_capacitance"
+#@   set vIdx [lookup_table index $lut]      ;# e.g. "{0.00114139996003 0.00220229988918 ...} {......}"
+#@   
+#@   # 1d and 2d lookup tables supported by now, sanity check already done in main
+#@   # procedure
+#@   set nDim [llength $vVar]
+#@   # if { $nDim < 1 || $nDim > 2 } {
+#@   #   return -code error "...\n"
+#@   # }
+#@   
+#@   set sVar0 [lindex $vVar 0]
+#@   set nIdx0Size [llength [lindex $vIdx 0]]
+#@   
+#@   if { $nDim > 1 } {
+#@     set sVar1 [lindex $vVar 1]
+#@     set nIdx1Size [llength [lindex $vIdx 1]]
+#@   }
+#@   
+#@   for { set i 0 } { $i<$nIdx0Size } { incr i } {
+#@     set fIdx0 [lindex [lindex $vIdx 0] $i]
+#@     if { $nDim==1 } {
+#@       set sDat $sFnPrefix
+#@       append sDat "lut" [expr $i+1] ".dat"
+#@       set vVarIdx [ list $sVar0 $fIdx0 ]
+#@       set ret [genPlotDataForCcs $lut $sDat $vVarIdx $fInitV1]
+#@       if { $ret==0 } {
+#@         return 0
+#@       }
+#@       lappend vDatRef $sDat
+#@     } elseif { $nDim==2 } {
+#@       for { set j 0 } { $j<$nIdx1Size } { incr j } {
+#@         set fIdx1 [lindex [lindex $vIdx 1] $j]
+#@         set sDat $sFnPrefix
+#@         append sDat "lut" [expr $i*$nIdx1Size+$j+1] ".dat"
+#@         set vVarIdx [ list $sVar0 $fIdx0 $sVar1 $fIdx1 ]
+#@         set ret [genPlotDataForCcs $lut $sDat $vVarIdx $fInitV1]
+#@         if { $ret==0 } {
+#@           return 0
+#@         }
+#@         lappend vDatRef $sDat
+#@       }
+#@     } ;# else 3d ...
+#@   }
+#@   
+#@   return 1
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes genPlotDataForCcsPlotAll -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: getInfoString   Author: James Zhang   Date: 2016/10/27
+#@ #   get information of lookup_table object
+#@ # Arguments:
+#@ #   lut               lookup_table object
+#@ # Return:
+#@ #   information string of the object
+#@ ##############################################################################
+#@ proc getInfoString { lut } {
+#@   set sInfo ""
+#@   
+#@   set sTmpl [lookup_table template_name $lut]
+#@   if { [string length $sTmpl]!=0 } {
+#@     append sInfo " template(" $sTmpl ")"
+#@   }
+#@   
+#@   set nDim [lookup_table dimension $lut]
+#@   set vSize [lookup_table sizes $lut]
+#@   if { $nDim>0 } {
+#@     append sInfo " size(" [lindex $vSize 0]
+#@   }
+#@   if { $nDim>1 } {
+#@     append sInfo "x" [lindex $vSize 1]
+#@   }
+#@   if { $nDim>2 } {
+#@     append sInfo "x" [lindex $vSize 2]
+#@   }
+#@   if { $nDim>0 } {
+#@     append sInfo ")"
+#@   }
+#@ 
+#@   return $sInfo
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes getInfoString -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: printFile   Author: James Zhang   Date: 2016/11/25
+#@ #   print out file content
+#@ # Arguments:
+#@ #   sDat               file path
+#@ # Return:
+#@ #   1 proc succeeded, 0 otherwise
+#@ ##############################################################################
+#@ proc printFile { sDat } {
+#@   set sDelimit "================================================================================"
+#@ 
+#@   puts ""
+#@   if [catch {open $sDat r} pDat] {
+#@     puts "error, failed to open $sDat for read:$pDat"
+#@     return 0
+#@   }
+#@   puts [file tail $sDat]
+#@   puts $sDelimit
+#@   puts [read $pDat]
+#@   puts $sDelimit
+#@   close $pDat      
+#@ 
+#@   return 1
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes printFile -hidden
+#@ 
+#@ ##############################################################################
+#@ # Proc: plot_table   Author: James Zhang   Date: 2016/9/18
+#@ #   plot lookup table(s) in lc_shell, using 'gnuplot'.
+#@ # Arguments:
+#@ #   see define_proc_attributes section 
+#@ # Return:
+#@ #   1 proc succeeded, 0 or error code otherwise
+#@ # Examples:
+#@ #   moved to man page: plot_table.3
+#@ ##############################################################################
+#@ proc plot_table {args} {
+#@   # supported after set lc_enable_plot_table true
+#@   if { [info exists ::lc_enable_plot_table]!=1 || [string equal -nocase $::lc_enable_plot_table "true"]!=1 } {
+#@ #     return -code error "UIL-100 (error) The command is not enabled. You need to set lc_enable_plot_table beforehand."
+#@     return ""
+#@   }
+#@   # supported in lc_advanced_tcl_mode
+#@   if { [info exists ::lc_advanced_tcl_mode]!=1 || [string equal -nocase $::lc_advanced_tcl_mode "true"]!=1 } {
+#@     return -code error "UIL-100 (error) The command is not enabled, it's support in advanced tcl mode only."
+#@   }
+#@   set i 0
+#@   
+#@   # get the args
+#@   parse_proc_arguments -args $args ra
+#@   
+#@   # -clear, which is an individual arg
+#@   if { [string length [array names ra -clear]] != 0 } {
+#@     clearSpot
+#@     return "1"
+#@   }
+#@   
+#@   # create one more unique dir for data/script
+#@   set sFnPrefix [createUniqueDir]
+#@   append sFnPrefix "/"
+#@   
+#@   # luts: list of lookup tables, which is the main arg
+#@   set vLut ""
+#@   if { [string length [array names ra luts]] != 0 } {
+#@     set vLut $ra(luts)
+#@   }
+#@   set nObjSize [llength $vLut]
+#@   if {$nObjSize < 1} {
+#@     return -code error "No lookup table is specified.\n"
+#@   }
+#@  
+#@   #
+#@   # sanity check and preparation
+#@   #
+#@   set bIsCCS 0
+#@   set bIsCCSPlotAll 0
+#@   set nDim 0
+#@   set sDat ""
+#@   set vDat ""   ;# filenames of data
+#@   foreach lut $vLut {
+#@     set vSize [lookup_table sizes $lut] ;# e.g. "8" (1d), "8 7" (2d)
+#@     if {[llength $vSize] < 1} {
+#@       return -code error "Specified object ($lut) is NOT a lookup table.\n"
+#@     }
+#@     
+#@     set nDimTmp [lookup_table dimension $lut]
+#@     if { $nDimTmp < 1 || $nDimTmp > 2 } {
+#@       # 1d and 2d lookup tables supported by now
+#@       return -code error "Not supported for $nDimTmp dimension(s).\n"
+#@     }
+#@     if {[llength [lookup_table slice $lut -all]] < 1} {
+#@       # this is a CCS object
+#@       set nDim $nDimTmp
+#@       if {$nObjSize > 1} {
+#@         return -code error "Multiple lookup tables are not supported for CCS object\n"
+#@       }
+#@       set bIsCCS 1
+#@       # -index, used to specify one slice of CCS object
+#@       set vVarIdx ""
+#@       if { [string length [array names ra -index]] != 0 } {
+#@         set vVarIdx $ra(-index)
+#@       }
+#@       set nVarIdxSize [llength $vVarIdx]
+#@       if { $nVarIdxSize==0 } {
+#@         set bIsCCSPlotAll 1
+#@       } elseif { $nVarIdxSize==1 } {
+#@         # e.g. "0:0"  --> "input_net_transition 0.00726140011102 total_output_net_capacitance 0.000390200002585"
+#@         # e.g. "0"    --> "input_net_transition 0.00726140011102"
+#@         set vId [split $vVarIdx ":"]
+#@         if {[llength $vId] != $nDim} {
+#@           return -code error "Specified index ($vVarIdx) is unmatched with the object of $nDim dimension(s).\n"
+#@         }
+#@         set vVar [lookup_table variables $lut]
+#@         set vIdx [lookup_table index $lut]
+#@         if { $nDim==1 } {
+#@           set vVarIdx [ list [lindex $vVar 0]             [lindex [lindex $vIdx 0] [expr [lindex $vId 0]]] ]
+#@         } elseif { $nDim==2 } {
+#@           set vVarIdx [ list [lindex $vVar 0]             [lindex [lindex $vIdx 0] [expr [lindex $vId 0]]]             [lindex $vVar 1]             [lindex [lindex $vIdx 1] [expr [lindex $vId 1]]] ]
+#@         } ;# else 3d ...
+#@       } ;# else more than 1 elements in $vVarIdx, leave check to lookup_table. e.g. "input_net_transition 0.00726140011102"
+#@     } else {
+#@       # this is NOT a CCS object
+#@       if { $i > 0 } {
+#@         if { $nDimTmp != $nDim } {
+#@           return -code error "Different dimension(s) of multiple lookup tables can't be plotted at once.\n"
+#@         } 
+#@       } else {
+#@         set nDim $nDimTmp
+#@       }
+#@     }
+#@     if { $bIsCCSPlotAll==0 } {
+#@       set sDat $sFnPrefix
+#@       append sDat "lut" [expr $i+1] ".dat"
+#@       lappend vDat $sDat
+#@     }
+#@     incr i
+#@   }
+#@  
+#@   # -derive_output_voltage, enable voltage curve for CCS object
+#@   set bOmitExpr 1
+#@   if { [string length [array names ra -derive_output_voltage]] != 0 } {
+#@     set bOmitExpr 0
+#@   }
+#@   if { $bOmitExpr==0 && $bIsCCS==0 } {
+#@     echo "warning, -derive_output_voltage option won't work for non-CCS objects, ommitted.\n"
+#@     set bOmitExpr 1
+#@   }
+#@ 
+#@   # -derive_output_voltage_equation
+#@   set sOvExpr ""  ;# customized expression, empty if N/A or invalid
+#@   if { $bOmitExpr==0 && [string length [array names ra -derive_output_voltage_equation]] != 0 } {
+#@     set sOvExpr $ra(-derive_output_voltage_equation)
+#@   }
+#@   
+#@   # -legend, to customize legends
+#@   set itLegend ""
+#@   if { [string length [array names ra -legend]] != 0 } {
+#@     set itLegend $ra(-legend) ;# it* is actually list_*
+#@   }
+#@   set vLegend ""              ;# v* is also list_*
+#@   set sLegend ""
+#@ 
+#@   # -initv1, Vss(Vdd) as initial V1 for derived voltage
+#@   set fInitV1 0.0
+#@   if { [string length [array names ra -initv1]] != 0 } {
+#@     set fInitV1 $ra(-initv1)
+#@   }
+#@   
+#@   #
+#@   # generate data, prepare legends for plotting
+#@   #
+#@   set i 0
+#@   foreach lut $vLut {
+#@     if { $bIsCCSPlotAll==1 } {
+#@       set ret [genPlotDataForCcsPlotAll $lut $sFnPrefix $sOvExpr $fInitV1]
+#@       if { $ret==0 } {
+#@         return 0
+#@       }
+#@     } elseif { $bIsCCS==1 } {
+#@       set ret [genPlotDataForCcs $lut [lindex $vDat 0] $vVarIdx $fInitV1]
+#@       if { $ret==0 } {
+#@         return 0
+#@       }
+#@     } else {
+#@       set ret [genPlotData $lut [lindex $vDat $i]]
+#@       if { $ret==0 } {
+#@         return 0
+#@       }
+#@     
+#@       # initialize legend for non-CCS object(s)
+#@       if { [string length [lindex $itLegend $i]]!=0 } {
+#@         set sLegend [lindex $itLegend $i]
+#@         # speical characters needs to be converted
+#@         regsub -all {\\} $sLegend {\\\\} sLegend
+#@         regsub -all "\"" $sLegend "\\\"" sLegend
+#@       } else {
+#@         set sLegend "lut"
+#@         append sLegend [expr $i+1]
+#@       }
+#@       append sLegend [getInfoString $lut]
+#@       lappend vLegend $sLegend
+#@     }
+#@     incr i
+#@   }
+#@   
+#@   # initialize legends for CCS object
+#@   if { $bIsCCS==1 } {
+#@     for { set i 0 } { $i<2 } { incr i } {
+#@       if { [string length [lindex $itLegend $i]]!=0 } {
+#@         set sLegend [lindex $itLegend $i]
+#@         # speical characters needs to be converted
+#@         regsub -all {\\} $sLegend {\\\\} sLegend
+#@         regsub -all "\"" $sLegend "\\\"" sLegend
+#@       } else {
+#@         if { $i==0 } {
+#@           set sLegend "y= current"
+#@         } elseif { [string length $sOvExpr]==0 } {
+#@           set sLegend "y2= V1+0.5/C*(I2+I1)*(T2-T1)"
+#@         } else {
+#@           set sLegend "y2= $sOvExpr"
+#@         }
+#@       }
+#@       lappend vLegend $sLegend
+#@     }
+#@   }
+#@   
+#@   # -aux, to add auxiliary curves or surfaces, currently +-*/ supported
+#@   set sAuxAppend ""
+#@   if { [string length [array names ra -aux]] != 0 } {
+#@     set itEq $ra(-aux)
+#@     set i 0
+#@     foreach sEq $itEq {
+#@       set sEqTmp $sEq
+#@       regsub -all "X" $sEqTmp -1.67345 sEqTmp
+#@       if { $nDim==2 } {
+#@         regsub -all "Y" $sEqTmp 864.195 sEqTmp
+#@       }
+#@       if { [string length $sEqTmp]==0 } {
+#@         set fExpr ""
+#@       } else {
+#@         set fExpr [expr $sEqTmp]
+#@       }
+#@       if { [string length $fExpr]!=0 } {
+#@         append sAuxAppend "," $sEq
+#@         if { $bIsCCS==1 } {
+#@           append sAuxAppend " title \"y= $sEq\" axes x1y1"  ;# plot auxiliaries to 1st Y-Axis for CCS
+#@         }
+#@       } else {
+#@         echo "warning, no.[expr $i+1] -aux equation($sEq) is invalid and omitted. Currently, arithmetic operations(+-*/) are supported. The variable names X and Y are used as the default independent variables. Additionally, Y is only supported for 2 dimension tables.\n"
+#@       }
+#@       incr i
+#@     }
+#@   }
+#@   
+#@   # -aux2, to add auxiliary curves to 2nd Y-Axis for CCS only, currently +-*/ supported
+#@   if { [string length [array names ra -aux2]] != 0 } {
+#@     set itEq $ra(-aux2)
+#@     set i 0
+#@     foreach sEq $itEq {
+#@       set sEqTmp $sEq
+#@       regsub -all "X" $sEqTmp -1.67345 sEqTmp
+#@       if { $nDim==2 } {
+#@         regsub -all "Y" $sEqTmp 864.195 sEqTmp
+#@       }
+#@       if { [string length $sEqTmp]==0 } {
+#@         set fExpr ""
+#@       } else {
+#@         set fExpr [expr $sEqTmp]
+#@       }
+#@       if { [string length $fExpr]!=0 } {
+#@         if { $bIsCCS==1 } {
+#@           append sAuxAppend "," $sEq
+#@           append sAuxAppend " title \"y2= $sEq\" axes x1y2"  ;# plot auxiliaries to 2nd Y-Axis for CCS only
+#@         }
+#@       } else {
+#@         echo "warning, no.[expr $i+1] -aux2 equation($sEq) is invalid and omitted. Currently, arithmetic operations(+-*/) are supported. The variable names X and Y are used as the default independent variables. Additionally, Y is only supported for 2 dimension tables.\n"
+#@       }
+#@       incr i
+#@     }
+#@   }
+#@   
+#@   # -title, -xlabel, -ylabel, -y2label, several simple 'string' arguments
+#@   set sTitle ""
+#@   if { [string length [array names ra -title]] != 0 } {
+#@     set sTitle $ra(-title)
+#@   }
+#@   set sXlabel ""
+#@   if { [string length [array names ra -xlabel]] != 0 } {
+#@     set sXlabel $ra(-xlabel)
+#@   }
+#@   set sYlabel ""
+#@   if { [string length [array names ra -ylabel]] != 0 } {
+#@     set sYlabel $ra(-ylabel)
+#@   }
+#@   set sY2label ""
+#@   if { [string length [array names ra -y2label]] != 0 } {
+#@     set sY2label $ra(-y2label)
+#@   }
+#@   
+#@   #
+#@   # generate main script 'lut.dem'
+#@   #
+#@   set sDem $sFnPrefix
+#@   append sDem "lut.dem"
+#@   if [catch {open $sDem w} pDem] {
+#@     puts "error, failed to open $sDem for write:$pDem"
+#@     return 0
+#@   }
+#@   puts $pDem "reset"  ;# reset graph-related options to default
+#@   if { [string length $sAuxAppend]!=0 } {
+#@     if { $bIsCCS==0 && $nDim==2 } {
+#@       puts $pDem "set dummy X,Y"
+#@     } else {
+#@       puts $pDem "set dummy X"
+#@     }
+#@   }
+#@   if { $bIsCCSPlotAll==1 } {
+#@     if { [string length $sTitle]!=0 } {
+#@       append sTitle "\\n"
+#@     }
+#@     append sTitle [lindex $vLegend 0]
+#@     if { $bOmitExpr==0 } {
+#@       append sTitle " vs. " [lindex $vLegend 1]
+#@     }
+#@     append sTitle [getInfoString $lut]
+#@     puts -nonewline $pDem "set multiplot title \"$sTitle\" layout [lindex $vSize 0],"
+#@     if { $nDim==1 } {
+#@       puts $pDem "1"
+#@     } elseif { $nDim==2 } {
+#@       puts $pDem "[lindex $vSize 1]"
+#@     } ;# else 3d ... (e.g. 5*8*7, maybe 5 windows popped-up?)
+#@     puts $pDem "unset border\nunset tics\nunset key"
+#@     if { $bOmitExpr==1 } {
+#@       foreach sDat $vDat {
+#@         puts $pDem "plot \'$sDat\' u 1:2 with lines $sAuxAppend"
+#@       }
+#@     } else {
+#@       foreach sDat $vDat {
+#@         puts $pDem "plot \'$sDat\' u 1:2 with lines , \'$sDat\' u 1:3 with lines axes x1y2$sAuxAppend"
+#@       }
+#@     }
+#@     puts $pDem "unset multiplot"
+#@   } elseif { $bIsCCS==1 } {
+#@     puts $pDem "set ytics nomirror"
+#@     puts $pDem "set y2tics"
+#@     if { [string length $sTitle]!=0 } {
+#@       append sTitle "\\n"
+#@     }
+#@     foreach vectorVarIndex_i $vVarIdx {
+#@       append sTitle $vectorVarIndex_i " "
+#@     }
+#@     puts $pDem "set title \"$sTitle\""
+#@     if { [string length $sXlabel]==0 } {
+#@       set sXlabel "time_adjust(T=time-reference_time)"
+#@     }
+#@     puts $pDem "set xlabel \'$sXlabel\'"
+#@     if { [string length $sYlabel]==0 } {
+#@       set sYlabel "current(I=vVal)"
+#@     }
+#@     puts $pDem "set ylabel \'$sYlabel\'"
+#@     if { $bOmitExpr==1 } {
+#@       puts $pDem "plot \'[lindex $vDat 0]\' using 1:2 with linespoints title \"[lindex $vLegend 0]\"$sAuxAppend"
+#@     } else {
+#@       if { [string length $sY2label]==0 } {
+#@         set sY2label "Vout"
+#@       }
+#@       puts $pDem "set y2label \'$sY2label\'"
+#@       puts $pDem "plot \'[lindex $vDat 0]\' using 1:2 with linespoints title \"[lindex $vLegend 0]\", \'[lindex $vDat 0]\' using 1:3 with linespoints title \"[lindex $vLegend 1]\" axes x1y2$sAuxAppend"
+#@     }
+#@   } else {
+#@     if { [string length $sTitle]!=0 } {
+#@       puts $pDem "set title \"$sTitle\""
+#@     }
+#@     if { $nDim==2 } {
+#@       # James Zhang 18:29 2016/10/28
+#@       # !!!LOOK OUT!!! in next line the letter before 'nonewline' is a '–' which
+#@       # is NOT A CORRECT dash symbol '-':
+#@       # puts –nonewline $pDem "set hidden3d\n"
+#@       puts $pDem "set hidden3d"
+#@       if { [string length [array names ra -nogrid]] == 0 } {
+#@         puts $pDem "set dgrid3d 50,50,4"
+#@       }
+#@       puts $pDem "set xyplane at 0.0"
+#@       if { [string length $sYlabel]==0 } {
+#@         set vVar [lookup_table variables $lut]
+#@         set sYlabel [lindex $vVar 1]
+#@       }
+#@       puts $pDem "set ylabel \'$sYlabel\'"
+#@     }
+#@     if { [string length $sXlabel]==0 } {
+#@       set vVar [lookup_table variables $lut]
+#@       set sXlabel [lindex $vVar 0]
+#@     }
+#@     puts $pDem "set xlabel \'$sXlabel\'"
+#@     if { $nDim==2 } {
+#@       puts -nonewline $pDem "splot "
+#@     } else {
+#@       puts -nonewline $pDem "plot "
+#@     }
+#@     for { set i 0 } { $i<$nObjSize } { incr i } {
+#@       if { $i>0 } {
+#@         puts -nonewline $pDem ", "
+#@       }
+#@       puts -nonewline $pDem "\'[lindex $vDat $i]\' with linespoints title \"[lindex $vLegend $i]\""
+#@     }
+#@     puts $pDem "$sAuxAppend"
+#@   }
+#@   close $pDem
+#@ 
+#@   #
+#@   # generate a wrapper script 'lut.demw', which sets env. and loads 'lut.dem'
+#@   #
+#@   set sDemw $sFnPrefix
+#@   append sDemw "lut.demw"
+#@   if [catch {open $sDemw w} pDemw] {
+#@     puts "error, failed to open $sDemw for write:$pDemw"
+#@     return 0
+#@   }
+#@   # save to image file (you need to plot-to-file before plot-to-X11, only 
+#@   # the last one being plotted is interactivable!)
+#@   set sImgFile ""
+#@   if { [string length [array names ra -save]] != 0 } {
+#@     set sImgFile $ra(-save)
+#@   }
+#@   set sCurDir [pwd]
+#@   if { [string length $sImgFile]!=0 } {
+#@     puts $pDemw "set term png large"
+#@     if { [string equal [file pathtype $sImgFile] "absolute"] } {
+#@       puts $pDemw "set output \'$sImgFile\'"
+#@     } else {
+#@       puts $pDemw "set output \'$sCurDir/$sImgFile\'"
+#@     }
+#@     puts $pDemw "load \'$sDem\'"
+#@   }
+#@   puts $pDemw "set term X11"    ;# to plot to X11
+#@   puts $pDemw "load \'$sDem\'"
+#@ 
+#@   close $pDemw
+#@   
+#@   #
+#@   # execute 'gnuplot' or dump data/script
+#@   #
+#@   if { [string length [array names ra -dump]] == 0 } {
+#@     cd $sFnPrefix
+#@     lappend ::lc_plot_table_pids [exec xterm -e "gnuplot $sDemw -" &]
+#@     lappend ::lc_plot_table_cmds "xterm -e gnuplot $sDemw - "
+#@     cd $sCurDir
+#@   } else {
+#@     set bDumpDat 1
+#@     set bDumpDem 1
+#@     set sDumpOption $ra(-dump)
+#@     if { [string equal $sDumpOption "data"] } {
+#@       set bDumpDem 0
+#@     }
+#@     if { [string equal $sDumpOption "script"] } {
+#@       set bDumpDat 0
+#@     }
+#@     
+#@     if { $bDumpDat==1 } {
+#@       foreach sDat $vDat {
+#@         printFile $sDat
+#@       }
+#@     }
+#@     if { $bDumpDem==1 } {
+#@       printFile $sDem
+#@       printFile $sDemw
+#@     }
+#@   }
+#@   
+#@   return 1
+#@ }
+#@ # This proc is hidden
+#@ define_proc_attributes plot_table -hidden
+#@ 
+#@ # define_proc_attributes plot_table #     -info "plot lookup table(s) by gnuplot." #     -define_args {
+#@ #       {luts "lookup table object variables" "object_list" list optional}
+#@ #       {-aux "add auxiliary curves or surfaces by equations" "equation_list" list optional}
+#@ #       {-aux2 "add auxiliary curves aligning to 2nd Y-Axis for CCS only" "equation_list" list optional}
+#@ #       {-derive_output_voltage "add output voltage curve which is derived upon default equation: V1+0.5*(I2+I1)*(T2-T1)/C" "" boolean optional}
+#@ #       {-derive_output_voltage_equation "customize the equation to derive output voltage curve" "equation" string optional}
+#@ #       {-initv1 "provide Vss(Vdd) as initial V1 for derived voltage" "Vss(Vdd)" string optional}
+#@ #       {-index "define grid points or lines" "{variable1 index1 variables2 index2}|index1_id:index2_id" string optional}
+#@ #       {-title "title for the plot chart" "title" string optional}
+#@ #       {-xlabel "label of x-axis for the plot chart" "xlabel" string optional}
+#@ #       {-ylabel "label of y-axis for the plot chart" "ylabel" string optional}
+#@ #       {-y2label "label of y2-axis for the plot chart" "y2label" string optional}
+#@ #       {-legend "legends for lookup table" "legend_list" list optional}
+#@ #       {-save "save to image file in png format" "png_file_path" string optional}
+#@ #       {-clear "close all opened terminals and remove all intermediate data" "" boolean optional}
+#@ #       {-nogrid "disable grid data mapping (to 50x50) for 3D data, show original data instead" "" boolean optional}
+#@ #       {-dump "print out data and/or scripts generated, instead of plot them" "data|script|all" string optional}
+#@ # }
+#@ # -- End source /cad/synopsys/lc/M-2017.06-SP3/auxx/lc/plot_table.tcl
+
+#@ #for read_lib -html	
+#@ source ${synopsys_root}/auxx/lc/read_lib_html_msg_list.tcl
+#@ # -- Starting source /cad/synopsys/lc/M-2017.06-SP3/auxx/lc/read_lib_html_msg_list.tcl
+
+#@ ##############################################################################
+#@ # message ID and descriptions for read_lib -html
+#@ # Rev01. changed LBDB-715 to LBDB-262, STAR 9001225503, jizhan, Aug 17
+#@ ##############################################################################
+#@ set read_lib_ccs_noise_msg {
+#@     LBDB-262
+#@     LBDB-660
+#@     LBDB-706
+#@     LBDB-708
+#@     LBDB-709
+#@     LBDB-710
+#@     LBDB-711
+#@     LBDB-712
+#@     LBDB-713
+#@     LBDB-714
+#@     LBDB-716
+#@     LBDB-717
+#@     LBDB-718
+#@     LBDB-733
+#@     LBDB-734
+#@     LBDB-784
+#@     LBDB-824
+#@     LBDB-825
+#@     LBDB-858
+#@     LBDB-898
+#@     LBDB-899
+#@     LBDB-908
+#@     LBDB-920
+#@     LBDB-935
+#@     LBDB-936
+#@     LBDB-937
+#@     LBDB-938
+#@     LBDB-939
+#@ }
+#@ # -- End source /cad/synopsys/lc/M-2017.06-SP3/auxx/lc/read_lib_html_msg_list.tcl
+
+#@ alias list_commands help
+#@ 
+#@ # Temporary fix for the LMC_HOME variable- set it to an empty string 
+#@ 
+#@ if { [catch {getenv LMC_HOME } __err ] != 0 } {
+#@   setenv LMC_HOME ""
+#@ }
+#@ 
+#@ #
+#@ #
+#@ #       Site-Specific Variables
+#@ #
+#@ #       These are the variables that are most commonly changed at a
+#@ #       specific site, either upon installation of the Synopsys software,
+#@ #       or by specific engineers in their local .synopsys_lc.setup files.
+#@ #
+#@ #
+#@ 
+#@ # from the System Variable Group 
+#@ set search_path [list . ${synopsys_root}/libraries/syn]
+#@ 
+#@ # do we need command_log_file ?
+#@ set command_log_file $sh_command_log_file
+#@ 
+#@ set view_command_log_file  "./view_command.log"
+#@ 
+#@ # from the View Variable group
+#@ if { $sh_arch == "hp700" } {
+#@    set text_print_command  "lp -d" 
+#@ } else {
+#@    set text_print_command  "lpr -Plw" 
+#@ }
+#@ 
+#@ 
+#@ #
+#@ #       System Variable Group:
+#@ #
+#@ #       These variables are system-wide variables.
+#@ #
+#@ 
+#@ set verbose_messages  "true"
+#@ set echo_include_commands  "true"
+#@ set suppress_errors  {}
+#@ 
+#@ # variables pertaining to VHDL library generation 
+#@ set vhdllib_timing_mesg   "true"
+#@ set vhdllib_timing_xgen   "false"
+#@ set vhdllib_timing_checks   "true"
+#@ set vhdllib_negative_constraint   "false"
+#@ set vhdllib_glitch_handle   "true"
+#@ set vhdllib_pulse_handle   "use_vhdllib_glitch_handle"
+#@ # /*set vhdllib_architecture   {FTBM, UDSM, FTSM, FTGS, VITAL} */
+#@ set vhdllib_architecture   {VITAL}
+#@ set vhdllib_tb_compare   0
+#@ set vhdllib_tb_x_eq_dontcare   FALSE
+#@ set vhdllib_logic_system   "ieee-1164"
+#@ set vhdllib_logical_name   ""
+#@ 
+#@ # variables pertaining to technology library processing 
+#@ set read_db_lib_warnings   FALSE
+#@ set read_translate_msff    TRUE
+#@ set libgen_max_differences   -1
+#@ 
+#@ set view_on_line_doc_cmd ${synopsys_root}/sold
+#@ 
+#@ # Aliases for backwards compatibility or other reasons 
+#@ #alias groupvar          group_variable
+#@ alias free		remove_lib
+#@ 
+#@ # set filename for logging input file 
+#@ set filename_log_file   "lc_filenames.log"  
+#@ # whether to delete the filename log after the normal exits 
+#@ set exit_delete_filename_log_file   "true"
+#@ 
+#@ #if { lc_shell_status == 0 } {
+#@ #  sh echo {Fatal: System .synopsys_lc.setup file not read properly. Please re-invoke.}
+#@ #  sh echo {Note that the init file .synopsy_lc.setup of lc_shell}
+#@ #  sh echo {is a subset of the dc_shell init file .synopsys_dc.setup.}
+#@ #  sh echo {If a non lc_shell command is encountered in the init file,}
+#@ #  sh echo {an error message will be issued and the processing might terminate.}
+#@ #  sh echo {Please refer to the Library Compiler reference manual for supported commands.}
+#@ #  quit
+#@ #}
+#@ proc get_legacy_lc_search_path { } {
+#@   set exec_path "invalid"
+#@   if {[info exists ::env(SYNOPSYS_SYN_ROOT)] &&  [file exists $::env(SYNOPSYS_SYN_ROOT)/$::sh_arch/syn/bin/common_shell_exec] } {
+#@     set exec_path $::env(SYNOPSYS_SYN_ROOT)/$::sh_arch/syn/bin/common_shell_exec
+#@   }
+#@   return $exec_path
+#@ }
+#@ 
+#@ proc get_legacy_lc_synopsys_root { } {
+#@   return [file dirname [file dirname [file dirname [file dirname $::legacy_lc_search_path] ] ] ] 
+#@ }
+#@ 
+#@ 
+#@ proc valias {v_orig v_alias} {
+#@    uplevel 1 "upvar 0 $v_orig $v_alias"
+#@ }
+#@ 
+#@ set legacy_lc_result_path "/tmp"
+#@ set legacy_lc_replay_tcl_file "common_shell_command.tcl"
+#@ set legacy_lc_search_path [get_legacy_lc_search_path]
+#@ valias lc_enable_legacy_library_compiler lc_enable_common_shell_lc
+#@ 
+#@ proc legacy_lc_lib2saif { args } {
+#@  return [common_shell_write_lib $args]
+#@ }
+#@ 
+#@ 
+#@ proc run_legacy_lc_with_echo {tcl_file} {
+#@   set chan [open "|$::legacy_lc_search_path -shell lc_shell -r [get_legacy_lc_synopsys_root] -f $tcl_file" r]
+#@ # things to do: In debug mode, we want copy the whole output (beginning to end) 
+#@ # to a file
+#@   if {$::lc_keep_legacy_lc_temp_files} {
+#@       set log [open $::legacy_lc_result_path/$::legacy_lc_log_path/libra.log w]
+#@   }
+#@   set echo 0
+#@   set ret 0
+#@   set firstLine true
+#@   while {[gets $chan line] >= 0} {
+#@       if {$::lc_keep_legacy_lc_temp_files} { puts $log $line }
+#@       if {[string equal -length 7 $line "##@@@##"]} {
+#@ 	  set echo [expr ! $echo]
+#@ 	  continue;
+#@       }
+#@       if {$echo} { 
+#@         if { $firstLine } {
+#@           set firstLine false
+#@           continue;
+#@         } else { 
+#@           if {$line == "1"} {
+#@             set ret  1
+#@           } elseif {$line == "0"} {
+#@             set ret 0
+#@           } else {
+#@             puts $line 
+#@           }
+#@         }
+#@       }
+#@   }
+#@   close $chan
+#@   if {$::lc_keep_legacy_lc_temp_files} {
+#@       close $log
+#@   }
+#@   return $ret;
+#@ }
+#@ 
+#@ proc common_shell_read_lib {args } {
+#@   if { [print_no_common_shell_found $::legacy_lc_search_path] } {
+#@     return 0
+#@   }
+#@   set_folder_var
+#@   set tcl_file "$::legacy_lc_result_path/$::legacy_lc_log_path/$::legacy_lc_replay_tcl_file"
+#@   set chan [open $tcl_file a]
+#@   export_tcl_var $chan 
+#@   gen_common_shell_read_lib_procedure $chan $args
+#@   close $chan
+#@   echo "Invoking common shell Library Compiler..."
+#@   run_legacy_lc_with_echo $tcl_file
+#@   libra_shell_read_dbs
+#@   common_shell_clean_up
+#@ }
+#@ 
+#@ proc common_shell_add_pg_pin {args } {
+#@   if { [print_no_common_shell_found $::legacy_lc_search_path] } {
+#@     return 0
+#@   }
+#@   # to use error message in synthesis root as the command is called under the hood
+#@   set synopsys ""
+#@   set synopsys_syn_root ""
+#@   if {[info exists ::env(SYNOPSYS)]} {
+#@     set synopsys $::env(SYNOPSYS)
+#@   }
+#@   if {[info exists ::env(SYNOPSYS_SYN_ROOT)]} {
+#@     set synopsys_syn_root $::env(SYNOPSYS_SYN_ROOT)
+#@   }
+#@   if {[string compare "$synopsys"  "$synopsys_syn_root"] && [string compare "$synopsys_syn_root" ""]} {
+#@     setenv SYNOPSYS  "$synopsys_syn_root"
+#@   }
+#@   set_folder_var
+#@   set tcl_file "$::legacy_lc_result_path/$::legacy_lc_log_path/$::legacy_lc_replay_tcl_file"
+#@   set chan [open $tcl_file a]
+#@   export_tcl_var $chan 
+#@   gen_common_shell_add_pg_pin_procedure $chan $args
+#@   close $chan
+#@   run_legacy_lc_with_echo $tcl_file
+#@   common_shell_clean_up
+#@   # restore SYNOPSYS enviroment after call synthesis
+#@   if {[string compare "$synopsys" ""]} {
+#@     setenv SYNOPSYS  "$synopsys"
+#@   } else {
+#@     unsetenv SYNOPSYS
+#@   }
+#@ }
+#@ 
+#@ proc common_shell_write_lib {args } {
+#@   if { [print_no_common_shell_found $::legacy_lc_search_path] } {
+#@     return 0
+#@   }
+#@   set_folder_var
+#@   set tcl_file $::legacy_lc_result_path/$::legacy_lc_log_path/$::legacy_lc_replay_tcl_file
+#@   set chan [open $tcl_file a]
+#@   export_tcl_var $chan 
+#@   libra_shell_write_db
+#@   gen_common_shell_write_lib_procedure $chan $args
+#@   close $chan
+#@   set ret [run_legacy_lc_with_echo $tcl_file]
+#@   common_shell_clean_up
+#@   return $ret
+#@ }
+#@ 
+#@ proc common_shell_update_lib {args } {
+#@   if { [print_no_common_shell_found $::legacy_lc_search_path] } {
+#@     return 0
+#@   }
+#@   set_folder_var
+#@   set tcl_file "$::legacy_lc_result_path/$::legacy_lc_log_path/$::legacy_lc_replay_tcl_file"
+#@   set chan [open $tcl_file a]
+#@   export_tcl_var $chan 
+#@   libra_shell_write_db   
+#@   gen_common_shell_write_lib_procedure $chan $args
+#@   close $chan
+#@   run_legacy_lc_with_echo $tcl_file  
+#@   libra_shell_read_dbs
+#@   common_shell_clean_up
+#@ }
+#@ 
+#@ # create the unique folder under tmp
+#@ proc set_folder_var { } {
+#@   set fileName [pid]
+#@   set ::legacy_lc_log_path [append fileName "_" [clock microseconds]] 
+#@   file delete -force $::legacy_lc_result_path/$::legacy_lc_log_path
+#@   file mkdir $::legacy_lc_result_path/$::legacy_lc_log_path  
+#@ }
+#@ 
+#@ # export all the vars
+#@ proc export_tcl_var { fileName } {
+#@   foreach var [info vars ::* ] {
+#@     if [array exists $var] {
+#@       continue;
+#@     }
+#@     puts $fileName "set $var \[list [set $var]\]"
+#@   }
+#@   
+#@   global lc_parameter_export_list
+#@   foreach var $lc_parameter_export_list {
+#@     global $var
+#@     puts $fileName "set $var \[list [set $var]\]"
+#@   }
+#@  
+#@   puts $fileName "set search_path \[lappend search_path \$synopsys_root/libraries/syn \$synopsys_root/libraries/syn \$synopsys_root/minpower/syn \$synopsys_root/dw/syn_ver \$synopsys_root/dw/sim_ver\]"
+#@ #  puts $fileName "set lc_enable_legacy_library_compiler TRUE"
+#@ }
+#@ 
+#@ # excuted by libra shell to read the dbs generated by common_shell
+#@ proc libra_shell_read_dbs { } {
+#@   set dbNames ""
+#@   foreach var [glob -nocomplain -directory $::legacy_lc_result_path/$::legacy_lc_log_path *.db] { 
+#@     append dbNames " " $var
+#@     read_db $var 
+#@   }
+#@   set ::lc_intermediate_db_files $dbNames
+#@ }
+#@ 
+#@ # display the log file genrated by common_shell in Libra and then remove the unique folder
+#@ proc common_shell_clean_up { } {
+#@   if { ! $::lc_keep_legacy_lc_temp_files } { 
+#@     file delete -force $::legacy_lc_result_path/$::legacy_lc_log_path 
+#@   }
+#@ }
+#@ 
+#@ # excuted by libra shell to write out the in-memory dbs
+#@ proc libra_shell_write_db { } {
+#@   foreach db $::lc_intermediate_db_files {
+#@     write_lib $db -o $::legacy_lc_result_path/$::legacy_lc_log_path/$db.db
+#@   }
+#@ }
+#@ 
+#@ proc gen_common_shell_read_lib_procedure { fileName args} {
+#@   puts $fileName "##@@@## gen_common_shell_read_lib"
+#@   puts $fileName "eval [lindex [lindex $args 0] 0]"
+#@   puts $fileName "##@@@##"
+#@   puts $fileName "set lc_write_view_db_file false"
+#@   puts $fileName "set librs \[get_libs\]"
+#@   puts $fileName "for {set i 0} {\$i < \[ sizeof \$librs \]} {incr i 1} {"
+#@   puts $fileName "  set lib \[index_collection \$librs \$i]"
+#@   puts $fileName "  redirect -var a \"query_object \$lib\" "
+#@   puts $fileName "  if \[regexp {{(\")?(gtech)(\")?}} \$a\] { "
+#@   puts $fileName "  } elseif \[regexp {{(\")?(standard.sldb)(\")?}} \$a] { "
+#@   puts $fileName "  } else {"
+#@   puts $fileName "    regexp {{(\")?(\[^\"\]*)(\")?}} \$a b c d e "
+#@   puts $fileName "    write_lib \$d -o \$legacy_lc_result_path/\$legacy_lc_log_path/\$d.db"
+#@   puts $fileName "  }"
+#@   puts $fileName "}"
+#@   puts $fileName "exit"
+#@ }
+#@ 
+#@ proc gen_common_shell_write_lib_procedure { fileName args } {
+#@   puts $fileName "foreach var \[glob -nocomplain -directory \$legacy_lc_result_path/\$legacy_lc_log_path *.db\] { read_db \$var }"
+#@   puts $fileName "set lc_write_view_db_file false"
+#@   puts $fileName "##@@@## gen_common_shell_write_lib"
+#@   puts $fileName "eval [lindex [lindex $args 0] 0]"
+#@   puts $fileName "##@@@##"
+#@   puts $fileName "exit"
+#@ }
+#@ 
+#@ proc gen_common_shell_add_pg_pin_procedure { fileName args } {
+#@   puts $fileName "##@@@## gen_common_shell_add_pg_pin"
+#@   puts $fileName "eval [lindex $args 0]"
+#@   puts $fileName "##@@@##"
+#@   puts $fileName "exit"
+#@ }
+#@ 
+#@ proc gen_is_none_tech_file {} {
+#@   sh touch $::nglc_result_path/$::nglc_log_path/is_non_tech_file
+#@ }
+#@ 
+#@ proc gen_is_symbol_file {} {
+#@   sh touch $::nglc_result_path/$::nglc_log_path/is_symbol_file
+#@ }
+#@ 
+#@ proc print_no_common_shell_found {arg} {
+#@   if {![file exists $arg] } {
+#@     echo "Error: No common shell Library Compiler found. (LCSH-2)"
+#@     return 1
+#@   }
+#@   return 0
+#@ }
+#@ 
+#@ proc set_host_options args {
+#@     global lc_cpu_allocation
+#@     if {[string compare [lindex $args 0] "-max_cores"]} {
+#@ 	puts "Must specify one of these options: -max_cores. (CMD-004)"
+#@ 	return
+#@     } elseif {[llength $args] != 2} {
+#@ 	puts "value not specified for option '-max_cores' (CMD-008)"
+#@ 	return
+#@     }
+#@     set val [lindex $args 1]
+#@     if {[string is integer $val] && ($val > 0) && ($val <= 16) } {
+#@ 	set lc_cpu_allocation [expr $val - 1]
+#@     } else {
+#@ 	puts "value $val for option '-max_cores' not in range (1-16). (CMD-019)"
+#@     }
+#@     return
+#@ }
+#@ 
+#@ proc remove_host_options {} {
+#@     global lc_cpu_allocation
+#@     set lc_cpu_allocation 0
+#@ }
+#@ 
+#@ proc report_host_options {} {
+#@      global lc_cpu_allocation
+#@      global sh_product_version
+#@      puts "****************************************
+#@ Report : host_options
+#@ Version: $sh_product_version
+#@ Data   : [date]
+#@ ****************************************
+#@ 
+#@ Max_cores: [expr $lc_cpu_allocation + 1]
+#@ "
+#@ }
+#@ 
+#@ define_proc_attributes set_host_options   -info "Controls the maximum number of CPU cores that can be used for read_lib command."   -define_args {
+#@     {-max_cores "number_of_cores" max_cores int required}
+#@ }
+#@ 
+#@ define_proc_attributes remove_host_options -info "Removes -max_cores specification set by the set_host_options command."
+#@ 
+#@ define_proc_attributes report_host_options -info "Prints a report of multi-CPU processing options as defined by the set_host_options command."
+#@ 
+#@ # to call init_criteria() and pass lc/lc/check_library/logic_sig_digits.tcl
+#@ set_check_library_options
+#@ # -- End source /cad/synopsys/lc/M-2017.06-SP3/admin/setup//.synopsys_lc.setup
+
+source -echo -verbose /tmp/6617_1626735599813834/nglc_shell_command.tcl
+#@ # -- Starting source /tmp/6617_1626735599813834/nglc_shell_command.tcl
+
+#@ catch { set ::spg_enable_via_resistance_support [list [binary format H* 66616c7365]] }
+#@ catch { set ::ADK_MAX_ROUTING_LAYER_DC [list [binary format H* 6d657435]] }
+#@ catch { set ::upf_suppress_message_in_etm [list [binary format H* 74727565]] }
+#@ catch { set ::in_gui_session [list [binary format H* 66616c7365]] }
+#@ catch { set ::rtl_load_resistance_factor [list [binary format H* 302e30]] }
+#@ catch { set ::dct_port_dont_snap_onto_tracks [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_user_top_compile_strategy_script [list [binary format H* 64656661756c745f746f70]] }
+#@ catch { set ::find_ignore_case [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_vhdl_syntax_extensions [list [binary format H* 46414c5345]] }
+#@ catch { set ::hdlin_infer_mux [list [binary format H* 64656661756c74]] }
+#@ catch { set ::vhdlout_write_top_configuration [list [binary format H* 46414c5345]] }
+#@ catch { set ::hdlin_sv_blackbox_modules "" }
+#@ catch { set ::x11_set_cursor_foreground [list [binary format H* 6d6167656e7461]] }
+#@ catch { set ::timing_disable_recovery_removal_checks [list [binary format H* 74727565]] }
+#@ catch { set ::enable_auto_attr_spread [list [binary format H* 74727565]] }
+#@ catch { set ::timing_input_port_default_clock [list [binary format H* 66616c7365]] }
+#@ catch { set ::cmds [list [binary format H* 7b2043656c6c2043656c6c73206765745f63656c6c7320226765745f63656c6c73202d68696572617263686963616c202d616c6c222068696572617263686963616c2c66696c7465722c71756965742c7265676578702c6e6f636173652c65786163742c616c6c2c6f665f6f626a656374732c6c6f676963616c2c706879736963616c207d207b204e657420204e65747320206765745f6e6574732020226765745f6e657473202d68696572617263686963616c22202068696572617263686963616c2c66696c7465722c71756965742c7265676578702c6e6f636173652c65786163742c746f705f6e65745f6f665f68696572617263686963616c5f67726f75702c7365676d656e74732c6f665f6f626a656374732c6c6f676963616c2c706879736963616c207d207b2050696e202050696e7320206765745f70696e732020226765745f70696e73202d68696572617263686963616c22202068696572617263686963616c2c66696c7465722c71756965742c7265676578702c6e6f636173652c65786163742c6c6561662c6f665f6f626a656374732c6c6f676963616c2c706879736963616c207d207b20506f727420506f727473206765745f706f72747320226765745f706f727473202d68696572617263686963616c222068696572617263686963616c2c66696c7465722c71756965742c7265676578702c6e6f636173652c65786163742c6f665f6f626a656374732c6c6f676963616c2c706879736963616c207d]] }
+#@ catch { set ::dont_touch_nets_with_size_only_cells [list [binary format H* 66616c7365]] }
+#@ catch { set ::upf_derive_ao_supply_on_exception_conns [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_top_design_vector [list [binary format H* 46414c5345]] }
+#@ catch { set ::upf_check_bias_supply_connections [list [binary format H* 74727565]] }
+#@ catch { set ::timing_ignore_paths_within_block_abstraction [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_check_port_changes_in_capture [list [binary format H* 74727565]] }
+#@ catch { set ::placer_disable_macro_placement_timeout [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_num_parallel_jobs [list [binary format H* 31]] }
+#@ catch { set ::veriloglib_cell_name_map "" }
+#@ catch { set ::hdlin_keep_signal_name [list [binary format H* 616c6c5f64726976696e67]] }
+#@ catch { set ::mw_logic0_net [list [binary format H* 565353]] }
+#@ catch { set ::gen_max_ports_on_symbol_side [list [binary format H* 30]] }
+#@ catch { set ::timing_pocvm_corner_sigma [list [binary format H* 33]] }
+#@ catch { set ::mw_hdl_top_module_list "" }
+#@ catch { set ::si_max_parallel_computations [list [binary format H* 30]] }
+#@ catch { set ::power_rclock_inputs_use_clocks_fanout [list [binary format H* 74727565]] }
+#@ catch { set ::compatibility_version [list [binary format H* 4c2d323031362e30332d5350352d35]] }
+#@ catch { set ::mv_no_cells_at_default_va [list [binary format H* 66616c7365]] }
+#@ catch { set ::sh_source_logging [list [binary format H* 74727565]] }
+#@ catch { set ::acs_exclude_list [list [binary format H* 2f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d35]] }
+#@ catch { set ::sh_arch [list [binary format H* 6c696e75783634]] }
+#@ catch { set ::dps_distributed_licensing [list [binary format H* 74727565]] }
+#@ catch { set ::view_execute_script_suffix [list [binary format H* 2e736372697074202e736372202e646373202e646376202e6463202e636f6e202e74636c]] }
+#@ catch { set ::placer_max_allowed_timing_depth [list [binary format H* 3230303030]] }
+#@ catch { set ::power_cg_high_effort_enable_fanin_analysis [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_gclock_source_network_num_master_registers [list [binary format H* 3130303030303030]] }
+#@ catch { set ::compile_state_reachability_high_effort_merge [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_bsd_default_bidir_delay [list [binary format H* 302e30]] }
+#@ catch { set ::ADK_POWER_MESH_BOT_LAYER [list [binary format H* 35]] }
+#@ catch { set ::net_auto_layer_promotion_max_utilization [list [binary format H* 31]] }
+#@ catch { set ::tested_technology "" }
+#@ catch { set ::compile_seqmap_propagate_constants_size_only [list [binary format H* 74727565]] }
+#@ catch { set ::synlib_wait_for_design_license "" }
+#@ catch { set ::x11_set_cursor_background "" }
+#@ catch { set ::mw_hvo_diode_ports [list [binary format H* 66616c7365]] }
+#@ catch { set ::dc_flatten_effort [list [binary format H* 30]] }
+#@ catch { set ::write_sdc_output_net_resistance [list [binary format H* 74727565]] }
+#@ catch { set ::write_sdc_output_lumped_net_capacitance [list [binary format H* 74727565]] }
+#@ catch { set ::dc_reports_dir [list [binary format H* 7265706f727473]] }
+#@ catch { set ::de_log_redirect_enable [list [binary format H* 66616c7365]] }
+#@ catch { set ::enable_clock_to_data_analysis [list [binary format H* 66616c7365]] }
+#@ catch { set ::set_isolate_ports [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_verification_priority [list [binary format H* 46414c5345]] }
+#@ catch { set ::enable_vhdl_netlist_reader [list [binary format H* 46414c5345]] }
+#@ catch { set ::mw_hvo_unconnected_cells [list [binary format H* 74727565]] }
+#@ catch { set ::report_timing_use_accurate_delay_symbol [list [binary format H* 74727565]] }
+#@ catch { set ::cache_read_info [list [binary format H* 66616c7365]] }
+#@ catch { set ::mw_hvo_output_wire_declaration [list [binary format H* 66616c7365]] }
+#@ catch { set ::high_fanout_net_threshold [list [binary format H* 31303030]] }
+#@ catch { set ::hdlin_shorten_long_module_name [list [binary format H* 66616c7365]] }
+#@ catch { set ::placer_enable_redefined_blockage_behavior [list [binary format H* 74727565]] }
+#@ catch { set ::test_enable_capture_checks [list [binary format H* 74727565]] }
+#@ catch { set ::sh_dev_null [list [binary format H* 2f6465762f6e756c6c]] }
+#@ catch { set ::hdlin_ignore_textio_constructs [list [binary format H* 54525545]] }
+#@ catch { set ::report_capacitance_use_ccs_receiver_model [list [binary format H* 74727565]] }
+#@ catch { set ::compile_error_on_missing_physical_cells [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_ocvm_ocv_precedence_compatibility [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_three_state_name [list [binary format H* 275a27]] }
+#@ catch { set ::synlib_hiis_force_on_cells "" }
+#@ catch { set ::ADK_TIE_CELLS [list [binary format H* 736b793133305f66645f73635f68645f5f636f6e625f31]] }
+#@ catch { set ::test_scan_clock_port_naming_style [list [binary format H* 746573745f73632573]] }
+#@ catch { set ::dct_preserve_all_preroutes [list [binary format H* 66616c7365]] }
+#@ catch { set ::verilogout_include_files "" }
+#@ catch { set ::ADK_BUF_CELL_LIST [list [binary format H* 736b793133305f66645f73635f68645f5f6275665f3120202020736b793133305f66645f73635f68645f5f6275665f3220202020736b793133305f66645f73635f68645f5f6275665f3420202020736b793133305f66645f73635f68645f5f6275665f3620202020736b793133305f66645f73635f68645f5f6275665f3820202020736b793133305f66645f73635f68645f5f6275665f313220202020736b793133305f66645f73635f68645f5f6275665f3136]] }
+#@ catch { set ::mw_hvo_pg_nets [list [binary format H* 74727565]] }
+#@ catch { set ::acs_constraint_file_suffix [list [binary format H* 636f6e]] }
+#@ catch { set ::rc_slew_lower_threshold_pct_rise [list [binary format H* 32302e303030303030]] }
+#@ catch { set ::check_design_allow_non_tri_drivers_on_tri_bus [list [binary format H* 74727565]] }
+#@ catch { set ::high_fanout_net_pin_capacitance [list [binary format H* 312e303030303030]] }
+#@ catch { set ::cts_insert_boundary_cell [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_clock_port_naming_style [list [binary format H* 746573745f632573]] }
+#@ catch { set ::power_cg_gated_clock_net_naming_style "" }
+#@ catch { set ::upf_suppress_message_in_black_box [list [binary format H* 74727565]] }
+#@ catch { set ::sh_allow_tcl_with_set_app_var_no_message_list "" }
+#@ catch { set ::upf_charz_allow_port_punch [list [binary format H* 74727565]] }
+#@ catch { set ::mw_hvo_empty_cell_definition [list [binary format H* 66616c7365]] }
+#@ catch { set ::lib_pin_using_cap_from_ccs [list [binary format H* 74727565]] }
+#@ catch { set ::power_opto_extra_high_dynamic_power_effort [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_seqmap_identify_shift_registers [list [binary format H* 74727565]] }
+#@ catch { set ::power_keep_license_after_power_commands [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_pocvm_enable_analysis [list [binary format H* 66616c7365]] }
+#@ catch { set ::register_duplicate [list [binary format H* 66616c7365]] }
+#@ catch { set ::enable_nldm_timing_noise_signoff [list [binary format H* 30]] }
+#@ catch { set ::veriloglib_tb_use_sensitization_as_vectors [list [binary format H* 74727565]] }
+#@ catch { set ::dc_allow_rtl_pg [list [binary format H* 66616c7365]] }
+#@ catch { set ::physopt_cell_count_threshold [list [binary format H* 30]] }
+#@ catch { set ::test_suppress_toggling_instance_name_prefix "" }
+#@ catch { set ::write_test_pattern_set_naming_style [list [binary format H* 54435f53796e5f2564]] }
+#@ catch { set ::synopsys_program_name [list [binary format H* 64635f7368656c6c]] }
+#@ catch { set ::compile_seqmap_enable_output_inversion [list [binary format H* 66616c7365]] }
+#@ catch { set ::echo_include_commands [list [binary format H* 74727565]] }
+#@ catch { set ::timing_crpr_threshold_ps [list [binary format H* 35]] }
+#@ catch { set ::mw_hvo_corner_pad_cells [list [binary format H* 74727565]] }
+#@ catch { set ::compile_auto_ungroup_override_wlm [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_single_bit [list [binary format H* 55534552]] }
+#@ catch { set ::report_default_significant_digits [list [binary format H* 2d31]] }
+#@ catch { set ::timing_pocv_ignore_aocvm_mode [list [binary format H* 66616c7365]] }
+#@ catch { set ::rom_auto_inferring [list [binary format H* 54525545]] }
+#@ catch { set ::acs_override_report_suffix [list [binary format H* 7265706f7274]] }
+#@ catch { set ::mw_hvo_strip_backslash_before_hiersep [list [binary format H* 74727565]] }
+#@ catch { set ::timing_clock_reconvergence_pessimism [list [binary format H* 6e6f726d616c]] }
+#@ catch { set ::dc_tluplus_map [list [binary format H* 696e707574732f61646b2f72746b2d746c75706c75732e6d6170]] }
+#@ catch { set ::test_jump_over_bufs_invs [list [binary format H* 74727565]] }
+#@ catch { set ::sh_enable_stdout_redirect [list [binary format H* 74727565]] }
+#@ catch { set ::derived_upf [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_register_replication [list [binary format H* 64656661756c74]] }
+#@ catch { set ::hdlin_upcase_names [list [binary format H* 46414c5345]] }
+#@ catch { set ::dc_tluplus_max [list [binary format H* 696e707574732f61646b2f72746b2d6d61782e746c75706c7573]] }
+#@ catch { set ::bus_minus_style [list [binary format H* 2d2564]] }
+#@ catch { set ::testsim_print_stats_file [list [binary format H* 74727565]] }
+#@ catch { set ::upf_name_map "" }
+#@ catch { set ::fsm_export_formality_state_info [list [binary format H* 46414c5345]] }
+#@ catch { set ::veriloglib_sdf3.0_support [list [binary format H* 66616c7365]] }
+#@ catch { set ::power_cg_print_enable_conditions_max_terms [list [binary format H* 3130]] }
+#@ catch { set ::hdlin_mux_size_only [list [binary format H* 31]] }
+#@ catch { set ::dc_tluplus_min [list [binary format H* 696e707574732f61646b2f72746b2d6d696e2e746c75706c7573]] }
+#@ catch { set ::mv_output_upf_line_width [list [binary format H* 30]] }
+#@ catch { set ::test_stil_netlist_format [list [binary format H* 6462]] }
+#@ catch { set ::mv_insert_level_shifters_on_ideal_nets "" }
+#@ catch { set ::placer_max_parallel_computations [list [binary format H* 30]] }
+#@ catch { set ::tio_preload_block_site_rows [list [binary format H* 66616c7365]] }
+#@ catch { set ::synlib_enable_analyze_dw_power [list [binary format H* 30]] }
+#@ catch { set ::bsd_max_in_switching_limit [list [binary format H* 3630303030]] }
+#@ catch { set ::test_default_strobe [list [binary format H* 34302e30]] }
+#@ catch { set ::test_scan_clock_a_port_naming_style [list [binary format H* 746573745f7363612573]] }
+#@ catch { set ::verilogout_no_negative_index [list [binary format H* 46414c5345]] }
+#@ catch { set ::multi_pass_test_generation [list [binary format H* 66616c7365]] }
+#@ catch { set ::alib_library_analysis_path [list [binary format H* 616c6962]] }
+#@ catch { set ::test_ate_sync_cycles [list [binary format H* 31]] }
+#@ catch { set ::font_library [list [binary format H* 315f32352e666f6e74]] }
+#@ catch { set ::gen_create_netlist_busses [list [binary format H* 74727565]] }
+#@ catch { set ::veriloglib_all_cells_in_one_file [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_budgeted_cstr_suffix [list [binary format H* 636f6e]] }
+#@ catch { set ::ADK_WELL_TAP_INTERVAL [list [binary format H* 3133]] }
+#@ catch { set ::disable_multicore_resource_checks [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_use_enhanced_capacitance_modeling [list [binary format H* 74727565]] }
+#@ catch { set ::link_path [list [binary format H* 2a2073746463656c6c732e646220696e707574732f61646b2f73746463656c6c732d62632e646220696e707574732f61646b2f73746463656c6c732e64622064775f666f756e646174696f6e2e736c6462]] }
+#@ catch { set ::upf_name_map_version [list [binary format H* 76312e30]] }
+#@ catch { set ::bit_blasted_bus_linking_naming_styles [list [binary format H* 25735c5b25645c5d202573282564292025735f25645f]] }
+#@ catch { set ::psynopt_density_limit [list [binary format H* 2d31]] }
+#@ catch { set ::sort_outputs [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_sv_union_member_naming [list [binary format H* 46414c5345]] }
+#@ catch { set ::sh_source_emits_line_numbers [list [binary format H* 4e6f6e65]] }
+#@ catch { set ::timing_scgc_override_library_setup_hold [list [binary format H* 74727565]] }
+#@ catch { set ::product [list [binary format H* 44657369676e20566973696f6e]] }
+#@ catch { set ::enable_golden_upf [list [binary format H* 66616c7365]] }
+#@ catch { set ::abstraction_ignore_percentage [list [binary format H* 3235]] }
+#@ catch { set ::test_scan_true_key [list [binary format H* 74]] }
+#@ catch { set ::vhdlout_lower_design_vector [list [binary format H* 54525545]] }
+#@ catch { set ::timing_report_fast_mode [list [binary format H* 66616c7365]] }
+#@ catch { set ::rc_input_threshold_pct_fall [list [binary format H* 35302e303030303030]] }
+#@ catch { set ::dc_suppress_msg [list [binary format H* 46616c7365]] }
+#@ catch { set ::vhdlout_wired_and_res_func "" }
+#@ catch { set ::hdlin_generate_naming_style [list [binary format H* 25735f2564]] }
+#@ catch { set ::gen_show_created_symbols [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_preview_scan_shows_cell_types [list [binary format H* 66616c7365]] }
+#@ catch { set ::libsetup_max_auto_opcond_message [list [binary format H* 3130]] }
+#@ catch { set ::compile_automatic_clock_phase_inference [list [binary format H* 737472696374]] }
+#@ catch { set ::golden_upf_report_missing_objects [list [binary format H* 66616c7365]] }
+#@ catch { set ::mw_read_ignore_corner_cell [list [binary format H* 74727565]] }
+#@ catch { set ::compile_enable_register_merging [list [binary format H* 74727565]] }
+#@ catch { set ::test_bsd_version_number [list [binary format H* 30]] }
+#@ catch { set ::atpg_test_asynchronous_pins [list [binary format H* 74727565]] }
+#@ catch { set ::test_scan_link_so_lockup_key [list [binary format H* 6c]] }
+#@ catch { set ::physopt_enable_root_via_res_support [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_module_arch_name_splitting [list [binary format H* 46414c5345]] }
+#@ catch { set ::sh_new_variable_message_in_proc [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_cc_ir_masked_bits [list [binary format H* 30]] }
+#@ catch { set ::mv_upf_enable_forward_reverse_bias_check [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_mux_rp_limit [list [binary format H* 3132387834]] }
+#@ catch { set ::test_bsd_default_strobe_width [list [binary format H* 302e30]] }
+#@ catch { set ::power_cg_all_registers [list [binary format H* 66616c7365]] }
+#@ catch { set ::ADK_POWER_MESH_TOP_LAYER [list [binary format H* 36]] }
+#@ catch { set ::test_mux_constant_si [list [binary format H* 66616c7365]] }
+#@ catch { set ::veriloglib_tb_compare [list [binary format H* 30]] }
+#@ catch { set ::mcmm_high_capacity_effort_level [list [binary format H* 30]] }
+#@ catch { set ::test_mux_constant_so [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_power_domain_boundary_optimization [list [binary format H* 74727565]] }
+#@ catch { set ::x11_set_cursor_number [list [binary format H* 2d31]] }
+#@ catch { set ::timing_library_derate_is_scenario_specific [list [binary format H* 46414c5345]] }
+#@ catch { set ::dct_prioritize_area_correlation [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_ddc_suffix [list [binary format H* 646463]] }
+#@ catch { set ::hdlin_check_input_netlist [list [binary format H* 46414c5345]] }
+#@ catch { set ::tcl_patchLevel [list [binary format H* 382e362e33]] }
+#@ catch { set ::mw_hvo_pad_filler_cells [list [binary format H* 74727565]] }
+#@ catch { set ::test_bsd_part_number [list [binary format H* 30]] }
+#@ catch { set ::vhdllib_insert_timing [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_one_name [list [binary format H* 273127]] }
+#@ catch { set ::ltl_obstruction_type [list [binary format H* 706c6163656d656e745f6f6e6c79]] }
+#@ catch { set ::vhdlout_zero_name [list [binary format H* 273027]] }
+#@ catch { set ::enable_cell_based_verilog_reader [list [binary format H* 66616c7365]] }
+#@ catch { set ::dc_results_dir [list [binary format H* 726573756c7473]] }
+#@ catch { set ::power_cg_auto_identify [list [binary format H* 66616c7365]] }
+#@ catch { set ::write_converted_tf_syntax [list [binary format H* 66616c7365]] }
+#@ catch { set ::use_port_name_for_oscs [list [binary format H* 66616c7365]] }
+#@ catch { set ::sh_obsolete_is_error [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_slack_driven_buffering [list [binary format H* 66616c7365]] }
+#@ catch { set ::insert_dft_clean_up [list [binary format H* 74727565]] }
+#@ catch { set ::power_preserve_rtl_hier_names [list [binary format H* 66616c7365]] }
+#@ catch { set ::dc_uniquify_with_design_name [list [binary format H* 54727565]] }
+#@ catch { set ::lc [list [binary format H* 4e4c535f4c414e47]] }
+#@ catch { set ::acs_preferred_target_compiler "" }
+#@ catch { set ::acs_sverilog_extensions [list [binary format H* 2e7376]] }
+#@ catch { set ::ungroup_keep_original_design [list [binary format H* 66616c7365]] }
+#@ catch { set ::write_test_include_scan_cell_info [list [binary format H* 74727565]] }
+#@ catch { set ::vhdlout_package_naming_style [list [binary format H* 434f4e565f5041434b5f2564]] }
+#@ catch { set ::write_test_max_scan_patterns [list [binary format H* 30]] }
+#@ catch { set ::hdlin_infer_multibit [list [binary format H* 64656661756c745f6e6f6e65]] }
+#@ catch { set ::change_names_dont_change_bus_members [list [binary format H* 66616c7365]] }
+#@ catch { set ::view_write_file_suffix [list [binary format H* 6764622064622073646220646f20656469662065716e20666e63206c7369204e4554206e6574656420706c612073742074646c207620766864207668646c20786e66]] }
+#@ catch { set ::hdlin_ff_always_sync_set_reset [list [binary format H* 74727565]] }
+#@ catch { set ::check_design_allow_unknown_wired_logic_type [list [binary format H* 74727565]] }
+#@ catch { set ::cache_read [list [binary format H* 7e]] }
+#@ catch { set ::hdl_keep_licenses [list [binary format H* 74727565]] }
+#@ catch { set ::ADK_TIE_LO_CELL [list [binary format H* 736b793133305f66645f73635f68645f5f636f6e625f31]] }
+#@ catch { set ::gen_single_osc_per_name [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_ultra_ungroup_small_hierarchies [list [binary format H* 74727565]] }
+#@ catch { set ::db_load_ccs_data [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_enable_register_merging_with_exceptions [list [binary format H* 66616c7365]] }
+#@ catch { set ::err [list [binary format H* 312e37]] }
+#@ catch { set ::disable_case_analysis [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_infer_function_local_latches [list [binary format H* 46414c5345]] }
+#@ catch { set ::mw_read_ignore_pad_cell [list [binary format H* 74727565]] }
+#@ catch { set ::test_stil_max_line_length [list [binary format H* 3732]] }
+#@ catch { set ::db_load_ccs_noise_data [list [binary format H* 66616c7365]] }
+#@ catch { set ::power_same_switching_activity_on_connected_objects [list [binary format H* 66616c7365]] }
+#@ catch { set ::dc_milkyway_tf [list [binary format H* 696e707574732f61646b2f72746b2d746563682e7466]] }
+#@ catch { set ::hdlin_enable_configurations [list [binary format H* 46414c5345]] }
+#@ catch { set ::test_bsd_optimize_control_cell [list [binary format H* 66616c7365]] }
+#@ catch { set ::sh_help_shows_group_overview [list [binary format H* 74727565]] }
+#@ catch { set ::rc_output_threshold_pct_rise [list [binary format H* 35302e303030303030]] }
+#@ catch { set ::symbol_library [list [binary format H* 796f75725f6c6962726172792e736462]] }
+#@ catch { set ::vhdlout_top_configuration_entity_name [list [binary format H* 45]] }
+#@ catch { set ::mw_read_ignore_unconnected_cell [list [binary format H* 74727565]] }
+#@ catch { set ::ctldb_use_old_prot_flow [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_bsd_dead_cycle_after_update_dr [list [binary format H* 30]] }
+#@ catch { set ::acs_hdl_source "" }
+#@ catch { set ::tcl_precision [list [binary format H* 3132]] }
+#@ catch { set ::placer_dont_error_out_on_conflicting_bounds [list [binary format H* 74727565]] }
+#@ catch { set ::optimize_reg_add_path_groups [list [binary format H* 66616c7365]] }
+#@ catch { set ::extract_max_parallel_computations [list [binary format H* 30]] }
+#@ catch { set ::write_test_new_translation_engine [list [binary format H* 66616c7365]] }
+#@ catch { set ::dc_alib_dir [list [binary format H* 616c6962]] }
+#@ catch { set ::upf_skip_ao_check_for_els_input [list [binary format H* 74727565]] }
+#@ catch { set ::physopt_power_critical_range [list [binary format H* 2d312e3034383538652b3036]] }
+#@ catch { set ::power_cg_inherit_timing_exceptions [list [binary format H* 66616c7365]] }
+#@ catch { set ::rc_slew_upper_threshold_pct_fall [list [binary format H* 38302e303030303030]] }
+#@ catch { set ::sh_new_variable_message_in_script [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_keep_original_for_external_references [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_scan_segment_key [list [binary format H* 73]] }
+#@ catch { set ::compile_retime_license_behavior [list [binary format H* 77616974]] }
+#@ catch { set ::upf_iso_filter_elements_with_applies_to [list [binary format H* 454e41424c45]] }
+#@ catch { set ::mw_pgconn_cell_inst "" }
+#@ catch { set ::default_port_connection_class [list [binary format H* 756e6976657273616c]] }
+#@ catch { set ::xt_filter_logic_constant_aggressors [list [binary format H* 74727565]] }
+#@ catch { set ::dc_num_cores [list [binary format H* 3136]] }
+#@ catch { set ::test_default_min_fault_coverage [list [binary format H* 3935]] }
+#@ catch { set ::compile_selector_merging [list [binary format H* 74727565]] }
+#@ catch { set ::power_low_power_placement [list [binary format H* 66616c7365]] }
+#@ catch { set ::lbo_cells_in_regions [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_ff_always_async_set_reset [list [binary format H* 54525545]] }
+#@ catch { set ::acs_area_report_suffix [list [binary format H* 61726561]] }
+#@ catch { set ::mw_cel_as_escaped [list [binary format H* 74727565]] }
+#@ catch { set ::mw_hdl_stop_at_FRAM_cells [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_top_configuration_name [list [binary format H* 4346475f54425f45]] }
+#@ catch { set ::bus_multiple_name_separator_style [list [binary format H* 2c2c]] }
+#@ catch { set ::compile_auto_ungroup_count_leaf_cells [list [binary format H* 66616c7365]] }
+#@ catch { set ::upf_create_implicit_supply_sets [list [binary format H* 74727565]] }
+#@ catch { set ::order [list [binary format H* 64657369676e65722d696e746572666163652e74636c2073657475702d73657373696f6e2e74636c20726561642d64657369676e2e74636c20636f6e73747261696e74732e74636c206d616b652d706174682d67726f7570732e74636c20636f6d70696c652d6f7074696f6e732e74636c20636f6d70696c652e74636c2067656e65726174652d726573756c74732e74636c207265706f7274696e672e74636c]] }
+#@ catch { set ::ADK_TIE_HI_PORT [list [binary format H* 4849]] }
+#@ catch { set ::power_enable_one_pass_power_gating [list [binary format H* 66616c7365]] }
+#@ catch { set ::view_command_log_file [list [binary format H* 2e2f766965775f636f6d6d616e642e6c6f67]] }
+#@ catch { set ::test_protocol_add_cycle [list [binary format H* 74727565]] }
+#@ catch { set ::level_shifter_naming_prefix "" }
+#@ catch { set ::synlib_dwhomeip "" }
+#@ catch { set ::acs_attr [list [binary format H* 4f7074696d697a6174696f6e5072696f726974696573205072657365727665426f756e64617269657320436f6d70696c6556657269667920546573745265616479436f6d70696c65204d6178417265612043616e466c617474656e2046756c6c436f6d70696c6520496e6372656d656e74616c436f6d70696c6520426f756e64617279436f6d70696c6520556c7472614f7074696d697a6174696f6e204175746f556e67726f757020557365546f70416c6c506174687320436f6d70696c65556c74726120546172676574436f6d70696c6572]] }
+#@ catch { set ::mw_site_name_mapping "" }
+#@ catch { set ::vhdlout_dont_create_dummy_nets [list [binary format H* 46414c5345]] }
+#@ catch { set ::ADK_BASE_LAYER_IDX [list [binary format H* 31]] }
+#@ catch { set ::gen_max_compound_name_length [list [binary format H* 323536]] }
+#@ catch { set ::dct_placement_ignore_scan [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_non_scan_clock_port_naming_style [list [binary format H* 746573745f6e73635f2573]] }
+#@ catch { set ::systemcout_levelize [list [binary format H* 74727565]] }
+#@ catch { set ::hdlin_enable_relative_placement [list [binary format H* 7262]] }
+#@ catch { set ::clock_arnoldi_dbg_file "" }
+#@ catch { set ::upf_charz_enable_supply_port_punching [list [binary format H* 74727565]] }
+#@ catch { set ::timing_check_defaults [list [binary format H* 67656e6572617465645f636c6f636b206c6f6f7073206e6f5f696e7075745f64656c617920756e636f6e73747261696e65645f656e64706f696e74732070756c73655f636c6f636b5f63656c6c5f74797065206e6f5f64726976696e675f63656c6c207061727469616c5f696e7075745f64656c6179]] }
+#@ catch { set ::acs_make_exec [list [binary format H* 676d616b65]] }
+#@ catch { set ::focalopt_power_critical_range [list [binary format H* 30]] }
+#@ catch { set ::default_output_delay [list [binary format H* 3330]] }
+#@ catch { set ::test_cc_ir_value_of_masked_bits [list [binary format H* 30]] }
+#@ catch { set ::si_xtalk_composite_aggr_noise_peak_ratio [list [binary format H* 302e3031]] }
+#@ catch { set ::dc_topographical [list [binary format H* 54727565]] }
+#@ catch { set ::dc_additional_search_path [list [binary format H* 696e707574732f61646b]] }
+#@ catch { set ::test_scan_in_port_naming_style [list [binary format H* 746573745f736925732573]] }
+#@ catch { set ::gen_match_ripper_wire_widths [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_rtldrc_latch_check_style [list [binary format H* 64656661756c74]] }
+#@ catch { set ::test_capture_clock_skew [list [binary format H* 736d616c6c5f736b6577]] }
+#@ catch { set ::power_do_not_size_icg_cells [list [binary format H* 74727565]] }
+#@ catch { set ::mw_support_hier_fill_view [list [binary format H* 74727565]] }
+#@ catch { set ::hdlin_strict_verilog_reader [list [binary format H* 46414c5345]] }
+#@ catch { set ::do_operand_isolation [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_bsd_default_delay [list [binary format H* 302e30]] }
+#@ catch { set ::verilogout_no_tri [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_verilog_extensions [list [binary format H* 2e76]] }
+#@ catch { set ::when_analysis_without_case_analysis [list [binary format H* 66616c7365]] }
+#@ catch { set ::__err [list [binary format H* 63616e2774207265616420223a3a656e76284c4d435f484f4d4529223a206e6f2073756368207661726961626c65]] }
+#@ catch { set ::timing_enable_non_sequential_checks [list [binary format H* 66616c7365]] }
+#@ catch { set ::lib_cell_using_delay_from_ccs [list [binary format H* 74727565]] }
+#@ catch { set ::test_shared_codec_io_architecture [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_write_attributes [list [binary format H* 46414c5345]] }
+#@ catch { set ::insert_test_design_naming_style [list [binary format H* 25735f746573745f2564]] }
+#@ catch { set ::html_log_filename [list [binary format H* 64656661756c742e68746d6c]] }
+#@ catch { set ::hdl_preferred_license "" }
+#@ catch { set ::sh_allow_tcl_with_set_app_var [list [binary format H* 74727565]] }
+#@ catch { set ::compile_top_acs_partition [list [binary format H* 66616c7365]] }
+#@ catch { set ::itclClass [list [binary format H* 3a3a6974636c3a3a636c617a7a]] }
+#@ catch { set ::veriloglib_sdf_edge [list [binary format H* 74727565]] }
+#@ catch { set ::nglc_replay_tcl_file [list [binary format H* 6e676c635f7368656c6c5f636f6d6d616e642e74636c]] }
+#@ catch { set ::hdlin_autoread_sverilog_extensions [list [binary format H* 2e7376202e73766572696c6f67]] }
+#@ catch { set ::upf_suppress_etm_model_checking [list [binary format H* 66616c7365]] }
+#@ catch { set ::template_parameter_style [list [binary format H* 25732564]] }
+#@ catch { set ::check_design_allow_multiply_driven_nets_by_inputs_and_outputs [list [binary format H* 66616c7365]] }
+#@ catch { set ::ignore_tf_error [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_latch_always_async_set_reset [list [binary format H* 46414c5345]] }
+#@ catch { set ::html_log_enable [list [binary format H* 66616c7365]] }
+#@ catch { set ::power_default_toggle_rate [list [binary format H* 302e31]] }
+#@ catch { set ::sheet_sizes "" }
+#@ catch { set ::hdlin_autoread_vhdl_extensions [list [binary format H* 2e766864202e7668646c]] }
+#@ catch { set ::auto_insert_level_shifters_on_clocks "" }
+#@ catch { set ::disable_library_transition_degradation [list [binary format H* 66616c7365]] }
+#@ catch { set ::magnet_placement_disable_overlap [list [binary format H* 66616c7365]] }
+#@ catch { set ::power_scale_internal_arc [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_bit_vector_type [list [binary format H* 7374645f6c6f6769635f766563746f72]] }
+#@ catch { set ::compile_allow_dw_hierarchical_inverter_opt [list [binary format H* 66616c7365]] }
+#@ catch { set ::budget_generate_critical_range [list [binary format H* 66616c7365]] }
+#@ catch { set ::fanin_fanout_trace_arcs [list [binary format H* 74696d696e67]] }
+#@ catch { set ::hdlin_vhdl93_concat [list [binary format H* 54525545]] }
+#@ catch { set ::compile_restructure_sync_set_reset [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_exclude_extensions "" }
+#@ catch { set ::hdlin_check_no_latch [list [binary format H* 46414c5345]] }
+#@ catch { set ::gen_dont_show_single_bit_busses [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_autopart_max_percent [list [binary format H* 302e30]] }
+#@ catch { set ::hdlin_mux_for_array_read_sparseness_limit [list [binary format H* 3930]] }
+#@ catch { set ::si_xtalk_composite_aggr_quantile_high_pct [list [binary format H* 39392e3733]] }
+#@ catch { set ::check_design_allow_inconsistent_input_port [list [binary format H* 66616c7365]] }
+#@ catch { set ::tcl_interactive [list [binary format H* 30]] }
+#@ catch { set ::vhdlout_write_entity [list [binary format H* 54525545]] }
+#@ catch { set ::view_report_append [list [binary format H* 74727565]] }
+#@ catch { set ::template_naming_style [list [binary format H* 25735f2570]] }
+#@ catch { set ::simplified_verification_mode_allow_retiming [list [binary format H* 46414c5345]] }
+#@ catch { set ::power_cg_balance_stages [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_delete_unloaded_sequential_cells [list [binary format H* 74727565]] }
+#@ catch { set ::test_isolate_hier_scan_out [list [binary format H* 30]] }
+#@ catch { set ::placer_reduce_high_density_regions [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_keep_connected_scan_en [list [binary format H* 66616c7365]] }
+#@ catch { set ::enable_instances_in_report_net [list [binary format H* 74727565]] }
+#@ catch { set ::mv_output_enforce_simple_names [list [binary format H* 66616c7365]] }
+#@ catch { set ::auto_link_options [list [binary format H* 2d616c6c]] }
+#@ catch { set ::cts_clock_source_is_exclude_pin [list [binary format H* 74727565]] }
+#@ catch { set ::psynopt_tns_high_effort [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_sv_packages [list [binary format H* 656e61626c65]] }
+#@ catch { set ::hdlin_enable_upf_compatible_naming [list [binary format H* 46414c5345]] }
+#@ catch { set ::test_user_test_data_register_naming_style [list [binary format H* 555444522564]] }
+#@ catch { set ::power_cg_module_naming_style "" }
+#@ catch { set ::test_scan_link_wire_key [list [binary format H* 77]] }
+#@ catch { set ::vhdlout_follow_vector_direction [list [binary format H* 54525545]] }
+#@ catch { set ::vhdlout_write_architecture [list [binary format H* 54525545]] }
+#@ catch { set ::dc_high_effort_area_opt [list [binary format H* 46616c7365]] }
+#@ catch { set ::timing_enable_through_paths [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_auto_ungroup_area_num_cells [list [binary format H* 3330]] }
+#@ catch { set ::placer_tns_driven [list [binary format H* 66616c7365]] }
+#@ catch { set ::bit_blasted_bus_linking_order [list [binary format H* 7265666572656e6365]] }
+#@ catch { set ::compile_register_replication_do_size_only [list [binary format H* 74727565]] }
+#@ catch { set ::veriloglib_delay_signal_naming_style "" }
+#@ catch { set ::mw_create_netlist_from_CEL [list [binary format H* 66616c7365]] }
+#@ catch { set ::tcl_version [list [binary format H* 382e36]] }
+#@ catch { set ::design_name [list [binary format H* 7361725f6164635f636f6e74726f6c6c6572]] }
+#@ catch { set ::ADK_TYPICAL_ON_CHIP_LOAD [list [binary format H* 302e303039]] }
+#@ catch { set ::_mv_allow_upf_cells_without_upf_disable_all_upf [list [binary format H* 74727565]] }
+#@ catch { set ::test_setup_additional_clock_pulse [list [binary format H* 66616c7365]] }
+#@ catch { set ::upf_isols_allow_instances_in_elements [list [binary format H* 74727565]] }
+#@ catch { set ::timing_use_driver_arc_transition_at_clock_source [list [binary format H* 74727565]] }
+#@ catch { set ::compile_preserve_subdesign_interfaces [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_top_all_paths [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_prefer_mux [list [binary format H* 66616c7365]] }
+#@ catch { set ::register_replication_naming_style [list [binary format H* 25735f7265702564]] }
+#@ catch { set ::init_path [list [binary format H* 2f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f617578782f73796e]] }
+#@ catch { set ::power_cg_enable_alternative_algorithm [list [binary format H* 66616c7365]] }
+#@ catch { set ::exit_delete_command_log_file [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_scan_enable_port_naming_style [list [binary format H* 746573745f73652573]] }
+#@ catch { set ::enable_keep_signal [list [binary format H* 66616c7365]] }
+#@ catch { set ::power_cg_print_enable_conditions [list [binary format H* 66616c7365]] }
+#@ catch { set ::gen_open_name_prefix [list [binary format H* 4f70656e]] }
+#@ catch { set ::timing_report_union_tns [list [binary format H* 74727565]] }
+#@ catch { set ::dps_top_grd_arch [list [binary format H* 6e6f6e65]] }
+#@ catch { set ::upf_extension [list [binary format H* 74727565]] }
+#@ catch { set ::tcl_pkgPath [list [binary format H* 2f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f617578782f74636c6c69622f6c69622f74636c382e36]] }
+#@ catch { set ::db_load_ccs_power_data [list [binary format H* 66616c7365]] }
+#@ catch { set ::ADK_PROCESS [list [binary format H* 313330]] }
+#@ catch { set ::site_info_file [list [binary format H* 2f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f61646d696e2f6c6963656e73652f736974655f696e666f]] }
+#@ catch { set ::search_path [list [binary format H* 2e20696e707574732f61646b202e202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f6c69627261726965732f73796e202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f6d696e706f7765722f73796e202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f64772f73796e5f766572202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f64772f73696d5f766572]] }
+#@ catch { set ::hdlin_while_loop_iterations [list [binary format H* 34303936]] }
+#@ catch { set ::mw_power_port "" }
+#@ catch { set ::current_instance "" }
+#@ catch { set ::lib_use_thresholds_per_pin [list [binary format H* 74727565]] }
+#@ catch { set ::test_bsd_allow_tolerable_violations [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_submit_log_uses_o_option [list [binary format H* 74727565]] }
+#@ catch { set ::cache_write_info [list [binary format H* 66616c7365]] }
+#@ catch { set ::dps_top_grd_args [list [binary format H* 6e6f6e65]] }
+#@ catch { set ::hdlin_sv_tokens [list [binary format H* 46414c5345]] }
+#@ catch { set ::ADK_ANTENNA_CELL [list [binary format H* 736b793133305f66645f73635f68645f5f64696f64655f32]] }
+#@ catch { set ::mw_disable_escape_char [list [binary format H* 74727565]] }
+#@ catch { set ::list_of_file_types [list [binary format H* 766572696c6f672876292020207668646c2876686429202020676c6f62616c5f6373747228636f6e29202020706173735f6373747228636f6e29202020757365725f6f766572726964655f636f6e73747261696e7428636f6e29202020757365725f6f766572726964655f7363726970742873637229202020757365725f6275646765745f7363726970742829202020757365725f7265706f72745f736372697074287265706f727429202020757365725f636f6d70696c655f73747261746567795f73637269707428636f6d70696c6529202020757365725f636f6d70696c655f7363726970742874636c29202020706173735f636f6d70696c655f736372697074286175746f73637229202020656c61625f646228646229202020656c61625f64646328646463292020206c69625f6462286462292020207072655f646228646229202020706f73745f6462286462292020207072655f6464632864646329202020706f73745f64646328646463292020207376662873766629202020676c6f62616c5f6c6f67286c6f6729202020706173735f6c6f67286c6f67292020206d616b6566696c6528292020206f632e74636c286f632e74636c29202020637374722e74636c28637374722e74636c29202020706173735f617265615f7265706f7274286172656129202020706173735f74696d696e675f7265706f72742874696d29202020706173735f716f725f7265706f727428716f7229202020706173735f637374725f7265706f7274286373747229202020676c6f62616c5f7265706f72742829202020656e762829]] }
+#@ catch { set ::power_cg_iscgs_enable [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_enable_multiple_clocks_per_reg [list [binary format H* 74727565]] }
+#@ catch { set ::timing_use_clock_specific_transition [list [binary format H* 74727565]] }
+#@ catch { set ::sh_deprecated_is_error [list [binary format H* 66616c7365]] }
+#@ catch { set ::mv_upf_enable_reverse_bias_check [list [binary format H* 66616c7365]] }
+#@ catch { set ::lc_enable_legacy_library_compiler [list [binary format H* 66616c7365]] }
+#@ catch { set ::default_schematic_options [list [binary format H* 2d73697a6520696e66696e697465]] }
+#@ catch { set ::test_point_keep_hierarchy [list [binary format H* 66616c7365]] }
+#@ catch { set ::hlo_resource_allocation [list [binary format H* 636f6e73747261696e745f64726976656e]] }
+#@ catch { set ::gui_start_option_no_windows [list [binary format H* 30]] }
+#@ catch { set ::case_analysis_with_logic_constants [list [binary format H* 74727565]] }
+#@ catch { set ::var_mux_mbm [list [binary format H* 54525545]] }
+#@ catch { set ::mv_allow_va_beyond_core_area [list [binary format H* 66616c7365]] }
+#@ catch { set ::link_allow_pin_name_synonym [list [binary format H* 74727565]] }
+#@ catch { set ::default_name_rules "" }
+#@ catch { set ::nglc_keep_nglc_temp_files [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_vrlg_std [list [binary format H* 32303035]] }
+#@ catch { set ::port_complement_naming_style [list [binary format H* 25735f424152]] }
+#@ catch { set ::inherit_parent_dont_touch [list [binary format H* 66616c7365]] }
+#@ catch { set ::enable_special_level_shifter_naming [list [binary format H* 66616c7365]] }
+#@ catch { set ::tio_preserve_routes_for_block [list [binary format H* 66616c7365]] }
+#@ catch { set ::atpg_bidirect_output_only [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_enable_assertions [list [binary format H* 46414c5345]] }
+#@ catch { set ::vhdlout_unknown_name [list [binary format H* 275827]] }
+#@ catch { set ::ccl_enable_always [list [binary format H* 66616c7365]] }
+#@ catch { set ::sh_enable_page_mode [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_final_drc_fix [list [binary format H* 6e6f6e65]] }
+#@ catch { set ::compile_instance_name_prefix [list [binary format H* 55]] }
+#@ catch { set ::spg_congestion_placement_in_incremental_compile [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_mux_oversize_ratio [list [binary format H* 313030]] }
+#@ catch { set ::physopt_create_missing_physical_libcells [list [binary format H* 66616c7365]] }
+#@ catch { set ::physopt_ignore_lpin_fanout [list [binary format H* 66616c7365]] }
+#@ catch { set ::check_error_list [list [binary format H* 434d442d30303420434d442d30303620434d442d30303720434d442d30303820434d442d30303920434d442d30313020434d442d30313120434d442d30313220434d442d30313420434d442d30313520434d442d30313620434d442d30313920434d442d30323620434d442d30333120434d442d3033372044422d3120444353482d3131204445532d303031204143532d3139332046494c452d312046494c452d322046494c452d332046494c452d34204c494e4b2d37204c494e542d37204c494e542d3230204c4e4b2d303233204f50542d313030204f50542d313031204f50542d313032204f50542d313134204f50542d313234204f50542d313237204f50542d313238204f50542d313535204f50542d313537204f50542d313831204f50542d3436322055492d31312055492d31342055492d31352055492d31362055492d31372055492d31392055492d32302055492d32312055492d32322055492d32332055492d34302055492d3431205549442d34205549442d36205549442d37205549442d38205549442d39205549442d3133205549442d3134205549442d3135205549442d3139205549442d3230205549442d3235205549442d3237205549442d3238205549442d3239205549442d3330205549442d3332205549442d3538205549442d3837205549442d313033205549442d313039205549442d323730205549442d323732205549442d343033205549442d343430205549442d3434342055494f2d322055494f2d332055494f2d342055494f2d32352055494f2d36352055494f2d36362055494f2d37352055494f2d39342055494f2d39352045514e2d362045514e2d31312045514e2d31352045514e2d31362045514e2d31382045514e2d3230]] }
+#@ catch { set ::test_dedicated_subdesign_scan_outs [list [binary format H* 66616c7365]] }
+#@ catch { set ::mv_input_enforce_simple_names [list [binary format H* 66616c7365]] }
+#@ catch { set ::write_test_max_cycles [list [binary format H* 30]] }
+#@ catch { set ::sdf_enable_cond_start_end [list [binary format H* 66616c7365]] }
+#@ catch { set ::uniquify_keep_original_design [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_lic_wait [list [binary format H* 30]] }
+#@ catch { set ::test_default_delay [list [binary format H* 302e30]] }
+#@ catch { set ::acs_make_args [list [binary format H* 736574206163735f6d616b655f61726773]] }
+#@ catch { set ::rc_input_threshold_pct_rise [list [binary format H* 35302e303030303030]] }
+#@ catch { set ::compile_ultra_ungroup_dw [list [binary format H* 54525545]] }
+#@ catch { set ::mw_design_library [list [binary format H* 7361725f6164635f636f6e74726f6c6c65725f6c6962]] }
+#@ catch { set ::ADK_MIN_BUF_PORT_I [list [binary format H* 41]] }
+#@ catch { set ::mv_output_upf_line_indent [list [binary format H* 32]] }
+#@ catch { set ::ADK_MIN_BUF_PORT_O [list [binary format H* 58]] }
+#@ catch { set ::verilogout_unconnected_prefix [list [binary format H* 53594e4f505359535f554e434f4e4e45435445445f]] }
+#@ catch { set ::hdlin_auto_save_templates [list [binary format H* 46414c5345]] }
+#@ catch { set ::synlib_dont_get_license "" }
+#@ catch { set ::test_disable_find_best_scan_out [list [binary format H* 66616c7365]] }
+#@ catch { set ::upf_enable_relaxed_charz [list [binary format H* 74727565]] }
+#@ catch { set ::verilogout_ignore_case [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_write_components [list [binary format H* 54525545]] }
+#@ catch { set ::power_enable_power_gating [list [binary format H* 66616c7365]] }
+#@ catch { set ::disable_conditional_mode_analysis [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_max_parallel_computations [list [binary format H* 30]] }
+#@ catch { set ::dps_merge_grd_arch [list [binary format H* 6e6f6e65]] }
+#@ catch { set ::dc_extra_link_libraries [list [binary format H* 696e707574732f61646b2f73746463656c6c732d62632e646220696e707574732f61646b2f73746463656c6c732e6462]] }
+#@ catch { set ::DW_lp_op_iso_mode [list [binary format H* 4e4f4e45]] }
+#@ catch { set ::tcl [list [binary format H* 726561642d64657369676e2e74636c]] }
+#@ catch { set ::bus_naming_style [list [binary format H* 25735b25645d]] }
+#@ catch { set ::hdlin_presto_cell_name_prefix [list [binary format H* 43]] }
+#@ catch { set ::hdlout_internal_busses [list [binary format H* 46414c5345]] }
+#@ catch { set ::vhdlout_unconnected_pin_prefix [list [binary format H* 6e]] }
+#@ catch { set ::timing_enable_normalized_slack [list [binary format H* 66616c7365]] }
+#@ catch { set ::auto_oldpath "" }
+#@ catch { set ::vhdlout_wired_or_res_func "" }
+#@ catch { set ::dps_merge_grd_args [list [binary format H* 6e6f6e65]] }
+#@ catch { set ::vhdlout_use_packages [list [binary format H* 494545452e7374645f6c6f6769635f31313634]] }
+#@ catch { set ::auto_insert_level_shifters [list [binary format H* 74727565]] }
+#@ catch { set ::dc_suppressed_msg [list [binary format H* 544643484b2d30373220544643484b2d30313420544643484b2d30343920544643484b2d30353020544643484b2d30313220544643484b2d30373320544643484b2d303932205053594e2d363531205053594e2d363530]] }
+#@ catch { set ::sdc_write_unambiguous_names [list [binary format H* 74727565]] }
+#@ catch { set ::acs_vhdl_extensions [list [binary format H* 2e766864]] }
+#@ catch { set ::hdlin_field_naming_style "" }
+#@ catch { set ::template_separator_style [list [binary format H* 5f]] }
+#@ catch { set ::adk_dir [list [binary format H* 696e707574732f61646b]] }
+#@ catch { set ::hdlin_interface_port_ABI [list [binary format H* 33]] }
+#@ catch { set ::gen_open_name_postfix "" }
+#@ catch { set ::enable_verilog_netlist_reader [list [binary format H* 74727565]] }
+#@ catch { set ::nglc_is_symbol_file [list [binary format H* 66616c7365]] }
+#@ catch { set ::placer_gated_register_area_multiplier [list [binary format H* 3230]] }
+#@ catch { set ::timing_max_normalization_cycles [list [binary format H* 34]] }
+#@ catch { set ::zrt_max_parallel_computations [list [binary format H* 30]] }
+#@ catch { set ::ADK_FILLER_CELLS [list [binary format H* 736b793133305f66645f73635f68645f5f66696c6c5f3820202020736b793133305f66645f73635f68645f5f66696c6c5f3420202020736b793133305f66645f73635f68645f5f66696c6c5f3220202020736b793133305f66645f73635f68645f5f66696c6c5f31]] }
+#@ catch { set ::write_test_round_timing_values [list [binary format H* 74727565]] }
+#@ catch { set ::compile_enable_async_mux_mapping [list [binary format H* 74727565]] }
+#@ catch { set ::enable_slew_degradation [list [binary format H* 74727565]] }
+#@ catch { set ::mv_upf_enable_forward_bias_check [list [binary format H* 66616c7365]] }
+#@ catch { set ::_acs_html_filename [list [binary format H* 526573756c74732e68746d6c]] }
+#@ catch { set ::test_scan_out_port_naming_style [list [binary format H* 746573745f736f25732573]] }
+#@ catch { set ::find_converts_name_lists [list [binary format H* 66616c7365]] }
+#@ catch { set ::exit_delete_filename_log_file [list [binary format H* 74727565]] }
+#@ catch { set ::compile_seqmap_identify_shift_registers_with_synchronous_logic_ascii [list [binary format H* 66616c7365]] }
+#@ catch { set ::mv_disable_voltage_area_aware_detour_routing [list [binary format H* 66616c7365]] }
+#@ catch { set ::initial_target_library "" }
+#@ catch { set ::compile_assume_fully_decoded_three_state_busses [list [binary format H* 66616c7365]] }
+#@ catch { set ::simplified_verification_mode [list [binary format H* 46414c5345]] }
+#@ catch { set ::new_idn_switch [list [binary format H* 74727565]] }
+#@ catch { set ::upf_allow_refer_before_define [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_reporting_level [list [binary format H* 6261736963]] }
+#@ catch { set ::mv_upf_tracking [list [binary format H* 74727565]] }
+#@ catch { set ::hdlin_preserve_sequential [list [binary format H* 6e6f6e65]] }
+#@ catch { set ::acs_user_budgeting_script [list [binary format H* 6275646765742e736372]] }
+#@ catch { set ::annotation_control [list [binary format H* 3634]] }
+#@ catch { set ::sh_script_stop_severity [list [binary format H* 4e6f6e65]] }
+#@ catch { set ::test_write_four_cycle_stil_protocol [list [binary format H* 66616c7365]] }
+#@ catch { set ::ADK_DRIVING_CELL [list [binary format H* 736b793133305f66645f73635f68645f5f696e765f32]] }
+#@ catch { set ::synlib_preferred_ff_chains "" }
+#@ catch { set ::spg_enhanced_timing_model [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_presto_net_name_prefix [list [binary format H* 4e]] }
+#@ catch { set ::dps_top_lsf_arch [list [binary format H* 6e6f6e65]] }
+#@ catch { set ::bus_range_separator_style [list [binary format H* 3a]] }
+#@ catch { set ::vhdllib_cell_name_map_file "" }
+#@ catch { set ::verilogout_higher_designs_first [list [binary format H* 46414c5345]] }
+#@ catch { set ::mw_hvo_must_not_dump_master_names "" }
+#@ catch { set ::synlib_iis_use_netlist [list [binary format H* 46414c5345]] }
+#@ catch { set ::enable_keep_signal_dt_net [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_scan_clock_b_port_naming_style [list [binary format H* 746573745f7363622573]] }
+#@ catch { set ::rc_slew_upper_threshold_pct_rise [list [binary format H* 38302e303030303030]] }
+#@ catch { set ::si_ccs_use_gate_level_simulation [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_compile_script_suffix [list [binary format H* 6175746f736372]] }
+#@ catch { set ::test_allow_clock_reconvergence [list [binary format H* 74727565]] }
+#@ catch { set ::upf_report_isolation_matching [list [binary format H* 66616c7365]] }
+#@ catch { set ::pgnet_power_nets_on_bb "" }
+#@ catch { set ::power_cg_flatten [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_seqmap_propagate_constants [list [binary format H* 74727565]] }
+#@ catch { set ::hdlin_vhdl_mixed_language_instantiation [list [binary format H* 46414c5345]] }
+#@ catch { set ::filename_log_file [list [binary format H* 66696c656e616d65732e6c6f67]] }
+#@ catch { set ::gui_auto_start [list [binary format H* 30]] }
+#@ catch { set ::tcl_prompt1 [list [binary format H* 6563686f202d6e202264635f7368656c6c2d746f706f3e2022]] }
+#@ catch { set ::dps_top_lsf_args [list [binary format H* 6e6f6e65]] }
+#@ catch { set ::mw_cell_name "" }
+#@ catch { set ::upf_charz_max_srsn_messages [list [binary format H* 3130]] }
+#@ catch { set ::test_allow_internal_pins_in_hierarchical_flow [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_enable_hier_naming [list [binary format H* 46414c5345]] }
+#@ catch { set ::nglc_search_path [list [binary format H* 2f6361642f73796e6f707379732f6c632f4d2d323031372e30362d5350332f6c696e757836342f6c632f62696e2f6c635f7368656c6c5f65786563]] }
+#@ catch { set ::test_bsd_synthesis_gated_tck [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_simulation_library "" }
+#@ catch { set ::test_wrapper_new_wrp_clock_timing "" }
+#@ catch { set ::dct_enable_track_auto_fill [list [binary format H* 74727565]] }
+#@ catch { set ::power_fix_sdpd_annotation [list [binary format H* 74727565]] }
+#@ catch { set ::acs_autopart_max_area [list [binary format H* 302e30]] }
+#@ catch { set ::mw_current_design "" }
+#@ catch { set ::rc_slew_derate_from_library [list [binary format H* 312e303030303030]] }
+#@ catch { set ::pdefout_diff_original [list [binary format H* 54525545]] }
+#@ catch { set ::rc_degrade_min_slew_when_rd_less_than_rnet [list [binary format H* 66616c7365]] }
+#@ catch { set ::verbose_messages [list [binary format H* 74727565]] }
+#@ catch { set ::test_mode_port_naming_style [list [binary format H* 746573745f6d6f64652573]] }
+#@ catch { set ::write_test_input_dont_care_value [list [binary format H* 58]] }
+#@ catch { set ::test_icg_n_ref_for_dft "" }
+#@ catch { set ::test_sync_occ_1x_period [list [binary format H* 3230]] }
+#@ catch { set ::mw_hvo_generate_macro_definition [list [binary format H* 66616c7365]] }
+#@ catch { set ::mv_allow_force_ls_with_iso_violations [list [binary format H* 74727565]] }
+#@ catch { set ::compile_dont_use_dedicated_scanout [list [binary format H* 31]] }
+#@ catch { set ::write_test_vhdlout [list [binary format H* 696e6c696e65]] }
+#@ catch { set ::ADK_END_CAP_CELL [list [binary format H* 736b793133305f66645f73635f68645f5f64656361705f33]] }
+#@ catch { set ::pass_dependent_file_types [list [binary format H* 706173735f63737472202020757365725f6f766572726964655f636f6e73747261696e74202020757365725f7265706f72745f736372697074202020757365725f636f6d70696c655f73747261746567795f736372697074202020757365725f6f766572726964655f736372697074202020706173735f636f6d70696c655f736372697074202020757365725f6275646765745f7363726970742020207072655f6462202020706f73745f64622020207072655f646463202020706f73745f6464632020207376662020206d616b6566696c65202020706173735f617265615f7265706f7274202020706173735f74696d696e675f7265706f7274202020706173735f716f725f7265706f7274202020706173735f637374725f7265706f7274202020706173735f6c6f67202020656e762020206f632e74636c202020637374722e74636c]] }
+#@ catch { set ::hdlin_enable_rtldrc_info [list [binary format H* 66616c7365]] }
+#@ catch { set ::clock_period [list [binary format H* 32302e30]] }
+#@ catch { set ::mw_ground_port "" }
+#@ catch { set ::compile_enable_constant_propagation_with_no_boundary_opt [list [binary format H* 74727565]] }
+#@ catch { set ::mw_logic1_net [list [binary format H* 564444]] }
+#@ catch { set ::single_group_per_sheet [list [binary format H* 66616c7365]] }
+#@ catch { set ::synlib_preferred_ffs "" }
+#@ catch { set ::verilogout_inout_is_in [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_sverilog_std [list [binary format H* 32303132]] }
+#@ catch { set ::gui_online_browser [list [binary format H* 6e65747363617065]] }
+#@ catch { set ::compile_no_new_cells_at_top_level [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_serialize_put_fsm_clock_output [list [binary format H* 74727565]] }
+#@ catch { set ::mv_allow_upf_cells_without_upf [list [binary format H* 66616c7365]] }
+#@ catch { set ::sh_command_abbrev_mode [list [binary format H* 416e797768657265]] }
+#@ catch { set ::dc_shell_mode [list [binary format H* 74636c]] }
+#@ catch { set ::complete_mixed_mode_extraction [list [binary format H* 74727565]] }
+#@ catch { set ::dont_bind_unused_pins_to_logic_constant [list [binary format H* 66616c7365]] }
+#@ catch { set ::gen_bussing_exact_implicit [list [binary format H* 66616c7365]] }
+#@ catch { set ::bus_inference_descending_sort [list [binary format H* 74727565]] }
+#@ catch { set ::gen_cell_pin_name_separator [list [binary format H* 2f]] }
+#@ catch { set ::create_clock_no_input_delay [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_subprogram_default_values [list [binary format H* 46414c5345]] }
+#@ catch { set ::bind_unused_hierarchical_pins [list [binary format H* 74727565]] }
+#@ catch { set ::tcl_library [list [binary format H* 2f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f617578782f74636c6c69622f6c69622f74636c382e36]] }
+#@ catch { set ::compile_seqmap_identify_shift_registers_with_synchronous_logic [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_early_launch_at_borrowing_latches [list [binary format H* 74727565]] }
+#@ catch { set ::mw_hvo_core_filler_cells [list [binary format H* 74727565]] }
+#@ catch { set ::synopsys_exec [list [binary format H* 2f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f616d6436342f73796e2f62696e2f636f6d6d6f6e5f7368656c6c5f65786563]] }
+#@ catch { set ::prev_sh_source_logging [list [binary format H* 74727565]] }
+#@ catch { set ::power_cg_ignore_setup_condition [list [binary format H* 66616c7365]] }
+#@ catch { set ::power_remove_redundant_clock_gates [list [binary format H* 74727565]] }
+#@ catch { set ::de_enable_upf_exploration [list [binary format H* 74727565]] }
+#@ catch { set ::ADK_WELL_TAP_CELL [list [binary format H* 736b793133305f66645f73635f68645f5f7461707670777276676e645f31]] }
+#@ catch { set ::test_disconnect_non_functional_so [list [binary format H* 31]] }
+#@ catch { set ::product_version [list [binary format H* 4c2d323031362e30332d5350352d35]] }
+#@ catch { set ::placer_enable_enhanced_soft_blockages [list [binary format H* 74727565]] }
+#@ catch { set ::placer_channel_detect_mode [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_default_bidir_delay [list [binary format H* 302e30]] }
+#@ catch { set ::disable_delta_slew_for_tran_cstr [list [binary format H* 66616c7365]] }
+#@ catch { set ::upf_set_interface_cell_rel_sn [list [binary format H* 66616c7365]] }
+#@ catch { set ::lc_run_from_legacy_library_compiler [list [binary format H* 74727565]] }
+#@ catch { set ::timing_edge_specific_source_latency [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_vhdl_std [list [binary format H* 32303038]] }
+#@ catch { set ::vhdlout_upcase [list [binary format H* 46414c5345]] }
+#@ catch { set ::veriloglib_insert_timing_in_specify_block [list [binary format H* 66616c7365]] }
+#@ catch { set ::mw_hvo_output_onezero_for_pg [list [binary format H* 74727565]] }
+#@ catch { set ::auto_attr_spread_debug [list [binary format H* 66616c7365]] }
+#@ catch { set ::estimate_resource_preference [list [binary format H* 66617374]] }
+#@ catch { set ::milkyway_library [list [binary format H* 7361725f6164635f636f6e74726f6c6c65725f6c6962]] }
+#@ catch { set ::compile_register_replication_across_hierarchy [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_optimize_unloaded_seq_logic_with_no_bound_opt [list [binary format H* 74727565]] }
+#@ catch { set ::ignore_clock_input_delay_for_skew [list [binary format H* 66616c7365]] }
+#@ catch { set ::gen_show_created_busses [list [binary format H* 66616c7365]] }
+#@ catch { set ::dps_merge_lsf_arch [list [binary format H* 6e6f6e65]] }
+#@ catch { set ::sdc_version [list [binary format H* 322e30]] }
+#@ catch { set ::power_cg_reconfig_stages [list [binary format H* 66616c7365]] }
+#@ catch { set ::veriloglib_tb_x_eq_dontcare [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_disable_hierarchical_inverter_opt [list [binary format H* 66616c7365]] }
+#@ catch { set ::dc_target_libraries [list [binary format H* 73746463656c6c732e6462]] }
+#@ catch { set ::systemcout_debug_mode [list [binary format H* 66616c7365]] }
+#@ catch { set ::mw_use_pdb_lib_format [list [binary format H* 66616c7365]] }
+#@ catch { set ::dc_rtl_handoff [list [binary format H* 696e707574732f64657369676e2e76]] }
+#@ catch { set ::dc_milkyway_ref_libraries [list [binary format H* 696e707574732f61646b2f73746463656c6c732e6d776c6962]] }
+#@ catch { set ::test_user_defined_instruction_naming_style [list [binary format H* 555345522564]] }
+#@ catch { set ::upf_use_additional_db_attributes [list [binary format H* 74727565]] }
+#@ catch { set ::write_test_scan_check_file_naming_style [list [binary format H* 25735f7363686b2e2573]] }
+#@ catch { set ::rc_driver_model_mode [list [binary format H* 616476616e636564]] }
+#@ catch { set ::power_cg_cell_naming_style "" }
+#@ catch { set ::dps_merge_lsf_args [list [binary format H* 6e6f6e65]] }
+#@ catch { set ::dpcm_slewlimit [list [binary format H* 54525545]] }
+#@ catch { set ::placer_max_cell_density_threshold [list [binary format H* 2d31]] }
+#@ catch { set ::link_portname_allow_square_bracket_to_match_underscore [list [binary format H* 66616c7365]] }
+#@ catch { set ::ADK_MAX_ROUTING_LAYER_INNOVUS [list [binary format H* 36]] }
+#@ catch { set ::compile_advanced_fix_multiple_port_nets [list [binary format H* 66616c7365]] }
+#@ catch { set ::mw_hdl_expand_cell_with_no_instance [list [binary format H* 66616c7365]] }
+#@ catch { set ::ADK_LVS_EXCLUDE_CELL_LIST [list [binary format H* 736b793133305f66645f73635f68645f5f66696c6c5f2a20202020736b793133305f66645f73635f68645f5f7461707670777276676e645f31]] }
+#@ catch { set ::motif_files [list [binary format H* 2f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f61646d696e2f7365747570]] }
+#@ catch { set ::mv_mtcmos_detour_obstruction [list [binary format H* 66616c7365]] }
+#@ catch { set ::collection_deletion_effort [list [binary format H* 6d656469756d]] }
+#@ catch { set ::compile_instance_name_suffix "" }
+#@ catch { set ::power_lib2saif_rise_fall_pd [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_use_autopartition [list [binary format H* 66616c7365]] }
+#@ catch { set ::bin_path [list [binary format H* 2f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f6c696e757836342f73796e2f62696e]] }
+#@ catch { set ::nglc_log_path [list [binary format H* 363631375f31363236373335353939383133383334]] }
+#@ catch { set ::ADK_VIRTUOSO_EXCLUDE_CELL_LIST [list [binary format H* 736b793133305f66645f73635f68645f5f66696c6c5f2a20202020736b793133305f66645f73635f68645f5f7461707670777276676e645f31]] }
+#@ catch { set ::duplicate_ports [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_seqmap_propagate_high_effort [list [binary format H* 74727565]] }
+#@ catch { set ::test_stil_multiclock_capture_procedures [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_prioritize_leakage [list [binary format H* 66616c7365]] }
+#@ catch { set ::sh_line_editing_mode [list [binary format H* 656d616373]] }
+#@ catch { set ::timing_crpr_remove_clock_to_data_crp [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_top_configuration_arch_name [list [binary format H* 41]] }
+#@ catch { set ::verilogout_single_bit [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_icg_p_ref_for_dft "" }
+#@ catch { set ::_acs_top_html_filename [list [binary format H* 4143535f726573756c7473]] }
+#@ catch { set ::vhdlout_target_simulator "" }
+#@ catch { set ::verilogout_show_unconnected_pins [list [binary format H* 46414c5345]] }
+#@ catch { set ::power_enable_clock_scaling [list [binary format H* 66616c7365]] }
+#@ catch { set ::current_design "" }
+#@ catch { set ::timing_library_max_cap_from_lookup_table [list [binary format H* 66616c7365]] }
+#@ catch { set ::bsd_physical_effort [list [binary format H* 6d656469756d]] }
+#@ catch { set ::dc_clock_period [list [binary format H* 32302e30]] }
+#@ catch { set ::case_analysis_log_file "" }
+#@ catch { set ::nglc_intermediate_db_files "" }
+#@ catch { set ::ldd_return_val [list [binary format H* 30]] }
+#@ catch { set ::mw_read_ignore_filler_cell [list [binary format H* 74727565]] }
+#@ catch { set ::test_disable_enhanced_dft_drc_reporting [list [binary format H* 74727565]] }
+#@ catch { set ::dct_enable_va_aware_ao_synthesis [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_generate_separator_style [list [binary format H* 5f]] }
+#@ catch { set ::hdlin_prohibit_nontri_multiple_drivers [list [binary format H* 54525545]] }
+#@ catch { set ::upf_skip_retention_on_dft_cells [list [binary format H* 66616c7365]] }
+#@ catch { set ::sh_source_uses_search_path [list [binary format H* 74727565]] }
+#@ catch { set ::acs_svf_suffix [list [binary format H* 737666]] }
+#@ catch { set ::test_bsd_default_strobe [list [binary format H* 39352e30]] }
+#@ catch { set ::arch [list [binary format H* 6c696e75783634]] }
+#@ catch { set ::veriloglib_write_recrem_as_setuphold [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_three_state_res_func "" }
+#@ catch { set ::timing_save_library_derate [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_disable_cond_default_arcs [list [binary format H* 66616c7365]] }
+#@ catch { set ::mv_no_always_on_buffer_for_redundant_isolation [list [binary format H* 66616c7365]] }
+#@ catch { set ::ddc_allow_unknown_packed_commands [list [binary format H* 74727565]] }
+#@ catch { set ::check_design_check_for_wire_loop [list [binary format H* 74727565]] }
+#@ catch { set ::rc_receiver_model_mode [list [binary format H* 616476616e636564]] }
+#@ catch { set ::power_default_static_probability [list [binary format H* 302e35]] }
+#@ catch { set ::generic_symbol_library [list [binary format H* 67656e657269632e736462]] }
+#@ catch { set ::power_cg_designware [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_equations [list [binary format H* 46414c5345]] }
+#@ catch { set ::test_bsd_control_cell_drive_limit [list [binary format H* 30]] }
+#@ catch { set ::allow_input_delay_min_greater_than_max [list [binary format H* 66616c7365]] }
+#@ catch { set ::mv_use_std_cell_for_isolation [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_default_scan_style [list [binary format H* 6d756c7469706c657865645f666c69705f666c6f70]] }
+#@ catch { set ::lc_enable_common_shell_lc [list [binary format H* 66616c7365]] }
+#@ catch { set ::mv_allow_ls_on_leaf_pin_boundary [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_clock_gating_propagate_enable [list [binary format H* 66616c7365]] }
+#@ catch { set ::find_allow_only_non_hier_ports [list [binary format H* 66616c7365]] }
+#@ catch { set ::spg_enable_via_ladder_opto [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_validate_test_model_connectivity [list [binary format H* 66616c7365]] }
+#@ catch { set ::view_report_output2file [list [binary format H* 66616c7365]] }
+#@ catch { set ::view_read_file_suffix [list [binary format H* 6462206764622073646220656469662065716e20666e63206c7369206d6966204e455420706c612073742074646c207620766864207668646c20786e66]] }
+#@ catch { set ::hdlin_enable_elaborate_ref_linking [list [binary format H* 46414c5345]] }
+#@ catch { set ::auto_noexec [list [binary format H* 31]] }
+#@ catch { set ::enable_rule_based_query [list [binary format H* 66616c7365]] }
+#@ catch { set ::errorCode [list [binary format H* 54434c2052454144205641524e414d45]] }
+#@ catch { set ::ADK_TIE_HI_CELL [list [binary format H* 736b793133305f66645f73635f68645f5f636f6e625f31]] }
+#@ catch { set ::disable_auto_time_borrow [list [binary format H* 66616c7365]] }
+#@ catch { set ::si_filter_per_aggr_noise_peak_ratio [list [binary format H* 302e3031]] }
+#@ catch { set ::power_rtl_saif_file [list [binary format H* 706f7765725f72746c2e73616966]] }
+#@ catch { set ::sh_tcllib_app_dirname [list [binary format H* 73796e]] }
+#@ catch { set ::power_cg_derive_related_clock [list [binary format H* 66616c7365]] }
+#@ catch { set ::rc_slew_lower_threshold_pct_fall [list [binary format H* 32302e303030303030]] }
+#@ catch { set ::abstraction_enable_power_calculation [list [binary format H* 74727565]] }
+#@ catch { set ::physopt_area_critical_range [list [binary format H* 2d312e3034383538652b3036]] }
+#@ catch { set ::acs_use_default_delays [list [binary format H* 66616c7365]] }
+#@ catch { set ::ADK_TIE_LO_PORT [list [binary format H* 4c4f]] }
+#@ catch { set ::compile_enhanced_resource_sharing [list [binary format H* 66616c7365]] }
+#@ catch { set ::suppress_errors "" }
+#@ catch { set ::dc_saif_instance [list [binary format H* 7361725f6164635f636f6e74726f6c6c65725f74622f7361725f6164635f636f6e74726f6c6c65725f696e7374]] }
+#@ catch { set ::link_library [list [binary format H* 2a2073746463656c6c732e646220696e707574732f61646b2f73746463656c6c732d62632e646220696e707574732f61646b2f73746463656c6c732e64622064775f666f756e646174696f6e2e736c6462]] }
+#@ catch { set ::vao_feedthrough_module_name_prefix "" }
+#@ catch { set ::power_enable_datapath_gating [list [binary format H* 54525545]] }
+#@ catch { set ::placer_congestion_effort [list [binary format H* 6175746f]] }
+#@ catch { set ::route_guide_naming_style [list [binary format H* 25735f2564]] }
+#@ catch { set ::power_cg_physically_aware_cg [list [binary format H* 66616c7365]] }
+#@ catch { set ::company "" }
+#@ catch { set ::product_build_date [list [binary format H* 4170722032312c2032303137]] }
+#@ catch { set ::test_default_period [list [binary format H* 3130302e30]] }
+#@ catch { set ::auto_ungroup_preserve_constraints [list [binary format H* 74727565]] }
+#@ catch { set ::budget_map_clock_gating_cells [list [binary format H* 66616c7365]] }
+#@ catch { set ::mw_hvo_unconnected_ports [list [binary format H* 66616c7365]] }
+#@ catch { set ::verilogout_indirect_inout_connection [list [binary format H* 46414c5345]] }
+#@ catch { set ::timing_self_loops_no_skew [list [binary format H* 66616c7365]] }
+#@ catch { set ::upf_levshi_on_constraint_only [list [binary format H* 66616c7365]] }
+#@ catch { set ::estimate_io_latency [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_through_path_max_segments [list [binary format H* 35]] }
+#@ catch { set ::hier_dont_trace_ungroup [list [binary format H* 30]] }
+#@ catch { set ::ADK_MIN_ROUTING_LAYER_DC [list [binary format H* 6d657432]] }
+#@ catch { set ::mw_hdl_bus_dir_for_undef_cell [list [binary format H* 30]] }
+#@ catch { set ::hdlin_module_name_limit [list [binary format H* 323536]] }
+#@ catch { set ::vhdllib_vital_99 [list [binary format H* 66616c7365]] }
+#@ catch { set ::when_analysis_permitted [list [binary format H* 74727565]] }
+#@ catch { set ::vhdlout_preserve_hierarchical_types [list [binary format H* 564543544f52]] }
+#@ catch { set ::magnet_placement_stop_after_seq_cell [list [binary format H* 66616c7365]] }
+#@ catch { set ::synopsys_root [list [binary format H* 2f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d35]] }
+#@ catch { set ::view_arch_types [list [binary format H* 73706172634f53352068707578313020727336303030207367696d697073]] }
+#@ catch { set ::case_analysis_sequential_propagation [list [binary format H* 6e65766572]] }
+#@ catch { set ::compile_implementation_selection [list [binary format H* 74727565]] }
+#@ catch { set ::test_bsd_make_private_instructions_public [list [binary format H* 66616c7365]] }
+#@ catch { set ::power_rclock_unrelated_use_fastest [list [binary format H* 74727565]] }
+#@ catch { set ::enable_recovery_removal_arcs [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_occ_insert_clock_gating_cells [list [binary format H* 66616c7365]] }
+#@ catch { set ::mw_allow_unescaped_slash_in_pin_name [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_bsd_new_output_parametrics [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_cpu_limit [list [binary format H* 302e30]] }
+#@ catch { set ::acs_hdl_verilog_define_list "" }
+#@ catch { set ::upf_block_partition "" }
+#@ catch { set ::timing_enable_slack_distribution [list [binary format H* 66616c7365]] }
+#@ catch { set ::mw_pgconn_cell_master "" }
+#@ catch { set ::write_test_vector_file_naming_style [list [binary format H* 25735f25642e2573]] }
+#@ catch { set ::bus_multiple_separator_style [list [binary format H* 2c]] }
+#@ catch { set ::bsd_max_out_switching_limit [list [binary format H* 3630303030]] }
+#@ catch { set ::view_report_interactive [list [binary format H* 74727565]] }
+#@ catch { set ::nglc_is_none_tech_file [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_hdl_sverilog_define_list "" }
+#@ catch { set ::placer_disable_auto_bound_for_gated_clock [list [binary format H* 74727565]] }
+#@ catch { set ::test_enable_codec_sharing [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_elab_errors_deep [list [binary format H* 46414c5345]] }
+#@ catch { set ::cache_file_chmod_octal [list [binary format H* 363636]] }
+#@ catch { set ::physopt_hard_keepout_distance [list [binary format H* 30]] }
+#@ catch { set ::test_infer_slave_clock_pulse_after_capture [list [binary format H* 696e666572]] }
+#@ catch { set ::test_mode_port_inverted_naming_style [list [binary format H* 746573745f6d6f64655f692573]] }
+#@ catch { set ::dc_gate_clock [list [binary format H* 54727565]] }
+#@ catch { set ::case_analysis_propagate_through_icg [list [binary format H* 66616c7365]] }
+#@ catch { set ::sh_output_log_file [list [binary format H* 6c6f67732f64632e6c6f67]] }
+#@ catch { set ::change_names_bit_blast_negative_index [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_default_strobe_width [list [binary format H* 302e30]] }
+#@ catch { set ::disable_mdb_stop_points [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdllib_sdf_edge [list [binary format H* 66616c7365]] }
+#@ catch { set ::rc_noise_model_mode [list [binary format H* 6261736963]] }
+#@ catch { set ::dc_design_name [list [binary format H* 7361725f6164635f636f6e74726f6c6c6572]] }
+#@ catch { set ::test_bsdl_max_line_length [list [binary format H* 3830]] }
+#@ catch { set ::fsm_auto_inferring [list [binary format H* 46414c5345]] }
+#@ catch { set ::mw_hvo_split_bus [list [binary format H* 66616c7365]] }
+#@ catch { set ::fsm_enable_state_minimization [list [binary format H* 46414c5345]] }
+#@ catch { set ::power_hdlc_do_not_split_cg_cells [list [binary format H* 66616c7365]] }
+#@ catch { set ::mw_hvo_pg_ports [list [binary format H* 66616c7365]] }
+#@ catch { set ::spg_place_enable_precluster [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_mux_size_limit [list [binary format H* 3332]] }
+#@ catch { set ::link_portname_allow_period_to_match_underscore [list [binary format H* 66616c7365]] }
+#@ catch { set ::power_min_internal_power_threshold "" }
+#@ catch { set ::query_objects_format [list [binary format H* 4c6567616379]] }
+#@ catch { set ::dc_adk_tcl [list [binary format H* 696e707574732f61646b2f61646b2e74636c]] }
+#@ catch { set ::mw_reference_library "" }
+#@ catch { set ::hdlin_report_sequential_pruning [list [binary format H* 46414c5345]] }
+#@ catch { set ::mw_hvo_dump_master_names "" }
+#@ catch { set ::test_bsdl_default_suffix_name [list [binary format H* 6273646c]] }
+#@ catch { set ::enable_page_mode [list [binary format H* 66616c7365]] }
+#@ catch { set ::synthetic_library [list [binary format H* 64775f666f756e646174696f6e2e736c6462]] }
+#@ catch { set ::designer "" }
+#@ catch { set ::power_model_preference [list [binary format H* 6e6c706d]] }
+#@ catch { set ::timing_separate_clock_gating_group [list [binary format H* 66616c7365]] }
+#@ catch { set ::read_translate_msff [list [binary format H* 54525545]] }
+#@ catch { set ::view_icon_path "" }
+#@ catch { set ::verilogout_equation [list [binary format H* 66616c7365]] }
+#@ catch { set ::power_sdpd_message_tolerance [list [binary format H* 302e3030303031]] }
+#@ catch { set ::compile_log_format [list [binary format H* 202025656c61705f74696d652025617265612025776e732025746e7320256472632025656e64706f696e74]] }
+#@ catch { set ::view_background [list [binary format H* 626c61636b]] }
+#@ catch { set ::HIERARCHY_DELIMITER [list [binary format H* 2f]] }
+#@ catch { set ::power_cg_ext_feedback_loop [list [binary format H* 74727565]] }
+#@ catch { set ::timing_consider_internal_startpoints [list [binary format H* 74727565]] }
+#@ catch { set ::sh_command_abbrev_options [list [binary format H* 74727565]] }
+#@ catch { set ::sh_user_man_path "" }
+#@ catch { set ::placer_enable_enhanced_router [list [binary format H* 66616c7365]] }
+#@ catch { set ::power_rclock_use_asynch_inputs [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_autoread_verilog_extensions [list [binary format H* 2e76]] }
+#@ catch { set ::mv_skip_opcond_checking_for_unloaded_level_shifter [list [binary format H* 66616c7365]] }
+#@ catch { set ::power_fix_sdpd_annotation_verbose [list [binary format H* 66616c7365]] }
+#@ catch { set ::ADK_MIN_BUF_CELL [list [binary format H* 736b793133305f66645f73635f68645f5f6275665f31]] }
+#@ catch { set ::test_bsd_manufacturer_id [list [binary format H* 30]] }
+#@ catch { set ::mv_allow_pg_pin_reconnection [list [binary format H* 66616c7365]] }
+#@ catch { set ::nglc_result_path [list [binary format H* 2f746d70]] }
+#@ catch { set ::spg_enable_zroute_layer_promotion [list [binary format H* 66616c7365]] }
+#@ catch { set ::sh_enable_line_editing [list [binary format H* 74727565]] }
+#@ catch { set ::target_library [list [binary format H* 73746463656c6c732e6462]] }
+#@ catch { set ::banking_enable_concatenate_name [list [binary format H* 74727565]] }
+#@ catch { set ::test_dont_fix_constraint_violations [list [binary format H* 66616c7365]] }
+#@ catch { set ::si_filter_accum_aggr_noise_peak_ratio [list [binary format H* 302e3033]] }
+#@ catch { set ::write_test_formats [list [binary format H* 73796e6f7073797320747373695f61736369692074647320766572696c6f67207668646c2077676c]] }
+#@ catch { set ::sh_new_variable_message [list [binary format H* 66616c7365]] }
+#@ catch { set ::veriloglib_violation_notifier_name "" }
+#@ catch { set ::dct_adjust_net_model [list [binary format H* 66616c7365]] }
+#@ catch { set ::bus_inference_style "" }
+#@ catch { set ::timing_dont_traverse_pg_net [list [binary format H* 74727565]] }
+#@ catch { set ::power_default_toggle_rate_type [list [binary format H* 666173746573745f636c6f636b]] }
+#@ catch { set ::mv_no_main_power_violations [list [binary format H* 74727565]] }
+#@ catch { set ::acs_dc_exec "" }
+#@ catch { set ::vhdlout_separate_scan_in [list [binary format H* 46414c5345]] }
+#@ catch { set ::hdlin_analyze_verbose_mode [list [binary format H* 30]] }
+#@ catch { set ::magnet_placement_fanout_limit [list [binary format H* 31303030]] }
+#@ catch { set ::timing_crpr_remove_muxed_clock_crp [list [binary format H* 74727565]] }
+#@ catch { set ::default_input_delay [list [binary format H* 3330]] }
+#@ catch { set ::upf_allow_DD_primary_with_supply_sets [list [binary format H* 66616c7365]] }
+#@ catch { set ::veriloglib_zero_delay_model [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_use_test_models [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_remove_clock_reconvergence_pessimism [list [binary format H* 66616c7365]] }
+#@ catch { set ::upf_enable_legacy_block [list [binary format H* 74727565]] }
+#@ catch { set ::synlib_abort_wo_dw_license [list [binary format H* 46414c5345]] }
+#@ catch { set ::hdlin_autoread_exclude_extensions "" }
+#@ catch { set ::auto_path [list [binary format H* 2f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f617578782f74636c6c69622f6c69622f74636c382e36202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f617578782f74636c6c69622f736e70735f74636c202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f617578782f74636c6c69622f73796e202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f617578782f74636c6c69622f6c6962202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f616d6436342f73796e2f6c6962202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f617578782f73796e2f6c6962202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f617578782f677569202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f617578782f6775692f636f6d6d6f6e202f6361642f73796e6f707379732f73796e2f4c2d323031362e30332d5350352d352f617578782f6775692f73796e2f6c61796f7574]] }
+#@ catch { set ::collection_result_display_limit [list [binary format H* 313030]] }
+#@ catch { set ::compile_seqmap_honor_sync_set_reset [list [binary format H* 74727565]] }
+#@ catch { set ::access_internal_pins [list [binary format H* 66616c7365]] }
+#@ catch { set ::mw_enable_net_bus [list [binary format H* 66616c7365]] }
+#@ catch { set ::acs_insert_level_shifter [list [binary format H* 74727565]] }
+#@ catch { set ::acs_default_pass_name [list [binary format H* 70617373]] }
+#@ catch { set ::enable_bit_blasted_bus_linking [list [binary format H* 66616c7365]] }
+#@ catch { set ::mux_auto_inferring_effort [list [binary format H* 32]] }
+#@ catch { set ::compile_clock_gating_through_hierarchy [list [binary format H* 66616c7365]] }
+#@ catch { set ::hdlin_mux_size_min [list [binary format H* 32]] }
+#@ catch { set ::sh_product_version [list [binary format H* 4c2d323031362e30332d5350352d35]] }
+#@ catch { set ::enable_netl_view [list [binary format H* 54525545]] }
+#@ catch { set ::test_dedicated_clock_chain_clock [list [binary format H* 66616c7365]] }
+#@ catch { set ::compile_timing_high_effort [list [binary format H* 66616c7365]] }
+#@ catch { set ::sh_new_variable_message_tmp [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_scan_enable_inverted_port_naming_style [list [binary format H* 746573745f7365692573]] }
+#@ catch { set ::rc_output_threshold_pct_fall [list [binary format H* 35302e303030303030]] }
+#@ catch { set ::compile_negative_logic_methodology [list [binary format H* 66616c7365]] }
+#@ catch { set ::timing_use_ceff_for_drc [list [binary format H* 66616c7365]] }
+#@ catch { set ::cache_dir_chmod_octal [list [binary format H* 373737]] }
+#@ catch { set ::physopt_enable_via_res_support [list [binary format H* 74727565]] }
+#@ catch { set ::test_bsd_input_ac_parametrics [list [binary format H* 66616c7365]] }
+#@ catch { set ::mv_make_primary_supply_available_for_always_on [list [binary format H* 74727565]] }
+#@ catch { set ::uniquify_naming_style [list [binary format H* 25735f2564]] }
+#@ catch { set ::compile_retime_exception_registers [list [binary format H* 66616c7365]] }
+#@ catch { set ::test_enable_scan_reordering_in_compile_incremental [list [binary format H* 74727565]] }
+#@ catch { set ::auto_link_disable [list [binary format H* 66616c7365]] }
+#@ catch { set ::write_name_nets_same_as_ports [list [binary format H* 66616c7365]] }
+#@ catch { set ::vhdlout_bit_type [list [binary format H* 7374645f6c6f676963]] }
+#@ catch { set ::preroute_opt_verbose [list [binary format H* 30]] }
+#@ catch { set ::cache_write [list [binary format H* 7e]] }
+#@ catch { set ::link_force_case [list [binary format H* 636865636b5f7265666572656e6365]] }
+#@ ##@@@## gen_nglc_check_lib_procedure
+#@ source /tmp/6617_1626735599813834/nglc_check_lib.tcl
+#@ # -- Starting source /tmp/6617_1626735599813834/nglc_check_lib.tcl
+
+#@ ##@@@## gen_nglc_check_lib_procedure
+#@ set search_path ". inputs/adk . /cad/synopsys/syn/L-2016.03-SP5-5/libraries/syn /cad/synopsys/syn/L-2016.03-SP5-5/minpower/syn /cad/synopsys/syn/L-2016.03-SP5-5/dw/syn_ver /cad/synopsys/syn/L-2016.03-SP5-5/dw/sim_ver"
+#@ set link_library "* stdcells.db inputs/adk/stdcells-bc.db inputs/adk/stdcells.db dw_foundation.sldb"
+#@ set target_library "stdcells.db"
+#@ set_check_library_options 
+#@ check_library 
+#@ ##@@@##
+#@ exit

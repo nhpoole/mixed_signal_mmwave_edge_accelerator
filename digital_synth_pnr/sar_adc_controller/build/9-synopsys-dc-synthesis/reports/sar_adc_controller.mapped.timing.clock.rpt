@@ -1,0 +1,39 @@
+ 
+****************************************
+Report : clock timing
+        -type summary
+Design : sar_adc_controller
+Version: L-2016.03-SP5-5
+Date   : Mon Jul 19 16:02:25 2021
+****************************************
+
+  Clock: ideal_clock
+----------------------------------------------------------------------------
+  Maximum setup launch latency:
+      dac_select_bits_reg_0_/CLK                             0.00      wr-+
+
+  Minimum setup capture latency:
+      dac_select_bits_reg_0_/CLK                             0.00      wr-+
+
+  Minimum hold launch latency:
+      dac_select_bits_reg_0_/CLK                             0.00      br-+
+
+  Maximum hold capture latency:
+      dac_select_bits_reg_0_/CLK                             0.00      br-+
+
+  Maximum active transition:
+      dac_select_bits_reg_0_/CLK                             0.00      wr-+
+
+  Minimum active transition:
+      dac_select_bits_reg_0_/CLK                             0.00      wr-+
+
+  Maximum setup skew:
+      dac_mask_reg_0_/CLK                                              wr-+
+      dac_select_bits_reg_0_/CLK                             0.00      wr-+
+
+  Maximum hold skew:
+      dac_mask_reg_0_/CLK                                              br-+
+      dac_select_bits_reg_0_/CLK                             0.00      br-+
+----------------------------------------------------------------------------
+
+1

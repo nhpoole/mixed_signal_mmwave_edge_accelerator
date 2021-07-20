@@ -1,0 +1,97 @@
+*----------------------------------------------------------------------------------------
+*	Innovus 20.13-s083_1 (64bit) 01/19/2021 16:51 (Linux 2.6.32-431.11.2.el6.x86_64)
+*	
+*
+* 	Date & Time:	2021-Jul-19 16:36:03 (2021-Jul-19 23:36:03 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: sar_adc_controller
+*
+*	Liberty Libraries used: 
+*	        analysis_default: /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/13-cadence-innovus-place/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/stdcells.lib
+*
+*	Power Domain used: 
+*              Rail:        VDD      Voltage:        1.8 
+*
+*       Power View : analysis_default
+*
+*       User-Defined Activity : N.A.
+*
+*       Activity File: N.A.
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs 
+*
+*       report_power -outfile reports/sar_adc_controller_postCTS.power -leakage
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Leakage Power:         0.00000031 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Leakage       Percentage 
+                                Power         (%)        
+-----------------------------------------------------------------------------------------
+Sequential                     1.659e-07       54.03 
+Macro                                  0           0 
+IO                                     0           0 
+Combinational                  1.225e-07       39.89 
+Clock (Combinational)          8.028e-09       2.615 
+Clock (Sequential)             1.061e-08       3.457 
+-----------------------------------------------------------------------------------------
+Total                           3.07e-07         100 
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Leakage       Percentage 
+                                Power         (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.8   3.07e-07         100 
+
+
+Clock                           Leakage       Percentage 
+                                Power         (%)        
+-----------------------------------------------------------------------------------------
+ideal_clock                    1.864e-08       6.073 
+-----------------------------------------------------------------------------------------
+Total (excluding duplicates)   1.864e-08       6.073 
+-----------------------------------------------------------------------------------------
+Clock: ideal_clock
+Clock Period: 0.020000 usec 
+Clock Toggle Rate:   100.0000 Mhz 
+Clock Static Probability:  0.5000
+
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*                Highest Average Power: clk_gate_dac_select_bits_reg/latch (sky130_fd_sc_hd__sdlclkp_4):        1.061e-08 
+*                Highest Leakage Power: clk_gate_dac_select_bits_reg/latch (sky130_fd_sc_hd__sdlclkp_4):        1.061e-08 
+*          Total Cap:      6.38822e-13 F
+*          Total instances in design:    87
+*          Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+*          Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+
+Total leakage power = 3.06973e-07 mW
+Cell usage statistics:  
+Library sky130_fd_sc_hd__tt_025C_1v80 , 87 cells ( 100.000000%) , 3.06973e-07 mW ( 100.000000%  ) 

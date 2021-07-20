@@ -1,0 +1,1109 @@
+** NOTE: Created directory path 'logs' for file 'logs/run.log'.
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2020 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v20.13-s083_1, built Tue Jan 19 16:51:46 PST 2021
+Options:	-overwrite -nowin -init START.tcl -log logs/run.log 
+Date:		Mon Jul 19 16:42:17 2021
+Host:		caddy13 (x86_64 w/Linux 3.10.0-1160.31.1.el7.x86_64) (8cores*16cpus*Common KVM processor 16384KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		invs	Innovus Implementation System	20.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_6762_caddy13_nhpoole_9jha70.
+
+The soft stacksize limit is either up to the hard limit or larger than 0.2% of RAM. No change is needed.
+
+**INFO:  MMMC transition support version v31-84 
+
+Sourcing file "START.tcl" ...
+#% Begin load design ... (date=07/19 16:43:00, mem=564.9M)
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'sar_adc_controller' saved by 'Innovus' '20.13-s083_1' on 'Mon Jul 19 16:42:04 2021'.
+% Begin Load MMMC data ... (date=07/19 16:43:01, mem=567.2M)
+% End Load MMMC data ... (date=07/19 16:43:01, total cpu=0:00:00.0, real=0:00:00.0, peak res=567.9M, current mem=567.9M)
+
+Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/libs/lef/rtk-tech.lef ...
+
+Loading LEF file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/libs/lef/stdcells.lef ...
+WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/libs/lef/stdcells.lef at line 18.
+Set DBUPerIGU to M1 pitch 460.
+**WARN: (IMPLF-201):	Pin 'HI' in macro 'sky130_fd_sc_hd__conb_1' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'LO' in macro 'sky130_fd_sc_hd__conb_1' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+
+viaInitial starts at Mon Jul 19 16:43:01 2021
+viaInitial ends at Mon Jul 19 16:43:01 2021
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/viewDefinition.tcl
+Reading libs_typical timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells.lib)
+Read 427 cells in library 'sky130_fd_sc_hd__tt_025C_1v80' 
+Reading libs_bc timing library '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_6'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_4'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_3'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_decapkapwr_12'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__lpflow_bleeder_1'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__diode_2'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'sky130_fd_sc_hd__decap_8'. The cell will only be used for analysis. (File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/5-skywater-130nm/view-standard/stdcells-bc.lib)
+Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 427 cells in library 'sky130_fd_sc_hd__ff_100C_1v95' 
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+*** End library_loading (cpu=0.04min, real=0.05min, mem=16.9M, fe_cpu=0.69min, fe_real=0.80min, fe_mem=670.6M) ***
+% Begin Load netlist data ... (date=07/19 16:43:04, mem=591.4M)
+*** Begin netlist parsing (mem=670.6M) ***
+Created 427 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/vbin/sar_adc_controller.v.bin'
+Reading binary database version 2 in 1-threaded mode
+
+*** Memory Usage v#2 (Current mem = 680.590M, initial mem = 267.605M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=680.6M) ***
+% End Load netlist data ... (date=07/19 16:43:04, total cpu=0:00:00.1, real=0:00:00.0, peak res=600.0M, current mem=600.0M)
+Set top cell to sar_adc_controller.
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Starting consistency checks on late and early library sets of delay corner 'delay_default'
+late library set: libs_typical
+early library set: libs_bc
+Completed consistency checks. Status: Successful
+Hooked 854 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell sar_adc_controller ...
+*** Netlist is unique.
+** info: there are 865 modules.
+** info: there are 87 stdCell insts.
+
+*** Memory Usage v#2 (Current mem = 717.062M, initial mem = 267.605M) ***
+*info: set bottom ioPad orient R0
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Adjust met3 preferred direction offset from 0.34 to 0.17.
+Adjust met4 preferred direction offset from 0.46 to 0.23.
+Adjust met5 preferred direction offset from 1.7 to 0.17.
+Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Loading preference file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/gui.pref.tcl ...
+##  Process: 130           (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 130nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.4.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+setAnalysisMode -usefulSkew already set.
+**WARN: (IMPOPT-3602):	The specified path group name Reg2Reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <high> specified for Reg2Reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name Reg2Out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for Reg2Out path_group
+**WARN: (IMPOPT-3602):	The specified path group name Reg2ClkGate is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for Reg2ClkGate path_group
+**WARN: (IMPOPT-3602):	The specified path group name In2Reg is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for In2Reg path_group
+**WARN: (IMPOPT-3602):	The specified path group name In2Out is not defined.
+Type 'man IMPOPT-3602' for more detail.
+Effort level <low> specified for In2Out path_group
+**WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+#WARNING (NRIF-91) Option setNanoRouteMode -routeTopRoutingLayer is obsolete. It will continue to work for the current release. To ensure compatibility with future releases, use option setDesignMode -topRoutingLayer instead.
+Setting -ignore_DRC to 0. ViaGen will do DRC check while creating vias.
+Setting -viarule_preference to default order. ViaGen will consider via rule priority based on the order of appearance in the technology file.
+**WARN: (IMPPTN-867):	Found use of setPinAssignMode -maxLayer. This will continue to work in this release; however, it is recommended to use setDesignMode -topRoutingLayer instead.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMaxRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -topRoutingLayer' instead.
+**WARN: (IMPPSP-1003):	Found use of 'setRouteMode -earlyGlobalMinRouteLayer'. This will continue to work in this release; however, it is recommended to use 'setDesignMode -bottomRoutingLayer' instead.
+Change floorplan default-technical-site to 'unithd'.
+*Info: initialize multi-corner CTS.
+Total number of combinational cells: 328
+Total number of sequential cells: 68
+Total number of tristate cells: 13
+Total number of level shifter cells: 7
+Total number of power gating cells: 0
+Total number of isolation cells: 11
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_12 sky130_fd_sc_hd__buf_16 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_6 sky130_fd_sc_hd__buf_8 sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_16 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8 sky130_fd_sc_hd__dlymetal6s2s_1 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__probe_p_8
+Total number of usable buffers: 15
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: sky130_fd_sc_hd__bufinv_16 sky130_fd_sc_hd__clkinv_1 sky130_fd_sc_hd__bufinv_8 sky130_fd_sc_hd__clkinv_16 sky130_fd_sc_hd__clkinv_2 sky130_fd_sc_hd__clkinv_4 sky130_fd_sc_hd__clkinv_8 sky130_fd_sc_hd__inv_1 sky130_fd_sc_hd__clkinvlp_2 sky130_fd_sc_hd__clkinvlp_4 sky130_fd_sc_hd__inv_12 sky130_fd_sc_hd__inv_16 sky130_fd_sc_hd__inv_2 sky130_fd_sc_hd__inv_4 sky130_fd_sc_hd__inv_6 sky130_fd_sc_hd__inv_8
+Total number of usable inverters: 16
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: sky130_fd_sc_hd__bufbuf_16 sky130_fd_sc_hd__bufbuf_8 sky130_fd_sc_hd__clkdlybuf4s15_1 sky130_fd_sc_hd__clkdlybuf4s15_2 sky130_fd_sc_hd__clkdlybuf4s18_1 sky130_fd_sc_hd__clkdlybuf4s18_2 sky130_fd_sc_hd__clkdlybuf4s25_1 sky130_fd_sc_hd__clkdlybuf4s50_1 sky130_fd_sc_hd__clkdlybuf4s25_2 sky130_fd_sc_hd__clkdlybuf4s50_2 sky130_fd_sc_hd__dlygate4sd2_1 sky130_fd_sc_hd__dlygate4sd1_1 sky130_fd_sc_hd__dlygate4sd3_1 sky130_fd_sc_hd__dlymetal6s6s_1 sky130_fd_sc_hd__dlymetal6s4s_1
+Total number of identified usable delay cells: 15
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Reading floorplan file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.fp.gz (mem = 973.7M).
+% Begin Load floorplan data ... (date=07/19 16:43:06, mem=886.3M)
+*info: reset 102 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 80500 100640)
+**WARN: (IMPFP-3961):	The techSite 'unithddbl' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Adjust met3 preferred direction offset from 0.34 to 0.17.
+Adjust met4 preferred direction offset from 0.46 to 0.23.
+Adjust met5 preferred direction offset from 1.7 to 0.17.
+Generated pitch 3.66 in met5 is different from 3.4 defined in technology file in preferred direction.
+Generated pitch 0.69 in met4 is different from 0.92 defined in technology file in preferred direction.
+Generated pitch 0.61 in met3 is different from 0.68 defined in technology file in preferred direction.
+ ... processed partition successfully.
+Reading binary special route file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.fp.spr.gz (Created by Innovus v20.13-s083_1 on Mon Jul 19 16:41:57 2021, version: 1)
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=889.0M, current mem=889.0M)
+There are 4 nets with weight being set
+There are 4 nets with bottomPreferredRoutingLayer being set
+There are 4 nets with avoidDetour being set
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Delete all existing relative floorplan constraints.
+% End Load floorplan data ... (date=07/19 16:43:08, total cpu=0:00:00.1, real=0:00:02.0, peak res=889.0M, current mem=888.2M)
+Reading congestion map file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=07/19 16:43:08, mem=888.4M)
+Suppress "**WARN ..." messages.
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=07/19 16:43:09, total cpu=0:00:00.0, real=0:00:01.0, peak res=888.6M, current mem=888.6M)
+Loading place ...
+% Begin Load placement data ... (date=07/19 16:43:09, mem=888.6M)
+Reading placement file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v20.13-s083_1 on Mon Jul 19 16:41:57 2021, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Checked 4 GNC rules.
+*** applyConnectGlobalNets disabled.
+*** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=975.7M) ***
+Total net length = 1.660e+03 (7.896e+02 8.702e+02) (ext = 7.806e+02)
+% End Load placement data ... (date=07/19 16:43:10, total cpu=0:00:00.0, real=0:00:01.0, peak res=889.6M, current mem=889.6M)
+Reading PG file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.pg.gz, version#2, (Created by Innovus v20.13-s083_1 on       Mon Jul 19 16:41:57 2021)
+*** Completed restorePGFile (cpu=0:00:00.0 real=0:00:01.0 mem=972.7M) ***
+% Begin Load routing data ... (date=07/19 16:43:11, mem=889.7M)
+Reading routing file - /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.route.gz.
+Reading Innovus routing data (Created by Innovus v20.13-s083_1 on Mon Jul 19 16:41:57 2021 Format: 20.1) ...
+*** Total 101 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.0 real=0:00:01.0 mem=976.7M) ***
+% End Load routing data ... (date=07/19 16:43:12, total cpu=0:00:00.1, real=0:00:01.0, peak res=895.2M, current mem=894.2M)
+TAT_INFO: restoreCongMap REAL = 1 : CPU = 0 : MEM = 0.
+Reading property file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=981.7M) ***
+Reading dirtyarea snapshot file /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.db.da.gz (Create by Innovus v20.13-s083_1 on Mon Jul 19 16:42:00 2021, version: 4).
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Reading Capacitance Table File /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable ...
+Process name: (null).
+Allocated an empty WireEdgeEnlargement table in typical [6].
+Allocated an empty WireEdgeEnlargement table in typical [6].
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: analysis_default
+    RC-Corner Name        : typical
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '/home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/libs/mmmc/rtk-typical.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Start generating vias ..
+#Skip building auto via since it is not turned on.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Via generation completed.
+% Begin Load power constraints ... (date=07/19 16:43:15, mem=901.5M)
+source /home/users/nhpoole/ee272b/ee272b_mixed_signal_mmwave_accelerator/digital_synth_pnr/sar_adc_controller/build/17-cadence-innovus-postroute/checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller_power_constraints.tcl
+'set_default_switching_activity' finished successfully.
+** WARN:  (VOLTUS_POWR-3212): The 'set_power_analysis_mode -leakage_power_view |-dynamic_power_view|-analysis_view' will be obsolete in 18.20 release. Use 'set_analysis_view -leakage <> | -dynamic <>' to set leakage and dynamic power views.
+
+% End Load power constraints ... (date=07/19 16:43:15, total cpu=0:00:00.1, real=0:00:01.0, peak res=908.0M, current mem=908.0M)
+% Begin load AAE data ... (date=07/19 16:43:16, mem=946.6M)
+**WARN: (IMPESI-3505):	setDelayCalMode -eng_copyNetPropToNewNet true (default=false) will be obsoleted along with its sgs2set equivalent.  This parameter will continue to be supported in the current release, but will be removed in the next major release of the software.
+AAE DB initialization (MEM=1049.27 CPU=0:00:00.0 REAL=0:00:00.0) 
+% End load AAE data ... (date=07/19 16:43:16, total cpu=0:00:00.6, real=0:00:00.0, peak res=952.3M, current mem=952.3M)
+Restoring CCOpt config...
+  Extracting original clock gating for ideal_clock...
+    clock_tree ideal_clock contains 20 sinks and 1 clock gates.
+    Extraction for ideal_clock complete.
+  Extracting original clock gating for ideal_clock done.
+  The skew group ideal_clock/constraints_default was created. It contains 20 sinks and 1 sources.
+  The skew group ideal_clock/constraints_default was created. It contains 20 sinks and 1 sources.
+Restoring CCOpt config done.
+Total number of combinational cells: 328
+Total number of sequential cells: 68
+Total number of tristate cells: 13
+Total number of level shifter cells: 7
+Total number of power gating cells: 0
+Total number of isolation cells: 11
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: sky130_fd_sc_hd__buf_1 sky130_fd_sc_hd__buf_12 sky130_fd_sc_hd__buf_16 sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_4 sky130_fd_sc_hd__buf_6 sky130_fd_sc_hd__buf_8 sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_16 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8 sky130_fd_sc_hd__dlymetal6s2s_1 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__probe_p_8
+Total number of usable buffers: 15
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: sky130_fd_sc_hd__bufinv_16 sky130_fd_sc_hd__clkinv_1 sky130_fd_sc_hd__bufinv_8 sky130_fd_sc_hd__clkinv_16 sky130_fd_sc_hd__clkinv_2 sky130_fd_sc_hd__clkinv_4 sky130_fd_sc_hd__clkinv_8 sky130_fd_sc_hd__inv_1 sky130_fd_sc_hd__clkinvlp_2 sky130_fd_sc_hd__clkinvlp_4 sky130_fd_sc_hd__inv_12 sky130_fd_sc_hd__inv_16 sky130_fd_sc_hd__inv_2 sky130_fd_sc_hd__inv_4 sky130_fd_sc_hd__inv_6 sky130_fd_sc_hd__inv_8
+Total number of usable inverters: 16
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: sky130_fd_sc_hd__bufbuf_16 sky130_fd_sc_hd__bufbuf_8 sky130_fd_sc_hd__clkdlybuf4s15_1 sky130_fd_sc_hd__clkdlybuf4s15_2 sky130_fd_sc_hd__clkdlybuf4s18_1 sky130_fd_sc_hd__clkdlybuf4s18_2 sky130_fd_sc_hd__clkdlybuf4s25_1 sky130_fd_sc_hd__clkdlybuf4s50_1 sky130_fd_sc_hd__clkdlybuf4s25_2 sky130_fd_sc_hd__clkdlybuf4s50_2 sky130_fd_sc_hd__dlygate4sd2_1 sky130_fd_sc_hd__dlygate4sd1_1 sky130_fd_sc_hd__dlygate4sd3_1 sky130_fd_sc_hd__dlymetal6s6s_1 sky130_fd_sc_hd__dlymetal6s4s_1
+Total number of identified usable delay cells: 15
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version 20.13-s083_1. They will be removed in the next release. 
+timing_enable_default_delay_arc
+#% End load design ... (date=07/19 16:43:16, total cpu=0:00:07.1, real=0:00:16.0, peak res=977.2M, current mem=956.4M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-201            2  Pin '%s' in macro '%s' has no ANTENNADIF...
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPPTN-867           1  Found use of %s. This will continue to w...
+WARNING   IMPESI-3505          1  setDelayCalMode -eng_%s (default=%s) wil...
+WARNING   IMPOPT-3602          5  The specified path group name %s is not ...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+WARNING   IMPPSP-1003          2  Found use of '%s'. This will continue to...
+WARNING   TECHLIB-302         24  No function defined for cell '%s'. The c...
+*** Message Summary: 39 warning(s), 0 error(s)
+
+The timeout for a remote job to respond is 3600 seconds.
+Submit command for task runs will be: local
+<FF> Plugin -> always_source_tcl
+<FF> LOADING 'always_source_tcl' PLUG-IN FILE(s) 
+<FF> -> innovus-foundation-flow/custom-scripts/always-source.tcl
+
+  > Info: Sourcing "scripts/main.tcl"
+
+### Start verbose source output (echo mode) for 'scripts/main.tcl' ...
+# source -verbose innovus-foundation-flow/INNOVUS/run_signoff.tcl
+### Start verbose source output (echo mode) for 'innovus-foundation-flow/INNOVUS/run_signoff.tcl' ...
+# if {[file exists innovus-foundation-flow/vars.tcl]} {
+   source innovus-foundation-flow/vars.tcl
+}
+# foreach file $vars(config_files) {
+   source $file
+}
+# source innovus-foundation-flow/procs.tcl
+# ff_procs::system_info
+# setDistributeHost -local
+The timeout for a remote job to respond is 3600 seconds.
+Submit command for task runs will be: local
+# setMultiCpuUsage -localCpu 16
+# if {$vars(restore_design)} { # <BEGIN TAG> signoff,restore_design
+
+# <begin tag signoff,restore_design,skip>
+#
+# restoreDesign checkpoints/postroute.enc.dat sar_adc_controller
+#
+# <end tag signoff,restore_design,skip> }
+# um::enable_metrics -on
+# puts "<FF> Plugin -> always_source_tcl"
+<FF> Plugin -> always_source_tcl
+# ff_procs::source_plug always_source_tcl
+<FF> LOADING 'always_source_tcl' PLUG-IN FILE(s) 
+<FF> -> innovus-foundation-flow/custom-scripts/always-source.tcl
+# set vars(step) signoff
+# set vars(signoff,start_time) [clock seconds]
+# um::push_snapshot_stack
+# setDesignMode -process 130
+##  Process: 130           (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 130nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.4.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+# setExtractRCMode -coupled true -effortLevel low
+# setAnalysisMode -analysisType onChipVariation -cppr both
+# set vars(active_rc_corners) [list]
+# foreach view [concat [all_setup_analysis_views] [all_hold_analysis_views]] {
+   set corner [get_delay_corner [get_analysis_view $view -delay_corner] \
+      -rc_corner]
+   if {[lsearch $vars(active_rc_corners) $corner] == -1 } {
+      lappend vars(active_rc_corners) $corner
+   }
+}
+# Puts "<FF> ACTIVE RC CORNER LIST: $vars(active_rc_corners)"
+<FF> ACTIVE RC CORNER LIST: typical
+# set empty_corners [list]
+# foreach corner $vars(active_rc_corners) {
+   if {![file exists [get_rc_corner $corner -qx_tech_file]]} {
+      lappend empty_corners $corner
+   }
+}
+# if {[llength $empty_corners] == 0} {
+   # <BEGIN TAG> signoff,set_extract_rc_mode
+   setExtractRCMode -engine postRoute -effortLevel low -coupled true
+
+   # <END TAG> signoff,set_extract_rc_mode
+} else {
+   Puts "<FF> CAN'T RUN SIGNOFF EXTRACTION BECAUSE qx_tech_file IS NOT DEFINED FOR these corners: $empty_corners"
+   # <BEGIN TAG> signoff,set_extract_rc_mode
+   setExtractRCMode -engine postRoute -effortLevel low -coupled true
+
+   # <END TAG> signoff,set_extract_rc_mode
+}
+<FF> CAN'T RUN SIGNOFF EXTRACTION BECAUSE qx_tech_file IS NOT DEFINED FOR these corners: typical
+# puts "<FF> Plugin -> pre_signoff_tcl"
+<FF> Plugin -> pre_signoff_tcl
+# Puts "<FF> RUNNING FINAL SIGNOFF ..."
+<FF> RUNNING FINAL SIGNOFF ...
+# extractRC
+Extraction called for design 'sar_adc_controller' of instances=200 and nets=102 using extraction engine 'postRoute' at effort level 'low' .
+PostRoute (effortLevel low) RC Extraction called for design sar_adc_controller.
+RC Extraction called in multi-corner(1) mode.
+Process corner(s) are loaded.
+ Corner: typical
+extractDetailRC Option : -outfile /tmp/innovus_temp_6762_caddy13_nhpoole_9jha70/sar_adc_controller_6762_VqF4lH.rcdb.d  -extended
+RC Mode: PostRoute -effortLevel low [Extended CapTable, RC Table Resistances]
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Coupling Cap. Scaling Factor : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 1.00000
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 1050.3M)
+Extracted 10.2222% (CPU Time= 0:00:00.0  MEM= 1063.3M)
+Extracted 20.2963% (CPU Time= 0:00:00.0  MEM= 1063.3M)
+Extracted 30.2222% (CPU Time= 0:00:00.0  MEM= 1063.3M)
+Extracted 40.2963% (CPU Time= 0:00:00.0  MEM= 1063.3M)
+Extracted 50.2222% (CPU Time= 0:00:00.0  MEM= 1064.3M)
+Extracted 60.2963% (CPU Time= 0:00:00.0  MEM= 1064.3M)
+Extracted 70.2222% (CPU Time= 0:00:00.0  MEM= 1064.3M)
+Extracted 80.2963% (CPU Time= 0:00:00.0  MEM= 1064.3M)
+Extracted 90.2222% (CPU Time= 0:00:00.0  MEM= 1064.3M)
+Extracted 100% (CPU Time= 0:00:00.1  MEM= 1064.3M)
+Number of Extracted Resistors     : 1151
+Number of Extracted Ground Cap.   : 1200
+Number of Extracted Coupling Cap. : 1432
+Filtering XCap in 'relativeAndCoupling' mode using values coupling_c_threshold=0.4fF, relative_c_threshold=1, and total_c_threshold=0fF.
+ Corner: typical
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 1072.3M)
+PostRoute (effortLevel low) RC Extraction DONE (CPU Time: 0:00:02.5  Real Time: 0:00:05.0  MEM: 1080.266M)
+# foreach corner $vars(active_rc_corners) {
+   rcOut -rc_corner $corner -spef $corner.spef.gz
+}
+RC Out has the following PVT Info:
+   RC:typical, Operating temperature 25 C
+Dumping Spef file.....
+Printing D_NET...
+rcOut completed:: 9 % rcOut completed:: 19 % rcOut completed:: 29 % rcOut completed:: 39 % rcOut completed:: 49 % rcOut completed:: 58 % rcOut completed:: 68 % rcOut completed:: 78 % rcOut completed:: 88 % rcOut completed:: 100 % 
+RC Out from RCDB Completed (CPU Time= 0:00:00.0  MEM= 1080.3M)
+# timeDesign -prefix signoff -signoff -reportOnly -outDir reports -expandedViews
+**WARN: (IMPOPT-7250):	Option -signOff for command timeDesign is obsolete and has been replaced by signoffTimeDesign.
+The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, update your script to use signoffTimeDesign.
+The setDelayCalMode -SIAware true is set. Running Signoff AAE-SI Analysis.
+*** timeDesign #1 [begin] : totSession cpu/real = 0:00:48.3/0:01:03.7 (0.8), mem = 1080.3M
+Total CPU(s) requested: 16
+Total CPU(s) enabled with current License(s): 8
+Current free CPU(s): 8
+Additional license(s) checked out: 1 Innovus_CPU_Opt license(s) for 8 CPU(s)
+Total CPU(s) now enabled: 16
+Multithreaded Timing Analysis is initialized with 16 threads
+
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+Deleting AAE DB and timing data for delay calculations...
+AAE DB initialization (MEM=1136.74 CPU=0:00:00.0 REAL=0:00:00.0) 
+This command "timeDesign -prefix signoff -signoff -reportOnly ..." required an extra checkout of license tpsxl.
+Additional license(s) checked out: 1 'Tempus_Timing_Signoff_XL' license(s)
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+Starting delay calculation for Setup views
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: sar_adc_controller
+# Design Mode: 130nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+Start delay calculation (fullDC) (16 T). (MEM=1248.62)
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+ Report initialization with DMWrite ... (0, Worst)
+AAE_INFO: 16 threads acquired from CTE.
+Total number of fetched objects 93
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 102,  90.2 percent of the nets selected for SI analysis
+Total number of fetched objects 93
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 102,  90.2 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1778.23 CPU=0:00:00.6 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=1730.23 CPU=0:00:00.8 REAL=0:00:01.0)
+esiiDumpWaveformsThread is successfull 1 
+Save waveform /tmp/innovus_temp_6762_caddy13_nhpoole_9jha70/.AAE_Da3Xg6/.AAE_6762/waveform.data in separate thread...
+Finish pthread dumping compressed waveforms.
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1700.2M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1732.2M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (16 T). (MEM=1589.36)
+ Report initialization with DMUpdate ... (1, Worst)
+Glitch Analysis: View analysis_default -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View analysis_default -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 93
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 102,  2.9 percent of the nets selected for SI analysis
+Total number of fetched objects 93
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 102,  2.9 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2222.96 CPU=0:00:00.1 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2222.96 CPU=0:00:00.2 REAL=0:00:00.0)
+*** Done Building Timing Graph (cpu=0:00:02.4 real=0:00:01.0 totSessionCpu=0:00:51.0 mem=1561.9M)
+** Profile ** Start :  cpu=0:00:00.0, mem=1561.9M
+** Profile ** Other data :  cpu=0:00:00.2, mem=1596.0M
+** Profile ** Overall slacks :  cpu=0:00:00.1, mem=1695.4M
+** Profile ** analysis_default slacks :  cpu=0:00:00.0, mem=1695.4M
+** Profile ** Total reports :  cpu=0:00:00.1, mem=1604.4M
+** Profile ** analysis_default reports :  cpu=0:00:00.1, mem=1604.4M
+** Profile ** DRVs :  cpu=0:00:00.1, mem=1598.9M
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Setup views included:
+ analysis_default 
+
++--------------------+--------------------------------------------------+
+|     ID Number      |                 Path Group Name                  |
++--------------------+--------------------------------------------------+
+|         1          |Reg2ClkGate                                       |
++--------------------+--------------------------------------------------+
+
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+|     Setup mode     |   all   | default | In2Out  | In2Reg  |1:Reg..te| Reg2Out | Reg2Reg |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):|  9.278  |  0.000  |   N/A   |  9.278  | 18.915  | 19.196  | 18.638  |
+|           TNS (ns):|  0.000  |  0.000  |   N/A   |  0.000  |  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |   N/A   |    0    |    0    |    0    |    0    |
+|          All Paths:|   31    |    0    |   N/A   |   21    |    1    |   10    |   20    |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+|analysis_default    |  9.278  |  0.000  |   N/A   |  9.278  | 18.915  | 19.196  | 18.638  |
+|                    |  0.000  |  0.000  |   N/A   |  0.000  |  0.000  |  0.000  |  0.000  |
+|                    |    0    |    0    |   N/A   |    0    |    0    |    0    |    0    |
+|                    |   31    |    0    |   N/A   |   21    |    1    |   10    |   20    |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 80.702%
+       (100.000% with Fillers)
+Total number of glitch violations: 0
+------------------------------------------------------------------
+** Profile ** Report data :  cpu=0:00:00.0, mem=1598.9M
+Reported timing to dir reports
+Total CPU time: 3.4 sec
+Total Real time: 3.0 sec
+Total Memory Usage: 1598.925781 Mbytes
+Reset AAE Options
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+*** timeDesign #1 [finish] : cpu/real = 0:00:03.5/0:00:02.8 (1.2), totSession cpu/real = 0:00:51.7/0:01:06.6 (0.8), mem = 1581.2M
+# timeDesign -prefix signoff \
+   -signoff \
+   -reportOnly \
+   -hold \
+   -outDir reports \
+   -expandedViews
+**WARN: (IMPOPT-7250):	Option -signOff for command timeDesign is obsolete and has been replaced by signoffTimeDesign.
+The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, update your script to use signoffTimeDesign.
+The setDelayCalMode -SIAware true is set. Running Signoff AAE-SI Analysis.
+*** timeDesign #2 [begin] : totSession cpu/real = 0:00:51.8/0:01:06.6 (0.8), mem = 1581.2M
+ Reset EOS DB
+Ignoring AAE DB Resetting ...
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+** Profile ** Start :  cpu=0:00:00.0, mem=1581.2M
+** Profile ** Other data :  cpu=0:00:00.1, mem=1582.7M
+Starting delay calculation for Hold views
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: sar_adc_controller
+# Design Mode: 130nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+Start delay calculation (fullDC) (16 T). (MEM=1582.69)
+*** Calculating scaling factor for libs_bc libraries using the default operating condition of each library.
+ Report initialization with DMWrite ... (0, Best)
+Total number of fetched objects 93
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 102,  90.2 percent of the nets selected for SI analysis
+Total number of fetched objects 93
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 102,  90.2 percent of the nets selected for SI analysis
+End delay calculation. (MEM=1991.74 CPU=0:00:00.5 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=1991.74 CPU=0:00:00.6 REAL=0:00:00.0)
+esiiDumpWaveformsThread is successfull 1 
+Save waveform /tmp/innovus_temp_6762_caddy13_nhpoole_9jha70/.AAE_Da3Xg6/.AAE_6762/waveform.data in separate thread...
+Finish pthread dumping compressed waveforms.
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1961.7M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1993.7M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (16 T). (MEM=1700.86)
+ Report initialization with DMUpdate ... (1, Worst)
+Glitch Analysis: View analysis_default -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View analysis_default -- Total Number of Nets Analyzed = 0. 
+Total number of fetched objects 93
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 102,  1.0 percent of the nets selected for SI analysis
+Total number of fetched objects 93
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 102,  1.0 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2328.49 CPU=0:00:00.1 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2328.49 CPU=0:00:00.1 REAL=0:00:00.0)
+*** Done Building Timing Graph (cpu=0:00:01.8 real=0:00:01.0 totSessionCpu=0:00:53.7 mem=1690.5M)
+** Profile ** Overall slacks :  cpu=0:00:01.9, mem=1787.9M
+** Profile ** analysis_default slacks :  cpu=0:00:00.0, mem=1787.9M
+** Profile ** Total reports :  cpu=0:00:00.1, mem=1695.9M
+** Profile ** analysis_default reports :  cpu=0:00:00.1, mem=1695.9M
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Hold views included:
+ analysis_default 
+
++--------------------+--------------------------------------------------+
+|     ID Number      |                 Path Group Name                  |
++--------------------+--------------------------------------------------+
+|         1          |Reg2ClkGate                                       |
++--------------------+--------------------------------------------------+
+
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+|     Hold mode      |   all   | default | In2Out  | In2Reg  |1:Reg..te| Reg2Out | Reg2Reg |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):|  0.199  |  0.000  |   N/A   | 10.136  |  0.489  |  0.199  |  0.333  |
+|           TNS (ns):|  0.000  |  0.000  |   N/A   |  0.000  |  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |   N/A   |    0    |    0    |    0    |    0    |
+|          All Paths:|   31    |    0    |   N/A   |   21    |    1    |   10    |   20    |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+|analysis_default    |  0.199  |  0.000  |   N/A   | 10.136  |  0.489  |  0.199  |  0.333  |
+|                    |  0.000  |  0.000  |   N/A   |  0.000  |  0.000  |  0.000  |  0.000  |
+|                    |    0    |    0    |   N/A   |    0    |    0    |    0    |    0    |
+|                    |   31    |    0    |   N/A   |   21    |    1    |   10    |   20    |
++--------------------+---------+---------+---------+---------+---------+---------+---------+
+
+Density: 80.702%
+       (100.000% with Fillers)
+------------------------------------------------------------------
+** Profile ** Report data :  cpu=0:00:00.1, mem=1678.2M
+Reported timing to dir reports
+Total CPU time: 2.39 sec
+Total Real time: 2.0 sec
+Total Memory Usage: 1634.183594 Mbytes
+Reset AAE Options
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+*** timeDesign #2 [finish] : cpu/real = 0:00:02.4/0:00:01.8 (1.3), totSession cpu/real = 0:00:54.2/0:01:08.4 (0.8), mem = 1634.2M
+# streamOut $vars(results_dir)/$vars(design).gds.gz \
+   -units 1000 \
+   -mapFile $vars(gds_layer_map)
+Parse flat map file...
+** NOTE: Created directory path 'results' for file 'results/sar_adc_controller.gds.gz'.
+Writing GDSII file ...
+	****** db unit per micron = 1000 ******
+	****** output gds2 file unit per micron = 1000 ******
+	****** unit scaling factor = 1 ******
+Output for instance
+Output for bump
+Output for physical terminals
+Output for logical terminals
+Output for regular nets
+Output for special nets and metal fills
+Output for via structure generation total number 15
+Statistics for GDS generated (version 3)
+----------------------------------------
+Stream Out Layer Mapping Information:
+GDS Layer Number          GDS Layer Name
+----------------------------------------
+    71                              via4
+    70                              via3
+    69                              via2
+    72                              met5
+    68                               via
+    71                              met4
+    67                              mcon
+    70                              met3
+    67                               li1
+    68                              met1
+    69                              met2
+
+
+Stream Out Information Processed for GDS version 3:
+Units: 1000 DBU
+
+Object                             Count
+----------------------------------------
+Instances                            200
+
+Ports/Pins                            30
+    metal layer met2                  14
+    metal layer met4                   8
+    metal layer met5                   8
+
+Nets                                 705
+    metal layer li1                   98
+    metal layer met1                 354
+    metal layer met2                 230
+    metal layer met3                  20
+    metal layer met4                   3
+
+    Via Instances                    436
+
+Special Nets                          31
+    metal layer met1                  17
+    metal layer met4                   6
+    metal layer met5                   8
+
+    Via Instances                     75
+
+Metal Fills                            0
+
+    Via Instances                      0
+
+Metal FillOPCs                         0
+
+    Via Instances                      0
+
+Metal FillDRCs                         0
+
+    Via Instances                      0
+
+Text                                  16
+    metal layer met2                  14
+    metal layer met5                   2
+
+
+Blockages                              0
+
+
+Custom Text                            0
+
+
+Custom Box                             0
+
+Trim Metal                             0
+
+######Streamout is finished!
+# set merge_files \
+[concat \
+[lsort [glob -nocomplain inputs/adk/*.gds*]] \
+[lsort [glob -nocomplain inputs/*.gds*]] \
+]
+# streamOut $vars(results_dir)/$vars(design)-merged.gds \
+   -units 1000 \
+   -mapFile $vars(gds_layer_map) \
+   -merge $merge_files
+Merge file: inputs/adk/stdcells.gds has version number: 3
+Parse flat map file...
+Writing GDSII file ...
+	****** db unit per micron = 1000 ******
+	****** output gds2 file unit per micron = 1000 ******
+	****** unit scaling factor = 1 ******
+Output for instance
+Output for bump
+Output for physical terminals
+Output for logical terminals
+Output for regular nets
+Output for special nets and metal fills
+Output for via structure generation total number 15
+Statistics for GDS generated (version 3)
+----------------------------------------
+Stream Out Layer Mapping Information:
+GDS Layer Number          GDS Layer Name
+----------------------------------------
+    71                              via4
+    70                              via3
+    69                              via2
+    72                              met5
+    68                               via
+    71                              met4
+    67                              mcon
+    70                              met3
+    67                               li1
+    68                              met1
+    69                              met2
+
+
+Stream Out Information Processed for GDS version 3:
+Units: 1000 DBU
+
+Object                             Count
+----------------------------------------
+Instances                            200
+
+Ports/Pins                            30
+    metal layer met2                  14
+    metal layer met4                   8
+    metal layer met5                   8
+
+Nets                                 705
+    metal layer li1                   98
+    metal layer met1                 354
+    metal layer met2                 230
+    metal layer met3                  20
+    metal layer met4                   3
+
+    Via Instances                    436
+
+Special Nets                          31
+    metal layer met1                  17
+    metal layer met4                   6
+    metal layer met5                   8
+
+    Via Instances                     75
+
+Metal Fills                            0
+
+    Via Instances                      0
+
+Metal FillOPCs                         0
+
+    Via Instances                      0
+
+Metal FillDRCs                         0
+
+    Via Instances                      0
+
+Text                                  16
+    metal layer met2                  14
+    metal layer met5                   2
+
+
+Blockages                              0
+
+
+Custom Text                            0
+
+
+Custom Box                             0
+
+Trim Metal                             0
+
+Scanning GDS file inputs/adk/stdcells.gds to register cell name ......
+Merging GDS file inputs/adk/stdcells.gds ......
+	****** Merge file: inputs/adk/stdcells.gds has version number: 3.
+	****** Merge file: inputs/adk/stdcells.gds has units: 1000 per micron.
+	****** unit scaling factor = 1 ******
+######Streamout is finished!
+# summaryReport -noHtml -outfile $vars(rpt_dir)/$vars(step).summaryReport.rpt
+Start to collect the design information.
+Build netlist information for Cell sar_adc_controller.
+Finished collecting the design information.
+Generating standard cells used in the design report.
+Analyze library ... 
+Analyze netlist ... 
+Generate no-driven nets information report.
+Analyze timing ... 
+Analyze floorplan/placement ... 
+Analysis Routing ...
+Report saved in file reports/signoff.summaryReport.rpt
+# verifyConnectivity -noAntenna
+VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Mon Jul 19 16:43:30 2021
+
+Design Name: sar_adc_controller
+Database Units: 1000
+Design Boundary: (0.0000, 0.0000) (80.5000, 100.6400)
+Error Limit = 1000; Warning Limit = 50
+Check all nets
+Use 16 pthreads
+Net VSS: has an unconnected terminal, has special routes with opens, has regular routing with opens.
+
+Begin Summary 
+    137 Problem(s) (IMPVFC-96): Terminal(s) are not connected.
+    1 Problem(s) (IMPVFC-200): Special Wires: Pieces of the net are not connected together.
+    10 Problem(s) (IMPVFC-92): Pieces of the net are not connected together.
+    148 total info(s) created.
+End Summary
+
+End Time: Mon Jul 19 16:43:30 2021
+Time Elapsed: 0:00:00.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 148 Viols.  0 Wrngs.
+  (CPU Time: 0:00:00.0  MEM: 0.055M)
+
+# verify_drc
+ *** Starting Verify DRC (MEM: 1664.2) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+**WARN: (IMPVFG-1198):	The number of CPUs requested 16 is larger than that verify_drc used 1. In Multithreading mode, the number of CPUs verify_drc used is not larger than the number of subareas.
+ Use 'setMultiCpuUsage -localCpu' to specify the less cup number if the verify area is not large.
+  VERIFY DRC ...... Using new threading
+  VERIFY DRC ...... Sub-Area: {0.000 0.000 80.500 100.640} 1 of 1
+  VERIFY DRC ...... Sub-Area : 1 complete 0 Viols.
+
+  Verification Complete : 0 Viols.
+
+ *** End Verify DRC (CPU: 0:00:00.0  ELAPSED TIME: 0.00  MEM: 0.0M) ***
+
+# verifyProcessAntenna
+
+******* START VERIFY ANTENNA ********
+Report File: sar_adc_controller.antenna.rpt
+LEF Macro File: sar_adc_controller.antenna.lef
+Verification Complete: 0 Violations
+******* DONE VERIFY ANTENNA ********
+(CPU Time: 0:00:00.0  MEM: 0.000M)
+
+# puts "<FF> Plugin -> post_signoff_tcl"
+<FF> Plugin -> post_signoff_tcl
+# um::pop_snapshot_stack
+# create_snapshot -name signoff -categories design
+------------------------------------------------------------
+	Current design flip-flop statistics
+
+Single-Bit FF Count  :           20
+Multi-Bit FF Count   :            0
+Total Bit Count      :           20
+Total FF Count       :           20
+Bits Per Flop        :        1.000
+------------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:          13.71             26          0.000 ns          9.278 ns  signoff
+# report_metric -file reports/metrics.html -format html
+# return
+### End verbose source output for 'innovus-foundation-flow/INNOVUS/run_signoff.tcl'.
+### End verbose source output for 'scripts/main.tcl'.
+
+  > Info: Sourcing "scripts/generate-results.tcl"
+
+### Start verbose source output (echo mode) for 'scripts/generate-results.tcl' ...
+# write_sdf $vars(results_dir)/$vars(design).sdf
+**WARN: (SDF-808):	The software is currently operating in a high performance mode which optimizes the handling of multiple timing arcs between input and output pin pairs. With the current settings, the SDF file generated will contain the same delay information for all of these arcs. To have the SDF recalculated with explicit pin pair data, you should use the option '-recompute_delay_calc'. This setting is recommended for generating SDF for functional  simulation applications.
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: sar_adc_controller
+# Design Mode: 130nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+Start delay calculation (fullDC) (16 T). (MEM=1796.44)
+*** Calculating scaling factor for libs_typical libraries using the default operating condition of each library.
+AAE_INFO-618: Total number of nets in the design is 102,  90.2 percent of the nets selected for SI analysis
+AAE_INFO-618: Total number of nets in the design is 102,  90.2 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2483.46 CPU=0:00:00.4 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2483.46 CPU=0:00:00.5 REAL=0:00:00.0)
+esiiDumpWaveformsThread is successfull 1 
+Save waveform /tmp/innovus_temp_6762_caddy13_nhpoole_9jha70/.AAE_Da3Xg6/.AAE_6762/waveform.data in separate thread...
+Finish pthread dumping compressed waveforms.
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1896.5M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1928.5M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (16 T). (MEM=1926.46)
+AAE_INFO-618: Total number of nets in the design is 102,  2.9 percent of the nets selected for SI analysis
+AAE_INFO-618: Total number of nets in the design is 102,  2.9 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2553.16 CPU=0:00:00.2 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2553.16 CPU=0:00:00.2 REAL=0:00:00.0)
+# writeTimingCon $vars(results_dir)/$vars(design).pt.sdc
+# sed -i "s/^current_design/\#current_design/" $vars(results_dir)/$vars(design).pt.sdc
+# sed -i "s/get_design.*$/current_design\]/" $vars(results_dir)/$vars(design).pt.sdc
+# foreach x $ADK_LVS_EXCLUDE_CELL_LIST {
+  append lvs_exclude_list [dbGet -u -e top.insts.cell.name $x] " "
+}
+# saveNetlist -excludeLeafCell                   \
+            -flat                              \
+            -phys                              \
+            $vars(results_dir)/$vars(design).lvs.v
+Writing Netlist "results/sar_adc_controller.lvs.v" ...
+Pwr name (VDD).
+Gnd name (VSS).
+1 Pwr names and 1 Gnd names.
+# saveNetlist -excludeLeafCell                   \
+            -flat                              \
+            -flattenBus                        \
+            -phys                              \
+            $vars(results_dir)/$vars(design).flatbuslvs.v
+Writing Netlist "results/sar_adc_controller.flatbuslvs.v" ...
+Pwr name (VDD).
+Gnd name (VSS).
+1 Pwr names and 1 Gnd names.
+# saveNetlist -excludeLeafCell                   \
+            -flat                              \
+            -phys                              \
+            -excludeCellInst $lvs_exclude_list \
+            $vars(results_dir)/$vars(design).nofillerlvs.v
+Writing Netlist "results/sar_adc_controller.nofillerlvs.v" ...
+Pwr name (VDD).
+Gnd name (VSS).
+1 Pwr names and 1 Gnd names.
+# saveNetlist -excludeLeafCell                   \
+            -flat                              \
+            -flattenBus                        \
+            -phys                              \
+            -excludeCellInst $lvs_exclude_list \
+            $vars(results_dir)/$vars(design).nofillerflatbuslvs.v
+Writing Netlist "results/sar_adc_controller.nofillerflatbuslvs.v" ...
+Pwr name (VDD).
+Gnd name (VSS).
+1 Pwr names and 1 Gnd names.
+# foreach x $ADK_VIRTUOSO_EXCLUDE_CELL_LIST {
+  append virtuoso_exclude_list [dbGet -u -e top.physInsts.cell.name $x] " "
+}
+# saveNetlist -excludeLeafCell                        \
+            -phys                                   \
+            -excludeCellInst $virtuoso_exclude_list \
+            $vars(results_dir)/$vars(design).virtuoso.v
+Writing Netlist "results/sar_adc_controller.virtuoso.v" ...
+Pwr name (VDD).
+Gnd name (VSS).
+1 Pwr names and 1 Gnd names.
+# saveNetlist -excludeLeafCell $vars(results_dir)/$vars(design).vcs.v
+Writing Netlist "results/sar_adc_controller.vcs.v" ...
+# saveNetlist -includePowerGround -excludeLeafCell $vars(results_dir)/$vars(design).vcs.pg.v
+Writing Netlist "results/sar_adc_controller.vcs.pg.v" ...
+Pwr name (VDD).
+Gnd name (VSS).
+1 Pwr names and 1 Gnd names.
+# write_lef_abstract                                                       \
+  -specifyTopLayer $vars(max_route_layer)                                \
+  -PGPinLayers [list $ADK_POWER_MESH_BOT_LAYER $ADK_POWER_MESH_TOP_LAYER] \
+  -noCutObs                                                              \
+  -stripePin                                                             \
+  $vars(results_dir)/$vars(design).lef
+# defOut -routing $vars(results_dir)/$vars(design).def.gz
+Writing DEF file 'results/sar_adc_controller.def.gz', current time is Mon Jul 19 16:43:34 2021 ...
+unitPerMicron=1000, dbgMicronPerDBU=0.001000, unitPerDBU=1.000000
+DEF file 'results/sar_adc_controller.def.gz' is written, current time is Mon Jul 19 16:43:35 2021 ...
+### End verbose source output for 'scripts/generate-results.tcl'.
+
+  > Info: Sourcing "scripts/reporting.tcl"
+
+### Start verbose source output (echo mode) for 'scripts/reporting.tcl' ...
+# report_area -verbose > $vars(rpt_dir)/$vars(step).area.rpt
+### End verbose source output for 'scripts/reporting.tcl'.
+The in-memory database contained RC information but was not saved. To save 
+the RC information, use saveDesign's -rc option. Note: Saving RC information can be quite large, 
+so it should only be saved when it is really desired.
+#% Begin save design ... (date=07/19 16:43:35, mem=1599.8M)
+% Begin Save ccopt configuration ... (date=07/19 16:43:35, mem=1601.8M)
+% End Save ccopt configuration ... (date=07/19 16:43:35, total cpu=0:00:00.0, real=0:00:01.0, peak res=1603.3M, current mem=1603.3M)
+% Begin Save netlist data ... (date=07/19 16:43:36, mem=1603.3M)
+Writing Binary DB to checkpoints/design.checkpoint/save.enc.dat/vbin/sar_adc_controller.v.bin in multi-threaded mode...
+% End Save netlist data ... (date=07/19 16:43:36, total cpu=0:00:00.1, real=0:00:00.0, peak res=1611.3M, current mem=1611.3M)
+Saving symbol-table file in separate thread ...
+Saving congestion map file in separate thread ...
+Saving congestion map file checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.route.congmap.gz ...
+% Begin Save AAE data ... (date=07/19 16:43:36, mem=1611.7M)
+Saving AAE Data ...
+% End Save AAE data ... (date=07/19 16:43:36, total cpu=0:00:00.0, real=0:00:00.0, peak res=1611.7M, current mem=1611.7M)
+Saving preference file checkpoints/design.checkpoint/save.enc.dat/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+Saving Drc markers ...
+... 148 markers are saved ...
+... 0 geometry drc markers are saved ...
+... 0 antenna drc markers are saved ...
+Saving special route data file in separate thread ...
+Saving PG file in separate thread ...
+Saving placement file in separate thread ...
+Saving route file in separate thread ...
+Saving property file in separate thread ...
+Saving PG file checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.pg.gz, version#2, (Created by Innovus v20.13-s083_1 on Mon Jul 19 16:43:39 2021)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+TAT_INFO: ::saveSpecialRoute REAL = 0 : CPU = 0 : MEM = 0.
+Saving property file checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1931.6M) ***
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:02.0 mem=1931.5M) ***
+TAT_INFO: ::savePGFile REAL = 2 : CPU = 0 : MEM = 0.
+TAT_INFO: ::savePlace REAL = 0 : CPU = 0 : MEM = 0.
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:02.0 mem=1931.5M) ***
+TAT_INFO: ::saveRoute REAL = 2 : CPU = 0 : MEM = 0.
+TAT_INFO: ::db::saveAnnotationAndProp REAL = 0 : CPU = 0 : MEM = 0.
+#Saving pin access data to file checkpoints/design.checkpoint/save.enc.dat/sar_adc_controller.apa ...
+TAT_INFO: ::db::saveSymbolTable REAL = 1 : CPU = 0 : MEM = 0.
+TAT_INFO: ::saveCongMap REAL = 1 : CPU = 0 : MEM = 0.
+% Begin Save power constraints data ... (date=07/19 16:43:43, mem=1618.4M)
+% End Save power constraints data ... (date=07/19 16:43:43, total cpu=0:00:00.0, real=0:00:00.0, peak res=1618.5M, current mem=1618.5M)
+Generated self-contained design save.enc.dat
+#% End save design ... (date=07/19 16:43:46, total cpu=0:00:02.0, real=0:00:11.0, peak res=1619.9M, current mem=1619.9M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+
+*** Memory Usage v#2 (Current mem = 1918.766M, initial mem = 267.605M) ***
+*** Message Summary: 53 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:01, real=0:01:29, mem=1918.8M) ---
+
