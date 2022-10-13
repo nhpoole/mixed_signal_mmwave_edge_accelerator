@@ -71,7 +71,8 @@ module chip_digital_eval_tb (
     reg unsigned [`BITS-1:0] addr_idx_cntr;
     reg unsigned [`BITS-1:0] addr_bit_cntr;
 
-    assign sig_frequency = `ADC_BITS'hc6;
+    // assign sig_frequency = `ADC_BITS'h4e;               // 20 Hz.
+    assign sig_frequency = `ADC_BITS'hc6;               // 50 Hz.
     assign sig_amplitude = `ADC_BITS'h15;
     assign adc_data = {sig_amplitude, sig_frequency};
 
@@ -91,7 +92,9 @@ module chip_digital_eval_tb (
 
     initial begin
         $readmemh("./freq_vec_data.txt", phase_mem);
-        $readmemh("./tf_coeff_data.txt", tf_coeff_mem);
+        // $readmemh("./tf_coeff_data_single_q.txt", tf_coeff_mem);
+        // $readmemh("./tf_coeff_data_multi_q_4.txt", tf_coeff_mem);
+        $readmemh("./tf_coeff_data_multi_q_8.txt", tf_coeff_mem);
     end
 
     always @(posedge clk) begin
